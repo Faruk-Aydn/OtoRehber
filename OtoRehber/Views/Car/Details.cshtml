@@ -47,13 +47,13 @@
             <div class="bg-green-50/50 rounded-2xl shadow-sm p-6 border border-green-100">
                 <h3 class="text-lg font-bold text-success mb-4 flex items-center"><i class="fa-solid fa-circle-check mr-2"></i>Artılar</h3>
                 <ul class="space-y-3">
-                    @if(Model.Pros != null && Model.Pros.Any())
+                    @if(Model.ProsConsList != null && Model.ProsConsList.Any(p => p.Type == "Pro"))
                     {
-                        foreach(var pro in Model.Pros)
+                        foreach(var pro in Model.ProsConsList.Where(p => p.Type == "Pro"))
                         {
                             <li class="flex items-start">
                                 <i class="fa-solid fa-check text-success mt-1 mr-3"></i>
-                                <span class="text-gray-700">@pro</span>
+                                <span class="text-gray-700">@pro.Description</span>
                             </li>
                         }
                     }
@@ -68,13 +68,13 @@
             <div class="bg-red-50/50 rounded-2xl shadow-sm p-6 border border-red-100">
                 <h3 class="text-lg font-bold text-danger mb-4 flex items-center"><i class="fa-solid fa-circle-xmark mr-2"></i>Eksiler</h3>
                 <ul class="space-y-3">
-                    @if(Model.Cons != null && Model.Cons.Any())
+                    @if(Model.ProsConsList != null && Model.ProsConsList.Any(p => p.Type == "Con"))
                     {
-                        foreach(var con in Model.Cons)
+                        foreach(var con in Model.ProsConsList.Where(p => p.Type == "Con"))
                         {
                             <li class="flex items-start">
                                 <i class="fa-solid fa-xmark text-danger mt-1 mr-3"></i>
-                                <span class="text-gray-700">@con</span>
+                                <span class="text-gray-700">@con.Description</span>
                             </li>
                         }
                     }

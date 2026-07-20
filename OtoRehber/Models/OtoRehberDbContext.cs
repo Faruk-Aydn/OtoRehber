@@ -8,6 +8,7 @@ namespace OtoRehber.Models
         }
         public DbSet<Car> Cars { get; set; }
         public DbSet<ChronicIssue> ChronicIssues { get; set; }
+        public DbSet<ProsCons> ProsCons { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Başlangıç verisi (Seeding)
@@ -22,9 +23,7 @@ namespace OtoRehber.Models
                     ExpertSummary = "C segmentinin referans modeli, kaliteli iç mekan ve tok sürüş hissi sunar. Ancak DSG şanzıman ve dizel motor bakım maliyetlerine dikkat edilmelidir.",
                     ReliabilityScore = 8,
                     PriceRange = "800k - 1.2M TL",
-                    EstimatedMaintenanceCostEUR = 400,
-                    Pros = ["Kaliteli iç mekan", "Tok sürüş hissi", "İyi 2. el değeri"],
-                    Cons = ["DSG şanzıman riski", "Dizel motor partikül filtresi", "Yüksek servis maliyeti"]
+                    EstimatedMaintenanceCostEUR = 400
                 },
                 new Car
                 {
@@ -36,9 +35,7 @@ namespace OtoRehber.Models
                     ExpertSummary = "Sorunsuzluk dendiğinde akla ilk gelen model. Konfor odaklı, aile kullanımına çok uygun fakat performans beklentisi olanları üzebilir.",
                     ReliabilityScore = 9.5,
                     PriceRange = "700k - 1.1M TL",
-                    EstimatedMaintenanceCostEUR = 200,
-                    Pros = ["Mükemmel sorunsuzluk", "Geniş iç hacim", "Düşük işletme maliyeti"],
-                    Cons = ["Zayıf yalıtım", "Vasat performans", "Demode iç tasarım"]
+                    EstimatedMaintenanceCostEUR = 200
                 }
             );
 
@@ -63,6 +60,26 @@ namespace OtoRehber.Models
                     EstimatedCostEUR = 500,
                     AffectedYears = "2013-2020"
                 }
+            );
+
+            modelBuilder.Entity<ProsCons>().HasData(
+                // Golf Pros
+                new ProsCons { Id = 1, CarId = 1, Type = "Pro", Description = "Kaliteli iç mekan" },
+                new ProsCons { Id = 2, CarId = 1, Type = "Pro", Description = "Tok sürüş hissi" },
+                new ProsCons { Id = 3, CarId = 1, Type = "Pro", Description = "İyi 2. el değeri" },
+                // Golf Cons
+                new ProsCons { Id = 4, CarId = 1, Type = "Con", Description = "DSG şanzıman riski" },
+                new ProsCons { Id = 5, CarId = 1, Type = "Con", Description = "Dizel motor partikül filtresi" },
+                new ProsCons { Id = 6, CarId = 1, Type = "Con", Description = "Yüksek servis maliyeti" },
+
+                // Corolla Pros
+                new ProsCons { Id = 7, CarId = 2, Type = "Pro", Description = "Mükemmel sorunsuzluk" },
+                new ProsCons { Id = 8, CarId = 2, Type = "Pro", Description = "Geniş iç hacim" },
+                new ProsCons { Id = 9, CarId = 2, Type = "Pro", Description = "Düşük işletme maliyeti" },
+                // Corolla Cons
+                new ProsCons { Id = 10, CarId = 2, Type = "Con", Description = "Zayıf yalıtım" },
+                new ProsCons { Id = 11, CarId = 2, Type = "Con", Description = "Vasat performans" },
+                new ProsCons { Id = 12, CarId = 2, Type = "Con", Description = "Demode iç tasarım" }
             );
         }
     }

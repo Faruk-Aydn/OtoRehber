@@ -18,7 +18,10 @@ namespace OtoRehber.Controllers
         public IActionResult Details(int id)
         {
             // Artık veritabanından ID ile aracı getiriyoruz
-            var car = _context.Cars.Include(c => c.ChronicIssues).FirstOrDefault(c => c.Id == id);
+            var car = _context.Cars
+                .Include(c => c.ChronicIssues)
+                .Include(c => c.ProsConsList)
+                .FirstOrDefault(c => c.Id == id);
 
             if (car == null)
             {

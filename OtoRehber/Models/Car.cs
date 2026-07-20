@@ -11,8 +11,7 @@ namespace OtoRehber.Models
         public double ReliabilityScore { get; set; }
         public string PriceRange { get; set; }
         public int EstimatedMaintenanceCostEUR { get; set; }
-        public List<string> Pros { get; set; } = new List<string>();
-        public List<string> Cons { get; set; } = new List<string>();
+        public List<ProsCons> ProsConsList { get; set; } = new List<ProsCons>();
         public List<ChronicIssue> ChronicIssues { get; set; } = new List<ChronicIssue>();
 
     }
