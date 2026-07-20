@@ -1,0 +1,66 @@
+@model List<OtoRehber.Models.Car>
+@{
+    ViewData["Title"] = "Otomobil Vitrini";
+}
+
+<div class="mb-8 text-center">
+    <h1 class="text-4xl font-extrabold text-gray-900 mb-4">Türkiye'nin Kapsamlı Otomobil Rehberi</h1>
+    <p class="text-lg text-gray-600 mb-6">Kronik sorunları, kullanıcı yorumlarını ve piyasa analizlerini keşfedin.</p>
+    
+    <!-- Search Form -->
+    <form method="get" asp-action="Index" class="max-w-xl mx-auto flex">
+        <div class="relative w-full">
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                <i class="fa-solid fa-magnifying-glass text-gray-500"></i>
+            </div>
+            <input type="text" name="searchQuery" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-l-lg focus:ring-primary focus:border-primary block w-full pl-10 p-3 shadow-sm" placeholder="Marka veya model arayın... (Örn: Golf, Corolla)" value="@Context.Request.Query["searchQuery"]">
+        </div>
+        <button type="submit" class="p-3 text-sm font-medium text-white bg-primary rounded-r-lg border border-primary hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 shadow-sm transition">
+            Ara
+        </button>
+    </form>
+</div>
+
+<!-- Car Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    @foreach (var car in Model)
+    {
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition flex flex-col h-full border border-gray-100">
+            <!-- Simulated Image Area -->
+            <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-400">
+                <i class="fa-solid fa-car text-5xl"></i>
+            </div>
+            
+            <div class="p-5 flex flex-col flex-grow">
+                <div class="flex justify-between items-start mb-2">
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-900">@car.Brand @car.ModelName</h2>
+                        <p class="text-sm text-gray-500 font-medium">@car.Engine &bull; @car.Segment Segment</p>
+                    </div>
+                    <div class="bg-blue-50 text-primary text-xs font-bold px-2 py-1 rounded border border-blue-100 flex items-center gap-1">
+                        <i class="fa-solid fa-star text-yellow-400"></i> @car.ReliabilityScore
+                    </div>
+                </div>
+                
+                <p class="text-gray-600 text-sm mb-4 line-clamp-3">@car.ExpertSummary</p>
+                
+                <div class="mt-auto pt-4 border-t border-gray-100 flex justify-between items-center">
+                    <span class="text-sm font-bold text-gray-700">@car.PriceRange</span>
+                    <a asp-controller="Car" asp-action="Details" asp-route-id="@car.Id" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-primary rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 transition">
+                        İncele <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@if (!Model.Any())
+{
+    <div class="text-center py-12 bg-white rounded-lg shadow border border-gray-200 mt-4">
+        <i class="fa-solid fa-car-burst text-4xl text-gray-300 mb-3"></i>
+        <h3 class="text-lg font-medium text-gray-900">Araç bulunamadı</h3>
+        <p class="text-gray-500">Arama kriterlerinize uygun bir araç sistemimizde yer almıyor.</p>
+        <a asp-action="Index" class="mt-4 inline-block text-primary hover:underline font-medium">Tüm Araçları Göster</a>
+    </div>
+}

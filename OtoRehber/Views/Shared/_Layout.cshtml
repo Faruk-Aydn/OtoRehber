@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - OtoRehber</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb', // Blue-600
+                        success: '#10b981', // Emerald-500
+                        danger: '#ef4444' // Red-500
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col">
+    <header class="bg-primary text-white shadow-md">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="text-2xl font-bold tracking-tight">
+                <i class="fa-solid fa-car-side mr-2"></i>OtoRehber
+            </a>
+            <div class="space-x-6">
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="hover:text-blue-200 transition">Ana Sayfa</a>
+                <a asp-area="" asp-controller="Home" asp-action="Privacy" class="hover:text-blue-200 transition">Gizlilik</a>
+            </div>
+        </nav>
+    </header>
+    
+    <main role="main" class="container mx-auto px-4 py-8 flex-grow">
+        @RenderBody()
+    </main>
+
+    <footer class="bg-white border-t border-gray-200 py-6 mt-auto">
+        <div class="container mx-auto px-4 text-center text-gray-500 text-sm">
+            &copy; 2026 - OtoRehber - <a asp-area="" asp-controller="Home" asp-action="Privacy" class="hover:text-primary transition">Gizlilik Sözleşmesi</a>
+        </div>
+    </footer>
+    
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
