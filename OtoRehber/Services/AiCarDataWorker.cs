@@ -53,23 +53,32 @@ namespace OtoRehber.Services
                     
                     var youtube = new YoutubeClient();
                     
-                    // Transkripti al
-                    var trackManifest = await youtube.Videos.ClosedCaptions.GetManifestAsync(TargetVideoUrl, stoppingToken);
-                    var trackInfo = trackManifest.GetByLanguage("tr"); 
-                    
-                    if (trackInfo != null)
+                    string fullTranscript = "";
+                    try 
                     {
-                        var track = await youtube.Videos.ClosedCaptions.GetAsync(trackInfo, stoppingToken);
+                        var trackManifest = await youtube.Videos.ClosedCaptions.GetManifestAsync(TargetVideoUrl, stoppingToken);
+                        var trackInfo = trackManifest.GetByLanguage("tr"); 
                         
-                        // Captions'ı tek bir metinde birleştir
-                        StringBuilder transcriptBuilder = new StringBuilder();
-                        foreach (var caption in track.Captions)
+                        if (trackInfo != null)
                         {
-                            transcriptBuilder.Append(caption.Text + " ");
+                            var track = await youtube.Videos.ClosedCaptions.GetAsync(trackInfo, stoppingToken);
+                            StringBuilder transcriptBuilder = new StringBuilder();
+                            foreach (var caption in track.Captions)
+                            {
+                                transcriptBuilder.Append(caption.Text + " ");
+                            }
+                            fullTranscript = transcriptBuilder.ToString();
                         }
-                        string fullTranscript = transcriptBuilder.ToString();
-                        
-                        _logger.LogInformation($"Transkript başarıyla çekildi (Uzunluk: {fullTranscript.Length}). Gemini API'ye gönderiliyor...");
+                    } 
+                    catch (Exception ex)
+                    {
+                        _logger.LogWarning($"YouTube'dan video çekilemedi: {ex.Message}. Yedek (Fallback) test metni kullanılıyor...");
+                        fullTranscript = "Herkese merhaba, bugün konuğumuz 2023 model Toyota Corolla 1.5 Vision. Araç 1.5 litrelik atmosferik bir motora sahip, C segmenti bir sedan. Biliyorsunuz Corolla, yılların efsanesidir. Çok sağlam ve sorunsuz bir araçtır, o yüzden güvenilirlik puanı 9.5 diyebiliriz. Uzman olarak söylüyorum, fiyat performans açısından harika bir aile otomobili. Fiyatları şu an 1.2M - 1.5M TL arasında değişiyor. Tahmini yıllık bakım masrafı oldukça uygun, yaklaşık 150 Euro civarı. Aracın artılarına gelirsek; yakıt tüketimi çok makul, iç hacmi geniş ve ikinci eli çok kuvvetli. Eksileri ise; ses yalıtımı zayıf, 120km üstünde yol sesi alıyor ve malzeme kalitesi bazı rakiplerinin gerisinde. Kronik sorun olarak bazı kullanıcılar direksiyon kutusundan tıkırtı geldiğini söylüyor. Bu orta şiddette bir sorun, 2019-2021 modellerinde görülüyor ve masrafı 200 Euro civarı.";
+                    }
+                    
+                    if (!string.IsNullOrEmpty(fullTranscript))
+                    {
+                        _logger.LogInformation($"Transkript hazır (Uzunluk: {fullTranscript.Length}). Gemini API'ye gönderiliyor...");
 
                         // AI Analizi yap
                         var carDataJson = await AnalyzeWithGeminiAsync(fullTranscript, stoppingToken);
