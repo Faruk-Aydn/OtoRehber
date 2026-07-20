@@ -28,9 +28,11 @@
             <a asp-area="" asp-controller="Home" asp-action="Index" class="text-2xl font-bold tracking-tight">
                 <i class="fa-solid fa-car-side mr-2"></i>OtoRehber
             </a>
-            <div class="space-x-6">
+            <div class="space-x-6 flex items-center">
                 <a asp-area="" asp-controller="Home" asp-action="Index" class="hover:text-blue-200 transition">Ana Sayfa</a>
-                <a asp-area="" asp-controller="Home" asp-action="Privacy" class="hover:text-blue-200 transition">Gizlilik</a>
+                <a asp-area="" asp-controller="AdminCar" asp-action="Index" class="bg-blue-700 hover:bg-blue-800 text-white px-3 py-1.5 rounded text-sm transition flex items-center">
+                    <i class="fa-solid fa-gear mr-1"></i> Admin
+                </a>
             </div>
         </nav>
     </header>
