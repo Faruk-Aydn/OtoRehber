@@ -7,6 +7,7 @@ builder.Services.AddDbContext<OtoRehberDbContext>(options =>
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddHostedService<OtoRehber.Services.AiCarDataWorker>();
 
 var app = builder.Build();
 
