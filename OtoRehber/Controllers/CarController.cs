@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
-using OtoRehber.Models;
+using OtoRehber.Domain.Entities;
+using OtoRehber.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using OtoRehber.Models;
 
 namespace OtoRehber.Controllers
 {
@@ -21,6 +23,8 @@ namespace OtoRehber.Controllers
             var car = _context.Cars
                 .Include(c => c.ChronicIssues)
                 .Include(c => c.ProsConsList)
+                .Include(c => c.MileageMilestones)
+                .Include(c => c.Reviews)
                 .FirstOrDefault(c => c.Id == id);
 
             if (car == null)
@@ -29,6 +33,59 @@ namespace OtoRehber.Controllers
             }
 
             return View(car);
+        }
+
+        [HttpPost]
+        public IActionResult AddReview(int carId, string userName, int rating, string comment)
+        {
+            if (string.IsNullOrWhiteSpace(userName) || string.IsNullOrWhiteSpace(comment) || rating < 1 || rating > 10)
+            {
+                TempData["ErrorMessage"] = "Lütfen tüm alanları geçerli şekilde doldurun.";
+                return RedirectToAction("Details", new { id = carId });
+            }
+
+            var review = new CarReview
+            {
+                CarId = carId,
+                UserName = userName,
+                Rating = rating,
+                Comment = comment,
+                CreatedAt = System.DateTime.Now
+            };
+
+            _context.CarReviews.Add(review);
+            _context.SaveChanges();
+
+            TempData["SuccessMessage"] = "Yorumunuz başarıyla eklendi! Teşekkür ederiz.";
+            return RedirectToAction("Details", new { id = carId });
+        }
+
+        public IActionResult Compare(int id1, int id2)
+        {
+            var car1 = _context.Cars
+                .Include(c => c.ChronicIssues)
+                .Include(c => c.ProsConsList)
+                .Include(c => c.MileageMilestones)
+                .FirstOrDefault(c => c.Id == id1);
+
+            var car2 = _context.Cars
+                .Include(c => c.ChronicIssues)
+                .Include(c => c.ProsConsList)
+                .Include(c => c.MileageMilestones)
+                .FirstOrDefault(c => c.Id == id2);
+
+            if (car1 == null || car2 == null)
+            {
+                return NotFound("Karşılaştırılacak araçlardan biri veya ikisi bulunamadı.");
+            }
+
+            var viewModel = new CarCompareViewModel
+            {
+                Car1 = car1,
+                Car2 = car2
+            };
+
+            return View(viewModel);
         }
     }
 }
