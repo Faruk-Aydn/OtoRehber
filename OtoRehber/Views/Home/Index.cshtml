@@ -1,52 +1,206 @@
-@model List<OtoRehber.Models.Car>
+@model List<OtoRehber.Domain.Entities.Car>
 @{
     ViewData["Title"] = "Otomobil Vitrini";
 }
 
-<div class="mb-8 text-center">
-    <h1 class="text-4xl font-extrabold text-gray-900 mb-4">Türkiye'nin Kapsamlı Otomobil Rehberi</h1>
-    <p class="text-lg text-gray-600 mb-6">Kronik sorunları, kullanıcı yorumlarını ve piyasa analizlerini keşfedin.</p>
-    
-    <!-- Search Form -->
-    <form method="get" asp-action="Index" class="max-w-xl mx-auto flex">
-        <div class="relative w-full">
-            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                <i class="fa-solid fa-magnifying-glass text-gray-500"></i>
+<!-- Hero Section -->
+<div class="relative bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 rounded-3xl shadow-2xl overflow-hidden mb-12 p-8 md:p-16 text-center" data-aos="fade-down">
+    <!-- Dekoratif Işıklar -->
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/30 rounded-full mix-blend-screen filter blur-3xl opacity-50 animate-blob"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/30 rounded-full mix-blend-screen filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
+
+    <div class="relative z-10">
+        <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-6 tracking-tight drop-shadow-md">
+            Türkiye'nin Kapsamlı <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Otomobil Rehberi</span>
+        </h1>
+        <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto font-light">
+            Kronik sorunları, gerçek sanayi maliyetlerini ve dürüst piyasa analizlerini yapay zeka gücüyle keşfedin.
+        </p>
+        
+        <!-- Search & Filter Form -->
+        <form method="get" asp-action="Index" class="max-w-4xl mx-auto bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 shadow-xl flex flex-col md:flex-row gap-3">
+            <div class="relative flex-grow">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
+                    <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
+                </div>
+                <input type="text" name="searchQuery" class="bg-white/90 border-0 text-gray-900 text-sm rounded-xl focus:ring-2 focus:ring-primary block w-full pl-11 p-3.5 placeholder-gray-500 font-medium" placeholder="Marka veya model (Örn: Golf, Egea)" value="@ViewData["CurrentSearch"]">
             </div>
-            <input type="text" name="searchQuery" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-l-lg focus:ring-primary focus:border-primary block w-full pl-10 p-3 shadow-sm" placeholder="Marka veya model arayın... (Örn: Golf, Corolla)" value="@Context.Request.Query["searchQuery"]">
+            
+            <div class="relative min-w-[150px]">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <i class="fa-solid fa-car text-gray-400"></i>
+                </div>
+                <select name="brand" onchange="this.form.submit()" class="bg-white/90 border-0 text-gray-900 text-sm rounded-xl focus:ring-2 focus:ring-primary block w-full pl-9 p-3.5 font-medium cursor-pointer appearance-none">
+                    <option value="" selected="@(string.IsNullOrEmpty(ViewData["CurrentBrand"]?.ToString()))">Tüm Markalar</option>
+                    @if(ViewBag.Brands != null)
+                    {
+                        foreach(var b in ViewBag.Brands)
+                        {
+                            <option value="@b" selected="@(ViewData["CurrentBrand"]?.ToString() == b)">@b</option>
+                        }
+                    }
+                </select>
+            </div>
+
+            <div class="relative min-w-[150px]">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <i class="fa-solid fa-layer-group text-gray-400"></i>
+                </div>
+                <select name="segment" onchange="this.form.submit()" class="bg-white/90 border-0 text-gray-900 text-sm rounded-xl focus:ring-2 focus:ring-primary block w-full pl-9 p-3.5 font-medium cursor-pointer appearance-none">
+                    <option value="" selected="@(string.IsNullOrEmpty(ViewData["CurrentSegment"]?.ToString()))">Tüm Segmentler</option>
+                    <option value="A" selected="@(ViewData["CurrentSegment"]?.ToString() == "A")">A Segmenti</option>
+                    <option value="B" selected="@(ViewData["CurrentSegment"]?.ToString() == "B")">B Segmenti</option>
+                    <option value="C" selected="@(ViewData["CurrentSegment"]?.ToString() == "C")">C Segmenti</option>
+                    <option value="D" selected="@(ViewData["CurrentSegment"]?.ToString() == "D")">D Segmenti</option>
+                    <option value="E" selected="@(ViewData["CurrentSegment"]?.ToString() == "E")">E Segmenti</option>
+                    <option value="SUV" selected="@(ViewData["CurrentSegment"]?.ToString() == "SUV")">SUV</option>
+                    <option value="Ticari" selected="@(ViewData["CurrentSegment"]?.ToString() == "Ticari")">Ticari</option>
+                    <option value="Spor" selected="@(ViewData["CurrentSegment"]?.ToString() == "Spor")">Spor</option>
+                    <option value="Elektrikli" selected="@(ViewData["CurrentSegment"]?.ToString() == "Elektrikli")">Elektrikli</option>
+                </select>
+            </div>
+
+            <div class="relative min-w-[170px]">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <i class="fa-solid fa-arrow-down-a-z text-gray-400"></i>
+                </div>
+                <select name="sortBy" onchange="this.form.submit()" class="bg-white/90 border-0 text-gray-900 text-sm rounded-xl focus:ring-2 focus:ring-primary block w-full pl-9 p-3.5 font-medium cursor-pointer appearance-none">
+                    <option value="" selected="@(string.IsNullOrEmpty(ViewData["CurrentSort"]?.ToString()))">Sıralama (Yeni Eklenen)</option>
+                    <option value="score_desc" selected="@(ViewData["CurrentSort"]?.ToString() == "score_desc")">Puan: Yüksekten Düşüğe</option>
+                    <option value="score_asc" selected="@(ViewData["CurrentSort"]?.ToString() == "score_asc")">Puan: Düşükten Yükseğe</option>
+                    <option value="price_asc" selected="@(ViewData["CurrentSort"]?.ToString() == "price_asc")">Fiyat: Artan</option>
+                    <option value="price_desc" selected="@(ViewData["CurrentSort"]?.ToString() == "price_desc")">Fiyat: Azalan</option>
+                </select>
+            </div>
+
+            <button type="submit" class="p-3.5 text-sm font-bold text-white bg-primary rounded-xl hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 shadow-md transition-all flex items-center justify-center gap-2 px-6">
+                <i class="fa-solid fa-filter"></i> Filtrele
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- Trendler (Leaderboards) Section -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+    
+    <!-- En Çok Yorum Alan -->
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden" data-aos="fade-right">
+        <div class="bg-gradient-to-r from-orange-500 to-red-500 p-4">
+            <h2 class="text-xl font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-fire"></i> En Çok Yorum Alan 10 Araç
+            </h2>
         </div>
-        <button type="submit" class="p-3 text-sm font-medium text-white bg-primary rounded-r-lg border border-primary hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 shadow-sm transition">
-            Ara
-        </button>
-    </form>
+        <div class="p-4">
+            @if (ViewBag.TopReviewed != null && ((IList<dynamic>)ViewBag.TopReviewed).Count > 0)
+            {
+                <ul class="divide-y divide-gray-100 dark:divide-gray-700">
+                    @{ int rank1 = 1; }
+                    @foreach (var item in ViewBag.TopReviewed)
+                    {
+                        <li class="py-3 flex justify-between items-center hover:bg-orange-50 dark:hover:bg-gray-700/50 rounded-lg px-2 transition">
+                            <div class="flex items-center gap-3">
+                                <span class="flex items-center justify-center w-6 h-6 rounded-full @(rank1 <= 3 ? "bg-orange-100 text-orange-600 dark:bg-orange-900/30 dark:text-orange-400 font-bold" : "bg-gray-100 text-gray-500 dark:bg-gray-800 dark:text-gray-400 font-medium") text-xs">
+                                    @rank1
+                                </span>
+                                <span class="font-semibold text-gray-800 dark:text-gray-200 text-sm">@item.Label</span>
+                            </div>
+                            <span class="text-xs text-gray-400">@item.Count yorum</span>
+                        </li>
+                        rank1++;
+                    }
+                </ul>
+            }
+            else
+            {
+                <div class="py-8 text-center text-gray-400 text-sm">
+                    <i class="fa-regular fa-comment-dots text-2xl mb-2 block"></i>
+                    Henüz yorum yapılmamış. İlk yorumu siz yapın!
+                </div>
+            }
+        </div>
+    </div>
+
+    <!-- En Yüksek Puanlılar -->
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden" data-aos="fade-left">
+        <div class="bg-gradient-to-r from-indigo-500 to-blue-600 p-4">
+            <h2 class="text-xl font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-trophy"></i> En Güvenilir 10 Araç
+            </h2>
+        </div>
+        <div class="p-4">
+            @if (ViewBag.TopByScore != null)
+            {
+                <ul class="divide-y divide-gray-100 dark:divide-gray-700">
+                    @{ int rank2 = 1; }
+                    @foreach (var item in ViewBag.TopByScore)
+                    {
+                        <li class="py-3 flex justify-between items-center hover:bg-blue-50 dark:hover:bg-gray-700/50 rounded-lg px-2 transition">
+                            <div class="flex items-center gap-3">
+                                <span class="flex items-center justify-center w-6 h-6 rounded-full @(rank2 <= 3 ? "bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400 font-bold" : "bg-gray-100 text-gray-500 dark:bg-gray-800 dark:text-gray-400 font-medium") text-xs">
+                                    @rank2
+                                </span>
+                                <span class="font-semibold text-gray-800 dark:text-gray-200 text-sm">@item.Label</span>
+                            </div>
+                            <span class="text-xs font-bold text-yellow-600 bg-yellow-50 dark:bg-yellow-900/20 dark:text-yellow-400 px-2 py-0.5 rounded">
+                                <i class="fa-solid fa-star mr-1"></i>@item.Score
+                            </span>
+                        </li>
+                        rank2++;
+                    }
+                </ul>
+            }
+        </div>
+    </div>
+
 </div>
 
 <!-- Car Grid -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<div id="car-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
     @foreach (var car in Model)
     {
-        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition flex flex-col h-full border border-gray-100">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm hover:shadow-xl overflow-hidden hover:-translate-y-1 transition-all duration-300 flex flex-col h-full border border-gray-200 dark:border-gray-700" data-aos="fade-up">
             <!-- Simulated Image Area -->
-            <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-400">
-                <i class="fa-solid fa-car text-5xl"></i>
+            <div class="relative h-48 bg-gradient-to-tr from-gray-100 to-gray-200 flex items-center justify-center text-gray-400 group border-b border-gray-100">
+                <!-- Karşılaştırma Checkbox -->
+                <div class="absolute top-3 left-3 bg-white/90 p-2 rounded-xl shadow-sm border border-gray-200 opacity-0 group-hover:opacity-100 transition-opacity focus-within:opacity-100 [&:has(:checked)]:opacity-100 z-10 backdrop-blur-sm">
+                    <label class="flex items-center cursor-pointer gap-2">
+                        <input type="checkbox" class="compare-checkbox w-5 h-5 text-primary bg-gray-100 border-gray-300 rounded focus:ring-primary focus:ring-2 transition" value="@car.Id" data-brand="@car.Brand @car.ModelName">
+                        <span class="text-xs font-extrabold text-gray-700 uppercase tracking-wide">Kıyasla</span>
+                    </label>
+                </div>
+                
+                <!-- Garaja Ekle Butonu -->
+                <button onclick="toggleGarageHome(@car.Id, this)" class="absolute top-3 right-3 bg-white/90 p-2 w-10 h-10 rounded-full shadow-sm border border-gray-200 z-10 backdrop-blur-sm flex items-center justify-center text-gray-400 hover:text-red-500 hover:scale-110 transition-all focus:outline-none" title="Garaja Ekle">
+                    <i class="fa-solid fa-heart text-lg"></i>
+                </button>
+
+                @if(!string.IsNullOrEmpty(car.ImageUrl)) {
+                    <img src="@car.ImageUrl" alt="@car.Brand @car.ModelName" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+                } else {
+                    <i class="fa-solid fa-car-side text-6xl text-gray-300 group-hover:text-primary/50 transition-colors"></i>
+                }
             </div>
             
-            <div class="p-5 flex flex-col flex-grow">
-                <div class="flex justify-between items-start mb-2">
+            <div class="p-6 flex flex-col flex-grow">
+                <div class="flex justify-between items-start mb-3">
                     <div>
-                        <h2 class="text-xl font-bold text-gray-900">@car.Brand @car.ModelName</h2>
-                        <p class="text-sm text-gray-500 font-medium">@car.Engine &bull; @car.Segment Segment</p>
+                        <h2 class="text-xl font-extrabold text-gray-900 dark:text-white tracking-tight">@car.Brand @car.ModelName</h2>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wider mt-1 bg-gray-100 dark:bg-gray-700 inline-block px-2 py-0.5 rounded">@car.Engine &bull; @car.Segment</p>
                     </div>
-                    <div class="bg-blue-50 text-primary text-xs font-bold px-2 py-1 rounded border border-blue-100 flex items-center gap-1">
-                        <i class="fa-solid fa-star text-yellow-400"></i> @car.ReliabilityScore
+                    <div class="bg-yellow-50 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-500 text-sm font-black px-2 py-1 rounded-lg border border-yellow-200 dark:border-yellow-700/50 flex items-center gap-1 shadow-sm">
+                        <i class="fa-solid fa-star"></i> @car.ReliabilityScore
                     </div>
                 </div>
                 
-                <p class="text-gray-600 text-sm mb-4 line-clamp-3">@car.ExpertSummary</p>
+                <p class="text-gray-600 dark:text-gray-300 text-sm mb-5 line-clamp-3 leading-relaxed font-medium">@car.ExpertSummary</p>
                 
-                <div class="mt-auto pt-4 border-t border-gray-100 flex justify-between items-center">
-                    <span class="text-sm font-bold text-gray-700">@car.PriceRange</span>
-                    <a asp-controller="Car" asp-action="Details" asp-route-id="@car.Id" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-primary rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 transition">
+                <div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-700 flex justify-between items-center">
+                    <div class="flex flex-col">
+                        <span class="text-[10px] text-gray-400 dark:text-gray-500 font-bold uppercase tracking-widest">Piyasa</span>
+                        <span class="text-sm font-extrabold text-gray-800 dark:text-gray-200">@car.PriceRange</span>
+                    </div>
+                    <a asp-controller="Car" asp-action="Details" asp-route-id="@car.Id" class="inline-flex items-center px-4 py-2 text-sm font-bold text-white bg-gray-900 rounded-xl hover:bg-primary focus:ring-4 focus:ring-blue-300 transition-colors shadow-md hover:shadow-lg">
                         İncele <i class="fa-solid fa-arrow-right ml-2"></i>
                     </a>
                 </div>
@@ -57,10 +211,226 @@
 
 @if (!Model.Any())
 {
-    <div class="text-center py-12 bg-white rounded-lg shadow border border-gray-200 mt-4">
-        <i class="fa-solid fa-car-burst text-4xl text-gray-300 mb-3"></i>
-        <h3 class="text-lg font-medium text-gray-900">Araç bulunamadı</h3>
-        <p class="text-gray-500">Arama kriterlerinize uygun bir araç sistemimizde yer almıyor.</p>
-        <a asp-action="Index" class="mt-4 inline-block text-primary hover:underline font-medium">Tüm Araçları Göster</a>
+    <div class="text-center py-16 bg-white rounded-2xl shadow-sm border border-gray-200 mt-6" data-aos="zoom-in">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-4">
+            <i class="fa-solid fa-car-burst text-2xl text-gray-400"></i>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Araç bulunamadı</h3>
+        <p class="text-gray-500 max-w-md mx-auto">Arama kriterlerinize veya seçtiğiniz filtrelere uygun bir araç sistemimizde yer almıyor.</p>
+        <a asp-action="Index" class="mt-6 inline-flex items-center px-5 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold rounded-xl transition">
+            <i class="fa-solid fa-rotate-left mr-2"></i> Filtreleri Temizle
+        </a>
     </div>
+}
+
+<!-- ============================================================ -->
+<!--  SAYFALAMA (PAGINATION)                                       -->
+<!-- ============================================================ -->
+@if (ViewBag.TotalPages != null && (int)ViewBag.TotalPages > 1)
+{
+    int currentPage = (int)ViewBag.CurrentPage;
+    int totalPages  = (int)ViewBag.TotalPages;
+    string searchQuery = ViewData["CurrentSearch"]?.ToString()  ?? "";
+    string segment     = ViewData["CurrentSegment"]?.ToString() ?? "";
+    string brand       = ViewData["CurrentBrand"]?.ToString()   ?? "";
+    string sortBy      = ViewData["CurrentSort"]?.ToString()    ?? "";
+
+    <div class="mt-12 mb-4 flex flex-col items-center gap-4" data-aos="fade-up">
+
+        <!-- Sayfa / Toplam Bilgisi -->
+        <p class="text-sm text-gray-500 dark:text-gray-400">
+            Sayfa <span class="font-bold text-gray-800 dark:text-white">@currentPage</span>
+            /
+            <span class="font-bold text-gray-800 dark:text-white">@totalPages</span>
+        </p>
+
+        <!-- Buton Grubu -->
+        <nav class="flex items-center gap-1.5 flex-wrap justify-center" aria-label="Sayfalama">
+
+            <!-- ← İlk -->
+            @if (currentPage > 1)
+            {
+                <a asp-action="Index"
+                   asp-route-page="1"
+                   asp-route-searchQuery="@searchQuery"
+                   asp-route-segment="@segment"
+                   asp-route-brand="@brand"
+                   asp-route-sortBy="@sortBy"
+                   title="İlk Sayfa"
+                   class="w-10 h-10 flex items-center justify-center rounded-xl border border-gray-200 dark:border-gray-700
+                          bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400
+                          hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-primary hover:border-primary
+                          transition-all shadow-sm text-sm">
+                    <i class="fa-solid fa-angles-left"></i>
+                </a>
+
+                <!-- ← Önceki -->
+                <a asp-action="Index"
+                   asp-route-page="@(currentPage - 1)"
+                   asp-route-searchQuery="@searchQuery"
+                   asp-route-segment="@segment"
+                   asp-route-brand="@brand"
+                   asp-route-sortBy="@sortBy"
+                   title="Önceki Sayfa"
+                   class="w-10 h-10 flex items-center justify-center rounded-xl border border-gray-200 dark:border-gray-700
+                          bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400
+                          hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-primary hover:border-primary
+                          transition-all shadow-sm text-sm">
+                    <i class="fa-solid fa-angle-left"></i>
+                </a>
+            }
+
+            <!-- Sayfa Numaraları (aktif sayfanın ±2 komşusu) -->
+            @{
+                int startPage = Math.Max(1, currentPage - 2);
+                int endPage   = Math.Min(totalPages, currentPage + 2);
+            }
+
+            @if (startPage > 1)
+            {
+                <span class="w-8 text-center text-gray-400 text-sm select-none">…</span>
+            }
+
+            @for (int p = startPage; p <= endPage; p++)
+            {
+                if (p == currentPage)
+                {
+                    <!-- Aktif Sayfa -->
+                    <span class="w-10 h-10 flex items-center justify-center rounded-xl
+                                 bg-primary text-white text-sm font-bold
+                                 shadow-md shadow-blue-500/30 ring-2 ring-offset-1 ring-blue-400 dark:ring-blue-600
+                                 dark:ring-offset-gray-900 select-none cursor-default">
+                        @p
+                    </span>
+                }
+                else
+                {
+                    <a asp-action="Index"
+                       asp-route-page="@p"
+                       asp-route-searchQuery="@searchQuery"
+                       asp-route-segment="@segment"
+                       asp-route-brand="@brand"
+                       asp-route-sortBy="@sortBy"
+                       class="w-10 h-10 flex items-center justify-center rounded-xl border border-gray-200 dark:border-gray-700
+                              bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-semibold
+                              hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-primary dark:hover:text-blue-400
+                              hover:border-primary transition-all shadow-sm">
+                        @p
+                    </a>
+                }
+            }
+
+            @if (endPage < totalPages)
+            {
+                <span class="w-8 text-center text-gray-400 text-sm select-none">…</span>
+            }
+
+            <!-- Sonraki → -->
+            @if (currentPage < totalPages)
+            {
+                <a asp-action="Index"
+                   asp-route-page="@(currentPage + 1)"
+                   asp-route-searchQuery="@searchQuery"
+                   asp-route-segment="@segment"
+                   asp-route-brand="@brand"
+                   asp-route-sortBy="@sortBy"
+                   title="Sonraki Sayfa"
+                   class="w-10 h-10 flex items-center justify-center rounded-xl border border-gray-200 dark:border-gray-700
+                          bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400
+                          hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-primary hover:border-primary
+                          transition-all shadow-sm text-sm">
+                    <i class="fa-solid fa-angle-right"></i>
+                </a>
+
+                <!-- Son → -->
+                <a asp-action="Index"
+                   asp-route-page="@totalPages"
+                   asp-route-searchQuery="@searchQuery"
+                   asp-route-segment="@segment"
+                   asp-route-brand="@brand"
+                   asp-route-sortBy="@sortBy"
+                   title="Son Sayfa"
+                   class="w-10 h-10 flex items-center justify-center rounded-xl border border-gray-200 dark:border-gray-700
+                          bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400
+                          hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-primary hover:border-primary
+                          transition-all shadow-sm text-sm">
+                    <i class="fa-solid fa-angles-right"></i>
+                </a>
+            }
+
+        </nav>
+    </div>
+}
+
+<!-- Floating Compare Button -->
+<div id="compare-widget" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-gray-900/95 backdrop-blur-md text-white px-6 py-4 rounded-full shadow-2xl flex items-center gap-5 transition-all duration-300 translate-y-32 opacity-0 z-50 border border-gray-700">
+    <div class="flex flex-col">
+        <span class="text-sm font-bold tracking-wide">Kıyaslama Modu</span>
+        <span id="compare-count" class="text-xs text-gray-400 font-medium">0 / 2 Seçildi</span>
+    </div>
+    <button id="compare-btn" class="bg-primary hover:bg-blue-500 px-5 py-2 rounded-full font-bold text-sm transition-all shadow-lg shadow-blue-500/30 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2" disabled>
+        <i class="fa-solid fa-code-compare"></i> Karşılaştır
+    </button>
+</div>
+
+@section Scripts {
+    <script>
+        // Sayfa numarası varsa araç listesine scroll et
+        (function () {
+            const params = new URLSearchParams(window.location.search);
+            if (params.has('page') && parseInt(params.get('page')) > 1) {
+                const grid = document.getElementById('car-grid');
+                if (grid) {
+                    // Kısa bir gecikme ile scroll et (layout render tamamlansın)
+                    setTimeout(() => {
+                        grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 80);
+                }
+            }
+        })();
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxes = document.querySelectorAll('.compare-checkbox');
+            const widget = document.getElementById('compare-widget');
+            const compareBtn = document.getElementById('compare-btn');
+            const countText = document.getElementById('compare-count');
+            
+            let selectedCars = [];
+
+            checkboxes.forEach(cb => {
+                cb.addEventListener('change', function() {
+                    const carId = this.value;
+                    
+                    if(this.checked) {
+                        if(selectedCars.length >= 2) {
+                            this.checked = false;
+                            alert('En fazla 2 araç karşılaştırabilirsiniz!');
+                            return;
+                        }
+                        selectedCars.push(carId);
+                    } else {
+                        selectedCars = selectedCars.filter(id => id !== carId);
+                    }
+
+                    // Widget Görünürlüğü
+                    if(selectedCars.length > 0) {
+                        widget.classList.remove('translate-y-32', 'opacity-0');
+                    } else {
+                        widget.classList.add('translate-y-32', 'opacity-0');
+                    }
+
+                    // Buton Durumu
+                    countText.textContent = `${selectedCars.length} / 2 Araç Seçildi`;
+                    compareBtn.disabled = selectedCars.length !== 2;
+                });
+            });
+
+            compareBtn.addEventListener('click', function() {
+                if(selectedCars.length === 2) {
+                    window.location.href = `/Compare/Result?car1Id=${selectedCars[0]}&car2Id=${selectedCars[1]}`;
+                }
+            });
+        });
+    </script>
 }
