@@ -1,0 +1,72 @@
+@model OtoRehber.Models.RegisterViewModel
+@{
+    ViewData["Title"] = "Kayıt Ol";
+    Layout = "_Layout";
+}
+
+<div class="min-h-[80vh] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full space-y-8 bg-white/80 backdrop-blur-xl p-10 rounded-3xl shadow-2xl border border-gray-100 relative overflow-hidden" data-aos="zoom-in">
+        
+        <!-- Background decoration -->
+        <div class="absolute top-0 right-0 -mr-8 -mt-8 w-32 h-32 rounded-full bg-blue-100 opacity-50 blur-2xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-8 -mb-8 w-32 h-32 rounded-full bg-indigo-100 opacity-50 blur-2xl"></div>
+
+        <div class="relative z-10">
+            <div>
+                <div class="mx-auto h-16 w-16 bg-blue-600 rounded-full flex items-center justify-center shadow-lg">
+                    <i class="fa-solid fa-user-plus text-2xl text-white"></i>
+                </div>
+                <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+                    OtoRehber'e Katıl
+                </h2>
+                <p class="mt-2 text-center text-sm text-gray-600">
+                    Favori araçlarını garajına ekle ve AI asistanından faydalan!
+                </p>
+            </div>
+
+            <form class="mt-8 space-y-6" asp-action="Register" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-red-500 text-sm font-medium p-3 bg-red-50 rounded-lg text-center"></div>
+                
+                <div class="space-y-4 rounded-md shadow-sm">
+                    <div>
+                        <label asp-for="Email" class="sr-only">E-posta Adresi</label>
+                        <input asp-for="Email" type="email" autocomplete="email" required class="appearance-none rounded-xl relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition-all" placeholder="E-posta Adresiniz">
+                        <span asp-validation-for="Email" class="text-red-500 text-xs mt-1 block"></span>
+                    </div>
+                    <div>
+                        <label asp-for="Password" class="sr-only">Şifre</label>
+                        <input asp-for="Password" type="password" autocomplete="new-password" required class="appearance-none rounded-xl relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition-all" placeholder="Şifreniz (En az 6 karakter)">
+                        <span asp-validation-for="Password" class="text-red-500 text-xs mt-1 block"></span>
+                    </div>
+                    <div>
+                        <label asp-for="ConfirmPassword" class="sr-only">Şifre Tekrar</label>
+                        <input asp-for="ConfirmPassword" type="password" autocomplete="new-password" required class="appearance-none rounded-xl relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition-all" placeholder="Şifrenizi Tekrar Girin">
+                        <span asp-validation-for="ConfirmPassword" class="text-red-500 text-xs mt-1 block"></span>
+                    </div>
+                </div>
+
+                <div>
+                    <button type="submit" class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-bold rounded-xl text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors shadow-md">
+                        <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                            <i class="fa-solid fa-arrow-right-to-bracket text-blue-500 group-hover:text-blue-400 transition-colors"></i>
+                        </span>
+                        Kayıt Ol ve Başla
+                    </button>
+                </div>
+            </form>
+
+            <div class="mt-6 text-center">
+                <p class="text-sm text-gray-600">
+                    Zaten üye misin? 
+                    <a asp-action="Login" class="font-medium text-blue-600 hover:text-blue-500 transition-colors">
+                        Buradan Giriş Yap
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
