@@ -1,4 +1,4 @@
-ï»¿using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -46,18 +46,18 @@ namespace OtoRehber.Migrations
                 columns: new[] { "Id", "CarId", "Description", "Type" },
                 values: new object[,]
                 {
-                    { 1, 1, "Kaliteli iÃ§ mekan", "Pro" },
-                    { 2, 1, "Tok sÃ¼rÃ¼ÅŸ hissi", "Pro" },
-                    { 3, 1, "Ä°yi 2. el deÄŸeri", "Pro" },
-                    { 4, 1, "DSG ÅŸanzÄ±man riski", "Con" },
-                    { 5, 1, "Dizel motor partikÃ¼l filtresi", "Con" },
-                    { 6, 1, "YÃ¼ksek servis maliyeti", "Con" },
-                    { 7, 2, "MÃ¼kemmel sorunsuzluk", "Pro" },
-                    { 8, 2, "GeniÅŸ iÃ§ hacim", "Pro" },
-                    { 9, 2, "DÃ¼ÅŸÃ¼k iÅŸletme maliyeti", "Pro" },
-                    { 10, 2, "ZayÄ±f yalÄ±tÄ±m", "Con" },
+                    { 1, 1, "Kaliteli iç mekan", "Pro" },
+                    { 2, 1, "Tok sürüþ hissi", "Pro" },
+                    { 3, 1, "Ýyi 2. el deðeri", "Pro" },
+                    { 4, 1, "DSG þanzýman riski", "Con" },
+                    { 5, 1, "Dizel motor partikül filtresi", "Con" },
+                    { 6, 1, "Yüksek servis maliyeti", "Con" },
+                    { 7, 2, "Mükemmel sorunsuzluk", "Pro" },
+                    { 8, 2, "Geniþ iç hacim", "Pro" },
+                    { 9, 2, "Düþük iþletme maliyeti", "Pro" },
+                    { 10, 2, "Zayýf yalýtým", "Con" },
                     { 11, 2, "Vasat performans", "Con" },
-                    { 12, 2, "Demode iÃ§ tasarÄ±m", "Con" }
+                    { 12, 2, "Demode iç tasarým", "Con" }
                 });
 
             migrationBuilder.CreateIndex(

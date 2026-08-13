@@ -1,4 +1,4 @@
-ï»¿using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -41,20 +41,20 @@ namespace OtoRehber.Migrations
                 keyColumn: "Id",
                 keyValue: 1,
                 columns: new[] { "Cons", "EstimatedMaintenanceCostEUR", "ExpertSummary", "Pros" },
-                values: new object[] { "[\"DSG \\u015Fanz\\u0131man riski\",\"Dizel motor partik\\u00FCl filtresi\",\"Y\\u00FCksek servis maliyeti\"]", 400, "C segmentinin referans modeli, kaliteli iÃ§ mekan ve tok sÃ¼rÃ¼ÅŸ hissi sunar. Ancak DSG ÅŸanzÄ±man ve dizel motor bakÄ±m maliyetlerine dikkat edilmelidir.", "[\"Kaliteli i\\u00E7 mekan\",\"Tok s\\u00FCr\\u00FC\\u015F hissi\",\"\\u0130yi 2. el de\\u011Feri\"]" });
+                values: new object[] { "[\"DSG \\u015Fanz\\u0131man riski\",\"Dizel motor partik\\u00FCl filtresi\",\"Y\\u00FCksek servis maliyeti\"]", 400, "C segmentinin referans modeli, kaliteli iç mekan ve tok sürüþ hissi sunar. Ancak DSG þanzýman ve dizel motor bakým maliyetlerine dikkat edilmelidir.", "[\"Kaliteli i\\u00E7 mekan\",\"Tok s\\u00FCr\\u00FC\\u015F hissi\",\"\\u0130yi 2. el de\\u011Feri\"]" });
 
             migrationBuilder.InsertData(
                 table: "Cars",
                 columns: new[] { "Id", "Brand", "Cons", "Engine", "EstimatedMaintenanceCostEUR", "ExpertSummary", "ModelName", "PriceRange", "Pros", "ReliabilityScore", "Segment" },
-                values: new object[] { 2, "Toyota", "[\"Zay\\u0131f yal\\u0131t\\u0131m\",\"Vasat performans\",\"Demode i\\u00E7 tasar\\u0131m\"]", "1.6 Valvematic", 200, "Sorunsuzluk dendiÄŸinde akla ilk gelen model. Konfor odaklÄ±, aile kullanÄ±mÄ±na Ã§ok uygun fakat performans beklentisi olanlarÄ± Ã¼zebilir.", "Corolla", "700k - 1.1M TL", "[\"M\\u00FCkemmel sorunsuzluk\",\"Geni\\u015F i\\u00E7 hacim\",\"D\\u00FC\\u015F\\u00FCk i\\u015Fletme maliyeti\"]", 9.5, "C" });
+                values: new object[] { 2, "Toyota", "[\"Zay\\u0131f yal\\u0131t\\u0131m\",\"Vasat performans\",\"Demode i\\u00E7 tasar\\u0131m\"]", "1.6 Valvematic", 200, "Sorunsuzluk dendiðinde akla ilk gelen model. Konfor odaklý, aile kullanýmýna çok uygun fakat performans beklentisi olanlarý üzebilir.", "Corolla", "700k - 1.1M TL", "[\"M\\u00FCkemmel sorunsuzluk\",\"Geni\\u015F i\\u00E7 hacim\",\"D\\u00FC\\u015F\\u00FCk i\\u015Fletme maliyeti\"]", 9.5, "C" });
 
             migrationBuilder.InsertData(
                 table: "ChronicIssues",
                 columns: new[] { "Id", "AffectedYears", "CarId", "Description", "EstimatedCostEUR", "IssueTitle", "Severity" },
                 values: new object[,]
                 {
-                    { 1, "2013-2018", 1, "Ã–zellikle kuru kavramalÄ± 7 ileri DSG ÅŸanzÄ±manlarda dur-kalk trafikte Ä±sÄ±nma ve mekatronik arÄ±zasÄ±.", 1200, "DSG ÅžanzÄ±man Mekatronik ArÄ±zasÄ±", "Kritik" },
-                    { 2, "2013-2020", 1, "DÃ¼ÅŸÃ¼k devirlerde ÅŸehir iÃ§i kullanÄ±mda kurum baÄŸlamasÄ± ve tÄ±kanÄ±klÄ±k.", 500, "EGR ve PartikÃ¼l Filtresi", "Orta" }
+                    { 1, "2013-2018", 1, "Özellikle kuru kavramalý 7 ileri DSG þanzýmanlarda dur-kalk trafikte ýsýnma ve mekatronik arýzasý.", 1200, "DSG Þanzýman Mekatronik Arýzasý", "Kritik" },
+                    { 2, "2013-2020", 1, "Düþük devirlerde þehir içi kullanýmda kurum baðlamasý ve týkanýklýk.", 500, "EGR ve Partikül Filtresi", "Orta" }
                 });
 
             migrationBuilder.CreateIndex(
