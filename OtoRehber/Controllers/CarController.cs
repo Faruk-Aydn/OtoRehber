@@ -4,17 +4,21 @@ using OtoRehber.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using OtoRehber.Models;
+using OtoRehber.Domain.DTOs;
+using AutoMapper;
 
 namespace OtoRehber.Controllers
 {
     public class CarController : Controller
     {
         private readonly OtoRehberDbContext _context;
+        private readonly IMapper _mapper;
 
         // Dependency Injection: Veritabanını Controller'a bağlıyoruz
-        public CarController(OtoRehberDbContext context)
+        public CarController(OtoRehberDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         public IActionResult Details(int id)
@@ -32,7 +36,8 @@ namespace OtoRehber.Controllers
                 return NotFound("Aradığınız araç veritabanında bulunamadı.");
             }
 
-            return View(car);
+            var carDto = _mapper.Map<CarDetailDto>(car);
+            return View(carDto);
         }
 
         [HttpPost]
@@ -58,34 +63,6 @@ namespace OtoRehber.Controllers
 
             TempData["SuccessMessage"] = "Yorumunuz başarıyla eklendi! Teşekkür ederiz.";
             return RedirectToAction("Details", new { id = carId });
-        }
-
-        public IActionResult Compare(int id1, int id2)
-        {
-            var car1 = _context.Cars
-                .Include(c => c.ChronicIssues)
-                .Include(c => c.ProsConsList)
-                .Include(c => c.MileageMilestones)
-                .FirstOrDefault(c => c.Id == id1);
-
-            var car2 = _context.Cars
-                .Include(c => c.ChronicIssues)
-                .Include(c => c.ProsConsList)
-                .Include(c => c.MileageMilestones)
-                .FirstOrDefault(c => c.Id == id2);
-
-            if (car1 == null || car2 == null)
-            {
-                return NotFound("Karşılaştırılacak araçlardan biri veya ikisi bulunamadı.");
-            }
-
-            var viewModel = new CarCompareViewModel
-            {
-                Car1 = car1,
-                Car2 = car2
-            };
-
-            return View(viewModel);
         }
     }
 }

@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using OtoRehber.Domain.Entities;
 using OtoRehber.Infrastructure.Data;
 using OtoRehber.Models;
+using OtoRehber.Domain.DTOs;
+using AutoMapper;
 
 namespace OtoRehber.Controllers
 {
@@ -10,11 +12,13 @@ namespace OtoRehber.Controllers
     {
         private readonly OtoRehberDbContext _context;
         private readonly ILogger<HomeController> _logger;
+        private readonly IMapper _mapper;
 
-        public HomeController(OtoRehberDbContext context, ILogger<HomeController> logger)
+        public HomeController(OtoRehberDbContext context, ILogger<HomeController> logger, IMapper mapper)
         {
             _context = context;
             _logger = logger;
+            _mapper = mapper;
         }
 
         public IActionResult Index(string searchQuery, string segment, string brand, string sortBy, int page = 1)
@@ -56,6 +60,7 @@ namespace OtoRehber.Controllers
             int totalPages = (int)Math.Ceiling(totalItems / (double)pageSize);
             
             var cars = carsQuery.Skip((page - 1) * pageSize).Take(pageSize).ToList();
+            var carDtos = _mapper.Map<List<CarListDto>>(cars);
 
             // View'a parametreleri gönderelim ki filtreler seçili kalsın
             ViewData["CurrentSearch"] = searchQuery;
@@ -85,7 +90,7 @@ namespace OtoRehber.Controllers
                 .Select(c => new { Label = c.Brand + " " + c.ModelName, Score = c.ReliabilityScore })
                 .ToList<dynamic>();
 
-            return View(cars);
+            return View(carDtos);
         }
 
         public IActionResult FixSegments()

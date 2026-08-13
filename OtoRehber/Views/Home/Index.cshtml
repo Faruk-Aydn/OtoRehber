@@ -1,4 +1,4 @@
-@model List<OtoRehber.Domain.Entities.Car>
+@model List<OtoRehber.Domain.DTOs.CarListDto>
 @{
     ViewData["Title"] = "Otomobil Vitrini";
 }
@@ -198,7 +198,7 @@
                 <div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-700 flex justify-between items-center">
                     <div class="flex flex-col">
                         <span class="text-[10px] text-gray-400 dark:text-gray-500 font-bold uppercase tracking-widest">Piyasa</span>
-                        <span class="text-sm font-extrabold text-gray-800 dark:text-gray-200">@car.PriceRange</span>
+                        <span class="text-sm font-extrabold text-gray-800 dark:text-gray-200">@car.MinPrice.ToString("N0") - @car.MaxPrice.ToString("N0") TL</span>
                     </div>
                     <a asp-controller="Car" asp-action="Details" asp-route-id="@car.Id" class="inline-flex items-center px-4 py-2 text-sm font-bold text-white bg-gray-900 rounded-xl hover:bg-primary focus:ring-4 focus:ring-blue-300 transition-colors shadow-md hover:shadow-lg">
                         İncele <i class="fa-solid fa-arrow-right ml-2"></i>
