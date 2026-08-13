@@ -1,0 +1,54 @@
+@model OtoRehber.Domain.Entities.Car
+@{
+    ViewData["Title"] = "Araç Sil";
+}
+
+<div class="max-w-2xl mx-auto mt-10">
+    <div class="bg-white rounded-xl shadow-lg border border-red-200 overflow-hidden">
+        
+        <!-- Header -->
+        <div class="bg-red-50 p-6 border-b border-red-100 text-center">
+            <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-red-100 mb-4 text-red-600">
+                <i class="fa-solid fa-triangle-exclamation text-3xl"></i>
+            </div>
+            <h1 class="text-2xl font-bold text-red-700">Kayıt Silinecek!</h1>
+            <p class="text-red-500 mt-2">Bu aracı sistemden silmek istediğinize emin misiniz? Bu işlem geri alınamaz.</p>
+        </div>
+
+        <!-- Body -->
+        <div class="p-8">
+            <div class="bg-gray-50 rounded-lg p-5 border border-gray-200">
+                <dl class="divide-y divide-gray-200">
+                    <div class="py-3 flex justify-between">
+                        <dt class="text-sm font-medium text-gray-500">Araç Marka ve Modeli</dt>
+                        <dd class="text-sm font-bold text-gray-900">@Model.Brand @Model.ModelName</dd>
+                    </div>
+                    <div class="py-3 flex justify-between">
+                        <dt class="text-sm font-medium text-gray-500">Motor</dt>
+                        <dd class="text-sm text-gray-900">@Model.Engine</dd>
+                    </div>
+                    <div class="py-3 flex justify-between">
+                        <dt class="text-sm font-medium text-gray-500">Segment</dt>
+                        <dd class="text-sm text-gray-900">@Model.Segment</dd>
+                    </div>
+                    <div class="py-3 flex justify-between">
+                        <dt class="text-sm font-medium text-gray-500">Veritabanı ID</dt>
+                        <dd class="text-sm text-gray-900">#@Model.Id</dd>
+                    </div>
+                </dl>
+            </div>
+            
+            <div class="mt-8 flex justify-center gap-4">
+                <a asp-action="Index" class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 focus:ring-4 focus:ring-gray-200 transition">
+                    Vazgeç
+                </a>
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="Id" />
+                    <button type="submit" class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium text-white bg-red-600 border border-transparent rounded-lg hover:bg-red-700 focus:ring-4 focus:ring-red-300 transition">
+                        <i class="fa-solid fa-trash mr-2"></i> Evet, Kalıcı Olarak Sil
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

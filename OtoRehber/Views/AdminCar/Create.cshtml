@@ -1,0 +1,118 @@
+@model OtoRehber.Domain.DTOs.CarCreateDto
+@{
+    ViewData["Title"] = "Yeni Araç Ekle";
+}
+
+<div class="max-w-3xl mx-auto">
+    <div class="mb-6 flex items-center justify-between">
+        <h1 class="text-3xl font-bold text-gray-900">Yeni Araç Ekle</h1>
+        <a asp-action="Index" class="text-gray-500 hover:text-primary transition flex items-center">
+            <i class="fa-solid fa-arrow-left mr-2"></i> Listeye Dön
+        </a>
+    </div>
+
+    <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
+        <form asp-action="Create" enctype="multipart/form-data" class="p-6 md:p-8">
+            <div asp-validation-summary="ModelOnly" class="text-red-500 mb-4 text-sm"></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <!-- Marka -->
+                <div>
+                    <label asp-for="Brand" class="block text-sm font-medium text-gray-700 mb-2">Marka</label>
+                    <input asp-for="Brand" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="Örn: Volkswagen" />
+                    <span asp-validation-for="Brand" class="text-red-500 text-xs mt-1 block"></span>
+                </div>
+
+                <!-- Model -->
+                <div>
+                    <label asp-for="ModelName" class="block text-sm font-medium text-gray-700 mb-2">Model</label>
+                    <input asp-for="ModelName" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="Örn: Golf" />
+                    <span asp-validation-for="ModelName" class="text-red-500 text-xs mt-1 block"></span>
+                </div>
+
+                <!-- Motor -->
+                <div>
+                    <label asp-for="Engine" class="block text-sm font-medium text-gray-700 mb-2">Motor</label>
+                    <input asp-for="Engine" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="Örn: 1.6 TDI" />
+                    <span asp-validation-for="Engine" class="text-red-500 text-xs mt-1 block"></span>
+                </div>
+
+                <!-- Segment -->
+                <div>
+                    <label asp-for="Segment" class="block text-sm font-medium text-gray-700 mb-2">Segment</label>
+                    <select asp-for="Segment" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5">
+                        <option value="A Segmenti">A Segmenti</option>
+                        <option value="B Segmenti">B Segmenti</option>
+                        <option value="C Segmenti">C Segmenti</option>
+                        <option value="D Segmenti">D Segmenti</option>
+                        <option value="E Segmenti">E Segmenti</option>
+                        <option value="SUV">SUV</option>
+                        <option value="Ticari">Ticari</option>
+                        <option value="Spor">Spor</option>
+                        <option value="Elektrikli">Elektrikli</option>
+                    </select>
+                    <span asp-validation-for="Segment" class="text-red-500 text-xs mt-1 block"></span>
+                </div>
+
+                <!-- Fiyat Skalası -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label asp-for="MinPrice" class="block text-sm font-medium text-gray-700 mb-2">Minimum Fiyat</label>
+                        <input asp-for="MinPrice" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" />
+                        <span asp-validation-for="MinPrice" class="text-red-500 text-xs mt-1 block"></span>
+                    </div>
+                    <div>
+                        <label asp-for="MaxPrice" class="block text-sm font-medium text-gray-700 mb-2">Maksimum Fiyat</label>
+                        <input asp-for="MaxPrice" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" />
+                        <span asp-validation-for="MaxPrice" class="text-red-500 text-xs mt-1 block"></span>
+                    </div>
+                </div>
+
+                <!-- Güvenilirlik -->
+                <div>
+                    <label asp-for="ReliabilityScore" class="block text-sm font-medium text-gray-700 mb-2">Güvenilirlik Puanı (1-10)</label>
+                    <input asp-for="ReliabilityScore" type="number" step="0.1" min="1" max="10" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" />
+                    <span asp-validation-for="ReliabilityScore" class="text-red-500 text-xs mt-1 block"></span>
+                </div>
+                
+                <!-- Tahmini Masraf -->
+                <div>
+                    <label asp-for="EstimatedMaintenanceCostEUR" class="block text-sm font-medium text-gray-700 mb-2">Tahmini Yıllık Masraf (€)</label>
+                    <input asp-for="EstimatedMaintenanceCostEUR" type="number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" />
+                    <span asp-validation-for="EstimatedMaintenanceCostEUR" class="text-red-500 text-xs mt-1 block"></span>
+                </div>
+                
+                <!-- Araç Görseli -->
+                <div class="md:col-span-2">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Araç Görseli Yükle</label>
+                    <input type="file" name="imageFile" accept="image/*" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none" />
+                    <p class="mt-1 text-xs text-gray-500">PNG, JPG veya WEBP (Max. 5MB).</p>
+                </div>
+
+                <!-- Uzman Özeti -->
+                <div class="md:col-span-2">
+                    <label asp-for="ExpertSummary" class="block text-sm font-medium text-gray-700 mb-2">Uzman Özeti</label>
+                    <textarea asp-for="ExpertSummary" rows="3" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="Araç hakkında genel özet..."></textarea>
+                    <span asp-validation-for="ExpertSummary" class="text-red-500 text-xs mt-1 block"></span>
+                </div>
+
+                <!-- Resim URL -->
+                <div class="md:col-span-2">
+                    <label asp-for="ImageUrl" class="block text-sm font-medium text-gray-700 mb-2">Resim URL (Görsel Linki)</label>
+                    <input asp-for="ImageUrl" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="https://example.com/arac-resmi.jpg" />
+                    <span asp-validation-for="ImageUrl" class="text-red-500 text-xs mt-1 block"></span>
+                </div>
+            </div>
+
+            <div class="flex justify-end pt-4 border-t border-gray-100">
+                <button type="submit" class="text-white bg-primary hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition flex items-center">
+                    <i class="fa-solid fa-floppy-disk mr-2"></i> Kaydet
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
