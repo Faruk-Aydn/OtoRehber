@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using OtoRehber.Infrastructure.Data;
+using OtoRehber.Infrastructure.Services;
+using OtoRehber.Domain.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,6 +35,9 @@ builder.Services.AddControllersWithViews();
 
 // AutoMapper'ı ekle
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+// Gemini AI servisi
+builder.Services.AddScoped<IAiCarDataService, AiCarDataService>();
 
 var app = builder.Build();
 
