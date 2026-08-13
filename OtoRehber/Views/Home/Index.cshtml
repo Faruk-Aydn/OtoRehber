@@ -1,4 +1,4 @@
-@model List<OtoRehber.Domain.DTOs.CarListDto>
+@model IEnumerable<OtoRehber.Domain.DTOs.CarListDto>
 @{
     ViewData["Title"] = "Otomobil Vitrini";
 }
@@ -48,11 +48,11 @@
                 </div>
                 <select name="segment" onchange="this.form.submit()" class="bg-white/90 border-0 text-gray-900 text-sm rounded-xl focus:ring-2 focus:ring-primary block w-full pl-9 p-3.5 font-medium cursor-pointer appearance-none">
                     <option value="" selected="@(string.IsNullOrEmpty(ViewData["CurrentSegment"]?.ToString()))">Tüm Segmentler</option>
-                    <option value="A" selected="@(ViewData["CurrentSegment"]?.ToString() == "A")">A Segmenti</option>
-                    <option value="B" selected="@(ViewData["CurrentSegment"]?.ToString() == "B")">B Segmenti</option>
-                    <option value="C" selected="@(ViewData["CurrentSegment"]?.ToString() == "C")">C Segmenti</option>
-                    <option value="D" selected="@(ViewData["CurrentSegment"]?.ToString() == "D")">D Segmenti</option>
-                    <option value="E" selected="@(ViewData["CurrentSegment"]?.ToString() == "E")">E Segmenti</option>
+                    <option value="A Segmenti" selected="@(ViewData["CurrentSegment"]?.ToString() == "A Segmenti")">A Segmenti</option>
+                    <option value="B Segmenti" selected="@(ViewData["CurrentSegment"]?.ToString() == "B Segmenti")">B Segmenti</option>
+                    <option value="C Segmenti" selected="@(ViewData["CurrentSegment"]?.ToString() == "C Segmenti")">C Segmenti</option>
+                    <option value="D Segmenti" selected="@(ViewData["CurrentSegment"]?.ToString() == "D Segmenti")">D Segmenti</option>
+                    <option value="E Segmenti" selected="@(ViewData["CurrentSegment"]?.ToString() == "E Segmenti")">E Segmenti</option>
                     <option value="SUV" selected="@(ViewData["CurrentSegment"]?.ToString() == "SUV")">SUV</option>
                     <option value="Ticari" selected="@(ViewData["CurrentSegment"]?.ToString() == "Ticari")">Ticari</option>
                     <option value="Spor" selected="@(ViewData["CurrentSegment"]?.ToString() == "Spor")">Spor</option>
@@ -186,7 +186,15 @@
                 <div class="flex justify-between items-start mb-3">
                     <div>
                         <h2 class="text-xl font-extrabold text-gray-900 dark:text-white tracking-tight">@car.Brand @car.ModelName</h2>
-                        <p class="text-xs text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wider mt-1 bg-gray-100 dark:bg-gray-700 inline-block px-2 py-0.5 rounded">@car.Engine &bull; @car.Segment</p>
+                        <div class="flex items-center gap-2 mt-1">
+                            <span class="text-xs font-black text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 px-2 py-0.5 rounded border border-gray-200 dark:border-gray-600 flex items-center">
+                                <i class="fa-regular fa-calendar-days mr-1"></i> @car.ProductionYears
+                            </span>
+                            <span class="text-xs text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wider">@car.Segment</span>
+                        </div>
+                        <p class="text-[11px] text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wider mt-2 line-clamp-1 bg-gray-50 dark:bg-gray-800 px-2 py-1 rounded" title="@car.Engine">
+                            <i class="fa-solid fa-engine mr-1"></i> @car.Engine
+                        </p>
                     </div>
                     <div class="bg-yellow-50 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-500 text-sm font-black px-2 py-1 rounded-lg border border-yellow-200 dark:border-yellow-700/50 flex items-center gap-1 shadow-sm">
                         <i class="fa-solid fa-star"></i> @car.ReliabilityScore

@@ -82,11 +82,11 @@
             <div class="grid grid-cols-2 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
                 <div class="p-4 sm:p-6 text-center border-r border-gray-200 dark:border-gray-700">
                     <span class="block text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-1 sm:hidden">Fiyat</span>
-                    <p class="text-green-600 dark:text-green-500 font-bold">@Model.Car1.PriceRange</p>
+                    <p class="text-green-600 dark:text-green-500 font-bold">@Model.Car1.MinPrice.ToString("N0") - @Model.Car1.MaxPrice.ToString("N0") TL</p>
                 </div>
                 <div class="p-4 sm:p-6 text-center">
                     <span class="block text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-1 sm:hidden">Fiyat</span>
-                    <p class="text-green-600 dark:text-green-500 font-bold">@Model.Car2.PriceRange</p>
+                    <p class="text-green-600 dark:text-green-500 font-bold">@Model.Car2.MinPrice.ToString("N0") - @Model.Car2.MaxPrice.ToString("N0") TL</p>
                 </div>
             </div>
 

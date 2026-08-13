@@ -2,16 +2,17 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using OtoRehber.Models;
+using OtoRehber.Domain.Entities;
 using System.Threading.Tasks;
 
 namespace OtoRehber.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly SignInManager<IdentityUser> _signInManager;
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<AppUser> _signInManager;
+        private readonly UserManager<AppUser> _userManager;
 
-        public AccountController(SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager)
+        public AccountController(SignInManager<AppUser> signInManager, UserManager<AppUser> userManager)
         {
             _signInManager = signInManager;
             _userManager = userManager;
@@ -49,7 +50,7 @@ namespace OtoRehber.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new IdentityUser { UserName = model.Email, Email = model.Email };
+                var user = new AppUser { UserName = model.Email, Email = model.Email };
                 var result = await _userManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
@@ -77,7 +78,7 @@ namespace OtoRehber.Controllers
             {
                 // Parola ile giriş yap
                 var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: true);
-
+                
                 if (result.Succeeded)
                 {
                     return RedirectToLocal(returnUrl);
@@ -97,8 +98,7 @@ namespace OtoRehber.Controllers
             return View(model);
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [HttpGet, HttpPost]
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();

@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -26,5 +28,7 @@ namespace OtoRehber.Domain.Entities
         public string Comment { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
+
+        public List<ReviewLike> ReviewLikes { get; set; } = new List<ReviewLike>();
     }
 }

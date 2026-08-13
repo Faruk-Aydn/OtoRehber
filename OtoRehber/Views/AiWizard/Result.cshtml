@@ -1,0 +1,82 @@
+@{
+    ViewData["Title"] = "AI Önerileri";
+}
+
+<div class="max-w-5xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-10" data-aos="fade-down">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 mb-4 shadow-sm border border-green-200 dark:border-green-800">
+            <i class="fa-solid fa-check-double text-3xl"></i>
+        </div>
+        <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-3">İşte Senin İçin Seçtiğimiz Araçlar!</h1>
+        <p class="text-lg text-gray-600 dark:text-gray-400 font-medium">Yapay zeka analizini tamamladı. Aşağıdaki önerileri inceleyebilirsin.</p>
+    </div>
+
+    <!-- AI Response Container -->
+    <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden mb-8" data-aos="fade-up">
+        <div class="bg-gradient-to-r from-indigo-50 to-blue-50 dark:from-indigo-900/20 dark:to-blue-900/20 p-6 border-b border-indigo-100 dark:border-indigo-900/50 flex items-center justify-between">
+            <div class="flex items-center">
+                <i class="fa-solid fa-robot text-3xl text-indigo-500 mr-4"></i>
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white">AI Uzman Raporu</h2>
+            </div>
+            <a asp-action="Index" class="hidden sm:inline-flex items-center px-4 py-2 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg text-sm font-bold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 transition shadow-sm">
+                <i class="fa-solid fa-rotate-left mr-2"></i> Yeniden Başla
+            </a>
+        </div>
+        
+        <div class="p-8 md:p-12 prose prose-lg dark:prose-invert max-w-none prose-indigo prose-headings:font-bold prose-a:text-blue-600">
+            <!-- Ham Markdown metni burada HTML-encode edilmiş halde tutulur; marked.js ile parse edilir -->
+            <div id="ai-content" class="hidden">
+                @ViewBag.AiResponse
+            </div>
+            <div id="formatted-content" class="markdown-body">
+                <!-- Parsed HTML goes here -->
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center sm:hidden">
+        <a asp-action="Index" class="inline-flex items-center px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-xl font-bold hover:bg-gray-800 dark:hover:bg-gray-100 transition shadow-lg w-full justify-center">
+            <i class="fa-solid fa-rotate-left mr-2"></i> Kriterleri Değiştir
+        </a>
+    </div>
+</div>
+
+@section Scripts {
+    <!-- Include marked.js for Markdown parsing + DOMPurify for XSS-safe sanitization -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ham markdown metnini al (tarayıcı, encode edilmiş içeriği textContent'e otomatik decode eder)
+            const rawContent = document.getElementById('ai-content').innerText || document.getElementById('ai-content').textContent;
+
+            // Markdown'ı parse et ve olası script/onerror gibi payload'lara karşı sanitize et
+            const parsedHtml = DOMPurify.sanitize(marked.parse(rawContent));
+
+            // Inject to view
+            document.getElementById('formatted-content').innerHTML = parsedHtml;
+
+            // Optional: Add custom styling to generated tables or lists
+            const formattedDiv = document.getElementById('formatted-content');
+            
+            // Style ul/ol
+            const lists = formattedDiv.querySelectorAll('ul, ol');
+            lists.forEach(list => {
+                list.classList.add('space-y-2', 'my-4', 'pl-5', 'marker:text-primary');
+                if(list.tagName === 'UL') list.classList.add('list-disc');
+                if(list.tagName === 'OL') list.classList.add('list-decimal');
+            });
+
+            // Style headers
+            const h2s = formattedDiv.querySelectorAll('h2');
+            h2s.forEach(h2 => {
+                h2.classList.add('text-2xl', 'font-extrabold', 'text-gray-900', 'dark:text-white', 'mt-8', 'mb-4', 'pb-2', 'border-b', 'border-gray-200', 'dark:border-gray-700');
+            });
+            
+            const h3s = formattedDiv.querySelectorAll('h3');
+            h3s.forEach(h3 => {
+                h3.classList.add('text-xl', 'font-bold', 'text-indigo-600', 'dark:text-indigo-400', 'mt-6', 'mb-3');
+            });
+        });
+    </script>
+}

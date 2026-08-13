@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 using OtoRehber.Infrastructure.Data;
 using OtoRehber.Infrastructure.Services;
+using OtoRehber.Domain.Entities;
 using OtoRehber.Domain.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,10 +14,10 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
     ?? "Data Source=OtoRehberDB.db";
 builder.Services.AddDbContext<OtoRehberDbContext>(options =>
-    options.UseSqlite(connectionString));
+    options.UseSqlite(connectionString, b => b.MigrationsAssembly("OtoRehber")));
 
 // Identity Kurulumu
-builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
+builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
 {
     options.Password.RequireDigit = true;
     options.Password.RequiredLength = 8;
@@ -42,10 +43,7 @@ builder.Services.ConfigureApplicationCookie(options =>
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// AutoMapper'ı ekle
-builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-
-// Gemini AI servisi: IHttpClientFactory üzerinden, sınırlı timeout ile
+// AI servisi: IHttpClientFactory üzerinden, sınırlı timeout ile
 builder.Services.AddHttpClient<IAiCarDataService, AiCarDataService>(client =>
 {
     client.Timeout = TimeSpan.FromSeconds(120);
@@ -66,7 +64,10 @@ builder.Services.AddRateLimiter(options =>
             }));
 });
 
-// Ağır sorgu/AI çağrısı içeren sayfalar için response caching (Compare/Result vb.)
+// AutoMapper'ı ekle
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+// Ağır sorgu/AI çağrısı içeren sayfalar için response caching (Stats, Compare/Result)
 builder.Services.AddResponseCaching();
 
 var app = builder.Build();
@@ -78,16 +79,10 @@ using (var scope = app.Services.CreateScope())
     var context = services.GetRequiredService<OtoRehberDbContext>();
     var logger = services.GetRequiredService<ILogger<Program>>();
 
-    // Veritabanını (Identity tablolarıyla birlikte) oluştur
-    context.Database.EnsureCreated();
+    // Veritabanını Migration'lar aracılığıyla oluştur/güncelle
+    context.Database.Migrate();
 
-    try
-    {
-        context.Database.ExecuteSqlRaw("ALTER TABLE Cars ADD COLUMN ImageUrl TEXT;");
-    }
-    catch { /* Column might already exist */ }
-
-    var userManager = services.GetRequiredService<UserManager<IdentityUser>>();
+    var userManager = services.GetRequiredService<UserManager<AppUser>>();
     var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
 
     // Create Admin Role if it doesn't exist
@@ -112,7 +107,7 @@ using (var scope = app.Services.CreateScope())
                 adminPassword);
         }
 
-        adminUser = new IdentityUser
+        adminUser = new AppUser
         {
             UserName = adminEmail,
             Email = adminEmail

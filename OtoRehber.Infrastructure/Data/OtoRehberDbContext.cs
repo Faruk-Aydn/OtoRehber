@@ -5,7 +5,7 @@ using OtoRehber.Domain.Entities;
 
 namespace OtoRehber.Infrastructure.Data
 {
-    public class OtoRehberDbContext : IdentityDbContext<IdentityUser>
+    public class OtoRehberDbContext : IdentityDbContext<AppUser>
     {
         public OtoRehberDbContext(DbContextOptions<OtoRehberDbContext> options) : base(options)
         {
@@ -32,8 +32,10 @@ namespace OtoRehber.Infrastructure.Data
                     ExpertSummary = "C segmentinin referans modeli, kaliteli iç mekan ve tok sürüş hissi sunar. Ancak DSG şanzıman ve dizel motor bakım maliyetlerine dikkat edilmelidir.",
                     UserFeedbackSummary = "Forumlarda Golf kalitesi övülse de, DSG şanzıman arızaları ve dizel partikül filtresi (DPF) tıkanıklığı en çok şikayet edilen konulardır.",
                     ReliabilityScore = 8,
-                    PriceRange = "800k - 1.2M TL",
-                    EstimatedMaintenanceCostEUR = 400
+                    MinPrice = 800000,
+                    MaxPrice = 1200000,
+                    EstimatedMaintenanceCostEUR = 400,
+                    ProductionYears = "2012-2020"
                 },
                 new Car
                 {
@@ -45,8 +47,10 @@ namespace OtoRehber.Infrastructure.Data
                     ExpertSummary = "Sorunsuzluk dendiğinde akla ilk gelen model. Konfor odaklı, aile kullanımına çok uygun fakat performans beklentisi olanları üzebilir.",
                     UserFeedbackSummary = "Kullanıcılar genel olarak sorunsuzluğundan ve düşük yakıt tüketiminden çok memnun. Ancak yüksek hızlarda içeri yol sesi alması klasik bir şikayettir.",
                     ReliabilityScore = 9.5,
-                    PriceRange = "700k - 1.1M TL",
-                    EstimatedMaintenanceCostEUR = 200
+                    MinPrice = 700000,
+                    MaxPrice = 1100000,
+                    EstimatedMaintenanceCostEUR = 200,
+                    ProductionYears = "2013-2018"
                 }
             );
 

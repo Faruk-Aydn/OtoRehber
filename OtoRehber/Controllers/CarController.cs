@@ -33,7 +33,8 @@ namespace OtoRehber.Controllers
 
             if (car == null)
             {
-                return NotFound("Aradığınız araç veritabanında bulunamadı.");
+                TempData["ErrorMessage"] = "Aradığınız araç artık mevcut değil veya kaldırılmış olabilir.";
+                return RedirectToAction("Index", "Home");
             }
 
             var carDto = _mapper.Map<CarDetailDto>(car);
@@ -64,6 +65,34 @@ namespace OtoRehber.Controllers
 
             TempData["SuccessMessage"] = "Yorumunuz başarıyla eklendi! Teşekkür ederiz.";
             return RedirectToAction("Details", new { id = carId });
+        }
+
+        public IActionResult Compare(int id1, int id2)
+        {
+            var car1 = _context.Cars
+                .Include(c => c.ChronicIssues)
+                .Include(c => c.ProsConsList)
+                .Include(c => c.MileageMilestones)
+                .FirstOrDefault(c => c.Id == id1);
+
+            var car2 = _context.Cars
+                .Include(c => c.ChronicIssues)
+                .Include(c => c.ProsConsList)
+                .Include(c => c.MileageMilestones)
+                .FirstOrDefault(c => c.Id == id2);
+
+            if (car1 == null || car2 == null)
+            {
+                return NotFound("Karşılaştırılacak araçlardan biri veya ikisi bulunamadı.");
+            }
+
+            var viewModel = new CarCompareViewModel
+            {
+                Car1 = car1,
+                Car2 = car2
+            };
+
+            return View(viewModel);
         }
     }
 }

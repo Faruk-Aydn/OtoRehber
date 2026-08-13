@@ -148,7 +148,8 @@ BEKLENEN JSON ŞABLONU (DİZİ FORMATINDA):
     ""ExpertSummary"": ""Uzmanın (Senin) ve videodaki test edenin araç hakkındaki genel değerlendirmesinin 2-3 cümlelik özeti."",
     ""UserFeedbackSummary"": ""Forum ve şikayet sitelerindeki genel kullanıcı kanısının özeti (Kronik şikayetler, memnuniyet durumu vb.)."",
     ""ReliabilityScore"": 8.5,
-    ""PriceRange"": ""Örn: 1M - 1.5M TL"",
+    ""MinPrice"": 1000000,
+    ""MaxPrice"": 1500000,
     ""EstimatedMaintenanceCostEUR"": 300,
     ""Pros"": [""Artı 1"", ""Artı 2""],
     ""Cons"": [""Eksi 1"", ""Eksi 2""],
@@ -232,7 +233,8 @@ Transkript Parçası:
                         ExpertSummary = aiData.ExpertSummary ?? "",
                         UserFeedbackSummary = aiData.UserFeedbackSummary ?? "",
                         ReliabilityScore = aiData.ReliabilityScore,
-                        PriceRange = aiData.PriceRange ?? "",
+                        MinPrice = aiData.MinPrice,
+                        MaxPrice = aiData.MaxPrice,
                         EstimatedMaintenanceCostEUR = aiData.EstimatedMaintenanceCostEUR
                     };
 
@@ -337,14 +339,14 @@ Sen 20 yıllık tecrübeli bir oto ekspertizsin. Tarafsız, rasyonel ve teknik b
 ARAÇ 1:
 Marka/Model: {car1.Brand} {car1.ModelName}
 Segment: {car1.Segment}
-Fiyat Aralığı: {car1.PriceRange}
+Fiyat Aralığı: {car1.MinPrice} - {car1.MaxPrice} TL
 Güvenilirlik Puanı: {car1.ReliabilityScore}/10
 Uzman Özeti: {car1.ExpertSummary}
 
 ARAÇ 2:
 Marka/Model: {car2.Brand} {car2.ModelName}
 Segment: {car2.Segment}
-Fiyat Aralığı: {car2.PriceRange}
+Fiyat Aralığı: {car2.MinPrice} - {car2.MaxPrice} TL
 Güvenilirlik Puanı: {car2.ReliabilityScore}/10
 Uzman Özeti: {car2.ExpertSummary}
 
@@ -393,7 +395,8 @@ Yazdığın metinde Markdown kullanabilirsin (başlıklar, kalın yazılar vs).
             public string ExpertSummary { get; set; }
             public string UserFeedbackSummary { get; set; }
             public double ReliabilityScore { get; set; }
-            public string PriceRange { get; set; }
+            public int MinPrice { get; set; }
+            public int MaxPrice { get; set; }
             public int EstimatedMaintenanceCostEUR { get; set; }
             public List<string> Pros { get; set; }
             public List<string> Cons { get; set; }

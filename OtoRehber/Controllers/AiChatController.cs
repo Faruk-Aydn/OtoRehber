@@ -44,7 +44,7 @@ namespace OtoRehber.Controllers
             var contextBuilder = new StringBuilder();
             foreach (var car in cars)
             {
-                contextBuilder.AppendLine($"- {car.Brand} {car.ModelName} ({car.Segment} Segment): Fiyat: {car.PriceRange}, Güvenilirlik: {car.ReliabilityScore}/10");
+                contextBuilder.AppendLine($"- {car.Brand} {car.ModelName} ({car.Segment} Segment): Fiyat: {car.MinPrice}-{car.MaxPrice} TL, Güvenilirlik: {car.ReliabilityScore}/10");
             }
 
             string availableCarsContext = contextBuilder.ToString();

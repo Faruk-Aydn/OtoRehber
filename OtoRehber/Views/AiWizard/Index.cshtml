@@ -1,0 +1,126 @@
+@{
+    ViewData["Title"] = "AI Araç Sihirbazı";
+}
+
+<div class="max-w-4xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12" data-aos="fade-down">
+        <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-tr from-indigo-500 to-purple-600 text-white shadow-lg mb-6">
+            <i class="fa-solid fa-wand-magic-sparkles text-4xl"></i>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-4">Sana En Uygun Aracı Bulalım</h1>
+        <p class="text-xl text-gray-600 dark:text-gray-400 font-light max-w-2xl mx-auto">
+            Yapay zeka asistanımız; bütçenizi, ailenizi ve ihtiyaçlarınızı analiz ederek size piyasadaki en mantıklı 3 aracı saniyeler içinde önerecek.
+        </p>
+    </div>
+
+    <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden" data-aos="zoom-in">
+        <div class="p-8 md:p-12">
+            <form id="wizardForm" asp-controller="AiWizard" asp-action="Analyze" method="post" class="space-y-8" onsubmit="showLoading()">
+                
+                @if (ViewBag.Error != null)
+                {
+                    <div class="bg-red-50 border-l-4 border-red-500 p-4 mb-6 rounded-r-lg">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fa-solid fa-triangle-exclamation text-red-500"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm text-red-700">@ViewBag.Error</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <!-- Soru 1: Bütçe -->
+                <div class="space-y-4">
+                    <label class="block text-xl font-bold text-gray-900 dark:text-gray-100"><i class="fa-solid fa-sack-dollar text-green-500 mr-2"></i> 1. Bütçeniz Ortalama Ne Kadar?</label>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-gray-500 font-bold">₺</span>
+                        <input type="text" name="budget" required placeholder="Örn: 1.500.000 TL" class="pl-10 w-full bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white text-lg rounded-xl focus:ring-primary focus:border-primary block p-4 outline-none transition">
+                    </div>
+                </div>
+
+                <!-- Soru 2: Aile Durumu -->
+                <div class="space-y-4">
+                    <label class="block text-xl font-bold text-gray-900 dark:text-gray-100"><i class="fa-solid fa-people-roof text-blue-500 mr-2"></i> 2. Aile Durumunuz Nedir?</label>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <label class="relative cursor-pointer">
+                            <input type="radio" name="familySize" value="Bekar / Çift (1-2 Kişi)" class="peer sr-only" required>
+                            <div class="p-5 border-2 border-gray-200 dark:border-gray-700 rounded-xl peer-checked:border-primary peer-checked:bg-indigo-50 dark:peer-checked:bg-indigo-900/30 hover:bg-gray-50 dark:hover:bg-gray-700 transition flex flex-col items-center text-center">
+                                <i class="fa-solid fa-person text-3xl text-gray-400 peer-checked:text-primary mb-2"></i>
+                                <span class="font-bold text-gray-700 dark:text-gray-300">Bekar / Çift</span>
+                            </div>
+                        </label>
+                        <label class="relative cursor-pointer">
+                            <input type="radio" name="familySize" value="Çekirdek Aile (3-4 Kişi)" class="peer sr-only">
+                            <div class="p-5 border-2 border-gray-200 dark:border-gray-700 rounded-xl peer-checked:border-primary peer-checked:bg-indigo-50 dark:peer-checked:bg-indigo-900/30 hover:bg-gray-50 dark:hover:bg-gray-700 transition flex flex-col items-center text-center">
+                                <i class="fa-solid fa-children text-3xl text-gray-400 peer-checked:text-primary mb-2"></i>
+                                <span class="font-bold text-gray-700 dark:text-gray-300">Çekirdek Aile</span>
+                            </div>
+                        </label>
+                        <label class="relative cursor-pointer">
+                            <input type="radio" name="familySize" value="Geniş Aile (5+ Kişi)" class="peer sr-only">
+                            <div class="p-5 border-2 border-gray-200 dark:border-gray-700 rounded-xl peer-checked:border-primary peer-checked:bg-indigo-50 dark:peer-checked:bg-indigo-900/30 hover:bg-gray-50 dark:hover:bg-gray-700 transition flex flex-col items-center text-center">
+                                <i class="fa-solid fa-people-group text-3xl text-gray-400 peer-checked:text-primary mb-2"></i>
+                                <span class="font-bold text-gray-700 dark:text-gray-300">Geniş Aile</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Soru 3: Kullanım Amacı -->
+                <div class="space-y-4">
+                    <label class="block text-xl font-bold text-gray-900 dark:text-gray-100"><i class="fa-solid fa-road text-orange-500 mr-2"></i> 3. Çoğunlukla Nerede Kullanacaksınız?</label>
+                    <select name="usageType" required class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white text-lg rounded-xl focus:ring-primary focus:border-primary block p-4 outline-none transition cursor-pointer appearance-none">
+                        <option value="">Seçim Yapınız...</option>
+                        <option value="Sadece Şehir İçi (İşe gidip gelme, market vs.)">Sadece Şehir İçi (İşe gitme, günlük işler)</option>
+                        <option value="Uzun Yol Ağırlıklı (Sürekli seyahat, tatil)">Uzun Yol Ağırlıklı (Sürekli şehirler arası)</option>
+                        <option value="Karma (Hem şehir içi hem uzun yol)">Karma (Hem şehir içi hem de arada uzun yol)</option>
+                        <option value="Arazi / Zorlu Şartlar (Köy yolları, kamp, dağ)">Arazi / Zorlu Şartlar (Kamp, dağ yolu vs.)</option>
+                    </select>
+                </div>
+
+                <!-- Soru 4: Öncelik -->
+                <div class="space-y-4">
+                    <label class="block text-xl font-bold text-gray-900 dark:text-gray-100"><i class="fa-solid fa-ranking-star text-yellow-500 mr-2"></i> 4. Sizin İçin En Önemli Şey Nedir?</label>
+                    <select name="priority" required class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white text-lg rounded-xl focus:ring-primary focus:border-primary block p-4 outline-none transition cursor-pointer appearance-none">
+                        <option value="">Seçim Yapınız...</option>
+                        <option value="Ekonomi ve Düşük Yakıt Tüketimi">Ekonomi (Az yaksın, masrafsız olsun)</option>
+                        <option value="Sorunsuzluk ve Sanayiye Gitmemek">Sorunsuzluk (Sanayi yüzü görmeyeyim, sağlam olsun)</option>
+                        <option value="Performans ve Hız">Performans (Gaza basınca gitsin, seri olsun)</option>
+                        <option value="Konfor, Teknoloji ve Yalıtım">Konfor ve Teknoloji (Geniş olsun, donanımlı olsun)</option>
+                        <option value="Prestij ve Gösteriş">Prestij (Dışarıdan bakıldığında lüks dursun)</option>
+                    </select>
+                </div>
+
+                <div class="pt-6 border-t border-gray-200 dark:border-gray-700 flex justify-end">
+                    <button type="submit" id="submitBtn" class="bg-gradient-to-r from-primary to-blue-600 hover:from-blue-600 hover:to-indigo-700 text-white text-lg font-bold py-4 px-10 rounded-xl transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center">
+                        <i class="fa-solid fa-bolt mr-3"></i> Sihirbazı Çalıştır
+                    </button>
+                </div>
+            </form>
+
+            <!-- Loading State -->
+            <div id="loadingState" class="hidden text-center py-16">
+                <div class="inline-block relative w-24 h-24 mb-6">
+                    <div class="absolute inset-0 rounded-full border-4 border-gray-200 dark:border-gray-700"></div>
+                    <div class="absolute inset-0 rounded-full border-4 border-primary border-t-transparent animate-spin"></div>
+                    <i class="fa-solid fa-robot absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl text-primary animate-pulse"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Yapay Zeka Analiz Ediyor...</h3>
+                <p class="text-gray-500 dark:text-gray-400 text-lg">Piyasadaki araçlar inceleniyor, sana en uygun tavsiyeler hazırlanıyor. Bu işlem 10-15 saniye sürebilir.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function showLoading() {
+            document.getElementById('wizardForm').classList.add('hidden');
+            document.getElementById('loadingState').classList.remove('hidden');
+            // Scroll to top of the card smoothly
+            document.getElementById('loadingState').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    </script>
+}

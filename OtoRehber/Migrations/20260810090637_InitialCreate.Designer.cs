@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OtoRehber.Infrastructure.Data;
 
@@ -10,9 +11,11 @@ using OtoRehber.Infrastructure.Data;
 namespace OtoRehber.Migrations
 {
     [DbContext(typeof(OtoRehberDbContext))]
-    partial class OtoRehberDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260810090637_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.0");
@@ -252,10 +255,6 @@ namespace OtoRehber.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("ProductionYears")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.Property<double>("ReliabilityScore")
                         .HasColumnType("REAL");
 
@@ -282,7 +281,6 @@ namespace OtoRehber.Migrations
                             MaxPrice = 1200000,
                             MinPrice = 800000,
                             ModelName = "Golf",
-                            ProductionYears = "2012-2020",
                             ReliabilityScore = 8.0,
                             Segment = "C",
                             UserFeedbackSummary = "Forumlarda Golf kalitesi övülse de, DSG şanzıman arızaları ve dizel partikül filtresi (DPF) tıkanıklığı en çok şikayet edilen konulardır."
@@ -297,7 +295,6 @@ namespace OtoRehber.Migrations
                             MaxPrice = 1100000,
                             MinPrice = 700000,
                             ModelName = "Corolla",
-                            ProductionYears = "2013-2018",
                             ReliabilityScore = 9.5,
                             Segment = "C",
                             UserFeedbackSummary = "Kullanıcılar genel olarak sorunsuzluğundan ve düşük yakıt tüketiminden çok memnun. Ancak yüksek hızlarda içeri yol sesi alması klasik bir şikayettir."

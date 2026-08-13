@@ -57,7 +57,7 @@
                         </div>
                         
                         <div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between">
-                            <span class="text-sm font-bold text-gray-900 dark:text-gray-200">@item.Car.PriceRange</span>
+                            <span class="text-sm font-bold text-gray-900 dark:text-gray-200">@item.Car.MinPrice.ToString("N0") - @item.Car.MaxPrice.ToString("N0") TL</span>
                             <a asp-controller="Car" asp-action="Details" asp-route-id="@item.CarId" class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 text-sm font-medium flex items-center group-hover:underline">
                                 Detaylar <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
                             </a>
