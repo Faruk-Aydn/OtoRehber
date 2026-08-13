@@ -35,5 +35,16 @@ bld/
 *.db-shm
 *.db-wal
 
+# Secrets - gerçek API key/parola içerebilecek ortam bazlı config dosyaları
+appsettings.Development.json
+appsettings.Local.json
+appsettings.Production.json
+appsettings.*.local.json
+
+# Staj / kişisel dosyalar
+_staj1.pdf
+staj_defteri.docx
+staj_defteri.pdf
+
 # Mac OS X
 .DS_Store

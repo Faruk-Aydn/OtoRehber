@@ -23,15 +23,15 @@ namespace OtoRehber.Infrastructure.Services
         private readonly HttpClient _httpClient;
 
         public AiCarDataService(
-            ILogger<AiCarDataService> logger, 
+            ILogger<AiCarDataService> logger,
             IServiceScopeFactory scopeFactory,
-            IConfiguration configuration)
+            IConfiguration configuration,
+            HttpClient httpClient)
         {
             _logger = logger;
             _scopeFactory = scopeFactory;
             _configuration = configuration;
-            _httpClient = new HttpClient();
-            _httpClient.Timeout = Timeout.InfiniteTimeSpan; // Gemini bazen çok geç cevap veriyor, HttpClient'ın iptal etmesini engelliyoruz.
+            _httpClient = httpClient; // Timeout DI kaydında (Program.cs > AddHttpClient) ayarlanıyor.
         }
 
         public async Task<List<Car>> AnalyzeAndSaveFromYoutubeAsync(string youtubeUrl, CancellationToken cancellationToken = default)

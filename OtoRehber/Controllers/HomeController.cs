@@ -93,6 +93,7 @@ namespace OtoRehber.Controllers
             return View(carDtos);
         }
 
+        [Microsoft.AspNetCore.Authorization.Authorize(Roles = "Admin")]
         public IActionResult FixSegments()
         {
             var cars = _context.Cars.ToList();
@@ -167,13 +168,6 @@ namespace OtoRehber.Controllers
         public IActionResult Privacy()
         {
             return View();
-        }
-
-        public IActionResult DebugSegments()
-        {
-            var segments = _context.Cars.Select(c => c.Segment).Distinct().ToList();
-            var totalCars = _context.Cars.Count();
-            return Json(new { TotalCars = totalCars, Segments = segments });
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

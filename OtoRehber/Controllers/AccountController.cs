@@ -76,11 +76,16 @@ namespace OtoRehber.Controllers
             if (ModelState.IsValid)
             {
                 // Parola ile giriş yap
-                var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
-                
+                var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: true);
+
                 if (result.Succeeded)
                 {
                     return RedirectToLocal(returnUrl);
+                }
+                else if (result.IsLockedOut)
+                {
+                    ModelState.AddModelError(string.Empty, "Çok fazla başarısız giriş denemesi. Hesabınız geçici olarak kilitlendi, lütfen daha sonra tekrar deneyin.");
+                    return View(model);
                 }
                 else
                 {

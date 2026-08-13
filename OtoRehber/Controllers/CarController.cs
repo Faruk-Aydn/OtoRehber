@@ -41,6 +41,7 @@ namespace OtoRehber.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult AddReview(int carId, string userName, int rating, string comment)
         {
             if (string.IsNullOrWhiteSpace(userName) || string.IsNullOrWhiteSpace(comment) || rating < 1 || rating > 10)
