@@ -297,8 +297,8 @@ Development: `dotnet user-secrets`. Production: environment variable.
 | 2026-08-27 | 2.4 | Serilog + admin audit log tablosu | 6024435 |
 | 2026-08-27 | responsive | Navbar hamburger + taşma düzeltmeleri (mobil/tablet/masaüstü) | 3529647 |
 | 2026-08-27 | 2.2 | Tailwind build-time derleme (CDN JIT kaldırıldı) | 24947e5 |
-| 2026-08-28 | 2.2 | `app.min.css` FontAwesome sonrası yüklenir (`.hidden` çakışması) + `-c` bayrağı | 24947e5 |
-| 2026-08-28 | 2.2 | FontAwesome/AOS/marked/DOMPurify/Chart.js/DataTables self-host + CSP'den CDN kaldırıldı | _(bu commit)_ |
+| 2026-08-28 | 2.2 | `app.min.css` FontAwesome sonrası yüklenir (`.hidden` çakışması) + `-c` bayrağı | 0c164fb |
+| 2026-08-28 | 2.2 | FontAwesome/AOS/marked/DOMPurify/Chart.js/DataTables self-host + CSP'den CDN kaldırıldı | 5e16da0 |
 | 2026-08-27 | 1.3, 1.10 | Railway `DATABASE_URL` ayrıştırma + Docker healthcheck düzeltme + deploy rehberi | 93c5dbb |
 | 2026-08-27 | deploy | Postgres bağlantı çözümü + `railway.json` | 1e7fb51 |
 | 2026-08-27 | deploy | `PORT` env dinleme + healthcheck timeout | 1c974f8 |
