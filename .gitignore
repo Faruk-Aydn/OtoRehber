@@ -50,5 +50,8 @@ _staj1.pdf
 staj_defteri.docx
 staj_defteri.pdf
 
+# Node (asset derleme)
+node_modules/
+
 # Mac OS X
 .DS_Store

@@ -1,0 +1,13 @@
+{
+  "name": "otorehber-assets",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build:css": "tailwindcss -i ./OtoRehber/wwwroot/css/app.src.css -o ./OtoRehber/wwwroot/css/app.min.css --minify",
+    "watch:css": "tailwindcss -i ./OtoRehber/wwwroot/css/app.src.css -o ./OtoRehber/wwwroot/css/app.min.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17",
+    "@tailwindcss/typography": "^0.5.15"
+  }
+}

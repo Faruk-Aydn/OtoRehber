@@ -205,6 +205,13 @@ Development: `dotnet user-secrets`. Production: environment variable.
 - [ ] CDN scriptleri `<script defer>`
 - [ ] CSP: `'unsafe-inline'` script kaldır, nonce tabanlı; CDN host'ları temizle
 
+### 2.R Responsive (mobil / tablet / masaüstü) ✅
+- [x] Navbar hamburger menü (lg altında); mobil arama + tema toggle
+- [x] `html/body { overflow-x: clip }`, `img/table { max-width: 100% }`
+- [x] Home hero/arama formu breakpoint'leri; AOS yatay slide'lar `fade-up`'a
+- [x] Stats marka tablosu mobilde kolon gizleme; toast/AI-chat mobil boyut
+- [x] Puppeteer ile 390/768/1280 px doğrulama — yatay taşma yok (prod dahil)
+
 ### 2.3 PWA
 - [ ] `service-worker.js`: sadece statik asset cache (auth'lu sayfaları cache'leme)
 - [ ] `activate` handler + eski cache temizliği + versiyonlama + `skipWaiting`/`clients.claim`
@@ -286,6 +293,8 @@ Development: `dotnet user-secrets`. Production: environment variable.
 | 2026-08-27 | 2.1 | Controller'lar async + pagination sınır + IMemoryCache + AI context daraltma | b30b262, a897658 |
 | 2026-08-27 | 2.5 | Entity `[MaxLength]` + Car index'leri + MinPrice/MaxPrice `long` + görsel magic-byte | a897658 |
 | 2026-08-27 | 2.8 | AI prompt injection çerçevesi + `GeminiModel` config (model adı düzeltme) | a897658 |
+| 2026-08-27 | 2.4 | Serilog + admin audit log tablosu | 6024435 |
+| 2026-08-27 | responsive | Navbar hamburger + taşma düzeltmeleri (mobil/tablet/masaüstü) | 3529647 |
 | 2026-08-27 | 1.3, 1.10 | Railway `DATABASE_URL` ayrıştırma + Docker healthcheck düzeltme + deploy rehberi | 93c5dbb |
 | 2026-08-27 | deploy | Postgres bağlantı çözümü + `railway.json` | 1e7fb51 |
 | 2026-08-27 | deploy | `PORT` env dinleme + healthcheck timeout | 1c974f8 |

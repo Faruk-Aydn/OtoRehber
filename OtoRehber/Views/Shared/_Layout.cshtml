@@ -8,38 +8,11 @@
     <link rel="manifest" href="~/manifest.json" />
     <meta name="theme-color" content="#2563eb" />
     <link rel="apple-touch-icon" href="~/favicon.ico" />
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#2563eb', // Blue-600
-                        success: '#10b981', // Emerald-500
-                        danger: '#ef4444' // Red-500
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Derlenmiş Tailwind (build-time; CDN JIT yerine) -->
+    <link rel="stylesheet" href="~/css/app.min.css" asp-append-version="true" />
     <!-- FontAwesome & AOS CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <style>
-        html, body { overflow-x: clip; max-width: 100%; }
-        img, video, canvas, table { max-width: 100%; }
-        /* Hukuki / bilgi sayfaları için basit tipografi */
-        .legal-doc { max-width: 48rem; margin: 0 auto; padding: 2.5rem 0; line-height: 1.75; }
-        .legal-doc h1 { font-size: 1.875rem; font-weight: 800; margin-bottom: .5rem; }
-        .legal-doc h2 { font-size: 1.25rem; font-weight: 700; margin: 2rem 0 .75rem; }
-        .legal-doc p, .legal-doc li { color: inherit; margin-bottom: .75rem; }
-        .legal-doc ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
-        .legal-doc a { color: #2563eb; text-decoration: underline; }
-        .dark .legal-doc a { color: #60a5fa; }
-        .legal-doc .muted { color: #6b7280; font-size: .875rem; }
-    </style>
     <script>
         // FOUC önlemek için sayfa render edilmeden önce temayı kontrol et
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
