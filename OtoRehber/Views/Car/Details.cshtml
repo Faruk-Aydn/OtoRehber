@@ -90,7 +90,7 @@
         <!-- Artılar ve Eksiler Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- Artılar -->
-            <div class="bg-green-50/50 rounded-2xl shadow-sm p-6 border border-green-100" data-aos="fade-right" data-aos-delay="300">
+            <div class="bg-green-50/50 rounded-2xl shadow-sm p-6 border border-green-100" data-aos="fade-up" data-aos-delay="300">
                 <h3 class="text-lg font-bold text-success mb-4 flex items-center"><i class="fa-solid fa-circle-check mr-2"></i>Artılar</h3>
                 <ul class="space-y-3">
                     @if(Model.ProsConsList != null && Model.ProsConsList.Any(p => p.Type == "Pro"))
@@ -111,7 +111,7 @@
             </div>
             
             <!-- Eksiler -->
-            <div class="bg-red-50/50 rounded-2xl shadow-sm p-6 border border-red-100" data-aos="fade-left" data-aos-delay="300">
+            <div class="bg-red-50/50 rounded-2xl shadow-sm p-6 border border-red-100" data-aos="fade-up" data-aos-delay="300">
                 <h3 class="text-lg font-bold text-danger mb-4 flex items-center"><i class="fa-solid fa-circle-xmark mr-2"></i>Eksiler</h3>
                 <ul class="space-y-3">
                     @if(Model.ProsConsList != null && Model.ProsConsList.Any(p => p.Type == "Con"))
@@ -136,7 +136,7 @@
 
     <!-- Sağ Kolon: Kronik Sorunlar -->
     <div class="space-y-6">
-        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden" data-aos="fade-left" data-aos-delay="200">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden" data-aos="fade-up" data-aos-delay="200">
             <div class="bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 p-5">
                 <h2 class="text-lg font-bold text-gray-900 dark:text-white flex items-center">
                     <i class="fa-solid fa-triangle-exclamation text-orange-500 mr-2"></i>Bilinen Kronik Sorunlar

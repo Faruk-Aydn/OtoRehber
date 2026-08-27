@@ -28,6 +28,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
+        html, body { overflow-x: clip; max-width: 100%; }
+        img, video, canvas, table { max-width: 100%; }
         /* Hukuki / bilgi sayfaları için basit tipografi */
         .legal-doc { max-width: 48rem; margin: 0 auto; padding: 2.5rem 0; line-height: 1.75; }
         .legal-doc h1 { font-size: 1.875rem; font-weight: 800; margin-bottom: .5rem; }
@@ -47,75 +49,95 @@
         }
     </script>
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans min-h-screen flex flex-col selection:bg-primary selection:text-white transition-colors duration-300">
-    
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans min-h-screen flex flex-col overflow-x-hidden selection:bg-primary selection:text-white transition-colors duration-300">
+
     <!-- Glassmorphism Navbar -->
     <header class="bg-white/80 dark:bg-gray-800/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50 shadow-sm transition-all duration-300">
-        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a asp-area="" asp-controller="Home" asp-action="Index" class="text-2xl font-extrabold tracking-tight text-primary dark:text-blue-400 flex items-center gap-2 hover:scale-105 transition-transform">
-                <i class="fa-solid fa-car-side"></i>OtoRehber
-            </a>
-            <div class="space-x-6 flex items-center">
-                
-                <!-- Theme Toggle Button -->
-                <button id="theme-toggle" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none rounded-lg text-sm p-2.5 transition-colors">
-                    <i id="theme-toggle-dark-icon" class="fa-solid fa-moon hidden text-lg"></i>
-                    <i id="theme-toggle-light-icon" class="fa-solid fa-sun hidden text-lg text-yellow-400"></i>
-                </button>
-
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 font-medium transition">Ana Sayfa</a>
-                <a asp-area="" asp-controller="Compare" asp-action="Index" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition">
-                    <i class="fa-solid fa-scale-balanced mr-1"></i> Karşılaştırma
-                </a>
-                
-                <!-- AI Sihirbaz -->
-                <a asp-area="" asp-controller="AiWizard" asp-action="Index" class="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 font-medium transition flex items-center">
-                    <i class="fa-solid fa-wand-magic-sparkles mr-1 text-purple-500"></i> AI Sihirbaz
+        <nav class="container mx-auto px-4 py-3 md:py-4">
+            <div class="flex justify-between items-center gap-3">
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="text-xl md:text-2xl font-extrabold tracking-tight text-primary dark:text-blue-400 flex items-center gap-2 shrink-0">
+                    <i class="fa-solid fa-car-side"></i>OtoRehber
                 </a>
 
-                <!-- İstatistikler -->
-                <a asp-area="" asp-controller="Stats" asp-action="Index" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition flex items-center">
-                    <i class="fa-solid fa-chart-pie mr-1 text-indigo-500"></i> İstatistikler
-                </a>
+                @{
+                    var linkCls = "text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 font-medium transition flex items-center gap-1";
+                }
 
-                <!-- Autocomplete Arama -->
-                <div class="relative" id="navbar-search-wrap">
-                    <div class="relative">
+                <!-- MASAÜSTÜ menü (lg+) -->
+                <div class="hidden lg:flex items-center gap-x-4 xl:gap-x-6">
+                    <button id="theme-toggle" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg p-2.5 transition-colors">
+                        <i id="theme-toggle-dark-icon" class="fa-solid fa-moon hidden text-lg"></i>
+                        <i id="theme-toggle-light-icon" class="fa-solid fa-sun hidden text-lg text-yellow-400"></i>
+                    </button>
+                    <a asp-controller="Home" asp-action="Index" class="@linkCls">Ana Sayfa</a>
+                    <a asp-controller="Compare" asp-action="Index" class="@linkCls"><i class="fa-solid fa-scale-balanced"></i> Karşılaştırma</a>
+                    <a asp-controller="AiWizard" asp-action="Index" class="@linkCls"><i class="fa-solid fa-wand-magic-sparkles text-purple-500"></i> AI Sihirbaz</a>
+                    <a asp-controller="Stats" asp-action="Index" class="@linkCls"><i class="fa-solid fa-chart-pie text-indigo-500"></i> İstatistikler</a>
+
+                    <div class="relative" id="navbar-search-wrap">
                         <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm pointer-events-none"></i>
                         <input id="navbar-search-input" type="text" placeholder="Araç ara..." autocomplete="off"
-                               class="bg-gray-100 dark:bg-gray-700 border-0 rounded-xl pl-9 pr-4 py-2 text-sm text-gray-800 dark:text-gray-200 placeholder-gray-400 focus:ring-2 focus:ring-primary outline-none w-44 transition-all focus:w-56" />
+                               class="bg-gray-100 dark:bg-gray-700 border-0 rounded-xl pl-9 pr-4 py-2 text-sm text-gray-800 dark:text-gray-200 placeholder-gray-400 focus:ring-2 focus:ring-primary outline-none w-40 lg:w-44 transition-all focus:w-52 lg:focus:w-56" />
+                        <div id="navbar-search-results" class="hidden absolute top-full right-0 mt-1 w-72 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 z-50 overflow-hidden"></div>
                     </div>
-                    <!-- Öneri Dropdown -->
-                    <div id="navbar-search-results" class="hidden absolute top-full left-0 mt-1 w-72 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 z-50 overflow-hidden"></div>
+
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                        <a asp-controller="Garage" asp-action="Index" class="@linkCls"><i class="fa-solid fa-heart text-red-500"></i> Garajım</a>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <a asp-controller="AdminCar" asp-action="Index" class="bg-primary hover:bg-blue-700 text-white px-3 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-2 shadow-md"><i class="fa-solid fa-gear"></i> Admin</a>
+                        }
+                        <form asp-controller="Account" asp-action="Logout" method="post" class="inline">
+                            <button type="submit" class="@linkCls text-sm"><i class="fa-solid fa-arrow-right-from-bracket"></i> Çıkış</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <a asp-controller="Account" asp-action="Register" class="@linkCls text-sm"><i class="fa-solid fa-user-plus"></i> Kayıt Ol</a>
+                        <a asp-controller="Account" asp-action="Login" class="@linkCls text-sm"><i class="fa-solid fa-lock"></i> Giriş</a>
+                    }
                 </div>
 
+                <!-- MOBİL/TABLET: tema + hamburger -->
+                <div class="flex lg:hidden items-center gap-1">
+                    <button id="theme-toggle-m" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg p-2.5">
+                        <i class="theme-dark-icon fa-solid fa-moon hidden text-lg"></i>
+                        <i class="theme-light-icon fa-solid fa-sun hidden text-lg text-yellow-400"></i>
+                    </button>
+                    <button id="mobile-menu-btn" aria-label="Menü" class="text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg p-2.5">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- MOBİL menü paneli -->
+            <div id="mobile-menu" class="hidden lg:hidden mt-3 pb-2 space-y-1 border-t border-gray-200 dark:border-gray-700 pt-3">
+                <div class="relative mb-2">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm pointer-events-none"></i>
+                    <input id="navbar-search-input-m" type="text" placeholder="Araç ara..." autocomplete="off"
+                           class="w-full bg-gray-100 dark:bg-gray-700 border-0 rounded-xl pl-9 pr-4 py-2.5 text-sm text-gray-800 dark:text-gray-200 placeholder-gray-400 focus:ring-2 focus:ring-primary outline-none" />
+                    <div id="navbar-search-results-m" class="hidden mt-1 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden"></div>
+                </div>
+                <a asp-controller="Home" asp-action="Index" class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 @linkCls">Ana Sayfa</a>
+                <a asp-controller="Compare" asp-action="Index" class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 @linkCls"><i class="fa-solid fa-scale-balanced"></i> Karşılaştırma</a>
+                <a asp-controller="AiWizard" asp-action="Index" class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 @linkCls"><i class="fa-solid fa-wand-magic-sparkles text-purple-500"></i> AI Sihirbaz</a>
+                <a asp-controller="Stats" asp-action="Index" class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 @linkCls"><i class="fa-solid fa-chart-pie text-indigo-500"></i> İstatistikler</a>
                 @if (User.Identity?.IsAuthenticated == true)
                 {
-                    <a asp-area="" asp-controller="Garage" asp-action="Index" class="text-gray-600 dark:text-gray-300 hover:text-red-500 dark:hover:text-red-400 font-medium transition flex items-center">
-                        <i class="fa-solid fa-heart mr-1 text-red-500"></i> Garajım
-                    </a>
-                    
+                    <a asp-controller="Garage" asp-action="Index" class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 @linkCls"><i class="fa-solid fa-heart text-red-500"></i> Garajım</a>
                     @if (User.IsInRole("Admin"))
                     {
-                        <a asp-area="" asp-controller="AdminCar" asp-action="Index" class="bg-primary hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center shadow-md hover:shadow-lg">
-                            <i class="fa-solid fa-gear mr-2"></i> Admin Panel
-                        </a>
+                        <a asp-controller="AdminCar" asp-action="Index" class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 @linkCls"><i class="fa-solid fa-gear"></i> Admin Panel</a>
                     }
-                    
-                    <form asp-controller="Account" asp-action="Logout" method="post" class="inline">
-                        <button type="submit" class="text-gray-600 dark:text-gray-300 hover:text-red-500 dark:hover:text-red-400 transition text-sm font-medium flex items-center">
-                            <i class="fa-solid fa-arrow-right-from-bracket mr-1"></i> Çıkış
-                        </button>
+                    <form asp-controller="Account" asp-action="Logout" method="post">
+                        <button type="submit" class="w-full text-left px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 @linkCls"><i class="fa-solid fa-arrow-right-from-bracket"></i> Çıkış</button>
                     </form>
                 }
                 else
                 {
-                    <a asp-area="" asp-controller="Account" asp-action="Register" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 font-medium transition text-sm flex items-center">
-                        <i class="fa-solid fa-user-plus mr-2"></i> Kayıt Ol
-                    </a>
-                    <a asp-area="" asp-controller="Account" asp-action="Login" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 font-medium transition text-sm flex items-center">
-                        <i class="fa-solid fa-lock mr-2"></i> Giriş Yap
-                    </a>
+                    <a asp-controller="Account" asp-action="Login" class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 @linkCls"><i class="fa-solid fa-lock"></i> Giriş Yap</a>
+                    <a asp-controller="Account" asp-action="Register" class="block mt-1 bg-primary text-white text-center px-3 py-2.5 rounded-lg font-semibold"><i class="fa-solid fa-user-plus mr-1"></i> Kayıt Ol</a>
                 }
             </div>
         </nav>
@@ -130,7 +152,7 @@
     <!-- ===== GLOBAL TOAST BİLDİRİM SİSTEMİ ===== -->
     @if (TempData["SuccessMessage"] != null)
     {
-        <div id="toast-success" class="fixed top-6 right-6 z-[200] flex items-center gap-3 bg-white dark:bg-gray-800 border-l-4 border-green-500 shadow-2xl rounded-xl px-5 py-4 max-w-sm transition-all duration-500" role="alert">
+        <div id="toast-success" class="fixed top-4 right-4 left-4 sm:left-auto z-[200] flex items-center gap-3 bg-white dark:bg-gray-800 border-l-4 border-green-500 shadow-2xl rounded-xl px-5 py-4 sm:max-w-sm transition-all duration-500" role="alert">
             <div class="flex-shrink-0 w-9 h-9 bg-green-100 rounded-full flex items-center justify-center">
                 <i class="fa-solid fa-circle-check text-green-600"></i>
             </div>
@@ -145,7 +167,7 @@
     }
     @if (TempData["ErrorMessage"] != null)
     {
-        <div id="toast-error" class="fixed top-6 right-6 z-[200] flex items-center gap-3 bg-white dark:bg-gray-800 border-l-4 border-red-500 shadow-2xl rounded-xl px-5 py-4 max-w-sm transition-all duration-500" role="alert">
+        <div id="toast-error" class="fixed top-4 right-4 left-4 sm:left-auto z-[200] flex items-center gap-3 bg-white dark:bg-gray-800 border-l-4 border-red-500 shadow-2xl rounded-xl px-5 py-4 sm:max-w-sm transition-all duration-500" role="alert">
             <div class="flex-shrink-0 w-9 h-9 bg-red-100 rounded-full flex items-center justify-center">
                 <i class="fa-solid fa-circle-xmark text-red-600"></i>
             </div>
@@ -160,7 +182,7 @@
     }
     @if (TempData["InfoMessage"] != null)
     {
-        <div id="toast-info" class="fixed top-6 right-6 z-[200] flex items-center gap-3 bg-white dark:bg-gray-800 border-l-4 border-blue-500 shadow-2xl rounded-xl px-5 py-4 max-w-sm transition-all duration-500" role="alert">
+        <div id="toast-info" class="fixed top-4 right-4 left-4 sm:left-auto z-[200] flex items-center gap-3 bg-white dark:bg-gray-800 border-l-4 border-blue-500 shadow-2xl rounded-xl px-5 py-4 sm:max-w-sm transition-all duration-500" role="alert">
             <div class="flex-shrink-0 w-9 h-9 bg-blue-100 rounded-full flex items-center justify-center">
                 <i class="fa-solid fa-circle-info text-blue-600"></i>
             </div>
@@ -250,14 +272,14 @@
     </script>
 
     <!-- AI Chatbot Asistanı (V3) -->
-    <div id="aiChatWidget" class="fixed bottom-6 right-6 z-[100]">
+    <div id="aiChatWidget" class="fixed bottom-4 right-4 z-[100]">
         <!-- Chat Butonu -->
         <button id="aiChatBtn" onclick="toggleChat()" class="bg-indigo-600 hover:bg-indigo-700 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:shadow-2xl transition-all transform hover:scale-110">
             <i class="fa-solid fa-robot text-2xl"></i>
         </button>
 
         <!-- Chat Penceresi -->
-        <div id="aiChatWindow" class="hidden absolute bottom-16 right-0 w-80 sm:w-96 bg-white/95 dark:bg-gray-800/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden flex flex-col transition-all origin-bottom-right" style="height: 500px;">
+        <div id="aiChatWindow" class="hidden absolute bottom-16 right-0 w-[calc(100vw-2rem)] max-w-sm bg-white/95 dark:bg-gray-800/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden flex flex-col transition-all origin-bottom-right h-[70vh] max-h-[500px] min-h-[360px]">
             <!-- Header -->
             <div class="bg-indigo-600 p-4 flex justify-between items-center text-white">
                 <div class="flex items-center gap-2">
@@ -451,73 +473,61 @@
             }
         }
 
-        // Theme Toggle Logic
+        // ===== TEMA + MOBİL MENÜ =====
         document.addEventListener('DOMContentLoaded', () => {
-            const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-            const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
-            const themeToggleBtn = document.getElementById('theme-toggle');
-
-            // Set initial icon based on applied theme
-            if (document.documentElement.classList.contains('dark')) {
-                themeToggleLightIcon.classList.remove('hidden');
-            } else {
-                themeToggleDarkIcon.classList.remove('hidden');
+            // Tema ikonlarını (masaüstü id + mobil class) güncelle
+            function syncThemeIcons() {
+                const dark = document.documentElement.classList.contains('dark');
+                document.querySelectorAll('#theme-toggle-dark-icon, .theme-dark-icon')
+                    .forEach(el => el.classList.toggle('hidden', dark));
+                document.querySelectorAll('#theme-toggle-light-icon, .theme-light-icon')
+                    .forEach(el => el.classList.toggle('hidden', !dark));
             }
+            syncThemeIcons();
 
-            themeToggleBtn.addEventListener('click', function() {
-                // Toggle icons
-                themeToggleDarkIcon.classList.toggle('hidden');
-                themeToggleLightIcon.classList.toggle('hidden');
-
-                // If is set in localStorage
-                if (localStorage.getItem('theme')) {
-                    if (localStorage.getItem('theme') === 'light') {
-                        document.documentElement.classList.add('dark');
-                        localStorage.setItem('theme', 'dark');
-                    } else {
-                        document.documentElement.classList.remove('dark');
-                        localStorage.setItem('theme', 'light');
-                    }
-                // If NOT set via local storage previously
-                } else {
-                    if (document.documentElement.classList.contains('dark')) {
-                        document.documentElement.classList.remove('dark');
-                        localStorage.setItem('theme', 'light');
-                    } else {
-                        document.documentElement.classList.add('dark');
-                        localStorage.setItem('theme', 'dark');
-                    }
-                }
+            function toggleTheme() {
+                const nowDark = !document.documentElement.classList.contains('dark');
+                document.documentElement.classList.toggle('dark', nowDark);
+                try { localStorage.setItem('theme', nowDark ? 'dark' : 'light'); } catch (e) {}
+                syncThemeIcons();
+            }
+            ['theme-toggle', 'theme-toggle-m'].forEach(id => {
+                document.getElementById(id)?.addEventListener('click', toggleTheme);
             });
+
+            // Mobil hamburger
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            function setMenu(open) {
+                menu.classList.toggle('hidden', !open);
+                menuBtn.querySelector('i').className = open ? 'fa-solid fa-xmark text-xl' : 'fa-solid fa-bars text-xl';
+            }
+            menuBtn?.addEventListener('click', () => setMenu(menu.classList.contains('hidden')));
+            // Menüdeki bir bağlantıya tıklanınca kapat
+            menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
         });
     </script>
 
-    <!-- ===== AUTOCOMPLETE ARAMA ===== -->
+    <!-- ===== AUTOCOMPLETE ARAMA (masaüstü + mobil) ===== -->
     <script>
-        (function () {
-            const input   = document.getElementById('navbar-search-input');
-            const results = document.getElementById('navbar-search-results');
+        function wireAutocomplete(inputId, resultsId) {
+            const input = document.getElementById(inputId);
+            const results = document.getElementById(resultsId);
             if (!input || !results) return;
-
             let debounceTimer;
 
             input.addEventListener('input', function () {
                 clearTimeout(debounceTimer);
                 const q = this.value.trim();
-
                 if (q.length < 2) { results.classList.add('hidden'); results.innerHTML = ''; return; }
-
                 debounceTimer = setTimeout(async () => {
                     try {
-                        const res  = await fetch(`/api/Search/suggest?q=${encodeURIComponent(q)}`);
+                        const res = await fetch(`/api/Search/suggest?q=${encodeURIComponent(q)}`);
                         const data = await res.json();
-
                         if (!data.length) {
                             results.innerHTML = '<div class="p-4 text-sm text-gray-400 text-center">Sonuç bulunamadı</div>';
-                            results.classList.remove('hidden');
-                            return;
+                            results.classList.remove('hidden'); return;
                         }
-
                         results.innerHTML = data.map(item => `
                             <a href="/Car/Details/${item.id}"
                                class="flex items-center justify-between px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700 border-b border-gray-100 dark:border-gray-700 last:border-0 transition group">
@@ -525,30 +535,24 @@
                                     <p class="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-primary">${item.label}</p>
                                     <p class="text-xs text-gray-400">${item.segment} Segmenti</p>
                                 </div>
-                                <span class="text-xs font-bold text-yellow-600 bg-yellow-50 dark:bg-yellow-900/20 px-2 py-0.5 rounded">
-                                    ⭐ ${item.score}
-                                </span>
+                                <span class="text-xs font-bold text-yellow-600 bg-yellow-50 dark:bg-yellow-900/20 px-2 py-0.5 rounded">⭐ ${item.score}</span>
                             </a>`).join('');
                         results.classList.remove('hidden');
                     } catch (e) { results.classList.add('hidden'); }
                 }, 250);
             });
 
-            // Dışarı tıklanınca kapat
-            document.addEventListener('click', (e) => {
-                if (!document.getElementById('navbar-search-wrap')?.contains(e.target)) {
-                    results.classList.add('hidden');
-                }
-            });
-
-            // Enter tuşu — ilk sonuca git
             input.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter') {
-                    const first = results.querySelector('a');
-                    if (first) first.click();
-                }
+                if (e.key === 'Enter') { const f = results.querySelector('a'); if (f) f.click(); }
             });
-        })();
+        }
+        wireAutocomplete('navbar-search-input', 'navbar-search-results');
+        wireAutocomplete('navbar-search-input-m', 'navbar-search-results-m');
+
+        document.addEventListener('click', (e) => {
+            if (!document.getElementById('navbar-search-wrap')?.contains(e.target))
+                document.getElementById('navbar-search-results')?.classList.add('hidden');
+        });
 
         // PWA Service Worker Registration
         if ('serviceWorker' in navigator) {

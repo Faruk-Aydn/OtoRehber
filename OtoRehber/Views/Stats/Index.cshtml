@@ -42,7 +42,7 @@
 <!-- Grafikler -->
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
     <!-- Segment Dagilimi -->
-    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6" data-aos="fade-right">
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6" data-aos="fade-up">
         <h2 class="text-lg font-bold text-gray-800 dark:text-white mb-4 flex items-center gap-2">
             <i class="fa-solid fa-chart-pie text-indigo-500"></i> Segment Dagilimi
         </h2>
@@ -51,7 +51,7 @@
         </div>
     </div>
     <!-- Marka Guvenilirlik -->
-    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6" data-aos="fade-left">
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6" data-aos="fade-up">
         <h2 class="text-lg font-bold text-gray-800 dark:text-white mb-4 flex items-center gap-2">
             <i class="fa-solid fa-chart-bar text-blue-500"></i> Marka Bazli Ort. Guvenilirlik
         </h2>
@@ -135,11 +135,11 @@
         <table class="w-full text-sm text-left">
             <thead class="bg-gray-50 dark:bg-gray-900 text-gray-500 dark:text-gray-400 uppercase text-xs tracking-wider">
                 <tr>
-                    <th class="px-6 py-3">#</th>
-                    <th class="px-6 py-3">Marka</th>
-                    <th class="px-6 py-3">Arac Sayisi</th>
-                    <th class="px-6 py-3">Ort. Guvenilirlik</th>
-                    <th class="px-6 py-3">Ort. Bakim/Yil</th>
+                    <th class="px-3 sm:px-6 py-3">#</th>
+                    <th class="px-3 sm:px-6 py-3">Marka</th>
+                    <th class="px-3 sm:px-6 py-3 hidden sm:table-cell">Araç Sayısı</th>
+                    <th class="px-3 sm:px-6 py-3">Ort. Güvenilirlik</th>
+                    <th class="px-3 sm:px-6 py-3 hidden md:table-cell">Ort. Bakım/Yıl</th>
                 </tr>
             </thead>
             <tbody class="divide-y divide-gray-100 dark:divide-gray-700">
@@ -152,15 +152,15 @@
                     for (int i = 0; i < labels.Count; i++)
                     {
                         <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
-                            <td class="px-6 py-4 text-gray-400 font-medium">@(i + 1)</td>
-                            <td class="px-6 py-4 font-bold text-gray-800 dark:text-gray-200">@labels[i]</td>
-                            <td class="px-6 py-4 text-gray-600 dark:text-gray-400">@counts[i] arac</td>
-                            <td class="px-6 py-4">
+                            <td class="px-3 sm:px-6 py-4 text-gray-400 font-medium">@(i + 1)</td>
+                            <td class="px-3 sm:px-6 py-4 font-bold text-gray-800 dark:text-gray-200">@labels[i]</td>
+                            <td class="px-3 sm:px-6 py-4 text-gray-600 dark:text-gray-400 hidden sm:table-cell">@counts[i] araç</td>
+                            <td class="px-3 sm:px-6 py-4">
                                 <span class="font-bold text-yellow-600">
                                     <i class="fa-solid fa-star mr-1"></i>@scores[i]
                                 </span>
                             </td>
-                            <td class="px-6 py-4 text-red-500 font-medium">~@costs[i] EUR</td>
+                            <td class="px-3 sm:px-6 py-4 text-red-500 font-medium hidden md:table-cell">~@costs[i] EUR</td>
                         </tr>
                     }
                 }

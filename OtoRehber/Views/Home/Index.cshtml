@@ -4,21 +4,21 @@
 }
 
 <!-- Hero Section -->
-<div class="relative bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 rounded-3xl shadow-2xl overflow-hidden mb-12 p-8 md:p-16 text-center" data-aos="fade-down">
+<div class="relative bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 rounded-3xl shadow-2xl overflow-hidden mb-8 md:mb-12 p-5 sm:p-8 md:p-16 text-center" data-aos="fade-down">
     <!-- Dekoratif Işıklar -->
-    <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/30 rounded-full mix-blend-screen filter blur-3xl opacity-50 animate-blob"></div>
-    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/30 rounded-full mix-blend-screen filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
+    <div class="absolute top-0 left-1/4 w-56 h-56 md:w-96 md:h-96 bg-primary/30 rounded-full mix-blend-screen filter blur-3xl opacity-50 animate-blob"></div>
+    <div class="absolute bottom-0 right-1/4 w-56 h-56 md:w-96 md:h-96 bg-purple-500/30 rounded-full mix-blend-screen filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
 
     <div class="relative z-10">
-        <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-6 tracking-tight drop-shadow-md">
+        <h1 class="text-2xl sm:text-4xl md:text-6xl font-extrabold text-white mb-4 md:mb-6 tracking-tight drop-shadow-md">
             Türkiye'nin Kapsamlı <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Otomobil Rehberi</span>
         </h1>
-        <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto font-light">
+        <p class="text-sm sm:text-lg md:text-xl text-gray-300 mb-6 md:mb-10 max-w-2xl mx-auto font-light">
             Kronik sorunları, gerçek sanayi maliyetlerini ve dürüst piyasa analizlerini yapay zeka gücüyle keşfedin.
         </p>
         
         <!-- Search & Filter Form -->
-        <form method="get" asp-action="Index" class="max-w-4xl mx-auto bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 shadow-xl flex flex-col md:flex-row gap-3">
+        <form method="get" asp-action="Index" class="max-w-4xl mx-auto bg-white/10 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-white/20 shadow-xl flex flex-col lg:flex-row gap-2.5 sm:gap-3">
             <div class="relative flex-grow">
                 <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
                     <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
@@ -26,7 +26,7 @@
                 <input type="text" name="searchQuery" class="bg-white/90 border-0 text-gray-900 text-sm rounded-xl focus:ring-2 focus:ring-primary block w-full pl-11 p-3.5 placeholder-gray-500 font-medium" placeholder="Marka veya model (Örn: Golf, Egea)" value="@ViewData["CurrentSearch"]">
             </div>
             
-            <div class="relative min-w-[150px]">
+            <div class="relative lg:min-w-[140px]">
                 <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                     <i class="fa-solid fa-car text-gray-400"></i>
                 </div>
@@ -42,7 +42,7 @@
                 </select>
             </div>
 
-            <div class="relative min-w-[150px]">
+            <div class="relative lg:min-w-[140px]">
                 <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                     <i class="fa-solid fa-layer-group text-gray-400"></i>
                 </div>
@@ -60,7 +60,7 @@
                 </select>
             </div>
 
-            <div class="relative min-w-[170px]">
+            <div class="relative lg:min-w-[160px]">
                 <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                     <i class="fa-solid fa-arrow-down-a-z text-gray-400"></i>
                 </div>
@@ -84,7 +84,7 @@
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
     
     <!-- En Çok Yorum Alan -->
-    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden" data-aos="fade-right">
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden" data-aos="fade-up">
         <div class="bg-gradient-to-r from-orange-500 to-red-500 p-4">
             <h2 class="text-xl font-bold text-white flex items-center gap-2">
                 <i class="fa-solid fa-fire"></i> En Çok Yorum Alan 10 Araç
@@ -121,7 +121,7 @@
     </div>
 
     <!-- En Yüksek Puanlılar -->
-    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden" data-aos="fade-left">
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden" data-aos="fade-up">
         <div class="bg-gradient-to-r from-indigo-500 to-blue-600 p-4">
             <h2 class="text-xl font-bold text-white flex items-center gap-2">
                 <i class="fa-solid fa-trophy"></i> En Güvenilir 10 Araç
