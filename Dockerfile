@@ -20,13 +20,13 @@ WORKDIR /app
 # Root olmayan kullanıcı
 RUN adduser --disabled-password --gecos "" appuser
 COPY --from=build /app ./
-RUN mkdir -p /data/keys && chown -R appuser /app /data
+RUN chown -R appuser /app
 USER appuser
 
+# DataProtection anahtarları PostgreSQL'de saklanır (volume gerektirmez).
 ENV ASPNETCORE_URLS=http://+:8080 \
     ASPNETCORE_ENVIRONMENT=Production \
-    Database__Provider=Postgres \
-    DataProtection__KeyPath=/data/keys
+    Database__Provider=Postgres
 EXPOSE 8080
 
 # Sağlık kontrolü: platformun (Railway/Render) healthcheck yolu "/health" olarak ayarlanmalı.

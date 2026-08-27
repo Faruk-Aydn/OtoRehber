@@ -283,7 +283,10 @@ Development: `dotnet user-secrets`. Production: environment variable.
 | 2026-08-27 | 1.2, 1.3 | PostgreSQL desteği + gizli anahtar sertleştirme | e1fde7f |
 | 2026-08-27 | 1.5–1.8 | CSRF, e-posta doğrulama, şifre sıfırlama, pipeline sertleştirme | aeba250 |
 | 2026-08-27 | 1.9, 1.10 | KVKK/hukuki sayfalar + çerez banner + Docker/CI + README | 12cc109 |
-| 2026-08-27 | 1.3, 1.10 | Railway `DATABASE_URL` ayrıştırma + Docker healthcheck düzeltme + deploy rehberi | (bu commit) |
+| 2026-08-27 | 1.3, 1.10 | Railway `DATABASE_URL` ayrıştırma + Docker healthcheck düzeltme + deploy rehberi | 93c5dbb |
+| 2026-08-27 | deploy | Postgres bağlantı çözümü + `railway.json` | 1e7fb51 |
+| 2026-08-27 | deploy | `PORT` env dinleme + healthcheck timeout | 1c974f8 |
+| 2026-08-27 | deploy | DataProtection anahtarları PostgreSQL'de (`DataProtectionKeys`); volume kaldırıldı; `.env` deseni | (bu commit) |
 
 **Faz 1 tamamlandı.** Kalan küçük işler: hukuki sayfalardaki `[...]` işletme
 bilgileri, prod `AllowedHosts`, gerçek Resend/Gemini/AdminSeed env değerleri.
@@ -321,13 +324,12 @@ Sadece 2 dosyada var:
 ASPNETCORE_ENVIRONMENT=Production
 Database__Provider=Postgres
 DATABASE_URL=${{Postgres.DATABASE_URL}}
-DataProtection__KeyPath=/data/keys
 AdminSeed__Email=<kendi e-postan>
 AdminSeed__Password=<güçlü şifre, min 8, büyük/küçük harf + rakam>
 GeminiApiKey=<AIza... — aistudio.google.com/apikey>
 Resend__ApiKey=<re_... — resend.com/api-keys ; boşsa e-posta gitmez, link log'a yazılır>
 Resend__FromEmail=OtoRehber <onboarding@resend.dev>
-AllowedHosts=<railway domain'in, örn otorehber-production.up.railway.app>
+AllowedHosts=*
 ```
 - `__` = appsettings'teki `:`.
 - `DATABASE_URL` = `${{Postgres.DATABASE_URL}}` — Railway değişken referansı.
@@ -336,6 +338,12 @@ AllowedHosts=<railway domain'in, örn otorehber-production.up.railway.app>
 - Kod `postgresql://user:pass@host/db` biçimini Npgsql biçimine çevirir
   (`Program.cs`). `DATABASE_URL` ve `ConnectionStrings__DefaultConnection`
   ikisi de kabul edilir; `DATABASE_URL` önceliklidir.
+- **`AllowedHosts=*` bırak.** Domain'e sabitlersen Railway'in healthcheck
+  isteği (farklı Host header) reddedilir → deploy fail. Railway proxy zaten
+  routing izolasyonu sağlıyor.
+- **Volume/kalıcı disk EKLEME.** DataProtection anahtarları PostgreSQL'de
+  (`DataProtectionKeys` tablosu) saklanır. Railway volume'u root sahipliğinde
+  mount ettiği için root-olmayan uygulama yazamaz → çöker.
 - `healthcheckPath=/health` ve restart politikası `railway.json` ile otomatik.
 
 ### D) Google Gemini key
@@ -355,12 +363,14 @@ aistudio.google.com/apikey → "Create API key" → `AIza...` kopyala.
 2. railway.com → New Project → Deploy from GitHub repo → `Faruk-Aydn/OtoRehber`.
 3. Railway kök `Dockerfile`'ı otomatik bulur.
 4. **+ New → Database → Add PostgreSQL**.
-5. Uygulama servisi → **Variables** → Raw Editor → yukarıdaki C bloğu.
-6. Uygulama servisi → **Settings → Volumes → Add Volume**, mount path `/data`.
-7. Uygulama servisi → **Settings → Networking → Generate Domain** → domain'i
-   `AllowedHosts`'a yaz.
-8. **Settings → Healthcheck** → Path `/health`.
-9. Deployments → View Logs: "Application started" görünmeli.
+5. Uygulama servisi → **Variables** → Raw Editor → yukarıdaki C bloğu
+   (+ Add Reference ile `DATABASE_URL`).
+6. Volume EKLEME (yukarıdaki nota bak).
+7. Deploy yeşil olunca → **Settings → Networking → Generate Domain**.
+   `AllowedHosts=*` kalsın.
+8. Healthcheck `railway.json` ile otomatik (`/health`).
+9. Deployments → View Logs: `Applying migration ..._AddDataProtectionKeys`,
+   `Now listening on: http://+:8080`, `Application started`.
 10. `https://<domain>/health` → `Healthy`.
 
 ### G) Deploy sonrası kontrol

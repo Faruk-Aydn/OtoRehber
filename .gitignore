@@ -40,6 +40,10 @@ appsettings.Development.json
 appsettings.Local.json
 appsettings.Production.json
 appsettings.*.local.json
+.env
+.env.local
+.env.*.local
+!.env.example
 
 # Staj / kişisel dosyalar
 _staj1.pdf

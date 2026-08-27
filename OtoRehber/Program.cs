@@ -1,5 +1,6 @@
 using System.Threading.RateLimiting;
 using Microsoft.AspNetCore.DataProtection;
+using Microsoft.AspNetCore.DataProtection.EntityFrameworkCore;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -186,15 +187,12 @@ builder.Services.Configure<ForwardedHeadersOptions>(options =>
     options.KnownProxies.Clear();
 });
 
-// DataProtection anahtarlarını kalıcı dizinde sakla (yeniden başlatmada oturum/antiforgery korunur).
-var keysPath = builder.Configuration["DataProtection:KeyPath"];
-if (!string.IsNullOrWhiteSpace(keysPath))
-{
-    System.IO.Directory.CreateDirectory(keysPath);
-    builder.Services.AddDataProtection()
-        .PersistKeysToFileSystem(new System.IO.DirectoryInfo(keysPath))
-        .SetApplicationName("OtoRehber");
-}
+// DataProtection anahtarları (oturum/antiforgery şifreleme).
+// Production: PostgreSQL'de sakla (kalıcı disk/volume gerektirmez).
+// Yerel Sqlite geliştirmede: varsayılan (geçici) — sorun değil.
+var dp = builder.Services.AddDataProtection().SetApplicationName("OtoRehber");
+if (isPostgres)
+    dp.PersistKeysToDbContext<OtoRehberDbContext>();
 
 // HSTS (production)
 builder.Services.AddHsts(options =>

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.DataProtection.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -5,7 +6,7 @@ using OtoRehber.Domain.Entities;
 
 namespace OtoRehber.Infrastructure.Data
 {
-    public class OtoRehberDbContext : IdentityDbContext<AppUser>
+    public class OtoRehberDbContext : IdentityDbContext<AppUser>, IDataProtectionKeyContext
     {
         public OtoRehberDbContext(DbContextOptions<OtoRehberDbContext> options) : base(options)
         {
@@ -16,6 +17,9 @@ namespace OtoRehber.Infrastructure.Data
         public DbSet<MileageMilestone> MileageMilestones { get; set; }
         public DbSet<CarReview> CarReviews { get; set; }
         public DbSet<UserGarage> UserGarages { get; set; }
+
+        // DataProtection anahtarları (oturum/antiforgery şifreleme) burada saklanır.
+        public DbSet<DataProtectionKey> DataProtectionKeys { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

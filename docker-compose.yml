@@ -1,5 +1,7 @@
 # Yerel/production benzeri çalıştırma: uygulama + PostgreSQL.
-# Kullanım:  docker compose up --build
+# Gizli değerler bu dosyaya YAZILMAZ; kök dizindeki .env dosyasından okunur
+# (.env git'e gönderilmez). Örnek için .env.example'a bakın.
+# Kullanım:  cp .env.example .env  → .env'i doldur  → docker compose up --build
 services:
   db:
     image: postgres:16-alpine
@@ -27,18 +29,15 @@ services:
       ASPNETCORE_ENVIRONMENT: Production
       Database__Provider: Postgres
       ConnectionStrings__DefaultConnection: "Host=db;Port=5432;Database=otorehber;Username=otorehber;Password=otorehber"
-      DataProtection__KeyPath: /data/keys
-      # Yayına almadan önce gerçek değerlerle doldurun:
-      AdminSeed__Email: "admin@otorehber.com"
-      AdminSeed__Password: ""
-      GeminiApiKey: ""
-      Resend__ApiKey: ""
-      # AllowedHosts: "otorehber.com"
+      AllowedHosts: "*"
+      # Gizli değerler .env dosyasından gelir (git'e gönderilmez):
+      AdminSeed__Email: "${ADMIN_EMAIL:-admin@otorehber.com}"
+      AdminSeed__Password: "${ADMIN_PASSWORD:-}"
+      GeminiApiKey: "${GEMINI_API_KEY:-}"
+      Resend__ApiKey: "${RESEND_API_KEY:-}"
+      Resend__FromEmail: "${RESEND_FROM_EMAIL:-OtoRehber <onboarding@resend.dev>}"
     ports:
       - "8080:8080"
-    volumes:
-      - dpkeys:/data/keys
 
 volumes:
   pgdata:
-  dpkeys:
