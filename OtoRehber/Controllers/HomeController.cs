@@ -1,5 +1,4 @@
 using System.Diagnostics;
-using Microsoft.AspNetCore.Antiforgery;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
@@ -117,45 +116,45 @@ namespace OtoRehber.Controllers
         [AllowAnonymous]
         [IgnoreAntiforgeryToken]
         [HttpGet("/__diag")]
-        public async Task<IActionResult> Diag(
+        public IActionResult Diag(
             [FromServices] IDataProtectionProvider dpProvider,
-            [FromServices] IAntiforgery antiforgery,
-            string? enc)
+            [FromServices] Microsoft.AspNetCore.DataProtection.KeyManagement.IKeyManager keyManager)
         {
             var sb = new System.Text.StringBuilder();
-            sb.AppendLine("diag v6");
-            sb.AppendLine($"scheme={Request.Scheme} isHttps={Request.IsHttps}");
-            sb.AppendLine($"xfproto=[{Request.Headers["X-Forwarded-Proto"]}] xff=[{Request.Headers["X-Forwarded-For"]}]");
-            sb.AppendLine($"incoming cookies: {string.Join(",", Request.Cookies.Keys)}");
+            sb.AppendLine("diag v7");
+            sb.AppendLine($"now(utc)={DateTime.UtcNow:o}");
 
-            var prot = dpProvider.CreateProtector("__diag");
-
-            if (!string.IsNullOrEmpty(enc))
+            // Key ring durumu
+            try
             {
-                // 2. istek: önceki protect'i çöz
-                try { sb.AppendLine($"UNPROTECT (onceki istekten): OK -> {prot.Unprotect(enc)}"); }
-                catch (Exception ex) { sb.AppendLine($"UNPROTECT HATA: {ex.GetType().Name}: {ex.Message}"); }
+                var keys = keyManager.GetAllKeys();
+                sb.AppendLine($"key sayisi: {keys.Count}");
+                foreach (var k in keys)
+                {
+                    sb.AppendLine($"  {k.KeyId} create={k.CreationDate:o} activate={k.ActivationDate:o} expire={k.ExpirationDate:o} revoked={k.IsRevoked}");
+                }
+            }
+            catch (Exception ex) { sb.AppendLine($"GetAllKeys HATA: {ex}"); }
 
-                // AF doğrulama
+            // Protect -> Unprotect (ayni istek, ayni protector)
+            var prot = dpProvider.CreateProtector("__diag");
+            try
+            {
+                var e = prot.Protect("payload-123");
+                sb.AppendLine($"PROTECT ok (len {e.Length})");
                 try
                 {
-                    var valid = await antiforgery.IsRequestValidAsync(HttpContext);
-                    sb.AppendLine($"AF IsRequestValidAsync: {valid}");
+                    var d = prot.Unprotect(e);
+                    sb.AppendLine($"UNPROTECT ok -> {d}");
                 }
-                catch (Exception ex) { sb.AppendLine($"AF validate HATA: {ex.GetType().Name}: {ex.Message}"); }
+                catch (Exception ex)
+                {
+                    sb.AppendLine($"UNPROTECT HATA: {ex.GetType().Name}: {ex.Message}");
+                    for (var ie = ex.InnerException; ie != null; ie = ie.InnerException)
+                        sb.AppendLine($"   inner: {ie.GetType().Name}: {ie.Message}");
+                }
             }
-            else
-            {
-                // 1. istek: yeni protect + AF token üret
-                var e = prot.Protect("diag-payload-123");
-                sb.AppendLine($"PROTECT: {e}");
-                // ayni istekte unprotect (ring stabil mi?)
-                try { sb.AppendLine($"  ayni istekte unprotect: {prot.Unprotect(e)}"); }
-                catch (Exception ex) { sb.AppendLine($"  ayni istekte unprotect HATA: {ex.Message}"); }
-
-                var tokens = antiforgery.GetAndStoreTokens(HttpContext);
-                sb.AppendLine($"AF requestToken: {tokens.RequestToken}");
-            }
+            catch (Exception ex) { sb.AppendLine($"PROTECT HATA: {ex}"); }
 
             return Content(sb.ToString(), "text/plain; charset=utf-8");
         }
