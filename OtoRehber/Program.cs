@@ -13,6 +13,11 @@ using OtoRehber.Domain.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Hosting platformu (Railway/Render vb.) PORT ortam değişkeni atar; ona bağlan.
+var port = Environment.GetEnvironmentVariable("PORT");
+if (!string.IsNullOrWhiteSpace(port))
+    builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
+
 // Veritabanı Bağlantısı
 // Sağlayıcı seçimi: Database:Provider = "Sqlite" (yerel geliştirme, varsayılan) | "Postgres" (production).
 // Yerelde Sqlite şeması EnsureCreated ile, Postgres şeması Migration'lar ile oluşturulur.
