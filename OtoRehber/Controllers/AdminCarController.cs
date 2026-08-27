@@ -46,6 +46,21 @@ namespace OtoRehber.Controllers
             _cache.Remove(HomeController.CacheKeyLeaderboard);
         }
 
+        private async Task AuditAsync(string action, string entity, string? entityId, string? detail)
+        {
+            _context.AuditLogs.Add(new AuditLog
+            {
+                UserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value,
+                UserName = User.Identity?.Name,
+                Action = action,
+                Entity = entity,
+                EntityId = entityId,
+                Detail = detail?.Length > 1000 ? detail[..1000] : detail,
+                IpAddress = HttpContext.Connection.RemoteIpAddress?.ToString()
+            });
+            await _context.SaveChangesAsync();
+        }
+
         // GET: /AdminCar/ImportFromYoutube
         public IActionResult ImportFromYoutube()
         {
@@ -70,6 +85,7 @@ namespace OtoRehber.Controllers
                 if (cars != null && cars.Any())
                 {
                     InvalidateHomeCache();
+                    await AuditAsync("Import", "Car", null, $"YouTube AI import: {cars.Count} araç ({youtubeUrl})");
                     TempData["SuccessMessage"] = $"{cars.Count} adet araç yapay zeka ile başarıyla eklendi!";
                     return RedirectToAction(nameof(Index));
                 }
@@ -176,6 +192,7 @@ namespace OtoRehber.Controllers
                 _context.Add(car);
                 await _context.SaveChangesAsync();
                 InvalidateHomeCache();
+                await AuditAsync("Create", "Car", car.Id.ToString(), $"{car.Brand} {car.ModelName}");
                 TempData["SuccessMessage"] = $"{car.Brand} {car.ModelName} başarıyla eklendi.";
                 return RedirectToAction(nameof(Index));
             }
@@ -266,6 +283,7 @@ namespace OtoRehber.Controllers
                     }
                 }
                 InvalidateHomeCache();
+                await AuditAsync("Update", "Car", carDto.Id.ToString(), $"{carDto.Brand} {carDto.ModelName}");
                 TempData["SuccessMessage"] = $"{carDto.Brand} {carDto.ModelName} başarıyla güncellendi.";
                 return RedirectToAction(nameof(Index));
             }
@@ -302,6 +320,7 @@ namespace OtoRehber.Controllers
                 _context.Cars.Remove(car);
                 await _context.SaveChangesAsync();
                 InvalidateHomeCache();
+                await AuditAsync("Delete", "Car", id.ToString(), name);
                 TempData["SuccessMessage"] = $"{name} başarıyla silindi.";
             }
 

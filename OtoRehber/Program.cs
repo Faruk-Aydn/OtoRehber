@@ -10,8 +10,19 @@ using OtoRehber.Infrastructure.Data;
 using OtoRehber.Infrastructure.Services;
 using OtoRehber.Domain.Entities;
 using OtoRehber.Domain.Interfaces;
+using Serilog;
+using Serilog.Events;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Serilog — yapılandırılmış console log (Railway/Render yakalar).
+builder.Host.UseSerilog((ctx, cfg) => cfg
+    .ReadFrom.Configuration(ctx.Configuration)
+    .Enrich.FromLogContext()
+    .MinimumLevel.Information()
+    .MinimumLevel.Override("Microsoft.AspNetCore", LogEventLevel.Warning)
+    .MinimumLevel.Override("Microsoft.EntityFrameworkCore.Database.Command", LogEventLevel.Warning)
+    .WriteTo.Console());
 
 // Hosting platformu (Railway/Render vb.) PORT ortam değişkeni atar; ona bağlan.
 var port = Environment.GetEnvironmentVariable("PORT");
@@ -269,6 +280,9 @@ using (var scope = app.Services.CreateScope())
 
 // Reverse proxy header'ları — pipeline'ın en başında.
 app.UseForwardedHeaders();
+
+// İstek başına tek satır özet log (yol, durum, süre).
+app.UseSerilogRequestLogging();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

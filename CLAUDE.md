@@ -191,12 +191,12 @@ Development: `dotnet user-secrets`. Production: environment variable.
 
 ## FAZ 2 — Kalite, performans, güvenilirlik (çıkıştan hemen sonra)
 
-### 2.1 Async & sorgu optimizasyonu
-- [ ] `HomeController.Index`, `CarController.Details`, `CarController.Compare`, `StatsController.Index` → async
-- [ ] `HomeController.Index` pagination sınır kontrolü (`page >= 1`, üst sınır)
-- [ ] Leaderboard / marka listesi → `IMemoryCache` (5-10 dk)
-- [ ] AI context sorgularında `Select` ile kolon daraltma
-- [ ] `Car.Brand`, `Car.Segment`, `Car.ReliabilityScore` index
+### 2.1 Async & sorgu optimizasyonu ✅
+- [x] `HomeController.Index`, `CarController.Details`, `CarController.Compare`, `StatsController.Index` → async (+ `AsNoTracking`, `AsSplitQuery`)
+- [x] `HomeController.Index` pagination sınır kontrolü (`Math.Clamp`)
+- [x] Leaderboard / marka listesi → `IMemoryCache` (5 dk); admin CRUD + yorumda invalidate
+- [x] AI context sorgularında `Select` ile kolon daraltma (6 kolon)
+- [x] `Car.Brand`, `Car.Segment`, `Car.ReliabilityScore` index
 
 ### 2.2 Frontend / asset
 - [ ] Tailwind'i build-time derle (CLI veya `Microsoft.AspNetCore.SpaProxy` yerine basit npm script), tek minified CSS
@@ -218,20 +218,20 @@ Development: `dotnet user-secrets`. Production: environment variable.
 - [ ] Admin işlemleri için audit log tablosu
 - [ ] Uptime monitor (harici)
 
-### 2.5 Veri bütünlüğü
-- [ ] `UserGarage (UserId, CarId)` unique index
-- [ ] Entity string alanlarına `[MaxLength]` + migration
-- [ ] `MinPrice`/`MaxPrice` → `long`
-- [ ] Tüm `DateTime.Now` → `DateTime.UtcNow`
-- [ ] `ToLower()` → `ToLowerInvariant()` / `EF.Functions.Like`
-- [ ] AI karşılaştırma sonuçlarını DB'de cache'le (`car1Id,car2Id` anahtarı)
-- [ ] `DbSet<CarPriceHistory>` / `DbSet<ReviewLike>` netleştir, tablo adları tutarlı
-- [ ] Migration geçmişini doğrula (`dotnet ef migrations list` + temiz DB'de `database update`)
-- [ ] Görsel yüklemede magic-byte kontrolü + EXIF temizleme (re-encode)
+### 2.5 Veri bütünlüğü ✅ (kısmen)
+- [x] `UserGarage (UserId, CarId)` unique index (Faz 1.6)
+- [x] Entity kısa string alanlarına `[MaxLength]` + migration (`Faz2DataIntegrity`); uzun prose alanları `text`
+- [x] `MinPrice`/`MaxPrice` → `long` (entity + DTO'lar)
+- [x] Tüm `DateTime.Now` → `DateTime.UtcNow` (Faz 1'de temizlendi)
+- [x] `ToLower()` → `ToLowerInvariant()` (Home/Search/Admin)
+- [ ] AI karşılaştırma sonuçlarını DB'de cache'le (`car1Id,car2Id`) → Batch B/C
+- [ ] `DbSet<CarPriceHistory>` / `DbSet<ReviewLike>` netleştir → Faz 3 (özellik gelince)
+- [x] Görsel yüklemede magic-byte kontrolü (EXIF re-encode → Faz 3, ImageSharp)
 
-### 2.8 AI güvenliği
-- [ ] Prompt injection: kullanıcı mesajı / transkript prompt'a girmeden önce sınırla + sistem talimatını ayır
-- [ ] AI çıktısı kullanıcıya gösterilmeden önce daima `DOMPurify` (mevcut, kontrol et)
+### 2.8 AI güvenliği ✅
+- [x] Prompt injection: kullanıcı girdisi 2000/200 kr sınır + sistem talimatı ayrımı + "talimat gaspını yok say" kuralı
+- [x] AI çıktısı: Compare/AiWizard Result'ta `DOMPurify.sanitize(marked.parse())`; _Layout chat escape-first
+- [x] Bonus: `gemini-3.5-flash` (geçersiz) → `GeminiModel` config, varsayılan `gemini-2.0-flash`
 
 ### 2.6 Test
 - [ ] `OtoRehber.Tests` projesi (`WebApplicationFactory`)
@@ -283,6 +283,9 @@ Development: `dotnet user-secrets`. Production: environment variable.
 | 2026-08-27 | 1.2, 1.3 | PostgreSQL desteği + gizli anahtar sertleştirme | e1fde7f |
 | 2026-08-27 | 1.5–1.8 | CSRF, e-posta doğrulama, şifre sıfırlama, pipeline sertleştirme | aeba250 |
 | 2026-08-27 | 1.9, 1.10 | KVKK/hukuki sayfalar + çerez banner + Docker/CI + README | 12cc109 |
+| 2026-08-27 | 2.1 | Controller'lar async + pagination sınır + IMemoryCache + AI context daraltma | b30b262, a897658 |
+| 2026-08-27 | 2.5 | Entity `[MaxLength]` + Car index'leri + MinPrice/MaxPrice `long` + görsel magic-byte | a897658 |
+| 2026-08-27 | 2.8 | AI prompt injection çerçevesi + `GeminiModel` config (model adı düzeltme) | a897658 |
 | 2026-08-27 | 1.3, 1.10 | Railway `DATABASE_URL` ayrıştırma + Docker healthcheck düzeltme + deploy rehberi | 93c5dbb |
 | 2026-08-27 | deploy | Postgres bağlantı çözümü + `railway.json` | 1e7fb51 |
 | 2026-08-27 | deploy | `PORT` env dinleme + healthcheck timeout | 1c974f8 |
