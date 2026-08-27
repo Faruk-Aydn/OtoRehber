@@ -1,6 +1,4 @@
 using System.Diagnostics;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
 using OtoRehber.Domain.Entities;
 using OtoRehber.Infrastructure.Data;
@@ -108,56 +106,6 @@ namespace OtoRehber.Controllers
         public IActionResult Hakkimizda() => View();
 
         public IActionResult Iletisim() => View();
-
-        // GEÇİCİ TEŞHİS — antiforgery/DataProtection sorununu çözünce kaldırılacak.
-        // 1. çağrı: GET /__diag            -> protect edilmiş string + AF token döner, cookie set eder
-        // 2. çağrı: GET /__diag?enc=...     (aynı cookie ile) -> önceki isteğin protect'ini unprotect dener
-        //           + header RequestVerificationToken: <rt>   -> AF doğrulamayı dener
-        [AllowAnonymous]
-        [IgnoreAntiforgeryToken]
-        [HttpGet("/__diag")]
-        public IActionResult Diag(
-            [FromServices] IDataProtectionProvider dpProvider,
-            [FromServices] Microsoft.AspNetCore.DataProtection.KeyManagement.IKeyManager keyManager)
-        {
-            var sb = new System.Text.StringBuilder();
-            sb.AppendLine("diag v7");
-            sb.AppendLine($"now(utc)={DateTime.UtcNow:o}");
-
-            // Key ring durumu
-            try
-            {
-                var keys = keyManager.GetAllKeys();
-                sb.AppendLine($"key sayisi: {keys.Count}");
-                foreach (var k in keys)
-                {
-                    sb.AppendLine($"  {k.KeyId} create={k.CreationDate:o} activate={k.ActivationDate:o} expire={k.ExpirationDate:o} revoked={k.IsRevoked}");
-                }
-            }
-            catch (Exception ex) { sb.AppendLine($"GetAllKeys HATA: {ex}"); }
-
-            // Protect -> Unprotect (ayni istek, ayni protector)
-            var prot = dpProvider.CreateProtector("__diag");
-            try
-            {
-                var e = prot.Protect("payload-123");
-                sb.AppendLine($"PROTECT ok (len {e.Length})");
-                try
-                {
-                    var d = prot.Unprotect(e);
-                    sb.AppendLine($"UNPROTECT ok -> {d}");
-                }
-                catch (Exception ex)
-                {
-                    sb.AppendLine($"UNPROTECT HATA: {ex.GetType().Name}: {ex.Message}");
-                    for (var ie = ex.InnerException; ie != null; ie = ie.InnerException)
-                        sb.AppendLine($"   inner: {ie.GetType().Name}: {ie.Message}");
-                }
-            }
-            catch (Exception ex) { sb.AppendLine($"PROTECT HATA: {ex}"); }
-
-            return Content(sb.ToString(), "text/plain; charset=utf-8");
-        }
 
         [IgnoreAntiforgeryToken]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
