@@ -202,9 +202,10 @@ builder.Services.AddHsts(options =>
     options.Preload = true;
 });
 
-// Health check
+// Health check — sadece "süreç ayakta mı" (liveness). DB kontrolü deploy'u
+// gereksiz yere düşürmesin diye ayrı: /health/ready.
 builder.Services.AddHealthChecks()
-    .AddDbContextCheck<OtoRehberDbContext>();
+    .AddDbContextCheck<OtoRehberDbContext>(name: "db", tags: new[] { "ready" });
 
 var app = builder.Build();
 
@@ -316,7 +317,13 @@ app.UseRateLimiter();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapHealthChecks("/health");
+// Liveness: süreç ayakta mı (hiç kontrol çalıştırmaz, hep 200).
+app.MapHealthChecks("/health", new Microsoft.AspNetCore.Diagnostics.HealthChecks.HealthCheckOptions
+{
+    Predicate = _ => false
+});
+// Readiness: DB dahil tüm kontroller.
+app.MapHealthChecks("/health/ready");
 
 app.MapControllerRoute(
     name: "default",
