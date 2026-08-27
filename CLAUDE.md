@@ -286,11 +286,29 @@ Development: `dotnet user-secrets`. Production: environment variable.
 | 2026-08-27 | 1.3, 1.10 | Railway `DATABASE_URL` ayrıştırma + Docker healthcheck düzeltme + deploy rehberi | 93c5dbb |
 | 2026-08-27 | deploy | Postgres bağlantı çözümü + `railway.json` | 1e7fb51 |
 | 2026-08-27 | deploy | `PORT` env dinleme + healthcheck timeout | 1c974f8 |
-| 2026-08-27 | deploy | DataProtection anahtarları PostgreSQL'de (`DataProtectionKeys`); volume kaldırıldı; `.env` deseni | (bu commit) |
+| 2026-08-27 | deploy | DataProtection anahtarları PostgreSQL'de, `.env` deseni (sonradan geri alındı) | 11fef36 |
+| 2026-08-27 | deploy | `/health` saf liveness, `/health/ready` DB kontrolü | 306fadc |
+| 2026-08-27 | **deploy — KÖK SORUN** | `.NET 10` paket sızması (`Microsoft.Extensions.Identity.Stores` 10.0.10) → DataProtection crypto uyumsuzluğu → tüm POST 400. `FrameworkReference` ile çözüldü | 9c6ea2b |
+| 2026-08-27 | deploy | Geçici teşhis kodu + debug logları temizlendi | a258301 |
 
-**Faz 1 tamamlandı.** Kalan küçük işler: hukuki sayfalardaki `[...]` işletme
-bilgileri, prod `AllowedHosts`, gerçek Resend/Gemini/AdminSeed env değerleri.
-Sıradaki: Faz 2.
+**Faz 1 tamamlandı ve CANLIDA:** https://otorehber-production.up.railway.app
+
+### Deploy sırasında öğrenilenler (Faz 2 / gelecek için)
+- **Sınıf kütüphaneleri** (`OtoRehber.Domain`, `.Infrastructure`) ASP.NET Core API'si
+  kullanıyorsa `<FrameworkReference Include="Microsoft.AspNetCore.App" />` şart —
+  `Microsoft.AspNetCore.*` paketlerini NuGet'ten sürüm belirterek çekme (runtime
+  ile uyumsuz kopya uygulamaya girer, DataProtection çöker).
+- Paket sürümleri **daima** `net8.0` ile aynı major (10.0.x paketi = felaket).
+- Railway: `PORT` env'e bağlan, `AllowedHosts=*`, volume kullanma (root-owned),
+  `DATABASE_URL` = `${{Postgres.DATABASE_URL}}`.
+- DataProtection anahtarları şu an konteyner-yerel (deploy'da oturumlar düşer).
+
+### Kalan küçük işler
+- Hukuki sayfalardaki `[Şirket Unvanı]`, `[adres]`, `[e-posta]` (`Kvkk.cshtml`, `Iletisim.cshtml`)
+- Railway `AllowedHosts` → gerçek domain'e sabitle (şu an `*`; healthcheck'i kırmadan)
+- Gerçek `GeminiApiKey` (`AIza...`), Resend domain doğrulaması
+- Prod Postgres'te orphan `DataProtectionKeys` tablosu (zararsız, DROP edilebilir)
+- **Sıradaki: Faz 2**
 
 ---
 
