@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using OtoRehber.Infrastructure.Data;
 
 namespace OtoRehber.Controllers
@@ -13,46 +14,49 @@ namespace OtoRehber.Controllers
         }
 
         [ResponseCache(Duration = 120, Location = ResponseCacheLocation.Any)]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            ViewBag.TotalCars    = _context.Cars.Count();
-            ViewBag.TotalReviews = _context.CarReviews.Count();
-            ViewBag.TotalGarage  = _context.UserGarages.Count();
-            ViewBag.AvgScore     = _context.Cars.Any()
-                                    ? Math.Round(_context.Cars.Average(c => c.ReliabilityScore), 2)
-                                    : 0;
+            // Araçları belleğe al; gruplama/yuvarlama SQL'e çevrilmeye çalışılmasın
+            // (Postgres'te ROUND(double precision, int) yok → 500).
+            var cars = await _context.Cars.AsNoTracking().ToListAsync();
 
-            var segmentData = _context.Cars
-                .GroupBy(c => c.Segment)
+            ViewBag.TotalCars = cars.Count;
+            ViewBag.TotalReviews = await _context.CarReviews.CountAsync();
+            ViewBag.TotalGarage = await _context.UserGarages.CountAsync();
+            ViewBag.AvgScore = cars.Count > 0 ? Math.Round(cars.Average(c => c.ReliabilityScore), 2) : 0;
+
+            var segmentData = cars
+                .GroupBy(c => string.IsNullOrWhiteSpace(c.Segment) ? "Belirsiz" : c.Segment)
                 .Select(g => new { Segment = g.Key, Count = g.Count() })
                 .OrderByDescending(x => x.Count)
                 .ToList();
             ViewBag.SegmentLabels = segmentData.Select(s => s.Segment).ToList();
             ViewBag.SegmentCounts = segmentData.Select(s => s.Count).ToList();
 
-            var brandScores = _context.Cars
-                .GroupBy(c => c.Brand)
-                .Select(g => new {
-                    Brand    = g.Key,
+            var brandScores = cars
+                .GroupBy(c => string.IsNullOrWhiteSpace(c.Brand) ? "Belirsiz" : c.Brand)
+                .Select(g => new
+                {
+                    Brand = g.Key,
                     AvgScore = Math.Round(g.Average(c => c.ReliabilityScore), 1),
                     CarCount = g.Count(),
-                    AvgCost  = g.Average(c => c.EstimatedMaintenanceCostEUR)
+                    AvgCost = g.Average(c => c.EstimatedMaintenanceCostEUR)
                 })
                 .OrderByDescending(x => x.AvgScore)
                 .Take(15)
                 .ToList();
-            ViewBag.BrandLabels    = brandScores.Select(b => b.Brand).ToList();
+            ViewBag.BrandLabels = brandScores.Select(b => b.Brand).ToList();
             ViewBag.BrandAvgScores = brandScores.Select(b => b.AvgScore).ToList();
             ViewBag.BrandCarCounts = brandScores.Select(b => b.CarCount).ToList();
-            ViewBag.BrandAvgCosts  = brandScores.Select(b => (int)b.AvgCost).ToList();
+            ViewBag.BrandAvgCosts = brandScores.Select(b => (int)b.AvgCost).ToList();
 
-            ViewBag.Top5Cars = _context.Cars
+            ViewBag.Top5Cars = cars
                 .OrderByDescending(c => c.ReliabilityScore)
                 .Take(5)
                 .Select(c => new { Name = c.Brand + " " + c.ModelName, Score = c.ReliabilityScore, Segment = c.Segment })
                 .ToList<dynamic>();
 
-            ViewBag.HighCostCars = _context.Cars
+            ViewBag.HighCostCars = cars
                 .OrderByDescending(c => c.EstimatedMaintenanceCostEUR)
                 .Take(5)
                 .Select(c => new { Name = c.Brand + " " + c.ModelName, Cost = c.EstimatedMaintenanceCostEUR, Segment = c.Segment })
