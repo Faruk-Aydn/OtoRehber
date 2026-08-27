@@ -15,20 +15,6 @@
         <a asp-action="ImportFromYoutube" class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg shadow transition flex items-center">
             <i class="fa-brands fa-youtube mr-2"></i> YouTube'dan AI İle Ekle
         </a>
-        <!-- AI Araçları Sil (ID > 6) -->
-        <form asp-action="DeleteAiCars" method="post" onsubmit="return confirm('AI ile eklenen araçları silmek istediğinizden emin misiniz? Seed data araçları (ilk 6) korunacak.');">
-            @Html.AntiForgeryToken()
-            <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-4 rounded-lg shadow transition flex items-center">
-                <i class="fa-solid fa-robot mr-2"></i> AI Araçları Sil
-            </button>
-        </form>
-        <!-- Tüm Araçları Sil -->
-        <form asp-action="DeleteAllCars" method="post" onsubmit="return confirm('UYARI: Tüm araçlar, yorumlar ve garaj verileri silinecek! Bu işlem geri alınamaz. Devam etmek istiyor musunuz?');">
-            @Html.AntiForgeryToken()
-            <button type="submit" class="bg-red-800 hover:bg-red-900 text-white font-medium py-2 px-4 rounded-lg shadow transition flex items-center">
-                <i class="fa-solid fa-trash-can mr-2"></i> Tümünü Sil
-            </button>
-        </form>
     </div>
 </div>
 

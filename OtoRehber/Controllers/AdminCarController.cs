@@ -22,17 +22,19 @@ namespace OtoRehber.Controllers
         private readonly IAiCarDataService _aiService;
         private readonly IWebHostEnvironment _hostEnvironment;
         private readonly IMapper _mapper;
+        private readonly ILogger<AdminCarController> _logger;
 
         private static readonly string[] AllowedImageExtensions = { ".jpg", ".jpeg", ".png", ".webp", ".gif" };
         private static readonly string[] AllowedImageContentTypes = { "image/jpeg", "image/png", "image/webp", "image/gif" };
         private const long MaxImageSizeBytes = 5 * 1024 * 1024; // 5 MB
 
-        public AdminCarController(OtoRehberDbContext context, IAiCarDataService aiService, IWebHostEnvironment hostEnvironment, IMapper mapper)
+        public AdminCarController(OtoRehberDbContext context, IAiCarDataService aiService, IWebHostEnvironment hostEnvironment, IMapper mapper, ILogger<AdminCarController> logger)
         {
             _context = context;
             _aiService = aiService;
             _hostEnvironment = hostEnvironment;
             _mapper = mapper;
+            _logger = logger;
         }
 
         // GET: /AdminCar/ImportFromYoutube
@@ -52,16 +54,29 @@ namespace OtoRehber.Controllers
                 return View();
             }
 
-            var cars = await _aiService.AnalyzeAndSaveFromYoutubeAsync(youtubeUrl);
-            
-            if (cars != null && cars.Any())
+            try
             {
-                TempData["SuccessMessage"] = $"{cars.Count} adet araç yapay zeka ile başarıyla eklendi!";
-                return RedirectToAction(nameof(Index));
+                var cars = await _aiService.AnalyzeAndSaveFromYoutubeAsync(youtubeUrl);
+
+                if (cars != null && cars.Any())
+                {
+                    TempData["SuccessMessage"] = $"{cars.Count} adet araç yapay zeka ile başarıyla eklendi!";
+                    return RedirectToAction(nameof(Index));
+                }
+
+                ViewBag.Error = "Videodan işlenebilecek bir araç bilgisi çıkarılamadı.";
+                return View();
             }
-            else
+            catch (InvalidOperationException ex)
             {
-                ViewBag.Error = "Video analiz edilemedi veya yapay zeka işleminde bir sorun oluştu.";
+                // Transkript/altyazı bulunamadı gibi beklenen hatalar
+                ViewBag.Error = ex.Message;
+                return View();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "YouTube AI import başarısız: {Url}", youtubeUrl);
+                ViewBag.Error = "İşlem sırasında beklenmeyen bir hata oluştu. Lütfen tekrar deneyin.";
                 return View();
             }
         }
@@ -80,8 +95,29 @@ namespace OtoRehber.Controllers
             var topCar = cars.OrderByDescending(c => c.ReliabilityScore).FirstOrDefault();
             ViewBag.TopCarName = topCar != null ? $"{topCar.Brand} {topCar.ModelName}" : "-";
 
+            // Segmentleri basitleştirmek için yardımcı fonksiyon
+            Func<OtoRehber.Domain.Entities.Car, string> SimplifySegment = (c) => {
+                var eng = (c.Engine ?? "").ToLower();
+                if (eng.Contains("elektrik") || eng.Contains("ev") || eng == "elektrikli") return "Elektrikli";
+
+                var s = (c.Segment ?? "").ToLower();
+                if (string.IsNullOrEmpty(s)) return "Belirsiz";
+                
+                if (s.Contains("suv") || s.Contains("crossover")) return "SUV";
+                if (s.Contains("ticari") || s.Contains("minivan") || s.Contains("panelvan")) return "Ticari";
+                if (s.Contains("spor") || s.Contains("coupe") || s.Contains("cabrio")) return "Spor";
+                
+                if (s.Contains("a-") || s.StartsWith("a ")) return "A Segmenti";
+                if (s.Contains("b-") || s.StartsWith("b ")) return "B Segmenti";
+                if (s.StartsWith("c") && (s.Length == 1 || s[1] == '-' || s[1] == ' ')) return "C Segmenti";
+                if (s.StartsWith("d") && (s.Length == 1 || s[1] == '-' || s[1] == ' ')) return "D Segmenti";
+                if (s.StartsWith("e") && (s.Length == 1 || s[1] == '-' || s[1] == ' ')) return "E Segmenti";
+                
+                return "Diğer";
+            };
+
             // Grafik Verileri (Chart.js için)
-            var segmentData = cars.GroupBy(c => c.Segment ?? "Belirsiz")
+            var segmentData = cars.GroupBy(c => SimplifySegment(c))
                                   .Select(g => new { Label = g.Key, Count = g.Count() })
                                   .OrderByDescending(x => x.Count)
                                   .ToList();
@@ -101,46 +137,8 @@ namespace OtoRehber.Controllers
             return View(carDtos);
         }
 
-        // POST: AdminCar/DeleteAllCars — Tüm araçları sil (seed data dahil)
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteAllCars()
-        {
-            // İlişkili verileri önce sil (FK constraint)
-            _context.CarReviews.RemoveRange(_context.CarReviews);
-            _context.ChronicIssues.RemoveRange(_context.ChronicIssues);
-            _context.ProsCons.RemoveRange(_context.ProsCons);
-            _context.MileageMilestones.RemoveRange(_context.MileageMilestones);
-            _context.UserGarages.RemoveRange(_context.UserGarages);
-            _context.Cars.RemoveRange(_context.Cars);
-            await _context.SaveChangesAsync();
-
-            TempData["SuccessMessage"] = "Tüm araçlar ve ilişkili veriler silindi.";
-            return RedirectToAction(nameof(Index));
-        }
-
-        // POST: AdminCar/DeleteAiCars — Sadece ID > 6 olan (AI ile eklenen) araçları sil
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteAiCars()
-        {
-            var aiCars = await _context.Cars.Where(c => c.Id > 6).ToListAsync();
-            var aiCarIds = aiCars.Select(c => c.Id).ToList();
-
-            _context.CarReviews.RemoveRange(_context.CarReviews.Where(r => aiCarIds.Contains(r.CarId)));
-            _context.ChronicIssues.RemoveRange(_context.ChronicIssues.Where(x => aiCarIds.Contains(x.CarId)));
-            _context.ProsCons.RemoveRange(_context.ProsCons.Where(x => aiCarIds.Contains(x.CarId)));
-            _context.MileageMilestones.RemoveRange(_context.MileageMilestones.Where(x => aiCarIds.Contains(x.CarId)));
-            _context.UserGarages.RemoveRange(_context.UserGarages.Where(x => aiCarIds.Contains(x.CarId)));
-            _context.Cars.RemoveRange(aiCars);
-            await _context.SaveChangesAsync();
-
-            TempData["SuccessMessage"] = $"{aiCars.Count} adet AI ile eklenen araç silindi. Seed data araçları korundu.";
-            return RedirectToAction(nameof(Index));
-        }
-
-
         public IActionResult Create()
+
         {
             return View();
         }

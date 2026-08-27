@@ -5,6 +5,7 @@ using System;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using YoutubeExplode;
@@ -40,11 +41,13 @@ namespace OtoRehber.Infrastructure.Services
             
             var youtube = new YoutubeClient();
             string fullTranscript = "";
-            try 
+            try
             {
                 var trackManifest = await youtube.Videos.ClosedCaptions.GetManifestAsync(youtubeUrl, cancellationToken);
-                var trackInfo = trackManifest.GetByLanguage("tr"); 
-                
+                // Önce Türkçe altyazı, yoksa mevcut ilk altyazı denenir.
+                var trackInfo = trackManifest.GetByLanguage("tr")
+                    ?? trackManifest.Tracks.FirstOrDefault();
+
                 if (trackInfo != null)
                 {
                     var track = await youtube.Videos.ClosedCaptions.GetAsync(trackInfo, cancellationToken);
@@ -55,17 +58,19 @@ namespace OtoRehber.Infrastructure.Services
                     }
                     fullTranscript = transcriptBuilder.ToString();
                 }
-            } 
+            }
             catch (Exception ex)
             {
-                _logger.LogWarning($"YouTube'dan video çekilemedi: {ex.Message}. Yedek (Fallback) test metni kullanılıyor...");
-                fullTranscript = "Herkese merhaba, bugün konuğumuz 2023 model Toyota Corolla 1.5 Vision. Araç 1.5 litrelik atmosferik bir motora sahip, C segmenti bir sedan. Biliyorsunuz Corolla, yılların efsanesidir. Çok sağlam ve sorunsuz bir araçtır, o yüzden güvenilirlik puanı 9.5 diyebiliriz. Uzman olarak söylüyorum, fiyat performans açısından harika bir aile otomobili. Fiyatları şu an 1.2M - 1.5M TL arasında değişiyor. Tahmini yıllık bakım masrafı oldukça uygun, yaklaşık 150 Euro civarı. Aracın artılarına gelirsek; yakıt tüketimi çok makul, iç hacmi geniş ve ikinci eli çok kuvvetli. Eksileri ise; ses yalıtımı zayıf, 120km üstünde yol sesi alıyor ve malzeme kalitesi bazı rakiplerinin gerisinde. Kronik sorun olarak bazı kullanıcılar direksiyon kutusundan tıkırtı geldiğini söylüyor. Bu orta şiddette bir sorun, 2019-2021 modellerinde görülüyor ve masrafı 200 Euro civarı.";
+                _logger.LogWarning(ex, "YouTube video transkripti çekilemedi: {Url}", youtubeUrl);
+                throw new InvalidOperationException(
+                    "Video transkripti alınamadı. Videonun altyazısı olduğundan ve linkin geçerli olduğundan emin olun.", ex);
             }
-            
-            if (string.IsNullOrEmpty(fullTranscript))
+
+            if (string.IsNullOrWhiteSpace(fullTranscript))
             {
-                 _logger.LogWarning("Transkript boş geldi, işlem iptal ediliyor.");
-                 return null;
+                _logger.LogWarning("Transkript boş geldi, işlem iptal ediliyor: {Url}", youtubeUrl);
+                throw new InvalidOperationException(
+                    "Bu videoda işlenebilecek bir altyazı/transkript bulunamadı.");
             }
 
             _logger.LogInformation($"Transkript hazır (Uzunluk: {fullTranscript.Length}). Gemini API'ye parçalar halinde gönderilecek...");

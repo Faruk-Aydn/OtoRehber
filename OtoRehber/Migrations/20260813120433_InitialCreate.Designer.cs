@@ -11,8 +11,8 @@ using OtoRehber.Infrastructure.Data;
 namespace OtoRehber.Migrations
 {
     [DbContext(typeof(OtoRehberDbContext))]
-    [Migration("20260810092825_AddProductionYears")]
-    partial class AddProductionYears
+    [Migration("20260813120433_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -63,6 +63,7 @@ namespace OtoRehber.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Brand = table.Column<string>(type: "TEXT", nullable: false),
                     ModelName = table.Column<string>(type: "TEXT", nullable: false),
+                    ProductionYears = table.Column<string>(type: "TEXT", nullable: false),
                     Engine = table.Column<string>(type: "TEXT", nullable: false),
                     Segment = table.Column<string>(type: "TEXT", nullable: false),
                     ExpertSummary = table.Column<string>(type: "TEXT", nullable: false),
@@ -345,11 +346,11 @@ namespace OtoRehber.Migrations
 
             migrationBuilder.InsertData(
                 table: "Cars",
-                columns: new[] { "Id", "Brand", "Engine", "EstimatedMaintenanceCostEUR", "ExpertSummary", "ImageUrl", "MaxPrice", "MinPrice", "ModelName", "ReliabilityScore", "Segment", "UserFeedbackSummary" },
+                columns: new[] { "Id", "Brand", "Engine", "EstimatedMaintenanceCostEUR", "ExpertSummary", "ImageUrl", "MaxPrice", "MinPrice", "ModelName", "ProductionYears", "ReliabilityScore", "Segment", "UserFeedbackSummary" },
                 values: new object[,]
                 {
-                    { 1, "Volkswagen", "1.6 TDI", 400, "C segmentinin referans modeli, kaliteli iç mekan ve tok sürüş hissi sunar. Ancak DSG şanzıman ve dizel motor bakım maliyetlerine dikkat edilmelidir.", null, 1200000, 800000, "Golf", 8.0, "C", "Forumlarda Golf kalitesi övülse de, DSG şanzıman arızaları ve dizel partikül filtresi (DPF) tıkanıklığı en çok şikayet edilen konulardır." },
-                    { 2, "Toyota", "1.6 Valvematic", 200, "Sorunsuzluk dendiğinde akla ilk gelen model. Konfor odaklı, aile kullanımına çok uygun fakat performans beklentisi olanları üzebilir.", null, 1100000, 700000, "Corolla", 9.5, "C", "Kullanıcılar genel olarak sorunsuzluğundan ve düşük yakıt tüketiminden çok memnun. Ancak yüksek hızlarda içeri yol sesi alması klasik bir şikayettir." }
+                    { 1, "Volkswagen", "1.6 TDI", 400, "C segmentinin referans modeli, kaliteli iç mekan ve tok sürüş hissi sunar. Ancak DSG şanzıman ve dizel motor bakım maliyetlerine dikkat edilmelidir.", null, 1200000, 800000, "Golf", "2012-2020", 8.0, "C", "Forumlarda Golf kalitesi övülse de, DSG şanzıman arızaları ve dizel partikül filtresi (DPF) tıkanıklığı en çok şikayet edilen konulardır." },
+                    { 2, "Toyota", "1.6 Valvematic", 200, "Sorunsuzluk dendiğinde akla ilk gelen model. Konfor odaklı, aile kullanımına çok uygun fakat performans beklentisi olanları üzebilir.", null, 1100000, 700000, "Corolla", "2013-2018", 9.5, "C", "Kullanıcılar genel olarak sorunsuzluğundan ve düşük yakıt tüketiminden çok memnun. Ancak yüksek hızlarda içeri yol sesi alması klasik bir şikayettir." }
                 });
 
             migrationBuilder.InsertData(
