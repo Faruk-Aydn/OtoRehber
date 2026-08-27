@@ -1,8 +1,12 @@
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using OtoRehber.Domain.Entities;
 using OtoRehber.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System.Threading.Tasks;
 using OtoRehber.Models;
 using OtoRehber.Domain.DTOs;
 using AutoMapper;
@@ -13,12 +17,14 @@ namespace OtoRehber.Controllers
     {
         private readonly OtoRehberDbContext _context;
         private readonly IMapper _mapper;
+        private readonly UserManager<AppUser> _userManager;
 
         // Dependency Injection: Veritabanını Controller'a bağlıyoruz
-        public CarController(OtoRehberDbContext context, IMapper mapper)
+        public CarController(OtoRehberDbContext context, IMapper mapper, UserManager<AppUser> userManager)
         {
             _context = context;
             _mapper = mapper;
+            _userManager = userManager;
         }
 
         public IActionResult Details(int id)
@@ -42,26 +48,45 @@ namespace OtoRehber.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult AddReview(int carId, string userName, int rating, string comment)
+        [Authorize]
+        [EnableRateLimiting("review")]
+        public async Task<IActionResult> AddReview(int carId, int rating, string comment)
         {
-            if (string.IsNullOrWhiteSpace(userName) || string.IsNullOrWhiteSpace(comment) || rating < 1 || rating > 10)
+            if (string.IsNullOrWhiteSpace(comment) || comment.Trim().Length < 10 || rating < 1 || rating > 10)
             {
-                TempData["ErrorMessage"] = "Lütfen tüm alanları geçerli şekilde doldurun.";
+                TempData["ErrorMessage"] = "Lütfen en az 10 karakterlik bir yorum ve 1-10 arası puan girin.";
                 return RedirectToAction("Details", new { id = carId });
             }
+
+            if (!await _context.Cars.AnyAsync(c => c.Id == carId))
+            {
+                TempData["ErrorMessage"] = "Yorum yapılacak araç bulunamadı.";
+                return RedirectToAction("Index", "Home");
+            }
+
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null) return Challenge();
+
+            if (await _context.CarReviews.AnyAsync(r => r.CarId == carId && r.UserId == user.Id))
+            {
+                TempData["ErrorMessage"] = "Bu araç için zaten bir yorumunuz var.";
+                return RedirectToAction("Details", new { id = carId });
+            }
+
+            var displayName = (user.Email ?? user.UserName ?? "Kullanıcı").Split('@')[0];
 
             var review = new CarReview
             {
                 CarId = carId,
-                UserName = userName,
+                UserId = user.Id,
+                UserName = displayName,
                 Rating = rating,
-                Comment = comment,
-                CreatedAt = System.DateTime.Now
+                Comment = comment.Trim(),
+                CreatedAt = System.DateTime.UtcNow
             };
 
             _context.CarReviews.Add(review);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             TempData["SuccessMessage"] = "Yorumunuz başarıyla eklendi! Teşekkür ederiz.";
             return RedirectToAction("Details", new { id = carId });

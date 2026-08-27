@@ -12,7 +12,7 @@ namespace OtoRehber.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    [AllowAnonymous]
     [EnableRateLimiting("ai")]
     public class AiChatController : ControllerBase
     {

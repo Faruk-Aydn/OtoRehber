@@ -1,6 +1,6 @@
 @model OtoRehber.Models.LoginViewModel
 @{
-    ViewData["Title"] = "Admin Girişi";
+    ViewData["Title"] = "Giriş Yap";
     Layout = null; // Giriş sayfasında normal navbar istemiyoruz
 }
 <!DOCTYPE html>
@@ -27,7 +27,7 @@
             <h1 class="text-3xl font-extrabold text-gray-900 mb-2">
                 <i class="fa-solid fa-car-side text-primary mr-2"></i>OtoRehber
             </h1>
-            <p class="text-gray-500">Yönetim Paneli Girişi</p>
+            <p class="text-gray-500">Hesabınıza giriş yapın</p>
         </div>
 
         <form asp-controller="Account" asp-action="Login" asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
@@ -60,6 +60,7 @@
                     <input asp-for="RememberMe" class="w-4 h-4 text-primary bg-gray-100 border-gray-300 rounded focus:ring-primary">
                     <label asp-for="RememberMe" class="ml-2 text-sm text-gray-600">Beni Hatırla</label>
                 </div>
+                <a asp-controller="Account" asp-action="ForgotPassword" class="text-sm text-primary hover:underline">Şifremi unuttum</a>
             </div>
 
             <button type="submit" class="w-full text-white bg-primary hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-5 py-3 text-center transition">
@@ -67,7 +68,8 @@
             </button>
         </form>
         
-        <div class="mt-6 text-center text-sm text-gray-500">
+        <div class="mt-6 text-center text-sm text-gray-500 space-y-2">
+            <p>Hesabın yok mu? <a asp-controller="Account" asp-action="Register" class="text-primary font-medium hover:underline">Kayıt ol</a></p>
             <a asp-controller="Home" asp-action="Index" class="hover:text-primary transition flex items-center justify-center">
                 <i class="fa-solid fa-arrow-left mr-2"></i> Siteye Dön
             </a>

@@ -20,6 +20,20 @@ namespace OtoRehber.Infrastructure.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            // Yorum → Kullanıcı ilişkisi; bir kullanıcı bir araca en fazla 1 yorum.
+            modelBuilder.Entity<CarReview>(b =>
+            {
+                b.HasOne(r => r.User)
+                    .WithMany()
+                    .HasForeignKey(r => r.UserId)
+                    .OnDelete(DeleteBehavior.Cascade);
+                b.HasIndex(r => new { r.CarId, r.UserId }).IsUnique();
+            });
+
+            // Garaj: aynı araç bir kullanıcıda tek kayıt.
+            modelBuilder.Entity<UserGarage>()
+                .HasIndex(g => new { g.UserId, g.CarId }).IsUnique();
+
             // Başlangıç verisi (Seeding)
             modelBuilder.Entity<Car>().HasData(
                 new Car

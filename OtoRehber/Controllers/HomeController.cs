@@ -101,9 +101,15 @@ namespace OtoRehber.Controllers
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult Error(int? code)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            var status = code ?? 0;
+            Response.StatusCode = status is >= 400 and < 600 ? status : 500;
+            return View(new ErrorViewModel
+            {
+                RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier,
+                StatusCode = status
+            });
         }
     }
 }

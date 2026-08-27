@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace OtoRehber.Controllers
 {
-    [Authorize]
+    [AllowAnonymous]
     [EnableRateLimiting("ai")]
     public class AiWizardController : Controller
     {

@@ -73,13 +73,7 @@
     <script>
         async function toggleGarage(carId, btnElement) {
             try {
-                const response = await fetch('/Garage/Toggle', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: carId
-                });
+                const response = await postJson('/Garage/Toggle', carId);
 
                 if (response.ok) {
                     const data = await response.json();

@@ -1,6 +1,10 @@
 using System.Threading.RateLimiting;
+using Microsoft.AspNetCore.DataProtection;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
+using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using OtoRehber.Infrastructure.Data;
 using OtoRehber.Infrastructure.Services;
@@ -39,9 +43,17 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
     options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(15);
     options.Lockout.MaxFailedAccessAttempts = 5;
     options.Lockout.AllowedForNewUsers = true;
+
+    options.User.RequireUniqueEmail = true;
+    // Giriş için e-posta doğrulaması zorunlu.
+    options.SignIn.RequireConfirmedAccount = true;
 })
 .AddEntityFrameworkStores<OtoRehberDbContext>()
 .AddDefaultTokenProviders();
+
+// E-posta gönderimi (doğrulama / şifre sıfırlama). Resend API key yoksa no-op + log.
+builder.Services.Configure<ResendEmailOptions>(builder.Configuration.GetSection("Resend"));
+builder.Services.AddHttpClient<IAppEmailSender, ResendEmailSender>();
 
 // Cookie (Giriş) Ayarları
 builder.Services.ConfigureApplicationCookie(options =>
@@ -49,10 +61,23 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.LoginPath = "/Account/Login";
     options.LogoutPath = "/Account/Logout";
     options.AccessDeniedPath = "/Account/AccessDenied";
+
+    options.Cookie.HttpOnly = true;
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+    options.Cookie.SameSite = SameSiteMode.Lax;
+    options.ExpireTimeSpan = TimeSpan.FromDays(7);
+    options.SlidingExpiration = true;
 });
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews(options =>
+{
+    // GET dışındaki tüm istekler için otomatik antiforgery doğrulaması.
+    options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
+});
+
+// AJAX istekleri antiforgery token'ı bu header ile gönderir.
+builder.Services.AddAntiforgery(options => options.HeaderName = "RequestVerificationToken");
 
 // AI servisi: IHttpClientFactory üzerinden, sınırlı timeout ile
 builder.Services.AddHttpClient<IAiCarDataService, AiCarDataService>(client =>
@@ -60,17 +85,45 @@ builder.Services.AddHttpClient<IAiCarDataService, AiCarDataService>(client =>
     client.Timeout = TimeSpan.FromSeconds(120);
 });
 
-// AI endpoint'leri için hız sınırlama (rate limiting)
+// Hız sınırlama (rate limiting)
 builder.Services.AddRateLimiter(options =>
 {
     options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+
+    // AI endpoint'leri: giriş yapan kullanıcıya daha yüksek, anonime sıkı limit.
     options.AddPolicy("ai", httpContext =>
+    {
+        var isAuth = httpContext.User.Identity?.IsAuthenticated == true;
+        var key = isAuth
+            ? "u:" + httpContext.User.Identity!.Name
+            : "ip:" + (httpContext.Connection.RemoteIpAddress?.ToString() ?? "anonymous");
+        return RateLimitPartition.GetFixedWindowLimiter(key, _ => new FixedWindowRateLimiterOptions
+        {
+            PermitLimit = isAuth ? 15 : 4,
+            Window = TimeSpan.FromMinutes(1),
+            QueueLimit = 0
+        });
+    });
+
+    // Kimlik doğrulama (login/register/şifre sıfırlama): IP bazlı brute-force koruması.
+    options.AddPolicy("auth", httpContext =>
         RateLimitPartition.GetFixedWindowLimiter(
-            partitionKey: httpContext.User.Identity?.Name ?? httpContext.Connection.RemoteIpAddress?.ToString() ?? "anonymous",
-            factory: _ => new FixedWindowRateLimiterOptions
+            "ip:" + (httpContext.Connection.RemoteIpAddress?.ToString() ?? "anonymous"),
+            _ => new FixedWindowRateLimiterOptions
             {
-                PermitLimit = 10,
-                Window = TimeSpan.FromMinutes(1),
+                PermitLimit = 8,
+                Window = TimeSpan.FromMinutes(5),
+                QueueLimit = 0
+            }));
+
+    // Yorum ekleme: kullanıcı bazlı spam koruması.
+    options.AddPolicy("review", httpContext =>
+        RateLimitPartition.GetFixedWindowLimiter(
+            "u:" + (httpContext.User.Identity?.Name ?? httpContext.Connection.RemoteIpAddress?.ToString() ?? "anonymous"),
+            _ => new FixedWindowRateLimiterOptions
+            {
+                PermitLimit = 5,
+                Window = TimeSpan.FromHours(1),
                 QueueLimit = 0
             }));
 });
@@ -80,6 +133,44 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 // Ağır sorgu/AI çağrısı içeren sayfalar için response caching (Stats, Compare/Result)
 builder.Services.AddResponseCaching();
+
+// Yanıt sıkıştırma (Brotli + Gzip)
+builder.Services.AddResponseCompression(options =>
+{
+    options.EnableForHttps = true;
+    options.Providers.Add<BrotliCompressionProvider>();
+    options.Providers.Add<GzipCompressionProvider>();
+});
+
+// Reverse proxy (Railway/Render) arkasında gerçek şema/IP bilgisi.
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+    options.KnownNetworks.Clear();
+    options.KnownProxies.Clear();
+});
+
+// DataProtection anahtarlarını kalıcı dizinde sakla (yeniden başlatmada oturum/antiforgery korunur).
+var keysPath = builder.Configuration["DataProtection:KeyPath"];
+if (!string.IsNullOrWhiteSpace(keysPath))
+{
+    System.IO.Directory.CreateDirectory(keysPath);
+    builder.Services.AddDataProtection()
+        .PersistKeysToFileSystem(new System.IO.DirectoryInfo(keysPath))
+        .SetApplicationName("OtoRehber");
+}
+
+// HSTS (production)
+builder.Services.AddHsts(options =>
+{
+    options.MaxAge = TimeSpan.FromDays(365);
+    options.IncludeSubDomains = true;
+    options.Preload = true;
+});
+
+// Health check
+builder.Services.AddHealthChecks()
+    .AddDbContextCheck<OtoRehberDbContext>();
 
 var app = builder.Build();
 
@@ -93,60 +184,57 @@ using (var scope = app.Services.CreateScope())
     // Postgres (production): Migration'ları uygula.
     // Sqlite (yerel geliştirme): şemayı modelden oluştur (migration gerektirmez).
     if (isPostgres)
-        context.Database.Migrate();
+        await context.Database.MigrateAsync();
     else
-        context.Database.EnsureCreated();
+        await context.Database.EnsureCreatedAsync();
 
     var userManager = services.GetRequiredService<UserManager<AppUser>>();
     var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
 
-    // Create Admin Role if it doesn't exist
-    if (!roleManager.RoleExistsAsync("Admin").Result)
+    if (!await roleManager.RoleExistsAsync("Admin"))
     {
-        roleManager.CreateAsync(new IdentityRole("Admin")).Wait();
+        await roleManager.CreateAsync(new IdentityRole("Admin"));
     }
 
     var config = services.GetRequiredService<IConfiguration>();
     string adminEmail = config["AdminSeed:Email"] ?? "admin@otorehber.com";
     string? adminPassword = config["AdminSeed:Password"];
 
-    var adminUser = userManager.FindByEmailAsync(adminEmail).Result;
-    if (adminUser == null)
+    var adminUser = await userManager.FindByEmailAsync(adminEmail);
+    if (adminUser == null && !string.IsNullOrWhiteSpace(adminPassword))
     {
-        if (string.IsNullOrWhiteSpace(adminPassword))
+        adminUser = new AppUser
         {
-            // Şifre yapılandırılmamışsa admin kullanıcı OLUŞTURULMAZ.
-            // Prod'da: AdminSeed__Password ortam değişkeni ile verilmelidir.
-            logger.LogWarning(
-                "AdminSeed:Password yapılandırılmamış. Admin kullanıcı ({AdminEmail}) oluşturulmadı. " +
-                "Ortam değişkeni AdminSeed__Password ayarlanıp uygulama yeniden başlatılmalıdır.",
-                adminEmail);
-        }
-        else
-        {
-            adminUser = new AppUser
-            {
-                UserName = adminEmail,
-                Email = adminEmail,
-                EmailConfirmed = true
-            };
+            UserName = adminEmail,
+            Email = adminEmail,
+            EmailConfirmed = true
+        };
 
-            var result = userManager.CreateAsync(adminUser, adminPassword).Result;
-            if (!result.Succeeded)
-            {
-                logger.LogError("Admin kullanıcı oluşturulamadı: {Errors}",
-                    string.Join(", ", result.Errors.Select(e => e.Description)));
-                adminUser = null;
-            }
+        var result = await userManager.CreateAsync(adminUser, adminPassword);
+        if (!result.Succeeded)
+        {
+            logger.LogError("Admin kullanıcı oluşturulamadı: {Errors}",
+                string.Join(", ", result.Errors.Select(e => e.Description)));
+            adminUser = null;
         }
     }
-
-    // Assign Admin Role
-    if (adminUser != null && !userManager.IsInRoleAsync(adminUser, "Admin").Result)
+    else if (adminUser == null)
     {
-        userManager.AddToRoleAsync(adminUser, "Admin").Wait();
+        // Şifre yapılandırılmamışsa admin kullanıcı OLUŞTURULMAZ.
+        // Prod'da: AdminSeed__Password ortam değişkeni ile verilmelidir.
+        logger.LogWarning(
+            "AdminSeed:Password yapılandırılmamış. Admin kullanıcı ({AdminEmail}) oluşturulmadı.",
+            adminEmail);
+    }
+
+    if (adminUser != null && !await userManager.IsInRoleAsync(adminUser, "Admin"))
+    {
+        await userManager.AddToRoleAsync(adminUser, "Admin");
     }
 }
+
+// Reverse proxy header'ları — pipeline'ın en başında.
+app.UseForwardedHeaders();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -154,6 +242,11 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
 }
+
+// Özel hata sayfaları (404 vb.)
+app.UseStatusCodePagesWithReExecute("/Home/Error", "?code={0}");
+
+app.UseResponseCompression();
 
 app.UseHttpsRedirection();
 
@@ -164,6 +257,7 @@ app.Use(async (context, next) =>
     headers["X-Content-Type-Options"] = "nosniff";
     headers["X-Frame-Options"] = "DENY";
     headers["Referrer-Policy"] = "strict-origin-when-cross-origin";
+    headers["Permissions-Policy"] = "geolocation=(), camera=(), microphone=(), payment=()";
     headers["Content-Security-Policy"] =
         "default-src 'self'; " +
         "script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com https://cdn.jsdelivr.net https://code.jquery.com https://cdn.datatables.net; " +
@@ -187,6 +281,8 @@ app.UseRateLimiter();
 // ÖNEMLİ: Kimlik doğrulama her zaman yetkilendirmeden önce gelmelidir.
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.MapHealthChecks("/health");
 
 app.MapControllerRoute(
     name: "default",

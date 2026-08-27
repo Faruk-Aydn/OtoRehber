@@ -110,6 +110,8 @@
         </nav>
     </header>
     
+    @Html.AntiForgeryToken()
+
     <main role="main" class="container mx-auto px-4 py-8 flex-grow">
         @RenderBody()
     </main>
@@ -258,6 +260,23 @@
 
     <!-- AI Chatbot Javascript -->
     <script>
+        // ===== ANTIFORGERY YARDIMCISI =====
+        // Sunucudaki AutoValidateAntiforgeryToken filtresi tüm POST'larda token bekler.
+        function antiForgeryToken() {
+            const el = document.querySelector('input[name="__RequestVerificationToken"]');
+            return el ? el.value : '';
+        }
+        function postJson(url, bodyObj) {
+            return fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'RequestVerificationToken': antiForgeryToken()
+                },
+                body: JSON.stringify(bodyObj)
+            });
+        }
+
         function toggleChat() {
             const chatWindow = document.getElementById('aiChatWindow');
             chatWindow.classList.toggle('hidden');
@@ -281,11 +300,7 @@
             scrollToBottom();
 
             try {
-                const response = await fetch('/api/AiChat/send', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: message })
-                });
+                const response = await postJson('/api/AiChat/send', { message: message });
 
                 const data = await response.json();
                 
@@ -373,13 +388,7 @@
 
         async function toggleGarageHome(carId, btnElement) {
             try {
-                const response = await fetch('/Garage/Toggle', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: carId
-                });
+                const response = await postJson('/Garage/Toggle', carId);
 
                 if (response.ok) {
                     const data = await response.json();

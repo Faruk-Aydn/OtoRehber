@@ -1,0 +1,31 @@
+@model bool
+@{
+    ViewData["Title"] = Model ? "E-posta doğrulandı" : "Doğrulama başarısız";
+}
+<div class="max-w-md mx-auto text-center py-16">
+    @if (Model)
+    {
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 text-green-600 mb-6">
+            <i class="fa-solid fa-circle-check text-2xl"></i>
+        </div>
+        <h1 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">E-posta adresin doğrulandı</h1>
+        <p class="text-gray-600 dark:text-gray-400 mb-8">Artık hesabına giriş yapabilirsin.</p>
+        <a asp-controller="Account" asp-action="Login" class="inline-flex items-center bg-primary hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition">
+            Giriş Yap
+        </a>
+    }
+    else
+    {
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-100 text-red-600 mb-6">
+            <i class="fa-solid fa-circle-xmark text-2xl"></i>
+        </div>
+        <h1 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Doğrulama bağlantısı geçersiz</h1>
+        <p class="text-gray-600 dark:text-gray-400 mb-8">
+            Bağlantının süresi dolmuş veya hatalı olabilir. Lütfen tekrar kayıt olmayı ya da
+            şifre sıfırlama akışını deneyin.
+        </p>
+        <a asp-controller="Home" asp-action="Index" class="inline-flex items-center bg-primary hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition">
+            Ana sayfa
+        </a>
+    }
+</div>

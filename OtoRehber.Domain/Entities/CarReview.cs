@@ -11,11 +11,19 @@ namespace OtoRehber.Domain.Entities
         public int Id { get; set; }
 
         public int CarId { get; set; }
-        
+
         [ForeignKey("CarId")]
         public Car Car { get; set; }
 
-        [Required(ErrorMessage = "Ad Soyad alanı zorunludur.")]
+        /// <summary>Yorumu yapan kullanıcının Identity Id'si. Sunucuda set edilir.</summary>
+        [Required]
+        public string UserId { get; set; }
+
+        [ForeignKey("UserId")]
+        public AppUser User { get; set; }
+
+        /// <summary>Görüntülenen ad (kullanıcının e-posta yerel kısmı). Sunucuda set edilir.</summary>
+        [Required]
         [StringLength(100)]
         public string UserName { get; set; }
 
@@ -27,7 +35,7 @@ namespace OtoRehber.Domain.Entities
         [StringLength(1000)]
         public string Comment { get; set; }
 
-        public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
         public List<ReviewLike> ReviewLikes { get; set; } = new List<ReviewLike>();
     }

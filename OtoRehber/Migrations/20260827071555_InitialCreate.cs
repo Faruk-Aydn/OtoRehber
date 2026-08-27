@@ -214,6 +214,7 @@ namespace OtoRehber.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     CarId = table.Column<int>(type: "integer", nullable: false),
+                    UserId = table.Column<string>(type: "text", nullable: false),
                     UserName = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
                     Rating = table.Column<int>(type: "integer", nullable: false),
                     Comment = table.Column<string>(type: "character varying(1000)", maxLength: 1000, nullable: false),
@@ -222,6 +223,12 @@ namespace OtoRehber.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_CarReviews", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CarReviews_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_CarReviews_Cars_CarId",
                         column: x => x.CarId,
@@ -425,9 +432,15 @@ namespace OtoRehber.Migrations
                 column: "CarId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CarReviews_CarId",
+                name: "IX_CarReviews_CarId_UserId",
                 table: "CarReviews",
-                column: "CarId");
+                columns: new[] { "CarId", "UserId" },
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CarReviews_UserId",
+                table: "CarReviews",
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ChronicIssues_CarId",
@@ -458,6 +471,12 @@ namespace OtoRehber.Migrations
                 name: "IX_UserGarages_CarId",
                 table: "UserGarages",
                 column: "CarId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserGarages_UserId_CarId",
+                table: "UserGarages",
+                columns: new[] { "UserId", "CarId" },
+                unique: true);
         }
 
         /// <inheritdoc />
@@ -500,10 +519,10 @@ namespace OtoRehber.Migrations
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "AspNetUsers");
+                name: "CarReviews");
 
             migrationBuilder.DropTable(
-                name: "CarReviews");
+                name: "AspNetUsers");
 
             migrationBuilder.DropTable(
                 name: "Cars");

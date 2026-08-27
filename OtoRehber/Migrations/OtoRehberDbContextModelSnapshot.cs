@@ -361,6 +361,10 @@ namespace OtoRehber.Migrations
                     b.Property<int>("Rating")
                         .HasColumnType("integer");
 
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("UserName")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -368,7 +372,10 @@ namespace OtoRehber.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CarId");
+                    b.HasIndex("UserId");
+
+                    b.HasIndex("CarId", "UserId")
+                        .IsUnique();
 
                     b.ToTable("CarReviews");
                 });
@@ -622,6 +629,9 @@ namespace OtoRehber.Migrations
 
                     b.HasIndex("CarId");
 
+                    b.HasIndex("UserId", "CarId")
+                        .IsUnique();
+
                     b.ToTable("UserGarages");
                 });
 
@@ -695,7 +705,15 @@ namespace OtoRehber.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("OtoRehber.Domain.Entities.AppUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Car");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("OtoRehber.Domain.Entities.ChronicIssue", b =>
