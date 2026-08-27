@@ -19,6 +19,7 @@ services:
 
   web:
     build: .
+    restart: unless-stopped
     depends_on:
       db:
         condition: service_healthy

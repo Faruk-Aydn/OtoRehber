@@ -279,11 +279,82 @@ Development: `dotnet user-secrets`. Production: environment variable.
 | Tarih | Faz/Madde | Değişiklik | Commit |
 |---|---|---|---|
 | 2026-08-27 | — | CLAUDE.md yol haritası oluşturuldu | — |
-| 2026-08-27 | 1.1, 1.4 | Tehlikeli endpoint'ler + AI sahte-veri fallback kaldırıldı | commit 1 |
-| 2026-08-27 | 1.2, 1.3 | PostgreSQL desteği + gizli anahtar sertleştirme | commit 2 |
-| 2026-08-27 | 1.5–1.8 | CSRF, e-posta doğrulama, şifre sıfırlama, pipeline sertleştirme | commit 3 |
-| 2026-08-27 | 1.9, 1.10 | KVKK/hukuki sayfalar + çerez banner + Docker/CI + README | commit 4 |
+| 2026-08-27 | 1.1, 1.4 | Tehlikeli endpoint'ler + AI sahte-veri fallback kaldırıldı | f2b020e |
+| 2026-08-27 | 1.2, 1.3 | PostgreSQL desteği + gizli anahtar sertleştirme | e1fde7f |
+| 2026-08-27 | 1.5–1.8 | CSRF, e-posta doğrulama, şifre sıfırlama, pipeline sertleştirme | aeba250 |
+| 2026-08-27 | 1.9, 1.10 | KVKK/hukuki sayfalar + çerez banner + Docker/CI + README | 12cc109 |
+| 2026-08-27 | 1.3, 1.10 | Railway `DATABASE_URL` ayrıştırma + Docker healthcheck düzeltme + deploy rehberi | (bu commit) |
 
 **Faz 1 tamamlandı.** Kalan küçük işler: hukuki sayfalardaki `[...]` işletme
 bilgileri, prod `AllowedHosts`, gerçek Resend/Gemini/AdminSeed env değerleri.
 Sıradaki: Faz 2.
+
+---
+
+## 6. Deploy Rehberi (Railway — Adım Adım)
+
+### A) Yerel veritabanı
+- `OtoRehber/OtoRehberDB.db*` silindi çünkü `CarReview.UserId` eklendi ve yerel
+  Sqlite `EnsureCreated` ile çalışıyor (mevcut şemayı değiştiremez).
+- **Yapılacak:** hiçbir şey — `dotnet run` DB'yi yeniden oluşturur, `HasData`
+  ile 2 araç (Golf, Corolla) geri gelir.
+- **Bundan sonra:** entity değişince yerelde `OtoRehber/OtoRehberDB.db*` sil,
+  tekrar çalıştır.
+- **Yerelde admin:**
+  `cd OtoRehber && dotnet user-secrets set "AdminSeed:Password" "Guclu1!Sifre"`
+  → `dotnet run` → `admin@otorehber.com` + o şifre ile giriş.
+
+### B) Hukuki sayfa placeholder'ları
+Sadece 2 dosyada var:
+- `OtoRehber/Views/Home/Kvkk.cshtml`: `[Şirket/İşletme Unvanı]` (şirket yoksa ad
+  soyad), `[adres]`, `[iletişim e-postası]` (2 yer) + satır 14'teki "Not:" cümlesi.
+- `OtoRehber/Views/Home/Iletisim.cshtml`: `mailto:[iletişim e-postası]` + görünen
+  metin + alttaki "Not:" cümlesi.
+
+### C) Deploy env değişkenleri (Railway → uygulama servisi → Variables → Raw Editor)
+```
+ASPNETCORE_ENVIRONMENT=Production
+Database__Provider=Postgres
+ConnectionStrings__DefaultConnection=${{Postgres.DATABASE_URL}}
+DataProtection__KeyPath=/data/keys
+AdminSeed__Email=<kendi e-postan>
+AdminSeed__Password=<güçlü şifre, min 8, büyük/küçük harf + rakam>
+GeminiApiKey=<AIza... — aistudio.google.com/apikey>
+Resend__ApiKey=<re_... — resend.com/api-keys ; boşsa e-posta gitmez, link log'a yazılır>
+Resend__FromEmail=OtoRehber <onboarding@resend.dev>
+AllowedHosts=<railway domain'in, örn otorehber-production.up.railway.app>
+```
+`__` = appsettings'teki `:`. `${{Postgres.DATABASE_URL}}` Railway değişken
+referansıdır; Postgres eklentisi eklenince otomatik dolar. Kod `postgresql://`
+URL'sini Npgsql biçimine çevirir (`Program.cs`).
+
+### D) Google Gemini key
+aistudio.google.com/apikey → "Create API key" → `AIza...` kopyala.
+
+### E) Resend (e-posta)
+1. resend.com → kaydol (GitHub ile).
+2. API Keys → "Create API Key" (Sending access) → `re_...`.
+3. Domain yoksa: `Resend__FromEmail=...onboarding@resend.dev` — yalnızca kendi
+   Resend hesabı e-postana gönderim yapar (sadece kendi kaydını test edersin).
+4. Domain varsa: Resend → Domains → Add Domain → DNS kayıtlarını (SPF/DKIM/DMARC)
+   ekle → Verify → `Resend__FromEmail=OtoRehber <no-reply@alanadin.com>`.
+5. Key hiç verilmezse: e-postalar Railway loglarına yazılır (manuel test).
+
+### F) Railway deploy adımları
+1. `git push` (main güncel olmalı — Railway `main`'e bağlı).
+2. railway.com → New Project → Deploy from GitHub repo → `Faruk-Aydn/OtoRehber`.
+3. Railway kök `Dockerfile`'ı otomatik bulur.
+4. **+ New → Database → Add PostgreSQL**.
+5. Uygulama servisi → **Variables** → Raw Editor → yukarıdaki C bloğu.
+6. Uygulama servisi → **Settings → Volumes → Add Volume**, mount path `/data`.
+7. Uygulama servisi → **Settings → Networking → Generate Domain** → domain'i
+   `AllowedHosts`'a yaz.
+8. **Settings → Healthcheck** → Path `/health`.
+9. Deployments → View Logs: "Application started" görünmeli.
+10. `https://<domain>/health` → `Healthy`.
+
+### G) Deploy sonrası kontrol
+- `/health` Healthy
+- admin girişi → Admin Panel
+- kayıt → doğrulama e-postası (veya log linki) → doğrula → giriş
+- yorum ekle, AI Sihirbaz, karşılaştırma çalışıyor

@@ -19,9 +19,23 @@ var builder = WebApplication.CreateBuilder(args);
 var dbProvider = (builder.Configuration["Database:Provider"] ?? "Sqlite").Trim();
 var isPostgres = dbProvider.Equals("Postgres", StringComparison.OrdinalIgnoreCase);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
+    ?? Environment.GetEnvironmentVariable("DATABASE_URL")
     ?? (isPostgres
         ? "Host=localhost;Port=5432;Database=otorehber;Username=otorehber;Password=otorehber"
         : "Data Source=OtoRehberDB.db");
+
+// Railway/Render vb. "postgresql://user:pass@host:port/db" biçimini Npgsql anahtar-değer biçimine çevir.
+if (isPostgres && (connectionString.StartsWith("postgres://") || connectionString.StartsWith("postgresql://")))
+{
+    var uri = new Uri(connectionString);
+    var userInfo = uri.UserInfo.Split(':', 2);
+    connectionString =
+        $"Host={uri.Host};Port={(uri.Port > 0 ? uri.Port : 5432)};" +
+        $"Database={uri.AbsolutePath.TrimStart('/')};" +
+        $"Username={Uri.UnescapeDataString(userInfo[0])};" +
+        $"Password={Uri.UnescapeDataString(userInfo.ElementAtOrDefault(1) ?? "")};" +
+        "SSL Mode=Require;Trust Server Certificate=true";
+}
 
 builder.Services.AddDbContext<OtoRehberDbContext>(options =>
 {

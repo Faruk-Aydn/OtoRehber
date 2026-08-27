@@ -29,7 +29,7 @@ ENV ASPNETCORE_URLS=http://+:8080 \
     DataProtection__KeyPath=/data/keys
 EXPOSE 8080
 
-HEALTHCHECK --interval=30s --timeout=5s --start-period=20s --retries=3 \
-    CMD wget -qO- http://localhost:8080/health || exit 1
+# Sağlık kontrolü: platformun (Railway/Render) healthcheck yolu "/health" olarak ayarlanmalı.
+# (aspnet runtime imajında curl/wget bulunmadığı için Docker HEALTHCHECK eklenmedi.)
 
 ENTRYPOINT ["dotnet", "OtoRehber.dll"]
