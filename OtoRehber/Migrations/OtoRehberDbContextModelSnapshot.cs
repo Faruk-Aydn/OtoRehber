@@ -22,25 +22,6 @@ namespace OtoRehber.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Microsoft.AspNetCore.DataProtection.EntityFrameworkCore.DataProtectionKey", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("FriendlyName")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Xml")
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("DataProtectionKeys");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -299,7 +280,7 @@ namespace OtoRehber.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Cars");
+                    b.ToTable("Cars", (string)null);
 
                     b.HasData(
                         new
@@ -355,7 +336,7 @@ namespace OtoRehber.Migrations
 
                     b.HasIndex("CarId");
 
-                    b.ToTable("CarPriceHistory");
+                    b.ToTable("CarPriceHistory", (string)null);
                 });
 
             modelBuilder.Entity("OtoRehber.Domain.Entities.CarReview", b =>
@@ -396,7 +377,7 @@ namespace OtoRehber.Migrations
                     b.HasIndex("CarId", "UserId")
                         .IsUnique();
 
-                    b.ToTable("CarReviews");
+                    b.ToTable("CarReviews", (string)null);
                 });
 
             modelBuilder.Entity("OtoRehber.Domain.Entities.ChronicIssue", b =>
@@ -433,7 +414,7 @@ namespace OtoRehber.Migrations
 
                     b.HasIndex("CarId");
 
-                    b.ToTable("ChronicIssues");
+                    b.ToTable("ChronicIssues", (string)null);
 
                     b.HasData(
                         new
@@ -484,7 +465,7 @@ namespace OtoRehber.Migrations
 
                     b.HasIndex("CarId");
 
-                    b.ToTable("MileageMilestones");
+                    b.ToTable("MileageMilestones", (string)null);
                 });
 
             modelBuilder.Entity("OtoRehber.Domain.Entities.ProsCons", b =>
@@ -510,7 +491,7 @@ namespace OtoRehber.Migrations
 
                     b.HasIndex("CarId");
 
-                    b.ToTable("ProsCons");
+                    b.ToTable("ProsCons", (string)null);
 
                     b.HasData(
                         new
@@ -623,7 +604,7 @@ namespace OtoRehber.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("ReviewLike");
+                    b.ToTable("ReviewLike", (string)null);
                 });
 
             modelBuilder.Entity("OtoRehber.Domain.Entities.UserGarage", b =>
@@ -651,7 +632,7 @@ namespace OtoRehber.Migrations
                     b.HasIndex("UserId", "CarId")
                         .IsUnique();
 
-                    b.ToTable("UserGarages");
+                    b.ToTable("UserGarages", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

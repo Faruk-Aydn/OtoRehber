@@ -1,21 +1,27 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
-  <ItemGroup>
-    <ProjectReference Include="..\OtoRehber.Domain\OtoRehber.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.DataProtection.EntityFrameworkCore" Version="8.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
-    <PackageReference Include="YoutubeExplode" Version="6.6.0" />
-  </ItemGroup>
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OtoRehber.Domain\OtoRehber.Domain.csproj" />
+  </ItemGroup>
+
+  <!-- ASP.NET Core API'leri (Identity, DataProtection vb.) shared framework'ten gelir.
+       Böylece runtime ile aynı sürüm kullanılır; uygulama klasörüne sürüm uyumsuz
+       kopyalar konmaz (bu, DataProtection'da MissingMethodException'a yol açıyordu). -->
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- IdentityDbContext — shared framework'te yok, ayrı paket (8.0.0'a sabit). -->
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.0" />
+    <PackageReference Include="YoutubeExplode" Version="6.6.0" />
+  </ItemGroup>
 
 </Project>
