@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 using OtoRehber.Domain.Entities;
 using OtoRehber.Infrastructure.Data;
 using OtoRehber.Models;
@@ -14,12 +15,18 @@ namespace OtoRehber.Controllers
         private readonly OtoRehberDbContext _context;
         private readonly ILogger<HomeController> _logger;
         private readonly IMapper _mapper;
+        private readonly IMemoryCache _cache;
 
-        public HomeController(OtoRehberDbContext context, ILogger<HomeController> logger, IMapper mapper)
+        // Araç/yorum eklendiğinde AdminCarController/CarController bu anahtarları temizler.
+        public const string CacheKeyBrands = "home:brands";
+        public const string CacheKeyLeaderboard = "home:leaderboard";
+
+        public HomeController(OtoRehberDbContext context, ILogger<HomeController> logger, IMapper mapper, IMemoryCache cache)
         {
             _context = context;
             _logger = logger;
             _mapper = mapper;
+            _cache = cache;
         }
 
         public async Task<IActionResult> Index(string searchQuery, string segment, string brand, string sortBy, int page = 1)
@@ -74,24 +81,35 @@ namespace OtoRehber.Controllers
             ViewBag.CurrentPage = page;
             ViewBag.TotalPages = totalPages;
             
-            // Dropdown için tüm markalar
-            ViewBag.Brands = await _context.Cars.Select(c => c.Brand).Distinct().OrderBy(b => b).ToListAsync();
+            // Dropdown için tüm markalar (5 dk cache — nadiren değişir)
+            ViewBag.Brands = await _cache.GetOrCreateAsync(CacheKeyBrands, async e =>
+            {
+                e.AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5);
+                return await _context.Cars.AsNoTracking()
+                    .Select(c => c.Brand).Distinct().OrderBy(b => b).ToListAsync();
+            });
 
-            // --- Dinamik Leaderboard --- (View'lar IList<dynamic> bekliyor)
-            ViewBag.TopReviewed = (await _context.CarReviews
-                .GroupBy(r => new { r.CarId, r.Car.Brand, r.Car.ModelName })
-                .Select(g => new { Label = g.Key.Brand + " " + g.Key.ModelName, Count = g.Count() })
-                .OrderByDescending(x => x.Count)
-                .Take(10)
-                .ToListAsync())
-                .Cast<object>().ToList();
+            // --- Dinamik Leaderboard --- (View'lar IList<dynamic> bekliyor, 5 dk cache)
+            var leaderboard = await _cache.GetOrCreateAsync(CacheKeyLeaderboard, async e =>
+            {
+                e.AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5);
+                var topReviewed = (await _context.CarReviews.AsNoTracking()
+                    .GroupBy(r => new { r.CarId, r.Car.Brand, r.Car.ModelName })
+                    .Select(g => new { Label = g.Key.Brand + " " + g.Key.ModelName, Count = g.Count() })
+                    .OrderByDescending(x => x.Count)
+                    .Take(10)
+                    .ToListAsync()).Cast<object>().ToList();
 
-            ViewBag.TopByScore = (await _context.Cars
-                .OrderByDescending(c => c.ReliabilityScore)
-                .Take(10)
-                .Select(c => new { Label = c.Brand + " " + c.ModelName, Score = c.ReliabilityScore })
-                .ToListAsync())
-                .Cast<object>().ToList();
+                var topByScore = (await _context.Cars.AsNoTracking()
+                    .OrderByDescending(c => c.ReliabilityScore)
+                    .Take(10)
+                    .Select(c => new { Label = c.Brand + " " + c.ModelName, Score = c.ReliabilityScore })
+                    .ToListAsync()).Cast<object>().ToList();
+
+                return (TopReviewed: topReviewed, TopByScore: topByScore);
+            });
+            ViewBag.TopReviewed = leaderboard.TopReviewed;
+            ViewBag.TopByScore = leaderboard.TopByScore;
 
             return View(carDtos);
         }

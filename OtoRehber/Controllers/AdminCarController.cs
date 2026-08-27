@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 using OtoRehber.Domain.Entities;
 using OtoRehber.Domain.DTOs;
 using AutoMapper;
@@ -23,18 +24,26 @@ namespace OtoRehber.Controllers
         private readonly IWebHostEnvironment _hostEnvironment;
         private readonly IMapper _mapper;
         private readonly ILogger<AdminCarController> _logger;
+        private readonly IMemoryCache _cache;
 
         private static readonly string[] AllowedImageExtensions = { ".jpg", ".jpeg", ".png", ".webp", ".gif" };
         private static readonly string[] AllowedImageContentTypes = { "image/jpeg", "image/png", "image/webp", "image/gif" };
         private const long MaxImageSizeBytes = 5 * 1024 * 1024; // 5 MB
 
-        public AdminCarController(OtoRehberDbContext context, IAiCarDataService aiService, IWebHostEnvironment hostEnvironment, IMapper mapper, ILogger<AdminCarController> logger)
+        public AdminCarController(OtoRehberDbContext context, IAiCarDataService aiService, IWebHostEnvironment hostEnvironment, IMapper mapper, ILogger<AdminCarController> logger, IMemoryCache cache)
         {
             _context = context;
             _aiService = aiService;
             _hostEnvironment = hostEnvironment;
             _mapper = mapper;
             _logger = logger;
+            _cache = cache;
+        }
+
+        private void InvalidateHomeCache()
+        {
+            _cache.Remove(HomeController.CacheKeyBrands);
+            _cache.Remove(HomeController.CacheKeyLeaderboard);
         }
 
         // GET: /AdminCar/ImportFromYoutube
@@ -60,6 +69,7 @@ namespace OtoRehber.Controllers
 
                 if (cars != null && cars.Any())
                 {
+                    InvalidateHomeCache();
                     TempData["SuccessMessage"] = $"{cars.Count} adet araç yapay zeka ile başarıyla eklendi!";
                     return RedirectToAction(nameof(Index));
                 }
@@ -165,6 +175,7 @@ namespace OtoRehber.Controllers
                 var car = _mapper.Map<Car>(carDto);
                 _context.Add(car);
                 await _context.SaveChangesAsync();
+                InvalidateHomeCache();
                 TempData["SuccessMessage"] = $"{car.Brand} {car.ModelName} başarıyla eklendi.";
                 return RedirectToAction(nameof(Index));
             }
@@ -254,6 +265,7 @@ namespace OtoRehber.Controllers
                         throw;
                     }
                 }
+                InvalidateHomeCache();
                 TempData["SuccessMessage"] = $"{carDto.Brand} {carDto.ModelName} başarıyla güncellendi.";
                 return RedirectToAction(nameof(Index));
             }
@@ -289,6 +301,7 @@ namespace OtoRehber.Controllers
                 var name = $"{car.Brand} {car.ModelName}";
                 _context.Cars.Remove(car);
                 await _context.SaveChangesAsync();
+                InvalidateHomeCache();
                 TempData["SuccessMessage"] = $"{name} başarıyla silindi.";
             }
 

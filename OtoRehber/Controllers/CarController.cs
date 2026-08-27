@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
+using Microsoft.Extensions.Caching.Memory;
 using OtoRehber.Domain.Entities;
 using OtoRehber.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
@@ -18,13 +19,15 @@ namespace OtoRehber.Controllers
         private readonly OtoRehberDbContext _context;
         private readonly IMapper _mapper;
         private readonly UserManager<AppUser> _userManager;
+        private readonly IMemoryCache _cache;
 
         // Dependency Injection: Veritabanını Controller'a bağlıyoruz
-        public CarController(OtoRehberDbContext context, IMapper mapper, UserManager<AppUser> userManager)
+        public CarController(OtoRehberDbContext context, IMapper mapper, UserManager<AppUser> userManager, IMemoryCache cache)
         {
             _context = context;
             _mapper = mapper;
             _userManager = userManager;
+            _cache = cache;
         }
 
         public async Task<IActionResult> Details(int id)
@@ -89,6 +92,7 @@ namespace OtoRehber.Controllers
 
             _context.CarReviews.Add(review);
             await _context.SaveChangesAsync();
+            _cache.Remove(HomeController.CacheKeyLeaderboard);
 
             TempData["SuccessMessage"] = "Yorumunuz başarıyla eklendi! Teşekkür ederiz.";
             return RedirectToAction("Details", new { id = carId });

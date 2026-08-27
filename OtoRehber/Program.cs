@@ -169,6 +169,7 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 // Ağır sorgu/AI çağrısı içeren sayfalar için response caching (Stats, Compare/Result)
 builder.Services.AddResponseCaching();
+builder.Services.AddMemoryCache();
 
 // Yanıt sıkıştırma (Brotli + Gzip)
 builder.Services.AddResponseCompression(options =>

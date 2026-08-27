@@ -33,29 +33,31 @@ namespace OtoRehber.Controllers
         [HttpPost("send")]
         public async Task<IActionResult> SendMessage([FromBody] ChatRequest request)
         {
-            if (string.IsNullOrWhiteSpace(request?.Message))
+            var message = request?.Message?.Trim();
+            if (string.IsNullOrWhiteSpace(message))
             {
                 return BadRequest(new { error = "Mesaj boş olamaz." });
             }
+            // Prompt injection / maliyet: kullanıcı mesajını sınırla
+            if (message.Length > 2000) message = message[..2000];
 
-            // Veritabanındaki araçların kısa bir özetini çekiyoruz
-            var cars = await _context.Cars.ToListAsync();
-            
+            // Sadece prompt'a giren kolonlar
+            var cars = await _context.Cars.AsNoTracking()
+                .Select(c => new { c.Brand, c.ModelName, c.Segment, c.MinPrice, c.MaxPrice, c.ReliabilityScore })
+                .ToListAsync();
+
             var contextBuilder = new StringBuilder();
             foreach (var car in cars)
             {
                 contextBuilder.AppendLine($"- {car.Brand} {car.ModelName} ({car.Segment} Segment): Fiyat: {car.MinPrice}-{car.MaxPrice} TL, Güvenilirlik: {car.ReliabilityScore}/10");
             }
 
-            string availableCarsContext = contextBuilder.ToString();
-            
-            if (string.IsNullOrWhiteSpace(availableCarsContext))
-            {
-                availableCarsContext = "Şu anda sistemde kayıtlı hiçbir araç yok.";
-            }
+            string availableCarsContext = contextBuilder.Length > 0
+                ? contextBuilder.ToString()
+                : "Şu anda sistemde kayıtlı hiçbir araç yok.";
 
             // Yapay zekaya soruyoruz
-            var responseText = await _aiService.GetCarRecommendationAsync(request.Message, availableCarsContext);
+            var responseText = await _aiService.GetCarRecommendationAsync(message, availableCarsContext);
 
             // Gelen cevaptaki Markdown yıldızlarını HTML'e veya JS'in daha kolay parse edebileceği bir şeye çevirebiliriz (isteğe bağlı)
             // Ama frontend'de marked.js kullanmak daha profesyoneldir. Biz şimdilik olduğu gibi dönüyoruz.

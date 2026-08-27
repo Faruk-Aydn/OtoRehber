@@ -37,9 +37,15 @@ namespace OtoRehber.Controllers
                 return View("Index");
             }
 
-            // Veritabanındaki araçların kısa bir özetini çekiyoruz
-            var cars = await _context.Cars.ToListAsync();
-            
+            // Kullanıcı girdilerini sınırla (prompt injection / maliyet)
+            static string Clip(string? s) => (s ?? "").Trim() is var t && t.Length > 200 ? t[..200] : t;
+            budget = Clip(budget); familySize = Clip(familySize); usageType = Clip(usageType); priority = Clip(priority);
+
+            // Sadece prompt'a giren kolonlar
+            var cars = await _context.Cars.AsNoTracking()
+                .Select(c => new { c.Brand, c.ModelName, c.Segment, c.MinPrice, c.MaxPrice, c.ReliabilityScore })
+                .ToListAsync();
+
             var contextBuilder = new StringBuilder();
             contextBuilder.AppendLine("Aşağıdaki araçlar veritabanımızda mevcut. Eğer kullanıcının profiline uygunlarsa, lütfen özellikle bunlardan öner. Eğer veritabanında uyan yoksa, genel piyasadan en mantıklı 3 aracı öner ve nedenlerini açıkla.");
             contextBuilder.AppendLine("Veritabanı Araçları:");
