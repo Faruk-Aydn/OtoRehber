@@ -3,8 +3,8 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "build:css": "tailwindcss -i ./OtoRehber/wwwroot/css/app.src.css -o ./OtoRehber/wwwroot/css/app.min.css --minify",
-    "watch:css": "tailwindcss -i ./OtoRehber/wwwroot/css/app.src.css -o ./OtoRehber/wwwroot/css/app.min.css --watch"
+    "build:css": "tailwindcss -c ./tailwind.config.js -i ./OtoRehber/wwwroot/css/app.src.css -o ./OtoRehber/wwwroot/css/app.min.css --minify",
+    "watch:css": "tailwindcss -c ./tailwind.config.js -i ./OtoRehber/wwwroot/css/app.src.css -o ./OtoRehber/wwwroot/css/app.min.css --watch"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.17",
