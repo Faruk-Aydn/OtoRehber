@@ -97,10 +97,10 @@ namespace OtoRehber.Controllers
 
             // Segmentleri basitleştirmek için yardımcı fonksiyon
             Func<OtoRehber.Domain.Entities.Car, string> SimplifySegment = (c) => {
-                var eng = (c.Engine ?? "").ToLower();
+                var eng = (c.Engine ?? "").ToLowerInvariant();
                 if (eng.Contains("elektrik") || eng.Contains("ev") || eng == "elektrikli") return "Elektrikli";
 
-                var s = (c.Segment ?? "").ToLower();
+                var s = (c.Segment ?? "").ToLowerInvariant();
                 if (string.IsNullOrEmpty(s)) return "Belirsiz";
                 
                 if (s.Contains("suv") || s.Contains("crossover")) return "SUV";

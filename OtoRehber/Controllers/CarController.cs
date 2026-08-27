@@ -27,15 +27,17 @@ namespace OtoRehber.Controllers
             _userManager = userManager;
         }
 
-        public IActionResult Details(int id)
+        public async Task<IActionResult> Details(int id)
         {
             // Artık veritabanından ID ile aracı getiriyoruz
-            var car = _context.Cars
+            var car = await _context.Cars
+                .AsNoTracking()
+                .AsSplitQuery()
                 .Include(c => c.ChronicIssues)
                 .Include(c => c.ProsConsList)
                 .Include(c => c.MileageMilestones)
                 .Include(c => c.Reviews)
-                .FirstOrDefault(c => c.Id == id);
+                .FirstOrDefaultAsync(c => c.Id == id);
 
             if (car == null)
             {
@@ -92,19 +94,19 @@ namespace OtoRehber.Controllers
             return RedirectToAction("Details", new { id = carId });
         }
 
-        public IActionResult Compare(int id1, int id2)
+        public async Task<IActionResult> Compare(int id1, int id2)
         {
-            var car1 = _context.Cars
+            var cars = await _context.Cars
+                .AsNoTracking()
+                .AsSplitQuery()
                 .Include(c => c.ChronicIssues)
                 .Include(c => c.ProsConsList)
                 .Include(c => c.MileageMilestones)
-                .FirstOrDefault(c => c.Id == id1);
+                .Where(c => c.Id == id1 || c.Id == id2)
+                .ToListAsync();
 
-            var car2 = _context.Cars
-                .Include(c => c.ChronicIssues)
-                .Include(c => c.ProsConsList)
-                .Include(c => c.MileageMilestones)
-                .FirstOrDefault(c => c.Id == id2);
+            var car1 = cars.FirstOrDefault(c => c.Id == id1);
+            var car2 = cars.FirstOrDefault(c => c.Id == id2);
 
             if (car1 == null || car2 == null)
             {

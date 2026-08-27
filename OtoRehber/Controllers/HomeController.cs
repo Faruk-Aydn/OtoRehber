@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using OtoRehber.Domain.Entities;
 using OtoRehber.Infrastructure.Data;
 using OtoRehber.Models;
@@ -21,14 +22,14 @@ namespace OtoRehber.Controllers
             _mapper = mapper;
         }
 
-        public IActionResult Index(string searchQuery, string segment, string brand, string sortBy, int page = 1)
+        public async Task<IActionResult> Index(string searchQuery, string segment, string brand, string sortBy, int page = 1)
         {
-            var carsQuery = _context.Cars.AsQueryable();
+            var carsQuery = _context.Cars.AsNoTracking().AsQueryable();
 
-            // Arama
-            if (!string.IsNullOrEmpty(searchQuery))
+            // Arama (Türkçe kültür bug'ı için ToLowerInvariant; kolon tarafı SQL LOWER'a çevrilir)
+            if (!string.IsNullOrWhiteSpace(searchQuery))
             {
-                var lowerSearch = searchQuery.ToLower();
+                var lowerSearch = searchQuery.Trim().ToLowerInvariant();
                 carsQuery = carsQuery.Where(c => c.Brand.ToLower().Contains(lowerSearch) || c.ModelName.ToLower().Contains(lowerSearch));
             }
 
@@ -54,14 +55,14 @@ namespace OtoRehber.Controllers
                 _ => carsQuery.OrderByDescending(c => c.Id) // Varsayılan: En son eklenenler
             };
 
-            // Sayfalama (Pagination)
-            int pageSize = 12; // Her sayfada 12 araç
-            int totalItems = carsQuery.Count();
-            int totalPages = (int)Math.Ceiling(totalItems / (double)pageSize);
-            
-            // Düzeltme: Skip ve Take parametrelerini açıkça ayırıyoruz
+            // Sayfalama (Pagination) — sınır kontrolü
+            const int pageSize = 12;
+            int totalItems = await carsQuery.CountAsync();
+            int totalPages = Math.Max(1, (int)Math.Ceiling(totalItems / (double)pageSize));
+            page = Math.Clamp(page, 1, totalPages);
+
             int skipAmount = (page - 1) * pageSize;
-            var cars = carsQuery.Skip(skipAmount).Take(pageSize).ToList();
+            var cars = await carsQuery.Skip(skipAmount).Take(pageSize).ToListAsync();
             var carDtos = _mapper.Map<List<CarListDto>>(cars);
 
             // View'a parametreleri gönderelim ki filtreler seçili kalsın
@@ -73,24 +74,24 @@ namespace OtoRehber.Controllers
             ViewBag.CurrentPage = page;
             ViewBag.TotalPages = totalPages;
             
-            // Dropdown için tüm markaları gönder
-            ViewBag.Brands = _context.Cars.Select(c => c.Brand).Distinct().OrderBy(b => b).ToList();
+            // Dropdown için tüm markalar
+            ViewBag.Brands = await _context.Cars.Select(c => c.Brand).Distinct().OrderBy(b => b).ToListAsync();
 
-            // --- Dinamik Leaderboard ---
-            // En çok yorum yapılan araçlar (gerçek veri)
-            ViewBag.TopReviewed = _context.CarReviews
+            // --- Dinamik Leaderboard --- (View'lar IList<dynamic> bekliyor)
+            ViewBag.TopReviewed = (await _context.CarReviews
                 .GroupBy(r => new { r.CarId, r.Car.Brand, r.Car.ModelName })
                 .Select(g => new { Label = g.Key.Brand + " " + g.Key.ModelName, Count = g.Count() })
                 .OrderByDescending(x => x.Count)
                 .Take(10)
-                .ToList<dynamic>();
+                .ToListAsync())
+                .Cast<object>().ToList();
 
-            // En yüksek güvenilirlik puanlı araçlar — Top 10
-            ViewBag.TopByScore = _context.Cars
+            ViewBag.TopByScore = (await _context.Cars
                 .OrderByDescending(c => c.ReliabilityScore)
                 .Take(10)
                 .Select(c => new { Label = c.Brand + " " + c.ModelName, Score = c.ReliabilityScore })
-                .ToList<dynamic>();
+                .ToListAsync())
+                .Cast<object>().ToList();
 
             return View(carDtos);
         }
