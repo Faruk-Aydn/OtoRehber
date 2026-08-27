@@ -107,6 +107,7 @@ namespace OtoRehber.Controllers
 
         public IActionResult Iletisim() => View();
 
+        [IgnoreAntiforgeryToken]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error(int? code)
         {
