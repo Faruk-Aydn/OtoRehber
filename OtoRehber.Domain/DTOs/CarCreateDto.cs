@@ -28,11 +28,11 @@ namespace OtoRehber.Domain.DTOs
 
         [Required]
         [Range(100000, 50000000)]
-        public int MinPrice { get; set; }
+        public long MinPrice { get; set; }
 
         [Required]
         [Range(100000, 50000000)]
-        public int MaxPrice { get; set; }
+        public long MaxPrice { get; set; }
 
         [Range(0, 10000, ErrorMessage = "Geçerli bir bakım maliyeti girin.")]
         public int EstimatedMaintenanceCostEUR { get; set; }

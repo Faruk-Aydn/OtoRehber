@@ -9,8 +9,8 @@ namespace OtoRehber.Domain.DTOs
         public string Engine { get; set; }
         public string Segment { get; set; }
         public double ReliabilityScore { get; set; }
-        public int MinPrice { get; set; }
-        public int MaxPrice { get; set; }
+        public long MinPrice { get; set; }
+        public long MaxPrice { get; set; }
         public string ExpertSummary { get; set; }
         public string UserFeedbackSummary { get; set; }
         public string? ImageUrl { get; set; }

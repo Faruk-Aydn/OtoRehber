@@ -34,6 +34,14 @@ namespace OtoRehber.Infrastructure.Data
             modelBuilder.Entity<UserGarage>()
                 .HasIndex(g => new { g.UserId, g.CarId }).IsUnique();
 
+            // Filtre / sıralama için index'ler.
+            modelBuilder.Entity<Car>(b =>
+            {
+                b.HasIndex(c => c.Brand);
+                b.HasIndex(c => c.Segment);
+                b.HasIndex(c => c.ReliabilityScore);
+            });
+
             // Başlangıç verisi (Seeding)
             modelBuilder.Entity<Car>().HasData(
                 new Car

@@ -325,7 +325,35 @@ namespace OtoRehber.Controllers
             if (string.IsNullOrEmpty(file.ContentType) || !AllowedImageContentTypes.Contains(file.ContentType.ToLowerInvariant()))
                 return false;
 
-            return true;
+            // Magic-byte (dosya imzası) kontrolü — uzantı/content-type sahtelenebilir.
+            return HasValidImageSignature(file);
+        }
+
+        private static bool HasValidImageSignature(IFormFile file)
+        {
+            try
+            {
+                using var stream = file.OpenReadStream();
+                Span<byte> head = stackalloc byte[12];
+                int read = stream.Read(head);
+                if (read < 12) return false;
+
+                // JPEG: FF D8 FF
+                if (head[0] == 0xFF && head[1] == 0xD8 && head[2] == 0xFF) return true;
+                // PNG: 89 50 4E 47 0D 0A 1A 0A
+                if (head[0] == 0x89 && head[1] == 0x50 && head[2] == 0x4E && head[3] == 0x47) return true;
+                // GIF: "GIF87a" / "GIF89a"
+                if (head[0] == 0x47 && head[1] == 0x49 && head[2] == 0x46) return true;
+                // WEBP: "RIFF"...."WEBP"
+                if (head[0] == 0x52 && head[1] == 0x49 && head[2] == 0x46 && head[3] == 0x46 &&
+                    head[8] == 0x57 && head[9] == 0x45 && head[10] == 0x42 && head[11] == 0x50) return true;
+
+                return false;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         private async Task<string> SaveImageAsync(IFormFile file)

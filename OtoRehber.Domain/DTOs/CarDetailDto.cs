@@ -14,8 +14,8 @@ namespace OtoRehber.Domain.DTOs
         public string ExpertSummary { get; set; }
         public string UserFeedbackSummary { get; set; }
         public double ReliabilityScore { get; set; }
-        public int MinPrice { get; set; }
-        public int MaxPrice { get; set; }
+        public long MinPrice { get; set; }
+        public long MaxPrice { get; set; }
         public int EstimatedMaintenanceCostEUR { get; set; }
         public string? ImageUrl { get; set; }
 
