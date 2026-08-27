@@ -1,4 +1,3 @@
-using System.Security.Cryptography;
 using System.Threading.RateLimiting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.RateLimiting;
@@ -11,10 +10,22 @@ using OtoRehber.Domain.Interfaces;
 var builder = WebApplication.CreateBuilder(args);
 
 // Veritabanı Bağlantısı
+// Sağlayıcı seçimi: Database:Provider = "Sqlite" (yerel geliştirme, varsayılan) | "Postgres" (production).
+// Yerelde Sqlite şeması EnsureCreated ile, Postgres şeması Migration'lar ile oluşturulur.
+var dbProvider = (builder.Configuration["Database:Provider"] ?? "Sqlite").Trim();
+var isPostgres = dbProvider.Equals("Postgres", StringComparison.OrdinalIgnoreCase);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
-    ?? "Data Source=OtoRehberDB.db";
+    ?? (isPostgres
+        ? "Host=localhost;Port=5432;Database=otorehber;Username=otorehber;Password=otorehber"
+        : "Data Source=OtoRehberDB.db");
+
 builder.Services.AddDbContext<OtoRehberDbContext>(options =>
-    options.UseSqlite(connectionString, b => b.MigrationsAssembly("OtoRehber")));
+{
+    if (isPostgres)
+        options.UseNpgsql(connectionString, b => b.MigrationsAssembly("OtoRehber"));
+    else
+        options.UseSqlite(connectionString);
+});
 
 // Identity Kurulumu
 builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
@@ -79,8 +90,12 @@ using (var scope = app.Services.CreateScope())
     var context = services.GetRequiredService<OtoRehberDbContext>();
     var logger = services.GetRequiredService<ILogger<Program>>();
 
-    // Veritabanını Migration'lar aracılığıyla oluştur/güncelle
-    context.Database.Migrate();
+    // Postgres (production): Migration'ları uygula.
+    // Sqlite (yerel geliştirme): şemayı modelden oluştur (migration gerektirmez).
+    if (isPostgres)
+        context.Database.Migrate();
+    else
+        context.Database.EnsureCreated();
 
     var userManager = services.GetRequiredService<UserManager<AppUser>>();
     var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
@@ -100,25 +115,29 @@ using (var scope = app.Services.CreateScope())
     {
         if (string.IsNullOrWhiteSpace(adminPassword))
         {
-            // Yapılandırmada şifre verilmemişse rastgele güvenli bir şifre üret ve logla.
-            adminPassword = Convert.ToBase64String(RandomNumberGenerator.GetBytes(18));
+            // Şifre yapılandırılmamışsa admin kullanıcı OLUŞTURULMAZ.
+            // Prod'da: AdminSeed__Password ortam değişkeni ile verilmelidir.
             logger.LogWarning(
-                "AdminSeed:Password yapılandırılmamış. Otomatik oluşturulan admin şifresi (sadece bu ilk çalıştırmada gösterilir): {AdminPassword}",
-                adminPassword);
+                "AdminSeed:Password yapılandırılmamış. Admin kullanıcı ({AdminEmail}) oluşturulmadı. " +
+                "Ortam değişkeni AdminSeed__Password ayarlanıp uygulama yeniden başlatılmalıdır.",
+                adminEmail);
         }
-
-        adminUser = new AppUser
+        else
         {
-            UserName = adminEmail,
-            Email = adminEmail
-        };
+            adminUser = new AppUser
+            {
+                UserName = adminEmail,
+                Email = adminEmail,
+                EmailConfirmed = true
+            };
 
-        var result = userManager.CreateAsync(adminUser, adminPassword).Result;
-        if (!result.Succeeded)
-        {
-            logger.LogError("Admin kullanıcı oluşturulamadı: {Errors}",
-                string.Join(", ", result.Errors.Select(e => e.Description)));
-            adminUser = null;
+            var result = userManager.CreateAsync(adminUser, adminPassword).Result;
+            if (!result.Succeeded)
+            {
+                logger.LogError("Admin kullanıcı oluşturulamadı: {Errors}",
+                    string.Join(", ", result.Errors.Select(e => e.Description)));
+                adminUser = null;
+            }
         }
     }
 
