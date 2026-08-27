@@ -18,23 +18,40 @@ var builder = WebApplication.CreateBuilder(args);
 // Yerelde Sqlite şeması EnsureCreated ile, Postgres şeması Migration'lar ile oluşturulur.
 var dbProvider = (builder.Configuration["Database:Provider"] ?? "Sqlite").Trim();
 var isPostgres = dbProvider.Equals("Postgres", StringComparison.OrdinalIgnoreCase);
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
-    ?? Environment.GetEnvironmentVariable("DATABASE_URL")
-    ?? (isPostgres
-        ? "Host=localhost;Port=5432;Database=otorehber;Username=otorehber;Password=otorehber"
-        : "Data Source=OtoRehberDB.db");
 
-// Railway/Render vb. "postgresql://user:pass@host:port/db" biçimini Npgsql anahtar-değer biçimine çevir.
-if (isPostgres && (connectionString.StartsWith("postgres://") || connectionString.StartsWith("postgresql://")))
+string connectionString;
+if (isPostgres)
 {
-    var uri = new Uri(connectionString);
-    var userInfo = uri.UserInfo.Split(':', 2);
+    // Öncelik: DATABASE_URL ortam değişkeni (Railway/Render Postgres eklentisi),
+    // sonra ConnectionStrings:DefaultConnection. appsettings.json'daki Sqlite
+    // varsayılanı ("Data Source=...") Postgres modunda geçersizdir.
+    var cfg = builder.Configuration.GetConnectionString("DefaultConnection");
     connectionString =
-        $"Host={uri.Host};Port={(uri.Port > 0 ? uri.Port : 5432)};" +
-        $"Database={uri.AbsolutePath.TrimStart('/')};" +
-        $"Username={Uri.UnescapeDataString(userInfo[0])};" +
-        $"Password={Uri.UnescapeDataString(userInfo.ElementAtOrDefault(1) ?? "")};" +
-        "SSL Mode=Require;Trust Server Certificate=true";
+        Environment.GetEnvironmentVariable("DATABASE_URL")
+        ?? (string.IsNullOrWhiteSpace(cfg) || cfg.StartsWith("Data Source=", StringComparison.OrdinalIgnoreCase) ? null : cfg)
+        ?? throw new InvalidOperationException(
+            "Database:Provider=Postgres ancak geçerli bir PostgreSQL bağlantısı yok. " +
+            "DATABASE_URL veya ConnectionStrings__DefaultConnection ortam değişkenini ayarlayın " +
+            "(örn. Railway'de ConnectionStrings__DefaultConnection = ${{Postgres.DATABASE_URL}}).");
+
+    // "postgresql://user:pass@host:port/db" biçimini Npgsql anahtar-değer biçimine çevir.
+    if (connectionString.StartsWith("postgres://") || connectionString.StartsWith("postgresql://"))
+    {
+        var uri = new Uri(connectionString);
+        var userInfo = uri.UserInfo.Split(':', 2);
+        connectionString =
+            $"Host={uri.Host};Port={(uri.Port > 0 ? uri.Port : 5432)};" +
+            $"Database={Uri.UnescapeDataString(uri.AbsolutePath.TrimStart('/'))};" +
+            $"Username={Uri.UnescapeDataString(userInfo[0])};" +
+            $"Password={Uri.UnescapeDataString(userInfo.ElementAtOrDefault(1) ?? "")};" +
+            // Railway iç ağında SSL yok, public proxy'de var → Prefer ikisini de kapsar.
+            "SSL Mode=Prefer;Trust Server Certificate=true";
+    }
+}
+else
+{
+    connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
+        ?? "Data Source=OtoRehberDB.db";
 }
 
 builder.Services.AddDbContext<OtoRehberDbContext>(options =>

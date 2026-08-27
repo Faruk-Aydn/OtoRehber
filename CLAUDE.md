@@ -312,10 +312,15 @@ Sadece 2 dosyada var:
   metin + alttaki "Not:" cümlesi.
 
 ### C) Deploy env değişkenleri (Railway → uygulama servisi → Variables → Raw Editor)
+
+> **ÖNCE** projeye PostgreSQL servisi ekle (`+ New → Database → Add PostgreSQL`),
+> sonra bu değişkenleri gir. Yoksa `${{Postgres.DATABASE_URL}}` boş kalır ve
+> uygulama "geçerli bir PostgreSQL bağlantısı yok" hatası verir.
+
 ```
 ASPNETCORE_ENVIRONMENT=Production
 Database__Provider=Postgres
-ConnectionStrings__DefaultConnection=${{Postgres.DATABASE_URL}}
+DATABASE_URL=${{Postgres.DATABASE_URL}}
 DataProtection__KeyPath=/data/keys
 AdminSeed__Email=<kendi e-postan>
 AdminSeed__Password=<güçlü şifre, min 8, büyük/küçük harf + rakam>
@@ -324,9 +329,14 @@ Resend__ApiKey=<re_... — resend.com/api-keys ; boşsa e-posta gitmez, link log
 Resend__FromEmail=OtoRehber <onboarding@resend.dev>
 AllowedHosts=<railway domain'in, örn otorehber-production.up.railway.app>
 ```
-`__` = appsettings'teki `:`. `${{Postgres.DATABASE_URL}}` Railway değişken
-referansıdır; Postgres eklentisi eklenince otomatik dolar. Kod `postgresql://`
-URL'sini Npgsql biçimine çevirir (`Program.cs`).
+- `__` = appsettings'teki `:`.
+- `DATABASE_URL` = `${{Postgres.DATABASE_URL}}` — Railway değişken referansı.
+  "Postgres" DB servisinin adıdır; farklı isim verdiysen ona göre değiştir.
+  Kolay yol: Variables → "Add Reference" → Postgres → DATABASE_URL seç.
+- Kod `postgresql://user:pass@host/db` biçimini Npgsql biçimine çevirir
+  (`Program.cs`). `DATABASE_URL` ve `ConnectionStrings__DefaultConnection`
+  ikisi de kabul edilir; `DATABASE_URL` önceliklidir.
+- `healthcheckPath=/health` ve restart politikası `railway.json` ile otomatik.
 
 ### D) Google Gemini key
 aistudio.google.com/apikey → "Create API key" → `AIza...` kopyala.
