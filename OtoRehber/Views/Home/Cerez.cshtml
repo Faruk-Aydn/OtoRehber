@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "Çerez Politikası";
+}
+<div class="legal-doc">
+    <h1>Çerez Politikası</h1>
+    <p class="muted">Son güncelleme: @DateTime.UtcNow.ToString("dd.MM.yyyy")</p>
+
+    <p>OtoRehber, yalnızca hizmetin çalışması için gerekli çerezleri kullanır.</p>
+
+    <h2>Kullanılan çerezler</h2>
+    <ul>
+        <li><strong>Oturum / kimlik çerezi</strong> (<code>.AspNetCore.Identity.Application</code>):
+            giriş yapmış kullanıcının oturumunu sürdürür.</li>
+        <li><strong>Antiforgery çerezi</strong>: form gönderimlerini sahtecilik (CSRF) saldırılarına karşı korur.</li>
+        <li><strong>Tema tercihi</strong> (tarayıcı <code>localStorage</code>): açık/koyu tema seçiminizi hatırlar.</li>
+        <li><strong>Çerez onayı</strong> (<code>localStorage</code>): bu bildirimi tekrar göstermemek için.</li>
+    </ul>
+
+    <p>Bu çerezler zorunludur ve kişisel profilleme veya reklam amacıyla kullanılmaz.
+    Analitik veya pazarlama çerezleri eklenmesi halinde bu politika güncellenecek ve
+    açık rızanız talep edilecektir.</p>
+
+    <h2>Çerezleri yönetme</h2>
+    <p>Tarayıcı ayarlarınızdan çerezleri silebilir veya engelleyebilirsiniz; ancak bu durumda
+    giriş yapma gibi bazı işlevler çalışmayabilir.</p>
+</div>

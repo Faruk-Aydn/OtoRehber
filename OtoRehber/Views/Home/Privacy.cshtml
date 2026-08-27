@@ -1,6 +1,39 @@
 @{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Gizlilik Politikası";
 }
-<h1>@ViewData["Title"]</h1>
+<div class="legal-doc">
+    <h1>Gizlilik Politikası</h1>
+    <p class="muted">Son güncelleme: @DateTime.UtcNow.ToString("dd.MM.yyyy")</p>
 
-<p>Use this page to detail your site's privacy policy.</p>
+    <p>
+        OtoRehber ("Platform") olarak gizliliğinize önem veriyoruz. Bu politika, Platform'u
+        kullandığınızda hangi verileri işlediğimizi ve bu verileri nasıl koruduğumuzu açıklar.
+        Kişisel verilerin işlenmesine ilişkin detaylı bilgi için
+        <a asp-action="Kvkk">KVKK Aydınlatma Metni</a>'ni inceleyebilirsiniz.
+    </p>
+
+    <h2>Topladığımız veriler</h2>
+    <ul>
+        <li><strong>Hesap bilgileri:</strong> e-posta adresi ve şifreniz (şifre geri döndürülemez şekilde şifrelenerek saklanır).</li>
+        <li><strong>Kullanım verileri:</strong> eklediğiniz yorumlar, garajınıza eklediğiniz araçlar.</li>
+        <li><strong>Teknik veriler:</strong> IP adresi, tarayıcı türü — güvenlik ve kötüye kullanımın önlenmesi amacıyla.</li>
+    </ul>
+
+    <h2>Verilerin kullanımı</h2>
+    <p>Verileriniz yalnızca hizmetin sunulması, hesabınızın güvenliği ve yasal yükümlülüklerin
+    yerine getirilmesi amacıyla kullanılır. Verileriniz pazarlama amacıyla üçüncü taraflara satılmaz.</p>
+
+    <h2>Üçüncü taraf hizmetler</h2>
+    <ul>
+        <li><strong>E-posta gönderimi:</strong> hesap doğrulama ve şifre sıfırlama e-postaları için Resend.</li>
+        <li><strong>Yapay zeka:</strong> araç önerisi ve karşılaştırma metinleri için Google Gemini API. Bu servise hesap verileriniz gönderilmez; yalnızca araç bilgileri ve sorunuz iletilir.</li>
+    </ul>
+
+    <h2>Saklama süresi</h2>
+    <p>Hesap verileriniz hesabınız aktif olduğu sürece saklanır. Hesabınızı sildiğinizde
+    kişisel verileriniz yasal saklama yükümlülükleri saklı kalmak kaydıyla silinir.</p>
+
+    <h2>Haklarınız</h2>
+    <p>Verilerinize erişebilir, düzeltme talep edebilir veya hesabınızın silinmesini isteyebilirsiniz.
+    Talepleriniz için: <a asp-action="Iletisim">İletişim</a>.</p>
+</div>

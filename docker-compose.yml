@@ -1,0 +1,43 @@
+# Yerel/production benzeri çalıştırma: uygulama + PostgreSQL.
+# Kullanım:  docker compose up --build
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: otorehber
+      POSTGRES_USER: otorehber
+      POSTGRES_PASSWORD: otorehber
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U otorehber"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  web:
+    build: .
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      Database__Provider: Postgres
+      ConnectionStrings__DefaultConnection: "Host=db;Port=5432;Database=otorehber;Username=otorehber;Password=otorehber"
+      DataProtection__KeyPath: /data/keys
+      # Yayına almadan önce gerçek değerlerle doldurun:
+      AdminSeed__Email: "admin@otorehber.com"
+      AdminSeed__Password: ""
+      GeminiApiKey: ""
+      Resend__ApiKey: ""
+      # AllowedHosts: "otorehber.com"
+    ports:
+      - "8080:8080"
+    volumes:
+      - dpkeys:/data/keys
+
+volumes:
+  pgdata:
+  dpkeys:

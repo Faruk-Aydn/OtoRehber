@@ -105,86 +105,87 @@ Development: `dotnet user-secrets`. Production: environment variable.
 
 ## FAZ 1 — Canlıya çıkış blokerleri (BUNLAR BİTMEDEN DEPLOY YOK)
 
-### 1.1 Tehlikeli / geçici endpoint'leri kaldır
-- [ ] `AdminCarController.RestoreDatabase` sil (anonim erişim + admin şifre sıfırlama açığı)
-- [ ] `AdminCarController.DeleteAllCars` sil veya ayrı korumalı bakım aracına taşı
-- [ ] `AdminCarController.DeleteAiCars` sil (`Id > 6` kırılgan mantık)
-- [ ] `AdminCarController.AutoFetchImages` sil (Bing scrape → harici URL enjeksiyonu, `new HttpClient()`)
-- [ ] Kök dizindeki `fix_migration.py` sil
-- **Durum:** _bekliyor_
+### 1.1 Tehlikeli / geçici endpoint'leri kaldır ✅
+- [x] `AdminCarController.RestoreDatabase` silindi
+- [x] `AdminCarController.DeleteAllCars` silindi
+- [x] `AdminCarController.DeleteAiCars` silindi
+- [x] `AdminCarController.AutoFetchImages` silindi
+- [x] `fix_migration.py` silindi
+- [x] `Views/AdminCar/Index` ilgili butonlar kaldırıldı
+- **Durum:** _tamam (commit 1)_
 
-### 1.2 Gizli anahtar yönetimi
-- [ ] `appsettings.json`'dan `GeminiApiKey` ve `AdminSeed:Password` değerleri boş kalsın; koddan `_configuration` ile okunmaya devam
-- [ ] `README`/bu dosyada dev için `user-secrets` talimatı
-- [ ] Production: environment variable (`GeminiApiKey`, `AdminSeed__Email`, `AdminSeed__Password`, `ConnectionStrings__DefaultConnection`)
-- [ ] Admin seed: şifre yoksa kullanıcı **oluşturma** (log'a şifre yazma yok); sadece uyarı logla
-- **Durum:** _bekliyor_
+### 1.2 Gizli anahtar yönetimi ✅
+- [x] `appsettings.json` gizli alanları boş; kod `_configuration` ile okuyor
+- [x] `csproj` `<UserSecretsId>` eklendi (dev `dotnet user-secrets`)
+- [x] Prod env değişkenleri: `README.md` + `docker-compose.yml`'de belgelendi
+- [x] Admin seed: şifre yoksa kullanıcı oluşturulmuyor (log'a şifre yazılmıyor)
+- **Durum:** _tamam (commit 2)_
 
-### 1.3 SQLite → PostgreSQL
-- [ ] `Npgsql.EntityFrameworkCore.PostgreSQL` paketi
-- [ ] `Program.cs`: `UseNpgsql` + connection string environment'tan
-- [ ] Yerel geliştirme için docker-compose'da postgres servisi
-- [ ] Migration'ları temiz üret (`InitialCreate`), `HasData` seed'i koru
-- [ ] `.gitignore`'a Postgres volume yolları (gerekirse)
-- **Durum:** _bekliyor_ — hosting/DB kararına bağlı. Karar gelene kadar SQLite provider'ı config ile seçilebilir yapılabilir.
+### 1.3 SQLite → PostgreSQL ✅
+- [x] `Npgsql.EntityFrameworkCore.PostgreSQL` 8.0.10
+- [x] `Database:Provider` config anahtarı (Sqlite=EnsureCreated, Postgres=Migrate)
+- [x] `docker-compose.yml` postgres servisi
+- [x] Migration'lar PostgreSQL'e göre yeniden üretildi + `OtoRehberDbContextFactory`
+- **Durum:** _tamam (commit 2)_. Not: yerel Sqlite `EnsureCreated` kullandığı için model değişince `OtoRehberDB.db` silinmeli.
 
-### 1.4 AI YouTube import — sahte veri fallback'i kaldır
-- [ ] `AiCarDataService.AnalyzeAndSaveFromYoutubeAsync` içindeki hard-coded Corolla transkripti sil
-- [ ] Transkript yoksa `null`/anlamlı hata döndür, controller kullanıcıya bildirsin
-- [ ] `chunk` döngüsündeki `Task.Delay` → arka plan işine taşınana kadar en azından `IHostedService`/kuyruk notu
-- **Durum:** _bekliyor_
+### 1.4 AI YouTube import — sahte veri fallback'i kaldır ✅
+- [x] Hard-coded Corolla transkripti kaldırıldı
+- [x] Transkript yoksa `InvalidOperationException`; `ImportFromYoutube` yakalayıp kullanıcıya gösteriyor
+- [ ] `Task.Delay` hâlâ istek içinde (admin-only) → Faz 2.7
+- **Durum:** _tamam (commit 1)_
 
-### 1.5 CSRF / antiforgery
-- [ ] `GarageController.Toggle` → `[ValidateAntiForgeryToken]` + JS'te `RequestVerificationToken` header
-- [ ] `AiWizardController.Analyze` → `[ValidateAntiForgeryToken]` + form token
-- [ ] `AiChatController.SendMessage` → antiforgery header doğrulaması (cookie auth API)
-- [ ] Global: `AutoValidateAntiforgeryTokenAttribute` filtresi (GET hariç tüm POST)
-- **Durum:** _bekliyor_
+### 1.5 CSRF / antiforgery ✅
+- [x] Global `AutoValidateAntiforgeryTokenAttribute`
+- [x] `AddAntiforgery` header `RequestVerificationToken`
+- [x] `_Layout` global token + `postJson` helper; garaj toggle / AI chat güncellendi
+- [x] Test: token'sız POST → 400, token'lı → 200 (doğrulandı)
+- **Durum:** _tamam (commit 3)_
 
-### 1.6 Yorum sistemi güvenliği
-- [ ] `CarController.AddReview` → `[Authorize]`
-- [ ] `CarReview`'a `UserId` (FK → AppUser) ekle; `UserName` server'da `User` üzerinden set edilsin
-- [ ] Aynı kullanıcı aynı araca 1 yorum (unique index) veya düzenleme akışı
-- [ ] Yorum endpoint'ine rate limit policy
-- [ ] Migration
-- **Durum:** _bekliyor_
+### 1.6 Yorum sistemi güvenliği ✅
+- [x] `CarController.AddReview` → `[Authorize]` + `[EnableRateLimiting("review")]` + async
+- [x] `CarReview.UserId` (FK → AppUser); `UserName` sunucuda e-posta yerel kısmından
+- [x] `(CarId, UserId)` unique index; `UserGarage (UserId, CarId)` unique index
+- [x] Migration + `Details.cshtml` formu login'e bağlandı
+- **Durum:** _tamam (commit 3)_
 
-### 1.7 Kimlik doğrulama sertleştirme
-- [ ] Login/Register endpoint'lerine rate limiting policy ("auth")
-- [ ] `AccountController.Login` GET → `[AllowAnonymous]` (tutarlılık)
-- [ ] E-posta doğrulama: Identity `SignIn.RequireConfirmedAccount` + "ForgotPassword/ResetPassword/ConfirmEmail" sayfaları
-- [ ] `IEmailSender` implementasyonu → `ResendEmailSender` (key yoksa no-op + log)
-- [ ] Cookie: `SecurePolicy = Always`, `SameSite = Lax`, `HttpOnly`, makul `ExpireTimeSpan`
-- [ ] Hesap enumerasyonu: `Register` ve `ForgotPassword` generic mesaj döndürsün
-- **Durum:** _bekliyor_
+### 1.7 Kimlik doğrulama sertleştirme ✅
+- [x] `auth` rate limit → Login/Register/ForgotPassword/ResetPassword
+- [x] `Login` GET `[AllowAnonymous]` (controller seviyesinde)
+- [x] `SignIn.RequireConfirmedAccount` + ConfirmEmail/ForgotPassword/ResetPassword akışları + view'lar
+- [x] `ResendEmailSender` (key yoksa no-op + log)
+- [x] Cookie: HttpOnly + Secure(Always) + SameSite=Lax + 7 gün sliding
+- [x] Hesap enumerasyonu: Register/ForgotPassword generic yanıt
+- [x] Test: kayıt→doğrulama linki→onay→giriş; doğrulanmamış giriş engelli (doğrulandı)
+- **Durum:** _tamam (commit 3)_
 
-### 1.8 Pipeline / hosting sağlamlaştırma
-- [ ] `app.UseForwardedHeaders()` (reverse proxy arkası)
-- [ ] DataProtection anahtarlarını kalıcı sakla (`PersistKeysToFileSystem` / Blob / Redis)
-- [ ] `AllowedHosts` → gerçek domain
-- [ ] `app.UseStatusCodePagesWithReExecute("/Home/Error")` + özel 404/500 View
-- [ ] `Program.cs` seeding → `async` (`.Result`/`.Wait()` kaldır)
-- [ ] Response compression (`UseResponseCompression`, Brotli)
-- [ ] HSTS `max-age=1yıl` + `preload` + `includeSubDomains` (`AddHsts`)
-- [ ] `Permissions-Policy` header ekle (geolocation/camera/microphone kapalı)
-- **Durum:** _bekliyor_
+### 1.8 Pipeline / hosting sağlamlaştırma ✅
+- [x] `UseForwardedHeaders`
+- [x] DataProtection `PersistKeysToFileSystem` (`DataProtection:KeyPath`)
+- [x] `UseStatusCodePagesWithReExecute` + özel Türkçe `Error.cshtml` (404/403/429/500)
+- [x] Seeding `async` (`.Result`/`.Wait()` kaldırıldı)
+- [x] `UseResponseCompression` (Brotli + Gzip)
+- [x] `AddHsts` 1 yıl + preload + includeSubDomains
+- [x] `Permissions-Policy` header
+- [x] `/health` health check (`AddDbContextCheck`)
+- [ ] `AllowedHosts` → prod'da env ile domain (deploy anında)
+- **Durum:** _tamam (commit 3), AllowedHosts deploy'da_
 
-### 1.9 Hukuki sayfalar (Türkiye / KVKK)
-- [ ] KVKK Aydınlatma Metni
-- [ ] Kullanım Koşulları
-- [ ] Çerez Politikası + çerez onay banner'ı
-- [ ] Gizlilik Politikası (gerçek içerik — şu an şablon)
-- [ ] Footer'a linkler
-- **Durum:** _bekliyor_
+### 1.9 Hukuki sayfalar (Türkiye / KVKK) ✅
+- [x] KVKK Aydınlatma Metni, Kullanım Koşulları, Çerez Politikası, Hakkımızda, İletişim
+- [x] Gizlilik Politikası gerçek içerikle yeniden yazıldı
+- [x] Footer linkleri + çerez onay banner'ı (`localStorage`)
+- [ ] Köşeli parantezli işletme bilgileri (`[Şirket Unvanı]`, `[adres]`, `[e-posta]`) doldurulmalı
+- **Durum:** _tamam (commit 4), placeholder'lar doldurulacak_
 
-### 1.10 Deployment altyapısı
-- [ ] `Dockerfile` (multi-stage, `dotnet publish -c Release`)
-- [ ] `docker-compose.yml` (app + postgres)
-- [ ] `.github/workflows/ci.yml` — build + test
-- [ ] `.github/workflows/deploy.yml` — migration bundle + deploy (platforma göre)
-- [ ] `/health` health check endpoint
-- [ ] `.dockerignore`
-- **Durum:** _bekliyor_
+### 1.10 Deployment altyapısı ✅
+- [x] `Dockerfile` (multi-stage, non-root, HEALTHCHECK)
+- [x] `.dockerignore`
+- [x] `docker-compose.yml` (web + postgres + volumes)
+- [x] `.github/workflows/ci.yml` (restore/build/test/docker build)
+- [x] `/health` endpoint
+- [x] `README.md` — Railway deploy adımları
+- [ ] `deploy.yml` — Railway otomatik build kullanıyor; ayrı workflow opsiyonel
+- **Durum:** _tamam (commit 4)_
 
 ---
 
@@ -278,3 +279,11 @@ Development: `dotnet user-secrets`. Production: environment variable.
 | Tarih | Faz/Madde | Değişiklik | Commit |
 |---|---|---|---|
 | 2026-08-27 | — | CLAUDE.md yol haritası oluşturuldu | — |
+| 2026-08-27 | 1.1, 1.4 | Tehlikeli endpoint'ler + AI sahte-veri fallback kaldırıldı | commit 1 |
+| 2026-08-27 | 1.2, 1.3 | PostgreSQL desteği + gizli anahtar sertleştirme | commit 2 |
+| 2026-08-27 | 1.5–1.8 | CSRF, e-posta doğrulama, şifre sıfırlama, pipeline sertleştirme | commit 3 |
+| 2026-08-27 | 1.9, 1.10 | KVKK/hukuki sayfalar + çerez banner + Docker/CI + README | commit 4 |
+
+**Faz 1 tamamlandı.** Kalan küçük işler: hukuki sayfalardaki `[...]` işletme
+bilgileri, prod `AllowedHosts`, gerçek Resend/Gemini/AdminSeed env değerleri.
+Sıradaki: Faz 2.

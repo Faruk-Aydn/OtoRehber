@@ -27,6 +27,17 @@
     <!-- FontAwesome & AOS CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Hukuki / bilgi sayfaları için basit tipografi */
+        .legal-doc { max-width: 48rem; margin: 0 auto; padding: 2.5rem 0; line-height: 1.75; }
+        .legal-doc h1 { font-size: 1.875rem; font-weight: 800; margin-bottom: .5rem; }
+        .legal-doc h2 { font-size: 1.25rem; font-weight: 700; margin: 2rem 0 .75rem; }
+        .legal-doc p, .legal-doc li { color: inherit; margin-bottom: .75rem; }
+        .legal-doc ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
+        .legal-doc a { color: #2563eb; text-decoration: underline; }
+        .dark .legal-doc a { color: #60a5fa; }
+        .legal-doc .muted { color: #6b7280; font-size: .875rem; }
+    </style>
     <script>
         // FOUC önlemek için sayfa render edilmeden önce temayı kontrol et
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -163,11 +174,43 @@
         </div>
     }
 
-    <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-6 mt-auto transition-colors duration-300">
+    <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-8 mt-auto transition-colors duration-300">
         <div class="container mx-auto px-4 text-center text-gray-500 dark:text-gray-400 text-sm">
-            &copy; 2026 - OtoRehber - <a asp-area="" asp-controller="Home" asp-action="Privacy" class="hover:text-primary dark:hover:text-blue-400 transition">Gizlilik Sözleşmesi</a>
+            <nav class="flex flex-wrap justify-center gap-x-5 gap-y-2 mb-4">
+                <a asp-controller="Home" asp-action="Hakkimizda" class="hover:text-primary dark:hover:text-blue-400 transition">Hakkımızda</a>
+                <a asp-controller="Home" asp-action="Iletisim" class="hover:text-primary dark:hover:text-blue-400 transition">İletişim</a>
+                <a asp-controller="Home" asp-action="Privacy" class="hover:text-primary dark:hover:text-blue-400 transition">Gizlilik Politikası</a>
+                <a asp-controller="Home" asp-action="Kvkk" class="hover:text-primary dark:hover:text-blue-400 transition">KVKK Aydınlatma Metni</a>
+                <a asp-controller="Home" asp-action="KullanimKosullari" class="hover:text-primary dark:hover:text-blue-400 transition">Kullanım Koşulları</a>
+                <a asp-controller="Home" asp-action="Cerez" class="hover:text-primary dark:hover:text-blue-400 transition">Çerez Politikası</a>
+            </nav>
+            <p>&copy; @DateTime.UtcNow.Year OtoRehber. İçerikler bilgilendirme amaçlıdır, bağlayıcı değildir.</p>
         </div>
     </footer>
+
+    <!-- Çerez onay bildirimi -->
+    <div id="cookie-banner" class="hidden fixed bottom-0 inset-x-0 z-[150] bg-gray-900 text-gray-100 text-sm">
+        <div class="container mx-auto px-4 py-3 flex flex-col sm:flex-row items-center gap-3">
+            <p class="flex-1 text-center sm:text-left">
+                Yalnızca sitenin çalışması için gerekli çerezleri kullanıyoruz.
+                <a asp-controller="Home" asp-action="Cerez" class="underline hover:text-white">Detaylı bilgi</a>.
+            </p>
+            <button onclick="acceptCookies()" class="bg-primary hover:bg-blue-700 text-white font-semibold px-4 py-1.5 rounded-lg whitespace-nowrap">Tamam</button>
+        </div>
+    </div>
+    <script>
+        (function () {
+            try {
+                if (localStorage.getItem('cookie-consent') !== 'ok') {
+                    document.getElementById('cookie-banner').classList.remove('hidden');
+                }
+            } catch (e) { }
+        })();
+        function acceptCookies() {
+            try { localStorage.setItem('cookie-consent', 'ok'); } catch (e) { }
+            document.getElementById('cookie-banner').classList.add('hidden');
+        }
+    </script>
     
     @await RenderSectionAsync("Scripts", required: false)
     
