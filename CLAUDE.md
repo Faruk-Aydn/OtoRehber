@@ -198,12 +198,13 @@ Development: `dotnet user-secrets`. Production: environment variable.
 - [x] AI context sorgularında `Select` ile kolon daraltma (6 kolon)
 - [x] `Car.Brand`, `Car.Segment`, `Car.ReliabilityScore` index
 
-### 2.2 Frontend / asset
-- [ ] Tailwind'i build-time derle (CLI veya `Microsoft.AspNetCore.SpaProxy` yerine basit npm script), tek minified CSS
-- [ ] FontAwesome / AOS / marked / DOMPurify / Chart.js self-host + bundle + minify
-- [ ] `asp-append-version="true"` tüm statik referanslara
-- [ ] CDN scriptleri `<script defer>`
-- [ ] CSP: `'unsafe-inline'` script kaldır, nonce tabanlı; CDN host'ları temizle
+### 2.2 Frontend / asset ✅ (kısmen)
+- [x] Tailwind build-time derleme — npm `build:css` script (`tailwind.config.js` + `app.src.css` → `wwwroot/css/app.min.css` commit'lenir, Docker Node istemez). CDN JIT kaldırıldı.
+- [x] FontAwesome (css+webfonts) / AOS / marked / DOMPurify / Chart.js / DataTables + jQuery(admin) → `wwwroot/lib/` altında self-host
+- [x] `asp-append-version="true"` self-host edilen tüm referanslara
+- [x] CSP: tüm CDN host'ları kaldırıldı → `script-src`/`style-src` sadece `'self' 'unsafe-inline'`, `font-src 'self' data:`
+- [ ] `'unsafe-inline'` script → nonce tabanlı (inline script çok, ayrı iş)
+- [ ] CDN/self-host scriptlerine `<script defer>` + `<environment>` dev/prod ayrımı
 
 ### 2.R Responsive (mobil / tablet / masaüstü) ✅
 - [x] Navbar hamburger menü (lg altında); mobil arama + tema toggle
@@ -295,6 +296,9 @@ Development: `dotnet user-secrets`. Production: environment variable.
 | 2026-08-27 | 2.8 | AI prompt injection çerçevesi + `GeminiModel` config (model adı düzeltme) | a897658 |
 | 2026-08-27 | 2.4 | Serilog + admin audit log tablosu | 6024435 |
 | 2026-08-27 | responsive | Navbar hamburger + taşma düzeltmeleri (mobil/tablet/masaüstü) | 3529647 |
+| 2026-08-27 | 2.2 | Tailwind build-time derleme (CDN JIT kaldırıldı) | 24947e5 |
+| 2026-08-28 | 2.2 | `app.min.css` FontAwesome sonrası yüklenir (`.hidden` çakışması) + `-c` bayrağı | 24947e5 |
+| 2026-08-28 | 2.2 | FontAwesome/AOS/marked/DOMPurify/Chart.js/DataTables self-host + CSP'den CDN kaldırıldı | _(bu commit)_ |
 | 2026-08-27 | 1.3, 1.10 | Railway `DATABASE_URL` ayrıştırma + Docker healthcheck düzeltme + deploy rehberi | 93c5dbb |
 | 2026-08-27 | deploy | Postgres bağlantı çözümü + `railway.json` | 1e7fb51 |
 | 2026-08-27 | deploy | `PORT` env dinleme + healthcheck timeout | 1c974f8 |
@@ -316,11 +320,37 @@ Development: `dotnet user-secrets`. Production: environment variable.
 - DataProtection anahtarları şu an konteyner-yerel (deploy'da oturumlar düşer).
 
 ### Kalan küçük işler
-- Hukuki sayfalardaki `[Şirket Unvanı]`, `[adres]`, `[e-posta]` (`Kvkk.cshtml`, `Iletisim.cshtml`)
 - Railway `AllowedHosts` → gerçek domain'e sabitle (şu an `*`; healthcheck'i kırmadan)
 - Gerçek `GeminiApiKey` (`AIza...`), Resend domain doğrulaması
 - Prod Postgres'te orphan `DataProtectionKeys` tablosu (zararsız, DROP edilebilir)
-- **Sıradaki: Faz 2**
+- DataProtection anahtarları hâlâ konteyner-yerel → deploy'da oturumlar düşer (DB/Redis backend'i doğru paketle)
+
+### Faz 2 — YAPILAN (bu oturuma kadar, canlıda test edilecek)
+- 2.1 async + IMemoryCache + AI context daraltma + Car index'leri
+- 2.5 entity `[MaxLength]` + `MinPrice/MaxPrice long` + görsel magic-byte (migration `Faz2DataIntegrity`)
+- 2.8 AI prompt-injection çerçevesi + `GeminiModel` config
+- 2.4 Serilog + admin audit log (`AuditLog` tablosu, migration `AddAuditLog`)
+- 2.R responsive (navbar hamburger, taşma düzeltmeleri, 390/768/1280 doğrulandı)
+- 2.2 Tailwind build-time derleme + tüm asset'ler self-host + CSP'den CDN temizlendi
+
+### Faz 2 — YAPILMAYAN (sıradaki oturum)
+- **2.3 PWA** — `service-worker.js` yeniden yaz (statik-only cache, `activate` temizliği,
+  `skipWaiting`/`clients.claim`), gerçek 192/512/maskable PNG ikonlar, `manifest.json` düzelt, `offline.html`
+- **2.7** — YouTube import → `BackgroundService`/`Channel` kuyruğu; `AiCarDataService`'teki
+  `Task.Delay(6000)` hâlâ request thread'inde (admin-only)
+- **2.6** — `OtoRehber.Tests` projesi (xUnit + `WebApplicationFactory`), smoke + AI birim testi, CI'da zorunlu
+- 2.2 kalanı — inline script'ler için CSP nonce, `<script defer>`, `<environment>` dev/prod ayrımı
+- 2.5 kalanı — AI karşılaştırma sonucu DB cache (`car1Id,car2Id`)
+- AutoMapper CVE (GHSA-rvv3-g6hj-g44x) sürüm yükseltme
+
+### Bir sonraki oturumda İLK yapılacak: prod doğrulama
+Bu commit Railway'e deploy oldu mu kontrol et:
+- `https://otorehber-production.up.railway.app/health` → `Healthy`
+- `/`, `/Stats`, `/Compare`, `/Account/Login`, `/AdminCar` → 200
+- DevTools → Network: `cdn.`/`unpkg`/`jsdelivr` isteği **olmamalı**, `/lib/...` 200, FA ikonları görünür
+- CSP ihlali konsol hatası yok
+Sorun varsa: en olası şüpheli `wwwroot/lib/` dosyalarının `.gitignore` / `.dockerignore` ile
+elenmesi veya `asp-append-version` + static file cache. `.dockerignore`'da `wwwroot` hariç tutulmadığından emin ol.
 
 ---
 

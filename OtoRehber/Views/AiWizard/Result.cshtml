@@ -43,8 +43,8 @@
 
 @section Scripts {
     <!-- Include marked.js for Markdown parsing + DOMPurify for XSS-safe sanitization -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
+    <script src="~/lib/marked/marked.min.js" asp-append-version="true"></script>
+    <script src="~/lib/dompurify/purify.min.js" asp-append-version="true"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Ham markdown metnini al (tarayıcı, encode edilmiş içeriği textContent'e otomatik decode eder)
