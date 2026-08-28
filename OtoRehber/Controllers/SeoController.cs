@@ -32,6 +32,7 @@ namespace OtoRehber.Controllers
             sb.AppendLine("Allow: /");
             sb.AppendLine("Disallow: /AdminCar");
             sb.AppendLine("Disallow: /Account");
+            sb.AppendLine("Disallow: /Manage");
             sb.AppendLine("Disallow: /Garage");
             sb.AppendLine();
             sb.AppendLine($"Sitemap: {BaseUrl}/sitemap.xml");

@@ -269,7 +269,10 @@ Development: `dotnet user-secrets`. Production: environment variable.
 ### 3.1 Sayfalar
 - [ ] Ayrı katalog sayfası (`/araclar`), Home = landing/hero
 - [ ] Tam arama sonuçları sayfası
-- [ ] Kullanıcı profili / hesap ayarları (şifre, e-posta, hesabı sil)
+- [x] Kullanıcı hesap ayarları — `ManageController` (`/Manage`): profil özeti (e-posta + yorum/garaj sayısı),
+  şifre değiştir (`RefreshSignIn`), e-posta değiştir (yeni adrese doğrulama linki + `ConfirmEmailChange`),
+  **hesabı sil** (şifre + onay kutusu; yorumlar cascade, garaj kayıtları elle silinir — KVKK silme hakkı).
+  Navbar'a "Hesabım" linki. `/Manage` → `noindex` + robots.txt disallow.
 - [ ] Marka sayfaları (`/marka/{slug}`), segment sayfaları
 - [ ] Hakkımızda, İletişim
 - [ ] `sitemap.xml`, `robots.txt`
@@ -321,6 +324,8 @@ Development: `dotnet user-secrets`. Production: environment variable.
 | 2026-08-28 | 2.5 | AI karşılaştırma sonucu `IMemoryCache` (6 saat, `compare-verdict:{a}-{b}`) — tekrar eden Gemini çağrısı yok | cdab798 |
 | 2026-08-28 | 3.3 | SEO: `_Layout` meta/OG/Twitter/canonical + `SeoController` (robots.txt + sitemap.xml) + araç detay `Car` JSON-LD; auth sayfaları `noindex` | 9fd8d8d |
 | 2026-08-28 | pipeline | DataProtection anahtarları PostgreSQL'e (`PersistKeysToDbContext`, migration `AddDataProtectionKeys`); test izolasyonu düzeltildi | cc4dfb1 |
+| 2026-08-28 | fix | Gemini varsayılan modeli `gemini-3.5-flash-lite` (`gemini-2.0-flash` 404) + Compare tek `AsSplitQuery` | acaed39, 2d98162 |
+| 2026-08-28 | 3.1 | Kullanıcı hesap ayarları (`ManageController`): şifre/e-posta değiştir + hesabı sil (KVKK) | _(bu commit)_ |
 | 2026-08-27 | 1.3, 1.10 | Railway `DATABASE_URL` ayrıştırma + Docker healthcheck düzeltme + deploy rehberi | 93c5dbb |
 | 2026-08-27 | deploy | Postgres bağlantı çözümü + `railway.json` | 1e7fb51 |
 | 2026-08-27 | deploy | `PORT` env dinleme + healthcheck timeout | 1c974f8 |

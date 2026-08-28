@@ -10,6 +10,7 @@
     var _pathLower = Context.Request.Path.Value?.ToLowerInvariant() ?? "";
     var _noindex = (ViewData["NoIndex"] as bool? ?? false)
         || _pathLower.StartsWith("/account")
+        || _pathLower.StartsWith("/manage")
         || _pathLower.StartsWith("/admincar")
         || _pathLower.StartsWith("/garage");
 }
@@ -91,6 +92,7 @@
                     @if (User.Identity?.IsAuthenticated == true)
                     {
                         <a asp-controller="Garage" asp-action="Index" class="@linkCls"><i class="fa-solid fa-heart text-red-500"></i> Garajım</a>
+                        <a asp-controller="Manage" asp-action="Index" class="@linkCls text-sm"><i class="fa-solid fa-circle-user"></i> Hesabım</a>
                         @if (User.IsInRole("Admin"))
                         {
                             <a asp-controller="AdminCar" asp-action="Index" class="bg-primary hover:bg-blue-700 text-white px-3 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-2 shadow-md"><i class="fa-solid fa-gear"></i> Admin</a>
@@ -133,6 +135,7 @@
                 @if (User.Identity?.IsAuthenticated == true)
                 {
                     <a asp-controller="Garage" asp-action="Index" class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 @linkCls"><i class="fa-solid fa-heart text-red-500"></i> Garajım</a>
+                    <a asp-controller="Manage" asp-action="Index" class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 @linkCls"><i class="fa-solid fa-circle-user"></i> Hesabım</a>
                     @if (User.IsInRole("Admin"))
                     {
                         <a asp-controller="AdminCar" asp-action="Index" class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 @linkCls"><i class="fa-solid fa-gear"></i> Admin Panel</a>

@@ -63,10 +63,14 @@ public class SmokeTests : IClassFixture<CustomWebApplicationFactory>
         Assert.Contains("\"@type\":\"Car\"", html);
     }
 
-    [Fact]
-    public async Task Get_AdminArea_Anonymous_RedirectsToLogin()
+    [Theory]
+    [InlineData("/AdminCar")]
+    [InlineData("/Manage")]
+    [InlineData("/Manage/DeleteAccount")]
+    [InlineData("/Garage")]
+    public async Task Get_ProtectedArea_Anonymous_RedirectsToLogin(string url)
     {
-        var res = await _client.GetAsync("/AdminCar");
+        var res = await _client.GetAsync(url);
         Assert.Equal(HttpStatusCode.Found, res.StatusCode);
         Assert.Contains("/Account/Login", res.Headers.Location?.OriginalString ?? "");
     }
