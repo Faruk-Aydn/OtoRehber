@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 using OtoRehber.Domain.Interfaces;
 using OtoRehber.Infrastructure.Data;
 using OtoRehber.Models;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -12,11 +14,13 @@ namespace OtoRehber.Controllers
     {
         private readonly OtoRehberDbContext _context;
         private readonly IAiCarDataService _aiService;
+        private readonly IMemoryCache _cache;
 
-        public CompareController(OtoRehberDbContext context, IAiCarDataService aiService)
+        public CompareController(OtoRehberDbContext context, IAiCarDataService aiService, IMemoryCache cache)
         {
             _context = context;
             _aiService = aiService;
+            _cache = cache;
         }
 
         // GET: /Compare
@@ -52,8 +56,17 @@ namespace OtoRehber.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            // AI Yorumunu al
-            string verdict = await _aiService.GetComparisonVerdictAsync(car1, car2);
+            // AI yorumu: aynı ikili için Gemini'yi tekrar çağırma (6 saat cache).
+            // Araç verisi nadiren değişir; hata/kota mesajları cache'lenmez.
+            var cacheKey = $"compare-verdict:{car1Id}-{car2Id}";
+            if (!_cache.TryGetValue(cacheKey, out string? verdict) || string.IsNullOrEmpty(verdict))
+            {
+                verdict = await _aiService.GetComparisonVerdictAsync(car1, car2);
+                if (!string.IsNullOrWhiteSpace(verdict) && verdict.Length > 150)
+                {
+                    _cache.Set(cacheKey, verdict, TimeSpan.FromHours(6));
+                }
+            }
 
             var viewModel = new CarCompareViewModel
             {

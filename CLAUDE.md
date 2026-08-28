@@ -237,7 +237,7 @@ Development: `dotnet user-secrets`. Production: environment variable.
 - [x] `MinPrice`/`MaxPrice` → `long` (entity + DTO'lar)
 - [x] Tüm `DateTime.Now` → `DateTime.UtcNow` (Faz 1'de temizlendi)
 - [x] `ToLower()` → `ToLowerInvariant()` (Home/Search/Admin)
-- [ ] AI karşılaştırma sonuçlarını DB'de cache'le (`car1Id,car2Id`) → Batch B/C
+- [x] AI karşılaştırma sonuçları `IMemoryCache`'te (`compare-verdict:{a}-{b}`, 6 saat); hata/kota mesajları cache'lenmez (uzunluk < 150). (DB yerine bellek — araç verisi nadir değişir, sonuç yumuşak metin)
 - [ ] `DbSet<CarPriceHistory>` / `DbSet<ReviewLike>` netleştir → Faz 3 (özellik gelince)
 - [x] Görsel yüklemede magic-byte kontrolü (EXIF re-encode → Faz 3, ImageSharp)
 
@@ -314,6 +314,7 @@ Development: `dotnet user-secrets`. Production: environment variable.
 | 2026-08-28 | 2.7 | YouTube import → `Channel` kuyruğu + `BackgroundService` + polling durum sayfası; `Task.Delay` request'ten çıktı | 533731e |
 | 2026-08-28 | 2.6 | `OtoRehber.Tests` (xUnit + `WebApplicationFactory`): 19 smoke + AI birim testi; CI'da `continue-on-error` kaldırıldı | e7f8198 |
 | 2026-08-28 | güvenlik | AutoMapper kaldırıldı (elle `CarMappings`) + savunmasız paketler yükseltildi (AngleSharp/STJ/Caching.Memory/EF Core) + jQuery validation fix | 8e261d2 |
+| 2026-08-28 | 2.5 | AI karşılaştırma sonucu `IMemoryCache` (6 saat, `compare-verdict:{a}-{b}`) — tekrar eden Gemini çağrısı yok | _(bu commit)_ |
 | 2026-08-27 | 1.3, 1.10 | Railway `DATABASE_URL` ayrıştırma + Docker healthcheck düzeltme + deploy rehberi | 93c5dbb |
 | 2026-08-27 | deploy | Postgres bağlantı çözümü + `railway.json` | 1e7fb51 |
 | 2026-08-27 | deploy | `PORT` env dinleme + healthcheck timeout | 1c974f8 |
@@ -358,8 +359,9 @@ Development: `dotnet user-secrets`. Production: environment variable.
 
 ### Faz 2 — YAPILMAYAN (sıradaki oturum)
 - 2.2 kalanı — inline script'ler için CSP nonce, `<script defer>`, `<environment>` dev/prod ayrımı
-- 2.5 kalanı — AI karşılaştırma sonucu DB cache (`car1Id,car2Id`)
-- DataProtection anahtarları kalıcı backend'e (deploy'da oturum düşmesin)
+- DataProtection anahtarları kalıcı backend'e (deploy'da oturum düşmesin) — **DİKKAT:** prod'da
+  orphan `DataProtectionKeys` tablosu + stale `AddDataProtectionKeys` migration history satırı var;
+  migration eklemeden önce prod'da `DROP TABLE` + history satırı silinmeli (yoksa deploy patlar)
 
 **Faz 2'nin ana maddeleri (2.1–2.8, responsive) tamamlandı.**
 
