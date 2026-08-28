@@ -319,7 +319,7 @@ Development: `dotnet user-secrets`. Production: environment variable.
 | 2026-08-28 | 2.6 | `OtoRehber.Tests` (xUnit + `WebApplicationFactory`): 19 smoke + AI birim testi; CI'da `continue-on-error` kaldırıldı | e7f8198 |
 | 2026-08-28 | güvenlik | AutoMapper kaldırıldı (elle `CarMappings`) + savunmasız paketler yükseltildi (AngleSharp/STJ/Caching.Memory/EF Core) + jQuery validation fix | 8e261d2 |
 | 2026-08-28 | 2.5 | AI karşılaştırma sonucu `IMemoryCache` (6 saat, `compare-verdict:{a}-{b}`) — tekrar eden Gemini çağrısı yok | cdab798 |
-| 2026-08-28 | 3.3 | SEO: `_Layout` meta/OG/Twitter/canonical + `SeoController` (robots.txt + sitemap.xml) + araç detay `Car` JSON-LD; auth sayfaları `noindex` | _(bu commit)_ |
+| 2026-08-28 | 3.3 | SEO: `_Layout` meta/OG/Twitter/canonical + `SeoController` (robots.txt + sitemap.xml) + araç detay `Car` JSON-LD; auth sayfaları `noindex` | 9fd8d8d |
 | 2026-08-27 | 1.3, 1.10 | Railway `DATABASE_URL` ayrıştırma + Docker healthcheck düzeltme + deploy rehberi | 93c5dbb |
 | 2026-08-27 | deploy | Postgres bağlantı çözümü + `railway.json` | 1e7fb51 |
 | 2026-08-27 | deploy | `PORT` env dinleme + healthcheck timeout | 1c974f8 |
