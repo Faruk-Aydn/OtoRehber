@@ -40,15 +40,16 @@ namespace OtoRehber.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            var car1 = await _context.Cars
+            var cars = await _context.Cars
+                .AsNoTracking()
+                .AsSplitQuery()
                 .Include(c => c.ProsConsList)
                 .Include(c => c.ChronicIssues)
-                .FirstOrDefaultAsync(c => c.Id == car1Id);
+                .Where(c => c.Id == car1Id || c.Id == car2Id)
+                .ToListAsync();
 
-            var car2 = await _context.Cars
-                .Include(c => c.ProsConsList)
-                .Include(c => c.ChronicIssues)
-                .FirstOrDefaultAsync(c => c.Id == car2Id);
+            var car1 = cars.FirstOrDefault(c => c.Id == car1Id);
+            var car2 = cars.FirstOrDefault(c => c.Id == car2Id);
 
             if (car1 == null || car2 == null)
             {
