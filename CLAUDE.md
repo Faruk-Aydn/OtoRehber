@@ -280,7 +280,9 @@ Development: `dotnet user-secrets`. Production: environment variable.
 - [ ] Blog/haber (opsiyonel, SEO)
 
 ### 3.2 Özellikler
-- [ ] Kullanıcıya bağlı yorumlar: düzenle/sil, şikayet et, "faydalı" oyu (`ReviewLike` tamamla)
+- [x] Kullanıcı kendi yorumunu **düzenle/sil** (`CarController.EditReview`/`DeleteReview`, sahiplik kontrolü;
+  araç detayında "Senin yorumun" kutusu + inline düzenleme; sahibi varsa "yorum ekle" formu gizlenir)
+- [ ] Yorumları şikayet et, "faydalı" oyu (`ReviewLike` tamamla)
 - [ ] Araç kartında ortalama kullanıcı puanı + `AggregateRating` JSON-LD
 - [ ] Fiyat geçmişi grafiği (`CarPriceHistory` — veri kaynağı/cron)
 - [ ] Garajdaki araçlar için fiyat/haber bildirimi (e-posta)
@@ -326,6 +328,7 @@ Development: `dotnet user-secrets`. Production: environment variable.
 | 2026-08-28 | pipeline | DataProtection anahtarları PostgreSQL'e (`PersistKeysToDbContext`, migration `AddDataProtectionKeys`); test izolasyonu düzeltildi | cc4dfb1 |
 | 2026-08-28 | fix | Gemini varsayılan modeli `gemini-3.5-flash-lite` (`gemini-2.0-flash` 404) + Compare tek `AsSplitQuery` | acaed39, 2d98162 |
 | 2026-08-28 | 3.1 | Kullanıcı hesap ayarları (`ManageController`): şifre/e-posta değiştir + hesabı sil (KVKK) | f55a639 |
+| 2026-08-28 | 3.2 | Kullanıcı kendi yorumunu düzenler/siler (`EditReview`/`DeleteReview` + araç detayı inline düzenleme) | _(bu commit)_ |
 | 2026-08-27 | 1.3, 1.10 | Railway `DATABASE_URL` ayrıştırma + Docker healthcheck düzeltme + deploy rehberi | 93c5dbb |
 | 2026-08-27 | deploy | Postgres bağlantı çözümü + `railway.json` | 1e7fb51 |
 | 2026-08-27 | deploy | `PORT` env dinleme + healthcheck timeout | 1c974f8 |

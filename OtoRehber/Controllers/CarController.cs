@@ -46,6 +46,8 @@ namespace OtoRehber.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
+            ViewBag.CurrentUserId = _userManager.GetUserId(User);
+
             var carDto = car.ToDetailDto();
             return View(carDto);
         }
@@ -93,6 +95,53 @@ namespace OtoRehber.Controllers
             _cache.Remove(HomeController.CacheKeyLeaderboard);
 
             TempData["SuccessMessage"] = "Yorumunuz başarıyla eklendi! Teşekkür ederiz.";
+            return RedirectToAction("Details", new { id = carId });
+        }
+
+        [HttpPost]
+        [Authorize]
+        [EnableRateLimiting("review")]
+        public async Task<IActionResult> EditReview(int reviewId, int rating, string comment)
+        {
+            var review = await _context.CarReviews.FirstOrDefaultAsync(r => r.Id == reviewId);
+            if (review == null)
+                return NotFound();
+
+            if (review.UserId != _userManager.GetUserId(User))
+                return Forbid();
+
+            if (string.IsNullOrWhiteSpace(comment) || comment.Trim().Length < 10 || rating < 1 || rating > 10)
+            {
+                TempData["ErrorMessage"] = "Lütfen en az 10 karakterlik bir yorum ve 1-10 arası puan girin.";
+                return RedirectToAction("Details", new { id = review.CarId });
+            }
+
+            review.Rating = rating;
+            review.Comment = comment.Trim();
+            await _context.SaveChangesAsync();
+            _cache.Remove(HomeController.CacheKeyLeaderboard);
+
+            TempData["SuccessMessage"] = "Yorumunuz güncellendi.";
+            return RedirectToAction("Details", new { id = review.CarId });
+        }
+
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> DeleteReview(int reviewId)
+        {
+            var review = await _context.CarReviews.FirstOrDefaultAsync(r => r.Id == reviewId);
+            if (review == null)
+                return NotFound();
+
+            if (review.UserId != _userManager.GetUserId(User))
+                return Forbid();
+
+            var carId = review.CarId;
+            _context.CarReviews.Remove(review);
+            await _context.SaveChangesAsync();
+            _cache.Remove(HomeController.CacheKeyLeaderboard);
+
+            TempData["SuccessMessage"] = "Yorumunuz silindi.";
             return RedirectToAction("Details", new { id = carId });
         }
 

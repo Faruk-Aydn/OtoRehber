@@ -284,7 +284,14 @@
             </div>
         }
 
-        @if (User.Identity?.IsAuthenticated == true)
+        @{
+            var _currentUserId = ViewBag.CurrentUserId as string;
+            var _myReview = _currentUserId != null
+                ? (Model.Reviews ?? new List<OtoRehber.Domain.Entities.CarReview>()).FirstOrDefault(r => r.UserId == _currentUserId)
+                : null;
+        }
+
+        @if (User.Identity?.IsAuthenticated == true && _myReview == null)
         {
             <form asp-controller="Car" asp-action="AddReview" method="post" class="space-y-4 mb-8">
                 <input type="hidden" name="carId" value="@Model.Id" />
@@ -310,6 +317,37 @@
                 </button>
             </form>
         }
+        else if (_myReview != null)
+        {
+            <div id="my-review" class="mb-8 bg-indigo-50/60 border border-indigo-100 rounded-xl p-4">
+                <div class="flex items-center justify-between mb-2">
+                    <p class="font-semibold text-gray-800"><i class="fa-solid fa-user-pen text-indigo-500 mr-1"></i> Senin yorumun</p>
+                    <div class="flex gap-2">
+                        <button type="button" onclick="document.getElementById('my-review-display').classList.toggle('hidden');document.getElementById('my-review-edit').classList.toggle('hidden');"
+                                class="text-sm text-indigo-600 hover:underline"><i class="fa-solid fa-pen"></i> Düzenle</button>
+                        <form asp-controller="Car" asp-action="DeleteReview" method="post" onsubmit="return confirm('Yorumunuz silinsin mi?');" class="inline">
+                            <input type="hidden" name="reviewId" value="@_myReview.Id" />
+                            <button type="submit" class="text-sm text-red-600 hover:underline"><i class="fa-solid fa-trash-can"></i> Sil</button>
+                        </form>
+                    </div>
+                </div>
+                <div id="my-review-display">
+                    <p class="text-sm text-gray-600 mb-1">Puan: <strong>@_myReview.Rating/10</strong></p>
+                    <p class="text-gray-700 text-sm">@_myReview.Comment</p>
+                </div>
+                <form id="my-review-edit" asp-controller="Car" asp-action="EditReview" method="post" class="hidden space-y-3 mt-2">
+                    <input type="hidden" name="reviewId" value="@_myReview.Id" />
+                    <select name="rating" required class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white">
+                        @for (int i = 10; i >= 1; i--)
+                        {
+                            <option value="@i" selected="@(i == _myReview.Rating)">@i Yıldız</option>
+                        }
+                    </select>
+                    <textarea name="comment" required minlength="10" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">@_myReview.Comment</textarea>
+                    <button type="submit" class="bg-primary hover:bg-blue-700 text-white font-semibold py-1.5 px-4 rounded-lg text-sm">Kaydet</button>
+                </form>
+            </div>
+        }
         else
         {
             <div class="mb-8 text-center py-6 bg-gray-50 rounded-xl border border-dashed border-gray-300">
@@ -323,11 +361,17 @@
 
         <div class="border-t border-gray-200 pt-6 mt-6">
             <h3 class="text-lg font-bold text-gray-800 mb-4">Topluluk Yorumları (@Model.Reviews?.Count)</h3>
-            
-            @if (Model.Reviews != null && Model.Reviews.Any())
+
+            @{
+                var _otherReviews = (Model.Reviews ?? new List<OtoRehber.Domain.Entities.CarReview>())
+                    .Where(r => _myReview == null || r.Id != _myReview.Id)
+                    .OrderByDescending(r => r.CreatedAt)
+                    .ToList();
+            }
+            @if (_otherReviews.Any())
             {
                 <div class="space-y-4">
-                    @foreach (var review in Model.Reviews.OrderByDescending(r => r.CreatedAt))
+                    @foreach (var review in _otherReviews)
                     {
                         <div class="bg-gray-50 rounded-xl p-4 border border-gray-100 flex gap-4">
                             <div class="flex-shrink-0">
@@ -363,7 +407,7 @@
             {
                 <div class="text-center py-6 text-gray-500 bg-gray-50 rounded-xl border border-dashed border-gray-300">
                     <i class="fa-regular fa-comments text-3xl mb-2 text-gray-400"></i>
-                    <p>Henüz yorum yapılmamış. İlk yorumu siz yapın!</p>
+                    <p>@(_myReview != null ? "Bu araca başka yorum yapılmamış." : "Henüz yorum yapılmamış. İlk yorumu siz yapın!")</p>
                 </div>
             }
         </div>
