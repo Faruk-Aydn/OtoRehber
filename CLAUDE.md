@@ -225,11 +225,11 @@ Development: `dotnet user-secrets`. Production: environment variable.
 - [x] `_Layout` `<head>`: `apple-touch-icon` + `apple-mobile-web-app-*` meta, `icon` 192 PNG
 - [ ] `<environment>` tag helper dev/prod ayrımı → tüm asset'ler self-host olduğu için düşük öncelik (Faz 2 devam)
 
-### 2.4 İzleme & loglama
-- [ ] Serilog (console + dosya/Seq) veya platform log
-- [ ] Sentry (veya benzeri) hata takibi
-- [ ] Admin işlemleri için audit log tablosu
-- [ ] Uptime monitor (harici)
+### 2.4 İzleme & loglama ✅ (kısmen)
+- [x] Serilog — yapılandırılmış console log (`UseSerilog` + `UseSerilogRequestLogging`); Railway/Render yakalar. EF SQL logları `Warning`'e çekildi. (commit `6024435`)
+- [x] Admin işlemleri için audit log tablosu — `AuditLog` entity + `AuditLogs` DbSet + migration `AddAuditLog`; `AdminCarController` Create/Update/Delete/Import sonrası kayıt (UserId/UserName/IP)
+- [ ] Sentry (veya benzeri) hata takibi — DSN gerekir, opsiyonel
+- [ ] Uptime monitor (harici) — kod işi değil, kullanıcı kurar (UptimeRobot vb.)
 
 ### 2.5 Veri bütünlüğü ✅ (kısmen)
 - [x] `UserGarage (UserId, CarId)` unique index (Faz 1.6)
@@ -251,8 +251,9 @@ Development: `dotnet user-secrets`. Production: environment variable.
 - [x] `CustomWebApplicationFactory`: her örneğe özel geçici SQLite dosyası, secrets boş
 - [x] Smoke (`SmokeTests`): `/`, `/Stats`, `/Compare`, `/Account/Login|Register|ForgotPassword`, `/Home/Kvkk|Privacy`, `/health`, `/health/ready`, `/manifest.json`, `/service-worker.js`, `/offline.html`, `/Car/Details/1` → 200; `/AdminCar` anon → login'e redirect; token'sız POST → 400
 - [x] `AiCarDataServiceTests`: mock `HttpMessageHandler` — key yok / başarı / 429 senaryoları
+- [x] `CarMappingsTests`: `ToListDto`/`ToDetailDto`/`ToEntity`/`ApplyTo` (AutoMapper kaldırıldıktan sonra)
 - [x] `ci.yml`'den `continue-on-error` kaldırıldı (test artık zorunlu)
-- **19 test, hepsi geçiyor.**
+- **23 test, hepsi geçiyor.**
 
 ### 2.7 Arka plan işleri ✅
 - [x] YouTube import → `Channel<Guid>` kuyruğu (`YoutubeImportQueue`) + `YoutubeImportHostedService : BackgroundService`; bellek içi `ImportJobStatus` deposu (admin-only, tek instance)
