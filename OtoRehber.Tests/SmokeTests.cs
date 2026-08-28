@@ -31,6 +31,8 @@ public class SmokeTests : IClassFixture<CustomWebApplicationFactory>
     [InlineData("/manifest.json")]
     [InlineData("/service-worker.js")]
     [InlineData("/offline.html")]
+    [InlineData("/robots.txt")]
+    [InlineData("/sitemap.xml")]
     public async Task Get_PublicPages_ReturnsSuccess(string url)
     {
         var res = await _client.GetAsync(url);
@@ -43,6 +45,22 @@ public class SmokeTests : IClassFixture<CustomWebApplicationFactory>
         // OnModelCreating.HasData ile Golf (Id=1) seed'lenir.
         var res = await _client.GetAsync("/Car/Details/1");
         Assert.Equal(HttpStatusCode.OK, res.StatusCode);
+    }
+
+    [Fact]
+    public async Task Sitemap_ListsSeededCarDetailUrls()
+    {
+        var xml = await _client.GetStringAsync("/sitemap.xml");
+        Assert.Contains("<loc>", xml);
+        Assert.Contains("/Car/Details/1</loc>", xml);
+    }
+
+    [Fact]
+    public async Task CarDetails_EmitsJsonLd()
+    {
+        var html = await _client.GetStringAsync("/Car/Details/1");
+        Assert.Contains("application/ld+json", html);
+        Assert.Contains("\"@type\":\"Car\"", html);
     }
 
     [Fact]

@@ -286,11 +286,14 @@ Development: `dotnet user-secrets`. Production: environment variable.
 - [ ] Yorumlarda sayfalama + sıralama
 - [ ] Gamification (`AppUser.Level`/`XP`) tamamla veya kaldır
 
-### 3.3 SEO / erişilebilirlik
-- [ ] Meta description, canonical, Open Graph / Twitter Card (tüm sayfalar)
-- [ ] Araç detay: `Car` / `Review` / `AggregateRating` JSON-LD
+### 3.3 SEO / erişilebilirlik ✅ (kısmen)
+- [x] `_Layout` `<head>`: meta description, canonical, Open Graph + Twitter Card (`summary_large_image`), `og:image` (varsayılan `icon-512`, araç sayfasında araç görseli), `robots` (Account/AdminCar/Garage → `noindex`)
+- [x] Sayfa bazlı `ViewData["Description"]` — Home/Compare/Stats/AiWizard/Car Details
+- [x] `SeoController` → dinamik `/robots.txt` + `/sitemap.xml` (statik sayfalar + tüm `Car/Details/{id}`; carId listesi 1 saat cache)
+- [x] Araç detay: `Car` JSON-LD (`AggregateOffer` fiyat aralığı + yorum varsa `AggregateRating`)
 - [ ] Erişilebilirlik denetimi: alt text, aria, klavye nav (chat + autocomplete), kontrast, focus
 - [ ] Gizlilik dostu analytics (onay banner'ına bağlı)
+- [ ] Blog/haber + marka/segment landing sayfaları (SEO içerik derinliği)
 
 ---
 
@@ -316,6 +319,7 @@ Development: `dotnet user-secrets`. Production: environment variable.
 | 2026-08-28 | 2.6 | `OtoRehber.Tests` (xUnit + `WebApplicationFactory`): 19 smoke + AI birim testi; CI'da `continue-on-error` kaldırıldı | e7f8198 |
 | 2026-08-28 | güvenlik | AutoMapper kaldırıldı (elle `CarMappings`) + savunmasız paketler yükseltildi (AngleSharp/STJ/Caching.Memory/EF Core) + jQuery validation fix | 8e261d2 |
 | 2026-08-28 | 2.5 | AI karşılaştırma sonucu `IMemoryCache` (6 saat, `compare-verdict:{a}-{b}`) — tekrar eden Gemini çağrısı yok | cdab798 |
+| 2026-08-28 | 3.3 | SEO: `_Layout` meta/OG/Twitter/canonical + `SeoController` (robots.txt + sitemap.xml) + araç detay `Car` JSON-LD; auth sayfaları `noindex` | _(bu commit)_ |
 | 2026-08-27 | 1.3, 1.10 | Railway `DATABASE_URL` ayrıştırma + Docker healthcheck düzeltme + deploy rehberi | 93c5dbb |
 | 2026-08-27 | deploy | Postgres bağlantı çözümü + `railway.json` | 1e7fb51 |
 | 2026-08-27 | deploy | `PORT` env dinleme + healthcheck timeout | 1c974f8 |

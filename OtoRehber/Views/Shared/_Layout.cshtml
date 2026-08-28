@@ -1,9 +1,39 @@
+@{
+    var _seoTitle = ViewData["Title"] != null ? $"{ViewData["Title"]} - OtoRehber" : "OtoRehber — Yapay Zeka Destekli Araç Rehberi";
+    var _seoDesc = (ViewData["Description"] as string)
+        ?? "Türkiye ikinci el otomobil piyasası için yapay zeka destekli araç inceleme, karşılaştırma ve öneri platformu. Kronik sorunlar, bakım maliyetleri ve dürüst analizler.";
+    var _canonical = $"{Context.Request.Scheme}://{Context.Request.Host}{Context.Request.Path}";
+    var _ogImage = (ViewData["OgImage"] as string) is { Length: > 0 } img
+        ? (img.StartsWith("http") ? img : $"{Context.Request.Scheme}://{Context.Request.Host}{img}")
+        : $"{Context.Request.Scheme}://{Context.Request.Host}/icons/icon-512.png";
+    var _ogType = (ViewData["OgType"] as string) ?? "website";
+    var _pathLower = Context.Request.Path.Value?.ToLowerInvariant() ?? "";
+    var _noindex = (ViewData["NoIndex"] as bool? ?? false)
+        || _pathLower.StartsWith("/account")
+        || _pathLower.StartsWith("/admincar")
+        || _pathLower.StartsWith("/garage");
+}
 <!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - OtoRehber</title>
+    <title>@_seoTitle</title>
+    <meta name="description" content="@_seoDesc" />
+    <link rel="canonical" href="@_canonical" />
+    <meta name="robots" content="@(_noindex ? "noindex,nofollow" : "index,follow")" />
+    <!-- Open Graph / Twitter Card (link önizlemeleri) -->
+    <meta property="og:site_name" content="OtoRehber" />
+    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:type" content="@_ogType" />
+    <meta property="og:title" content="@_seoTitle" />
+    <meta property="og:description" content="@_seoDesc" />
+    <meta property="og:url" content="@_canonical" />
+    <meta property="og:image" content="@_ogImage" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="@_seoTitle" />
+    <meta name="twitter:description" content="@_seoDesc" />
+    <meta name="twitter:image" content="@_ogImage" />
     <!-- PWA (Progressive Web App) Meta Etiketleri -->
     <link rel="manifest" href="~/manifest.json" />
     <meta name="theme-color" content="#2563eb" />

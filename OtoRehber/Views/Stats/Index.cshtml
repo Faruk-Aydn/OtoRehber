@@ -1,5 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Veritabani Istatistikleri";
+    ViewData["Description"] = "OtoRehber veritabanındaki araçların segment dağılımı, marka bazlı ortalama güvenilirlik puanları ve genel istatistikler.";
     var segLabels = System.Text.Json.JsonSerializer.Serialize(ViewBag.SegmentLabels ?? new List<string>());
     var segCounts = System.Text.Json.JsonSerializer.Serialize(ViewBag.SegmentCounts ?? new List<int>());
     var brandLabels = System.Text.Json.JsonSerializer.Serialize(ViewBag.BrandLabels ?? new List<string>());

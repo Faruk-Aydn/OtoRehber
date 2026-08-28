@@ -1,7 +1,59 @@
 @model OtoRehber.Domain.DTOs.CarDetailDto
 @{
     ViewData["Title"] = $"{Model.Brand} {Model.ModelName} İncelemesi";
+
+    var _plainSummary = System.Text.RegularExpressions.Regex.Replace(Model.ExpertSummary ?? "", "<.*?>|[#*_`>]", " ").Trim();
+    if (_plainSummary.Length > 300) _plainSummary = _plainSummary.Substring(0, 297).TrimEnd() + "…";
+    ViewData["Description"] = string.IsNullOrWhiteSpace(_plainSummary)
+        ? $"{Model.Brand} {Model.ModelName}: güvenilirlik puanı {Model.ReliabilityScore:0.#}/10, kronik sorunlar, bakım maliyetleri ve kullanıcı yorumları."
+        : _plainSummary;
+    ViewData["OgType"] = "article";
+    if (!string.IsNullOrEmpty(Model.ImageUrl)) ViewData["OgImage"] = Model.ImageUrl;
+
+    var _reviews = Model.Reviews ?? new List<OtoRehber.Domain.Entities.CarReview>();
+    var _ratedCount = _reviews.Count;
+    var _avgRating = _ratedCount > 0 ? System.Math.Round(_reviews.Average(r => r.Rating), 1) : 0d;
+
+    var _req = Context.Request;
+    var _pageUrl = $"{_req.Scheme}://{_req.Host}{_req.Path}";
+    var _imgAbs = string.IsNullOrEmpty(Model.ImageUrl) ? null
+        : (Model.ImageUrl.StartsWith("http") ? Model.ImageUrl : $"{_req.Scheme}://{_req.Host}{Model.ImageUrl}");
+
+    var _jsonLd = new Dictionary<string, object>
+    {
+        ["@context"] = "https://schema.org",
+        ["@type"] = "Car",
+        ["name"] = $"{Model.Brand} {Model.ModelName}",
+        ["brand"] = new Dictionary<string, object> { ["@type"] = "Brand", ["name"] = Model.Brand },
+        ["model"] = Model.ModelName,
+        ["vehicleConfiguration"] = Model.Segment,
+        ["description"] = ViewData["Description"] as string ?? "",
+        ["url"] = _pageUrl,
+        ["offers"] = new Dictionary<string, object>
+        {
+            ["@type"] = "AggregateOffer",
+            ["priceCurrency"] = "TRY",
+            ["lowPrice"] = Model.MinPrice,
+            ["highPrice"] = Model.MaxPrice
+        }
+    };
+    if (_imgAbs != null) _jsonLd["image"] = _imgAbs;
+    if (_ratedCount > 0)
+    {
+        _jsonLd["aggregateRating"] = new Dictionary<string, object>
+        {
+            ["@type"] = "AggregateRating",
+            ["ratingValue"] = _avgRating,
+            ["bestRating"] = 10,
+            ["worstRating"] = 1,
+            ["ratingCount"] = _ratedCount
+        };
+    }
+    var _jsonLdString = System.Text.Json.JsonSerializer.Serialize(_jsonLd);
 }
+
+<script type="application/ld+json">@Html.Raw(_jsonLdString)</script>
+
 
 <!-- Hero Section -->
 <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-md overflow-hidden mb-8 border border-gray-200 dark:border-gray-700" data-aos="fade-down">
