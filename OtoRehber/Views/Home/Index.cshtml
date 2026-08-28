@@ -196,6 +196,17 @@
                         <p class="text-[11px] text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wider mt-2 line-clamp-1 bg-gray-50 dark:bg-gray-800 px-2 py-1 rounded" title="@car.Engine">
                             <i class="fa-solid fa-engine mr-1"></i> @car.Engine
                         </p>
+                        @{
+                            var _ratings = ViewBag.CarRatings as IDictionary<int, (double Avg, int Count)>;
+                        }
+                        @if (_ratings != null && _ratings.TryGetValue(car.Id, out var _rt))
+                        {
+                            <p class="text-xs text-gray-600 dark:text-gray-300 mt-2 flex items-center gap-1">
+                                <i class="fa-solid fa-star text-yellow-400"></i>
+                                <span class="font-bold">@_rt.Avg.ToString("0.#")</span>
+                                <span class="text-gray-400">/ 10 · @_rt.Count kullanıcı</span>
+                            </p>
+                        }
                     </div>
                     <div class="bg-yellow-50 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-500 text-sm font-black px-2 py-1 rounded-lg border border-yellow-200 dark:border-yellow-700/50 flex items-center gap-1 shadow-sm">
                         <i class="fa-solid fa-star"></i> @car.ReliabilityScore

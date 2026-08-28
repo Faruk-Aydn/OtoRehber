@@ -70,6 +70,17 @@ namespace OtoRehber.Controllers
             var cars = await carsQuery.Skip(skipAmount).Take(pageSize).ToListAsync();
             var carDtos = cars.ToListDto();
 
+            // Bu sayfadaki araçların ortalama kullanıcı puanı (kart rozetinde gösterilir)
+            var pageCarIds = carDtos.Select(d => d.Id).ToList();
+            var ratingRows = await _context.CarReviews.AsNoTracking()
+                .Where(r => pageCarIds.Contains(r.CarId))
+                .GroupBy(r => r.CarId)
+                .Select(g => new { CarId = g.Key, Sum = g.Sum(r => r.Rating), Count = g.Count() })
+                .ToListAsync();
+            ViewBag.CarRatings = ratingRows.ToDictionary(
+                x => x.CarId,
+                x => (Avg: Math.Round((double)x.Sum / x.Count, 1), Count: x.Count));
+
             // View'a parametreleri gönderelim ki filtreler seçili kalsın
             ViewData["CurrentSearch"] = searchQuery;
             ViewData["CurrentSegment"] = segment;

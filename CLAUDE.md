@@ -283,7 +283,8 @@ Development: `dotnet user-secrets`. Production: environment variable.
 - [x] Kullanıcı kendi yorumunu **düzenle/sil** (`CarController.EditReview`/`DeleteReview`, sahiplik kontrolü;
   araç detayında "Senin yorumun" kutusu + inline düzenleme; sahibi varsa "yorum ekle" formu gizlenir)
 - [ ] Yorumları şikayet et, "faydalı" oyu (`ReviewLike` tamamla)
-- [ ] Araç kartında ortalama kullanıcı puanı + `AggregateRating` JSON-LD
+- [x] Araç kartında + detay sayfasında ortalama kullanıcı puanı (Home'da sayfa başına tek `GROUP BY` sorgu → ViewBag);
+  detay `AggregateRating` JSON-LD zaten var (3.3)
 - [ ] Fiyat geçmişi grafiği (`CarPriceHistory` — veri kaynağı/cron)
 - [ ] Garajdaki araçlar için fiyat/haber bildirimi (e-posta)
 - [ ] 2+ araç karşılaştırma
@@ -329,6 +330,7 @@ Development: `dotnet user-secrets`. Production: environment variable.
 | 2026-08-28 | fix | Gemini varsayılan modeli `gemini-3.5-flash-lite` (`gemini-2.0-flash` 404) + Compare tek `AsSplitQuery` | acaed39, 2d98162 |
 | 2026-08-28 | 3.1 | Kullanıcı hesap ayarları (`ManageController`): şifre/e-posta değiştir + hesabı sil (KVKK) | f55a639 |
 | 2026-08-28 | 3.2 | Kullanıcı kendi yorumunu düzenler/siler (`EditReview`/`DeleteReview` + araç detayı inline düzenleme) | 45010cd |
+| 2026-08-28 | 3.2 | Ortalama kullanıcı puanı: Home kartları + araç detay kutusu | _(bu commit)_ |
 | 2026-08-27 | 1.3, 1.10 | Railway `DATABASE_URL` ayrıştırma + Docker healthcheck düzeltme + deploy rehberi | 93c5dbb |
 | 2026-08-27 | deploy | Postgres bağlantı çözümü + `railway.json` | 1e7fb51 |
 | 2026-08-27 | deploy | `PORT` env dinleme + healthcheck timeout | 1c974f8 |
