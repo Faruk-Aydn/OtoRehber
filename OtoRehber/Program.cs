@@ -1,5 +1,6 @@
 using System.Threading.RateLimiting;
 using Microsoft.AspNetCore.DataProtection;
+using Microsoft.AspNetCore.DataProtection.EntityFrameworkCore;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -200,11 +201,12 @@ builder.Services.Configure<ForwardedHeadersOptions>(options =>
     options.KnownProxies.Clear();
 });
 
-// DataProtection anahtarları (oturum/antiforgery şifreleme).
-// Anahtarlar konteyner içinde (~/.aspnet/DataProtection-Keys) tutulur:
-// bir deploy boyunca sabit, deploy değişince yenilenir (kullanıcı tekrar giriş yapar).
-// TODO (Faz 2): çok kopyalı / deploy'lar arası kalıcılık için Redis veya sabit anahtar.
-builder.Services.AddDataProtection().SetApplicationName("OtoRehber");
+// DataProtection anahtarları (oturum/antiforgery şifreleme) → veritabanında saklanır.
+// Böylece deploy'da konteyner değişse bile anahtarlar korunur, kullanıcı oturumları düşmez.
+// (Postgres'te `DataProtectionKeys` tablosu; yerel SQLite'ta EnsureCreated otomatik oluşturur.)
+builder.Services.AddDataProtection()
+    .SetApplicationName("OtoRehber")
+    .PersistKeysToDbContext<OtoRehberDbContext>();
 
 // HSTS (production)
 builder.Services.AddHsts(options =>

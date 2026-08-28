@@ -320,6 +320,7 @@ Development: `dotnet user-secrets`. Production: environment variable.
 | 2026-08-28 | güvenlik | AutoMapper kaldırıldı (elle `CarMappings`) + savunmasız paketler yükseltildi (AngleSharp/STJ/Caching.Memory/EF Core) + jQuery validation fix | 8e261d2 |
 | 2026-08-28 | 2.5 | AI karşılaştırma sonucu `IMemoryCache` (6 saat, `compare-verdict:{a}-{b}`) — tekrar eden Gemini çağrısı yok | cdab798 |
 | 2026-08-28 | 3.3 | SEO: `_Layout` meta/OG/Twitter/canonical + `SeoController` (robots.txt + sitemap.xml) + araç detay `Car` JSON-LD; auth sayfaları `noindex` | 9fd8d8d |
+| 2026-08-28 | pipeline | DataProtection anahtarları PostgreSQL'e (`PersistKeysToDbContext`, migration `AddDataProtectionKeys`); test izolasyonu düzeltildi | _(bu commit)_ |
 | 2026-08-27 | 1.3, 1.10 | Railway `DATABASE_URL` ayrıştırma + Docker healthcheck düzeltme + deploy rehberi | 93c5dbb |
 | 2026-08-27 | deploy | Postgres bağlantı çözümü + `railway.json` | 1e7fb51 |
 | 2026-08-27 | deploy | `PORT` env dinleme + healthcheck timeout | 1c974f8 |
@@ -338,13 +339,11 @@ Development: `dotnet user-secrets`. Production: environment variable.
 - Paket sürümleri **daima** `net8.0` ile aynı major (10.0.x paketi = felaket).
 - Railway: `PORT` env'e bağlan, `AllowedHosts=*`, volume kullanma (root-owned),
   `DATABASE_URL` = `${{Postgres.DATABASE_URL}}`.
-- DataProtection anahtarları şu an konteyner-yerel (deploy'da oturumlar düşer).
+- DataProtection anahtarları artık PostgreSQL'de (`DataProtectionKeys` tablosu, `PersistKeysToDbContext`) — deploy'da oturumlar düşmez.
 
 ### Kalan küçük işler
 - Railway `AllowedHosts` → gerçek domain'e sabitle (şu an `*`; healthcheck'i kırmadan)
 - Gerçek `GeminiApiKey` (`AIza...`), Resend domain doğrulaması
-- Prod Postgres'te orphan `DataProtectionKeys` tablosu (zararsız, DROP edilebilir)
-- DataProtection anahtarları hâlâ konteyner-yerel → deploy'da oturumlar düşer (DB/Redis backend'i doğru paketle)
 
 ### Faz 2 — YAPILAN (bu oturuma kadar, canlıda test edilecek)
 - 2.1 async + IMemoryCache + AI context daraltma + Car index'leri
@@ -362,13 +361,15 @@ Development: `dotnet user-secrets`. Production: environment variable.
   (SQLitePCLRaw CVE'si: yamalı sürüm yok + SQLite dev-only → `Directory.Build.props`'ta bastırıldı)
 - Bonus: admin Create/Edit + Account form'larında jQuery yüklenmiyordu → `_ValidationScriptsPartial`'a eklendi (client-side validation artık çalışıyor)
 
+- DataProtection anahtarları PostgreSQL'e alındı (`Microsoft.AspNetCore.DataProtection.EntityFrameworkCore` +
+  `IDataProtectionKeyContext` + migration `AddDataProtectionKeys` [orphan tabloyu güvenle DROP edip yeniden kurar]).
+  Restart sonrası oturum korunuyor — yerelde doğrulandı. Bonus: `CustomWebApplicationFactory` gerçek test izolasyonuna
+  kavuştu (`ConfigureTestServices` ile DbContext → temp SQLite; önceden bin'deki stale db kullanılıyordu).
+
 ### Faz 2 — YAPILMAYAN (sıradaki oturum)
 - 2.2 kalanı — inline script'ler için CSP nonce, `<script defer>`, `<environment>` dev/prod ayrımı
-- DataProtection anahtarları kalıcı backend'e (deploy'da oturum düşmesin) — **DİKKAT:** prod'da
-  orphan `DataProtectionKeys` tablosu + stale `AddDataProtectionKeys` migration history satırı var;
-  migration eklemeden önce prod'da `DROP TABLE` + history satırı silinmeli (yoksa deploy patlar)
 
-**Faz 2'nin ana maddeleri (2.1–2.8, responsive) tamamlandı.**
+**Faz 2 tamamlandı (2.1–2.8, responsive). Faz 3'e geçildi (3.3 SEO yapıldı).**
 
 ### Bir sonraki oturumda İLK yapılacak: prod doğrulama
 Bu commit Railway'e deploy oldu mu kontrol et:

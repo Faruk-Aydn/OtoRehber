@@ -1,15 +1,19 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.TestHost;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using OtoRehber.Infrastructure.Data;
 
 namespace OtoRehber.Tests;
 
 /// <summary>
 /// Testler için uygulamayı, her fabrika örneğine özel geçici bir SQLite dosyasıyla
-/// ayağa kaldırır (Sqlite + EnsureCreated → HasData ile 2 araç seed'lenir).
+/// ayağa kaldırır. `Program.cs`'teki seeding bloğu `EnsureCreatedAsync` ile tüm
+/// tabloları (DataProtectionKeys dahil) modelden oluşturur; HasData ile 2 araç gelir.
 /// </summary>
 public class CustomWebApplicationFactory : WebApplicationFactory<Program>
 {
@@ -19,16 +23,20 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
     {
         builder.UseEnvironment("Testing");
 
-        builder.ConfigureAppConfiguration((_, config) =>
+        // Minimal hosting'de ConfigureAppConfiguration Program.cs'in erken config
+        // okumasını güvenilir şekilde geçersiz kılamıyor; DbContext'i doğrudan
+        // test SQLite dosyasına yönlendiriyoruz.
+        builder.ConfigureTestServices(services =>
         {
-            config.AddInMemoryCollection(new Dictionary<string, string?>
-            {
-                ["Database:Provider"] = "Sqlite",
-                ["ConnectionStrings:DefaultConnection"] = $"Data Source={_dbPath}",
-                ["AdminSeed:Password"] = "",          // admin oluşturulmasın
-                ["GeminiApiKey"] = "",
-                ["Resend:ApiKey"] = "",
-            });
+            var descriptors = services
+                .Where(d => d.ServiceType == typeof(DbContextOptions<OtoRehberDbContext>)
+                         || d.ServiceType == typeof(DbContextOptions)
+                         || d.ServiceType == typeof(OtoRehberDbContext))
+                .ToList();
+            foreach (var d in descriptors)
+                services.Remove(d);
+
+            services.AddDbContext<OtoRehberDbContext>(o => o.UseSqlite($"Data Source={_dbPath}"));
         });
     }
 
