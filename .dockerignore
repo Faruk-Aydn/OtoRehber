@@ -11,6 +11,7 @@ appsettings.Development.json
 appsettings.Local.json
 appsettings.Production.json
 **/node_modules/
+OtoRehber.Tests/
 .claude/
 CLAUDE.md
 README.md
