@@ -8,17 +8,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="12.0.1" />
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="Serilog.AspNetCore" Version="8.0.3" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.10">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.10" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.10" />
-    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" Version="8.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0">
+    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" Version="8.0.10" />
+    <!-- Güvenlik: transitively gelen savunmasız sürümleri yamalıya sabitle -->
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="8.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.10">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

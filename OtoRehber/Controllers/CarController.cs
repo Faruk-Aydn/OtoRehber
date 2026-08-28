@@ -10,22 +10,20 @@ using System.Linq;
 using System.Threading.Tasks;
 using OtoRehber.Models;
 using OtoRehber.Domain.DTOs;
-using AutoMapper;
+using OtoRehber.Domain.Mappings;
 
 namespace OtoRehber.Controllers
 {
     public class CarController : Controller
     {
         private readonly OtoRehberDbContext _context;
-        private readonly IMapper _mapper;
         private readonly UserManager<AppUser> _userManager;
         private readonly IMemoryCache _cache;
 
         // Dependency Injection: Veritabanını Controller'a bağlıyoruz
-        public CarController(OtoRehberDbContext context, IMapper mapper, UserManager<AppUser> userManager, IMemoryCache cache)
+        public CarController(OtoRehberDbContext context, UserManager<AppUser> userManager, IMemoryCache cache)
         {
             _context = context;
-            _mapper = mapper;
             _userManager = userManager;
             _cache = cache;
         }
@@ -48,7 +46,7 @@ namespace OtoRehber.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
-            var carDto = _mapper.Map<CarDetailDto>(car);
+            var carDto = car.ToDetailDto();
             return View(carDto);
         }
 

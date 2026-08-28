@@ -1,0 +1,15 @@
+<Project>
+
+  <!--
+    Çözüm geneli NuGet güvenlik denetimi ayarları.
+
+    GHSA-2m69-gcr7-jv3q (SQLitePCLRaw.lib.e_sqlite3 / CVE-2025-6965):
+      - Yamalı sürüm YOK (2.1.11 dahil tüm sürümler etkileniyor).
+      - SQLite yalnızca yerel geliştirmede kullanılıyor; production PostgreSQL.
+      - Bu yüzden bilinçli olarak bastırıldı; SQLitePCLRaw yamalı sürüm yayınlayınca kaldır.
+  -->
+  <ItemGroup>
+    <NuGetAuditSuppress Include="https://github.com/advisories/GHSA-2m69-gcr7-jv3q" />
+  </ItemGroup>
+
+</Project>

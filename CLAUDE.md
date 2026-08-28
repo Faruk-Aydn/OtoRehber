@@ -22,14 +22,14 @@ araç inceleme / karşılaştırma / öneri platformudur.
 - ASP.NET Core 8 MVC (SDK 9 ile derleniyor, `TargetFramework=net8.0`)
 - EF Core 8 + **SQLite** (→ Faz 1'de PostgreSQL'e geçilecek)
 - ASP.NET Core Identity (cookie auth, `Admin` rolü)
-- AutoMapper, Tailwind (şu an CDN), FontAwesome, AOS, Chart.js
+- Tailwind (build-time), FontAwesome, AOS, Chart.js (hepsi self-host); Car↔DTO dönüşümü elle (`CarMappings`)
 - Google Gemini API (`GeminiApiKey`), YoutubeExplode
 
 ### Çözüm yapısı
 ```
 OtoRehber.sln
 ├─ OtoRehber/                 → Web (MVC, Controllers, Views, Program.cs, Migrations)
-├─ OtoRehber.Domain/          → Entities, DTOs, Interfaces, AutoMapper Profile
+├─ OtoRehber.Domain/          → Entities, DTOs, Interfaces, Mappings (CarMappings)
 └─ OtoRehber.Infrastructure/  → DbContext, AiCarDataService
 ```
 
@@ -313,6 +313,7 @@ Development: `dotnet user-secrets`. Production: environment variable.
 | 2026-08-28 | 2.3 | PWA: service-worker yeniden yazıldı (statik-only, offline.html) + gerçek PNG ikonlar + manifest düzeltme | c407783 |
 | 2026-08-28 | 2.7 | YouTube import → `Channel` kuyruğu + `BackgroundService` + polling durum sayfası; `Task.Delay` request'ten çıktı | 533731e |
 | 2026-08-28 | 2.6 | `OtoRehber.Tests` (xUnit + `WebApplicationFactory`): 19 smoke + AI birim testi; CI'da `continue-on-error` kaldırıldı | e7f8198 |
+| 2026-08-28 | güvenlik | AutoMapper kaldırıldı (elle `CarMappings`) + savunmasız paketler yükseltildi (AngleSharp/STJ/Caching.Memory/EF Core) + jQuery validation fix | _(bu commit)_ |
 | 2026-08-27 | 1.3, 1.10 | Railway `DATABASE_URL` ayrıştırma + Docker healthcheck düzeltme + deploy rehberi | 93c5dbb |
 | 2026-08-27 | deploy | Postgres bağlantı çözümü + `railway.json` | 1e7fb51 |
 | 2026-08-27 | deploy | `PORT` env dinleme + healthcheck timeout | 1c974f8 |
@@ -349,12 +350,15 @@ Development: `dotnet user-secrets`. Production: environment variable.
 - 2.3 PWA: service-worker yeniden yazıldı (statik-only, network-first HTML, `offline.html`,
   `activate` temizliği, `skipWaiting`/`clients.claim`) + gerçek PNG ikonlar + manifest düzeltme
 - 2.7 YouTube import arka plan kuyruğuna alındı (`Channel` + `BackgroundService` + polling durum sayfası)
-- 2.6 `OtoRehber.Tests` (xUnit + `WebApplicationFactory`): 19 smoke + AI birim testi; CI'da zorunlu
+- 2.6 `OtoRehber.Tests` (xUnit + `WebApplicationFactory`): 23 smoke + mapping + AI birim testi; CI'da zorunlu
+- Bağımlılık güvenliği: **AutoMapper kaldırıldı** (elle `CarMappings`), AngleSharp 1.4→1.5,
+  System.Text.Json 8.0.0→8.0.5, Caching.Memory 8.0.0→8.0.1, EF Core 8.0.0→8.0.10.
+  (SQLitePCLRaw CVE'si: yamalı sürüm yok + SQLite dev-only → `Directory.Build.props`'ta bastırıldı)
+- Bonus: admin Create/Edit + Account form'larında jQuery yüklenmiyordu → `_ValidationScriptsPartial`'a eklendi (client-side validation artık çalışıyor)
 
 ### Faz 2 — YAPILMAYAN (sıradaki oturum)
 - 2.2 kalanı — inline script'ler için CSP nonce, `<script defer>`, `<environment>` dev/prod ayrımı
 - 2.5 kalanı — AI karşılaştırma sonucu DB cache (`car1Id,car2Id`)
-- AutoMapper CVE (GHSA-rvv3-g6hj-g44x) sürüm yükseltme
 - DataProtection anahtarları kalıcı backend'e (deploy'da oturum düşmesin)
 
 **Faz 2'nin ana maddeleri (2.1–2.8, responsive) tamamlandı.**

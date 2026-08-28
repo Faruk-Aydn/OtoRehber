@@ -6,7 +6,7 @@ using OtoRehber.Domain.Entities;
 using OtoRehber.Infrastructure.Data;
 using OtoRehber.Models;
 using OtoRehber.Domain.DTOs;
-using AutoMapper;
+using OtoRehber.Domain.Mappings;
 
 namespace OtoRehber.Controllers
 {
@@ -14,18 +14,16 @@ namespace OtoRehber.Controllers
     {
         private readonly OtoRehberDbContext _context;
         private readonly ILogger<HomeController> _logger;
-        private readonly IMapper _mapper;
         private readonly IMemoryCache _cache;
 
         // Araç/yorum eklendiğinde AdminCarController/CarController bu anahtarları temizler.
         public const string CacheKeyBrands = "home:brands";
         public const string CacheKeyLeaderboard = "home:leaderboard";
 
-        public HomeController(OtoRehberDbContext context, ILogger<HomeController> logger, IMapper mapper, IMemoryCache cache)
+        public HomeController(OtoRehberDbContext context, ILogger<HomeController> logger, IMemoryCache cache)
         {
             _context = context;
             _logger = logger;
-            _mapper = mapper;
             _cache = cache;
         }
 
@@ -70,7 +68,7 @@ namespace OtoRehber.Controllers
 
             int skipAmount = (page - 1) * pageSize;
             var cars = await carsQuery.Skip(skipAmount).Take(pageSize).ToListAsync();
-            var carDtos = _mapper.Map<List<CarListDto>>(cars);
+            var carDtos = cars.ToListDto();
 
             // View'a parametreleri gönderelim ki filtreler seçili kalsın
             ViewData["CurrentSearch"] = searchQuery;

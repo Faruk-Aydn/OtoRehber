@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using OtoRehber.Domain.Entities;
 using OtoRehber.Domain.DTOs;
-using AutoMapper;
+using OtoRehber.Domain.Mappings;
 using OtoRehber.Domain.Interfaces;
 using OtoRehber.Infrastructure.Data;
 using System.Linq;
@@ -21,7 +21,6 @@ namespace OtoRehber.Controllers
     {
         private readonly OtoRehberDbContext _context;
         private readonly IWebHostEnvironment _hostEnvironment;
-        private readonly IMapper _mapper;
         private readonly ILogger<AdminCarController> _logger;
         private readonly IMemoryCache _cache;
         private readonly IYoutubeImportQueue _importQueue;
@@ -30,11 +29,10 @@ namespace OtoRehber.Controllers
         private static readonly string[] AllowedImageContentTypes = { "image/jpeg", "image/png", "image/webp", "image/gif" };
         private const long MaxImageSizeBytes = 5 * 1024 * 1024; // 5 MB
 
-        public AdminCarController(OtoRehberDbContext context, IWebHostEnvironment hostEnvironment, IMapper mapper, ILogger<AdminCarController> logger, IMemoryCache cache, IYoutubeImportQueue importQueue)
+        public AdminCarController(OtoRehberDbContext context, IWebHostEnvironment hostEnvironment, ILogger<AdminCarController> logger, IMemoryCache cache, IYoutubeImportQueue importQueue)
         {
             _context = context;
             _hostEnvironment = hostEnvironment;
-            _mapper = mapper;
             _logger = logger;
             _cache = cache;
             _importQueue = importQueue;
@@ -119,7 +117,7 @@ namespace OtoRehber.Controllers
         public async Task<IActionResult> Index()
         {
             var cars = await _context.Cars.ToListAsync();
-            var carDtos = _mapper.Map<List<CarListDto>>(cars);
+            var carDtos = cars.ToListDto();
             
             // Dashboard İstatistikleri
             ViewBag.TotalCars = cars.Count;
@@ -196,7 +194,7 @@ namespace OtoRehber.Controllers
                     carDto.ImageUrl = await SaveImageAsync(imageFile);
                 }
 
-                var car = _mapper.Map<Car>(carDto);
+                var car = carDto.ToEntity();
                 _context.Add(car);
                 await _context.SaveChangesAsync();
                 InvalidateHomeCache();
@@ -221,7 +219,7 @@ namespace OtoRehber.Controllers
                 return NotFound();
             }
             
-            var carDto = _mapper.Map<CarCreateDto>(car);
+            var carDto = car.ToCreateDto();
             return View(carDto);
         }
 
@@ -274,8 +272,8 @@ namespace OtoRehber.Controllers
                         carDto.ImageUrl = existingCar.ImageUrl;
                     }
 
-                    // AutoMapper ile alanları mevcut nesneye aktarıyoruz (Overposting engellenir)
-                    _mapper.Map(carDto, existingCar);
+                    // Alanları mevcut nesneye aktarıyoruz (Overposting engellenir; Id + nav'lar korunur)
+                    carDto.ApplyTo(existingCar);
 
                     await _context.SaveChangesAsync();
                 }
