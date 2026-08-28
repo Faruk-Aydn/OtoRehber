@@ -244,7 +244,7 @@ Development: `dotnet user-secrets`. Production: environment variable.
 ### 2.8 AI güvenliği ✅
 - [x] Prompt injection: kullanıcı girdisi 2000/200 kr sınır + sistem talimatı ayrımı + "talimat gaspını yok say" kuralı
 - [x] AI çıktısı: Compare/AiWizard Result'ta `DOMPurify.sanitize(marked.parse())`; _Layout chat escape-first
-- [x] Bonus: `gemini-3.5-flash` (geçersiz) → `GeminiModel` config, varsayılan `gemini-2.0-flash`
+- [x] `GeminiModel` config anahtarı; varsayılan **`gemini-3.5-flash-lite`** (ücretsiz katmanda 15 RPM / 500 RPD). `gemini-2.0-flash` artık 404 veriyor.
 
 ### 2.6 Test ✅
 - [x] `OtoRehber.Tests` projesi (xUnit + `WebApplicationFactory<Program>`; `Program.cs`'e `public partial class Program`)
@@ -436,6 +436,11 @@ AllowedHosts=*
 
 ### D) Google Gemini key
 aistudio.google.com/apikey → "Create API key" → `AIza...` kopyala.
+- Key kısıtsız olmalı (Application restrictions = None).
+- Kod varsayılan modeli `gemini-3.5-flash-lite`. Hesabında farklı bir model daha
+  yüksek limitliyse Railway'de `GeminiModel=<model-id>` ile değiştir
+  (geçerli id'ler: `gemini-3.5-flash-lite`, `gemini-2.5-flash-lite`, `gemini-2.5-flash`, `gemini-3.5-flash`).
+  404 alıyorsan model id'si o key için geçersiz demektir.
 
 ### E) Resend (e-posta)
 1. resend.com → kaydol (GitHub ile).

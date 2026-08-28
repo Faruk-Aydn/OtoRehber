@@ -35,11 +35,13 @@ namespace OtoRehber.Infrastructure.Services
             _httpClient = httpClient; // Timeout DI kaydında (Program.cs > AddHttpClient) ayarlanıyor.
         }
 
-        // Model config'den değiştirilebilir (GeminiModel). Varsayılan: ücretsiz katmanda çalışan hızlı model.
+        // Model config'den değiştirilebilir (GeminiModel env değişkeni).
+        // Varsayılan: gemini-3.5-flash-lite — ücretsiz katmanda en yüksek limitler
+        // (15 RPM / 500 RPD / 250K TPM). Not: gemini-2.0-flash artık 404 veriyor.
         private string GeminiEndpoint(string apiKey)
         {
             var model = _configuration["GeminiModel"];
-            if (string.IsNullOrWhiteSpace(model)) model = "gemini-2.0-flash";
+            if (string.IsNullOrWhiteSpace(model)) model = "gemini-3.5-flash-lite";
             return $"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={apiKey}";
         }
 
