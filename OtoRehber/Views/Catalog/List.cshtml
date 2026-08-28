@@ -1,0 +1,38 @@
+@model IEnumerable<OtoRehber.Domain.DTOs.CarListDto>
+@{
+    ViewData["Ratings"] = ViewBag.CarRatings;
+    ViewData["ShowCompare"] = false;
+}
+<div class="max-w-7xl mx-auto py-8 px-4">
+    <nav class="text-sm text-gray-500 dark:text-gray-400 mb-4 flex items-center gap-2">
+        <a asp-controller="Home" asp-action="Index" class="hover:text-primary">Ana Sayfa</a>
+        <i class="fa-solid fa-chevron-right text-[10px]"></i>
+        <span class="text-gray-700 dark:text-gray-300">@ViewBag.Heading</span>
+    </nav>
+
+    <h1 class="text-3xl font-extrabold text-gray-900 dark:text-white mb-2">@ViewBag.Heading</h1>
+    <p class="text-gray-500 dark:text-gray-400 mb-8">@ViewData["Description"]</p>
+
+    @if (Model.Any())
+    {
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            @foreach (var car in Model)
+            {
+                <partial name="_CarCard" model="car" />
+            }
+        </div>
+    }
+    else
+    {
+        <div class="text-center py-16 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700">
+            <i class="fa-solid fa-car-burst text-3xl text-gray-400 mb-3"></i>
+            <p class="text-gray-500">Bu @ViewBag.Kind için henüz araç eklenmemiş.</p>
+        </div>
+    }
+
+    <div class="mt-10">
+        <a asp-controller="Home" asp-action="Index" class="inline-flex items-center text-gray-500 hover:text-primary font-medium">
+            <i class="fa-solid fa-arrow-left mr-2"></i> Tüm araçlara dön
+        </a>
+    </div>
+</div>

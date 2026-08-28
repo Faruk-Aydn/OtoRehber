@@ -43,14 +43,18 @@ namespace OtoRehber.Controllers
         [ResponseCache(Duration = 3600, Location = ResponseCacheLocation.Any)]
         public async Task<IActionResult> Sitemap()
         {
-            var carIds = await _cache.GetOrCreateAsync("seo:sitemap-carids", async e =>
+            var cars = await _cache.GetOrCreateAsync("seo:sitemap-cars", async e =>
             {
                 e.AbsoluteExpirationRelativeToNow = TimeSpan.FromHours(1);
                 return await _context.Cars.AsNoTracking()
                     .OrderBy(c => c.Id)
-                    .Select(c => c.Id)
+                    .Select(c => new { c.Id, c.Brand, c.Segment })
                     .ToListAsync();
             }) ?? new();
+
+            var carIds = cars.Select(c => c.Id).ToList();
+            var brandSlugs = cars.Select(c => CatalogController.Slugify(c.Brand)).Where(s => s.Length > 0).Distinct().ToList();
+            var segmentSlugs = cars.Select(c => CatalogController.Slugify(c.Segment ?? "")).Where(s => s.Length > 0).Distinct().ToList();
 
             var today = DateTime.UtcNow.ToString("yyyy-MM-dd");
             var sb = new StringBuilder();
@@ -78,6 +82,10 @@ namespace OtoRehber.Controllers
             Url("/Home/KullanimKosullari", "0.2", "yearly");
             Url("/Home/Cerez", "0.2", "yearly");
 
+            foreach (var slug in brandSlugs)
+                Url($"/marka/{slug}", "0.7", "weekly");
+            foreach (var slug in segmentSlugs)
+                Url($"/segment/{slug}", "0.6", "weekly");
             foreach (var id in carIds)
                 Url($"/Car/Details/{id}", "0.9", "weekly");
 

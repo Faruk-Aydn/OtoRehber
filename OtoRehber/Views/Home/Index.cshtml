@@ -156,76 +156,14 @@
 </div>
 
 <!-- Car Grid -->
+@{
+    ViewData["Ratings"] = ViewBag.CarRatings;
+    ViewData["ShowCompare"] = true;
+}
 <div id="car-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
     @foreach (var car in Model)
     {
-        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm hover:shadow-xl overflow-hidden hover:-translate-y-1 transition-all duration-300 flex flex-col h-full border border-gray-200 dark:border-gray-700" data-aos="fade-up">
-            <!-- Simulated Image Area -->
-            <div class="relative h-48 bg-gradient-to-tr from-gray-100 to-gray-200 flex items-center justify-center text-gray-400 group border-b border-gray-100">
-                <!-- Karşılaştırma Checkbox -->
-                <div class="absolute top-3 left-3 bg-white/90 p-2 rounded-xl shadow-sm border border-gray-200 opacity-0 group-hover:opacity-100 transition-opacity focus-within:opacity-100 [&:has(:checked)]:opacity-100 z-10 backdrop-blur-sm">
-                    <label class="flex items-center cursor-pointer gap-2">
-                        <input type="checkbox" class="compare-checkbox w-5 h-5 text-primary bg-gray-100 border-gray-300 rounded focus:ring-primary focus:ring-2 transition" value="@car.Id" data-brand="@car.Brand @car.ModelName">
-                        <span class="text-xs font-extrabold text-gray-700 uppercase tracking-wide">Kıyasla</span>
-                    </label>
-                </div>
-                
-                <!-- Garaja Ekle Butonu -->
-                <button onclick="toggleGarageHome(@car.Id, this)" class="absolute top-3 right-3 bg-white/90 p-2 w-10 h-10 rounded-full shadow-sm border border-gray-200 z-10 backdrop-blur-sm flex items-center justify-center text-gray-400 hover:text-red-500 hover:scale-110 transition-all focus:outline-none" title="Garaja Ekle">
-                    <i class="fa-solid fa-heart text-lg"></i>
-                </button>
-
-                @if(!string.IsNullOrEmpty(car.ImageUrl)) {
-                    <img src="@car.ImageUrl" alt="@car.Brand @car.ModelName" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                    <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
-                } else {
-                    <i class="fa-solid fa-car-side text-6xl text-gray-300 group-hover:text-primary/50 transition-colors"></i>
-                }
-            </div>
-            
-            <div class="p-6 flex flex-col flex-grow">
-                <div class="flex justify-between items-start mb-3">
-                    <div>
-                        <h2 class="text-xl font-extrabold text-gray-900 dark:text-white tracking-tight">@car.Brand @car.ModelName</h2>
-                        <div class="flex items-center gap-2 mt-1">
-                            <span class="text-xs font-black text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 px-2 py-0.5 rounded border border-gray-200 dark:border-gray-600 flex items-center">
-                                <i class="fa-regular fa-calendar-days mr-1"></i> @car.ProductionYears
-                            </span>
-                            <span class="text-xs text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wider">@car.Segment</span>
-                        </div>
-                        <p class="text-[11px] text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wider mt-2 line-clamp-1 bg-gray-50 dark:bg-gray-800 px-2 py-1 rounded" title="@car.Engine">
-                            <i class="fa-solid fa-engine mr-1"></i> @car.Engine
-                        </p>
-                        @{
-                            var _ratings = ViewBag.CarRatings as IDictionary<int, (double Avg, int Count)>;
-                        }
-                        @if (_ratings != null && _ratings.TryGetValue(car.Id, out var _rt))
-                        {
-                            <p class="text-xs text-gray-600 dark:text-gray-300 mt-2 flex items-center gap-1">
-                                <i class="fa-solid fa-star text-yellow-400"></i>
-                                <span class="font-bold">@_rt.Avg.ToString("0.#")</span>
-                                <span class="text-gray-400">/ 10 · @_rt.Count kullanıcı</span>
-                            </p>
-                        }
-                    </div>
-                    <div class="bg-yellow-50 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-500 text-sm font-black px-2 py-1 rounded-lg border border-yellow-200 dark:border-yellow-700/50 flex items-center gap-1 shadow-sm">
-                        <i class="fa-solid fa-star"></i> @car.ReliabilityScore
-                    </div>
-                </div>
-                
-                <p class="text-gray-600 dark:text-gray-300 text-sm mb-5 line-clamp-3 leading-relaxed font-medium">@car.ExpertSummary</p>
-                
-                <div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-700 flex justify-between items-center">
-                    <div class="flex flex-col">
-                        <span class="text-[10px] text-gray-400 dark:text-gray-500 font-bold uppercase tracking-widest">Piyasa</span>
-                        <span class="text-sm font-extrabold text-gray-800 dark:text-gray-200">@car.MinPrice.ToString("N0") - @car.MaxPrice.ToString("N0") TL</span>
-                    </div>
-                    <a asp-controller="Car" asp-action="Details" asp-route-id="@car.Id" class="inline-flex items-center px-4 py-2 text-sm font-bold text-white bg-gray-900 rounded-xl hover:bg-primary focus:ring-4 focus:ring-blue-300 transition-colors shadow-md hover:shadow-lg">
-                        İncele <i class="fa-solid fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
+        <partial name="_CarCard" model="car" />
     }
 </div>
 

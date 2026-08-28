@@ -273,9 +273,11 @@ Development: `dotnet user-secrets`. Production: environment variable.
   şifre değiştir (`RefreshSignIn`), e-posta değiştir (yeni adrese doğrulama linki + `ConfirmEmailChange`),
   **hesabı sil** (şifre + onay kutusu; yorumlar cascade, garaj kayıtları elle silinir — KVKK silme hakkı).
   Navbar'a "Hesabım" linki. `/Manage` → `noindex` + robots.txt disallow.
-- [ ] Marka sayfaları (`/marka/{slug}`), segment sayfaları
-- [ ] Hakkımızda, İletişim
-- [ ] `sitemap.xml`, `robots.txt`
+- [x] Marka + segment landing sayfaları — `CatalogController` `/marka/{slug}` + `/segment/{slug}`
+  (`Slugify` Türkçe karakter sadeleştirme; bilinmeyen slug → 404; sitemap'e eklendi;
+  araç detayında marka/segment link rozetleri). Ortak `_CarCard` partial'ı çıkarıldı (Home + Catalog).
+- [x] Hakkımızda, İletişim (Faz 1'de eklendi)
+- [x] `sitemap.xml`, `robots.txt` (3.3)
 - [ ] Admin: kullanıcı yönetimi, yorum moderasyon kuyruğu, güvenli toplu import UI
 - [ ] Blog/haber (opsiyonel, SEO)
 
@@ -332,6 +334,7 @@ Development: `dotnet user-secrets`. Production: environment variable.
 | 2026-08-28 | 3.2 | Kullanıcı kendi yorumunu düzenler/siler (`EditReview`/`DeleteReview` + araç detayı inline düzenleme) | 45010cd |
 | 2026-08-28 | 3.2 | Ortalama kullanıcı puanı: Home kartları + araç detay kutusu | d3ab465 |
 | 2026-08-28 | fix | `AdminSeed:ResetPassword=true` bayrağı — mevcut admin şifresini sıfırlar (unutulan şifre kurtarma) | b22800c |
+| 2026-08-29 | 3.1 | Marka/segment landing sayfaları (`CatalogController`, `/marka/{slug}` + `/segment/{slug}`) + ortak `_CarCard` partial | _(bu commit)_ |
 | 2026-08-27 | 1.3, 1.10 | Railway `DATABASE_URL` ayrıştırma + Docker healthcheck düzeltme + deploy rehberi | 93c5dbb |
 | 2026-08-27 | deploy | Postgres bağlantı çözümü + `railway.json` | 1e7fb51 |
 | 2026-08-27 | deploy | `PORT` env dinleme + healthcheck timeout | 1c974f8 |

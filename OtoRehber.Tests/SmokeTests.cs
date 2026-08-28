@@ -53,6 +53,25 @@ public class SmokeTests : IClassFixture<CustomWebApplicationFactory>
         var xml = await _client.GetStringAsync("/sitemap.xml");
         Assert.Contains("<loc>", xml);
         Assert.Contains("/Car/Details/1</loc>", xml);
+        Assert.Contains("/marka/", xml);
+        Assert.Contains("/segment/", xml);
+    }
+
+    [Theory]
+    [InlineData("/marka/volkswagen")]
+    [InlineData("/marka/toyota")]
+    [InlineData("/segment/c")]
+    public async Task CatalogPages_SeededSlugs_ReturnSuccess(string url)
+    {
+        var res = await _client.GetAsync(url);
+        Assert.Equal(HttpStatusCode.OK, res.StatusCode);
+    }
+
+    [Fact]
+    public async Task Catalog_UnknownSlug_Returns404()
+    {
+        var res = await _client.GetAsync("/marka/boyle-bir-marka-yok");
+        Assert.Equal(HttpStatusCode.NotFound, res.StatusCode);
     }
 
     [Fact]
