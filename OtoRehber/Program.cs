@@ -248,6 +248,9 @@ using (var scope = app.Services.CreateScope())
     var config = services.GetRequiredService<IConfiguration>();
     string adminEmail = config["AdminSeed:Email"] ?? "admin@otorehber.com";
     string? adminPassword = config["AdminSeed:Password"];
+    // Mevcut admin'in şifresini AdminSeed:Password ile eşitlemek için tek seferlik bayrak.
+    // (Şifre unutulduğunda: AdminSeed__ResetPassword=true → deploy → giriş → bayrağı kaldır.)
+    bool forceReset = string.Equals(config["AdminSeed:ResetPassword"], "true", StringComparison.OrdinalIgnoreCase);
 
     var adminUser = await userManager.FindByEmailAsync(adminEmail);
     if (adminUser == null && !string.IsNullOrWhiteSpace(adminPassword))
@@ -274,6 +277,20 @@ using (var scope = app.Services.CreateScope())
         logger.LogWarning(
             "AdminSeed:Password yapılandırılmamış. Admin kullanıcı ({AdminEmail}) oluşturulmadı.",
             adminEmail);
+    }
+    else if (forceReset && !string.IsNullOrWhiteSpace(adminPassword))
+    {
+        // Mevcut admin: e-postayı onayla, kilidi aç, şifreyi sıfırla.
+        adminUser.EmailConfirmed = true;
+        await userManager.SetLockoutEndDateAsync(adminUser, null);
+        await userManager.ResetAccessFailedCountAsync(adminUser);
+        var token = await userManager.GeneratePasswordResetTokenAsync(adminUser);
+        var reset = await userManager.ResetPasswordAsync(adminUser, token, adminPassword);
+        if (reset.Succeeded)
+            logger.LogWarning("AdminSeed:ResetPassword=true — admin şifresi sıfırlandı. Bu ortam değişkenini KALDIRIN.");
+        else
+            logger.LogError("Admin şifre sıfırlama başarısız: {Errors}",
+                string.Join(", ", reset.Errors.Select(e => e.Description)));
     }
 
     if (adminUser != null && !await userManager.IsInRoleAsync(adminUser, "Admin"))
