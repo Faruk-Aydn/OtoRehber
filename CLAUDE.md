@@ -57,6 +57,9 @@ dotnet build OtoRehber.sln
 # Çalıştırma (Development)
 dotnet run --project OtoRehber
 
+# Testler (xUnit + WebApplicationFactory)
+dotnet test OtoRehber.sln
+
 # Migration ekleme (Migrations assembly = OtoRehber)
 dotnet ef migrations add <Ad> --project OtoRehber --startup-project OtoRehber
 
@@ -243,10 +246,13 @@ Development: `dotnet user-secrets`. Production: environment variable.
 - [x] AI çıktısı: Compare/AiWizard Result'ta `DOMPurify.sanitize(marked.parse())`; _Layout chat escape-first
 - [x] Bonus: `gemini-3.5-flash` (geçersiz) → `GeminiModel` config, varsayılan `gemini-2.0-flash`
 
-### 2.6 Test
-- [ ] `OtoRehber.Tests` projesi (`WebApplicationFactory`)
-- [ ] Smoke: ana sayfa, araç detay, login, kayıt, yorum ekleme
-- [ ] AI servis için birim test (mock HttpMessageHandler)
+### 2.6 Test ✅
+- [x] `OtoRehber.Tests` projesi (xUnit + `WebApplicationFactory<Program>`; `Program.cs`'e `public partial class Program`)
+- [x] `CustomWebApplicationFactory`: her örneğe özel geçici SQLite dosyası, secrets boş
+- [x] Smoke (`SmokeTests`): `/`, `/Stats`, `/Compare`, `/Account/Login|Register|ForgotPassword`, `/Home/Kvkk|Privacy`, `/health`, `/health/ready`, `/manifest.json`, `/service-worker.js`, `/offline.html`, `/Car/Details/1` → 200; `/AdminCar` anon → login'e redirect; token'sız POST → 400
+- [x] `AiCarDataServiceTests`: mock `HttpMessageHandler` — key yok / başarı / 429 senaryoları
+- [x] `ci.yml`'den `continue-on-error` kaldırıldı (test artık zorunlu)
+- **19 test, hepsi geçiyor.**
 
 ### 2.7 Arka plan işleri ✅
 - [x] YouTube import → `Channel<Guid>` kuyruğu (`YoutubeImportQueue`) + `YoutubeImportHostedService : BackgroundService`; bellek içi `ImportJobStatus` deposu (admin-only, tek instance)
@@ -306,6 +312,7 @@ Development: `dotnet user-secrets`. Production: environment variable.
 | 2026-08-28 | 2.2 | FontAwesome/AOS/marked/DOMPurify/Chart.js/DataTables self-host + CSP'den CDN kaldırıldı | 5e16da0 |
 | 2026-08-28 | 2.3 | PWA: service-worker yeniden yazıldı (statik-only, offline.html) + gerçek PNG ikonlar + manifest düzeltme | c407783 |
 | 2026-08-28 | 2.7 | YouTube import → `Channel` kuyruğu + `BackgroundService` + polling durum sayfası; `Task.Delay` request'ten çıktı | 533731e |
+| 2026-08-28 | 2.6 | `OtoRehber.Tests` (xUnit + `WebApplicationFactory`): 19 smoke + AI birim testi; CI'da `continue-on-error` kaldırıldı | _(bu commit)_ |
 | 2026-08-27 | 1.3, 1.10 | Railway `DATABASE_URL` ayrıştırma + Docker healthcheck düzeltme + deploy rehberi | 93c5dbb |
 | 2026-08-27 | deploy | Postgres bağlantı çözümü + `railway.json` | 1e7fb51 |
 | 2026-08-27 | deploy | `PORT` env dinleme + healthcheck timeout | 1c974f8 |
@@ -342,12 +349,15 @@ Development: `dotnet user-secrets`. Production: environment variable.
 - 2.3 PWA: service-worker yeniden yazıldı (statik-only, network-first HTML, `offline.html`,
   `activate` temizliği, `skipWaiting`/`clients.claim`) + gerçek PNG ikonlar + manifest düzeltme
 - 2.7 YouTube import arka plan kuyruğuna alındı (`Channel` + `BackgroundService` + polling durum sayfası)
+- 2.6 `OtoRehber.Tests` (xUnit + `WebApplicationFactory`): 19 smoke + AI birim testi; CI'da zorunlu
 
 ### Faz 2 — YAPILMAYAN (sıradaki oturum)
-- **2.6** — `OtoRehber.Tests` projesi (xUnit + `WebApplicationFactory`), smoke + AI birim testi, CI'da zorunlu
 - 2.2 kalanı — inline script'ler için CSP nonce, `<script defer>`, `<environment>` dev/prod ayrımı
 - 2.5 kalanı — AI karşılaştırma sonucu DB cache (`car1Id,car2Id`)
 - AutoMapper CVE (GHSA-rvv3-g6hj-g44x) sürüm yükseltme
+- DataProtection anahtarları kalıcı backend'e (deploy'da oturum düşmesin)
+
+**Faz 2'nin ana maddeleri (2.1–2.8, responsive) tamamlandı.**
 
 ### Bir sonraki oturumda İLK yapılacak: prod doğrulama
 Bu commit Railway'e deploy oldu mu kontrol et:

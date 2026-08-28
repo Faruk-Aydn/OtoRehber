@@ -25,7 +25,6 @@ jobs:
 
       - name: Test
         run: dotnet test OtoRehber.sln -c Release --no-build --verbosity normal
-        continue-on-error: true # Test projesi eklenene kadar (Faz 2)
 
       - name: Docker build (smoke)
         run: docker build -t otorehber:ci .

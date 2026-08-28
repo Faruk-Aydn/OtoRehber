@@ -348,3 +348,6 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+// Entegrasyon testlerinin (WebApplicationFactory<Program>) erişebilmesi için.
+public partial class Program { }
