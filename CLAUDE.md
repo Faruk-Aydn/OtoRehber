@@ -213,12 +213,14 @@ Development: `dotnet user-secrets`. Production: environment variable.
 - [x] Stats marka tablosu mobilde kolon gizleme; toast/AI-chat mobil boyut
 - [x] Puppeteer ile 390/768/1280 px doğrulama — yatay taşma yok (prod dahil)
 
-### 2.3 PWA
-- [ ] `service-worker.js`: sadece statik asset cache (auth'lu sayfaları cache'leme)
-- [ ] `activate` handler + eski cache temizliği + versiyonlama + `skipWaiting`/`clients.claim`
-- [ ] Gerçek 192/512/maskable PNG ikonlar + `manifest.json` düzelt
-- [ ] PWA offline sayfası (dostça "bağlantı yok" ekranı)
-- [ ] `<environment>` tag helper ile dev/prod asset ayrımı
+### 2.3 PWA ✅
+- [x] `service-worker.js` yeniden yazıldı: sadece statik asset cache (`/css`, `/js`, `/lib`, `/icons`, `/images` + statik uzantılar) — gezinme/HTML yanıtları **asla** cache'lenmez (network-first, hata → `offline.html`)
+- [x] `activate` handler: eski cache sürümlerini sil + `CACHE_VERSION` (`v3`) + `skipWaiting()`/`clients.claim()`
+- [x] Gerçek PNG ikonlar (`wwwroot/icons/`): `icon-192`, `icon-512`, `icon-maskable-512` (mavi zemin + beyaz araç, maskable safe-zone padding'li)
+- [x] `manifest.json` düzeltildi: `id`/`scope`/`lang`/`categories` + 3 gerçek PNG ikon (any + maskable)
+- [x] `wwwroot/offline.html` — self-contained (dış referans yok), tema-duyarlı, "Yeniden dene" butonu
+- [x] `_Layout` `<head>`: `apple-touch-icon` + `apple-mobile-web-app-*` meta, `icon` 192 PNG
+- [ ] `<environment>` tag helper dev/prod ayrımı → tüm asset'ler self-host olduğu için düşük öncelik (Faz 2 devam)
 
 ### 2.4 İzleme & loglama
 - [ ] Serilog (console + dosya/Seq) veya platform log
@@ -299,6 +301,7 @@ Development: `dotnet user-secrets`. Production: environment variable.
 | 2026-08-27 | 2.2 | Tailwind build-time derleme (CDN JIT kaldırıldı) | 24947e5 |
 | 2026-08-28 | 2.2 | `app.min.css` FontAwesome sonrası yüklenir (`.hidden` çakışması) + `-c` bayrağı | 0c164fb |
 | 2026-08-28 | 2.2 | FontAwesome/AOS/marked/DOMPurify/Chart.js/DataTables self-host + CSP'den CDN kaldırıldı | 5e16da0 |
+| 2026-08-28 | 2.3 | PWA: service-worker yeniden yazıldı (statik-only, offline.html) + gerçek PNG ikonlar + manifest düzeltme | _(bu commit)_ |
 | 2026-08-27 | 1.3, 1.10 | Railway `DATABASE_URL` ayrıştırma + Docker healthcheck düzeltme + deploy rehberi | 93c5dbb |
 | 2026-08-27 | deploy | Postgres bağlantı çözümü + `railway.json` | 1e7fb51 |
 | 2026-08-27 | deploy | `PORT` env dinleme + healthcheck timeout | 1c974f8 |
@@ -332,10 +335,10 @@ Development: `dotnet user-secrets`. Production: environment variable.
 - 2.4 Serilog + admin audit log (`AuditLog` tablosu, migration `AddAuditLog`)
 - 2.R responsive (navbar hamburger, taşma düzeltmeleri, 390/768/1280 doğrulandı)
 - 2.2 Tailwind build-time derleme + tüm asset'ler self-host + CSP'den CDN temizlendi
+- 2.3 PWA: service-worker yeniden yazıldı (statik-only, network-first HTML, `offline.html`,
+  `activate` temizliği, `skipWaiting`/`clients.claim`) + gerçek PNG ikonlar + manifest düzeltme
 
 ### Faz 2 — YAPILMAYAN (sıradaki oturum)
-- **2.3 PWA** — `service-worker.js` yeniden yaz (statik-only cache, `activate` temizliği,
-  `skipWaiting`/`clients.claim`), gerçek 192/512/maskable PNG ikonlar, `manifest.json` düzelt, `offline.html`
 - **2.7** — YouTube import → `BackgroundService`/`Channel` kuyruğu; `AiCarDataService`'teki
   `Task.Delay(6000)` hâlâ request thread'inde (admin-only)
 - **2.6** — `OtoRehber.Tests` projesi (xUnit + `WebApplicationFactory`), smoke + AI birim testi, CI'da zorunlu

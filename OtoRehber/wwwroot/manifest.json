@@ -1,21 +1,35 @@
 {
+  "id": "/",
   "name": "OtoRehber - Yapay Zeka Destekli Araç Rehberi",
   "short_name": "OtoRehber",
-  "description": "Araç karşılaştırma ve inceleme platformu.",
+  "description": "Türkiye ikinci el otomobil piyasası için yapay zeka destekli araç inceleme, karşılaştırma ve öneri platformu.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait-primary",
+  "lang": "tr",
+  "dir": "ltr",
   "background_color": "#ffffff",
   "theme_color": "#2563eb",
+  "categories": ["automotive", "shopping", "lifestyle"],
   "icons": [
     {
-      "src": "/favicon.ico",
+      "src": "/icons/icon-192.png",
       "sizes": "192x192",
-      "type": "image/x-icon"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "/favicon.ico",
+      "src": "/icons/icon-512.png",
       "sizes": "512x512",
-      "type": "image/x-icon"
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }
