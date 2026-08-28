@@ -248,9 +248,12 @@ Development: `dotnet user-secrets`. Production: environment variable.
 - [ ] Smoke: ana sayfa, araç detay, login, kayıt, yorum ekleme
 - [ ] AI servis için birim test (mock HttpMessageHandler)
 
-### 2.7 Arka plan işleri
-- [ ] YouTube import → `IHostedService` / kanal kuyruğu; UI'da ilerleme/polling
-- [ ] `Task.Delay` içeren tüm akışları request thread'inden çıkar
+### 2.7 Arka plan işleri ✅
+- [x] YouTube import → `Channel<Guid>` kuyruğu (`YoutubeImportQueue`) + `YoutubeImportHostedService : BackgroundService`; bellek içi `ImportJobStatus` deposu (admin-only, tek instance)
+- [x] `AdminCarController.ImportFromYoutube` POST artık işi kuyruğa atıp `ImportStatus/{id}`'ye redirect ediyor (~150 ms); `ImportStatus.cshtml` 2 sn polling ile durum gösterir
+- [x] `Task.Delay(6000)` artık BackgroundService thread'inde, request'te değil
+- [x] Audit log + Home cache invalidation başarıda hosted service içinde
+- [x] Bonus: `AiCarDataService` altyazı seçimi düzeltildi (`GetByLanguage` bulamayınca exception fırlatıyordu → `Tracks.FirstOrDefault` ile tr→tr*→ilk)
 
 ---
 
@@ -302,6 +305,7 @@ Development: `dotnet user-secrets`. Production: environment variable.
 | 2026-08-28 | 2.2 | `app.min.css` FontAwesome sonrası yüklenir (`.hidden` çakışması) + `-c` bayrağı | 0c164fb |
 | 2026-08-28 | 2.2 | FontAwesome/AOS/marked/DOMPurify/Chart.js/DataTables self-host + CSP'den CDN kaldırıldı | 5e16da0 |
 | 2026-08-28 | 2.3 | PWA: service-worker yeniden yazıldı (statik-only, offline.html) + gerçek PNG ikonlar + manifest düzeltme | c407783 |
+| 2026-08-28 | 2.7 | YouTube import → `Channel` kuyruğu + `BackgroundService` + polling durum sayfası; `Task.Delay` request'ten çıktı | _(bu commit)_ |
 | 2026-08-27 | 1.3, 1.10 | Railway `DATABASE_URL` ayrıştırma + Docker healthcheck düzeltme + deploy rehberi | 93c5dbb |
 | 2026-08-27 | deploy | Postgres bağlantı çözümü + `railway.json` | 1e7fb51 |
 | 2026-08-27 | deploy | `PORT` env dinleme + healthcheck timeout | 1c974f8 |
@@ -337,10 +341,9 @@ Development: `dotnet user-secrets`. Production: environment variable.
 - 2.2 Tailwind build-time derleme + tüm asset'ler self-host + CSP'den CDN temizlendi
 - 2.3 PWA: service-worker yeniden yazıldı (statik-only, network-first HTML, `offline.html`,
   `activate` temizliği, `skipWaiting`/`clients.claim`) + gerçek PNG ikonlar + manifest düzeltme
+- 2.7 YouTube import arka plan kuyruğuna alındı (`Channel` + `BackgroundService` + polling durum sayfası)
 
 ### Faz 2 — YAPILMAYAN (sıradaki oturum)
-- **2.7** — YouTube import → `BackgroundService`/`Channel` kuyruğu; `AiCarDataService`'teki
-  `Task.Delay(6000)` hâlâ request thread'inde (admin-only)
 - **2.6** — `OtoRehber.Tests` projesi (xUnit + `WebApplicationFactory`), smoke + AI birim testi, CI'da zorunlu
 - 2.2 kalanı — inline script'ler için CSP nonce, `<script defer>`, `<environment>` dev/prod ayrımı
 - 2.5 kalanı — AI karşılaştırma sonucu DB cache (`car1Id,car2Id`)

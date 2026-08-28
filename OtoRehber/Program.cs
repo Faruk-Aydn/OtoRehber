@@ -132,6 +132,11 @@ builder.Services.AddHttpClient<IAiCarDataService, AiCarDataService>(client =>
     client.Timeout = TimeSpan.FromSeconds(120);
 });
 
+// YouTube AI import: request thread'ini bloke etmemek için arka plan kuyruğu.
+builder.Services.AddSingleton<YoutubeImportQueue>();
+builder.Services.AddSingleton<IYoutubeImportQueue>(sp => sp.GetRequiredService<YoutubeImportQueue>());
+builder.Services.AddHostedService<YoutubeImportHostedService>();
+
 // Hız sınırlama (rate limiting)
 builder.Services.AddRateLimiter(options =>
 {

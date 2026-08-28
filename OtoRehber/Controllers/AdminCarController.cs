@@ -20,24 +20,24 @@ namespace OtoRehber.Controllers
     public class AdminCarController : Controller
     {
         private readonly OtoRehberDbContext _context;
-        private readonly IAiCarDataService _aiService;
         private readonly IWebHostEnvironment _hostEnvironment;
         private readonly IMapper _mapper;
         private readonly ILogger<AdminCarController> _logger;
         private readonly IMemoryCache _cache;
+        private readonly IYoutubeImportQueue _importQueue;
 
         private static readonly string[] AllowedImageExtensions = { ".jpg", ".jpeg", ".png", ".webp", ".gif" };
         private static readonly string[] AllowedImageContentTypes = { "image/jpeg", "image/png", "image/webp", "image/gif" };
         private const long MaxImageSizeBytes = 5 * 1024 * 1024; // 5 MB
 
-        public AdminCarController(OtoRehberDbContext context, IAiCarDataService aiService, IWebHostEnvironment hostEnvironment, IMapper mapper, ILogger<AdminCarController> logger, IMemoryCache cache)
+        public AdminCarController(OtoRehberDbContext context, IWebHostEnvironment hostEnvironment, IMapper mapper, ILogger<AdminCarController> logger, IMemoryCache cache, IYoutubeImportQueue importQueue)
         {
             _context = context;
-            _aiService = aiService;
             _hostEnvironment = hostEnvironment;
             _mapper = mapper;
             _logger = logger;
             _cache = cache;
+            _importQueue = importQueue;
         }
 
         private void InvalidateHomeCache()
@@ -68,43 +68,51 @@ namespace OtoRehber.Controllers
         }
 
         // POST: /AdminCar/ImportFromYoutube
+        // İş kuyruğa alınır, arka planda işlenir; kullanıcı durum sayfasına yönlendirilir.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ImportFromYoutube(string youtubeUrl)
+        public IActionResult ImportFromYoutube(string youtubeUrl)
         {
-            if (string.IsNullOrEmpty(youtubeUrl))
+            if (string.IsNullOrWhiteSpace(youtubeUrl))
             {
                 ViewBag.Error = "Lütfen geçerli bir YouTube linki girin.";
                 return View();
             }
 
-            try
-            {
-                var cars = await _aiService.AnalyzeAndSaveFromYoutubeAsync(youtubeUrl);
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            var job = _importQueue.Enqueue(youtubeUrl.Trim(), userId, User.Identity?.Name);
+            _logger.LogInformation("YouTube AI import kuyruğa alındı: {JobId} ({Url})", job.Id, youtubeUrl);
 
-                if (cars != null && cars.Any())
-                {
-                    InvalidateHomeCache();
-                    await AuditAsync("Import", "Car", null, $"YouTube AI import: {cars.Count} araç ({youtubeUrl})");
-                    TempData["SuccessMessage"] = $"{cars.Count} adet araç yapay zeka ile başarıyla eklendi!";
-                    return RedirectToAction(nameof(Index));
-                }
+            return RedirectToAction(nameof(ImportStatus), new { id = job.Id });
+        }
 
-                ViewBag.Error = "Videodan işlenebilecek bir araç bilgisi çıkarılamadı.";
-                return View();
-            }
-            catch (InvalidOperationException ex)
+        // GET: /AdminCar/ImportStatus/{id}
+        public IActionResult ImportStatus(Guid id)
+        {
+            var job = _importQueue.Get(id);
+            if (job == null)
             {
-                // Transkript/altyazı bulunamadı gibi beklenen hatalar
-                ViewBag.Error = ex.Message;
-                return View();
+                TempData["ErrorMessage"] = "İçe aktarma işi bulunamadı (süresi dolmuş olabilir).";
+                return RedirectToAction(nameof(Index));
             }
-            catch (Exception ex)
+            return View(job);
+        }
+
+        // GET: /AdminCar/ImportStatusJson/{id} — durum sayfasının polling'i için.
+        [HttpGet]
+        public IActionResult ImportStatusJson(Guid id)
+        {
+            var job = _importQueue.Get(id);
+            if (job == null)
+                return NotFound();
+
+            return Json(new
             {
-                _logger.LogError(ex, "YouTube AI import başarısız: {Url}", youtubeUrl);
-                ViewBag.Error = "İşlem sırasında beklenmeyen bir hata oluştu. Lütfen tekrar deneyin.";
-                return View();
-            }
+                state = job.State.ToString(),
+                finished = job.IsFinished,
+                message = job.Message,
+                carCount = job.CarCount
+            });
         }
 
         // GET: AdminCar

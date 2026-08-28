@@ -1,0 +1,75 @@
+@model OtoRehber.Domain.Interfaces.ImportJobStatus
+@{
+    ViewData["Title"] = "İçe Aktarma Durumu";
+}
+
+<div class="max-w-2xl mx-auto py-8">
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+        <h1 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-1">Yapay Zeka Analizi</h1>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-6 break-all">@Model.YoutubeUrl</p>
+
+        <div id="status-pending" class="@(Model.IsFinished ? "hidden" : "") text-center py-6">
+            <div class="inline-block animate-spin rounded-full h-12 w-12 border-4 border-gray-200 border-t-red-600 mb-4"></div>
+            <p id="status-text" class="text-gray-600 dark:text-gray-300 font-medium animate-pulse">
+                Video altyazıları okunuyor ve araç bilgileri çıkarılıyor... Bu işlem birkaç dakika sürebilir, sayfayı açık tutmanız gerekmez.
+            </p>
+        </div>
+
+        <div id="status-success" class="@(Model.State == OtoRehber.Domain.Interfaces.ImportJobState.Succeeded ? "" : "hidden") text-center py-6">
+            <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-green-100 text-green-600 mb-4">
+                <i class="fa-solid fa-check text-2xl"></i>
+            </div>
+            <p class="text-gray-800 dark:text-gray-100 font-semibold mb-4"><span id="success-msg">@Model.Message</span></p>
+            <a asp-action="Index" class="inline-block bg-primary hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-md shadow">Araç Listesine Dön</a>
+        </div>
+
+        <div id="status-failed" class="@(Model.State == OtoRehber.Domain.Interfaces.ImportJobState.Failed ? "" : "hidden") text-center py-6">
+            <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-red-100 text-red-600 mb-4">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </div>
+            <p class="text-red-700 dark:text-red-400 font-medium mb-4"><span id="failed-msg">@Model.Message</span></p>
+            <a asp-action="ImportFromYoutube" class="inline-block bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-100 font-bold py-2 px-6 rounded-md">Tekrar Dene</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        (function () {
+            var finished = @(Model.IsFinished ? "true" : "false");
+            if (finished) return;
+
+            var url = '@Url.Action("ImportStatusJson", new { id = Model.Id })';
+            var pending = document.getElementById('status-pending');
+            var success = document.getElementById('status-success');
+            var failed = document.getElementById('status-failed');
+
+            var timer = setInterval(async function () {
+                try {
+                    var res = await fetch(url, { headers: { 'Accept': 'application/json' } });
+                    if (!res.ok) return;
+                    var data = await res.json();
+
+                    if (data.state === 'Running') {
+                        document.getElementById('status-text').textContent =
+                            'Yapay zeka videoyu analiz ediyor...';
+                    }
+
+                    if (data.finished) {
+                        clearInterval(timer);
+                        pending.classList.add('hidden');
+                        if (data.state === 'Succeeded') {
+                            document.getElementById('success-msg').textContent =
+                                data.message || (data.carCount + ' araç eklendi.');
+                            success.classList.remove('hidden');
+                        } else {
+                            document.getElementById('failed-msg').textContent =
+                                data.message || 'İşlem başarısız oldu.';
+                            failed.classList.remove('hidden');
+                        }
+                    }
+                } catch (e) { /* geçici ağ hatası — bir sonraki tur dener */ }
+            }, 2000);
+        })();
+    </script>
+}

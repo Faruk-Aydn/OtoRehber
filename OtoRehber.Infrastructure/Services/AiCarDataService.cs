@@ -53,7 +53,9 @@ namespace OtoRehber.Infrastructure.Services
             {
                 var trackManifest = await youtube.Videos.ClosedCaptions.GetManifestAsync(youtubeUrl, cancellationToken);
                 // Önce Türkçe altyazı, yoksa mevcut ilk altyazı denenir.
-                var trackInfo = trackManifest.GetByLanguage("tr")
+                // (GetByLanguage bulamazsa exception fırlatır; bu yüzden Tracks üzerinde arıyoruz.)
+                var trackInfo = trackManifest.Tracks.FirstOrDefault(t => t.Language.Code == "tr")
+                    ?? trackManifest.Tracks.FirstOrDefault(t => t.Language.Code.StartsWith("tr"))
                     ?? trackManifest.Tracks.FirstOrDefault();
 
                 if (trackInfo != null)
