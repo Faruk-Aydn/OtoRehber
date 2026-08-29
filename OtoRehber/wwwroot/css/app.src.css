@@ -2,36 +2,141 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================================
+   Yazı tipi — Inter (self-host, variable, latin + latin-ext)
+   ============================================================ */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('/lib/fonts/inter-latin-ext.woff2') format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('/lib/fonts/inter-latin.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* ============================================================
+   Tema token'ları — açık/koyu tek yerden
+   ============================================================ */
 @layer base {
+    :root {
+        --surface: 255 255 255;      /* kart / panel zemini */
+        --surface-2: 248 250 252;    /* slate-50 — sayfa zemini / ikincil */
+        --surface-3: 241 245 249;    /* slate-100 — girişler, hover */
+        --border: 226 232 240;       /* slate-200 */
+        --content: 15 23 42;         /* slate-900 — ana metin */
+        --content-muted: 100 116 139;/* slate-500 — ikincil metin */
+    }
+    .dark {
+        --surface: 17 24 39;         /* slate-900'e yakın, biraz daha derin */
+        --surface-2: 3 7 18;         /* neredeyse siyah — sayfa zemini */
+        --surface-3: 30 41 59;       /* slate-800 — girişler, hover */
+        --border: 51 65 85;          /* slate-700 */
+        --content: 241 245 249;      /* slate-100 */
+        --content-muted: 148 163 184;/* slate-400 */
+    }
+
+    html {
+        font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+    }
     html, body {
         overflow-x: clip;
         max-width: 100%;
     }
+    body {
+        background-color: rgb(var(--surface-2));
+        color: rgb(var(--content));
+    }
     img, video, canvas, table {
         max-width: 100%;
     }
+    ::selection {
+        background-color: theme('colors.brand.600');
+        color: #fff;
+    }
+    h1, h2, h3, h4 {
+        letter-spacing: -0.011em;
+    }
 }
 
-/* Hukuki / bilgi sayfaları için basit tipografi */
-.legal-doc {
-    max-width: 48rem;
-    margin: 0 auto;
-    padding: 2.5rem 0;
-    line-height: 1.75;
+/* ============================================================
+   Bileşen sınıfları — tutarlı buton / kart / giriş / rozet
+   ============================================================ */
+@layer components {
+    .btn {
+        @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold
+               transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500
+               focus-visible:ring-offset-2 focus-visible:ring-offset-surface disabled:opacity-60 disabled:pointer-events-none;
+    }
+    .btn-primary   { @apply btn bg-brand-600 text-white hover:bg-brand-700; }
+    .btn-secondary { @apply btn bg-surface-3 text-content hover:bg-border/60 border border-border; }
+    .btn-ghost     { @apply btn text-content-muted hover:bg-surface-3 hover:text-content; }
+    .btn-danger    { @apply btn bg-danger text-white hover:bg-red-700; }
+    .btn-sm        { @apply px-3 py-1.5 text-xs rounded-md; }
+    .btn-lg        { @apply px-6 py-3 text-base; }
+
+    .card       { @apply rounded-xl border border-border bg-surface; }
+    .card-pad   { @apply p-5 sm:p-6; }
+    .card-hover { @apply transition-shadow hover:shadow-md; }
+
+    .input, .select, .textarea {
+        @apply w-full rounded-lg border border-border bg-surface px-3.5 py-2.5 text-sm text-content
+               placeholder:text-content-muted/70 transition-colors
+               focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30;
+    }
+    .select { @apply appearance-none bg-no-repeat pr-10; }
+
+    .label { @apply block text-sm font-medium text-content mb-1.5; }
+    .form-error { @apply mt-1 text-xs text-danger; }
+
+    .badge {
+        @apply inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-semibold;
+    }
+    .badge-brand   { @apply badge bg-brand-50 text-brand-700 dark:bg-brand-500/15 dark:text-brand-300; }
+    .badge-muted   { @apply badge bg-surface-3 text-content-muted; }
+    .badge-success { @apply badge bg-emerald-50 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300; }
+    .badge-warning { @apply badge bg-amber-50 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300; }
+
+    /* Kaldırılabilir filtre çipi */
+    .chip {
+        @apply inline-flex items-center gap-1.5 rounded-full border border-border bg-surface-3
+               px-3 py-1 text-xs font-medium text-content;
+    }
+    .chip button { @apply -mr-1 text-content-muted hover:text-danger; }
+
+    /* İstatistik kutusu */
+    .stat { @apply card card-pad text-center; }
+    .stat-value { @apply text-3xl font-bold tracking-tight text-content; }
+    .stat-label { @apply mt-1 text-sm text-content-muted; }
+
+    .section-title { @apply text-lg font-semibold text-content; }
+
+    /* AI / markdown çıktısı */
+    .prose-oto {
+        @apply prose prose-slate dark:prose-invert max-w-none
+               prose-headings:font-semibold prose-headings:tracking-tight
+               prose-a:text-brand-600 prose-a:no-underline hover:prose-a:underline
+               prose-strong:text-content;
+    }
 }
-.legal-doc h1 { font-size: 1.875rem; font-weight: 800; margin-bottom: .5rem; }
-.legal-doc h2 { font-size: 1.25rem; font-weight: 700; margin: 2rem 0 .75rem; }
-.legal-doc p, .legal-doc li { color: inherit; margin-bottom: .75rem; }
+
+/* ============================================================
+   Yardımcılar — hukuki sayfalar
+   ============================================================ */
+.legal-doc { max-width: 46rem; margin: 0 auto; padding: 2.5rem 0; line-height: 1.75; }
+.legal-doc h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: .5rem; }
+.legal-doc h2 { font-size: 1.15rem; font-weight: 600; margin: 2rem 0 .75rem; }
+.legal-doc p, .legal-doc li { margin-bottom: .75rem; }
 .legal-doc ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
-.legal-doc a { color: #2563eb; text-decoration: underline; }
-.dark .legal-doc a { color: #60a5fa; }
-.legal-doc .muted { color: #6b7280; font-size: .875rem; }
-
-/* Hero dekoratif blob animasyonu (Home / Stats) */
-@keyframes blob {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(20px, -30px) scale(1.1); }
-    66% { transform: translate(-15px, 15px) scale(0.95); }
-}
-.animate-blob { animation: blob 12s infinite ease-in-out; }
-.animation-delay-2000 { animation-delay: 2s; }
+.legal-doc a { color: theme('colors.brand.600'); text-decoration: underline; }
+.dark .legal-doc a { color: theme('colors.brand.400'); }
+.legal-doc .muted { color: rgb(var(--content-muted)); font-size: .875rem; }
