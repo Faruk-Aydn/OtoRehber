@@ -370,20 +370,38 @@
         }
 
         <div class="border-t border-gray-200 pt-6 mt-6">
-            <h3 class="text-lg font-bold text-gray-800 mb-4">Topluluk Yorumları (@Model.Reviews?.Count)</h3>
-
             @{
-                var _otherReviews = (Model.Reviews ?? new List<OtoRehber.Domain.Entities.CarReview>())
-                    .Where(r => _myReview == null || r.Id != _myReview.Id)
-                    .OrderByDescending(r => r.CreatedAt)
-                    .ToList();
+                var _rsort = (Context.Request.Query["rsort"].ToString() ?? "new").ToLowerInvariant();
+                var _allOther = (Model.Reviews ?? new List<OtoRehber.Domain.Entities.CarReview>())
+                    .Where(r => _myReview == null || r.Id != _myReview.Id);
+                var _otherReviews = (_rsort switch
+                {
+                    "rating_desc" => _allOther.OrderByDescending(r => r.Rating).ThenByDescending(r => r.CreatedAt),
+                    "rating_asc" => _allOther.OrderBy(r => r.Rating).ThenByDescending(r => r.CreatedAt),
+                    _ => _allOther.OrderByDescending(r => r.CreatedAt).ThenBy(r => r.Id),
+                }).ToList();
+                const int _revPageSize = 5;
             }
+
+            <div class="flex items-center justify-between flex-wrap gap-2 mb-4">
+                <h3 class="text-lg font-bold text-gray-800 dark:text-gray-100">Topluluk Yorumları (@Model.Reviews?.Count)</h3>
+                @if (_otherReviews.Count > 1)
+                {
+                    <select onchange="location.href='?rsort=' + this.value" class="text-sm border border-gray-300 dark:border-gray-600 dark:bg-gray-900 rounded-lg px-2 py-1.5">
+                        <option value="new" selected="@(_rsort == "new")">En yeni</option>
+                        <option value="rating_desc" selected="@(_rsort == "rating_desc")">En yüksek puan</option>
+                        <option value="rating_asc" selected="@(_rsort == "rating_asc")">En düşük puan</option>
+                    </select>
+                }
+            </div>
+
             @if (_otherReviews.Any())
             {
-                <div class="space-y-4">
+                var _revI = 0;
+                <div class="space-y-4" id="review-list">
                     @foreach (var review in _otherReviews)
                     {
-                        <div class="bg-gray-50 rounded-xl p-4 border border-gray-100 flex gap-4">
+                        <div class="review-item bg-gray-50 dark:bg-gray-900/40 rounded-xl p-4 border border-gray-100 dark:border-gray-700 flex gap-4 @(_revI++ >= _revPageSize ? "hidden" : "")">
                             <div class="flex-shrink-0">
                                 <div class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-700 font-bold text-lg">
                                     @review.UserName.Substring(0, 1).ToUpper()
@@ -391,7 +409,7 @@
                             </div>
                             <div class="flex-1">
                                 <div class="flex items-center justify-between mb-1">
-                                    <h4 class="font-bold text-gray-900">@review.UserName</h4>
+                                    <h4 class="font-bold text-gray-900 dark:text-gray-100">@review.UserName</h4>
                                     <span class="text-xs text-gray-500">@review.CreatedAt.ToString("dd MMM yyyy")</span>
                                 </div>
                                 <div class="flex items-center mb-2">
@@ -405,13 +423,20 @@
                                             <i class="fa-regular fa-star text-gray-300"></i>
                                         }
                                     </div>
-                                    <span class="ml-2 text-sm font-medium text-gray-600">@review.Rating/10</span>
+                                    <span class="ml-2 text-sm font-medium text-gray-600 dark:text-gray-400">@review.Rating/10</span>
                                 </div>
-                                <p class="text-gray-700 text-sm">@review.Comment</p>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm">@review.Comment</p>
                             </div>
                         </div>
                     }
                 </div>
+                @if (_otherReviews.Count > _revPageSize)
+                {
+                    <button type="button" id="show-more-reviews" onclick="document.querySelectorAll('#review-list .review-item.hidden').forEach(e=>e.classList.remove('hidden')); this.remove();"
+                            class="mt-4 w-full py-2.5 text-sm font-semibold text-primary bg-blue-50 dark:bg-blue-900/20 rounded-xl hover:bg-blue-100 dark:hover:bg-blue-900/40 transition">
+                        @(_otherReviews.Count - _revPageSize) yorum daha göster
+                    </button>
+                }
             }
             else
             {
