@@ -1,0 +1,562 @@
+[
+  {
+    "brand": "Honda",
+    "modelName": "Civic (ES, 2001-2006)",
+    "productionYears": "2001-2006",
+    "engine": "1.6 VTEC 110 HP (D16V1, SOHC) + 5 İleri Manuel",
+    "segment": "C",
+    "reliabilityScore": 9.0,
+    "minPrice": 300000,
+    "maxPrice": 520000,
+    "estimatedMaintenanceCostEUR": 220,
+    "expertSummary": "\"VTEC 2\" diye bilinen ES kasa Civic sedan, Honda'nın sağlamlık efsanesinin Türkiye'deki temsilcilerinden. D16V1 1.6 SOHC VTEC motor zincir değil kayış trigerlidir (100 bin km periyot) ama blok olarak neredeyse ölümsüzdür ve LPG'ye çok uyumludur. Bu düz vitesli versiyon en ucuz ve dertsizi. Yüksek devir sever, düşük devirde yumuşaktır. Süspansiyon konforlu, direksiyon hissi keyifli. Günlük dille: \"Eski ama motoru ve şasisi altın; LPG'lisi düzgünse ucuz ve sağlam ulaşım.\" İlk otomobil, öğrenci, masrafsızlık isteyen için mantıklı.",
+    "userFeedbackSummary": "Kullanıcılar 'motoru ölmüyor' diyor; 300-400 bin km örnekler var. Şikayetler yaş kaynaklı: kaporta pas noktaları (arka çamurluk, eşik), iç döşeme yıpranması, klima performansı, elektrik aksesuar arızaları (cam krikosu, gösterge), ön takım sesleri. Kayış triger periyodu ve LPG'de subap ayarı takip edilirse çok uzun ömürlü. Yağ bakımı 8-10 bin km'yi geçmemeli.",
+    "chronicIssues": [
+      { "title": "Triger kayışı seti değişiminin aksatılması", "description": "D16V1 kayış trigerlidir; kayış+gergi+su pompası 90-100 bin km'de değişmezse kayış kopar ve subap-piston teması motora ağır hasar verir. LPG'li araçlarda periyot biraz kısa tutulur.", "severity": "Orta", "estimatedCostEUR": 180, "affectedYears": "2001-2006" },
+      { "title": "Kaporta pası (arka çamurluk, eşik, bagaj tabanı)", "description": "İnce sac ve yaş nedeniyle arka çamurluk içleri, eşikler ve bagaj tabanında pas. Alırken mutlaka kontrol; ilerlemişse kaynak/değişim gerekir.", "severity": "Orta", "estimatedCostEUR": 200, "affectedYears": "2001-2006" },
+      { "title": "Elektrik aksesuar arızaları (cam krikosu, gösterge, klima paneli)", "description": "Cam krikoları kopar, gösterge ışıkları söner, klima paneli tuşları çalışmaz. Tek tek ucuz ama sık.", "severity": "Düşük", "estimatedCostEUR": 100, "affectedYears": "2001-2006" }
+    ],
+    "pros": [
+      "Efsane dayanıklılıkta D16 VTEC motor, LPG uyumlu",
+      "Konforlu süspansiyon ve keyifli direksiyon hissi",
+      "Ucuz alım, bol yedek parça",
+      "İyi ikinci el likiditesi (Honda sadakati)"
+    ],
+    "cons": [
+      "Kaporta pas noktaları",
+      "Kayış triger — periyodik masraf",
+      "Yaş kaynaklı iç yıpranma ve elektrik arızaları",
+      "Eski nesil güvenlik ve donanım"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre (kaliteli), bujiler, hava/polen filtresi, fren hidroliği, LPG'de subap ayarı, pas kontrolü.", "estimatedCostEUR": 150 },
+      { "mileage": "100.000 km", "expectedIssues": "Triger kayış seti + su pompası + gergi, devirdaim kayışı, ön takım revizyonu, subap ayarı.", "estimatedCostEUR": 300 },
+      { "mileage": "200.000 km", "expectedIssues": "İkinci triger seti, debriyaj seti, motor takozları, klima kompresörü, kaporta pas onarımı.", "estimatedCostEUR": 450 }
+    ]
+  },
+  {
+    "brand": "Honda",
+    "modelName": "Civic (ES, 2001-2006)",
+    "productionYears": "2001-2006",
+    "engine": "1.6 VTEC 110 HP (D16V1, SOHC) + 4 İleri Tam Otomatik (tork konvertörlü)",
+    "segment": "C",
+    "reliabilityScore": 8.6,
+    "minPrice": 320000,
+    "maxPrice": 540000,
+    "estimatedMaintenanceCostEUR": 250,
+    "expertSummary": "ES Civic'in otomatik versiyonu 4 ileri tork konvertörlü (Honda kendi üretimi) şanzıman kullanır. D16V1 motor yine LPG dostu ve dayanıklı. Bu Honda otomatikleri düzenli yağ değişimiyle sağlamdır ama ihmal edilirse (özellikle 'ömürlük yağ' efsanesi yüzünden) vites geçişlerinde sertlik ve darbe başlar; ileri seviyede solenoid/valf gövdesi arızası gelir. 4 vites olduğu için otoyolda devir yüksek. Günlük dille: \"Honda otomatiği sağlamdır ama yağının değişmiş olması şart; alırken şanzıman geçmişini sor.\"",
+    "userFeedbackSummary": "Kullanıcılar motoru sever; şanzıman için 'yağını değiştirdiysen sorun yok' diyorlar. Yağı hiç değişmemiş araçlarda geç vites atma, kalkışta darbe ve 'D4' lambası yanıp sönmesi görülür. 4 vites yüzünden otoyolda yüksek devir ve yakıt. Kaporta pası ve elektrik arızaları ES klasiği.",
+    "chronicIssues": [
+      { "title": "Otomatik şanzıman yağının ihmali (solenoid / valf gövdesi arızası)", "description": "Honda 4 ileri otomatik sağlamdır ama yağı düzenli değişmezse valf gövdesi ve solenoidlerde tıkanma olur; sert vites geçişi, kalkışta darbe, 'D' lambası yanıp sönmesi. Yağ+filtre ve gerekirse valf gövdesi revizyonu gerekir.", "severity": "Orta", "estimatedCostEUR": 350, "affectedYears": "2001-2006" },
+      { "title": "Triger kayışı seti değişiminin aksatılması", "description": "D16V1 kayış trigerlidir; 90-100 bin km'de kayış+gergi+su pompası değişmezse kayış kopar, motor hasar görür.", "severity": "Orta", "estimatedCostEUR": 180, "affectedYears": "2001-2006" },
+      { "title": "Kaporta pası ve elektrik aksesuar arızaları", "description": "Arka çamurluk/eşik pası; cam krikosu, gösterge, klima paneli arızaları. ES kasa klasiği.", "severity": "Orta", "estimatedCostEUR": 200, "affectedYears": "2001-2006" }
+    ],
+    "pros": [
+      "LPG dostu, dayanıklı D16 VTEC motor",
+      "Bakımlı örnekte sağlam tork konvertörlü otomatik",
+      "Konforlu süspansiyon, keyifli direksiyon",
+      "Ucuz alım ve bol parça"
+    ],
+    "cons": [
+      "Sadece 4 ileri: otoyolda yüksek devir ve yakıt",
+      "Şanzıman yağı ihmal edilmişse valf gövdesi masrafı",
+      "Kaporta pası, elektrik arızaları",
+      "Kayış triger periyodik gideri"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, filtreler, şanzıman yağ+filtre (Honda ATF-Z1), LPG'de subap ayarı.", "estimatedCostEUR": 200 },
+      { "mileage": "100.000 km", "expectedIssues": "Triger kayış seti + su pompası, ön takım revizyonu, ikinci şanzıman yağı, subap ayarı.", "estimatedCostEUR": 350 },
+      { "mileage": "200.000 km", "expectedIssues": "İkinci triger seti, valf gövdesi kontrolü, motor takozları, klima kompresörü, kaporta pas onarımı.", "estimatedCostEUR": 500 }
+    ]
+  },
+  {
+    "brand": "Honda",
+    "modelName": "Civic (FD6, 2006-2012)",
+    "productionYears": "2006-2012",
+    "engine": "1.6 i-VTEC 125 HP (R16A2) + 5 İleri Manuel",
+    "segment": "C",
+    "reliabilityScore": 8.9,
+    "minPrice": 650000,
+    "maxPrice": 1000000,
+    "estimatedMaintenanceCostEUR": 260,
+    "expertSummary": "FD6 Civic, \"uzay gemisi\" iç tasarımı ve iki katlı gösterge paneliyle döneminin en dikkat çeken C sedanıydı; ikinci elde değerini en iyi koruyan araçlardandır. R16A2 1.6 i-VTEC motor zincir trigerlidir, yüksek devir sever ve yağ bakımı düzenliyse 300 bin km+ gider. Bu düz vitesli versiyon en ucuz ve dinamik olanıdır. Motor yağ bakımı 8-10 bin km'yi geçmemeli (VTEC mekanizması yağ kalitesine hassas). Günlük dille: \"Hem şık hem sağlam; düz vitesli FD6 en keyiflisi. Sert süspansiyon ve alçak ön tampon bazılarını rahatsız edebilir.\"",
+    "userFeedbackSummary": "Kullanıcılar sağlamlık ve prestijden çok memnun; 'satmam' diyenler çok. Övülen: motorun VTEC karakteri, iç mekan tasarımı, boya kalitesi, keyifli direksiyon. Şikayetler: yağı geç değiştirenlerde VTEC solenoid ve yağ yakma, ön cam su kaçağı ve gıcırtı, klima evaporatör kokusu, sert süspansiyon, alçak ön tampon (kaldırım/hız kesici sürtme).",
+    "chronicIssues": [
+      { "title": "Motor yağ yakma / VTEC solenoid (yağ bakımı geç yapılırsa)", "description": "R16A2 düzenli bakımda sorunsuzdur; ancak 15-20 bin km yağ kullanan araçlarda VTEC solenoid ve segmanlarda sorun başlar, yağ eksiltir. Servis geçmişi ve motor sesi/dumanı kontrol edin. 8-10 bin km yağ periyodu şart.", "severity": "Orta", "estimatedCostEUR": 300, "affectedYears": "2006-2012" },
+      { "title": "Ön cam ve sunroof su kaçağı, iç gıcırtılar", "description": "Bazı örneklerde ön cam kenarından ve sunroof kanalından su sızar; torpido ve tavan döşemesinde gıcırtı yapar. Cam fitili ve sunroof drenaj temizliğiyle çözülür.", "severity": "Düşük", "estimatedCostEUR": 100, "affectedYears": "2006-2012" },
+      { "title": "Klima evaporatör kokusu ve rölanti kompresör sesi", "description": "Nemli havada klimadan küf kokusu; buharlaştırıcı temizliği ve polen filtresi ile geçer. Yüksek km'de kompresör kavraması ses yapabilir.", "severity": "Düşük", "estimatedCostEUR": 120, "affectedYears": "2006-2012" }
+    ],
+    "pros": [
+      "İkinci elde çok yüksek ve istikrarlı değer",
+      "Sağlam zincir trigerli i-VTEC motor",
+      "Çarpıcı ve kaliteli iç tasarım",
+      "Keyifli, hassas direksiyon ve gövde kontrolü"
+    ],
+    "cons": [
+      "Sert süspansiyon, düşük yol açıklığı (alt sürtme riski)",
+      "Yağ bakımına hassas motor; geç bakımda yağ yakar",
+      "Arka görüş açısı ve bagaj ağzı dar",
+      "Yol sesi yalıtımı orta"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre (kaliteli), bujiler, hava/polen filtresi, fren hidroliği, subap ayarı kontrolü.", "estimatedCostEUR": 170 },
+      { "mileage": "120.000 km", "expectedIssues": "Ön takım revizyonu, devirdaim kayışı, VTEC solenoid conta, klima bakımı, debriyaj kontrolü.", "estimatedCostEUR": 320 },
+      { "mileage": "200.000 km", "expectedIssues": "Debriyaj seti, su pompası, motor takozları, subap ayarı, direksiyon kutusu/rot.", "estimatedCostEUR": 450 }
+    ]
+  },
+  {
+    "brand": "Honda",
+    "modelName": "Civic (FD6, 2006-2012)",
+    "productionYears": "2006-2012",
+    "engine": "1.6 i-VTEC 125 HP (R16A2) + 5 İleri Tam Otomatik (F1 kulakçıklı, tork konvertörlü)",
+    "segment": "C",
+    "reliabilityScore": 8.8,
+    "minPrice": 700000,
+    "maxPrice": 1150000,
+    "estimatedMaintenanceCostEUR": 280,
+    "expertSummary": "FD6 Civic'in otomatik versiyonu 5 ileri gerçek tork konvertörlü (CVT değil) şanzıman kullanır, direksiyondan kulakçıklıdır ve sarsıntısızdır. R16A2 motor zincir trigerli, LPG dostu ve yağ bakımı düzenliyse çok dayanıklı. Şanzıman 5 vites olduğu için otoyol devri makul; düzenli yağ değişimiyle çok sağlamdır. İkinci elde bu kasanın en aranan kombinasyonudur. Günlük dille: \"Hem şık hem sağlam hem otomatiği düzgün — Civic'in en dengeli kasası. Şanzıman yağı geçmişini sor.\"",
+    "userFeedbackSummary": "Kullanıcılar otomatiğin düzgünlüğünü ve motorun karakterini övüyor. 150-200 bin km sorunsuz örnekler çok. Şikayetler: yağı geç değiştirenlerde motorda yağ yakma, şanzıman yağı ihmal edilmişse geç vites atma, ön cam su kaçağı, klima kokusu, sert süspansiyon, alçak ön tampon.",
+    "chronicIssues": [
+      { "title": "Motor yağ yakma / VTEC solenoid (yağ bakımı geç yapılırsa)", "description": "15-20 bin km yağ kullanan araçlarda VTEC solenoid ve segmanlarda sorun başlar, yağ eksiltir. 8-10 bin km yağ periyodu ve servis geçmişi kontrolü şart.", "severity": "Orta", "estimatedCostEUR": 300, "affectedYears": "2006-2012" },
+      { "title": "Otomatik şanzıman yağının ihmal edilmesi", "description": "5 ileri tork konvertörlü şanzıman sağlamdır ama Honda DW1/ATF-Z1 yağının 60 bin km'de değişmesi gerekir; ihmal edilende geç ve sert vites geçişi başlar.", "severity": "Orta", "estimatedCostEUR": 200, "affectedYears": "2006-2012" },
+      { "title": "Ön cam / sunroof su kaçağı ve klima kokusu", "description": "Ön cam ve sunroof kanalından su sızması; nemli havada evaporatör kokusu. Cam fitili, drenaj temizliği ve polen filtresi ile çözülür.", "severity": "Düşük", "estimatedCostEUR": 120, "affectedYears": "2006-2012" }
+    ],
+    "pros": [
+      "İkinci elde çok yüksek ve istikrarlı değer",
+      "Sağlam zincir trigerli i-VTEC motor",
+      "Düzgün ve dayanıklı gerçek tam otomatik (5 ileri, CVT değil)",
+      "Çarpıcı ve kaliteli iç tasarım"
+    ],
+    "cons": [
+      "Sert süspansiyon, düşük yol açıklığı",
+      "Yağ bakımına hassas motor",
+      "Şanzıman yağı ihmal edilmişse vites sertliği",
+      "Arka görüş ve bagaj ağzı dar"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, hava/polen filtresi, fren hidroliği, şanzıman yağı (Honda DW1) kontrolü.", "estimatedCostEUR": 200 },
+      { "mileage": "120.000 km", "expectedIssues": "Şanzıman yağı, ön takım revizyonu, devirdaim kayışı, VTEC solenoid conta, klima bakımı.", "estimatedCostEUR": 350 },
+      { "mileage": "200.000 km", "expectedIssues": "Su pompası, motor takozları, subap ayarı, direksiyon rot, ikinci şanzıman yağı.", "estimatedCostEUR": 450 }
+    ]
+  },
+  {
+    "brand": "Honda",
+    "modelName": "Civic (FD6, 2006-2012)",
+    "productionYears": "2006-2012",
+    "engine": "1.8 i-VTEC 140 HP (R18A2) + 5 İleri Tam Otomatik (tork konvertörlü)",
+    "segment": "C",
+    "reliabilityScore": 8.7,
+    "minPrice": 730000,
+    "maxPrice": 1200000,
+    "estimatedMaintenanceCostEUR": 290,
+    "expertSummary": "FD6 Civic'in 1.8 i-VTEC (R18A2, 140 HP) motoru, 1.6'ya göre daha torklu ve otoyolda daha rahattır; ekonomik mod (ECON) ve silindir devre dışı bırakma özelliğiyle tüketimi 1.6'ya yakın tutar. Zincir trigerli, dayanıklı bir ünitedir. 5 ileri tork konvertörlü otomatikle geldi (CVT değil). Yağ bakımına yine hassastır. Günlük dille: \"Daha güçlü ve otoyol dostu FD6; 1.6'nın tüm sağlamlığı + biraz daha tork. Yağ bakımını aksatma.\"",
+    "userFeedbackSummary": "Kullanıcılar 1.6'ya göre performansı ve otoyol rahatlığını övüyor. Şikayetler: yağı geç değiştirenlerde yağ yakma, ECON modunun tepkiyi öldürmesi, şanzıman yağı ihmali, ön cam su kaçağı, sert süspansiyon. LPG'de subap bakımı 1.6 kadar kritik.",
+    "chronicIssues": [
+      { "title": "Motor yağ yakma (yağ bakımı geç yapılırsa)", "description": "R18A2 düzenli bakımda sorunsuzdur; 15-20 bin km yağ kullanan araçlarda segman/VTEC solenoid sorunları ve yağ eksiltme başlar. 8-10 bin km yağ periyodu şart.", "severity": "Orta", "estimatedCostEUR": 320, "affectedYears": "2006-2012" },
+      { "title": "Otomatik şanzıman yağının ihmal edilmesi", "description": "5 ileri tork konvertörlü şanzıman sağlamdır; Honda DW1 yağının 60 bin km'de değişmesi gerekir. İhmal edilende geç ve sert vites geçişi.", "severity": "Orta", "estimatedCostEUR": 200, "affectedYears": "2006-2012" },
+      { "title": "Ön cam / sunroof su kaçağı ve klima kokusu", "description": "Ön cam ve sunroof kanalından su sızması; nemli havada evaporatör kokusu. Cam fitili, drenaj temizliği ve polen filtresi ile çözülür.", "severity": "Düşük", "estimatedCostEUR": 120, "affectedYears": "2006-2012" }
+    ],
+    "pros": [
+      "1.6'ya göre daha torklu ve otoyol dostu",
+      "Zincir trigerli, dayanıklı R18 motor",
+      "Düzgün 5 ileri tork konvertörlü otomatik",
+      "Yüksek ve istikrarlı ikinci el değeri"
+    ],
+    "cons": [
+      "Yağ bakımına hassas; geç bakımda yağ yakar",
+      "ECON modu tepkiyi belirgin şekilde köreltir",
+      "Sert süspansiyon, düşük yol açıklığı",
+      "Şanzıman yağı ihmal edilmişse vites sertliği"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, hava/polen filtresi, fren hidroliği, şanzıman yağı (Honda DW1) kontrolü.", "estimatedCostEUR": 200 },
+      { "mileage": "120.000 km", "expectedIssues": "Şanzıman yağı, ön takım revizyonu, devirdaim kayışı, VTEC solenoid conta, klima bakımı.", "estimatedCostEUR": 360 },
+      { "mileage": "200.000 km", "expectedIssues": "Su pompası, motor takozları, subap ayarı, direksiyon rot, ikinci şanzıman yağı.", "estimatedCostEUR": 470 }
+    ]
+  },
+  {
+    "brand": "Honda",
+    "modelName": "Civic (FB7, 2012-2016)",
+    "productionYears": "2012-2016",
+    "engine": "1.6 i-VTEC Eco 125 HP (R16B1) + 5 İleri Manuel",
+    "segment": "C",
+    "reliabilityScore": 8.8,
+    "minPrice": 800000,
+    "maxPrice": 1150000,
+    "estimatedMaintenanceCostEUR": 270,
+    "expertSummary": "FB7 Civic, FD6'nın gösterişli çizgisini yumuşatıp daha olgun bir sedana dönüştü; iki katlı gösterge korundu, malzeme kalitesi arttı. R16B1 1.6 i-VTEC motor zincir trigerli ve dayanıklı. Türkiye'ye gelen 'Eco' versiyonlarda fabrika çıkışı LPG tesisatı ve LPG'ye uygun supap/gösterge kalibrasyonu var — LPG'li ikinci el alacaklar için büyük avantaj. Bu düz vitesli versiyon en dinamik ve ucuz olanı. Günlük dille: \"FD6'nın sağlamlığı, daha olgun paket; fabrika LPG'li düz vitesi bulursan kaçırma.\"",
+    "userFeedbackSummary": "Kullanıcılar sorunsuzluktan ve fabrika LPG'nin performansından memnun. 150-200 bin km motor sağlam. Övülen: yakıt ekonomisi (LPG ile çok ucuz), geniş bagaj, montaj kalitesi. Şikayetler: yol sesi yalıtımı orta, süspansiyon bozuk yolda sekiyor, multimedya demode ve yavaş, arka cam görüşü kısıtlı.",
+    "chronicIssues": [
+      { "title": "LPG'li araçlarda supap ve supap yatağı aşınması (bakım geç yapılırsa)", "description": "Fabrika LPG uyumlu olsa da subap ayarının periyodik yapılması, kaliteli LPG yağlama katkısı kullanılması gerekir. İhmal edilen araçlarda kompresyon düşüşü ve tekleme başlar.", "severity": "Orta", "estimatedCostEUR": 300, "affectedYears": "2012-2016" },
+      { "title": "Ön amortisör ve salıncak burcu sesi", "description": "Türkiye yollarında 80-120 bin km'de ön takımdan tıkırtı; salıncak burçları ve amortisör üst takozları yenilenir. Parça uygun.", "severity": "Düşük", "estimatedCostEUR": 130, "affectedYears": "2012-2016" },
+      { "title": "Klima kokusu ve kompresör kavrama sesi", "description": "Nemli havada evaporatörden küf kokusu; temizlik ve polen filtresi ile geçer. Yüksek km'de kompresör kavraması ses yapabilir.", "severity": "Düşük", "estimatedCostEUR": 120, "affectedYears": "2012-2016" }
+    ],
+    "pros": [
+      "Fabrika LPG tesisatlı 'Eco' versiyon: ucuz ve garantili LPG kullanımı",
+      "Zincir trigerli, dayanıklı i-VTEC motor",
+      "Geniş bagaj ve arka koltuk",
+      "Yüksek ikinci el değeri"
+    ],
+    "cons": [
+      "Yol ve rüzgar sesi yalıtımı orta",
+      "Süspansiyon bozuk zeminde sekiyor",
+      "Multimedya ve donanım demode",
+      "Arka cam ve pilar görüşü kısıtlı"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, filtreler, fren hidroliği, LPG'de subap ayarı, LPG regülatör bakımı.", "estimatedCostEUR": 170 },
+      { "mileage": "120.000 km", "expectedIssues": "Ön takım revizyonu, devirdaim kayışı, klima bakımı, LPG regülatör bakımı, debriyaj kontrolü.", "estimatedCostEUR": 300 },
+      { "mileage": "200.000 km", "expectedIssues": "Debriyaj seti, su pompası, motor takozları, subap ayarı, direksiyon rot/rotil.", "estimatedCostEUR": 440 }
+    ]
+  },
+  {
+    "brand": "Honda",
+    "modelName": "Civic (FB7, 2012-2016)",
+    "productionYears": "2012-2016",
+    "engine": "1.6 i-VTEC Eco 125 HP (R16B1) + 5 İleri Tam Otomatik (tork konvertörlü)",
+    "segment": "C",
+    "reliabilityScore": 8.7,
+    "minPrice": 850000,
+    "maxPrice": 1250000,
+    "estimatedMaintenanceCostEUR": 280,
+    "expertSummary": "FB7 Civic'in otomatik versiyonu 5 ileri gerçek tork konvertörlü (CVT değil) şanzıman kullanır; sağlam ve düzgündür, 60 bin km'de yağ ister. R16B1 motor zincir trigerli; fabrika LPG'li 'Eco' örnekler LPG'li otomatik arayanlar için nadir ve değerlidir. Sürüş FD6'ya göre daha konforlu, süspansiyon daha yumuşak. Günlük dille: \"FD6'nın sağlam otomatiği, daha olgun paket; fabrika LPG'li otomatik bulursan çok iyi bir alım.\"",
+    "userFeedbackSummary": "Kullanıcılar sorunsuzluktan ve otomatiğin düzgünlüğünden memnun. Şikayetler: şanzıman yağı ihmal edilmişse vites sertliği, LPG'de subap bakımı, yol sesi yalıtımı orta, multimedya demode, arka görüş kısıtlı. 150-200 bin km sorunsuz örnekler yaygın.",
+    "chronicIssues": [
+      { "title": "Otomatik şanzıman yağının ihmal edilmesi", "description": "5 ileri tork konvertörlü şanzıman sağlamdır; Honda DW1 yağının 60 bin km'de değişmesi gerekir. İhmal edilende geç ve sert vites geçişi, kalkışta darbe.", "severity": "Orta", "estimatedCostEUR": 200, "affectedYears": "2012-2016" },
+      { "title": "LPG'li araçlarda supap ve supap yatağı aşınması", "description": "Fabrika LPG uyumlu olsa da subap ayarı ve kaliteli LPG yağlama katkısı gerekir. İhmal edilende kompresyon düşüşü ve tekleme.", "severity": "Orta", "estimatedCostEUR": 300, "affectedYears": "2012-2016" },
+      { "title": "Ön amortisör / salıncak burcu sesi ve klima kokusu", "description": "80-120 bin km'de ön takım tıkırtısı; nemli havada evaporatör kokusu. Ön takım revizyonu, klima temizliği ve polen filtresi ile çözülür.", "severity": "Düşük", "estimatedCostEUR": 180, "affectedYears": "2012-2016" }
+    ],
+    "pros": [
+      "Sağlam ve düzgün 5 ileri tork konvertörlü otomatik (CVT değil)",
+      "Fabrika LPG'li 'Eco' örneklerde ucuz LPG + otomatik konfor",
+      "Zincir trigerli, dayanıklı i-VTEC motor",
+      "Geniş bagaj, yüksek ikinci el değeri"
+    ],
+    "cons": [
+      "Şanzıman yağı ihmal edilmişse vites sertliği",
+      "LPG'de subap bakımına dikkat",
+      "Yol sesi yalıtımı orta, süspansiyon bozuk yolda sekiyor",
+      "Multimedya demode, arka görüş kısıtlı"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, filtreler, şanzıman yağı (Honda DW1), LPG'de subap ayarı, LPG regülatör bakımı.", "estimatedCostEUR": 200 },
+      { "mileage": "120.000 km", "expectedIssues": "Şanzıman yağı, ön takım revizyonu, devirdaim kayışı, klima bakımı, LPG regülatör bakımı.", "estimatedCostEUR": 340 },
+      { "mileage": "200.000 km", "expectedIssues": "Su pompası, motor takozları, subap ayarı, direksiyon rot, ikinci şanzıman yağı.", "estimatedCostEUR": 460 }
+    ]
+  },
+  {
+    "brand": "Honda",
+    "modelName": "Civic (FB7, 2012-2016)",
+    "productionYears": "2012-2016",
+    "engine": "1.6 i-DTEC 120 HP (N16A1, Dizel Turbo) + 6 İleri Manuel",
+    "segment": "C",
+    "reliabilityScore": 7.8,
+    "minPrice": 850000,
+    "maxPrice": 1250000,
+    "estimatedMaintenanceCostEUR": 350,
+    "expertSummary": "FB7 Civic'in 1.6 i-DTEC (N16A1) dizel motoru, Honda'nın 'Earth Dreams' ailesinin alüminyum bloklu, hafif ve verimli bir ünitesidir: 300 Nm tork, uzun yolda 4-4.5 lt yakıt. Zincir trigerlidir. Dizel klasikleri geçerli: EGR ve emme manifoldu kurumu, DPF (şehir içi tıkanma), enjektör, turbo. Honda dizeli yaygın olmadığı için usta ve bazı parça bulmak diğer markalara göre biraz zor olabilir. Günlük dille: \"Yakıtı harika, motoru hafif ve modern; ama Honda dizeli az bulunur, ustasını ve DPF'sini iyi düşün.\" Ağırlıklı uzun yol yapan için mantıklı.",
+    "userFeedbackSummary": "Kullanıcılar yakıt tüketimini ve sessizliği övüyor. Şikayetler: EGR ve emme manifoldu kurumu, DPF tıkanması (şehir içi), enjektör, turbo, Honda dizel ustası bulma zorluğu, bazı elektronik/DPF sensör parçalarının pahalılığı. Kaliteli mazot ve ara sıra uzun yol şart.",
+    "chronicIssues": [
+      { "title": "EGR valfi ve emme manifoldu kurumlanması", "description": "1.6 i-DTEC'te düşük devir şehir kullanımında EGR ve emme manifoldu kurum bağlar; güç kaybı, arıza lambası, rölanti dengesizliği. Temizlik veya yenileme.", "severity": "Orta", "estimatedCostEUR": 280, "affectedYears": "2012-2016" },
+      { "title": "DPF (partikül filtresi) tıkanması", "description": "Kısa mesafe şehir kullanımında DPF dolar, rejenerasyon tamamlanamaz; güç kaybı ve servis rejenerasyonu gerekir. Uzun yol önler; ileri seviyede temizlik/değişim pahalı.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2012-2016" },
+      { "title": "Enjektör ve turbo VNT kontrolü", "description": "Common-rail enjektörler zamanla debisini şaşırır; turbo kayıcı kanatları kurum bağlar. Kaliteli mazot ömrü uzatır. Revizyon/temizlik gerekir.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2012-2016" }
+    ],
+    "pros": [
+      "Çok düşük yakıt tüketimi (uzun yol 4-4.5 lt), sessiz ve torklu",
+      "Hafif alüminyum blok, zincir triger",
+      "Geniş bagaj ve arka koltuk",
+      "Yüksek ikinci el değeri (Honda sadakati)"
+    ],
+    "cons": [
+      "Honda dizeli az bulunur — usta ve bazı parça zorluğu",
+      "EGR/emme/DPF/enjektör gibi dizel bakımları",
+      "Şehir içi kullanımda DPF tıkanması",
+      "DPF/emisyon sensörü parçaları pahalı"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR/DPF ilk kontrol, fren hidroliği.", "estimatedCostEUR": 180 },
+      { "mileage": "150.000 km", "expectedIssues": "EGR/emme temizliği, DPF kontrolü, enjektör kontrolü, turbo VNT kontrolü, debriyaj seti, ön takım revizyonu.", "estimatedCostEUR": 650 },
+      { "mileage": "250.000 km", "expectedIssues": "Zincir triger kontrolü, su pompası, turbo revizyonu ihtimali, DPF temizliği/değişimi, süspansiyon.", "estimatedCostEUR": 750 }
+    ]
+  },
+  {
+    "brand": "Honda",
+    "modelName": "Civic (FC5, 2016-2021)",
+    "productionYears": "2016-2021",
+    "engine": "1.6 i-VTEC Eco 125 HP + 6 İleri Manuel",
+    "segment": "C",
+    "reliabilityScore": 8.6,
+    "minPrice": 1000000,
+    "maxPrice": 1500000,
+    "estimatedMaintenanceCostEUR": 280,
+    "expertSummary": "FC5 Civic, çok daha uzun, alçak ve agresif çizgili 10. nesildir; iç mekan iki katlı göstergeyi bıraktı, tek ekrana geçti. Atmosferik 1.6 i-VTEC Eco motor (125 HP) fabrika LPG tesisatlı gelir ve Honda'nın en dertsiz motorlarından biridir; zincir trigerli. Bu düz vitesli versiyon en ucuz ve en huzurlu FC5. Uzun kaporta yüzünden park biraz zor, arka cam görüşü kısıtlı. Günlük dille: \"Modern, sportif görünümlü, fabrika LPG'li ve motoru dertsiz; düz vitesi en akıllısı.\" Aile + günlük kullanım için mantıklı.",
+    "userFeedbackSummary": "Kullanıcılar tasarımı, iç hacmi ve LPG ekonomisini çok övüyor. Motor için 100-150 bin km sorunsuz örnekler yaygın. Şikayetler: alçak gövde ve uzun kaporta (park, kaldırım), arka görüş, sert süspansiyon (özellikle büyük jantlı paketler), yol sesi orta, multimedya (Honda Connect) donması.",
+    "chronicIssues": [
+      { "title": "LPG'li araçlarda supap ve supap yatağı aşınması (bakım geç yapılırsa)", "description": "Fabrika LPG uyumlu olsa da subap ayarı ve kaliteli LPG yağlama katkısı gerekir. İhmal edilende kompresyon düşüşü ve tekleme.", "severity": "Orta", "estimatedCostEUR": 300, "affectedYears": "2016-2021" },
+      { "title": "Multimedya (Honda Connect) donması ve geri görüş kamerası arızası", "description": "Ekran donar/yeniden başlar, Apple CarPlay/Android Auto kopar, kamera görüntüsü kesilir. Yazılım güncelleme veya ünite/kamera değişimi.", "severity": "Düşük", "estimatedCostEUR": 200, "affectedYears": "2016-2021" },
+      { "title": "Ön amortisör ve salıncak burcu sesi", "description": "Türkiye yollarında 80-120 bin km'de ön takım tıkırtısı; büyük jantlı paketlerde daha erken. Ön takım revizyonu.", "severity": "Düşük", "estimatedCostEUR": 150, "affectedYears": "2016-2021" }
+    ],
+    "pros": [
+      "Modern, sportif tasarım ve geniş iç hacim",
+      "Fabrika LPG tesisatlı, dertsiz zincir trigerli motor",
+      "Düşük yakıt ve bakım gideri",
+      "Güçlü ve istikrarlı ikinci el değeri"
+    ],
+    "cons": [
+      "Alçak gövde, uzun kaporta — park ve kaldırım zorluğu",
+      "Arka cam görüşü kısıtlı",
+      "Sert süspansiyon (büyük jantlı paketler)",
+      "Multimedya arızaları ve donma"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, filtreler, fren hidroliği, LPG'de subap ayarı, LPG regülatör bakımı, yazılım güncelleme.", "estimatedCostEUR": 180 },
+      { "mileage": "120.000 km", "expectedIssues": "Ön takım revizyonu, devirdaim kayışı, klima bakımı, LPG regülatör bakımı, debriyaj kontrolü.", "estimatedCostEUR": 320 },
+      { "mileage": "200.000 km", "expectedIssues": "Debriyaj seti, su pompası, motor takozları, subap ayarı, süspansiyon yenileme.", "estimatedCostEUR": 460 }
+    ]
+  },
+  {
+    "brand": "Honda",
+    "modelName": "Civic (FC5, 2016-2021)",
+    "productionYears": "2016-2021",
+    "engine": "1.6 i-VTEC Eco 125 HP + CVT (Sürekli Değişken Şanzıman)",
+    "segment": "C",
+    "reliabilityScore": 8.2,
+    "minPrice": 1050000,
+    "maxPrice": 1550000,
+    "estimatedMaintenanceCostEUR": 300,
+    "expertSummary": "FC5 Civic'in 1.6 atmosferik + CVT kombinasyonu, otomatik konfor + LPG ekonomisi isteyenler için. Honda CVT'si (kayış tahrikli) dayanıklıdır ama Toyota'nın tork konvertörlü Multidrive S'ine göre yağ bakımına daha bağımlıdır: Honda HCF-2 yağının 40-60 bin km'de değişmesi şart, ihmal edilende titreme ve ivmede zayıflık başlar. Sert gazda 'lastik bant' hissi ve motor sesinin devirde asılı kalması olağan. Günlük dille: \"Otomatik + LPG ekonomisi; ama CVT yağı bakımını asla aksatma, geçmişini sor.\"",
+    "userFeedbackSummary": "Kullanıcılar otomatik konfor + LPG ekonomisini seviyor. Şikayetler: sert gazda CVT sesi ve gecikme, CVT yağı ihmal edilmişse titreme ve arıza uyarısı, alçak gövde/park zorluğu, arka görüş, multimedya donması. CVT yağının düzenli değişip değişmediği en kritik konu.",
+    "chronicIssues": [
+      { "title": "CVT yağının ihmal edilmesi (titreme, ivmede zayıflık)", "description": "Honda CVT'si Honda HCF-2 özel yağını 40-60 bin km'de ister; ihmal edilende kalkışta ve sabit hızda titreme, ivmede zayıflama, arıza uyarısı ve uzun vadede kayış/pulley aşınması olur. Bakım geçmişi kritik.", "severity": "Orta", "estimatedCostEUR": 250, "affectedYears": "2016-2021" },
+      { "title": "LPG'li araçlarda supap ve supap yatağı aşınması", "description": "Fabrika LPG uyumlu olsa da subap ayarı ve kaliteli LPG yağlama katkısı gerekir. İhmal edilende kompresyon düşüşü ve tekleme.", "severity": "Orta", "estimatedCostEUR": 300, "affectedYears": "2016-2021" },
+      { "title": "Multimedya donması ve ön takım sesleri", "description": "Honda Connect ekranı donar; 80-120 bin km'de ön takım tıkırtısı. Yazılım güncelleme ve ön takım revizyonu.", "severity": "Düşük", "estimatedCostEUR": 200, "affectedYears": "2016-2021" }
+    ],
+    "pros": [
+      "Otomatik konfor + fabrika LPG ekonomisi",
+      "Dertsiz zincir trigerli atmosferik motor",
+      "Modern tasarım, geniş iç hacim",
+      "Güçlü ikinci el değeri"
+    ],
+    "cons": [
+      "CVT yağı bakımına çok bağımlı — ihmal edilende masraflı",
+      "Sert gazda CVT sesi ve tepki gecikmesi",
+      "Alçak gövde, uzun kaporta — park zorluğu",
+      "Arka görüş kısıtlı, multimedya donması"
+    ],
+    "milestones": [
+      { "mileage": "50.000 km", "expectedIssues": "CVT yağı (Honda HCF-2), yağ+filtre, bujiler, filtreler, LPG'de subap ayarı.", "estimatedCostEUR": 230 },
+      { "mileage": "100.000 km", "expectedIssues": "İkinci CVT yağı, ön takım revizyonu, devirdaim kayışı, klima bakımı, LPG regülatör bakımı.", "estimatedCostEUR": 350 },
+      { "mileage": "200.000 km", "expectedIssues": "CVT içi kontrol, su pompası, motor takozları, subap ayarı, süspansiyon yenileme.", "estimatedCostEUR": 500 }
+    ]
+  },
+  {
+    "brand": "Honda",
+    "modelName": "Civic (FC5, 2016-2021)",
+    "productionYears": "2016-2021",
+    "engine": "1.5 VTEC Turbo 182 HP (L15B7) + CVT (RS)",
+    "segment": "C",
+    "reliabilityScore": 7.6,
+    "minPrice": 1200000,
+    "maxPrice": 1750000,
+    "estimatedMaintenanceCostEUR": 350,
+    "expertSummary": "FC5 Civic RS'in kalbi 1.5 VTEC Turbo (L15B7, 182 HP): 240 Nm torkla segmentinin en hızlılarından, 0-100 ~8 sn. Turbolu ve direkt enjeksiyonlu olduğu için atmosferik Honda'ların dertsizliğinde değildir. En bilinen konu yakıt seyrelmesi (özellikle kısa mesafe soğuk kullanımda benzinin motor yağına karışıp seviyeyi yükseltmesi) ve emme supabı karbon birikimidir. Zincir trigerli. Direkt enjeksiyon nedeniyle LPG önerilmez. CVT'si güçlendirilmiştir ama yağ bakımı kritik. Günlük dille: \"Hızlı ve keyifli ama atmosferik Honda değil; yağ seyrelmesine ve CVT yağına dikkat, kısa mesafede sık kullanma.\"",
+    "userFeedbackSummary": "Kullanıcılar performansı ve sürüş keyfini çok övüyor. Şikayetler: motor yağ seviyesinin yükselmesi (benzin karışması) — özellikle soğuk/kısa mesafe kullanımda, emme supabı karbon birikimi, turbo/wastegate sesi, CVT'nin sert gazdaki sesi. Yağ seviyesi ve kokusu düzenli kontrol edilmeli.",
+    "chronicIssues": [
+      { "title": "Yakıt (benzin) seyrelmesi — motor yağ seviyesinin yükselmesi", "description": "L15B7 turbo motorlarda, özellikle kısa mesafe ve soğuk hava kullanımında yanmamış benzin motor yağına karışır; yağ seviyesi yükselir, yağlama özelliği düşer. Motoru ısıtmadan kısa yol yapmamak, kısa periyot yağ değişimi ve seviye takibi şart.", "severity": "Orta", "estimatedCostEUR": 200, "affectedYears": "2016-2021" },
+      { "title": "Emme supaplarında karbon birikimi (direkt enjeksiyon)", "description": "Direkt enjeksiyon emme supaplarını yakıt yıkamaz; kurum birikir, güç kaybı ve rölanti dengesizliği olur. Ceviz kabuğu püskürtme temizliği yapılır.", "severity": "Orta", "estimatedCostEUR": 300, "affectedYears": "2016-2021" },
+      { "title": "CVT yağı ihmali ve turbo/wastegate sesi", "description": "Güçlendirilmiş CVT bile Honda HCF-2 yağını 40-50 bin km'de ister; ihmal edilende titreme. Turbo wastegate mekanizması takırdayabilir.", "severity": "Orta", "estimatedCostEUR": 300, "affectedYears": "2016-2021" }
+    ],
+    "pros": [
+      "Segmentinin en hızlılarından, keyifli ve torklu sürüş",
+      "Zincir triger, güçlendirilmiş CVT",
+      "Modern tasarım, RS donanımı",
+      "Güçlü ikinci el talebi"
+    ],
+    "cons": [
+      "Yakıt seyrelmesi — yağ seviyesi ve kokusu takibi şart",
+      "Direkt enjeksiyon: karbon birikimi, LPG uyumsuzluğu",
+      "Atmosferik Honda'lara göre daha bakım-hassas",
+      "CVT yağı bakımına bağımlı, sert gazda CVT sesi"
+    ],
+    "milestones": [
+      { "mileage": "50.000 km", "expectedIssues": "Yağ+filtre (kısa periyot, seviye takibi), CVT yağı (Honda HCF-2), bujiler, PCV valfi, turbo kaçak kontrolü.", "estimatedCostEUR": 260 },
+      { "mileage": "100.000 km", "expectedIssues": "Emme supabı karbon temizliği, ikinci CVT yağı, turbo kontrolü, ön takım revizyonu, devirdaim kayışı.", "estimatedCostEUR": 550 },
+      { "mileage": "180.000 km", "expectedIssues": "Turbo revizyonu ihtimali, CVT içi kontrol, su pompası, zincir triger kontrolü, süspansiyon yenileme.", "estimatedCostEUR": 650 }
+    ]
+  },
+  {
+    "brand": "Honda",
+    "modelName": "Civic (FC5, 2016-2021)",
+    "productionYears": "2016-2021",
+    "engine": "1.6 i-DTEC 120 HP (Dizel Turbo) + 9 İleri Tam Otomatik (ZF 9HP)",
+    "segment": "C",
+    "reliabilityScore": 7.5,
+    "minPrice": 1150000,
+    "maxPrice": 1650000,
+    "estimatedMaintenanceCostEUR": 380,
+    "expertSummary": "FC5 Civic'in dizel + otomatik seçeneği 1.6 i-DTEC + ZF 9 ileri tork konvertörlü şanzımandır (DSG/kuru kavrama DEĞİL — bu büyük bir güven avantajı). Motor hafif alüminyum bloklu, verimli (uzun yol 4-4.5 lt); şanzıman ise sarsıntısız ama 9 vitesin sürekli vites arayışı bazı sürücüleri rahatsız eder ve yazılım/mekatronik güncellemeleri önemlidir. Dizel klasikleri: EGR/emme kurumu, DPF (şehir içi), enjektör, turbo. Günlük dille: \"Yakıtı harika + gerçek tam otomatik (DSG değil); ama Honda dizeli az bulunur, ZF 9HP yazılımı ve DPF'sine dikkat.\"",
+    "userFeedbackSummary": "Kullanıcılar yakıt ekonomisini ve DSG olmamasını övüyor. Şikayetler: ZF 9HP'nin tereddütlü vites geçişleri ve nadir mekatronik uyarıları (yazılım güncellemesiyle iyileşir), EGR/emme kurumu, DPF tıkanması (şehir içi), Honda dizel ustası bulma zorluğu. Kaliteli mazot ve ara sıra uzun yol şart.",
+    "chronicIssues": [
+      { "title": "ZF 9HP şanzıman yazılım/mekatronik güncellemesi ve yağ bakımı", "description": "9 ileri tork konvertörlü şanzıman güncel yazılım ve düzenli yağ değişimiyle sorunsuzdur; ihmal edilende tereddüt, sert geçiş ve nadiren mekatronik uyarısı görülür. Yazılım güncellemesi + 80-100 bin km yağ değişimi önemli.", "severity": "Orta", "estimatedCostEUR": 300, "affectedYears": "2016-2021" },
+      { "title": "EGR valfi ve emme manifoldu kurumlanması", "description": "Düşük devir şehir kullanımında EGR ve emme yolları kurum bağlar; güç kaybı, arıza lambası. Temizlik veya yenileme.", "severity": "Orta", "estimatedCostEUR": 280, "affectedYears": "2016-2021" },
+      { "title": "DPF tıkanması (şehir içi) ve enjektör kontrolü", "description": "Kısa mesafe kullanımda DPF dolar; enjektörler zamanla debisini şaşırır. Uzun yol + temizlik/revizyon gerekir.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2016-2021" }
+    ],
+    "pros": [
+      "Çok düşük yakıt tüketimi + gerçek tam otomatik (DSG değil)",
+      "Hafif alüminyum blok, zincir triger",
+      "Modern tasarım, geniş iç hacim",
+      "Güçlü ikinci el talebi"
+    ],
+    "cons": [
+      "ZF 9HP tereddütlü vites geçişleri, yazılıma bağımlı",
+      "Honda dizeli az bulunur — usta ve parça zorluğu",
+      "EGR/emme/DPF/enjektör gibi dizel bakımları",
+      "Şehir içi kullanımda DPF tıkanması"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR/DPF ilk kontrol, ZF 9HP yazılım güncelleme, şanzıman yağı kontrolü.", "estimatedCostEUR": 250 },
+      { "mileage": "150.000 km", "expectedIssues": "EGR/emme temizliği, DPF kontrolü, enjektör kontrolü, turbo kontrolü, ZF 9HP yağı, ön takım revizyonu.", "estimatedCostEUR": 700 },
+      { "mileage": "250.000 km", "expectedIssues": "Zincir triger kontrolü, su pompası, turbo revizyonu ihtimali, DPF değişimi ihtimali, süspansiyon.", "estimatedCostEUR": 800 }
+    ]
+  },
+  {
+    "brand": "Honda",
+    "modelName": "Jazz (Mk2, 2008-2015)",
+    "productionYears": "2008-2015",
+    "engine": "1.4 i-VTEC 100 HP (L13Z) + 5 İleri Manuel",
+    "segment": "B",
+    "reliabilityScore": 8.7,
+    "minPrice": 380000,
+    "maxPrice": 620000,
+    "estimatedMaintenanceCostEUR": 220,
+    "expertSummary": "İkinci nesil Jazz, B segmentinde 'sihirli koltuklar' (Magic Seats) sistemiyle sınıfının çok üstünde bir yükleme esnekliği sunar: arka koltuk minderleri sinema koltuğu gibi yukarı kalkar, uzun eşya dik taşınabilir. L13Z 1.4 i-VTEC motor zincir trigerli, LPG dostu ve çok dayanıklıdır. Bu düz vitesli versiyon en dertsizi. Yüksek tavan, dik oturuş, geniş cam alanı. Günlük dille: \"Küçük dıştan, kocaman içten; motoru Honda sağlamlığında, düz vitesi en akıllısı.\" Şehir içi + pratik aile kullanımı için ideal.",
+    "userFeedbackSummary": "Kullanıcılar iç hacmi, Magic Seats'i ve sorunsuzluğu çok övüyor. Motor 200-250 bin km sorunsuz. Şikayetler: sert süspansiyon (bozuk yolda seken), yol sesi yalıtımı orta, 100 HP'nin otoyolda yetersizliği, direksiyon hafifliği. LPG'li örneklerde subap ayarı sorulmalı.",
+    "chronicIssues": [
+      { "title": "Ateşleme bobini zayıflaması", "description": "Yaşa bağlı bobin zayıflar; tekleme, arıza lambası. Bobin+buji seti; LPG'de periyot kısa.", "severity": "Düşük", "estimatedCostEUR": 100, "affectedYears": "2008-2015" },
+      { "title": "Ön amortisör ve salıncak burcu sesi", "description": "Türkiye yollarında 80-120 bin km'de ön takım sesleri; salıncak burçları ve amortisör üst takozları yenilenir. Parça uygun.", "severity": "Düşük", "estimatedCostEUR": 130, "affectedYears": "2008-2015" },
+      { "title": "Klima kokusu ve rölanti dalgalanması (gaz kelebeği kirlenmesi)", "description": "Nemli havada evaporatör kokusu; gaz kelebeği kurumu rölanti dengesizliği yapar. Klima temizliği, polen filtresi ve kelebek temizliği/adaptasyonu ile çözülür.", "severity": "Düşük", "estimatedCostEUR": 130, "affectedYears": "2008-2015" }
+    ],
+    "pros": [
+      "Sınıfının çok üstünde yükleme esnekliği (Magic Seats)",
+      "Zincir trigerli, dayanıklı L13Z i-VTEC motor, LPG uyumlu",
+      "Yüksek tavan, dik oturuş, geniş görüş",
+      "Düşük yakıt ve bakım gideri, yüksek ikinci el değeri"
+    ],
+    "cons": [
+      "Sert süspansiyon, bozuk yolda seken sürüş",
+      "100 HP otoyolda yetersiz",
+      "Yol sesi yalıtımı orta",
+      "Direksiyon hafif ve hissiz"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, filtreler, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 150 },
+      { "mileage": "120.000 km", "expectedIssues": "Ön takım revizyonu, devirdaim kayışı, gaz kelebeği temizliği, klima bakımı, debriyaj kontrolü.", "estimatedCostEUR": 280 },
+      { "mileage": "200.000 km", "expectedIssues": "Debriyaj seti, su pompası, motor takozları, subap ayarı, ateşleme bobinleri.", "estimatedCostEUR": 400 }
+    ]
+  },
+  {
+    "brand": "Honda",
+    "modelName": "Jazz (Mk2, 2008-2015)",
+    "productionYears": "2008-2015",
+    "engine": "1.4 i-VTEC 100 HP (L13Z) + i-SHIFT (Robotize Tek Kavrama)",
+    "segment": "B",
+    "reliabilityScore": 7.0,
+    "minPrice": 390000,
+    "maxPrice": 620000,
+    "estimatedMaintenanceCostEUR": 250,
+    "expertSummary": "İkinci nesil Jazz'ın erken yıllarındaki 'otomatik' seçeneği i-SHIFT'tir: manuel bir kutu, debriyajı ve vitesleri robot yönetir (Fiat Dualogic, Toyota MultiMode ile aynı mantık). Otomatik konforu beklerken yarı otomatik alırsınız: kalkışta gecikme, 'çukur' hissi, yokuşta geri kaçma. Motor (L13Z) tarafı tam not, Magic Seats yine burada. Günlük dille: \"İç hacmi ve motoru harika ama i-SHIFT vitesi test sür; sevmezsen düz viteslisini ya da CVT'li Mk3'ü ara.\"",
+    "userFeedbackSummary": "Motor ve iç hacim övülür, i-SHIFT eleştirilir: kalkışta gecikme, sarsıntı, zamanla debriyaj ve aktüatör masrafı, yokuşta geri kaçma. Dur-kalk trafikte debriyaj ömrü kısalır. Yazılım güncellemesi davranışı hafif iyileştirir. Sert süspansiyon Jazz klasiği.",
+    "chronicIssues": [
+      { "title": "i-SHIFT debriyaj ve aktüatör aşınması", "description": "Robotlu tek kavrama debriyajı zamanla biter; kalkışta kayma, titreme, vites atarken sarsıntı. Debriyaj seti + rulman + aktüatör + kalibrasyon gerekir. Dur-kalk trafikte ömür kısalır.", "severity": "Kritik", "estimatedCostEUR": 650, "affectedYears": "2008-2015" },
+      { "title": "i-SHIFT vites aktüatörü / pozisyon sensörü arızası", "description": "Vites moduna girmeme, N'de kalma, arıza lambası. Aktüatör veya sensör yenilenir; yazılım kalibrasyonu şart.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2008-2015" },
+      { "title": "Ön amortisör / salıncak burcu sesi ve klima kokusu", "description": "80-120 bin km'de ön takım tıkırtısı; nemli havada evaporatör kokusu. Ön takım revizyonu, klima temizliği ve polen filtresi.", "severity": "Düşük", "estimatedCostEUR": 180, "affectedYears": "2008-2015" }
+    ],
+    "pros": [
+      "Sınıfının çok üstünde yükleme esnekliği (Magic Seats)",
+      "Zincir trigerli, dayanıklı L13Z i-VTEC motor, LPG uyumlu",
+      "Yüksek tavan, dik oturuş, geniş görüş",
+      "Düşük yakıt gideri"
+    ],
+    "cons": [
+      "i-SHIFT otomatik değil; karakteri ve debriyaj masrafı caydırıcı",
+      "Kalkışta gecikme, yokuşta geri kaçma",
+      "Sert süspansiyon, orta yalıtım",
+      "100 HP otoyolda yetersiz"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, filtreler, i-SHIFT debriyaj ve aktüatör kontrolü, LPG'de subap ayarı.", "estimatedCostEUR": 160 },
+      { "mileage": "120.000 km", "expectedIssues": "i-SHIFT debriyaj seti ihtimali, ön takım revizyonu, devirdaim kayışı, klima bakımı, gaz kelebeği temizliği.", "estimatedCostEUR": 500 },
+      { "mileage": "200.000 km", "expectedIssues": "Su pompası, motor takozları, ikinci debriyaj seti ihtimali, subap ayarı, ateşleme bobinleri.", "estimatedCostEUR": 450 }
+    ]
+  },
+  {
+    "brand": "Honda",
+    "modelName": "Jazz (Mk3, 2015-2020)",
+    "productionYears": "2015-2020",
+    "engine": "1.3 i-VTEC 102 HP (L13B, Earth Dreams) + 6 İleri Manuel",
+    "segment": "B",
+    "reliabilityScore": 8.6,
+    "minPrice": 550000,
+    "maxPrice": 850000,
+    "estimatedMaintenanceCostEUR": 230,
+    "expertSummary": "Üçüncü nesil Jazz, Magic Seats sistemini ve dev iç hacmi korurken daha modern bir kabin ve 'Earth Dreams' 1.3 i-VTEC (L13B) motor aldı. Motor zincir trigerli, LPG dostu ve çok dayanıklı; 102 HP şehir içi + hafif yol için yeterli, otoyolda devir yüksek gezer. Bu düz vitesli versiyon en dertsizi. Günlük dille: \"Küçük dıştan, kocaman içten; Honda sağlamlığı + modern kabin; düz vitesi en akıllısı.\" Şehir içi + pratik aile kullanımı için ideal.",
+    "userFeedbackSummary": "Kullanıcılar iç hacmi, Magic Seats'i ve sorunsuzluğu çok övüyor. Motor 100-150 bin km sorunsuz. Şikayetler: sert süspansiyon, yol sesi yalıtımı orta, 102 HP'nin otoyolda yetersizliği, iç plastik kalitesi B segmenti seviyesinde, multimedya (Honda Connect) yavaşlığı.",
+    "chronicIssues": [
+      { "title": "Ateşleme bobini ve gaz kelebeği kirlenmesi", "description": "Yaşa bağlı bobin zayıflar (tekleme); gaz kelebeği kurumu rölanti dengesizliği yapar. Bobin+buji seti ve kelebek temizliği/adaptasyonu.", "severity": "Düşük", "estimatedCostEUR": 120, "affectedYears": "2015-2020" },
+      { "title": "Ön amortisör ve salıncak burcu sesi", "description": "Türkiye yollarında 80-120 bin km'de ön takım sesleri; salıncak burçları ve amortisör üst takozları yenilenir. Parça uygun.", "severity": "Düşük", "estimatedCostEUR": 130, "affectedYears": "2015-2020" },
+      { "title": "Multimedya (Honda Connect) yavaşlığı ve donması", "description": "Ekran donar/yeniden başlar, dokunma tepkisi yavaş. Yazılım güncelleme veya ünite değişimi.", "severity": "Düşük", "estimatedCostEUR": 150, "affectedYears": "2015-2020" }
+    ],
+    "pros": [
+      "Sınıfının çok üstünde yükleme esnekliği (Magic Seats)",
+      "Zincir trigerli, dayanıklı L13B i-VTEC motor, LPG uyumlu",
+      "Modern kabin, yüksek tavan, geniş görüş",
+      "Düşük yakıt ve bakım gideri, yüksek ikinci el değeri"
+    ],
+    "cons": [
+      "Sert süspansiyon, orta yol sesi yalıtımı",
+      "102 HP otoyolda yetersiz, yüksek devir",
+      "İç plastik kalitesi B segmenti seviyesinde",
+      "Multimedya yavaş"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, filtreler, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 150 },
+      { "mileage": "120.000 km", "expectedIssues": "Ön takım revizyonu, devirdaim kayışı, gaz kelebeği temizliği, klima bakımı, debriyaj kontrolü.", "estimatedCostEUR": 280 },
+      { "mileage": "200.000 km", "expectedIssues": "Debriyaj seti, su pompası, motor takozları, subap ayarı, ateşleme bobinleri.", "estimatedCostEUR": 400 }
+    ]
+  },
+  {
+    "brand": "Honda",
+    "modelName": "Jazz (Mk3, 2015-2020)",
+    "productionYears": "2015-2020",
+    "engine": "1.3 i-VTEC 102 HP (L13B, Earth Dreams) + CVT (Sürekli Değişken Şanzıman)",
+    "segment": "B",
+    "reliabilityScore": 8.1,
+    "minPrice": 580000,
+    "maxPrice": 900000,
+    "estimatedMaintenanceCostEUR": 260,
+    "expertSummary": "Üçüncü nesil Jazz'ın otomatik seçeneği CVT'dir (i-SHIFT terk edildi, doğru karar). Honda'nın kayış tahrikli CVT'si dayanıklıdır ama Honda HCF-2 özel yağının 40-60 bin km'de değişmesi şart; ihmal edilende titreme ve ivmede zayıflık başlar. Sert gazda 'lastik bant' hissi olağan. Şehir içi park ve dur-kalk için çok rahat. Günlük dille: \"i-SHIFT'in aksine gerçek otomatik konfor; ama CVT yağı bakımını asla aksatma, geçmişini sor.\" Şehir içi ağırlıklı kullanım için ideal.",
+    "userFeedbackSummary": "Kullanıcılar i-SHIFT'e göre çok daha rahat buluyor; şehir içi kullanımda memnuniyet yüksek. Şikayetler: sert gazda CVT sesi ve gecikme, CVT yağı ihmal edilmişse titreme, sert süspansiyon, otoyolda 102 HP yetersizliği. CVT yağı geçmişi en kritik konu.",
+    "chronicIssues": [
+      { "title": "CVT yağının ihmal edilmesi (titreme, ivmede zayıflık)", "description": "Honda CVT'si Honda HCF-2 yağını 40-60 bin km'de ister; ihmal edilende kalkışta/sabit hızda titreme, ivmede zayıflama ve uzun vadede kayış/pulley aşınması. Bakım geçmişi kritik.", "severity": "Orta", "estimatedCostEUR": 250, "affectedYears": "2015-2020" },
+      { "title": "Ateşleme bobini ve gaz kelebeği kirlenmesi", "description": "Yaşa bağlı bobin zayıflar; gaz kelebeği kurumu rölanti dengesizliği. Bobin+buji ve kelebek temizliği/adaptasyonu.", "severity": "Düşük", "estimatedCostEUR": 120, "affectedYears": "2015-2020" },
+      { "title": "Ön amortisör / salıncak burcu sesi ve multimedya yavaşlığı", "description": "80-120 bin km'de ön takım tıkırtısı; Honda Connect ekranı yavaş/donuyor. Ön takım revizyonu ve yazılım güncelleme.", "severity": "Düşük", "estimatedCostEUR": 180, "affectedYears": "2015-2020" }
+    ],
+    "pros": [
+      "Gerçek otomatik konfor (i-SHIFT'in aksine)",
+      "Sınıfının çok üstünde yükleme esnekliği (Magic Seats)",
+      "Zincir trigerli, dayanıklı i-VTEC motor, LPG uyumlu",
+      "Şehir içi park ve dur-kalk çok rahat, yüksek ikinci el değeri"
+    ],
+    "cons": [
+      "CVT yağı bakımına bağımlı — ihmal edilende masraflı",
+      "Sert gazda CVT sesi ve tepki gecikmesi",
+      "Sert süspansiyon, orta yalıtım",
+      "102 HP otoyolda yetersiz"
+    ],
+    "milestones": [
+      { "mileage": "50.000 km", "expectedIssues": "CVT yağı (Honda HCF-2), yağ+filtre, bujiler, filtreler, LPG'de subap ayarı.", "estimatedCostEUR": 220 },
+      { "mileage": "100.000 km", "expectedIssues": "İkinci CVT yağı, ön takım revizyonu, devirdaim kayışı, gaz kelebeği temizliği, klima bakımı.", "estimatedCostEUR": 330 },
+      { "mileage": "200.000 km", "expectedIssues": "CVT içi kontrol, su pompası, motor takozları, subap ayarı, süspansiyon yenileme.", "estimatedCostEUR": 470 }
+    ]
+  }
+]
