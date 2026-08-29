@@ -335,6 +335,59 @@ namespace OtoRehber.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        // ---- Fiyat geçmişi (araç başına manuel fiyat kaydı) ----
+
+        // GET: AdminCar/PriceHistory/5
+        public async Task<IActionResult> PriceHistory(int id)
+        {
+            var car = await _context.Cars.AsNoTracking().FirstOrDefaultAsync(c => c.Id == id);
+            if (car == null) return NotFound();
+
+            ViewBag.Car = car;
+            var history = await _context.CarPriceHistories.AsNoTracking()
+                .Where(h => h.CarId == id)
+                .OrderByDescending(h => h.RecordedAt)
+                .ToListAsync();
+            return View(history);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddPriceHistory(int carId, int price, DateTime? recordedAt)
+        {
+            if (price < 1)
+            {
+                TempData["ErrorMessage"] = "Geçerli bir fiyat girin.";
+                return RedirectToAction(nameof(PriceHistory), new { id = carId });
+            }
+            if (!await _context.Cars.AnyAsync(c => c.Id == carId))
+                return NotFound();
+
+            _context.CarPriceHistories.Add(new CarPriceHistory
+            {
+                CarId = carId,
+                Price = price,
+                RecordedAt = (recordedAt ?? DateTime.UtcNow).Date
+            });
+            await _context.SaveChangesAsync();
+            await AuditAsync("Create", "CarPriceHistory", carId.ToString(), $"{price:N0} TL @ {(recordedAt ?? DateTime.UtcNow):yyyy-MM-dd}");
+            TempData["SuccessMessage"] = "Fiyat kaydı eklendi.";
+            return RedirectToAction(nameof(PriceHistory), new { id = carId });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeletePriceHistory(int id)
+        {
+            var row = await _context.CarPriceHistories.FindAsync(id);
+            if (row == null) return NotFound();
+            var carId = row.CarId;
+            _context.CarPriceHistories.Remove(row);
+            await _context.SaveChangesAsync();
+            TempData["SuccessMessage"] = "Fiyat kaydı silindi.";
+            return RedirectToAction(nameof(PriceHistory), new { id = carId });
+        }
+
         private bool CarExists(int id)
         {
             return _context.Cars.Any(e => e.Id == id);

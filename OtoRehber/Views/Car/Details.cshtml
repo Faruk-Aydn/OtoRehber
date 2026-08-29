@@ -119,6 +119,19 @@
                     <div class="text-xl font-bold text-gray-900 dark:text-white"><i class="fa-solid fa-tag text-green-500 mr-2"></i>@Model.MinPrice.ToString("N0") - @Model.MaxPrice.ToString("N0") TL</div>
                 </div>
             </div>
+
+            @{
+                var _priceHistory = ViewBag.PriceHistory as System.Collections.IList;
+            }
+            @if (_priceHistory != null && _priceHistory.Count >= 2)
+            {
+                <div class="mt-6 bg-gray-50 dark:bg-gray-900/50 rounded-xl p-4 border border-gray-100 dark:border-gray-700">
+                    <div class="text-xs text-gray-500 dark:text-gray-400 font-semibold uppercase mb-3">
+                        <i class="fa-solid fa-chart-line mr-1"></i> Fiyat Geçmişi
+                    </div>
+                    <div class="h-56"><canvas id="priceHistoryChart"></canvas></div>
+                </div>
+            }
         </div>
     </div>
 </div>
@@ -473,6 +486,43 @@
         <i class="fa-solid fa-arrow-left mr-2"></i> Vitrine Dön
     </a>
 </div>
+
+@{
+    var _phJson = System.Text.Json.JsonSerializer.Serialize(ViewBag.PriceHistory ?? new List<object>());
+}
+@if (ViewBag.PriceHistory != null && ((System.Collections.IList)ViewBag.PriceHistory).Count >= 2)
+{
+    <script src="~/lib/chartjs/chart.umd.min.js" asp-append-version="true"></script>
+    <script>
+        (function () {
+            var data = @Html.Raw(_phJson);
+            var ctx = document.getElementById('priceHistoryChart');
+            if (!ctx || !window.Chart) return;
+            var dark = document.documentElement.classList.contains('dark');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: data.map(function (x) { return x.d; }),
+                    datasets: [{
+                        label: 'Fiyat (TL)',
+                        data: data.map(function (x) { return x.p; }),
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37,99,235,0.1)',
+                        fill: true, tension: 0.3, pointRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { ticks: { color: dark ? '#9ca3af' : '#6b7280', callback: function (v) { return (v / 1000) + 'K'; } }, grid: { color: dark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)' } },
+                        x: { ticks: { color: dark ? '#9ca3af' : '#6b7280' }, grid: { display: false } }
+                    }
+                }
+            });
+        })();
+    </script>
+}
 
 <script>
     async function toggleReviewLike(btn, reviewId) {

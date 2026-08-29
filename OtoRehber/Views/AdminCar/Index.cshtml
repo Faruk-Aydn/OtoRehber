@@ -137,6 +137,9 @@
                             <a asp-controller="Car" asp-action="Details" asp-route-id="@item.Id" class="text-blue-600 hover:text-blue-900 transition" title="Görüntüle" target="_blank">
                                 <i class="fa-solid fa-eye text-lg"></i>
                             </a>
+                            <a asp-action="PriceHistory" asp-route-id="@item.Id" class="text-green-600 hover:text-green-900 transition" title="Fiyat Geçmişi">
+                                <i class="fa-solid fa-chart-line text-lg"></i>
+                            </a>
                             <a asp-action="Delete" asp-route-id="@item.Id" class="text-red-600 hover:text-red-900 transition" title="Sil">
                                 <i class="fa-solid fa-trash text-lg"></i>
                             </a>

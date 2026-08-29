@@ -1,0 +1,56 @@
+@model IEnumerable<OtoRehber.Domain.Entities.CarPriceHistory>
+@{
+    var car = (OtoRehber.Domain.Entities.Car)ViewBag.Car;
+    ViewData["Title"] = $"{car.Brand} {car.ModelName} — Fiyat Geçmişi";
+}
+
+<div class="max-w-3xl mx-auto py-8">
+    <div class="mb-6 flex justify-between items-center flex-wrap gap-3">
+        <div>
+            <h1 class="text-2xl font-bold text-gray-900 dark:text-white">@car.Brand @car.ModelName — Fiyat Geçmişi</h1>
+            <p class="text-gray-500 mt-1">Manuel fiyat kayıtları. En az 2 kayıt olunca araç sayfasında grafik gösterilir.</p>
+        </div>
+        <a asp-action="Index" class="text-gray-600 dark:text-gray-300 hover:text-primary font-medium flex items-center gap-2">
+            <i class="fa-solid fa-arrow-left"></i> Araç Paneli
+        </a>
+    </div>
+
+    <form asp-action="AddPriceHistory" method="post" class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-5 mb-6 flex flex-wrap items-end gap-3">
+        <input type="hidden" name="carId" value="@car.Id" />
+        <div>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Fiyat (TL)</label>
+            <input type="number" name="price" min="1" required class="p-2.5 border border-gray-300 dark:border-gray-600 dark:bg-gray-900 rounded-lg text-sm w-40" placeholder="850000" />
+        </div>
+        <div>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Tarih</label>
+            <input type="date" name="recordedAt" value="@DateTime.UtcNow.ToString("yyyy-MM-dd")" class="p-2.5 border border-gray-300 dark:border-gray-600 dark:bg-gray-900 rounded-lg text-sm" />
+        </div>
+        <button type="submit" class="bg-primary hover:bg-blue-700 text-white font-semibold px-5 py-2.5 rounded-lg text-sm">Ekle</button>
+    </form>
+
+    <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl overflow-hidden">
+        <table class="w-full text-sm text-left">
+            <thead class="text-xs uppercase text-gray-500 bg-gray-50 dark:bg-gray-900/50 border-b border-gray-200 dark:border-gray-700">
+                <tr><th class="px-4 py-3">Tarih</th><th class="px-4 py-3">Fiyat</th><th class="px-4 py-3"></th></tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100 dark:divide-gray-700">
+                @foreach (var h in Model)
+                {
+                    <tr>
+                        <td class="px-4 py-3 text-gray-700 dark:text-gray-300">@h.RecordedAt.ToString("dd.MM.yyyy")</td>
+                        <td class="px-4 py-3 font-semibold text-gray-900 dark:text-gray-100">@h.Price.ToString("N0") TL</td>
+                        <td class="px-4 py-3 text-right">
+                            <form asp-action="DeletePriceHistory" asp-route-id="@h.Id" method="post" onsubmit="return confirm('Silinsin mi?');">
+                                <button type="submit" class="text-red-600 hover:text-red-800"><i class="fa-solid fa-trash-can"></i></button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+                @if (!Model.Any())
+                {
+                    <tr><td colspan="3" class="px-4 py-8 text-center text-gray-400">Henüz fiyat kaydı yok.</td></tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -39,6 +39,7 @@ namespace OtoRehber.Controllers
                 .Include(c => c.MileageMilestones)
                 .Include(c => c.Reviews)
                     .ThenInclude(r => r.ReviewLikes)
+                .Include(c => c.PriceHistory)
                 .FirstOrDefaultAsync(c => c.Id == id);
 
             if (car == null)
@@ -49,6 +50,12 @@ namespace OtoRehber.Controllers
 
             var currentUserId = _userManager.GetUserId(User);
             ViewBag.CurrentUserId = currentUserId;
+
+            // Fiyat geçmişi grafiği için (en az 2 kayıt varsa)
+            ViewBag.PriceHistory = car.PriceHistory
+                .OrderBy(h => h.RecordedAt)
+                .Select(h => new { d = h.RecordedAt.ToString("yyyy-MM-dd"), p = h.Price })
+                .ToList();
 
             // Yorum başına "faydalı" oy sayısı + kullanıcının oy verip vermediği
             ViewBag.ReviewLikes = car.Reviews.ToDictionary(

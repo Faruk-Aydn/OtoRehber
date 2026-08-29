@@ -297,7 +297,9 @@ Development: `dotnet user-secrets`. Production: environment variable.
 - [ ] Yorumları şikayet et
 - [x] Araç kartında + detay sayfasında ortalama kullanıcı puanı (Home'da sayfa başına tek `GROUP BY` sorgu → ViewBag);
   detay `AggregateRating` JSON-LD zaten var (3.3)
-- [ ] Fiyat geçmişi grafiği (`CarPriceHistory` — veri kaynağı/cron)
+- [x] Fiyat geçmişi grafiği — `CarPriceHistory` (`DbSet` + migration `PriceHistoryDbSet` rename);
+  admin `/AdminCar/PriceHistory/{id}` manuel fiyat girişi/silme; araç detayında ≥2 kayıtta Chart.js line grafik.
+  (Otomatik veri kaynağı/cron sonra)
 - [ ] Garajdaki araçlar için fiyat/haber bildirimi (e-posta)
 - [ ] 2+ araç karşılaştırma
 - [ ] Araç başına çoklu görsel galerisi
@@ -354,6 +356,7 @@ Development: `dotnet user-secrets`. Production: environment variable.
 | 2026-08-29 | 3.1 | Admin kullanıcı yönetimi (`AdminUserController` `/Admin/Users`): liste/arama, admin rolü, kilit aç, sil | 238efde |
 | 2026-08-29 | 3.2 | Gamification kaldırıldı — `AppUser` düz `IdentityUser` (migration `DropAppUserGamification`) | 882b135 |
 | 2026-08-29 | 3.1 | `/araclar` katalog sayfası (`CatalogController.Index` + `Services/CarCatalogQuery` ortak filtre); navbar + sitemap | 4efb731 |
+| 2026-08-29 | 3.2 | Fiyat geçmişi — `CarPriceHistory` DbSet (migration `PriceHistoryDbSet`) + admin fiyat girişi + araç detayında Chart.js grafik | _(bu commit)_ |
 | 2026-08-27 | 1.3, 1.10 | Railway `DATABASE_URL` ayrıştırma + Docker healthcheck düzeltme + deploy rehberi | 93c5dbb |
 | 2026-08-27 | deploy | Postgres bağlantı çözümü + `railway.json` | 1e7fb51 |
 | 2026-08-27 | deploy | `PORT` env dinleme + healthcheck timeout | 1c974f8 |
