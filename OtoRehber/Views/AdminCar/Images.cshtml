@@ -1,0 +1,63 @@
+@model IEnumerable<OtoRehber.Domain.Entities.CarImage>
+@{
+    var car = (OtoRehber.Domain.Entities.Car)ViewBag.Car;
+    ViewData["Title"] = $"{car.Brand} {car.ModelName} — Görseller";
+}
+
+<div class="max-w-4xl mx-auto py-8">
+    <div class="mb-6 flex justify-between items-center flex-wrap gap-3">
+        <div>
+            <h1 class="text-2xl font-bold text-gray-900 dark:text-white">@car.Brand @car.ModelName — Görseller</h1>
+            <p class="text-gray-500 mt-1">Kapak görseli araç kartlarında ve paylaşımlarda kullanılır. Ek görseller araç sayfasında galeride görünür.</p>
+        </div>
+        <a asp-action="Index" class="text-gray-600 dark:text-gray-300 hover:text-primary font-medium flex items-center gap-2">
+            <i class="fa-solid fa-arrow-left"></i> Araç Paneli
+        </a>
+    </div>
+
+    <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-5 mb-6">
+        <p class="text-xs uppercase tracking-wide text-gray-400 mb-2">Mevcut Kapak</p>
+        @if (!string.IsNullOrEmpty(car.ImageUrl))
+        {
+            <img src="@car.ImageUrl" alt="Kapak" class="h-40 rounded-xl object-cover border border-gray-200 dark:border-gray-700" />
+        }
+        else
+        {
+            <div class="h-40 w-64 rounded-xl bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-400"><i class="fa-solid fa-image text-3xl"></i></div>
+        }
+    </div>
+
+    <form asp-action="AddImages" method="post" enctype="multipart/form-data" class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-5 mb-6">
+        <input type="hidden" name="carId" value="@car.Id" />
+        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Yeni görsel(ler) yükle (JPG/PNG/WEBP/GIF, maks. 5 MB)</label>
+        <input type="file" name="files" accept="image/*" multiple required class="block w-full text-sm text-gray-600 dark:text-gray-300 file:mr-3 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-primary file:text-white file:font-semibold hover:file:bg-blue-700" />
+        <button type="submit" class="mt-3 bg-primary hover:bg-blue-700 text-white font-semibold px-5 py-2.5 rounded-lg text-sm">Yükle</button>
+    </form>
+
+    <p class="text-xs uppercase tracking-wide text-gray-400 mb-2">Ek Görseller (@Model.Count())</p>
+    @if (Model.Any())
+    {
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            @foreach (var img in Model)
+            {
+                <div class="relative group rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                    <img src="@img.Url" alt="Araç görseli" class="w-full h-32 object-cover" />
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center gap-3">
+                        <form asp-action="MakeCover" asp-route-id="@img.Id" method="post">
+                            <button type="submit" class="text-white hover:text-yellow-300" title="Kapak yap"><i class="fa-solid fa-star"></i></button>
+                        </form>
+                        <form asp-action="DeleteImage" asp-route-id="@img.Id" method="post" onsubmit="return confirm('Silinsin mi?');">
+                            <button type="submit" class="text-white hover:text-red-400" title="Sil"><i class="fa-solid fa-trash-can"></i></button>
+                        </form>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="text-center py-10 text-gray-400 bg-white dark:bg-gray-800 rounded-2xl border border-dashed border-gray-300 dark:border-gray-700">
+            Henüz ek görsel yok.
+        </div>
+    }
+</div>

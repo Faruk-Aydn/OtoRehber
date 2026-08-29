@@ -302,7 +302,9 @@ Development: `dotnet user-secrets`. Production: environment variable.
   (Otomatik veri kaynağı/cron sonra)
 - [ ] Garajdaki araçlar için fiyat/haber bildirimi (e-posta)
 - [ ] 2+ araç karşılaştırma
-- [ ] Araç başına çoklu görsel galerisi
+- [x] Araç başına çoklu görsel galerisi — `CarImage` entity (migration `CarImageGallery`);
+  admin `/AdminCar/Images/{id}` çoklu yükleme + sil + "kapak yap"; araç detayında ana görsel + tıklanabilir thumbnail şeridi.
+  Kapak hâlâ `Car.ImageUrl` (kart/OG/JSON-LD).
 - [x] Yorumlarda sıralama (en yeni / en yüksek puan / en düşük puan — `?rsort=`) + "daha fazla göster" (ilk 5, gerisi JS ile açılır)
 - [x] Gamification KALDIRILDI — `AppUser` artık düz `IdentityUser` (kullanılmayan `Level`/`XP`/`AvatarUrl` alanları silindi, migration `DropAppUserGamification`)
 
@@ -357,6 +359,7 @@ Development: `dotnet user-secrets`. Production: environment variable.
 | 2026-08-29 | 3.2 | Gamification kaldırıldı — `AppUser` düz `IdentityUser` (migration `DropAppUserGamification`) | 882b135 |
 | 2026-08-29 | 3.1 | `/araclar` katalog sayfası (`CatalogController.Index` + `Services/CarCatalogQuery` ortak filtre); navbar + sitemap | 4efb731 |
 | 2026-08-29 | 3.2 | Fiyat geçmişi — `CarPriceHistory` DbSet (migration `PriceHistoryDbSet`) + admin fiyat girişi + araç detayında Chart.js grafik | df80c83 |
+| 2026-08-29 | 3.2 | Çoklu görsel galerisi — `CarImage` (migration `CarImageGallery`) + admin çoklu yükleme/kapak + araç detay thumbnail galeri | _(bu commit)_ |
 | 2026-08-27 | 1.3, 1.10 | Railway `DATABASE_URL` ayrıştırma + Docker healthcheck düzeltme + deploy rehberi | 93c5dbb |
 | 2026-08-27 | deploy | Postgres bağlantı çözümü + `railway.json` | 1e7fb51 |
 | 2026-08-27 | deploy | `PORT` env dinleme + healthcheck timeout | 1c974f8 |

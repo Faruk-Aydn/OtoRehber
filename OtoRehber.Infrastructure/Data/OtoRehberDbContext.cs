@@ -21,6 +21,7 @@ namespace OtoRehber.Infrastructure.Data
         public DbSet<UserGarage> UserGarages { get; set; }
         public DbSet<ReviewLike> ReviewLikes { get; set; }
         public DbSet<CarPriceHistory> CarPriceHistories { get; set; }
+        public DbSet<CarImage> CarImages { get; set; }
         public DbSet<AuditLog> AuditLogs { get; set; }
         public DbSet<DataProtectionKey> DataProtectionKeys { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)

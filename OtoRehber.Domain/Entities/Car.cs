@@ -39,5 +39,6 @@ namespace OtoRehber.Domain.Entities
         public List<MileageMilestone> MileageMilestones { get; set; } = new List<MileageMilestone>();
         public List<CarReview> Reviews { get; set; } = new List<CarReview>();
         public List<CarPriceHistory> PriceHistory { get; set; } = new List<CarPriceHistory>();
+        public List<CarImage> Images { get; set; } = new List<CarImage>();
     }
 }

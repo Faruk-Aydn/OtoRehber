@@ -388,6 +388,85 @@ namespace OtoRehber.Controllers
             return RedirectToAction(nameof(PriceHistory), new { id = carId });
         }
 
+        // ---- Araç görsel galerisi (kapak = Car.ImageUrl, ekstralar = CarImage) ----
+
+        public async Task<IActionResult> Images(int id)
+        {
+            var car = await _context.Cars.AsNoTracking().FirstOrDefaultAsync(c => c.Id == id);
+            if (car == null) return NotFound();
+            ViewBag.Car = car;
+            var images = await _context.CarImages.AsNoTracking()
+                .Where(i => i.CarId == id).OrderBy(i => i.SortOrder).ThenBy(i => i.Id).ToListAsync();
+            return View(images);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [RequestSizeLimit(30 * 1024 * 1024)]
+        public async Task<IActionResult> AddImages(int carId, List<IFormFile> files)
+        {
+            if (!await _context.Cars.AnyAsync(c => c.Id == carId)) return NotFound();
+
+            int added = 0, skipped = 0;
+            int nextSort = (await _context.CarImages.Where(i => i.CarId == carId).MaxAsync(i => (int?)i.SortOrder) ?? -1) + 1;
+
+            foreach (var file in files ?? new List<IFormFile>())
+            {
+                if (file.Length == 0) continue;
+                if (!IsValidImage(file)) { skipped++; continue; }
+                var url = await SaveImageAsync(file);
+                _context.CarImages.Add(new CarImage { CarId = carId, Url = url, SortOrder = nextSort++ });
+                added++;
+            }
+            if (added > 0) await _context.SaveChangesAsync();
+
+            InvalidateHomeCache();
+            TempData[skipped > 0 ? "InfoMessage" : "SuccessMessage"] =
+                $"{added} görsel eklendi" + (skipped > 0 ? $", {skipped} geçersiz dosya atlandı." : ".");
+            return RedirectToAction(nameof(Images), new { id = carId });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteImage(int id)
+        {
+            var img = await _context.CarImages.FindAsync(id);
+            if (img == null) return NotFound();
+            var carId = img.CarId;
+            DeletePhysicalImage(img.Url);
+            _context.CarImages.Remove(img);
+            await _context.SaveChangesAsync();
+            TempData["SuccessMessage"] = "Görsel silindi.";
+            return RedirectToAction(nameof(Images), new { id = carId });
+        }
+
+        // Bu galeri görselini araç kapağı yap (Car.ImageUrl).
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> MakeCover(int id)
+        {
+            var img = await _context.CarImages.FindAsync(id);
+            if (img == null) return NotFound();
+            var car = await _context.Cars.FindAsync(img.CarId);
+            if (car == null) return NotFound();
+            car.ImageUrl = img.Url;
+            await _context.SaveChangesAsync();
+            InvalidateHomeCache();
+            TempData["SuccessMessage"] = "Kapak görseli güncellendi.";
+            return RedirectToAction(nameof(Images), new { id = car.Id });
+        }
+
+        private void DeletePhysicalImage(string? url)
+        {
+            if (string.IsNullOrEmpty(url) || !url.StartsWith("/images/")) return;
+            try
+            {
+                var path = Path.Combine(_hostEnvironment.WebRootPath, url.TrimStart('/').Replace('/', Path.DirectorySeparatorChar));
+                if (System.IO.File.Exists(path)) System.IO.File.Delete(path);
+            }
+            catch { /* yoksay */ }
+        }
+
         private bool CarExists(int id)
         {
             return _context.Cars.Any(e => e.Id == id);

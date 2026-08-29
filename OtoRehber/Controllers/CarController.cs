@@ -40,6 +40,7 @@ namespace OtoRehber.Controllers
                 .Include(c => c.Reviews)
                     .ThenInclude(r => r.ReviewLikes)
                 .Include(c => c.PriceHistory)
+                .Include(c => c.Images)
                 .FirstOrDefaultAsync(c => c.Id == id);
 
             if (car == null)
@@ -56,6 +57,13 @@ namespace OtoRehber.Controllers
                 .OrderBy(h => h.RecordedAt)
                 .Select(h => new { d = h.RecordedAt.ToString("yyyy-MM-dd"), p = h.Price })
                 .ToList();
+
+            // Galeri: kapak (ImageUrl) + ek görseller
+            var gallery = new List<string>();
+            if (!string.IsNullOrEmpty(car.ImageUrl)) gallery.Add(car.ImageUrl);
+            gallery.AddRange(car.Images.OrderBy(i => i.SortOrder).ThenBy(i => i.Id)
+                .Select(i => i.Url).Where(u => u != car.ImageUrl));
+            ViewBag.Gallery = gallery;
 
             // Yorum başına "faydalı" oy sayısı + kullanıcının oy verip vermediği
             ViewBag.ReviewLikes = car.Reviews.ToDictionary(
