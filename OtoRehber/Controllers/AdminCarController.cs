@@ -24,18 +24,20 @@ namespace OtoRehber.Controllers
         private readonly ILogger<AdminCarController> _logger;
         private readonly IMemoryCache _cache;
         private readonly IYoutubeImportQueue _importQueue;
+        private readonly IAppEmailSender _emailSender;
 
         private static readonly string[] AllowedImageExtensions = { ".jpg", ".jpeg", ".png", ".webp", ".gif" };
         private static readonly string[] AllowedImageContentTypes = { "image/jpeg", "image/png", "image/webp", "image/gif" };
         private const long MaxImageSizeBytes = 5 * 1024 * 1024; // 5 MB
 
-        public AdminCarController(OtoRehberDbContext context, IWebHostEnvironment hostEnvironment, ILogger<AdminCarController> logger, IMemoryCache cache, IYoutubeImportQueue importQueue)
+        public AdminCarController(OtoRehberDbContext context, IWebHostEnvironment hostEnvironment, ILogger<AdminCarController> logger, IMemoryCache cache, IYoutubeImportQueue importQueue, IAppEmailSender emailSender)
         {
             _context = context;
             _hostEnvironment = hostEnvironment;
             _logger = logger;
             _cache = cache;
             _importQueue = importQueue;
+            _emailSender = emailSender;
         }
 
         private void InvalidateHomeCache()
@@ -360,8 +362,11 @@ namespace OtoRehber.Controllers
                 TempData["ErrorMessage"] = "Geçerli bir fiyat girin.";
                 return RedirectToAction(nameof(PriceHistory), new { id = carId });
             }
-            if (!await _context.Cars.AnyAsync(c => c.Id == carId))
-                return NotFound();
+            var car = await _context.Cars.FirstOrDefaultAsync(c => c.Id == carId);
+            if (car == null) return NotFound();
+
+            var prevPrice = await _context.CarPriceHistories.Where(h => h.CarId == carId)
+                .OrderByDescending(h => h.RecordedAt).Select(h => (int?)h.Price).FirstOrDefaultAsync();
 
             _context.CarPriceHistories.Add(new CarPriceHistory
             {
@@ -371,8 +376,41 @@ namespace OtoRehber.Controllers
             });
             await _context.SaveChangesAsync();
             await AuditAsync("Create", "CarPriceHistory", carId.ToString(), $"{price:N0} TL @ {(recordedAt ?? DateTime.UtcNow):yyyy-MM-dd}");
+
+            // Garajında bu araç olan kullanıcılara fiyat değişikliği bildirimi (Resend key yoksa no-op + log).
+            if (prevPrice.HasValue && prevPrice.Value != price)
+                await NotifyGarageOwnersAsync(car, prevPrice.Value, price);
+
             TempData["SuccessMessage"] = "Fiyat kaydı eklendi.";
             return RedirectToAction(nameof(PriceHistory), new { id = carId });
+        }
+
+        private async Task NotifyGarageOwnersAsync(Car car, int oldPrice, int newPrice)
+        {
+            try
+            {
+                var emails = await (from g in _context.UserGarages.AsNoTracking()
+                                    join u in _context.Users.AsNoTracking() on g.UserId equals u.Id
+                                    where g.CarId == car.Id && u.Email != null && u.EmailConfirmed
+                                    select u.Email!).Distinct().ToListAsync();
+                if (emails.Count == 0) return;
+
+                var dir = newPrice > oldPrice ? "arttı" : "düştü";
+                var subject = $"OtoRehber — {car.Brand} {car.ModelName} fiyatı {dir}";
+                var url = $"{Request.Scheme}://{Request.Host}/Car/Details/{car.Id}";
+                var body = $"Garajınızdaki <strong>{car.Brand} {car.ModelName}</strong> için yeni bir fiyat kaydı eklendi: " +
+                           $"{oldPrice:N0} TL → <strong>{newPrice:N0} TL</strong>.<br/>" +
+                           $"<a href=\"{url}\">Araç sayfasını görüntüle</a>";
+
+                foreach (var email in emails)
+                    await _emailSender.SendAsync(email, subject, body);
+
+                _logger.LogInformation("Fiyat bildirimi: araç #{CarId}, {Count} kullanıcı", car.Id, emails.Count);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "Garaj fiyat bildirimi gönderilemedi (araç #{CarId})", car.Id);
+            }
         }
 
         [HttpPost]

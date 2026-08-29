@@ -300,7 +300,8 @@ Development: `dotnet user-secrets`. Production: environment variable.
 - [x] Fiyat geçmişi grafiği — `CarPriceHistory` (`DbSet` + migration `PriceHistoryDbSet` rename);
   admin `/AdminCar/PriceHistory/{id}` manuel fiyat girişi/silme; araç detayında ≥2 kayıtta Chart.js line grafik.
   (Otomatik veri kaynağı/cron sonra)
-- [ ] Garajdaki araçlar için fiyat/haber bildirimi (e-posta)
+- [x] Garajdaki araçlar için **fiyat değişikliği bildirimi** — admin `AddPriceHistory` sonrası, garajında o araç olan
+  (e-postası doğrulanmış) kullanıcılara e-posta (`IAppEmailSender`; Resend key yoksa no-op + log). Fiyat aynıysa gönderilmez.
 - [ ] 2+ araç karşılaştırma
 - [x] Araç başına çoklu görsel galerisi — `CarImage` entity (migration `CarImageGallery`);
   admin `/AdminCar/Images/{id}` çoklu yükleme + sil + "kapak yap"; araç detayında ana görsel + tıklanabilir thumbnail şeridi.
@@ -362,6 +363,7 @@ Development: `dotnet user-secrets`. Production: environment variable.
 | 2026-08-29 | 3.1 | `/araclar` katalog sayfası (`CatalogController.Index` + `Services/CarCatalogQuery` ortak filtre); navbar + sitemap | 4efb731 |
 | 2026-08-29 | 3.2 | Fiyat geçmişi — `CarPriceHistory` DbSet (migration `PriceHistoryDbSet`) + admin fiyat girişi + araç detayında Chart.js grafik | df80c83 |
 | 2026-08-29 | 3.2 | Çoklu görsel galerisi — `CarImage` (migration `CarImageGallery`) + admin çoklu yükleme/kapak + araç detay thumbnail galeri | eb18b20 |
+| 2026-08-29 | 3.2 | Garaj fiyat bildirimi — admin fiyat kaydı sonrası garajında o araç olan kullanıcılara e-posta | _(bu commit)_ |
 | 2026-08-27 | 1.3, 1.10 | Railway `DATABASE_URL` ayrıştırma + Docker healthcheck düzeltme + deploy rehberi | 93c5dbb |
 | 2026-08-27 | deploy | Postgres bağlantı çözümü + `railway.json` | 1e7fb51 |
 | 2026-08-27 | deploy | `PORT` env dinleme + healthcheck timeout | 1c974f8 |
