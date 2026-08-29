@@ -2,49 +2,49 @@
     ViewData["Title"] = "Hesabım";
 }
 <div class="max-w-2xl mx-auto py-10">
-    <h1 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Hesabım</h1>
+    <h1 class="text-2xl font-bold text-content tracking-tight mb-6">Hesabım</h1>
 
-    <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-sm divide-y divide-gray-100 dark:divide-gray-700">
+    <div class="card divide-y divide-border">
         <div class="p-5">
-            <p class="text-xs uppercase tracking-wide text-gray-400 mb-1">E-posta</p>
-            <p class="text-gray-900 dark:text-gray-100 font-medium flex items-center gap-2">
+            <p class="text-xs uppercase tracking-wide text-content-muted mb-1">E-posta</p>
+            <p class="text-content font-medium flex items-center gap-2">
                 @ViewBag.Email
                 @if (ViewBag.EmailConfirmed == true)
                 {
-                    <span class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">doğrulandı</span>
+                    <span class="badge-success">doğrulandı</span>
                 }
                 else
                 {
-                    <span class="text-xs bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded-full">doğrulanmadı</span>
+                    <span class="badge-warning">doğrulanmadı</span>
                 }
             </p>
         </div>
         <div class="p-5 grid grid-cols-2 gap-4 text-center">
             <div>
-                <p class="text-2xl font-bold text-primary">@ViewBag.ReviewCount</p>
-                <p class="text-xs text-gray-500">Yorum</p>
+                <p class="text-2xl font-bold text-content">@ViewBag.ReviewCount</p>
+                <p class="text-xs text-content-muted">Yorum</p>
             </div>
             <div>
-                <p class="text-2xl font-bold text-red-500">@ViewBag.GarageCount</p>
-                <p class="text-xs text-gray-500">Garajdaki araç</p>
+                <p class="text-2xl font-bold text-content">@ViewBag.GarageCount</p>
+                <p class="text-xs text-content-muted">Garajdaki araç</p>
             </div>
         </div>
     </div>
 
     <div class="mt-6 grid gap-3 sm:grid-cols-2">
-        <a asp-action="ChangePassword" class="flex items-center gap-3 p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl hover:border-primary transition">
-            <i class="fa-solid fa-key text-primary"></i>
-            <span class="font-medium text-gray-800 dark:text-gray-100">Şifre değiştir</span>
+        <a asp-action="ChangePassword" class="card card-hover flex items-center gap-3 p-4 hover:border-brand-300 transition-colors">
+            <i class="fa-solid fa-key text-content-muted"></i>
+            <span class="font-medium text-content">Şifre değiştir</span>
         </a>
-        <a asp-action="ChangeEmail" class="flex items-center gap-3 p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl hover:border-primary transition">
-            <i class="fa-solid fa-envelope text-primary"></i>
-            <span class="font-medium text-gray-800 dark:text-gray-100">E-posta değiştir</span>
+        <a asp-action="ChangeEmail" class="card card-hover flex items-center gap-3 p-4 hover:border-brand-300 transition-colors">
+            <i class="fa-solid fa-envelope text-content-muted"></i>
+            <span class="font-medium text-content">E-posta değiştir</span>
         </a>
-        <a asp-controller="Garage" asp-action="Index" class="flex items-center gap-3 p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl hover:border-primary transition">
-            <i class="fa-solid fa-heart text-red-500"></i>
-            <span class="font-medium text-gray-800 dark:text-gray-100">Garajım</span>
+        <a asp-controller="Garage" asp-action="Index" class="card card-hover flex items-center gap-3 p-4 hover:border-brand-300 transition-colors">
+            <i class="fa-solid fa-heart text-content-muted"></i>
+            <span class="font-medium text-content">Garajım</span>
         </a>
-        <a asp-action="DeleteAccount" class="flex items-center gap-3 p-4 bg-white dark:bg-gray-800 border border-red-200 dark:border-red-900/40 rounded-xl hover:border-red-500 transition">
+        <a asp-action="DeleteAccount" class="card flex items-center gap-3 p-4 border-red-200 dark:border-red-900/40 hover:border-red-500 transition-colors">
             <i class="fa-solid fa-trash-can text-red-500"></i>
             <span class="font-medium text-red-600 dark:text-red-400">Hesabı sil</span>
         </a>

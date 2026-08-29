@@ -16,57 +16,45 @@
     <link rel="stylesheet" href="~/css/app.min.css" asp-append-version="true" />
     <script>if(localStorage.theme==='dark'||(!('theme' in localStorage)&&matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.classList.add('dark');</script>
 </head>
-<body class="bg-surface-2 text-content flex items-center justify-center min-h-screen p-4">
-    <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full border border-gray-200">
+<body class="bg-surface-2 text-content font-sans flex items-center justify-center min-h-screen p-4">
+    <div class="card card-pad max-w-md w-full">
         <div class="text-center mb-8">
-            <h1 class="text-3xl font-extrabold text-gray-900 mb-2">
-                <i class="fa-solid fa-car-side text-primary mr-2"></i>OtoRehber
+            <h1 class="text-2xl font-bold text-content tracking-tight mb-1">
+                <i class="fa-solid fa-car-side text-brand-600 mr-2"></i>OtoRehber
             </h1>
-            <p class="text-gray-500">Hesabınıza giriş yapın</p>
+            <p class="text-content-muted text-sm">Hesabınıza giriş yapın</p>
         </div>
 
-        <form asp-controller="Account" asp-action="Login" asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
-            <div asp-validation-summary="ModelOnly" class="text-red-600 text-sm mb-4"></div>
-            
-            <div class="mb-4">
-                <label asp-for="Email" class="block text-sm font-medium text-gray-700 mb-1">E-posta Adresi</label>
-                <div class="relative">
-                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                        <i class="fa-solid fa-envelope text-gray-400"></i>
-                    </div>
-                    <input asp-for="Email" class="pl-10 w-full p-2.5 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary text-sm" placeholder="admin@otorehber.com" required>
-                </div>
-                <span asp-validation-for="Email" class="text-red-500 text-xs mt-1"></span>
+        <form asp-controller="Account" asp-action="Login" asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post" class="space-y-4">
+            <div asp-validation-summary="ModelOnly" class="form-error"></div>
+
+            <div>
+                <label asp-for="Email" class="label">E-posta adresi</label>
+                <input asp-for="Email" class="input" placeholder="ornek@eposta.com" required>
+                <span asp-validation-for="Email" class="form-error"></span>
             </div>
 
-            <div class="mb-6">
-                <label asp-for="Password" class="block text-sm font-medium text-gray-700 mb-1">Şifre</label>
-                <div class="relative">
-                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                        <i class="fa-solid fa-lock text-gray-400"></i>
-                    </div>
-                    <input asp-for="Password" type="password" class="pl-10 w-full p-2.5 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary text-sm" placeholder="••••••••" required>
-                </div>
-                <span asp-validation-for="Password" class="text-red-500 text-xs mt-1"></span>
+            <div>
+                <label asp-for="Password" class="label">Şifre</label>
+                <input asp-for="Password" type="password" class="input" placeholder="••••••••" required>
+                <span asp-validation-for="Password" class="form-error"></span>
             </div>
 
-            <div class="flex items-center justify-between mb-6">
-                <div class="flex items-center">
-                    <input asp-for="RememberMe" class="w-4 h-4 text-primary bg-gray-100 border-gray-300 rounded focus:ring-primary">
-                    <label asp-for="RememberMe" class="ml-2 text-sm text-gray-600">Beni Hatırla</label>
-                </div>
-                <a asp-controller="Account" asp-action="ForgotPassword" class="text-sm text-primary hover:underline">Şifremi unuttum</a>
+            <div class="flex items-center justify-between">
+                <label class="flex items-center gap-2 text-sm text-content-muted">
+                    <input asp-for="RememberMe" class="w-4 h-4 accent-brand-600 rounded">
+                    Beni hatırla
+                </label>
+                <a asp-controller="Account" asp-action="ForgotPassword" class="text-sm text-brand-600 hover:underline">Şifremi unuttum</a>
             </div>
 
-            <button type="submit" class="w-full text-white bg-primary hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-5 py-3 text-center transition">
-                Giriş Yap <i class="fa-solid fa-arrow-right-to-bracket ml-2"></i>
-            </button>
+            <button type="submit" class="btn-primary w-full">Giriş yap <i class="fa-solid fa-arrow-right-to-bracket"></i></button>
         </form>
-        
-        <div class="mt-6 text-center text-sm text-gray-500 space-y-2">
-            <p>Hesabın yok mu? <a asp-controller="Account" asp-action="Register" class="text-primary font-medium hover:underline">Kayıt ol</a></p>
-            <a asp-controller="Home" asp-action="Index" class="hover:text-primary transition flex items-center justify-center">
-                <i class="fa-solid fa-arrow-left mr-2"></i> Siteye Dön
+
+        <div class="mt-6 text-center text-sm text-content-muted space-y-2">
+            <p>Hesabın yok mu? <a asp-controller="Account" asp-action="Register" class="text-brand-600 font-medium hover:underline">Kayıt ol</a></p>
+            <a asp-controller="Home" asp-action="Index" class="hover:text-content transition-colors flex items-center justify-center">
+                <i class="fa-solid fa-arrow-left mr-2"></i> Siteye dön
             </a>
         </div>
     </div>

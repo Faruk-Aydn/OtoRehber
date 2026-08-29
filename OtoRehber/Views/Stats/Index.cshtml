@@ -1,5 +1,5 @@
-﻿@{
-    ViewData["Title"] = "Veritabani Istatistikleri";
+@{
+    ViewData["Title"] = "Veritabanı İstatistikleri";
     ViewData["Description"] = "OtoRehber veritabanındaki araçların segment dağılımı, marka bazlı ortalama güvenilirlik puanları ve genel istatistikler.";
     var segLabels = System.Text.Json.JsonSerializer.Serialize(ViewBag.SegmentLabels ?? new List<string>());
     var segCounts = System.Text.Json.JsonSerializer.Serialize(ViewBag.SegmentCounts ?? new List<int>());
@@ -8,68 +8,46 @@
     var brandCounts = System.Text.Json.JsonSerializer.Serialize(ViewBag.BrandCarCounts ?? new List<int>());
 }
 
-<!-- Hero -->
-<div class="relative bg-gradient-to-br from-gray-900 via-indigo-950 to-blue-900 rounded-3xl shadow-2xl overflow-hidden mb-10 p-8 text-center" data-aos="fade-down">
-    <div class="absolute top-0 left-1/4 w-80 h-80 bg-indigo-500/20 rounded-full filter blur-3xl"></div>
-    <div class="relative z-10">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-3 tracking-tight">
-            <i class="fa-solid fa-chart-pie mr-3 text-indigo-400"></i>Veritabani
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-cyan-300">Istatistikleri</span>
-        </h1>
-        <p class="text-gray-300 text-lg max-w-xl mx-auto">Sistemdeki tum araclarin gercek zamanli analiz ve ozeti</p>
-    </div>
+<div class="mb-8" data-aos="fade-down">
+    <h1 class="text-2xl sm:text-3xl font-bold text-content tracking-tight">Veritabanı istatistikleri</h1>
+    <p class="text-content-muted mt-2">Sistemdeki tüm araçların gerçek zamanlı analizi ve özeti.</p>
 </div>
 
-<!-- Kart Ozeti -->
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10" data-aos="fade-up">
-    <div class="bg-white dark:bg-gray-800 rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-gray-700 text-center">
-        <div class="text-4xl font-black text-primary mb-1">@ViewBag.TotalCars</div>
-        <div class="text-sm text-gray-500 dark:text-gray-400 font-medium"><i class="fa-solid fa-car mr-1"></i>Toplam Arac</div>
+    <div class="stat">
+        <div class="stat-value">@ViewBag.TotalCars</div>
+        <div class="stat-label"><i class="fa-solid fa-car mr-1"></i>Toplam araç</div>
     </div>
-    <div class="bg-white dark:bg-gray-800 rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-gray-700 text-center">
-        <div class="text-4xl font-black text-indigo-500 mb-1">@ViewBag.TotalReviews</div>
-        <div class="text-sm text-gray-500 dark:text-gray-400 font-medium"><i class="fa-solid fa-star mr-1"></i>Toplam Yorum</div>
+    <div class="stat">
+        <div class="stat-value">@ViewBag.TotalReviews</div>
+        <div class="stat-label"><i class="fa-solid fa-star mr-1"></i>Toplam yorum</div>
     </div>
-    <div class="bg-white dark:bg-gray-800 rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-gray-700 text-center">
-        <div class="text-4xl font-black text-red-500 mb-1">@ViewBag.TotalGarage</div>
-        <div class="text-sm text-gray-500 dark:text-gray-400 font-medium"><i class="fa-solid fa-heart mr-1"></i>Garaj Kaydi</div>
+    <div class="stat">
+        <div class="stat-value">@ViewBag.TotalGarage</div>
+        <div class="stat-label"><i class="fa-solid fa-heart mr-1"></i>Garaj kaydı</div>
     </div>
-    <div class="bg-white dark:bg-gray-800 rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-gray-700 text-center">
-        <div class="text-4xl font-black text-yellow-500 mb-1">@ViewBag.AvgScore</div>
-        <div class="text-sm text-gray-500 dark:text-gray-400 font-medium"><i class="fa-solid fa-gauge mr-1"></i>Ort. Puan</div>
-    </div>
-</div>
-
-<!-- Grafikler -->
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
-    <!-- Segment Dagilimi -->
-    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6" data-aos="fade-up">
-        <h2 class="text-lg font-bold text-gray-800 dark:text-white mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-chart-pie text-indigo-500"></i> Segment Dagilimi
-        </h2>
-        <div class="relative h-64">
-            <canvas id="segmentChart"></canvas>
-        </div>
-    </div>
-    <!-- Marka Guvenilirlik -->
-    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6" data-aos="fade-up">
-        <h2 class="text-lg font-bold text-gray-800 dark:text-white mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-chart-bar text-blue-500"></i> Marka Bazli Ort. Guvenilirlik
-        </h2>
-        <div class="relative h-64">
-            <canvas id="brandChart"></canvas>
-        </div>
+    <div class="stat">
+        <div class="stat-value">@ViewBag.AvgScore</div>
+        <div class="stat-label"><i class="fa-solid fa-gauge mr-1"></i>Ort. puan</div>
     </div>
 </div>
 
-<!-- Top 5 + En Yuksek Maliyet -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-    <!-- En Guvenilir 5 Arac -->
-    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden" data-aos="fade-up">
-        <div class="bg-gradient-to-r from-green-500 to-teal-500 p-4">
-            <h2 class="text-lg font-bold text-white flex items-center gap-2">
-                <i class="fa-solid fa-shield-halved"></i> En Guvenilir 5 Arac
-            </h2>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
+    <div class="card card-pad" data-aos="fade-up">
+        <h2 class="section-title mb-4 flex items-center gap-2"><i class="fa-solid fa-chart-pie text-content-muted"></i> Segment dağılımı</h2>
+        <div class="relative h-64"><canvas id="segmentChart"></canvas></div>
+    </div>
+    <div class="card card-pad" data-aos="fade-up">
+        <h2 class="section-title mb-4 flex items-center gap-2"><i class="fa-solid fa-chart-bar text-content-muted"></i> Marka bazlı ort. güvenilirlik</h2>
+        <div class="relative h-64"><canvas id="brandChart"></canvas></div>
+    </div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+    <div class="card overflow-hidden" data-aos="fade-up">
+        <div class="px-5 py-4 border-b border-border flex items-center gap-2">
+            <i class="fa-solid fa-shield-halved text-content-muted"></i>
+            <h2 class="section-title">En güvenilir 5 araç</h2>
         </div>
         <div class="p-4 space-y-3">
             @if (ViewBag.Top5Cars != null)
@@ -77,17 +55,15 @@
                 int tr = 1;
                 foreach (var c in ViewBag.Top5Cars)
                 {
-                    <div class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-xl border border-gray-100 dark:border-gray-700">
+                    <div class="flex items-center justify-between p-3 rounded-lg bg-surface-2 border border-border">
                         <div class="flex items-center gap-3">
-                            <span class="w-7 h-7 rounded-full bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 font-black text-sm flex items-center justify-center">@tr</span>
+                            <span class="w-7 h-7 rounded-full bg-brand-50 text-brand-700 dark:bg-brand-500/15 dark:text-brand-300 font-semibold text-sm flex items-center justify-center">@tr</span>
                             <div>
-                                <p class="font-semibold text-gray-800 dark:text-gray-200 text-sm">@c.Name</p>
-                                <p class="text-xs text-gray-400">@c.Segment Segmenti</p>
+                                <p class="font-medium text-content text-sm">@c.Name</p>
+                                <p class="text-xs text-content-muted">@c.Segment segmenti</p>
                             </div>
                         </div>
-                        <span class="text-sm font-black text-yellow-600 bg-yellow-50 dark:bg-yellow-900/20 px-3 py-1 rounded-full">
-                            <i class="fa-solid fa-star mr-1"></i>@c.Score
-                        </span>
+                        <span class="badge-warning"><i class="fa-solid fa-star"></i>@c.Score</span>
                     </div>
                     tr++;
                 }
@@ -95,12 +71,10 @@
         </div>
     </div>
 
-    <!-- En Yuksek Maliyet -->
-    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-        <div class="bg-gradient-to-r from-red-500 to-orange-500 p-4">
-            <h2 class="text-lg font-bold text-white flex items-center gap-2">
-                <i class="fa-solid fa-screwdriver-wrench"></i> En Yuksek Bakim Maliyeti
-            </h2>
+    <div class="card overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+        <div class="px-5 py-4 border-b border-border flex items-center gap-2">
+            <i class="fa-solid fa-screwdriver-wrench text-content-muted"></i>
+            <h2 class="section-title">En yüksek bakım maliyeti</h2>
         </div>
         <div class="p-4 space-y-3">
             @if (ViewBag.HighCostCars != null)
@@ -108,15 +82,15 @@
                 int hc = 1;
                 foreach (var c in ViewBag.HighCostCars)
                 {
-                    <div class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-xl border border-gray-100 dark:border-gray-700">
+                    <div class="flex items-center justify-between p-3 rounded-lg bg-surface-2 border border-border">
                         <div class="flex items-center gap-3">
-                            <span class="w-7 h-7 rounded-full bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400 font-black text-sm flex items-center justify-center">@hc</span>
+                            <span class="w-7 h-7 rounded-full bg-red-50 text-red-700 dark:bg-red-500/15 dark:text-red-300 font-semibold text-sm flex items-center justify-center">@hc</span>
                             <div>
-                                <p class="font-semibold text-gray-800 dark:text-gray-200 text-sm">@c.Name</p>
-                                <p class="text-xs text-gray-400">@c.Segment Segmenti</p>
+                                <p class="font-medium text-content text-sm">@c.Name</p>
+                                <p class="text-xs text-content-muted">@c.Segment segmenti</p>
                             </div>
                         </div>
-                        <span class="text-sm font-bold text-red-600 bg-red-50 dark:bg-red-900/20 px-3 py-1 rounded-full">~@c.Cost EUR/Yil</span>
+                        <span class="badge bg-red-50 text-red-700 dark:bg-red-500/15 dark:text-red-300">~@c.Cost € / yıl</span>
                     </div>
                     hc++;
                 }
@@ -125,43 +99,39 @@
     </div>
 </div>
 
-<!-- Marka Detay Tablosu -->
-<div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden mb-6" data-aos="fade-up">
-    <div class="p-5 border-b border-gray-100 dark:border-gray-700">
-        <h2 class="text-lg font-bold text-gray-800 dark:text-white flex items-center gap-2">
-            <i class="fa-solid fa-table text-blue-500"></i> Marka Ozet Tablosu
-        </h2>
+<div class="card overflow-hidden mb-6" data-aos="fade-up">
+    <div class="p-5 border-b border-border flex items-center gap-2">
+        <i class="fa-solid fa-table text-content-muted"></i>
+        <h2 class="section-title">Marka özet tablosu</h2>
     </div>
     <div class="overflow-x-auto">
         <table class="w-full text-sm text-left">
-            <thead class="bg-gray-50 dark:bg-gray-900 text-gray-500 dark:text-gray-400 uppercase text-xs tracking-wider">
+            <thead class="bg-surface-2 text-content-muted uppercase text-xs tracking-wider">
                 <tr>
                     <th class="px-3 sm:px-6 py-3">#</th>
                     <th class="px-3 sm:px-6 py-3">Marka</th>
-                    <th class="px-3 sm:px-6 py-3 hidden sm:table-cell">Araç Sayısı</th>
-                    <th class="px-3 sm:px-6 py-3">Ort. Güvenilirlik</th>
-                    <th class="px-3 sm:px-6 py-3 hidden md:table-cell">Ort. Bakım/Yıl</th>
+                    <th class="px-3 sm:px-6 py-3 hidden sm:table-cell">Araç sayısı</th>
+                    <th class="px-3 sm:px-6 py-3">Ort. güvenilirlik</th>
+                    <th class="px-3 sm:px-6 py-3 hidden md:table-cell">Ort. bakım/yıl</th>
                 </tr>
             </thead>
-            <tbody class="divide-y divide-gray-100 dark:divide-gray-700">
+            <tbody class="divide-y divide-border">
                 @if (ViewBag.BrandLabels != null)
                 {
                     var labels = (List<string>)ViewBag.BrandLabels;
                     var scores = (List<double>)ViewBag.BrandAvgScores;
                     var counts = (List<int>)ViewBag.BrandCarCounts;
-                    var costs  = (List<int>)ViewBag.BrandAvgCosts;
+                    var costs = (List<int>)ViewBag.BrandAvgCosts;
                     for (int i = 0; i < labels.Count; i++)
                     {
-                        <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
-                            <td class="px-3 sm:px-6 py-4 text-gray-400 font-medium">@(i + 1)</td>
-                            <td class="px-3 sm:px-6 py-4 font-bold text-gray-800 dark:text-gray-200">@labels[i]</td>
-                            <td class="px-3 sm:px-6 py-4 text-gray-600 dark:text-gray-400 hidden sm:table-cell">@counts[i] araç</td>
+                        <tr class="hover:bg-surface-2 transition-colors">
+                            <td class="px-3 sm:px-6 py-4 text-content-muted font-medium">@(i + 1)</td>
+                            <td class="px-3 sm:px-6 py-4 font-semibold text-content">@labels[i]</td>
+                            <td class="px-3 sm:px-6 py-4 text-content-muted hidden sm:table-cell">@counts[i] araç</td>
                             <td class="px-3 sm:px-6 py-4">
-                                <span class="font-bold text-yellow-600">
-                                    <i class="fa-solid fa-star mr-1"></i>@scores[i]
-                                </span>
+                                <span class="font-semibold text-amber-600 dark:text-amber-400"><i class="fa-solid fa-star mr-1"></i>@scores[i]</span>
                             </td>
-                            <td class="px-3 sm:px-6 py-4 text-red-500 font-medium hidden md:table-cell">~@costs[i] EUR</td>
+                            <td class="px-3 sm:px-6 py-4 text-red-500 font-medium hidden md:table-cell">~@costs[i] €</td>
                         </tr>
                     }
                 }
@@ -177,52 +147,31 @@
         const segCounts = @Html.Raw(segCounts);
         const brandLabels = @Html.Raw(brandLabels);
         const brandScores = @Html.Raw(brandScores);
+        const dark = document.documentElement.classList.contains('dark');
+        const tick = dark ? '#94a3b8' : '#64748b';
+        const grid = dark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)';
 
-        const palette = ['#6366f1','#3b82f6','#06b6d4','#10b981','#f59e0b','#ef4444','#8b5cf6','#ec4899','#14b8a6','#f97316'];
+        // Marka rengi tonları + nötr gri destek tonları
+        const palette = ['#2563eb', '#3b76f6', '#6096fa', '#93bbfd', '#64748b', '#94a3b8', '#1d4ed8', '#1e40af', '#bfd7fe', '#cbd5e1'];
 
-        // Segment Pasta Grafigi
         new Chart(document.getElementById('segmentChart'), {
             type: 'doughnut',
-            data: {
-                labels: segLabels,
-                datasets: [{
-                    data: segCounts,
-                    backgroundColor: palette,
-                    borderWidth: 2,
-                    borderColor: '#fff'
-                }]
-            },
+            data: { labels: segLabels, datasets: [{ data: segCounts, backgroundColor: palette, borderWidth: 2, borderColor: dark ? '#0f172a' : '#ffffff' }] },
             options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: { position: 'right', labels: { font: { size: 12 } } }
-                }
+                responsive: true, maintainAspectRatio: false,
+                plugins: { legend: { position: 'right', labels: { font: { size: 12 }, color: dark ? '#e2e8f0' : '#1e293b' } } }
             }
         });
 
-        // Marka Bar Grafigi
         new Chart(document.getElementById('brandChart'), {
             type: 'bar',
-            data: {
-                labels: brandLabels,
-                datasets: [{
-                    label: 'Ort. Guvenilirlik Puani',
-                    data: brandScores,
-                    backgroundColor: '#6366f1cc',
-                    borderColor: '#6366f1',
-                    borderWidth: 1,
-                    borderRadius: 6
-                }]
-            },
+            data: { labels: brandLabels, datasets: [{ label: 'Ort. güvenilirlik puanı', data: brandScores, backgroundColor: 'rgba(37,99,235,0.8)', borderColor: '#2563eb', borderWidth: 1, borderRadius: 6 }] },
             options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                indexAxis: 'y',
+                responsive: true, maintainAspectRatio: false, indexAxis: 'y',
                 plugins: { legend: { display: false } },
                 scales: {
-                    x: { min: 0, max: 10, ticks: { font: { size: 11 } } },
-                    y: { ticks: { font: { size: 11 } } }
+                    x: { min: 0, max: 10, ticks: { font: { size: 11 }, color: tick }, grid: { color: grid } },
+                    y: { ticks: { font: { size: 11 }, color: tick }, grid: { display: false } }
                 }
             }
         });
