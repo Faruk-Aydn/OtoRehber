@@ -33,6 +33,9 @@ public class SmokeTests : IClassFixture<CustomWebApplicationFactory>
     [InlineData("/offline.html")]
     [InlineData("/robots.txt")]
     [InlineData("/sitemap.xml")]
+    [InlineData("/araclar")]
+    [InlineData("/araclar?brand=Toyota&sortBy=price_asc")]
+    [InlineData("/araclar?page=999")]
     public async Task Get_PublicPages_ReturnsSuccess(string url)
     {
         var res = await _client.GetAsync(url);

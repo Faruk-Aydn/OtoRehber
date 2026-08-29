@@ -73,6 +73,7 @@ namespace OtoRehber.Controllers
             }
 
             Url("/", "1.0", "daily");
+            Url("/araclar", "0.9", "daily");
             Url("/Compare", "0.8", "weekly");
             Url("/AiWizard", "0.8", "weekly");
             Url("/Stats", "0.6", "weekly");

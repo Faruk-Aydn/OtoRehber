@@ -6,19 +6,65 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 using OtoRehber.Domain.Mappings;
 using OtoRehber.Infrastructure.Data;
+using OtoRehber.Services;
 
 namespace OtoRehber.Controllers
 {
-    // Marka ve segment landing sayfaları (/marka/{slug}, /segment/{slug}) — SEO.
+    // /araclar tam katalog + marka/segment landing sayfaları (/marka/{slug}, /segment/{slug}).
     public class CatalogController : Controller
     {
         private readonly OtoRehberDbContext _context;
+        private readonly IMemoryCache _cache;
 
-        public CatalogController(OtoRehberDbContext context)
+        public CatalogController(OtoRehberDbContext context, IMemoryCache cache)
         {
             _context = context;
+            _cache = cache;
+        }
+
+        // GET: /araclar  — filtre + sıralama + sayfalama
+        [HttpGet("/araclar")]
+        public async Task<IActionResult> Index(string? searchQuery, string? segment, string? brand, string? sortBy, int page = 1)
+        {
+            const int pageSize = 12;
+
+            var query = CarCatalogQuery.ApplyFilters(_context.Cars.AsNoTracking(), searchQuery, segment, brand);
+            var total = await query.CountAsync();
+            var totalPages = Math.Max(1, (int)Math.Ceiling(total / (double)pageSize));
+            page = Math.Clamp(page, 1, totalPages);
+
+            var cars = await CarCatalogQuery.ApplySort(query, sortBy)
+                .Skip((page - 1) * pageSize).Take(pageSize)
+                .ToListAsync();
+
+            await FillRatingsAsync(cars.Select(c => c.Id).ToList());
+
+            ViewBag.Brands = await _cache.GetOrCreateAsync(HomeController.CacheKeyBrands, async e =>
+            {
+                e.AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5);
+                return await _context.Cars.AsNoTracking().Select(c => c.Brand).Distinct().OrderBy(b => b).ToListAsync();
+            });
+            ViewBag.Segments = await _cache.GetOrCreateAsync("catalog:segments", async e =>
+            {
+                e.AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10);
+                return await _context.Cars.AsNoTracking()
+                    .Where(c => c.Segment != null && c.Segment != "")
+                    .Select(c => c.Segment).Distinct().OrderBy(s => s).ToListAsync();
+            });
+
+            ViewData["Title"] = "Tüm Araçlar";
+            ViewData["Description"] = "OtoRehber'deki tüm araçları markaya, segmente ve fiyata göre filtreleyin; güvenilirlik puanları ve kullanıcı yorumlarıyla karşılaştırın.";
+            ViewBag.Total = total;
+            ViewBag.Page = page;
+            ViewBag.TotalPages = totalPages;
+            ViewData["CurrentSearch"] = searchQuery;
+            ViewData["CurrentSegment"] = segment;
+            ViewData["CurrentBrand"] = brand;
+            ViewData["CurrentSort"] = sortBy;
+            return View(cars.ToListDto());
         }
 
         // "Volkswagen" → "volkswagen", "Alfa Romeo" → "alfa-romeo", Türkçe karakterleri sadeleştirir.

@@ -29,36 +29,10 @@ namespace OtoRehber.Controllers
 
         public async Task<IActionResult> Index(string searchQuery, string segment, string brand, string sortBy, int page = 1)
         {
-            var carsQuery = _context.Cars.AsNoTracking().AsQueryable();
-
-            // Arama (Türkçe kültür bug'ı için ToLowerInvariant; kolon tarafı SQL LOWER'a çevrilir)
-            if (!string.IsNullOrWhiteSpace(searchQuery))
-            {
-                var lowerSearch = searchQuery.Trim().ToLowerInvariant();
-                carsQuery = carsQuery.Where(c => c.Brand.ToLower().Contains(lowerSearch) || c.ModelName.ToLower().Contains(lowerSearch));
-            }
-
-            // Segment Filtresi
-            if (!string.IsNullOrEmpty(segment))
-            {
-                carsQuery = carsQuery.Where(c => c.Segment == segment);
-            }
-
-            // Marka Filtresi
-            if (!string.IsNullOrEmpty(brand))
-            {
-                carsQuery = carsQuery.Where(c => c.Brand == brand);
-            }
-
-            // Sıralama
-            carsQuery = sortBy switch
-            {
-                "price_asc" => carsQuery.OrderBy(c => c.MinPrice),
-                "price_desc" => carsQuery.OrderByDescending(c => c.MinPrice),
-                "score_desc" => carsQuery.OrderByDescending(c => c.ReliabilityScore),
-                "score_asc" => carsQuery.OrderBy(c => c.ReliabilityScore),
-                _ => carsQuery.OrderByDescending(c => c.Id) // Varsayılan: En son eklenenler
-            };
+            // Filtre + sıralama /araclar ile ortak (Services/CarCatalogQuery).
+            var carsQuery = OtoRehber.Services.CarCatalogQuery.ApplyFilters(
+                _context.Cars.AsNoTracking(), searchQuery, segment, brand);
+            carsQuery = OtoRehber.Services.CarCatalogQuery.ApplySort(carsQuery, sortBy);
 
             // Sayfalama (Pagination) — sınır kontrolü
             const int pageSize = 12;

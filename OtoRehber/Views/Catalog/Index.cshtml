@@ -1,0 +1,81 @@
+@model IEnumerable<OtoRehber.Domain.DTOs.CarListDto>
+@{
+    ViewData["Ratings"] = ViewBag.CarRatings;
+    ViewData["ShowCompare"] = false;
+    var cs = ViewData["CurrentSearch"] as string;
+    var cseg = ViewData["CurrentSegment"] as string;
+    var cbr = ViewData["CurrentBrand"] as string;
+    var csort = ViewData["CurrentSort"] as string;
+}
+
+<div class="max-w-7xl mx-auto py-8 px-4">
+    <div class="flex items-end justify-between flex-wrap gap-3 mb-6">
+        <div>
+            <h1 class="text-3xl font-extrabold text-gray-900 dark:text-white">Tüm Araçlar</h1>
+            <p class="text-gray-500 dark:text-gray-400 mt-1">@ViewBag.Total araç</p>
+        </div>
+    </div>
+
+    <form method="get" class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-4 mb-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <input type="text" name="searchQuery" value="@cs" placeholder="Marka veya model ara"
+               class="p-2.5 border border-gray-300 dark:border-gray-600 dark:bg-gray-900 rounded-lg text-sm focus:ring-primary focus:border-primary" />
+        <select name="brand" onchange="this.form.submit()" class="p-2.5 border border-gray-300 dark:border-gray-600 dark:bg-gray-900 rounded-lg text-sm">
+            <option value="">Tüm markalar</option>
+            @if (ViewBag.Brands != null)
+            {
+                foreach (var b in ViewBag.Brands)
+                {
+                    <option value="@b" selected="@(cbr == (string)b)">@b</option>
+                }
+            }
+        </select>
+        <select name="segment" onchange="this.form.submit()" class="p-2.5 border border-gray-300 dark:border-gray-600 dark:bg-gray-900 rounded-lg text-sm">
+            <option value="">Tüm segmentler</option>
+            @if (ViewBag.Segments != null)
+            {
+                foreach (var s in ViewBag.Segments)
+                {
+                    <option value="@s" selected="@(cseg == (string)s)">@s segmenti</option>
+                }
+            }
+        </select>
+        <div class="flex gap-2">
+            <select name="sortBy" onchange="this.form.submit()" class="flex-1 p-2.5 border border-gray-300 dark:border-gray-600 dark:bg-gray-900 rounded-lg text-sm">
+                <option value="" selected="@string.IsNullOrEmpty(csort)">En yeni</option>
+                <option value="score_desc" selected="@(csort == "score_desc")">Güvenilirlik ↓</option>
+                <option value="price_asc" selected="@(csort == "price_asc")">Fiyat ↑</option>
+                <option value="price_desc" selected="@(csort == "price_desc")">Fiyat ↓</option>
+            </select>
+            <button type="submit" class="bg-primary hover:bg-blue-700 text-white font-semibold px-4 rounded-lg text-sm">Filtrele</button>
+        </div>
+    </form>
+
+    @if (Model.Any())
+    {
+        <div id="car-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            @foreach (var car in Model)
+            {
+                <partial name="_CarCard" model="car" />
+            }
+        </div>
+    }
+    else
+    {
+        <div class="text-center py-16 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700">
+            <i class="fa-solid fa-car-burst text-3xl text-gray-400 mb-3"></i>
+            <p class="text-gray-500">Filtrenize uygun araç bulunamadı.</p>
+            <a href="/araclar" class="mt-4 inline-block text-primary font-semibold hover:underline">Filtreleri temizle</a>
+        </div>
+    }
+
+    @if (ViewBag.TotalPages > 1)
+    {
+        <div class="mt-8 flex justify-center gap-2 flex-wrap">
+            @for (int i = 1; i <= ViewBag.TotalPages; i++)
+            {
+                <a asp-route-page="@i" asp-route-searchQuery="@cs" asp-route-brand="@cbr" asp-route-segment="@cseg" asp-route-sortBy="@csort"
+                   class="px-3 py-1.5 rounded-lg text-sm font-medium @(i == ViewBag.Page ? "bg-primary text-white" : "bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:border-primary")">@i</a>
+            }
+        </div>
+    }
+</div>
