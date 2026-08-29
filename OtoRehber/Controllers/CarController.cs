@@ -215,33 +215,5 @@ namespace OtoRehber.Controllers
             var count = await _context.ReviewLikes.CountAsync(l => l.ReviewId == req.ReviewId);
             return Json(new { count, voted });
         }
-
-        public async Task<IActionResult> Compare(int id1, int id2)
-        {
-            var cars = await _context.Cars
-                .AsNoTracking()
-                .AsSplitQuery()
-                .Include(c => c.ChronicIssues)
-                .Include(c => c.ProsConsList)
-                .Include(c => c.MileageMilestones)
-                .Where(c => c.Id == id1 || c.Id == id2)
-                .ToListAsync();
-
-            var car1 = cars.FirstOrDefault(c => c.Id == id1);
-            var car2 = cars.FirstOrDefault(c => c.Id == id2);
-
-            if (car1 == null || car2 == null)
-            {
-                return NotFound("Karşılaştırılacak araçlardan biri veya ikisi bulunamadı.");
-            }
-
-            var viewModel = new CarCompareViewModel
-            {
-                Car1 = car1,
-                Car2 = car2
-            };
-
-            return View(viewModel);
-        }
     }
 }

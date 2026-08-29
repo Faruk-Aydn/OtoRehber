@@ -22,7 +22,8 @@ araç inceleme / karşılaştırma / öneri platformudur.
 - ASP.NET Core 8 MVC (SDK 9 ile derleniyor, `TargetFramework=net8.0`)
 - EF Core 8 + **SQLite** (→ Faz 1'de PostgreSQL'e geçilecek)
 - ASP.NET Core Identity (cookie auth, `Admin` rolü)
-- Tailwind (build-time), FontAwesome, AOS, Chart.js (hepsi self-host); Car↔DTO dönüşümü elle (`CarMappings`)
+- Tailwind (build-time, token/bileşen sistemi + Inter self-host), FontAwesome, AOS, Chart.js, marked+DOMPurify (hepsi self-host); Car↔DTO dönüşümü elle (`CarMappings`)
+- Tasarım sistemi: `tailwind.config.js` `brand` ölçeği + CSS değişkeni token'ları (`surface`/`content`/`border` — `app.src.css`); `@layer components` (`.btn*`/`.card*`/`.input`/`.select`/`.badge*`/`.chip`/`.stat`/`.section-title`/`.prose-oto`). View'larda `dark:` tekrarı minimal.
 - Google Gemini API (`GeminiApiKey`), YoutubeExplode
 
 ### Çözüm yapısı
@@ -267,9 +268,10 @@ Development: `dotnet user-secrets`. Production: environment variable.
 ## FAZ 3 — Ürün geliştirme
 
 ### 3.1 Sayfalar
-- [x] Ayrı katalog sayfası `/araclar` — `CatalogController.Index`: filtre (arama/marka/segment) + sıralama + sayfalama,
-  `_CarCard` grid, navbar + sitemap'e eklendi. Filtre/sıralama mantığı Home ile ortak (`Services/CarCatalogQuery`).
-  (Home hâlâ hero + grid; tam "landing" ayrımı sonra)
+- [x] Ayrı katalog sayfası `/araclar` — `CatalogController.Index`: **zengin filtre paneli** (sticky sol panel:
+  arama/marka/segment/fiyat aralığı/min. güvenilirlik/sıralama), aktif filtre çipleri (× ile kaldır) + "tümünü temizle",
+  sonuç sayacı, sayfalama tüm parametreleri taşır. `_CarCard` grid. Filtre mantığı `Services/CarCatalogQuery`
+  (`priceMin`/`priceMax`/`minScore` dahil). Home hero → sade tek kutulu hızlı arama (`/araclar`'a gider).
 - [x] Tam arama sonuçları = `/araclar?searchQuery=...`
 - [x] Kullanıcı hesap ayarları — `ManageController` (`/Manage`): profil özeti (e-posta + yorum/garaj sayısı),
   şifre değiştir (`RefreshSignIn`), e-posta değiştir (yeni adrese doğrulama linki + `ConfirmEmailChange`),
@@ -364,6 +366,11 @@ Development: `dotnet user-secrets`. Production: environment variable.
 | 2026-08-29 | 3.2 | Fiyat geçmişi — `CarPriceHistory` DbSet (migration `PriceHistoryDbSet`) + admin fiyat girişi + araç detayında Chart.js grafik | df80c83 |
 | 2026-08-29 | 3.2 | Çoklu görsel galerisi — `CarImage` (migration `CarImageGallery`) + admin çoklu yükleme/kapak + araç detay thumbnail galeri | eb18b20 |
 | 2026-08-29 | 3.2 | Garaj fiyat bildirimi — admin fiyat kaydı sonrası garajında o araç olan kullanıcılara e-posta | 7c4c30a |
+| 2026-08-29 | tasarım | **Profesyonelleştirme turu** — renk token sistemi + Inter self-host + `@layer components` bileşenleri (A); tüm public view'lar yeniden yazıldı, gradient/blob/glassmorphism kaldırıldı, dark-tema kutuları düzeltildi (B) | 507b755…(B commit'leri) |
+| 2026-08-29 | 3.1 filtre | `/araclar` zengin filtre paneli (sticky sol panel, fiyat aralığı, min. güvenilirlik, aktif filtre çipleri, sonuç sayacı) + `CarCatalogQuery` genişletildi (priceMin/priceMax/minScore) + Home hero → sade hızlı arama | (C commit) |
+| 2026-08-29 | 3.1 segment | Segment sabit listeye (`OtoRehber.Domain.CarSegments`) — admin Create/Edit dropdown + server validation + migration `NormalizeCarSegment` (prod veri düzeltme) | (C commit) |
+| 2026-08-29 | 3.2 sihirbaz | AI Sihirbaz yeniden yazıldı: bütçe aralığı + kasa/vites/yakıt chip radyo + çoklu öncelik checkbox + serbest metin; `AiCarDataService` prompt yumuşatıldı (DB varsa işaretle, yoksa piyasadan tamamla); Result'ta eşleşen DB araç kartları | (D commit) |
+| 2026-08-29 | denetim | Ölü kod: `CarController.Compare` + `Views/Car/Compare.cshtml` silindi; AI chat widget markdown → marked+DOMPurify (global); `_CarGrid` ortak partial | (E commit) |
 | 2026-08-27 | 1.3, 1.10 | Railway `DATABASE_URL` ayrıştırma + Docker healthcheck düzeltme + deploy rehberi | 93c5dbb |
 | 2026-08-27 | deploy | Postgres bağlantı çözümü + `railway.json` | 1e7fb51 |
 | 2026-08-27 | deploy | `PORT` env dinleme + healthcheck timeout | 1c974f8 |
@@ -414,14 +421,17 @@ Development: `dotnet user-secrets`. Production: environment variable.
 
 **Faz 2 tamamlandı (2.1–2.8, responsive). Faz 3'e geçildi (3.3 SEO yapıldı).**
 
-### Bir sonraki oturumda İLK yapılacak: prod doğrulama
-Bu commit Railway'e deploy oldu mu kontrol et:
+### Bir sonraki oturumda İLK yapılacak: prod doğrulama (profesyonelleştirme turu)
+Railway'e deploy oldu mu kontrol et:
 - `https://otorehber-production.up.railway.app/health` → `Healthy`
-- `/`, `/Stats`, `/Compare`, `/Account/Login`, `/AdminCar` → 200
-- DevTools → Network: `cdn.`/`unpkg`/`jsdelivr` isteği **olmamalı**, `/lib/...` 200, FA ikonları görünür
-- CSP ihlali konsol hatası yok
-Sorun varsa: en olası şüpheli `wwwroot/lib/` dosyalarının `.gitignore` / `.dockerignore` ile
-elenmesi veya `asp-append-version` + static file cache. `.dockerignore`'da `wwwroot` hariç tutulmadığından emin ol.
+- `/`, `/araclar`, `/Stats`, `/Compare`, `/AiWizard`, `/Account/Login` → 200; iki tema da düzgün
+- **Inter yazı tipi**: `/lib/fonts/inter-latin.woff2` 200, sayfa Inter ile render; CSP `font-src` ihlali yok
+- `/araclar` filtre paneli: fiyat + segment + min. puan uygula → doğru sonuç + çipler; segment `C` eşleşiyor
+- Migration log: `Applying migration ..._NormalizeCarSegment` (prod'da AI-import araçları varsa segmentleri düzelir)
+- AI Sihirbaz: yeni form (bütçe aralığı + chip'ler + çoklu öncelik) → sonuç render + eşleşen kartlar
+- AI chat widget: markdown düzgün render (marked+DOMPurify global), CSP konsol hatası yok
+- Gradient/blob/glassmorphism kalmadı; dark tema kartları kırık değil
+Sorun varsa: `wwwroot/lib/fonts/` `.dockerignore`/`.gitignore` ile elenmiş olabilir; `app.min.css` commit'lendi mi.
 
 ---
 
