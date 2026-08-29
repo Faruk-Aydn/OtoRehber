@@ -1,0 +1,1374 @@
+[
+  {
+    "brand": "Toyota",
+    "modelName": "Corolla (E120 \"Sol Kasa\", 2002-2007)",
+    "productionYears": "2002-2007",
+    "engine": "1.6 VVT-i 110 HP (3ZZ-FE) + 4 İleri Tam Otomatik (Aisin Super ECT)",
+    "segment": "C",
+    "reliabilityScore": 9.4,
+    "minPrice": 340000,
+    "maxPrice": 600000,
+    "estimatedMaintenanceCostEUR": 220,
+    "expertSummary": "Halk arasında \"sol kasa\" diye bilinen E120 Corolla, ikinci el piyasasında sorunsuzluğun ölçüsü kabul edilir. 3ZZ-FE 1.6 benzinli motor zincir triger kullanır (kayış değişimi derdi yok), düşük devirde tork verir ve LPG'ye çok uyumludur. Buradaki 4 ileri Aisin tam otomatik şanzıman tork konvertörlüdür; sarsıntısız, geri kaydırmaz ve düzenli yağ değişimiyle 400.000 km'yi rahat görür. Teknik olarak eski (4 vites, ESP çoğu pakette yok, iç plastikler sert) ama mekanik olarak neredeyse ölümsüzdür. Günlük dille: \"Bin, çevir, git; yolda kalma diye bir kelime yok.\" Şehir içi + kısa yol aile kullanımında, ilk otomobilini alan veya masrafsızlık isteyen için hâlâ en güvenli seçeneklerden biri. Beklenti performans veya modern donanımsa hayal kırıklığı yaratır.",
+    "userFeedbackSummary": "Forumlarda en sık geçen cümle \"pişman olmazsın\". Kullanıcılar 200-300 bin km'de motorun yağ yakmadan çalıştığını, otomatik şanzımanın hiç arıza yapmadığını söylüyor. Şikayetler kozmetik: direksiyon açıları zayıf olduğu için rot-balans hassas, ön kaportada taş izi çok oluyor, klima kompresörü yaşa bağlı zayıflayabiliyor, gıcırdayan iç plastikler ve soluk far camları klasik. LPG'li örneklerde subap ayarı ve yağ bakımının düzenli yapıldığından emin olun.",
+    "chronicIssues": [
+      {
+        "title": "Ateşleme bobini ve buji arızası (tekleme)",
+        "description": "Yaşlanan bobinlerden biri zayıflayınca rölantide titreme ve gaza geç tepki olur; motor arıza lambası yanar. 4 bobin ayrı ayrı çalışır, genelde biri gider. Orijinal Denso bobin + iridyum buji ile kalıcı çözülür. LPG'li araçlarda daha erken gelir.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 120,
+        "affectedYears": "2002-2007"
+      },
+      {
+        "title": "Otomatik şanzıman yağının hiç değişmemiş olması",
+        "description": "Aisin şanzıman sağlamdır ama 'ömürlük yağ' efsanesi yüzünden çoğu araçta 200.000 km boyunca yağ değişmemiştir. Bu araçlarda geç vites atma / hafif darbe başlar. Alırken pan (karter) açtırıp yağ+filtre yaptırmak, gerekiyorsa yağ devri (flush değil) yapmak şart.",
+        "severity": "Orta",
+        "estimatedCostEUR": 180,
+        "affectedYears": "2002-2007"
+      },
+      {
+        "title": "Ön salıncak burçları ve rot başı aşınması",
+        "description": "Türkiye yol şartlarında 80-120 bin km'de ön takım sesleri başlar. Parça bol ve ucuz, işçilik kısa. İhmal edilirse lastik düzensiz aşınır.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 90,
+        "affectedYears": "2002-2007"
+      }
+    ],
+    "pros": [
+      "Efsane sorunsuzluk — motor ve otomatik şanzıman arıza yapmıyor",
+      "Zincir triger: kayış değişimi masrafı yok",
+      "Ucuz ve her yerde bulunan yedek parça",
+      "LPG'ye tam uyumlu, düşük yakıt gideri",
+      "Yüksek ve stabil ikinci el değeri"
+    ],
+    "cons": [
+      "Sadece 4 ileri otomatik: otoyolda devir yüksek, yakıt artar",
+      "Sert plastikler, demode iç mekan ve donanım",
+      "Zayıf ses/titreşim yalıtımı",
+      "Çoğu pakette ESP/yan hava yastığı yok"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "İlk ciddi bakım: bujiler, hava/polen filtresi, fren hidroliği, şanzıman yağı kontrolü.", "estimatedCostEUR": 150 },
+      { "mileage": "120.000 km", "expectedIssues": "Ön takım revizyonu (salıncak, rot, rotil), amortisör kontrolü, devirdaim ve V kayışı.", "estimatedCostEUR": 250 },
+      { "mileage": "200.000 km", "expectedIssues": "Otomatik şanzıman yağı+filtre (kaçırıldıysa), su pompası, motor takozları, klima kompresörü kontrolü.", "estimatedCostEUR": 350 }
+    ]
+  },
+  {
+    "brand": "Toyota",
+    "modelName": "Corolla (E120 \"Sol Kasa\", 2002-2007)",
+    "productionYears": "2002-2007",
+    "engine": "1.4 D-4D 90 HP (1ND-TV) + 5 İleri Manuel",
+    "segment": "C",
+    "reliabilityScore": 8.6,
+    "minPrice": 330000,
+    "maxPrice": 560000,
+    "estimatedMaintenanceCostEUR": 260,
+    "expertSummary": "E120 Corolla'nın dizel versiyonu 1.4 D-4D (1ND-TV) motoru kullanır; zincir triger sistemlidir ve blok olarak dayanıklıdır. 90 beygir bugünün standardında zayıf kalır ama 200 Nm civarı torkla şehir içi + orta yol için yeterlidir, 5-5.5 lt/100 km yakar. Common-rail dizel olduğu için enjektör, EGR ve (varsa) DPF bakımına duyarlıdır; kısa mesafe şehir içinde sürekli çalışan araçlarda kurumlanma hızlanır. Günlük dille: \"Motor bloğu sağlam ama dizelin nazlı yerleri var; bakımlısını al, kısa yolda ezme.\" Uzun yol ve yüksek km yapan, yakıt ekonomisi arayan kullanıcı için mantıklı; performans ve modern konfor bekleyen için değil.",
+    "userFeedbackSummary": "Kullanıcılar motor sağlamlığından memnun; 300 bin km üzeri örnekler yaygın. En çok konuşulan konu enjektör revizyonu (genelde 150-200 bin km) ve EGR temizliği. Turbo kelebek (manifold) kurum yapabiliyor. Debriyaj baskı-balata seti orta km'de yenilenmesi gereken normal bir gider. Zincir triger uzun ömürlü ama 250 bin km sonrası ses yaparsa set değişir.",
+    "chronicIssues": [
+      {
+        "title": "Enjektör kalibrasyonu / revizyonu",
+        "description": "Common-rail enjektörler zamanla debisini şaşırır; soğukta zor çalışma, is, tekleme ve yakıt artışı görülür. Kaliteli mazot kullanımı ömrü uzatır. 4 enjektör birden revize edilir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2002-2007"
+      },
+      {
+        "title": "EGR valfi ve emme manifoldu kurumlanması",
+        "description": "Şehir içi düşük devir kullanımında EGR ve emme yolları kurum bağlar; güç kaybı ve arıza lambası yapar. Temizlik veya EGR yenileme çözer.",
+        "severity": "Orta",
+        "estimatedCostEUR": 200,
+        "affectedYears": "2002-2007"
+      },
+      {
+        "title": "Turbo kayıcı kanat (VNT) tıkanması",
+        "description": "Kurumdan dolayı turbonun değişken kanatları sıkışır; rampada üfleme düşer, arıza lambası yanar. Erken müdahale edilirse temizlikle, geç kalınırsa turbo revizyonuyla çözülür.",
+        "severity": "Orta",
+        "estimatedCostEUR": 300,
+        "affectedYears": "2002-2007"
+      }
+    ],
+    "pros": [
+      "Dayanıklı motor bloğu, zincir triger",
+      "Düşük yakıt tüketimi (uzun yolda 4.5-5 lt)",
+      "Yüksek kilometrelere rahat çıkıyor",
+      "Ucuz ve bol yedek parça"
+    ],
+    "cons": [
+      "90 HP bugün zayıf, otoyol geçişleri hantal",
+      "Enjektör/EGR/turbo gibi dizele özgü periyodik masraflar",
+      "Kısa mesafe şehir içi kullanımına uygun değil",
+      "Demode donanım ve yalıtım"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre (kaliteli dizel yağı), yakıt filtresi, hava filtresi, EGR ilk kontrol.", "estimatedCostEUR": 160 },
+      { "mileage": "150.000 km", "expectedIssues": "Enjektör kontrolü/revizyonu, debriyaj seti, EGR temizliği, turbo kelebek kontrolü, ön takım.", "estimatedCostEUR": 550 },
+      { "mileage": "250.000 km", "expectedIssues": "Zincir triger seti (ses varsa), su pompası, turbo revizyonu ihtimali, enjeksiyon pompası kontrolü.", "estimatedCostEUR": 700 }
+    ]
+  },
+  {
+    "brand": "Toyota",
+    "modelName": "Corolla (E140/E150, 2007-2013)",
+    "productionYears": "2007-2013",
+    "engine": "1.6 Dual VVT-i 124 HP (1ZR-FE) + MultiMode (5/6 İleri Robotize Tek Kavrama)",
+    "segment": "C",
+    "reliabilityScore": 7.6,
+    "minPrice": 520000,
+    "maxPrice": 820000,
+    "estimatedMaintenanceCostEUR": 260,
+    "expertSummary": "E140/E150 Corolla motor tarafında yine çok sağlam: 1ZR-FE 1.6 Dual VVT-i zincir trigerli, yağ yakmayan, LPG dostu bir ünite. Sorun motorda değil, buradaki MultiMode (M/M) şanzımanda: aslında manuel bir vites kutusudur, debriyajı ve vites kollarını robot yönetir. Yani otomatik konforu beklerken yarı otomatik alırsınız — kalkışlarda ve düşük hızda 'boşa alıp tekrar bağlama' hissi, yokuşta geri kaçma ve trafikte yorucu davranış olağandır. Yazılım güncel, debriyaj sağlam ve aktüatör bakımlıysa yaşanabilir; değilse sürekli servis dostu olur. Günlük dille: \"Motoru al gözün kapalı, ama M/M vitesi mutlaka test sür — sevmezsen düz viteslisine yönel.\" Otomatik konfor önceliğinse 2010 sonrası 4 ileri tam otomatik versiyonu tercih edin.",
+    "userFeedbackSummary": "Motor için tam not: 250-300 bin km sorunsuz örnekler çok. Şikayetlerin neredeyse tamamı M/M şanzımanda toplanıyor: 'çukur' hissi, kalkışta gecikme, yokuşta geri kaçma, zamanla debriyaj balatasının bitmesi ve aktüatör/pozisyon sensörü arızaları. Debriyaj+baskı+rulman seti + kalibrasyon masrafı orta-yüksek. Yazılım güncellemesi davranışı iyileştiriyor ama karakteri tam değiştirmiyor. Düz vitesliyi alanlar 'keşke baştan bunu alsaymışım' diyor.",
+    "chronicIssues": [
+      {
+        "title": "MultiMode (M/M) debriyaj ve aktüatör aşınması",
+        "description": "Robotlu tek kavrama şanzımanda debriyaj balatası zamanla biter; kalkışta kayma, titreme, vites atarken sarsıntı olur. Debriyaj seti + rulman + aktüatör kontrolü + kalibrasyon gerekir. Dur-kalk trafikte ömür kısalır.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 700,
+        "affectedYears": "2007-2013"
+      },
+      {
+        "title": "M/M vites pozisyon sensörü / hidrolik ünite arızası",
+        "description": "Vites moduna girmeme, N'de kalma, arıza lambası ve 'vitese basın' uyarısı. Sensör veya aktüatör hidroliği yenilenir; yazılım kalibrasyonu şart.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2007-2013"
+      },
+      {
+        "title": "Ön amortisör üst takoz (kule) sesi",
+        "description": "Direksiyon çevirirken 'tık tık' sesi; amortisör üst takozu ve rulmanı aşınır. Yaygın ve ucuz bir onarım.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 120,
+        "affectedYears": "2007-2013"
+      }
+    ],
+    "pros": [
+      "1ZR-FE motor çok dayanıklı, zincir triger, LPG uyumlu",
+      "Geniş bagaj ve arka diz mesafesi",
+      "Düşük yakıt tüketimi ve işletme gideri",
+      "Yedek parça bol ve uygun"
+    ],
+    "cons": [
+      "MultiMode şanzıman otomatik değil; karakteri ve masrafı caydırıcı",
+      "Yokuşta geri kaçma, kalkışta gecikme",
+      "Yol sesi yalıtımı vasat",
+      "Direksiyon hissi ve sürüş dinamiği sıradan"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Bujiler, filtreler, fren hidroliği, M/M şanzıman yağı ve debriyaj kalınlığı kontrolü.", "estimatedCostEUR": 160 },
+      { "mileage": "120.000 km", "expectedIssues": "M/M debriyaj seti ihtimali, ön takım revizyonu, amortisör üst takozları, devirdaim kayışı.", "estimatedCostEUR": 550 },
+      { "mileage": "200.000 km", "expectedIssues": "Su pompası, motor takozları, klima kompresörü, ikinci debriyaj seti ihtimali, ateşleme bobinleri.", "estimatedCostEUR": 450 }
+    ]
+  },
+  {
+    "brand": "Toyota",
+    "modelName": "Corolla (E140/E150, 2010-2013 makyaj)",
+    "productionYears": "2010-2013",
+    "engine": "1.6 Dual VVT-i 124 HP (1ZR-FE) + 4 İleri Tam Otomatik (Aisin, tork konvertörlü)",
+    "segment": "C",
+    "reliabilityScore": 8.9,
+    "minPrice": 560000,
+    "maxPrice": 850000,
+    "estimatedMaintenanceCostEUR": 240,
+    "expertSummary": "2010 makyajıyla Toyota, çok şikayet edilen MultiMode şanzımanı bırakıp E140/E150'nin 1.6 benzinlisine klasik 4 ileri Aisin tam otomatik (tork konvertörlü) şanzımanı geri getirdi. Bu, ikinci el piyasasında bu kasanın en çok aranan ve en huzurlu kombinasyonudur: motor zaten efsane sağlamlıkta (1ZR-FE, zincir triger, LPG dostu), şanzıman ise sarsıntısız, geri kaydırmaz ve arıza yapmaz. Tek 'eksisi' 4 vites olması: otoyolda devir biraz yüksek gezer, 100 km/s'te ~2.700 d/dk, bu da 7-7.5 lt/100 km yakıt demek. Günlük dille: \"Corolla'nın otomatiğini istiyorsan alacağın tam olarak bu; M/M'li olanlardan uzak dur.\" Aile, ilk otomobil, uzun ömür ve düşük stres isteyen herkese uygundur.",
+    "userFeedbackSummary": "Bu versiyon için şikayet bulmak zor. Kullanıcılar 'hiçbir şey yapmadı' diyor; 200 bin km'de bile motor yağ yakmıyor, şanzıman ilk günkü gibi. Eleştiriler: 4 vites yüzünden otoyolda yüksek devir ve yakıt, zayıf ses yalıtımı, sade/demode iç mekan ve donanım. LPG'li örneklerde subap ayarı ve düzenli yağ bakımı sorulmalı. Otomatik şanzıman yağının en az bir kez değişmiş olması artı puandır.",
+    "chronicIssues": [
+      {
+        "title": "Ateşleme bobini zayıflaması",
+        "description": "Yaşa bağlı olarak bobinlerden biri zayıflar; rölantide titreme, gaza tepkisizlik, arıza lambası. Orijinal Denso bobinle kalıcı çözülür, LPG'de daha erken gelebilir.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 110,
+        "affectedYears": "2010-2013"
+      },
+      {
+        "title": "Ön amortisör üst takoz ve rulman sesi",
+        "description": "Direksiyon çevirirken tıkırtı; kule takozu+rulman yenilenir. Ucuz ve yaygın.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 120,
+        "affectedYears": "2010-2013"
+      },
+      {
+        "title": "Otomatik şanzıman yağının ihmal edilmesi",
+        "description": "Şanzıman sağlam ama yağı hiç değişmemiş araçlarda geç ve sert vites geçişi başlar. Alırken pan açtırıp yağ+filtre yaptırmak, iç temizlik yapmak yeterli.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 160,
+        "affectedYears": "2010-2013"
+      }
+    ],
+    "pros": [
+      "Corolla sorunsuzluğu + arıza yapmayan gerçek tam otomatik şanzıman",
+      "1ZR-FE motor: zincir triger, yağ yakmaz, LPG uyumlu",
+      "Çok düşük işletme ve bakım maliyeti",
+      "Geniş iç hacim ve bagaj",
+      "Güçlü ikinci el değeri"
+    ],
+    "cons": [
+      "Sadece 4 ileri: otoyolda yüksek devir ve fazladan yakıt",
+      "Yol ve rüzgar sesi yalıtımı zayıf",
+      "İç tasarım ve donanım demode",
+      "Sürüş keyfi/dinamiği vasat"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Bujiler, filtreler, fren hidroliği, şanzıman yağı kontrolü, LPG'de subap ayarı.", "estimatedCostEUR": 150 },
+      { "mileage": "120.000 km", "expectedIssues": "Ön takım revizyonu, amortisör üst takozları, devirdaim kayışı, şanzıman yağ+filtre.", "estimatedCostEUR": 300 },
+      { "mileage": "200.000 km", "expectedIssues": "Su pompası, motor takozları, klima kompresörü, ateşleme bobinleri, ikinci şanzıman yağ değişimi.", "estimatedCostEUR": 400 }
+    ]
+  },
+  {
+    "brand": "Toyota",
+    "modelName": "Corolla (E170/E180, 2013-2019)",
+    "productionYears": "2013-2019",
+    "engine": "1.6 Valvematic 132 HP (1ZR-FAE) + Multidrive S (7 İleri Sanal Kademeli CVT)",
+    "segment": "C",
+    "reliabilityScore": 9.0,
+    "minPrice": 860000,
+    "maxPrice": 1350000,
+    "estimatedMaintenanceCostEUR": 260,
+    "expertSummary": "E170/E180 Corolla, ikinci el C segmentinde 'sorunsuz otomatik' arayanların ilk durağıdır. 1.6 Valvematic (1ZR-FAE) motor zincir trigerli, 132 HP verir ve LPG ile çok yaygın kullanılır. Buradaki Multidrive S şanzıman bir CVT'dir ama Toyota'ya özgü bir farkla: kalkışta gerçek bir tork konvertörü kullanır (kayış yükü azalır, ömür uzar) ve manuel modda 7 sanal kademe sunar. Bu yüzden Honda/Nissan CVT'lerine göre daha dayanıklı kabul edilir. Sürüşte sakin; sert gazda 'lastik bant' hissi ve motor sesinin devirde asılı kalması olağan. Günlük dille: \"Bas-git, yolda bırakmaz; ama spor bir his arıyorsan burada yok.\" CVT yağının 60.000 km'de bir Toyota WS/CVT-FE spesifikasyonuyla değişmesi ömrü belirler.",
+    "userFeedbackSummary": "Kullanıcı memnuniyeti çok yüksek. 150-200 bin km'de motor ve CVT sorunsuz örnekler standart. Övülen konular: yakıt ekonomisi (şehir dışı 5.5-6 lt), düşük bakım gideri, geniş arka koltuk ve bagaj, sağlam boya/montaj kalitesi. Şikayetler: yol sesi yalıtımı hâlâ zayıf, sert gazda CVT'nin sesi ve tepki gecikmesi, 132 HP'nin dolu araçta yetersiz kalması, direksiyonun hissiz olması. LPG'li örneklerde subap ayarı ve yağ bakımı sorgulanmalı; CVT yağının değişip değişmediği kritik.",
+    "chronicIssues": [
+      {
+        "title": "CVT yağının değiştirilmemiş olması",
+        "description": "Multidrive S dayanıklıdır ama 'ömürlük yağ' söylemi yüzünden çoğu araçta hiç değişmemiştir. Yağ eskiyince kalkışta titreme, ivmede zayıflama ve uzun vadede konik/kayış aşınması olur. 60.000 km periyotla Toyota CVT yağı şart; alırken geçmişi sorun.",
+        "severity": "Orta",
+        "estimatedCostEUR": 200,
+        "affectedYears": "2013-2019"
+      },
+      {
+        "title": "Valvematic aktüatör / mekanizma arızası",
+        "description": "Valvematic sistemi supap kaldırma miktarını değiştirir; nadiren aktüatör motoru veya dişlisi arıza yapar (rölanti dalgalanması, güç kaybı, arıza lambası). Yağ bakımı düzenli olanlarda çok seyrek görülür.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2013-2019"
+      },
+      {
+        "title": "Ön cam su kaçağı / rüzgar sesi ve far buğusu",
+        "description": "Bazı örneklerde ön cam kenarından su sızması ve yüksek hızda rüzgar sesi bildirilir; far içi buğulanma da görülür. Cam fitili/far havalandırması ile çözülür.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 90,
+        "affectedYears": "2013-2016"
+      }
+    ],
+    "pros": [
+      "Toyota sorunsuzluğu + görece dayanıklı CVT (tork konvertörlü kalkış)",
+      "Düşük yakıt tüketimi ve bakım gideri",
+      "Segmentin en geniş arka koltuk ve bagaj hacimlerinden biri",
+      "LPG ile çok yaygın, ucuz işletme",
+      "Yüksek ve istikrarlı ikinci el değeri"
+    ],
+    "cons": [
+      "Yol/rüzgar sesi yalıtımı sınıf ortalamasının altında",
+      "Sert gazda CVT sesi ve tepki gecikmesi",
+      "132 HP tam yüklü kullanımda yetersiz",
+      "Direksiyon ve şasi hissi keyifsiz"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "CVT yağı (Toyota spesifikasyonu), bujiler, filtreler, fren hidroliği, LPG'de subap ayarı.", "estimatedCostEUR": 250 },
+      { "mileage": "120.000 km", "expectedIssues": "İkinci CVT yağı, ön takım revizyonu, devirdaim kayışı, amortisör kontrolü, klima bakımı.", "estimatedCostEUR": 350 },
+      { "mileage": "200.000 km", "expectedIssues": "Su pompası, motor takozları, CVT içi kontrol, ateşleme bobinleri, süspansiyon yenileme.", "estimatedCostEUR": 450 }
+    ]
+  },
+  {
+    "brand": "Toyota",
+    "modelName": "Corolla (E170/E180, 2013-2019)",
+    "productionYears": "2013-2019",
+    "engine": "1.4 D-4D 90 HP + MultiMode M/M (Robotize Tek Kavrama)",
+    "segment": "C",
+    "reliabilityScore": 7.4,
+    "minPrice": 800000,
+    "maxPrice": 1200000,
+    "estimatedMaintenanceCostEUR": 300,
+    "expertSummary": "E170/E180'in dizel seçeneği 1.4 D-4D (90 HP) motordur; blok olarak sağlam, ekonomik (4.5-5 lt/100 km) ama common-rail dizele özgü enjektör/EGR/DPF bakımlarına açıktır. Bu versiyonun otomatik seçeneği yine MultiMode'dur — yani robotlu tek kavrama, gerçek otomatik değil. Vites geçişlerinde 'çukur' hissi, kalkışta gecikme ve yokuşta geri kaçma normaldir; düz vitesli D-4D'ye göre daha çok servis dostudur. Motor + M/M kombinasyonu düzenli bakımla yaşanabilir ama alıcının beklentisi 'binek otomatik konforu' ise hayal kırıklığı olur. Günlük dille: \"Yakıtı süper, motoru tamam; ama vitesi düz vitesin robotlusu — trafik seviyorsan düşün.\" Yüksek km yapan, uzun yol ağırlıklı ve düz vitese sorun etmeyen için mantıklı.",
+    "userFeedbackSummary": "Dizel motor için yorumlar genelde olumlu: yakıt tüketimi çok düşük, yüksek km'lere çıkıyor. Ana şikayet M/M şanzımanın karakteri ve zamanla gelen debriyaj/aktüatör masrafı. Ayrıca DPF'li örneklerde sürekli şehir içi kullananlar rejenerasyon (kendini yakma) sorunları ve is birikimi yaşıyor; ara sıra uzun yol şart. Enjektör revizyonu 150-200 bin km'de gündeme gelebilir.",
+    "chronicIssues": [
+      {
+        "title": "DPF (partikül filtresi) tıkanması",
+        "description": "Kısa mesafe şehir içi kullanımda partikül filtresi dolar, rejenerasyon tamamlanamaz; güç kaybı, arıza lambası ve zorunlu servis rejenerasyonu gerekir. Haftada bir 20-30 dk uzun yol bunu önler. İleri seviyede DPF temizliği veya değişimi pahalıdır.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2013-2019"
+      },
+      {
+        "title": "MultiMode debriyaj ve aktüatör aşınması",
+        "description": "Robotlu tek kavrama debriyajı zamanla biter; kalkışta kayma/titreme, vites atarken sarsıntı. Debriyaj seti + rulman + kalibrasyon gerekir, dur-kalk trafikte ömrü kısalır.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 700,
+        "affectedYears": "2013-2019"
+      },
+      {
+        "title": "EGR valfi ve emme kurumlanması",
+        "description": "Düşük devir şehir kullanımında EGR ve emme manifoldu kurum bağlar; güç kaybı ve arıza lambası. Temizlik veya EGR yenileme çözer.",
+        "severity": "Orta",
+        "estimatedCostEUR": 220,
+        "affectedYears": "2013-2019"
+      }
+    ],
+    "pros": [
+      "Çok düşük yakıt tüketimi (uzun yolda 4.3-4.7 lt)",
+      "Dayanıklı motor bloğu, yüksek km potansiyeli",
+      "Geniş iç hacim ve bagaj",
+      "Toyota bakım ağı ve parça bolluğu"
+    ],
+    "cons": [
+      "MultiMode şanzıman otomatik değil; karakteri ve masrafı",
+      "DPF nedeniyle sürekli şehir içi kullanıma uygun değil",
+      "90 HP tam yüklü ve rampada yetersiz",
+      "Enjektör/EGR/DPF gibi dizele özgü periyodik giderler"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre (dizel yağı), yakıt filtresi, hava filtresi, EGR kontrolü, M/M debriyaj kontrolü.", "estimatedCostEUR": 170 },
+      { "mileage": "150.000 km", "expectedIssues": "Enjektör kontrolü, M/M debriyaj seti ihtimali, DPF temizliği, ön takım revizyonu, turbo kontrolü.", "estimatedCostEUR": 650 },
+      { "mileage": "250.000 km", "expectedIssues": "Zincir triger kontrolü, su pompası, ikinci debriyaj seti, DPF değişim ihtimali, enjeksiyon pompası.", "estimatedCostEUR": 800 }
+    ]
+  },
+  {
+    "brand": "Honda",
+    "modelName": "Civic (FD6, 2006-2012)",
+    "productionYears": "2006-2012",
+    "engine": "1.6 i-VTEC 125 HP (R16A2) + 5 İleri Tam Otomatik (F1 kulakçıklı, tork konvertörlü)",
+    "segment": "C",
+    "reliabilityScore": 8.8,
+    "minPrice": 720000,
+    "maxPrice": 1200000,
+    "estimatedMaintenanceCostEUR": 280,
+    "expertSummary": "FD6 Civic, 'uzay gemisi' iç tasarımı ve iki katlı gösterge paneliyle döneminin en dikkat çeken C segmenti sedanıydı; ikinci elde değerini en iyi koruyan araçlardandır. R16A2 1.6 i-VTEC motor zincir trigerlidir, yüksek devir sever ve yağ bakımı düzenliyse 300 bin km+ gider. Buradaki 5 ileri otomatik şanzıman gerçek tork konvertörlüdür (CVT değil), direksiyondan kulakçıklı, sarsıntısızdır ve düzenli yağ değişimiyle çok sağlamdır. Motor yağ bakımı 8-10 bin km'yi geçmemeli (VTEC mekanizması yağ kalitesine hassas). Günlük dille: \"Hem şık hem sağlam hem otomatiği düzgün — Civic'in en dengeli kasası.\" Aile + günlük + hafif sportif kullanım isteyen için ideal; sert süspansiyon ve düşük yol açıklığı bazılarını rahatsız edebilir.",
+    "userFeedbackSummary": "Kullanıcılar sağlamlık ve prestijden çok memnun; forumlarda 'satmam' diyenler çok. Övülen: otomatik şanzımanın düzgünlüğü, motorun VTEC karakteri, iç mekan tasarımı, boya kalitesi. Şikayetler: motor yağını geç değiştirenlerde VTEC solenoid ve yağ yakma sorunları, ön cam su kaçağı ve gıcırtı, klima buharlaştırıcı (evaporatör) kokusu, sert süspansiyon ve alçak ön tampon (kaldırım/hız kesici sürtme). Direksiyon rotu ve salıncak burçları orta km'de yenilenir.",
+    "chronicIssues": [
+      {
+        "title": "Motor yağ yakma / VTEC solenoid (yağ bakımı geç yapılırsa)",
+        "description": "R16A2 düzenli bakımda sorunsuzdur; ancak 15-20 bin km yağ kullanan araçlarda VTEC solenoid ve segmanlarda sorun başlar, yağ eksiltir. Alırken servis geçmişi ve motor sesi/dumanı kontrol edin. 8-10 bin km yağ periyodu şart.",
+        "severity": "Orta",
+        "estimatedCostEUR": 300,
+        "affectedYears": "2006-2012"
+      },
+      {
+        "title": "Ön cam ve tavan su kaçağı, iç gıcırtılar",
+        "description": "Bazı örneklerde ön cam kenarından ve sunroof kanalından su sızar; torpido ve tavan döşemesinde gıcırtı yapar. Cam fitili ve sunroof drenaj temizliğiyle çözülür.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 100,
+        "affectedYears": "2006-2012"
+      },
+      {
+        "title": "Klima evaporatör kokusu ve rölanti kompresör sesi",
+        "description": "Nemli havada klimadan küf kokusu; buharlaştırıcı temizliği ve polen filtresi ile geçer. Yüksek km'de kompresör kavraması ses yapabilir.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 120,
+        "affectedYears": "2006-2012"
+      }
+    ],
+    "pros": [
+      "İkinci elde çok yüksek ve istikrarlı değer",
+      "Sağlam zincir trigerli i-VTEC motor",
+      "Düzgün ve dayanıklı gerçek tam otomatik şanzıman",
+      "Çarpıcı ve kaliteli iç tasarım",
+      "Keyifli, hassas direksiyon ve gövde kontrolü"
+    ],
+    "cons": [
+      "Sert süspansiyon, düşük yol açıklığı (alt sürtme riski)",
+      "Yağ bakımına hassas motor; geç bakımda yağ yakar",
+      "Arka görüş açısı ve bagaj ağzı dar",
+      "Yol sesi yalıtımı orta"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre (kaliteli), bujiler, hava/polen filtresi, fren hidroliği, şanzıman yağı kontrolü.", "estimatedCostEUR": 170 },
+      { "mileage": "120.000 km", "expectedIssues": "Şanzıman yağı (Honda ATF-Z1/DW1), ön takım revizyonu, devirdaim kayışı, VTEC solenoid conta, klima bakımı.", "estimatedCostEUR": 350 },
+      { "mileage": "200.000 km", "expectedIssues": "Su pompası, motor takozları, subap ayarı kontrolü, direksiyon kutusu/rot, ikinci şanzıman yağı.", "estimatedCostEUR": 450 }
+    ]
+  },
+  {
+    "brand": "Honda",
+    "modelName": "Civic (FB7, 2012-2016)",
+    "productionYears": "2012-2016",
+    "engine": "1.6 i-VTEC 125 HP (R16B1) + 5 İleri Tam Otomatik (tork konvertörlü, Eco LPG uyumlu)",
+    "segment": "C",
+    "reliabilityScore": 8.7,
+    "minPrice": 860000,
+    "maxPrice": 1300000,
+    "estimatedMaintenanceCostEUR": 280,
+    "expertSummary": "FB7 Civic, FD6'nın gösterişli çizgisini yumuşatıp daha olgun bir sedana dönüştü; iç mekan iki katlı göstergeyi korudu ama malzeme kalitesi arttı. R16B1 1.6 i-VTEC motor yine zincir trigerli ve dayanıklı; Türkiye'ye gelen 'Eco' versiyonlarda fabrika çıkışı LPG tesisatı ve LPG'ye uygun supap/gösterge kalibrasyonu var — bu, LPG'li ikinci el alacaklar için büyük avantaj. Şanzıman 5 ileri gerçek tork konvertörlü otomatik; sağlam ve düzgün. Sürüş FD6'ya göre daha konforlu, süspansiyon daha yumuşak. Günlük dille: \"FD6'nın sağlamlığı, daha olgun bir paket; fabrika LPG'lisini bulursan kaçırma.\" Geniş bagaj, düşük işletme gideri ve güçlü ikinci el değeriyle aile kullanımına çok uygun.",
+    "userFeedbackSummary": "Kullanıcılar sorunsuzluktan ve fabrika LPG'nin performansından memnun. 150-200 bin km'de motor ve şanzıman sağlam örnekler yaygın. Övülen: yakıt ekonomisi (LPG ile çok ucuz), geniş bagaj, sağlam montaj. Şikayetler: yol sesi yalıtımı orta, süspansiyon bozuk yolda sekiyor, multimedya ekranı demode ve yavaş, arka cam görüşü kısıtlı. Yağ bakımı düzenli olmalı; LPG'de subap ayarı periyodik kontrol edilmeli.",
+    "chronicIssues": [
+      {
+        "title": "LPG'li araçlarda supap ve supap yatağı aşınması (bakım geç yapılırsa)",
+        "description": "Fabrika LPG uyumlu olsa da subap ayarının periyodik yapılması, kaliteli LPG yağlama katkısı kullanılması gerekir. İhmal edilen araçlarda kompresyon düşüşü ve tekleme başlar.",
+        "severity": "Orta",
+        "estimatedCostEUR": 300,
+        "affectedYears": "2012-2016"
+      },
+      {
+        "title": "Ön amortisör ve salıncak burcu sesi",
+        "description": "Türkiye yollarında 80-120 bin km'de ön takımdan tıkırtı; salıncak burçları ve amortisör üst takozları yenilenir. Parça uygun.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 130,
+        "affectedYears": "2012-2016"
+      },
+      {
+        "title": "Klima kokusu ve kompresör kavrama sesi",
+        "description": "Nemli havada evaporatörden küf kokusu; temizlik ve polen filtresi ile geçer. Yüksek km'de kompresör kavraması ses yapabilir.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 120,
+        "affectedYears": "2012-2016"
+      }
+    ],
+    "pros": [
+      "Fabrika LPG tesisatlı 'Eco' versiyon: ucuz ve garantili LPG kullanımı",
+      "Zincir trigerli, dayanıklı i-VTEC motor",
+      "Sağlam ve düzgün gerçek tam otomatik şanzıman",
+      "Geniş bagaj ve arka koltuk",
+      "Yüksek ikinci el değeri"
+    ],
+    "cons": [
+      "Yol ve rüzgar sesi yalıtımı orta",
+      "Süspansiyon bozuk zeminde sekiyor",
+      "Multimedya ve donanım demode",
+      "Arka cam ve pilar görüşü kısıtlı"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, filtreler, fren hidroliği, LPG'de subap ayarı, şanzıman yağı kontrolü.", "estimatedCostEUR": 170 },
+      { "mileage": "120.000 km", "expectedIssues": "Şanzıman yağı (Honda DW1), ön takım revizyonu, devirdaim kayışı, klima bakımı, LPG regülatör bakımı.", "estimatedCostEUR": 350 },
+      { "mileage": "200.000 km", "expectedIssues": "Su pompası, motor takozları, subap ayarı, direksiyon rot/rotil, ikinci şanzıman yağı.", "estimatedCostEUR": 450 }
+    ]
+  },
+  {
+    "brand": "Volkswagen",
+    "modelName": "Golf 5 / Jetta 5 (2003-2009)",
+    "productionYears": "2003-2009",
+    "engine": "1.6 8V 102 HP (BSE/BGU) + 6 İleri Tiptronic (Aisin, tork konvertörlü)",
+    "segment": "C",
+    "reliabilityScore": 7.6,
+    "minPrice": 430000,
+    "maxPrice": 680000,
+    "estimatedMaintenanceCostEUR": 350,
+    "expertSummary": "Golf 5'in en huzurlu kombinasyonu budur: 1.6 8V (BSE/BGU) atmosferik benzinli motor + 6 ileri Aisin Tiptronic tam otomatik şanzıman. Motor turbosuz, direkt enjeksiyonsuz ve zincir/kayış derdi az olan basit bir ünitedir; LPG'ye çok uygundur ve 300 bin km'ye rahat çıkar. Aisin şanzıman DSG değildir — tork konvertörlüdür, arıza yapmaz, sadece 60 bin km'de bir yağ+filtre ister. 102 HP zayıftır, otomatikle birlikte araç 'tembel' hisseder ama şehir içi ve orta yol için yeterli. Günlük dille: \"Golf kalitesini istiyorsan ama DSG korkusu yaşamak istemiyorsan, 1.6 benzinli + Aisin otomatik tam sana göre.\" Gövde sağlamlığı, sürüş hissi ve iç kalite hâlâ segmentin üstünde.",
+    "userFeedbackSummary": "Kullanıcılar 'Golf'ün en dertsizi' diyor. Aisin şanzıman şikayeti neredeyse yok. Motor için en çok konuşulan: emme manifoldu (kelebek/klape motoru) arızası, bobin ve buji tekleme, EGR/gaz kelebeği kirlenmesi. Süspansiyon (özellikle ön salıncak ve arka aks burçları) Türkiye yollarında orta km'de yeniliyor. Elektrik/konfor arızaları (cam krikosu, merkezi kilit modülü, ısıtıcı rezistans) yaşa bağlı görülebiliyor. LPG'li örneklerde subap ayarı önemli.",
+    "chronicIssues": [
+      {
+        "title": "Emme manifoldu klape (swirl) motoru arızası",
+        "description": "1.6 8V ve bazı motorlarda emme manifoldundaki klape mekanizması / motoru arızalanır; güç kaybı, rölanti dalgalanması ve arıza lambası yapar. Manifold komple değişir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 250,
+        "affectedYears": "2003-2009"
+      },
+      {
+        "title": "Ateşleme bobini ve gaz kelebeği kirlenmesi",
+        "description": "Yaşa bağlı bobin zayıflaması (tekleme, arıza lambası) ve gaz kelebeği kurumu (rölanti dengesizliği). Bobin seti + kelebek temizliği/adaptasyonu ile çözülür.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 150,
+        "affectedYears": "2003-2009"
+      },
+      {
+        "title": "Ön süspansiyon ve arka aks burçları aşınması",
+        "description": "Türkiye yol şartlarında 80-120 bin km'de ön salıncak, rot, rotil ve arka torsiyon aks burçlarında ses ve boşluk. Parça ve işçilik makul.",
+        "severity": "Orta",
+        "estimatedCostEUR": 200,
+        "affectedYears": "2003-2009"
+      }
+    ],
+    "pros": [
+      "DSG yok: dayanıklı Aisin tork konvertörlü tam otomatik",
+      "Basit, LPG dostu atmosferik motor",
+      "Segment üstü gövde sağlamlığı ve iç kalite",
+      "Sağlam sürüş hissi ve gövde kontrolü"
+    ],
+    "cons": [
+      "102 HP + otomatik: zayıf performans",
+      "Yaşa bağlı elektrik/konfor arızaları",
+      "Bakım ve parça VW seviyesinde (Japon rakiplerden pahalı)",
+      "Otomatikte yakıt tüketimi şehirde 9-10 lt"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, hava/polen filtresi, fren hidroliği, şanzıman yağ+filtre (Aisin).", "estimatedCostEUR": 250 },
+      { "mileage": "120.000 km", "expectedIssues": "Ön takım revizyonu, arka aks burçları, bobin seti, emme manifoldu kontrolü, devirdaim + su pompası.", "estimatedCostEUR": 450 },
+      { "mileage": "200.000 km", "expectedIssues": "İkinci şanzıman yağı, motor takozları, direksiyon kutusu, klima kompresörü, konfor modülleri kontrolü.", "estimatedCostEUR": 500 }
+    ]
+  },
+  {
+    "brand": "Volkswagen",
+    "modelName": "Golf 5 / Jetta 5 (2003-2009)",
+    "productionYears": "2003-2009",
+    "engine": "1.9 TDI 105 HP (BKC/BXE/BLS) + 5 İleri Manuel",
+    "segment": "C",
+    "reliabilityScore": 7.8,
+    "minPrice": 440000,
+    "maxPrice": 700000,
+    "estimatedMaintenanceCostEUR": 380,
+    "expertSummary": "Golf 5'in efsane dizeli: 1.9 TDI (BKC/BXE/BLS) pompa enjektör (PD) motoru. Kaba ve sesli çalışır ama 250 Nm torku, 4.5-5 lt yakıtı ve blok dayanıklılığıyla 400 bin km görmüş örnekleri vardır. PD (pompadüz) sistemin kritik noktası eksantrik mili ve enjektör mekanizmasını çeviren dişli/lifter takımıdır — bakımsız kalırsa eksantrik yalar. Ayrıca EGR, turbo VNT ve (varsa) DPF kurumlanması dizele özgü klasik konulardır. Manuel şanzıman ve debriyaj (özellikle çift kütleli volan) orta km'de gider. Günlük dille: \"Motor tank gibi ama nazlı bakım noktaları var; bakımlısını al, kalitesiz mazottan kaç.\" Yüksek km + uzun yol + yakıt ekonomisi arayan için en akıllı Golf 5 seçeneği.",
+    "userFeedbackSummary": "Kullanıcılar motor sağlamlığından çok memnun; 'ölmüyor' diyorlar. En çok konuşulan: enjektör revizyonu (150-200 bin km), EGR temizliği, turbo VNT tıkanması, çift kütleli volan + debriyaj seti masrafı (yüksek). PD motorlarda özel VW 505.01/507.00 yağ ve doğru servis periyodu şart. Kısa mesafe şehir içinde DPF'li örneklerde tıkanma yaşanıyor; ara sıra uzun yol gerekiyor. Süspansiyon ve ön takım Türkiye yollarında normal aşınıyor.",
+    "chronicIssues": [
+      {
+        "title": "Eksantrik mili ve enjektör lifter (PD) aşınması",
+        "description": "Pompa enjektör motorunda eksantrik mili ve enjektörleri iten lifter/tırnak takımı yanlış yağ veya geç bakımda aşınır; metalik tıkırtı, güç kaybı ve ağır durumda motor hasarı olur. Doğru yağ (VW 505.01/507.00) ve periyot kritik.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 600,
+        "affectedYears": "2003-2009"
+      },
+      {
+        "title": "Turbo VNT (değişken kanat) tıkanması",
+        "description": "Kurumdan turbonun değişken kanatları sıkışır; rampada üfleme düşer, arıza lambası yanar, 'limp mode'a girer. Erken temizlik, geç kalınırsa turbo revizyonu.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2003-2009"
+      },
+      {
+        "title": "Çift kütleli volan (DMF) ve debriyaj aşınması",
+        "description": "Rölantide takırtı, kalkışta titreme; DMF + debriyaj seti birlikte değişir. İşçilik uzun, parça pahalı. Tek kütleli volan dönüşümü tartışmalı bir alternatif.",
+        "severity": "Orta",
+        "estimatedCostEUR": 550,
+        "affectedYears": "2003-2009"
+      },
+      {
+        "title": "EGR valfi ve DPF (varsa) kurumlanması",
+        "description": "Şehir içi düşük devir kullanımında EGR ve partikül filtresi kurum bağlar; güç kaybı, arıza lambası, rejenerasyon sorunu. Temizlik veya değişim gerekir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 300,
+        "affectedYears": "2005-2009"
+      }
+    ],
+    "pros": [
+      "Efsane dayanıklılıkta blok, yüksek km potansiyeli",
+      "Düşük yakıt tüketimi ve yüksek tork",
+      "Bol yedek parça ve yaygın servis bilgisi",
+      "Sağlam Golf gövdesi ve sürüş hissi"
+    ],
+    "cons": [
+      "PD motorun eksantrik/lifter riski — bakıma çok bağımlı",
+      "Çift kütleli volan + debriyaj masrafı yüksek",
+      "EGR/turbo/DPF gibi dizel bakımları",
+      "Kaba ve sesli motor karakteri"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Doğru dizel yağı+filtre, yakıt filtresi, hava filtresi, EGR ve turbo kaçak kontrolü.", "estimatedCostEUR": 200 },
+      { "mileage": "150.000 km", "expectedIssues": "Enjektör revizyonu, EGR temizliği, turbo VNT temizliği, çift kütleli volan+debriyaj, triger kayış seti.", "estimatedCostEUR": 900 },
+      { "mileage": "250.000 km", "expectedIssues": "İkinci triger seti, su pompası, turbo revizyonu ihtimali, DPF temizliği/değişimi, süspansiyon yenileme.", "estimatedCostEUR": 800 }
+    ]
+  },
+  {
+    "brand": "Volkswagen",
+    "modelName": "Golf 6 / Jetta 6 (2008-2016)",
+    "productionYears": "2008-2016",
+    "engine": "1.4 TSI 122 HP (CAXA) + 7 İleri DSG DQ200 (Kuru Çift Kavrama)",
+    "segment": "C",
+    "reliabilityScore": 6.6,
+    "minPrice": 650000,
+    "maxPrice": 950000,
+    "estimatedMaintenanceCostEUR": 480,
+    "expertSummary": "Golf 6'nın en yaygın otomatik kombinasyonu: 1.4 TSI (CAXA) turbo benzinli + 7 ileri DQ200 kuru kavramalı DSG. Sürüş çok keyifli — hızlı vites geçişleri, düşük devir torku, düz vitese yakın yakıt. Ama iki riskli nokta var: (1) 1.4 TSI ilk yıllarda zincir triger gerdiricisi zayıftır, atlarsa motor hasar görür; (2) DQ200 kuru kavrama, dur-kalk trafikte ısınır, mekatronik kartı ve kavrama seti aşınır. Bakımlı, mekatronik kartı revize/değişmiş, zincir gerdiricisi güncellenmiş bir örnek yıllarca sorunsuz gidebilir; bakımsız olan sürekli servise girer. Günlük dille: \"Sürmesi zevkli ama 'kırık' örneği pahalıya patlar; ekspertizsiz alınmaz.\" Ekspertizde DSG adaptasyon değerleri ve zincir sesi mutlaka dinlenmeli.",
+    "userFeedbackSummary": "Forumlarda iki uç var: bakımlı örnek sahipleri 'harika araba' derken, şanssız olanlar 'servisten çıkmadı' diyor. En çok şikayet: DQ200 mekatronik arızası (vites atmama, sarsıntı, 'PRNDS' yanıp sönmesi), kuru kavrama titremesi/kayması, 1.4 TSI zincir gerdirici sesi ve (ilk yıllar) zincir atması, su pompası (plastik) arızası, turbo/wastegate sesi. DSG yağ değişimi (kuru DQ200'de mekatronik hidroliği) ihmal edilmemeli. Kaporta ve iç kalite hâlâ iyi.",
+    "chronicIssues": [
+      {
+        "title": "DQ200 (kuru) DSG mekatronik ünitesi arızası",
+        "description": "Mekatronik içindeki hidrolik akümülatör ve kart arızalanır; vites atmama, ani sarsıntı, gösterge uyarısı ve yol ortasında kalma olur. Revizyonlu mekatronik veya değişim gerekir. Dur-kalk trafik ömrü kısaltır.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 1000,
+        "affectedYears": "2008-2016"
+      },
+      {
+        "title": "1.4 TSI zincir triger gerdiricisi zayıflığı (özellikle 2008-2012)",
+        "description": "Erken üretim gerdiriciler basıncı tutamaz; soğuk çalıştırmada zincir sesi, ileri seviyede zincir atlaması ve motor hasarı. Güncellenmiş gerdirici + zincir seti ile kalıcı çözülür.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 700,
+        "affectedYears": "2008-2013"
+      },
+      {
+        "title": "Plastik gövdeli su pompası / termostat arızası",
+        "description": "Entegre plastik su pompası+termostat sızdırır veya hararet yapar. Metal gövdeli güncellenmiş parçayla değişir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 250,
+        "affectedYears": "2008-2016"
+      },
+      {
+        "title": "Kuru kavrama (debriyaj) titreme ve kayma",
+        "description": "Kavrama balatası aşınınca kalkışta titreme, yokuşta koku ve kayma başlar. Çift kavrama seti + rulman + adaptasyon gerekir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 600,
+        "affectedYears": "2008-2016"
+      }
+    ],
+    "pros": [
+      "Keyifli, hızlı ve akıcı DSG sürüş hissi",
+      "Düşük devir torku, düz vitese yakın yakıt",
+      "Segment üstü iç kalite ve gövde sağlamlığı",
+      "Bakımlı örnekte güçlü performans/verim dengesi"
+    ],
+    "cons": [
+      "DQ200 mekatronik ve kuru kavrama riski (yüksek onarım maliyeti)",
+      "1.4 TSI zincir gerdirici riski (erken yıllar)",
+      "Dur-kalk trafikte şanzıman ısınması",
+      "Toplam bakım gideri Japon rakiplerin çok üstünde"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre (VW 504.00), bujiler, DSG mekatronik hidrolik yağı, su pompası kontrolü, zincir sesi dinleme.", "estimatedCostEUR": 300 },
+      { "mileage": "120.000 km", "expectedIssues": "Zincir triger seti (ses varsa), DSG kavrama seti ihtimali, turbo/wastegate kontrolü, ön takım, PCV valfi.", "estimatedCostEUR": 900 },
+      { "mileage": "180.000 km", "expectedIssues": "Mekatronik revizyonu ihtimali, ikinci kavrama seti, su pompası, enjektör temizliği, süspansiyon yenileme.", "estimatedCostEUR": 1100 }
+    ]
+  },
+  {
+    "brand": "Volkswagen",
+    "modelName": "Golf 7 / Golf 7.5 (2012-2020)",
+    "productionYears": "2012-2020",
+    "engine": "1.6 TDI 115 HP (CRKB/DDYA/CLHA) + 7 İleri DSG DQ200 (Kuru Çift Kavrama)",
+    "segment": "C",
+    "reliabilityScore": 6.8,
+    "minPrice": 950000,
+    "maxPrice": 1550000,
+    "estimatedMaintenanceCostEUR": 520,
+    "expertSummary": "Golf 7'nin ikinci elde en çok aranan kombinasyonu: 1.6 TDI dizel + 7 ileri DQ200 DSG. Yakıt ekonomisi mükemmel (uzun yol 4-4.5 lt), sessiz-torklu common-rail dizel, hızlı ve akıcı DSG. Golf 6'ya göre motor daha rafine ve zincir yerine yeniden kayışa döndüğü için o zincir gerdirici derdi yok — ama kayışın 120-160 bin km'de değişmesi gerekir. Riskler: DQ200 kuru kavrama (dur-kalk trafik, kavrama ve mekatronik aşınması) ve dizele özgü EGR/DPF/enjektör kurumlanması, özellikle şehir içi kullanımda. AdBlue'lu (SCR) geç modellerde emisyon sistemi arızaları da eklenir. Günlük dille: \"Yakıtı efsane, sürmesi zevkli; ama DSG ve dizel bakımını cebine göre hesapla, ekspertizsiz alma.\" Uzun yol ağırlıklı kullananlar için ideal, sürekli şehir içi için ideal değil.",
+    "userFeedbackSummary": "Kullanıcılar yakıt tüketimi ve sürüş kalitesini çok seviyor; 'otoyol otomobili' diyorlar. Şikayetler: DQ200 kavrama titremesi ve mekatronik arızası, EGR ve DPF tıkanması (şehir içi), enjektör kurumu, süspansiyon burç sesleri, multimedya (Discover) donması, park sensörü/kamera arızaları. AdBlue'lu modellerde SCR/NOx sensörü arızası pahalı. DSG yağ değişimi ve triger kayışı periyodu ihmal edilmemeli. Bakımlı örnek uzun süre sorunsuz.",
+    "chronicIssues": [
+      {
+        "title": "DQ200 (kuru) DSG mekatronik ve kavrama arızası",
+        "description": "Kuru çift kavrama dur-kalk trafikte ısınır; kavrama titremesi/kayması ve mekatronik kart/hidrolik arızası (vites atmama, sarsıntı, uyarı). Kavrama seti veya mekatronik revizyonu gerekir.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 900,
+        "affectedYears": "2012-2020"
+      },
+      {
+        "title": "EGR soğutucusu ve DPF (partikül filtresi) tıkanması",
+        "description": "Kısa mesafe şehir kullanımında EGR ve DPF kurum bağlar; güç kaybı, arıza lambası, rejenerasyon sorunu. Bazı yıllarda EGR soğutucu geri çağırma konusu oldu. Uzun yol + temizlik/değişim gerekir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 450,
+        "affectedYears": "2012-2020"
+      },
+      {
+        "title": "AdBlue / SCR NOx sensörü ve dozaj ünitesi arızası (Euro 6 modeller)",
+        "description": "Geç modellerde AdBlue dozaj pompası ve NOx sensörleri arızalanır; 'X km sonra çalışmayacak' uyarısı verir. Sensör ve pompa pahalıdır.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2016-2020"
+      },
+      {
+        "title": "Triger kayışı seti ve su pompası",
+        "description": "1.6 TDI kayış trigerlidir; 120-160 bin km'de kayış+gergi+su pompası seti değişmelidir. İhmal edilirse kayış kopar, motor hasar görür.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2012-2020"
+      }
+    ],
+    "pros": [
+      "Sınıfının en iyi yakıt ekonomisi (uzun yol 4-4.5 lt)",
+      "Sessiz, torklu, rafine common-rail dizel",
+      "Hızlı ve akıcı DSG, keyifli sürüş",
+      "Segment üstü iç kalite, güçlü ikinci el değeri"
+    ],
+    "cons": [
+      "DQ200 kuru kavrama ve mekatronik riski",
+      "Şehir içi kullanımda EGR/DPF tıkanması",
+      "AdBlue'lu modellerde emisyon sistemi masrafı",
+      "Toplam bakım gideri yüksek; ekspertiz şart"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, DSG mekatronik hidrolik yağı, EGR/DPF ilk kontrol, AdBlue seviyesi.", "estimatedCostEUR": 300 },
+      { "mileage": "140.000 km", "expectedIssues": "Triger kayış seti+su pompası, DSG kavrama seti ihtimali, EGR/DPF temizliği, enjektör kontrolü, ön takım.", "estimatedCostEUR": 900 },
+      { "mileage": "220.000 km", "expectedIssues": "Mekatronik revizyonu ihtimali, ikinci kayış seti, turbo kontrolü, DPF değişimi, NOx sensörleri, süspansiyon.", "estimatedCostEUR": 1200 }
+    ]
+  },
+  {
+    "brand": "Volkswagen",
+    "modelName": "Golf 7 / Golf 7.5 (2012-2020)",
+    "productionYears": "2012-2020",
+    "engine": "1.4 TSI 125 HP (CZCA) + 7 İleri DSG DQ200 (Kuru Çift Kavrama)",
+    "segment": "C",
+    "reliabilityScore": 7.0,
+    "minPrice": 950000,
+    "maxPrice": 1500000,
+    "estimatedMaintenanceCostEUR": 460,
+    "expertSummary": "Golf 7'nin 1.4 TSI 125 HP (CZCA) benzinli + DSG kombinasyonu, dizel istemeyen ama otomatik ve performans arayanların tercihi. Bu motor Golf 6'daki sorunlu 1.4 TSI'nin (CAXA) devamı değil; MQB platformuyla gelen daha rafine, ACT (silindir kapama) özellikli, kayış trigerli bir ünite ve zincir gerdirici derdi büyük ölçüde çözülmüş durumda. Yine de TSI ailesine özgü karbon birikimi (direkt enjeksiyon), PCV valfi ve su pompası konuları var. Şanzıman yine DQ200 kuru kavrama — aynı dur-kalk trafik ve mekatronik riski geçerli. Günlük dille: \"Golf 6'nın 1.4 TSI'sinden çok daha güvenli; ama DSG hâlâ DSG.\" LPG düşünülüyorsa direkt enjeksiyonlu TSI'ye LPG tavsiye edilmez (supap yağlaması sorunu).",
+    "userFeedbackSummary": "Kullanıcılar motor tarafında Golf 6'ya göre çok daha az sorun bildiriyor. Şikayetler ağırlıkla DSG'de: kalkışta tik-tak, dur-kalkta titreme, uzun vadede mekatronik. Ayrıca zamanla emme supaplarında karbon birikimi (güç kaybı, rölanti dengesizliği — walnut blasting temizliği), su pompası sızıntısı, PCV valfi ve nadiren turbo wastegate sesi. Multimedya ve elektronik konfor arızaları yaşa bağlı. Bakımlı örnek dizelden daha huzurlu bir sahiplik sunuyor.",
+    "chronicIssues": [
+      {
+        "title": "DQ200 (kuru) DSG kavrama ve mekatronik arızası",
+        "description": "Kuru çift kavrama dur-kalk trafikte ısınır; kavrama titremesi ve mekatronik kart/hidrolik arızası. Kavrama seti veya mekatronik revizyonu gerekir.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 850,
+        "affectedYears": "2012-2020"
+      },
+      {
+        "title": "Emme supaplarında karbon birikimi (direkt enjeksiyon)",
+        "description": "TSI direkt enjeksiyonlu olduğu için emme supaplarını yakıt yıkamaz; zamanla kurum birikir, güç kaybı ve rölanti dengesizliği olur. Ceviz kabuğu püskürtme (walnut blasting) ile temizlenir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 250,
+        "affectedYears": "2012-2020"
+      },
+      {
+        "title": "Su pompası / termostat sızıntısı",
+        "description": "Entegre su pompası+termostat modülü zamanla sızdırır veya hararet yapar. Modül komple değişir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 250,
+        "affectedYears": "2012-2020"
+      }
+    ],
+    "pros": [
+      "Golf 6'nın 1.4 TSI'sinden çok daha güvenilir, rafine motor",
+      "ACT silindir kapatma: sakin kullanımda düşük yakıt",
+      "Hızlı, akıcı DSG ve keyifli sürüş",
+      "Segment üstü iç kalite, güçlü ikinci el değeri"
+    ],
+    "cons": [
+      "DQ200 kuru kavrama ve mekatronik riski sürüyor",
+      "Direkt enjeksiyon: emme kurumu ve LPG uyumsuzluğu",
+      "Su pompası / PCV gibi TSI klasiği bakımlar",
+      "Bakım gideri yüksek"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre (VW 504.00), bujiler, DSG mekatronik hidrolik yağı, su pompası kontrolü, PCV valfi.", "estimatedCostEUR": 280 },
+      { "mileage": "120.000 km", "expectedIssues": "Triger kayış seti, DSG kavrama seti ihtimali, emme supabı karbon temizliği, turbo kontrolü, ön takım.", "estimatedCostEUR": 800 },
+      { "mileage": "180.000 km", "expectedIssues": "Mekatronik revizyonu ihtimali, su pompası, ikinci kayış seti, enjektör temizliği, süspansiyon yenileme.", "estimatedCostEUR": 900 }
+    ]
+  },
+  {
+    "brand": "Renault",
+    "modelName": "Megane 2 (2003-2009)",
+    "productionYears": "2003-2009",
+    "engine": "1.6 16V 115 HP (K4M) + 5 İleri Manuel",
+    "segment": "C",
+    "reliabilityScore": 6.6,
+    "minPrice": 340000,
+    "maxPrice": 560000,
+    "estimatedMaintenanceCostEUR": 300,
+    "expertSummary": "Megane 2, tasarımıyla döneminde çığır açtı ama ikinci elde 'ucuz ama dertli' etiketiyle anılır. Kalp olan K4M 1.6 16V motor aslında sağlamdır, LPG'ye çok uygundur ve 300 bin km görür; asıl sorun çevre birimlerinde ve elektronikte. Kart-anahtar (kartlı kontak) sistemi, direksiyon kilidi kolonu (ELV), cam krikoları, ısıtıcı rezistansı ve çeşitli beyin/sensör arızaları klasiktir. Ön takım (özellikle rot başı ve salıncak) Türkiye yollarında hızlı aşınır. Manuel şanzıman ve debriyaj dayanıklıdır. Günlük dille: \"Motoru korkma, ama elektroniğine ve küçük parçalarına hazır ol; bakımlı ve ekspertizli al.\" Bütçesi kısıtlı, tamir bilen veya güvendiği ustası olan kullanıcı için mantıklı.",
+    "userFeedbackSummary": "Forumlarda motor övülür, gerisi eleştirilir. En sık: kartlı kontağın okumaması / araç çalışmaması, direksiyon kilidi (ELV) arızası (direksiyon kilitli kalır), cam krikosu kopması, kalorifer rezistansı ve kl'ıma paneli arızası, ön takımdan gelen sesler, eksantrik ayar kasnağı (dephaser) tıkırtısı. Yağ bakımı düzenli olan K4M motorlar çok uzun ömürlü. Parça ucuz ama çok sık parça değişmek yıpratıcı.",
+    "chronicIssues": [
+      {
+        "title": "Kartlı kontak / direksiyon kilidi kolonu (ELV) arızası",
+        "description": "Renault'nun kart-anahtar sistemi ve elektronik direksiyon kilidi (ELV) yaşa bağlı arıza yapar; araç çalışmaz, direksiyon kilitli kalır, 'anahtar algılanmadı' uyarısı verir. ELV mekanizması veya kart okuyucu yenilenir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 250,
+        "affectedYears": "2003-2009"
+      },
+      {
+        "title": "Eksantrik ayar kasnağı (dephaser) tıkırtısı",
+        "description": "K4M motorda VVT kasnağı zamanla boşluk yapar; soğuk çalıştırmada metalik tıkırtı duyulur. Kasnak değişimiyle çözülür, ihmal edilirse triger atlayabilir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 200,
+        "affectedYears": "2003-2009"
+      },
+      {
+        "title": "Cam krikosu, kalorifer rezistansı ve konfor elektroniği arızaları",
+        "description": "Cam krikoları kırılır/kopar, klima-kalorifer üfleme rezistansı yanar, gösterge ve tavan lambası modülleri arıza yapar. Tek tek ucuz ama sık.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 120,
+        "affectedYears": "2003-2009"
+      },
+      {
+        "title": "Ön takım (rot başı, salıncak, rotil) hızlı aşınması",
+        "description": "Türkiye yollarında 60-100 bin km'de ön takım sesleri; komple revizyon gerekir. Parça ucuz.",
+        "severity": "Orta",
+        "estimatedCostEUR": 180,
+        "affectedYears": "2003-2009"
+      }
+    ],
+    "pros": [
+      "Dayanıklı ve LPG dostu K4M 1.6 motor",
+      "Çok uygun satın alma fiyatı",
+      "Ucuz ve bol yedek parça",
+      "İyi ön koltuk konforu ve yol tutuş"
+    ],
+    "cons": [
+      "Kart/ELV, cam krikosu, rezistans gibi kronik elektronik arızalar",
+      "Ön takım hızlı aşınıyor",
+      "Düşük ikinci el değeri, zor satılır",
+      "Kaporta pas noktaları (arka çamurluk, bagaj eşiği)"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Triger kayış seti (K4M kayışlı), yağ+filtre, bujiler, ön takım kontrolü, dephaser sesi dinleme.", "estimatedCostEUR": 220 },
+      { "mileage": "120.000 km", "expectedIssues": "İkinci triger seti, debriyaj kontrolü, ELV/kart sistemi, cam krikoları, kalorifer rezistansı, süspansiyon.", "estimatedCostEUR": 350 },
+      { "mileage": "200.000 km", "expectedIssues": "Su pompası, dephaser kasnağı, ön takım komple, motor takozları, klima kompresörü, pas onarımı.", "estimatedCostEUR": 400 }
+    ]
+  },
+  {
+    "brand": "Renault",
+    "modelName": "Fluence / Megane 3 (2009-2016)",
+    "productionYears": "2009-2016",
+    "engine": "1.5 dCi 110 HP (K9K) + 6 İleri EDC (Kuru Çift Kavrama)",
+    "segment": "C",
+    "reliabilityScore": 7.0,
+    "minPrice": 600000,
+    "maxPrice": 980000,
+    "estimatedMaintenanceCostEUR": 400,
+    "expertSummary": "Fluence ve Megane 3'ün 1.5 dCi 110 HP + 6 ileri EDC kombinasyonu, ikinci el piyasasının en hızlı satan otomatik dizellerindendir: geniş bagaj, ucuz yakıt (uzun yol 4.5 lt), makul fiyat. K9K dizel motor çok yaygın ve parçası bol; kritik nokta enjektörler (Delphi/Continental) ve turbodur. EDC şanzıman kuru çift kavramadır (Getrag 6DCT250, Ford Powershift ile aynı aile) — dur-kalk trafikte kavrama ve mekatronik ısınması, titreme ve arıza riski taşır. Bakımlı, kavraması/mekatroniği revize edilmiş örnek uzun süre gider; ihmal edilmiş olan pahalı onarım demektir. Günlük dille: \"Yakıtı ve iç hacmi harika; EDC'sini test sür, ekspertizde şanzıman adaptasyonuna baktır.\" Uzun yol ve aile kullanımı için mantıklı, yoğun şehir trafiği için riskli.",
+    "userFeedbackSummary": "Kullanıcılar yakıt ve iç hacimden çok memnun. Şikayetler: EDC şanzımanın kalkışta gecikmesi/tik sesi, dur-kalkta titreme, ileri km'de kavrama ve mekatronik arızası (sarsıntı, vites atmama, arıza lambası); enjektör revizyonu (150-200 bin km); turbo kayıcı kanat tıkanması; EGR kurumu; süspansiyon burç sesleri. Kartlı kontak/ELV Megane 2'ye göre iyileşmiş ama tamamen bitmemiş. Multimedya ve klima paneli arızaları yaşa bağlı.",
+    "chronicIssues": [
+      {
+        "title": "EDC (kuru) çift kavrama ve mekatronik arızası",
+        "description": "Getrag kuru çift kavrama dur-kalk trafikte ısınır; kalkışta gecikme, titreme, sarsıntı ve mekatronik arızası (vites atmama, arıza lambası). Kavrama seti veya mekatronik revizyonu gerekir.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 850,
+        "affectedYears": "2009-2016"
+      },
+      {
+        "title": "1.5 dCi enjektör (Delphi) arızası",
+        "description": "Common-rail enjektörler zamanla debisini şaşırır; soğukta zor çalışma, is, tekleme, geri dönüş kaçağı. Kaliteli mazot şart. 4 enjektör revize/değişim.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2009-2016"
+      },
+      {
+        "title": "Turbo VNT tıkanması ve EGR kurumlanması",
+        "description": "Şehir içi düşük devir kullanımında turbonun değişken kanatları ve EGR kurum bağlar; rampada güç düşüşü, arıza lambası, limp mode. Temizlik veya turbo/EGR yenileme.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2009-2016"
+      }
+    ],
+    "pros": [
+      "Segmentin en geniş bagajlarından biri (Fluence)",
+      "Çok düşük yakıt tüketimi",
+      "Uygun fiyat, bol parça",
+      "Otoyol konforu ve sessizliği iyi"
+    ],
+    "cons": [
+      "EDC kuru kavrama ve mekatronik riski",
+      "Enjektör/turbo/EGR gibi dizel bakımları",
+      "Şehir içi yoğun trafik şanzımanı yoruyor",
+      "İç malzeme kalitesi ve multimedya vasat"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EDC yağ ve adaptasyon kontrolü, EGR ilk kontrol.", "estimatedCostEUR": 220 },
+      { "mileage": "150.000 km", "expectedIssues": "Enjektör revizyonu, EDC kavrama seti ihtimali, turbo/EGR temizliği, triger kayış seti, ön takım.", "estimatedCostEUR": 800 },
+      { "mileage": "220.000 km", "expectedIssues": "Mekatronik revizyonu ihtimali, ikinci triger seti, turbo revizyonu, su pompası, süspansiyon yenileme.", "estimatedCostEUR": 900 }
+    ]
+  },
+  {
+    "brand": "Renault",
+    "modelName": "Clio 4 / Symbol 3 (2012-2020)",
+    "productionYears": "2012-2020",
+    "engine": "0.9 TCe 90 HP (3 Silindir Turbo Benzin, H4Bt) + 5 İleri Manuel",
+    "segment": "B",
+    "reliabilityScore": 6.8,
+    "minPrice": 540000,
+    "maxPrice": 830000,
+    "estimatedMaintenanceCostEUR": 320,
+    "expertSummary": "Clio 4, tasarımı ve iç mekan kalitesiyle B segmentinin en çok tercih edilenlerinden. 0.9 TCe (H4Bt) 3 silindirli turbo benzinli motor küçük hacmine göre canlıdır (135 Nm), şehir içinde yeterli, otoyolda 3. kişi/yükle zorlanır. 3 silindir olduğu için rölantide hafif titreşim normaldir. Kritik konular: turbo (yağlama kanalı kurumu), ateşleme bobini, PCV/karter havalandırması ve zamanla gelen yağ eksiltme. Manuel şanzıman ve debriyaj makul. Elektronik olarak Megane 2'ye göre çok daha iyi ama R-Link multimedya donması, cam krikosu ve klima paneli arızaları görülebilir. Günlük dille: \"Şehir arabası olarak keyifli ve şık; turbolu küçük motorun bakımını aksatma.\" Tek kişi/çift, şehir içi ağırlıklı kullanım için ideal.",
+    "userFeedbackSummary": "Kullanıcılar tasarım, iç mekan ve şehir içi çevikliği seviyor. Şikayetler: 3 silindir titreşimi ve sesi, otoyolda güç yetersizliği, yağ eksiltme (özellikle ilk yıllar ve bakımsız örnekler), turbo sesi, bobin tekleme, R-Link ekran donması/güncelleme, cam krikosu, direksiyon açısı sınırlı olduğu için lastik aşınması. Debriyaj orta km'de yenileniyor. Kaliteli benzin ve düzenli yağ (Renault RN17) önemli.",
+    "chronicIssues": [
+      {
+        "title": "Motor yağ eksiltme ve turbo yağlama kanalı kurumu",
+        "description": "0.9 TCe bazı örneklerde yağ eksiltir; turbo yağ besleme borusu kurum bağlarsa turbo ömrü kısalır. Kısa periyot yağ (max 10 bin km), kaliteli yağ ve motoru soğutmadan kapatmama önemlidir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 300,
+        "affectedYears": "2012-2020"
+      },
+      {
+        "title": "Ateşleme bobini ve buji tekleme",
+        "description": "3 bobinden biri zayıflayınca belirgin tekleme ve arıza lambası olur. Bobin+buji seti ile çözülür, turbo motorda periyot kısadır.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 120,
+        "affectedYears": "2012-2020"
+      },
+      {
+        "title": "R-Link multimedya ve konfor elektroniği arızaları",
+        "description": "R-Link ekranı donar/yeniden başlar, navigasyon takılır; cam krikosu, klima paneli ve park sensörü arızaları görülür. Yazılım güncellemesi ve parça değişimi.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 150,
+        "affectedYears": "2012-2020"
+      }
+    ],
+    "pros": [
+      "Şık dış tasarım ve segment üstü iç mekan hissi",
+      "Şehir içinde canlı, ekonomik turbo motor",
+      "İyi süspansiyon konforu",
+      "Uygun fiyat ve makul parça maliyeti"
+    ],
+    "cons": [
+      "3 silindir titreşim/ses, otoyolda güç yetersizliği",
+      "Yağ eksiltme ve turbo bakımına duyarlılık",
+      "R-Link ve konfor elektroniği arızaları",
+      "Arka koltuk ve bagaj B segmenti ortalaması"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre (kısa periyot), bujiler, hava/polen filtresi, turbo kaçak kontrolü, yazılım güncelleme.", "estimatedCostEUR": 150 },
+      { "mileage": "120.000 km", "expectedIssues": "Triger kayış seti, debriyaj kontrolü, bobin seti, PCV valfi, ön takım revizyonu, turbo kontrolü.", "estimatedCostEUR": 400 },
+      { "mileage": "180.000 km", "expectedIssues": "Turbo revizyonu ihtimali, su pompası, ikinci triger seti, süspansiyon yenileme, klima kompresörü.", "estimatedCostEUR": 500 }
+    ]
+  },
+  {
+    "brand": "Fiat",
+    "modelName": "Egea (2015-2021)",
+    "productionYears": "2015-2021",
+    "engine": "1.6 Multijet 120 HP (Dizel Turbo) + 6 İleri Manuel",
+    "segment": "C",
+    "reliabilityScore": 7.8,
+    "minPrice": 680000,
+    "maxPrice": 1150000,
+    "estimatedMaintenanceCostEUR": 320,
+    "expertSummary": "Egea, Türkiye'de üretilen, ucuz parça ve yaygın servis ağıyla 'akılcı aile sedanı' konumunda. 1.6 Multijet 120 HP dizel motor bilinen, olgun bir ünite: 320 Nm tork, uzun yolda 4.5-5 lt yakıt, zincir triger (kayış derdi yok). Manuel şanzıman ve debriyaj dayanıklı. Kritik dizel konuları: EGR ve emme manifoldu kurumu, DPF (şehir içi), enjektör ve turbo VNT. Sedan gövde geniş bagajlıdır; sürüş konforu iyi ama direksiyon hissi ve yalıtım orta. İç malzeme sert plastik ağırlıklı. Günlük dille: \"Ucuz yakıt, ucuz parça, geniş bagaj — pratik ve dertsiz; kısa şehir yolunda DPF'ye dikkat.\" Uzun yol ve aile kullanımı için segmentin en mantıklı dizellerinden.",
+    "userFeedbackSummary": "Kullanıcılar yakıt ekonomisi, bagaj hacmi ve düşük işletme maliyetinden çok memnun. Şikayetler: iç plastik kalitesi ve gıcırtılar, yol sesi yalıtımı, direksiyon hissizliği, şehir içi kullanımda EGR/DPF tıkanması ve emme manifoldu kurumu, debriyaj pedalı sesi, ilk yıllarda multimedya ve geri görüş kamerası arızaları. Zincir triger uzun ömürlü. Kaliteli mazot ve ara sıra uzun yol DPF için şart.",
+    "chronicIssues": [
+      {
+        "title": "EGR valfi ve emme manifoldu kurumlanması",
+        "description": "1.6 Multijet'te düşük devir şehir kullanımında EGR ve emme manifoldu kurum bağlar; güç kaybı, arıza lambası, rölanti dengesizliği. Temizlik veya EGR/manifold yenileme.",
+        "severity": "Orta",
+        "estimatedCostEUR": 220,
+        "affectedYears": "2015-2021"
+      },
+      {
+        "title": "DPF (partikül filtresi) tıkanması",
+        "description": "Kısa mesafe şehir kullanımında DPF dolar, rejenerasyon tamamlanmaz; güç kaybı ve servis rejenerasyonu gerekir. Haftada bir uzun yol önler; ileri seviyede temizlik/değişim pahalı.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2015-2021"
+      },
+      {
+        "title": "İç mekan gıcırtıları ve plastik kalitesi",
+        "description": "Torpido, kapı paneli ve tavan döşemesinde gıcırtı/tıkırtı; keçe-fitil takviyesiyle azaltılır. Kozmetik ama sürüş konforunu etkiler.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 60,
+        "affectedYears": "2015-2021"
+      }
+    ],
+    "pros": [
+      "Çok düşük yakıt tüketimi ve işletme maliyeti",
+      "Segmentin en geniş bagajlarından biri",
+      "Ucuz parça, yaygın yerli servis ağı",
+      "Zincir triger, olgun ve dayanıklı dizel motor"
+    ],
+    "cons": [
+      "Sert plastikler, iç gıcırtılar, orta yalıtım",
+      "Şehir içi kullanımda EGR/DPF tıkanması",
+      "Direksiyon ve şasi hissi sıradan",
+      "İlk yıllarda multimedya/kamera arızaları"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR ilk kontrol, fren hidroliği, polen filtresi.", "estimatedCostEUR": 150 },
+      { "mileage": "150.000 km", "expectedIssues": "EGR/emme temizliği, DPF kontrolü, enjektör kontrolü, debriyaj kontrolü, turbo VNT, ön takım revizyonu.", "estimatedCostEUR": 500 },
+      { "mileage": "250.000 km", "expectedIssues": "Zincir triger kontrolü, su pompası, turbo revizyonu ihtimali, DPF temizliği/değişimi, süspansiyon.", "estimatedCostEUR": 650 }
+    ]
+  },
+  {
+    "brand": "Fiat",
+    "modelName": "Egea (2015-2021)",
+    "productionYears": "2015-2021",
+    "engine": "1.4 Fire 95 HP (Benzin/LPG, Atmosferik) + 6 İleri Manuel",
+    "segment": "C",
+    "reliabilityScore": 7.9,
+    "minPrice": 620000,
+    "maxPrice": 950000,
+    "estimatedMaintenanceCostEUR": 240,
+    "expertSummary": "Egea'nın 1.4 Fire 95 HP benzinli versiyonu, dizelin bakım masrafını istemeyen ve LPG düşünen aileler için en ucuz işletmeli seçenektir. Fire motor ailesi Türkiye'de onlarca yıldır bilinir: atmosferik, turbosuz, direkt enjeksiyonsuz — yani LPG'ye tam uyumlu ve dertsiz. 95 HP zayıftır, dolu araçta ve rampada hantal hisseder, otoyol geçişlerini planlamak gerekir. Ama şehir içi + orta yol için yeterli, çok az arıza çıkarır ve parçası bedava sayılır. Kayış trigerlidir, 60-90 bin km'de kayış seti ister. Günlük dille: \"Az güç ama sıfır dert; LPG tak, en ucuz aile arabasına sahip ol.\" Bütçe odaklı, şehir ağırlıklı kullanan aile için mantıklı.",
+    "userFeedbackSummary": "Kullanıcılar 'masrafsız' ve 'LPG ile çok ucuz' diyor. En büyük şikayet performans: dolu araçta yokuşta zorlanma, otoyolda 120+ hızda güçsüzlük ve devir yüksekliği. Ayrıca iç plastik gıcırtıları, yol sesi, sert süspansiyon hissi ve ilk yıl multimedya arızaları. Motor tarafında ciddi kronik sorun yok; kayış triger periyodu ve LPG'de subap ayarı takip edilirse uzun ömürlü.",
+    "chronicIssues": [
+      {
+        "title": "Triger kayış seti değişiminin aksatılması",
+        "description": "1.4 Fire kayış trigerlidir; kayış+gergi rulmanı 60-90 bin km'de değişmezse kopar ve subap-piston teması motora hasar verir. LPG'li araçlarda periyot daha kısa tutulur.",
+        "severity": "Orta",
+        "estimatedCostEUR": 150,
+        "affectedYears": "2015-2021"
+      },
+      {
+        "title": "LPG'li araçlarda subap ve subap yatağı aşınması (bakım geç yapılırsa)",
+        "description": "Fire motor LPG dostu olsa da subap ayarının ve yağ bakımının düzenli yapılması gerekir; ihmal edilen araçlarda kompresyon düşüşü ve tekleme başlar. Subap yatağı takviyesi gerekebilir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 300,
+        "affectedYears": "2015-2021"
+      },
+      {
+        "title": "İç mekan gıcırtıları ve kaporta taş izi hassasiyeti",
+        "description": "Torpido/kapı panellerinde gıcırtı; ön kaporta ve tampon boyası taş izine hassas. Kozmetik.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 60,
+        "affectedYears": "2015-2021"
+      }
+    ],
+    "pros": [
+      "LPG'ye tam uyumlu, çok düşük yakıt gideri",
+      "Neredeyse hiç kronik motor sorunu yok",
+      "Ucuz parça, yaygın yerli servis",
+      "Geniş bagaj ve arka koltuk"
+    ],
+    "cons": [
+      "95 HP zayıf — dolu araç ve rampada hantal",
+      "Otoyolda yüksek devir ve gürültü",
+      "Sert plastikler, iç gıcırtılar, orta yalıtım",
+      "Sürüş dinamiği ve direksiyon hissi sıradan"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, hava/polen filtresi, triger kayış seti, LPG'de subap ayarı, fren hidroliği.", "estimatedCostEUR": 200 },
+      { "mileage": "120.000 km", "expectedIssues": "İkinci triger seti, debriyaj kontrolü, ön takım revizyonu, LPG regülatör bakımı, devirdaim kayışı.", "estimatedCostEUR": 300 },
+      { "mileage": "200.000 km", "expectedIssues": "Su pompası, motor takozları, subap ayarı/yatak takviyesi, klima kompresörü, süspansiyon yenileme.", "estimatedCostEUR": 350 }
+    ]
+  },
+  {
+    "brand": "Ford",
+    "modelName": "Focus 2 / 2.5 (2004-2011)",
+    "productionYears": "2004-2011",
+    "engine": "1.6 TDCi 90/109 HP (Dizel) + 5 İleri Manuel",
+    "segment": "C",
+    "reliabilityScore": 7.4,
+    "minPrice": 400000,
+    "maxPrice": 640000,
+    "estimatedMaintenanceCostEUR": 320,
+    "expertSummary": "Focus 2, 'Control Blade' bağımsız arka süspansiyonu sayesinde segmentin en iyi yol tutan araçlarındandır — kıvrımlı yolda hâlâ keyif verir. 1.6 TDCi dizel motor PSA (Peugeot-Citroën) ortak üretimidir (DV6); ekonomik (4.5 lt) ve yaygındır. 90 HP sabit kanatlı turbo, 109 HP değişken kanatlı (VNT) turboludur ve DPF'lidir. Kritik konular: DPF tıkanması (özellikle 109 HP, şehir içi), turbo VNT, enjektör ve EGR. Zincir değil kayış trigerlidir. Manuel şanzıman sağlam. Günlük dille: \"Yol tutuşu için al; ama dizelin DPF'sine ve turbosuna dikkat, kısa yolda ezme.\" Sürüş keyfi + ekonomi isteyen, ağırlıklı uzun yol yapan için mantıklı.",
+    "userFeedbackSummary": "Kullanıcılar direksiyon hissi ve yol tutuştan çok memnun; 'kıvrımda C segmenti şampiyonu' diyorlar. Şikayetler: 109 HP + DPF kombinasyonunda şehir içi tıkanma ve rejenerasyon sorunları, turbo VNT tıkanması, enjektör revizyonu, EGR kurumu, direksiyon kutusu/rot sesleri, klima paneli ve elektrik arızaları. 90 HP DPF'siz versiyon şehir içi için daha huzurlu. Kaliteli mazot ve ara sıra uzun yol DPF için önemli.",
+    "chronicIssues": [
+      {
+        "title": "DPF (partikül filtresi) tıkanması — özellikle 109 HP",
+        "description": "Şehir içi kısa mesafe kullanımda DPF dolar, rejenerasyon tamamlanamaz; güç kaybı, arıza lambası, motor yağına mazot karışması. Uzun yol + servis rejenerasyonu, ileri seviyede temizlik/değişim gerekir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2005-2011"
+      },
+      {
+        "title": "Turbo VNT tıkanması ve EGR kurumu",
+        "description": "109 HP'nin değişken kanatlı turbosu ve EGR kurum bağlar; rampada güç düşüşü, arıza lambası, limp mode. Temizlik veya turbo/EGR yenileme.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2004-2011"
+      },
+      {
+        "title": "Enjektör (Siemens/Delphi) arızası",
+        "description": "Common-rail enjektörler zamanla debisini şaşırır; is, tekleme, soğukta zor çalışma. 4 enjektör revize/değişim.",
+        "severity": "Orta",
+        "estimatedCostEUR": 380,
+        "affectedYears": "2004-2011"
+      }
+    ],
+    "pros": [
+      "Segmentin en iyi yol tutuşu ve direksiyon hissi",
+      "Ekonomik ve yaygın 1.6 TDCi motor",
+      "Sağlam manuel şanzıman ve gövde",
+      "Uygun fiyat, bol parça"
+    ],
+    "cons": [
+      "DPF/turbo/EGR gibi dizele özgü masraflar (özellikle 109 HP)",
+      "Şehir içi kısa mesafe kullanımına uygun değil",
+      "Elektrik/konfor arızaları yaşa bağlı",
+      "İç malzeme kalitesi orta, düşük ikinci el değeri"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR kontrolü, triger kayış seti kontrolü, fren hidroliği.", "estimatedCostEUR": 180 },
+      { "mileage": "150.000 km", "expectedIssues": "Enjektör kontrolü/revizyonu, DPF temizliği, turbo VNT/EGR temizliği, debriyaj seti, triger kayış seti, ön takım.", "estimatedCostEUR": 650 },
+      { "mileage": "250.000 km", "expectedIssues": "İkinci triger seti, su pompası, turbo revizyonu, DPF değişimi ihtimali, direksiyon kutusu, süspansiyon.", "estimatedCostEUR": 750 }
+    ]
+  },
+  {
+    "brand": "Ford",
+    "modelName": "Focus 3 / 3.5 (2011-2018)",
+    "productionYears": "2011-2018",
+    "engine": "1.6 Ti-VCT 125 HP (Benzin) + 6 İleri Powershift (DPS6, Kuru Çift Kavrama)",
+    "segment": "C",
+    "reliabilityScore": 5.6,
+    "minPrice": 680000,
+    "maxPrice": 1000000,
+    "estimatedMaintenanceCostEUR": 420,
+    "expertSummary": "Focus 3'ün 1.6 Ti-VCT benzinli + Powershift (DPS6) kombinasyonu, ikinci elde en çok dikkat gerektiren paketlerden biridir. Motor tarafı sorun değil: 1.6 Ti-VCT atmosferik, LPG'ye uygun, dayanıklı. Sorun DPS6 kuru çift kavramalı şanzımanda: bu şanzıman dünya çapında yüksek arıza oranıyla anılır — kalkışta sarsıntı ('sürünme titremesi'), debriyaj balatası aşınması, TCM (şanzıman beyni) ve kavrama çatalı arızaları, ağır durumda 'vitese takmıyor'. Ford birçok pazarda garanti uzatması yaptı. Bakımlı, kavrama ve TCM'i yenilenmiş örnek yaşanabilir ama uzun vadede tekrar masraf ihtimali yüksek. Günlük dille: \"Manuel versiyonunu ara; Powershift'liyi ancak servis kayıtları tertemizse ve fiyatı çok uygunsa düşün.\"",
+    "userFeedbackSummary": "Powershift'li Focus 3 sahipleri forumlarda en çok dert yanan gruplardan. Tipik şikayetler: düşük hızda araç sürüklenirken şiddetli titreme, kalkışta 'debriyaj kaçırıyor' hissi, vites atarken tekleme, gösterge 'Transmission fault / service now' uyarısı, sık sık kavrama ve TCM değişimi. Bazı kullanıcılar 2-3 kez şanzıman onarımı yaptırmış. Motor, kaporta ve iç mekan tarafında ise Focus 3 gayet iyi. Manuel versiyon sahipleri memnun.",
+    "chronicIssues": [
+      {
+        "title": "DPS6 Powershift kuru çift kavrama titreme ve arızası",
+        "description": "Kuru çift kavrama düşük hızda araç sürüklenirken şiddetli titrer; balata aşınır, koku yapar, kayar. Kavrama seti + rulman + adaptasyon gerekir, dur-kalk trafikte tekrarlar.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 750,
+        "affectedYears": "2011-2018"
+      },
+      {
+        "title": "TCM (şanzıman kontrol modülü) ve kavrama çatalı arızası",
+        "description": "Şanzıman beyni ve mekatronik çatal arızalanır; 'Transmission Malfunction' uyarısı, vites atmama, hareket etmeme. TCM değişimi veya revizyonu + yazılım.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 500,
+        "affectedYears": "2011-2018"
+      },
+      {
+        "title": "Ön takım (rot, salıncak) ve direksiyon kolonu sesi",
+        "description": "Türkiye yollarında 80-120 bin km'de ön takım sesleri; elektrikli direksiyon kolonu da tıkırtı yapabilir. Parça makul.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 150,
+        "affectedYears": "2011-2018"
+      }
+    ],
+    "pros": [
+      "Sağlam, LPG uyumlu 1.6 Ti-VCT atmosferik motor",
+      "İyi yol tutuş ve direksiyon hissi",
+      "Modern (dönemine göre) iç tasarım ve donanım",
+      "Uygun satın alma fiyatı (Powershift korkusu fiyatı düşürür)"
+    ],
+    "cons": [
+      "DPS6 Powershift şanzıman yüksek arıza oranı — tekrar eden masraf riski",
+      "Düşük ve zor korunur ikinci el değeri (Powershift'li)",
+      "Bagaj ağzı ve arka görüş kısıtlı",
+      "Multimedya (Sync 1) demode"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, filtreler, Powershift adaptasyon ve kavrama durumu kontrolü, TCM yazılım.", "estimatedCostEUR": 180 },
+      { "mileage": "120.000 km", "expectedIssues": "Powershift kavrama seti (büyük ihtimalle), TCM kontrolü, ön takım revizyonu, devirdaim kayışı, su pompası.", "estimatedCostEUR": 850 },
+      { "mileage": "180.000 km", "expectedIssues": "İkinci kavrama seti ihtimali, TCM değişimi, direksiyon kolonu, süspansiyon yenileme, klima kompresörü.", "estimatedCostEUR": 900 }
+    ]
+  },
+  {
+    "brand": "Opel",
+    "modelName": "Astra J (2009-2020)",
+    "productionYears": "2009-2020",
+    "engine": "1.6 CDTI 136 HP (B16DTH \"Fısıltı Dizel\") + 6 İleri Otomatik (Aisin/GM 6T40) veya 6 İleri Manuel",
+    "segment": "C",
+    "reliabilityScore": 7.0,
+    "minPrice": 650000,
+    "maxPrice": 1050000,
+    "estimatedMaintenanceCostEUR": 360,
+    "expertSummary": "Astra J, Türkiye'de en çok satan Astra kasasıdır; geniş, sağlam gövdeli ve uygun fiyatlı bir C sedan/HB. 1.6 CDTI (B16DTH), 'fısıltı dizel' lakabıyla bilinen sessiz ve modern (çift turbo değil, tek turbo VNT) bir motordur; 136 HP + 320 Nm ile canlı, uzun yolda 4.5-5 lt yakar. Otomatik seçeneği GM/Aisin 6 ileri tork konvertörlüdür (DSG/kuru kavrama DEĞİL) — bu, aynı segmentteki DSG'li rakiplere göre büyük bir güven avantajıdır; sadece 60 bin km'de yağ ister. Dizel klasikleri geçerli: DPF (şehir içi), EGR, enjektör, turbo. Multimedya ve elektronik arızaları Opel'e özgü olarak görülür. Günlük dille: \"Sessiz dizel + arıza yapmayan tork konvertörlü otomatik — DSG korkusu olmadan otomatik dizel isteyene ideal.\"",
+    "userFeedbackSummary": "Kullanıcılar motorun sessizliğini, torkunu ve otomatik şanzımanın sorunsuzluğunu övüyor. Şikayetler: şehir içi kullanımda DPF tıkanması ve yağ seyrelmesi, EGR kurumu, enjektör revizyonu, ara sıra turbo VNT; multimedya (Navi 600/900) donması, direksiyon açısı sensörü, park sensörü ve elektrik arızaları; ön takım burç sesleri. Kaporta boşlukları ve iç plastik kalitesi eleştiriliyor. Bakımlı örnek otomatik dizel arayan için çok iyi bir seçenek.",
+    "chronicIssues": [
+      {
+        "title": "DPF tıkanması ve motor yağına mazot karışması (şehir içi)",
+        "description": "Kısa mesafe kullanımda DPF rejenerasyonu tamamlanamaz; DPF dolar, güç düşer ve rejenerasyon denemeleri sırasında motor yağ seviyesi yükselir (mazot karışır). Yağ seviyesi takibi ve ara sıra uzun yol şart.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2009-2020"
+      },
+      {
+        "title": "EGR valfi/soğutucusu ve enjektör arızası",
+        "description": "EGR kurum bağlar (güç kaybı, arıza lambası); enjektörler zamanla debisini şaşırır (is, tekleme). Temizlik/yenileme ve enjektör revizyonu gerekir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2009-2020"
+      },
+      {
+        "title": "Multimedya ve konfor elektroniği arızaları",
+        "description": "Navi ekranı donar/yeniden başlar, USB/Bluetooth kopar, direksiyon açı sensörü ve park sensörü arıza yapar. Yazılım güncelleme veya parça değişimi.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 150,
+        "affectedYears": "2009-2020"
+      }
+    ],
+    "pros": [
+      "Sessiz, torklu ve ekonomik 1.6 CDTI 'fısıltı dizel'",
+      "Arıza yapmayan tork konvertörlü 6 ileri otomatik (DSG değil)",
+      "Geniş, sağlam gövde ve iyi otoyol konforu",
+      "Uygun fiyat, bol parça"
+    ],
+    "cons": [
+      "Şehir içi kullanımda DPF ve yağ seyrelmesi riski",
+      "EGR/enjektör/turbo gibi dizel bakımları",
+      "Opel multimedya ve elektronik arızaları",
+      "İç plastik kalitesi ve montaj boşlukları orta"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre (seviye takibi), yakıt/hava filtresi, otomatikte şanzıman yağı, EGR/DPF ilk kontrol.", "estimatedCostEUR": 250 },
+      { "mileage": "150.000 km", "expectedIssues": "Enjektör kontrolü, EGR/DPF temizliği, turbo VNT kontrolü, triger kayış seti, ön takım revizyonu, şanzıman yağı.", "estimatedCostEUR": 650 },
+      { "mileage": "250.000 km", "expectedIssues": "İkinci triger seti, su pompası, turbo revizyonu, DPF değişimi ihtimali, süspansiyon yenileme, multimedya.", "estimatedCostEUR": 750 }
+    ]
+  },
+  {
+    "brand": "Opel",
+    "modelName": "Astra H (Classic 3, 2004-2014)",
+    "productionYears": "2004-2014",
+    "engine": "1.6 Twinport 105 HP (Z16XEP) + 5 İleri Manuel",
+    "segment": "C",
+    "reliabilityScore": 7.2,
+    "minPrice": 380000,
+    "maxPrice": 600000,
+    "estimatedMaintenanceCostEUR": 260,
+    "expertSummary": "Astra H (Türkiye'de uzun süre 'Classic 3' adıyla üretildi), ucuz, sağlam gövdeli ve LPG dostu bir C segmenti klasiğidir. 1.6 Twinport (Z16XEP) motor atmosferiktir, turbosuz-basittir ve LPG ile çok yaygın kullanılır; 300 bin km görür. Kritik noktalar: eksantrik pozisyon sensörü, EGR/gaz kelebeği kurumu, ateşleme bobini (dört ayrı bobin), su pompası ve LPG'li araçlarda subap. Elektrik tarafında direksiyon kolonu (CIM modülü), cam krikosu, klima paneli ve elektrikli direksiyon (EPS) arızaları görülür. Manuel şanzıman ve debriyaj dayanıklı. Günlük dille: \"Ucuz, LPG'yle çok ekonomik, motoru dertsiz; elektroniğine ve küçük parçalarına hazır ol.\" Bütçe odaklı, şehir içi + orta yol kullanan için mantıklı.",
+    "userFeedbackSummary": "Kullanıcılar 'ucuz ve idare eder' diyor. Motor tarafında ciddi kronik yok; LPG'yle çok düşük yakıt gideri övülüyor. Şikayetler: elektrikli direksiyon (EPS) sertleşmesi/arızası, CIM (direksiyon altı modül) arızası (sinyal, korna, direksiyon tuşları çalışmaz), cam krikosu, klima rezistansı, eksantrik sensörü teklemesi, ön takım sesleri. Kaporta arka çamurluk ve bagaj eşiğinde pas noktaları olabilir. Parça ucuz.",
+    "chronicIssues": [
+      {
+        "title": "Elektrikli direksiyon (EPS) ve CIM modülü arızası",
+        "description": "Elektrikli direksiyon kolonu sertleşir veya devreden çıkar (uyarı lambası); CIM modülü arızalanınca sinyal/korna/direksiyon tuşları ve gösterge sorunları olur. Kolon revizyonu veya CIM değişimi+kodlama gerekir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 300,
+        "affectedYears": "2004-2014"
+      },
+      {
+        "title": "Eksantrik pozisyon sensörü ve gaz kelebeği/EGR kurumu",
+        "description": "Eksantrik sensörü zayıflayınca tekleme ve zor çalışma; gaz kelebeği ve EGR kurumu rölanti dengesizliği yapar. Sensör değişimi ve kelebek temizliği/adaptasyonu.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 130,
+        "affectedYears": "2004-2014"
+      },
+      {
+        "title": "Cam krikosu, klima rezistansı ve konfor elektroniği",
+        "description": "Cam krikosu kopar, kalorifer üfleme rezistansı yanar, tavan lambası/çakmaklık arızaları görülür. Tek tek ucuz ama sık.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 110,
+        "affectedYears": "2004-2014"
+      }
+    ],
+    "pros": [
+      "LPG'ye tam uyumlu, çok düşük yakıt gideri",
+      "Sağlam gövde ve dayanıklı manuel şanzıman",
+      "Çok uygun satın alma fiyatı",
+      "Ucuz ve bol yedek parça"
+    ],
+    "cons": [
+      "EPS/CIM, cam krikosu, rezistans gibi kronik elektronik arızalar",
+      "Kaporta pas noktaları (arka çamurluk, eşikler)",
+      "Düşük ikinci el değeri",
+      "İç malzeme sert, donanım demode"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Triger kayış seti, yağ+filtre, bujiler, LPG'de subap ayarı, ön takım kontrolü, fren hidroliği.", "estimatedCostEUR": 200 },
+      { "mileage": "120.000 km", "expectedIssues": "İkinci triger seti, su pompası, debriyaj kontrolü, eksantrik sensörü, EPS/CIM kontrolü, süspansiyon.", "estimatedCostEUR": 350 },
+      { "mileage": "200.000 km", "expectedIssues": "Motor takozları, ateşleme bobinleri, klima kompresörü, ön takım komple, pas onarımı, kalorifer rezistansı.", "estimatedCostEUR": 400 }
+    ]
+  },
+  {
+    "brand": "Volkswagen",
+    "modelName": "Passat B7 (2010-2014)",
+    "productionYears": "2010-2014",
+    "engine": "1.6 TDI 105 HP (CAYC) + 7 İleri DSG DQ200 (Kuru Çift Kavrama)",
+    "segment": "D",
+    "reliabilityScore": 6.4,
+    "minPrice": 780000,
+    "maxPrice": 1250000,
+    "estimatedMaintenanceCostEUR": 520,
+    "expertSummary": "Passat B7, Türkiye D segmentinin uzun süre satış lideriydi: prestijli, geniş, iyi yalıtımlı bir aile/filo sedanı. 1.6 TDI (CAYC) 105 HP motor, D segmenti gövdeyi taşımak için 'yeterli ama coşkusuz'; asıl cazibesi düşük yakıt (uzun yol 4.5 lt) ve vergi avantajı. Buradaki şanzıman DQ200 kuru kavramalı DSG'dir ve B7'deki en tartışmalı nokta budur: 1.6 TDI'nin torkuyla kuru kavrama dur-kalk trafikte zorlanır, titreme ve mekatronik arızası riski taşır. Ayrıca CAYC motorda enjektör kalibrasyonu, EGR ve DPF konuları öne çıkar. Bakımlı, mekatroniği/kavraması yenilenmiş örnek uzun süre gidebilir. Günlük dille: \"Prestijli ve konforlu; ama 1.6 TDI + kuru DSG ikilisi ekspertizsiz alınmaz, servis kaydı şart.\"",
+    "userFeedbackSummary": "Kullanıcılar konfor, iç hacim ve yakıt ekonomisini seviyor. Şikayetler: DQ200 kavrama titremesi ve mekatronik arızası, CAYC enjektör kalibrasyon sorunu (tekleme, is), EGR/DPF tıkanması (şehir içi), elektronik el freni ve direksiyon kilit kolonu (ELV) arızası, park sensörü/kamera, multimedya (RNS 510) donması, süspansiyon burç sesleri. DSG yağ değişimi (mekatronik hidroliği) ihmal edilmemeli. 105 HP performans beklentisi olanlar hayal kırıklığına uğruyor.",
+    "chronicIssues": [
+      {
+        "title": "DQ200 (kuru) DSG mekatronik ve kavrama arızası",
+        "description": "1.6 TDI torkuyla kuru çift kavrama dur-kalk trafikte zorlanır; kavrama titremesi/kayması ve mekatronik kart/hidrolik arızası (vites atmama, sarsıntı, uyarı). Kavrama seti veya mekatronik revizyonu gerekir.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 950,
+        "affectedYears": "2010-2014"
+      },
+      {
+        "title": "CAYC 1.6 TDI enjektör kalibrasyonu ve EGR/DPF tıkanması",
+        "description": "Enjektörler zamanla debisini şaşırır (tekleme, is, güç kaybı); EGR ve DPF şehir içi kullanımda kurum bağlar. Enjektör kalibrasyonu/değişimi ve EGR/DPF temizliği gerekir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 450,
+        "affectedYears": "2010-2014"
+      },
+      {
+        "title": "Elektronik el freni ve direksiyon kilit kolonu (ELV) arızası",
+        "description": "Elektronik el freni motoru arızalanır (fren açılmaz/kapanmaz, uyarı); ELV mekanizması araç çalışmasını engelleyebilir. Modül/mekanizma değişimi.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2010-2014"
+      }
+    ],
+    "pros": [
+      "D segmenti prestij, geniş iç hacim, iyi yalıtım",
+      "Çok düşük yakıt tüketimi ve vergi avantajı",
+      "Güçlü ikinci el talebi ve tanınırlık",
+      "Otoyol konforu ve gövde sağlamlığı"
+    ],
+    "cons": [
+      "1.6 TDI + kuru DSG: mekatronik ve kavrama riski yüksek",
+      "105 HP D segmenti gövde için coşkusuz",
+      "EGR/DPF/enjektör ve elektronik arızalar",
+      "Bakım ve parça maliyeti yüksek"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, DSG mekatronik hidrolik yağı, EGR/DPF ilk kontrol, enjektör kodlama kontrolü.", "estimatedCostEUR": 320 },
+      { "mileage": "140.000 km", "expectedIssues": "Triger kayış seti+su pompası, DSG kavrama seti ihtimali, enjektör/EGR/DPF revizyonu, ön takım, el freni modülü.", "estimatedCostEUR": 1000 },
+      { "mileage": "220.000 km", "expectedIssues": "Mekatronik revizyonu ihtimali, turbo kontrolü, DPF değişimi, süspansiyon yenileme, ELV, multimedya.", "estimatedCostEUR": 1200 }
+    ]
+  },
+  {
+    "brand": "BMW",
+    "modelName": "3 Serisi (E90/E91/E92, 2005-2012)",
+    "productionYears": "2005-2012",
+    "engine": "320d 177/184 HP (N47 Dizel, Alüminyum Blok) + 6 İleri Steptronic (ZF, tork konvertörlü)",
+    "segment": "D",
+    "reliabilityScore": 6.0,
+    "minPrice": 800000,
+    "maxPrice": 1400000,
+    "estimatedMaintenanceCostEUR": 700,
+    "expertSummary": "E90 320d, ikinci el 'uygun fiyatlı premium D sedan' arayanların favorisidir: arkadan itiş, 50:50 ağırlık dağılımı, direksiyon hissi ve 380 Nm torkla otoyol keyfi. ZF 6 ileri Steptronic şanzıman tork konvertörlüdür (DSG değil) ve sağlamdır — sadece 80-100 bin km'de yağ ister. ASIL kritik nokta N47 dizel motorun triger zincirinin MOTORUN ARKASINDA (kavrama tarafında) olmasıdır: zincir uzarsa/atarsa motor hurdaya çıkar ve değişim için motorun sökülmesi gerektiğinden işçilik çok pahalıdır. Ayrıca emme manifoldu (swirl flap) kurumu, EGR, turbo ve yağ soğutucu contası klasik konulardır. Günlük dille: \"Sürmesi bağımlılık yapar ama N47 zincirini duymadan alma; bakım cebini yakar.\" Sadece bilinçli, bütçesi geniş, iyi BMW ustası olan kullanıcı için.",
+    "userFeedbackSummary": "Kullanıcılar sürüş keyfinden vazgeçemiyor ama 'para deposu' diyor. En korkulan konu N47 triger zinciri sesi (soğuk çalıştırmada arkadan 'çıtırtı/hırıltı') — duyulursa acil müdahale gerekir. Diğer sık konular: emme manifoldu swirl flap kırılması, EGR soğutucu çatlağı (soğuk su kaçağı), turbo, yağ soğutucu ve karter conta sızıntıları, DPF, direksiyon rot/rotil, arka porya rulmanı. Bakımlı, zinciri değişmiş örnek çok keyifli; bakımsızı kabus.",
+    "chronicIssues": [
+      {
+        "title": "N47 triger zinciri uzaması / atlaması (motorun arkasında)",
+        "description": "N47 dizelin triger zinciri kavrama tarafındadır; zincir ve gergisi zamanla uzar. Soğuk çalıştırmada arkadan metalik ses gelir. İhmal edilirse zincir atlar, subap-piston teması motoru hurdaya çıkarır. Değişim için motor/şanzıman sökülür — çok yüksek işçilik.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 1500,
+        "affectedYears": "2007-2012"
+      },
+      {
+        "title": "Emme manifoldu swirl flap (girdap kanatçığı) kırılması",
+        "description": "Emme manifoldundaki plastik kanatçıklar kurum yapıp kırılır; parça motora kaçarsa supap/piston hasarı olur. Manifold komple değişir veya kanatçıklar iptal edilir.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2005-2012"
+      },
+      {
+        "title": "EGR soğutucusu çatlağı ve turbo/yağ sızıntıları",
+        "description": "EGR soğutucusu çatlayınca antifriz kaybı ve buhar; turbo, yağ soğutucu contası ve karter havalandırması sızıntı yapar. Birden fazla sızıntı bir arada gelir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 500,
+        "affectedYears": "2005-2012"
+      },
+      {
+        "title": "DPF tıkanması ve arka porya rulmanı sesi",
+        "description": "Şehir içi kullanımda DPF dolar; arka poryalarda uğultu başlar. DPF temizliği/değişimi ve porya rulmanı yenilenir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2005-2012"
+      }
+    ],
+    "pros": [
+      "Arkadan itiş, keyifli direksiyon ve şasi dengesi",
+      "Güçlü ve ekonomik dizel (otoyol 4.5-5 lt, 380 Nm)",
+      "Sağlam ZF tork konvertörlü otomatik (DSG değil)",
+      "Premium iç kalite ve otoyol konforu"
+    ],
+    "cons": [
+      "N47 triger zinciri riski — en pahalı arıza kalemi",
+      "Swirl flap, EGR, turbo, yağ sızıntısı gibi zincirleme masraflar",
+      "Yüksek bakım, parça ve işçilik maliyeti",
+      "Bakımsız örnekler çok yaygın; iyi ekspertiz şart"
+    ],
+    "milestones": [
+      { "mileage": "80.000 km", "expectedIssues": "Yağ+filtre (LL-04), ZF şanzıman yağı, yakıt/hava filtresi, EGR ve swirl flap kontrolü, zincir sesi dinleme.", "estimatedCostEUR": 450 },
+      { "mileage": "160.000 km", "expectedIssues": "Triger zinciri seti (ses/uzama varsa), swirl flap manifold, EGR soğutucu, turbo kontrolü, ön takım, arka porya.", "estimatedCostEUR": 2000 },
+      { "mileage": "240.000 km", "expectedIssues": "İkinci ZF yağı, yağ soğutucu/karter contaları, DPF değişimi, enjektör kontrolü, direksiyon kutusu, süspansiyon komple.", "estimatedCostEUR": 1500 }
+    ]
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "modelName": "C-Serisi (W204, 2007-2014)",
+    "productionYears": "2007-2014",
+    "engine": "C180 1.6 Turbo 156 HP (M274, 2012+ makyaj) + 7G-Tronic Plus (722.9, tork konvertörlü)",
+    "segment": "C",
+    "reliabilityScore": 7.2,
+    "minPrice": 900000,
+    "maxPrice": 1500000,
+    "estimatedMaintenanceCostEUR": 650,
+    "expertSummary": "W204 makyajlı kasa (2011-2014), ikinci elde 'uygun fiyatlı yıldız' arayanların en dengeli tercihidir. Makyaj öncesi C180'ler eski M271 Kompresör motorluyken, 2012 sonrası C180'e yeni M274 1.6 turbo motor geldi: daha rafine, daha ekonomik ve makyaj öncesindeki M271 eksantrik dişli/zincir sorununu geride bıraktı. Şanzıman 7G-Tronic Plus (722.9) tork konvertörlüdür — DSG/kuru kavrama DEĞİL, sarsıntısız ve sağlamdır, 60-80 bin km'de yağ+filtre ister. M274 motorun bilinen konuları: zincir gergi ve triger kızağı (yüksek km), turbo, PCV valfi, su pompası ve direkt enjeksiyon karbon birikimi. Günlük dille: \"Yıldız prestiji + arıza yapmayan gerçek otomatik; ama Mercedes bakım fiyatlarına hazır ol, makyajlı M274'lü olanı ara.\"",
+    "userFeedbackSummary": "Kullanıcılar prestij, sürüş konforu ve 7G-Tronic'in düzgünlüğünü seviyor. M274 motor M271'e göre çok daha az sorunlu. Şikayetler: yüksek km'de triger zinciri kızak/gergi sesi, turbo ve wastegate sesi, su pompası sızıntısı, direksiyon açı sensörü ve park sensörü arızaları, COMAND multimedya donması, süspansiyon burç sesleri, arka koltuğun dar oluşu. Bakım ve parça pahalı ama huzurlu bir sahiplik; makyaj öncesi M271'lilerden kaçının.",
+    "chronicIssues": [
+      {
+        "title": "M274 triger zinciri gergi ve kızak (kılavuz) aşınması",
+        "description": "Yüksek kilometrede zincir gerginliği düşer, plastik kızaklar aşınır; soğuk çalıştırmada zincir sesi ve ileri seviyede triger atlaması riski. Zincir seti + gergi + kızak değişimi gerekir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 700,
+        "affectedYears": "2012-2014"
+      },
+      {
+        "title": "Turbo / wastegate sesi ve PCV (karter havalandırma) valfi",
+        "description": "Turbo wastegate mekanizması takırdar, PCV valfi arızalanınca yağ tüketimi ve rölanti dengesizliği olur. Valf ucuz, turbo revizyonu pahalı.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2012-2014"
+      },
+      {
+        "title": "Direkt enjeksiyon emme supabı karbon birikimi",
+        "description": "M274 direkt enjeksiyonlu olduğu için emme supaplarını yakıt yıkamaz; kurum birikir, güç kaybı ve rölanti dengesizliği olur. Ceviz kabuğu püskürtme temizliği yapılır.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 250,
+        "affectedYears": "2012-2014"
+      },
+      {
+        "title": "COMAND multimedya ve konfor elektroniği arızaları",
+        "description": "COMAND ekranı donar/yeniden başlar, direksiyon açı sensörü ve park sensörü arıza yapar. Yazılım güncelleme veya parça değişimi (pahalı).",
+        "severity": "Düşük",
+        "estimatedCostEUR": 200,
+        "affectedYears": "2007-2014"
+      }
+    ],
+    "pros": [
+      "Yıldız prestiji ve segment üstü sürüş konforu",
+      "Arıza yapmayan 7G-Tronic tork konvertörlü otomatik (DSG değil)",
+      "M274 motor: makyaj öncesi M271'e göre çok daha güvenilir",
+      "İyi yalıtım ve gövde sağlamlığı"
+    ],
+    "cons": [
+      "Mercedes bakım ve parça fiyatları yüksek",
+      "Yüksek km'de triger zinciri kızak/gergi masrafı",
+      "Direkt enjeksiyon karbon birikimi",
+      "Arka koltuk ve bagaj segment ortalamasının altında"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre (MB 229.5/229.51), 7G-Tronic yağ+filtre, bujiler, filtreler, PCV valfi, zincir sesi dinleme.", "estimatedCostEUR": 400 },
+      { "mileage": "140.000 km", "expectedIssues": "Triger zinciri seti+kızak (ses varsa), su pompası, turbo kontrolü, emme supabı karbon temizliği, ön takım.", "estimatedCostEUR": 900 },
+      { "mileage": "220.000 km", "expectedIssues": "İkinci şanzıman yağı, direksiyon kutusu, süspansiyon yenileme, turbo revizyonu ihtimali, multimedya, klima kompresörü.", "estimatedCostEUR": 1000 }
+    ]
+  }
+]

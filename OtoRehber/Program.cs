@@ -297,6 +297,19 @@ using (var scope = app.Services.CreateScope())
     {
         await userManager.AddToRoleAsync(adminUser, "Admin");
     }
+
+    // Araç kataloğu (Data/catalog/*.json) — idempotent seeder.
+    // Catalog:ForceUpdate=true ise mevcut kayıtların alanları katalogdan yeniden yazılır (admin düzenlemelerini ezer).
+    try
+    {
+        var catalogDir = Path.Combine(app.Environment.ContentRootPath, "Data", "catalog");
+        bool catalogForce = string.Equals(config["Catalog:ForceUpdate"], "true", StringComparison.OrdinalIgnoreCase);
+        await OtoRehber.Infrastructure.Data.CatalogSeed.CatalogSeeder.SeedAsync(context, catalogDir, logger, catalogForce);
+    }
+    catch (Exception ex)
+    {
+        logger.LogError(ex, "Araç kataloğu seeder hatası (uygulama başlatma engellenmedi).");
+    }
 }
 
 // Reverse proxy header'ları — pipeline'ın en başında.

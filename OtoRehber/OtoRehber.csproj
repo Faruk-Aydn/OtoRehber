@@ -31,4 +31,10 @@
     <ProjectReference Include="..\OtoRehber.Infrastructure\OtoRehber.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <!-- Araç kataloğu JSON verisi — çıktı/publish klasörüne kopyalanır (startup seeder okur).
+         SDK zaten Content olarak dahil ediyor; sadece kopyalama davranışını güncelliyoruz. -->
+    <Content Update="Data\catalog\**\*.json" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+
 </Project>
