@@ -1,0 +1,69 @@
+@model IEnumerable<OtoRehber.Domain.Entities.CarReview>
+@{
+    ViewData["Title"] = "Yorum Moderasyonu";
+}
+
+<div class="mb-6 flex justify-between items-center flex-wrap gap-3">
+    <div>
+        <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Yorum Moderasyonu</h1>
+        <p class="text-gray-500 mt-1">Toplam @ViewBag.Total yorum. Uygunsuz yorumları buradan silebilirsiniz.</p>
+    </div>
+    <a asp-controller="AdminCar" asp-action="Index" class="text-gray-600 dark:text-gray-300 hover:text-primary font-medium flex items-center gap-2">
+        <i class="fa-solid fa-arrow-left"></i> Araç Paneli
+    </a>
+</div>
+
+<div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-x-auto">
+    <table class="w-full text-sm text-left">
+        <thead class="text-xs uppercase text-gray-500 dark:text-gray-400 bg-gray-50 dark:bg-gray-900/50 border-b border-gray-200 dark:border-gray-700">
+            <tr>
+                <th class="px-4 py-3">Araç</th>
+                <th class="px-4 py-3">Kullanıcı</th>
+                <th class="px-4 py-3">Puan</th>
+                <th class="px-4 py-3">Yorum</th>
+                <th class="px-4 py-3 whitespace-nowrap">Tarih</th>
+                <th class="px-4 py-3"></th>
+            </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100 dark:divide-gray-700">
+            @foreach (var r in Model)
+            {
+                <tr class="hover:bg-gray-50 dark:hover:bg-gray-900/40">
+                    <td class="px-4 py-3 whitespace-nowrap">
+                        @if (r.Car != null)
+                        {
+                            <a asp-controller="Car" asp-action="Details" asp-route-id="@r.CarId" class="text-primary hover:underline">@r.Car.Brand @r.Car.ModelName</a>
+                        }
+                        else
+                        {
+                            <span class="text-gray-400">#@r.CarId</span>
+                        }
+                    </td>
+                    <td class="px-4 py-3 whitespace-nowrap text-gray-700 dark:text-gray-300">@r.UserName</td>
+                    <td class="px-4 py-3 font-bold text-yellow-600">@r.Rating/10</td>
+                    <td class="px-4 py-3 text-gray-600 dark:text-gray-300 max-w-md"><div class="line-clamp-2">@r.Comment</div></td>
+                    <td class="px-4 py-3 whitespace-nowrap text-gray-400">@r.CreatedAt.ToString("dd.MM.yyyy")</td>
+                    <td class="px-4 py-3 text-right">
+                        <form asp-action="Delete" asp-route-id="@r.Id" method="post" onsubmit="return confirm('Bu yorumu silmek istediğinize emin misiniz?');">
+                            <button type="submit" class="text-red-600 hover:text-red-800" title="Sil"><i class="fa-solid fa-trash-can"></i></button>
+                        </form>
+                    </td>
+                </tr>
+            }
+            @if (!Model.Any())
+            {
+                <tr><td colspan="6" class="px-4 py-10 text-center text-gray-400">Henüz yorum yok.</td></tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@if (ViewBag.TotalPages > 1)
+{
+    <div class="mt-6 flex justify-center gap-2">
+        @for (int i = 1; i <= ViewBag.TotalPages; i++)
+        {
+            <a asp-route-page="@i" class="px-3 py-1.5 rounded-lg text-sm font-medium @(i == ViewBag.Page ? "bg-primary text-white" : "bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:border-primary")">@i</a>
+        }
+    </div>
+}

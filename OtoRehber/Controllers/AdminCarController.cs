@@ -42,6 +42,8 @@ namespace OtoRehber.Controllers
         {
             _cache.Remove(HomeController.CacheKeyBrands);
             _cache.Remove(HomeController.CacheKeyLeaderboard);
+            _cache.Remove("catalog-menu");
+            _cache.Remove("seo:sitemap-cars");
         }
 
         private async Task AuditAsync(string action, string entity, string? entityId, string? detail)

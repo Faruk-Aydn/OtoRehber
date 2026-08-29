@@ -30,6 +30,7 @@ namespace OtoRehber.Controllers
             var sb = new StringBuilder();
             sb.AppendLine("User-agent: *");
             sb.AppendLine("Allow: /");
+            sb.AppendLine("Disallow: /Admin");
             sb.AppendLine("Disallow: /AdminCar");
             sb.AppendLine("Disallow: /Account");
             sb.AppendLine("Disallow: /Manage");

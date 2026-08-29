@@ -1,0 +1,31 @@
+@model (System.Collections.Generic.List<OtoRehber.ViewComponents.CatalogMenuViewComponent.MenuLink> Brands, System.Collections.Generic.List<OtoRehber.ViewComponents.CatalogMenuViewComponent.MenuLink> Segments)
+
+@if (Model.Brands.Any() || Model.Segments.Any())
+{
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 max-w-2xl mx-auto text-left mb-8">
+        @if (Model.Brands.Any())
+        {
+            <div>
+                <p class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Markalar</p>
+                <ul class="space-y-1">
+                    @foreach (var b in Model.Brands)
+                    {
+                        <li><a href="/marka/@b.Slug" class="hover:text-primary dark:hover:text-blue-400 transition">@b.Name</a></li>
+                    }
+                </ul>
+            </div>
+        }
+        @if (Model.Segments.Any())
+        {
+            <div>
+                <p class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Segmentler</p>
+                <ul class="space-y-1">
+                    @foreach (var s in Model.Segments)
+                    {
+                        <li><a href="/segment/@s.Slug" class="hover:text-primary dark:hover:text-blue-400 transition">@s.Name segmenti</a></li>
+                    }
+                </ul>
+            </div>
+        }
+    </div>
+}
