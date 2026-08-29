@@ -38,6 +38,7 @@ namespace OtoRehber.Controllers
                 .Include(c => c.ProsConsList)
                 .Include(c => c.MileageMilestones)
                 .Include(c => c.Reviews)
+                    .ThenInclude(r => r.ReviewLikes)
                 .FirstOrDefaultAsync(c => c.Id == id);
 
             if (car == null)
@@ -46,7 +47,14 @@ namespace OtoRehber.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
-            ViewBag.CurrentUserId = _userManager.GetUserId(User);
+            var currentUserId = _userManager.GetUserId(User);
+            ViewBag.CurrentUserId = currentUserId;
+
+            // Yorum başına "faydalı" oy sayısı + kullanıcının oy verip vermediği
+            ViewBag.ReviewLikes = car.Reviews.ToDictionary(
+                r => r.Id,
+                r => (Count: r.ReviewLikes.Count,
+                      Voted: currentUserId != null && r.ReviewLikes.Any(l => l.UserId == currentUserId)));
 
             var carDto = car.ToDetailDto();
             return View(carDto);
@@ -143,6 +151,54 @@ namespace OtoRehber.Controllers
 
             TempData["SuccessMessage"] = "Yorumunuz silindi.";
             return RedirectToAction("Details", new { id = carId });
+        }
+
+        public class ReviewLikeRequest
+        {
+            public int ReviewId { get; set; }
+        }
+
+        // Yoruma "faydalı" oyu ver / geri al (AJAX). Kendi yorumuna oy verilemez.
+        [HttpPost]
+        [Authorize]
+        [EnableRateLimiting("review")]
+        public async Task<IActionResult> ToggleReviewLike([FromBody] ReviewLikeRequest req)
+        {
+            var review = await _context.CarReviews.AsNoTracking()
+                .FirstOrDefaultAsync(r => r.Id == req.ReviewId);
+            if (review == null)
+                return NotFound();
+
+            var userId = _userManager.GetUserId(User)!;
+            if (review.UserId == userId)
+                return BadRequest(new { error = "Kendi yorumunuza oy veremezsiniz." });
+
+            var existing = await _context.ReviewLikes
+                .FirstOrDefaultAsync(l => l.ReviewId == req.ReviewId && l.UserId == userId);
+
+            bool voted;
+            if (existing != null)
+            {
+                _context.ReviewLikes.Remove(existing);
+                voted = false;
+            }
+            else
+            {
+                _context.ReviewLikes.Add(new ReviewLike { ReviewId = req.ReviewId, UserId = userId, IsHelpful = true });
+                voted = true;
+            }
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                // Eşzamanlı çift tık → unique index ihlali; mevcut durumu döndür.
+            }
+
+            var count = await _context.ReviewLikes.CountAsync(l => l.ReviewId == req.ReviewId);
+            return Json(new { count, voted });
         }
 
         public async Task<IActionResult> Compare(int id1, int id2)

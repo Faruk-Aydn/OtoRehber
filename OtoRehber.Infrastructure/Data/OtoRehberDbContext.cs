@@ -19,6 +19,7 @@ namespace OtoRehber.Infrastructure.Data
         public DbSet<MileageMilestone> MileageMilestones { get; set; }
         public DbSet<CarReview> CarReviews { get; set; }
         public DbSet<UserGarage> UserGarages { get; set; }
+        public DbSet<ReviewLike> ReviewLikes { get; set; }
         public DbSet<AuditLog> AuditLogs { get; set; }
         public DbSet<DataProtectionKey> DataProtectionKeys { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -38,6 +39,16 @@ namespace OtoRehber.Infrastructure.Data
             // Garaj: aynı araç bir kullanıcıda tek kayıt.
             modelBuilder.Entity<UserGarage>()
                 .HasIndex(g => new { g.UserId, g.CarId }).IsUnique();
+
+            // Yorum "faydalı" oyu: kullanıcı bir yoruma en fazla 1 oy; yorum silinince oylar da silinir.
+            modelBuilder.Entity<ReviewLike>(b =>
+            {
+                b.HasIndex(l => new { l.UserId, l.ReviewId }).IsUnique();
+                b.HasOne(l => l.Review)
+                    .WithMany(r => r.ReviewLikes)
+                    .HasForeignKey(l => l.ReviewId)
+                    .OnDelete(DeleteBehavior.Cascade);
+            });
 
             // Filtre / sıralama için index'ler.
             modelBuilder.Entity<Car>(b =>

@@ -105,4 +105,20 @@ public class SmokeTests : IClassFixture<CustomWebApplicationFactory>
             }));
         Assert.Equal(HttpStatusCode.BadRequest, res.StatusCode);
     }
+
+    [Fact]
+    public async Task ToggleReviewLike_Anonymous_RedirectsToLogin()
+    {
+        var res = await _client.PostAsync("/Car/ToggleReviewLike",
+            new StringContent("{\"reviewId\":1}", System.Text.Encoding.UTF8, "application/json"));
+        Assert.Equal(HttpStatusCode.Found, res.StatusCode);
+        Assert.Contains("/Account/Login", res.Headers.Location?.OriginalString ?? "");
+    }
+
+    [Fact]
+    public async Task CarDetails_RendersReviewSection()
+    {
+        var html = await _client.GetStringAsync("/Car/Details/1");
+        Assert.Contains("Topluluk Yorumları", html);
+    }
 }

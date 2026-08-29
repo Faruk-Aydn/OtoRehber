@@ -238,7 +238,7 @@ Development: `dotnet user-secrets`. Production: environment variable.
 - [x] Tüm `DateTime.Now` → `DateTime.UtcNow` (Faz 1'de temizlendi)
 - [x] `ToLower()` → `ToLowerInvariant()` (Home/Search/Admin)
 - [x] AI karşılaştırma sonuçları `IMemoryCache`'te (`compare-verdict:{a}-{b}`, 6 saat); hata/kota mesajları cache'lenmez (uzunluk < 150). (DB yerine bellek — araç verisi nadir değişir, sonuç yumuşak metin)
-- [ ] `DbSet<CarPriceHistory>` / `DbSet<ReviewLike>` netleştir → Faz 3 (özellik gelince)
+- [x] `DbSet<ReviewLike>` eklendi (faydalı oyu — 3.2). `CarPriceHistory` hâlâ DbSet'siz (fiyat geçmişi özelliği gelince)
 - [x] Görsel yüklemede magic-byte kontrolü (EXIF re-encode → Faz 3, ImageSharp)
 
 ### 2.8 AI güvenliği ✅
@@ -287,7 +287,9 @@ Development: `dotnet user-secrets`. Production: environment variable.
 ### 3.2 Özellikler
 - [x] Kullanıcı kendi yorumunu **düzenle/sil** (`CarController.EditReview`/`DeleteReview`, sahiplik kontrolü;
   araç detayında "Senin yorumun" kutusu + inline düzenleme; sahibi varsa "yorum ekle" formu gizlenir)
-- [ ] Yorumları şikayet et, "faydalı" oyu (`ReviewLike` tamamla)
+- [x] Yorumlara **"faydalı" oyu** (`ReviewLike` → `DbSet` + `(UserId,ReviewId)` unique index, migration `ReviewLikeVote`;
+  `CarController.ToggleReviewLike` AJAX toggle, kendi yorumuna oy yok; araç detayında buton + sayaç, `postJson` ile)
+- [ ] Yorumları şikayet et
 - [x] Araç kartında + detay sayfasında ortalama kullanıcı puanı (Home'da sayfa başına tek `GROUP BY` sorgu → ViewBag);
   detay `AggregateRating` JSON-LD zaten var (3.3)
 - [ ] Fiyat geçmişi grafiği (`CarPriceHistory` — veri kaynağı/cron)
@@ -340,6 +342,7 @@ Development: `dotnet user-secrets`. Production: environment variable.
 | 2026-08-29 | 3.1 | Marka/segment landing sayfaları (`CatalogController`, `/marka/{slug}` + `/segment/{slug}`) + ortak `_CarCard` partial | 6746bb5 |
 | 2026-08-29 | 3.1 | Footer marka/segment menüsü (`CatalogMenuViewComponent`) + admin yorum moderasyonu (`AdminReviewController` `/Admin/Reviews`) | 02f6cc9 |
 | 2026-08-29 | 3.2 | Araç detayında yorum sıralama (`?rsort=`) + "daha fazla göster" (ilk 5) | 56462a0 |
+| 2026-08-29 | 3.2 | Yorumlara "faydalı" oyu — `ReviewLike` DbSet + unique index (migration `ReviewLikeVote`) + `ToggleReviewLike` AJAX | _(bu commit)_ |
 | 2026-08-27 | 1.3, 1.10 | Railway `DATABASE_URL` ayrıştırma + Docker healthcheck düzeltme + deploy rehberi | 93c5dbb |
 | 2026-08-27 | deploy | Postgres bağlantı çözümü + `railway.json` | 1e7fb51 |
 | 2026-08-27 | deploy | `PORT` env dinleme + healthcheck timeout | 1c974f8 |

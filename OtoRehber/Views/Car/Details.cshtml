@@ -426,6 +426,25 @@
                                     <span class="ml-2 text-sm font-medium text-gray-600 dark:text-gray-400">@review.Rating/10</span>
                                 </div>
                                 <p class="text-gray-700 dark:text-gray-300 text-sm">@review.Comment</p>
+                                @{
+                                    var _rl = ViewBag.ReviewLikes as IDictionary<int, (int Count, bool Voted)>;
+                                    (int Count, bool Voted) _rlv = _rl != null && _rl.TryGetValue(review.Id, out var _v) ? _v : (0, false);
+                                    var _ownReview = _currentUserId != null && review.UserId == _currentUserId;
+                                }
+                                @if (!_ownReview)
+                                {
+                                    <button type="button" onclick="toggleReviewLike(this, @review.Id)"
+                                            class="review-like-btn mt-2 inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full border transition @(_rlv.Voted ? "bg-primary/10 border-primary text-primary" : "border-gray-300 dark:border-gray-600 text-gray-500 hover:border-primary hover:text-primary")"
+                                            aria-pressed="@(_rlv.Voted ? "true" : "false")">
+                                        <i class="fa-regular fa-thumbs-up"></i>
+                                        <span>Faydalı</span>
+                                        <span class="review-like-count">@(_rlv.Count > 0 ? $"({_rlv.Count})" : "")</span>
+                                    </button>
+                                }
+                                else if (_rlv.Count > 0)
+                                {
+                                    <p class="mt-2 text-xs text-gray-400"><i class="fa-regular fa-thumbs-up mr-1"></i>@_rlv.Count kişi faydalı buldu</p>
+                                }
                             </div>
                         </div>
                     }
@@ -454,3 +473,24 @@
         <i class="fa-solid fa-arrow-left mr-2"></i> Vitrine Dön
     </a>
 </div>
+
+<script>
+    async function toggleReviewLike(btn, reviewId) {
+        btn.disabled = true;
+        try {
+            const res = await postJson('/Car/ToggleReviewLike', { reviewId: reviewId });
+            if (res.status === 401) { window.location.href = '/Account/Login'; return; }
+            if (!res.ok) return;
+            const data = await res.json();
+            const countEl = btn.querySelector('.review-like-count');
+            countEl.textContent = data.count > 0 ? `(${data.count})` : '';
+            btn.setAttribute('aria-pressed', data.voted ? 'true' : 'false');
+            btn.classList.toggle('bg-primary/10', data.voted);
+            btn.classList.toggle('border-primary', data.voted);
+            btn.classList.toggle('text-primary', data.voted);
+            btn.classList.toggle('border-gray-300', !data.voted);
+            btn.classList.toggle('text-gray-500', !data.voted);
+        } catch (e) { /* yoksay */ }
+        finally { btn.disabled = false; }
+    }
+</script>
