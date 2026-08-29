@@ -305,6 +305,8 @@ Development: `dotnet user-secrets`. Production: environment variable.
 - [x] Araç başına çoklu görsel galerisi — `CarImage` entity (migration `CarImageGallery`);
   admin `/AdminCar/Images/{id}` çoklu yükleme + sil + "kapak yap"; araç detayında ana görsel + tıklanabilir thumbnail şeridi.
   Kapak hâlâ `Car.ImageUrl` (kart/OG/JSON-LD).
+  **⚠️ Bilinen sınır:** yüklenen görseller `wwwroot/images/cars/`'a yazılıyor; Railway'de volume olmadığı için
+  her deploy'da silinir → kalıcılık için object storage (S3/Cloudinary) gerekir (Faz 4).
 - [x] Yorumlarda sıralama (en yeni / en yüksek puan / en düşük puan — `?rsort=`) + "daha fazla göster" (ilk 5, gerisi JS ile açılır)
 - [x] Gamification KALDIRILDI — `AppUser` artık düz `IdentityUser` (kullanılmayan `Level`/`XP`/`AvatarUrl` alanları silindi, migration `DropAppUserGamification`)
 

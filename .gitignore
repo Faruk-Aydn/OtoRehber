@@ -55,3 +55,7 @@ node_modules/
 
 # Mac OS X
 .DS_Store
+
+# Admin tarafından yüklenen araç görselleri (repoya girmez; kalıcılık için object storage gerekir)
+OtoRehber/wwwroot/images/cars/*
+!OtoRehber/wwwroot/images/cars/.gitkeep
