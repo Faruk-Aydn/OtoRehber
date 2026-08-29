@@ -22,6 +22,8 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
         builder.UseEnvironment("Testing");
+        // Katalog seeder testlerde kapalı: HasData'nın 2 aracıyla hızlı ve deterministik.
+        builder.UseSetting("Catalog:Sync", "false");
 
         // Minimal hosting'de ConfigureAppConfiguration Program.cs'in erken config
         // okumasını güvenilir şekilde geçersiz kılamıyor; DbContext'i doğrudan

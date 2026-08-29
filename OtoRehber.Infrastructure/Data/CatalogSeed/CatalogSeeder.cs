@@ -12,13 +12,21 @@ using OtoRehber.Domain.Entities;
 namespace OtoRehber.Infrastructure.Data.CatalogSeed
 {
     /// <summary>
-    /// `Data/catalog/*.json` dosyalarındaki araç varyantlarını veritabanına idempotent şekilde ekler.
-    /// Anahtar: (Brand + ModelName + Engine). Kayıt varsa DOKUNULMAZ (admin düzenlemeleri korunur),
-    /// yoksa alt kayıtlarıyla (kronik arıza / artı-eksi / km barajı) birlikte eklenir.
-    /// `forceUpdate = true` ise mevcut kayıtların alanları ve alt listeleri katalogdan yeniden yazılır.
+    /// `Data/catalog/*.json` dosyalarını veritabanına **bildirimsel** olarak senkronlar.
+    /// JSON = doğruluk kaynağı. Anahtar: (Brand + ModelName + Engine), harf duyarsız.
+    ///
+    /// - Anahtar JSON'da var, DB'de yok → ekle (`Source = "catalog"`).
+    /// - Anahtar JSON'da var, DB'de var → benimse (`Source = "catalog"`) + tüm alanları/alt
+    ///   listeleri JSON'dan yeniden yaz. (Elle eklenen bir araç granüler bir anahtarı birebir
+    ///   tutturamayacağı için bu güvenlidir; HasData anahtarları da eşleşmez.)
+    /// - `Source == "catalog"` olup anahtarı JSON'da YOK → buda (sil). Yorumu / garaj kaydı /
+    ///   fiyat geçmişi olan katalog aracı SİLİNMEZ (atlanır + uyarı loglanır).
+    /// - `Source == null` (HasData / admin) satırlara asla dokunulmaz.
     /// </summary>
     public static class CatalogSeeder
     {
+        public const string SourceCatalog = "catalog";
+
         private static readonly JsonSerializerOptions JsonOpts = new()
         {
             PropertyNameCaseInsensitive = true,
@@ -26,7 +34,7 @@ namespace OtoRehber.Infrastructure.Data.CatalogSeed
             AllowTrailingCommas = true
         };
 
-        public static async Task SeedAsync(OtoRehberDbContext db, string catalogDir, ILogger logger, bool forceUpdate = false)
+        public static async Task SeedAsync(OtoRehberDbContext db, string catalogDir, ILogger logger)
         {
             if (!Directory.Exists(catalogDir))
             {
@@ -56,24 +64,18 @@ namespace OtoRehber.Infrastructure.Data.CatalogSeed
                 }
             }
 
-            if (incoming.Count == 0) return;
+            if (incoming.Count == 0)
+            {
+                logger.LogWarning("Katalog JSON'ları boş/okunamadı; senkron atlandı (mevcut kayıtlara dokunulmadı).");
+                return;
+            }
 
-            // Mevcut araçları anahtarlarıyla çek (alt listeleriyle, forceUpdate için).
-            var existing = await db.Cars
-                .Include(c => c.ProsConsList)
-                .Include(c => c.ChronicIssues)
-                .Include(c => c.MileageMilestones)
-                .ToListAsync();
-
-            static string Key(string brand, string model, string engine) =>
+            static string Key(string? brand, string? model, string? engine) =>
                 $"{brand?.Trim().ToLowerInvariant()}|{model?.Trim().ToLowerInvariant()}|{engine?.Trim().ToLowerInvariant()}";
 
-            var byKey = existing
-                .GroupBy(c => Key(c.Brand, c.ModelName, c.Engine))
-                .ToDictionary(g => g.Key, g => g.First());
-
-            int added = 0, updated = 0, skipped = 0, invalid = 0;
-
+            // Geçersizleri ele, anahtar bazında son kaydı tut (aynı anahtar iki kez yazıldıysa).
+            var incomingByKey = new Dictionary<string, CatalogCar>();
+            int invalid = 0;
             foreach (var src in incoming)
             {
                 if (string.IsNullOrWhiteSpace(src.Brand) || string.IsNullOrWhiteSpace(src.ModelName) || string.IsNullOrWhiteSpace(src.Engine))
@@ -81,21 +83,35 @@ namespace OtoRehber.Infrastructure.Data.CatalogSeed
                     invalid++;
                     continue;
                 }
+                incomingByKey[Key(src.Brand, src.ModelName, src.Engine)] = src;
+            }
+
+            var existing = await db.Cars
+                .Include(c => c.ProsConsList)
+                .Include(c => c.ChronicIssues)
+                .Include(c => c.MileageMilestones)
+                .ToListAsync();
+            var existingByKey = existing
+                .GroupBy(c => Key(c.Brand, c.ModelName, c.Engine))
+                .ToDictionary(g => g.Key, g => g.First());
+
+            // Prune adayları için referans (yorum/garaj/fiyat) olan araç Id'lerini topla.
+            var referencedCarIds = new HashSet<int>(
+                (await db.CarReviews.Select(r => r.CarId).Distinct().ToListAsync())
+                .Concat(await db.UserGarages.Select(g => g.CarId).Distinct().ToListAsync())
+                .Concat(await db.CarPriceHistories.Select(p => p.CarId).Distinct().ToListAsync()));
+
+            int added = 0, adopted = 0, pruned = 0, prunedBlocked = 0;
+
+            // 1) Ekle + Benimse/Güncelle
+            foreach (var (key, src) in incomingByKey)
+            {
                 var segment = CarSegments.IsValid(src.Segment) ? src.Segment.Trim() : "C";
 
-                if (byKey.TryGetValue(Key(src.Brand, src.ModelName, src.Engine), out var car))
+                if (existingByKey.TryGetValue(key, out var car))
                 {
-                    if (!forceUpdate) { skipped++; continue; }
-
-                    car.ProductionYears = src.ProductionYears;
-                    car.Segment = segment;
-                    car.ReliabilityScore = src.ReliabilityScore;
-                    car.MinPrice = src.MinPrice;
-                    car.MaxPrice = src.MaxPrice;
-                    car.EstimatedMaintenanceCostEUR = src.EstimatedMaintenanceCostEUR;
-                    car.ExpertSummary = src.ExpertSummary;
-                    car.UserFeedbackSummary = src.UserFeedbackSummary;
-                    if (!string.IsNullOrWhiteSpace(src.ImageUrl)) car.ImageUrl = src.ImageUrl;
+                    if (car.Source != SourceCatalog) { car.Source = SourceCatalog; adopted++; }
+                    ApplyFields(car, src, segment);
 
                     db.ProsCons.RemoveRange(car.ProsConsList);
                     db.ChronicIssues.RemoveRange(car.ChronicIssues);
@@ -103,40 +119,60 @@ namespace OtoRehber.Infrastructure.Data.CatalogSeed
                     car.ProsConsList = BuildProsCons(src);
                     car.ChronicIssues = BuildIssues(src);
                     car.MileageMilestones = BuildMilestones(src);
-                    updated++;
                 }
                 else
                 {
-                    var newCar = new Car
-                    {
-                        Brand = src.Brand.Trim(),
-                        ModelName = src.ModelName.Trim(),
-                        ProductionYears = src.ProductionYears,
-                        Engine = src.Engine.Trim(),
-                        Segment = segment,
-                        ReliabilityScore = src.ReliabilityScore,
-                        MinPrice = src.MinPrice,
-                        MaxPrice = src.MaxPrice,
-                        EstimatedMaintenanceCostEUR = src.EstimatedMaintenanceCostEUR,
-                        ExpertSummary = src.ExpertSummary,
-                        UserFeedbackSummary = src.UserFeedbackSummary,
-                        ImageUrl = string.IsNullOrWhiteSpace(src.ImageUrl) ? null : src.ImageUrl,
-                        ProsConsList = BuildProsCons(src),
-                        ChronicIssues = BuildIssues(src),
-                        MileageMilestones = BuildMilestones(src)
-                    };
+                    var newCar = new Car { Source = SourceCatalog };
+                    ApplyFields(newCar, src, segment);
+                    newCar.ProsConsList = BuildProsCons(src);
+                    newCar.ChronicIssues = BuildIssues(src);
+                    newCar.MileageMilestones = BuildMilestones(src);
                     db.Cars.Add(newCar);
-                    byKey[Key(newCar.Brand, newCar.ModelName, newCar.Engine)] = newCar;
+                    existingByKey[key] = newCar;
                     added++;
                 }
             }
 
-            if (added > 0 || updated > 0)
-                await db.SaveChangesAsync();
+            // 2) Buda: Source="catalog" olup artık JSON'da olmayanlar
+            foreach (var car in existing)
+            {
+                if (car.Source != SourceCatalog) continue;
+                var key = Key(car.Brand, car.ModelName, car.Engine);
+                if (incomingByKey.ContainsKey(key)) continue;
+
+                if (referencedCarIds.Contains(car.Id))
+                {
+                    prunedBlocked++;
+                    logger.LogWarning(
+                        "Katalog aracı budanamadı (yorum/garaj/fiyat kaydı var): #{Id} {Brand} {Model} — {Engine}. Elle temizleyin.",
+                        car.Id, car.Brand, car.ModelName, car.Engine);
+                    continue;
+                }
+                db.Cars.Remove(car);
+                pruned++;
+            }
+
+            await db.SaveChangesAsync();
 
             logger.LogInformation(
-                "Katalog seeder: {Files} dosya, {Incoming} varyant → eklendi {Added}, güncellendi {Updated}, atlandı {Skipped}, geçersiz {Invalid}.",
-                files.Count, incoming.Count, added, updated, skipped, invalid);
+                "Katalog seeder: {Files} dosya, {Keys} benzersiz varyant → eklendi {Added}, benimsendi {Adopted}, budandı {Pruned}, atlandı(referanslı) {Blocked}, geçersiz {Invalid}.",
+                files.Count, incomingByKey.Count, added, adopted, pruned, prunedBlocked, invalid);
+        }
+
+        private static void ApplyFields(Car car, CatalogCar src, string segment)
+        {
+            car.Brand = src.Brand.Trim();
+            car.ModelName = src.ModelName.Trim();
+            car.ProductionYears = Trim(src.ProductionYears ?? "", 40);
+            car.Engine = Trim(src.Engine.Trim(), 120);
+            car.Segment = segment;
+            car.ReliabilityScore = src.ReliabilityScore;
+            car.MinPrice = src.MinPrice;
+            car.MaxPrice = src.MaxPrice;
+            car.EstimatedMaintenanceCostEUR = src.EstimatedMaintenanceCostEUR;
+            car.ExpertSummary = src.ExpertSummary ?? "";
+            car.UserFeedbackSummary = src.UserFeedbackSummary ?? "";
+            car.ImageUrl = string.IsNullOrWhiteSpace(src.ImageUrl) ? null : Trim(src.ImageUrl!, 500);
         }
 
         private static string ClipSeverity(string? s)
@@ -164,7 +200,7 @@ namespace OtoRehber.Infrastructure.Data.CatalogSeed
                     Description = i.Description ?? "",
                     Severity = ClipSeverity(i.Severity),
                     EstimatedCostEUR = i.EstimatedCostEUR,
-                    AffectedYears = Trim(i.AffectedYears, 60)
+                    AffectedYears = Trim(i.AffectedYears ?? "", 60)
                 })
                 .ToList();
 

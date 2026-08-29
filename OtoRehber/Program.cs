@@ -298,17 +298,21 @@ using (var scope = app.Services.CreateScope())
         await userManager.AddToRoleAsync(adminUser, "Admin");
     }
 
-    // Araç kataloğu (Data/catalog/*.json) — idempotent seeder.
-    // Catalog:ForceUpdate=true ise mevcut kayıtların alanları katalogdan yeniden yazılır (admin düzenlemelerini ezer).
-    try
+    // Araç kataloğu (Data/catalog/*.json) — bildirimsel senkron (ekle/benimse/buda).
+    // JSON = doğruluk kaynağı; Source="catalog" satırları JSON'a göre güncellenir/budanır.
+    // Catalog:Sync=false ile tamamen kapatılır (varsayılan: açık; testlerde kapalı).
+    var catalogSync = !string.Equals(config["Catalog:Sync"], "false", StringComparison.OrdinalIgnoreCase);
+    if (catalogSync)
     {
-        var catalogDir = Path.Combine(app.Environment.ContentRootPath, "Data", "catalog");
-        bool catalogForce = string.Equals(config["Catalog:ForceUpdate"], "true", StringComparison.OrdinalIgnoreCase);
-        await OtoRehber.Infrastructure.Data.CatalogSeed.CatalogSeeder.SeedAsync(context, catalogDir, logger, catalogForce);
-    }
-    catch (Exception ex)
-    {
-        logger.LogError(ex, "Araç kataloğu seeder hatası (uygulama başlatma engellenmedi).");
+        try
+        {
+            var catalogDir = Path.Combine(app.Environment.ContentRootPath, "Data", "catalog");
+            await OtoRehber.Infrastructure.Data.CatalogSeed.CatalogSeeder.SeedAsync(context, catalogDir, logger);
+        }
+        catch (Exception ex)
+        {
+            logger.LogError(ex, "Araç kataloğu seeder hatası (uygulama başlatma engellenmedi).");
+        }
     }
 }
 

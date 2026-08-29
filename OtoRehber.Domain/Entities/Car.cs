@@ -34,6 +34,13 @@ namespace OtoRehber.Domain.Entities
         [MaxLength(500)]
         public string? ImageUrl { get; set; }
 
+        /// <summary>
+        /// Kaydın kaynağı: "catalog" → `Data/catalog/*.json` seeder yönetir (senkron/prune);
+        /// null → HasData seed veya admin panelden elle eklendi (seeder dokunmaz).
+        /// </summary>
+        [MaxLength(20)]
+        public string? Source { get; set; }
+
         public List<ProsCons> ProsConsList { get; set; } = new List<ProsCons>();
         public List<ChronicIssue> ChronicIssues { get; set; } = new List<ChronicIssue>();
         public List<MileageMilestone> MileageMilestones { get; set; } = new List<MileageMilestone>();
