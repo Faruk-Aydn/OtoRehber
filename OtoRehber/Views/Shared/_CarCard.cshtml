@@ -16,8 +16,8 @@
                 </label>
             </div>
         }
-        <button onclick="toggleGarageHome(@Model.Id, this)" class="absolute top-3 right-3 bg-white/90 p-2 w-10 h-10 rounded-full shadow-sm border border-gray-200 z-10 backdrop-blur-sm flex items-center justify-center text-gray-400 hover:text-red-500 hover:scale-110 transition-all focus:outline-none" title="Garaja Ekle">
-            <i class="fa-solid fa-heart text-lg"></i>
+        <button type="button" onclick="toggleGarageHome(@Model.Id, this)" class="absolute top-3 right-3 bg-white/90 p-2 w-10 h-10 rounded-full shadow-sm border border-gray-200 z-10 backdrop-blur-sm flex items-center justify-center text-gray-400 hover:text-red-500 hover:scale-110 transition-all focus:ring-2 focus:ring-primary outline-none" title="Garaja Ekle" aria-label="@Model.Brand @Model.ModelName aracını garajıma ekle/çıkar">
+            <i class="fa-solid fa-heart text-lg" aria-hidden="true"></i>
         </button>
 
         @if (!string.IsNullOrEmpty(Model.ImageUrl))

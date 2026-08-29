@@ -85,8 +85,8 @@
                     </div>
                     <h1 class="mt-1 text-3xl font-extrabold text-gray-900 dark:text-white leading-tight">@Model.Brand @Model.ModelName</h1>
                 </div>
-                <button onclick="toggleGarageHome(@Model.Id, this)" class="bg-gray-100 p-3 w-12 h-12 rounded-full shadow-sm border border-gray-200 z-10 flex items-center justify-center text-gray-400 hover:text-red-500 hover:scale-110 transition-all focus:outline-none" title="Garaja Ekle">
-                    <i class="fa-solid fa-heart text-xl"></i>
+                <button type="button" onclick="toggleGarageHome(@Model.Id, this)" class="bg-gray-100 p-3 w-12 h-12 rounded-full shadow-sm border border-gray-200 z-10 flex items-center justify-center text-gray-400 hover:text-red-500 hover:scale-110 transition-all focus:ring-2 focus:ring-primary outline-none" title="Garaja Ekle" aria-label="Bu aracı garajıma ekle/çıkar">
+                    <i class="fa-solid fa-heart text-xl" aria-hidden="true"></i>
                 </button>
             </div>
             

@@ -59,6 +59,10 @@
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans min-h-screen flex flex-col overflow-x-hidden selection:bg-primary selection:text-white transition-colors duration-300">
 
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[300] focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg">
+        İçeriğe geç
+    </a>
+
     <!-- Glassmorphism Navbar -->
     <header class="bg-white/80 dark:bg-gray-800/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50 shadow-sm transition-all duration-300">
         <nav class="container mx-auto px-4 py-3 md:py-4">
@@ -73,9 +77,9 @@
 
                 <!-- MASAÜSTÜ menü (lg+) -->
                 <div class="hidden lg:flex items-center gap-x-4 xl:gap-x-6">
-                    <button id="theme-toggle" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg p-2.5 transition-colors">
-                        <i id="theme-toggle-dark-icon" class="fa-solid fa-moon hidden text-lg"></i>
-                        <i id="theme-toggle-light-icon" class="fa-solid fa-sun hidden text-lg text-yellow-400"></i>
+                    <button id="theme-toggle" type="button" aria-label="Karanlık/aydınlık tema değiştir" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg p-2.5 transition-colors focus:ring-2 focus:ring-primary outline-none">
+                        <i id="theme-toggle-dark-icon" class="fa-solid fa-moon hidden text-lg" aria-hidden="true"></i>
+                        <i id="theme-toggle-light-icon" class="fa-solid fa-sun hidden text-lg text-yellow-400" aria-hidden="true"></i>
                     </button>
                     <a asp-controller="Home" asp-action="Index" class="@linkCls">Ana Sayfa</a>
                     <a asp-controller="Compare" asp-action="Index" class="@linkCls"><i class="fa-solid fa-scale-balanced"></i> Karşılaştırma</a>
@@ -83,10 +87,11 @@
                     <a asp-controller="Stats" asp-action="Index" class="@linkCls"><i class="fa-solid fa-chart-pie text-indigo-500"></i> İstatistikler</a>
 
                     <div class="relative" id="navbar-search-wrap">
-                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm pointer-events-none"></i>
-                        <input id="navbar-search-input" type="text" placeholder="Araç ara..." autocomplete="off"
+                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm pointer-events-none" aria-hidden="true"></i>
+                        <input id="navbar-search-input" type="search" placeholder="Araç ara..." autocomplete="off"
+                               aria-label="Araç ara" role="combobox" aria-expanded="false" aria-controls="navbar-search-results" aria-autocomplete="list"
                                class="bg-gray-100 dark:bg-gray-700 border-0 rounded-xl pl-9 pr-4 py-2 text-sm text-gray-800 dark:text-gray-200 placeholder-gray-400 focus:ring-2 focus:ring-primary outline-none w-40 lg:w-44 transition-all focus:w-52 lg:focus:w-56" />
-                        <div id="navbar-search-results" class="hidden absolute top-full right-0 mt-1 w-72 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 z-50 overflow-hidden"></div>
+                        <div id="navbar-search-results" role="listbox" class="hidden absolute top-full right-0 mt-1 w-72 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 z-50 overflow-hidden"></div>
                     </div>
 
                     @if (User.Identity?.IsAuthenticated == true)
@@ -110,12 +115,12 @@
 
                 <!-- MOBİL/TABLET: tema + hamburger -->
                 <div class="flex lg:hidden items-center gap-1">
-                    <button id="theme-toggle-m" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg p-2.5">
-                        <i class="theme-dark-icon fa-solid fa-moon hidden text-lg"></i>
-                        <i class="theme-light-icon fa-solid fa-sun hidden text-lg text-yellow-400"></i>
+                    <button id="theme-toggle-m" type="button" aria-label="Karanlık/aydınlık tema değiştir" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg p-2.5 focus:ring-2 focus:ring-primary outline-none">
+                        <i class="theme-dark-icon fa-solid fa-moon hidden text-lg" aria-hidden="true"></i>
+                        <i class="theme-light-icon fa-solid fa-sun hidden text-lg text-yellow-400" aria-hidden="true"></i>
                     </button>
-                    <button id="mobile-menu-btn" aria-label="Menü" class="text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg p-2.5">
-                        <i class="fa-solid fa-bars text-xl"></i>
+                    <button id="mobile-menu-btn" type="button" aria-label="Menü" aria-expanded="false" aria-controls="mobile-menu" class="text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg p-2.5 focus:ring-2 focus:ring-primary outline-none">
+                        <i class="fa-solid fa-bars text-xl" aria-hidden="true"></i>
                     </button>
                 </div>
             </div>
@@ -155,7 +160,7 @@
     
     @Html.AntiForgeryToken()
 
-    <main role="main" class="container mx-auto px-4 py-8 flex-grow">
+    <main id="main-content" role="main" tabindex="-1" class="container mx-auto px-4 py-8 flex-grow outline-none">
         @RenderBody()
     </main>
 
@@ -285,8 +290,8 @@
     <!-- AI Chatbot Asistanı (V3) -->
     <div id="aiChatWidget" class="fixed bottom-4 right-4 z-[100]">
         <!-- Chat Butonu -->
-        <button id="aiChatBtn" onclick="toggleChat()" class="bg-indigo-600 hover:bg-indigo-700 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:shadow-2xl transition-all transform hover:scale-110">
-            <i class="fa-solid fa-robot text-2xl"></i>
+        <button id="aiChatBtn" type="button" onclick="toggleChat()" aria-label="Yapay zeka asistanını aç" aria-expanded="false" aria-controls="aiChatWindow" class="bg-indigo-600 hover:bg-indigo-700 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:shadow-2xl transition-all transform hover:scale-110 focus:ring-4 focus:ring-indigo-300 outline-none">
+            <i class="fa-solid fa-robot text-2xl" aria-hidden="true"></i>
         </button>
 
         <!-- Chat Penceresi -->
@@ -356,8 +361,12 @@
         function toggleChat() {
             const chatWindow = document.getElementById('aiChatWindow');
             chatWindow.classList.toggle('hidden');
-            if(!chatWindow.classList.contains('hidden')) {
+            const open = !chatWindow.classList.contains('hidden');
+            document.getElementById('aiChatBtn')?.setAttribute('aria-expanded', open ? 'true' : 'false');
+            if (open) {
                 document.getElementById('aiChatInput').focus();
+            } else {
+                document.getElementById('aiChatBtn')?.focus();
             }
         }
 
@@ -512,8 +521,13 @@
             function setMenu(open) {
                 menu.classList.toggle('hidden', !open);
                 menuBtn.querySelector('i').className = open ? 'fa-solid fa-xmark text-xl' : 'fa-solid fa-bars text-xl';
+                menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
             }
             menuBtn?.addEventListener('click', () => setMenu(menu.classList.contains('hidden')));
+            // Esc ile kapat
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !menu.classList.contains('hidden')) { setMenu(false); menuBtn.focus(); }
+            });
             // Menüdeki bir bağlantıya tıklanınca kapat
             menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
         });
@@ -540,8 +554,8 @@
                             results.classList.remove('hidden'); return;
                         }
                         results.innerHTML = data.map(item => `
-                            <a href="/Car/Details/${item.id}"
-                               class="flex items-center justify-between px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700 border-b border-gray-100 dark:border-gray-700 last:border-0 transition group">
+                            <a href="/Car/Details/${item.id}" role="option"
+                               class="ac-item flex items-center justify-between px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700 aria-selected:bg-gray-100 dark:aria-selected:bg-gray-700 border-b border-gray-100 dark:border-gray-700 last:border-0 transition group">
                                 <div>
                                     <p class="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-primary">${item.label}</p>
                                     <p class="text-xs text-gray-400">${item.segment} Segmenti</p>
@@ -549,13 +563,25 @@
                                 <span class="text-xs font-bold text-yellow-600 bg-yellow-50 dark:bg-yellow-900/20 px-2 py-0.5 rounded">⭐ ${item.score}</span>
                             </a>`).join('');
                         results.classList.remove('hidden');
-                    } catch (e) { results.classList.add('hidden'); }
+                        input.setAttribute('aria-expanded', 'true');
+                    } catch (e) { results.classList.add('hidden'); input.setAttribute('aria-expanded', 'false'); }
                 }, 250);
             });
 
+            // Klavye navigasyonu: ↑ ↓ Enter Esc
+            let activeIdx = -1;
             input.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter') { const f = results.querySelector('a'); if (f) f.click(); }
+                const items = [...results.querySelectorAll('.ac-item')];
+                if (e.key === 'Escape') { results.classList.add('hidden'); input.setAttribute('aria-expanded', 'false'); activeIdx = -1; return; }
+                if (!items.length) { if (e.key === 'Enter') { const f = results.querySelector('a'); if (f) f.click(); } return; }
+                if (e.key === 'ArrowDown') { e.preventDefault(); activeIdx = (activeIdx + 1) % items.length; }
+                else if (e.key === 'ArrowUp') { e.preventDefault(); activeIdx = (activeIdx - 1 + items.length) % items.length; }
+                else if (e.key === 'Enter') { e.preventDefault(); (items[activeIdx] || items[0]).click(); return; }
+                else return;
+                items.forEach((it, i) => it.setAttribute('aria-selected', i === activeIdx ? 'true' : 'false'));
+                items[activeIdx]?.scrollIntoView({ block: 'nearest' });
             });
+            input.addEventListener('blur', () => setTimeout(() => { results.classList.add('hidden'); input.setAttribute('aria-expanded', 'false'); }, 150));
         }
         wireAutocomplete('navbar-search-input', 'navbar-search-results');
         wireAutocomplete('navbar-search-input-m', 'navbar-search-results-m');

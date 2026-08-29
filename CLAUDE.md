@@ -304,7 +304,9 @@ Development: `dotnet user-secrets`. Production: environment variable.
 - [x] Sayfa bazlı `ViewData["Description"]` — Home/Compare/Stats/AiWizard/Car Details
 - [x] `SeoController` → dinamik `/robots.txt` + `/sitemap.xml` (statik sayfalar + tüm `Car/Details/{id}`; carId listesi 1 saat cache)
 - [x] Araç detay: `Car` JSON-LD (`AggregateOffer` fiyat aralığı + yorum varsa `AggregateRating`)
-- [ ] Erişilebilirlik denetimi: alt text, aria, klavye nav (chat + autocomplete), kontrast, focus
+- [x] Erişilebilirlik (kısmen): skip-link (`#main-content`), icon-only butonlara `aria-label` + `aria-hidden` ikonlar,
+  `focus:ring` görünür odak, autocomplete `role=combobox`/`listbox` + ok tuşu navigasyonu + Esc, chat/menü `aria-expanded`.
+  (Kontrast denetimi + tam ekran okuyucu testi kaldı)
 - [ ] Gizlilik dostu analytics (onay banner'ına bağlı)
 - [ ] Blog/haber + marka/segment landing sayfaları (SEO içerik derinliği)
 
@@ -343,6 +345,7 @@ Development: `dotnet user-secrets`. Production: environment variable.
 | 2026-08-29 | 3.1 | Footer marka/segment menüsü (`CatalogMenuViewComponent`) + admin yorum moderasyonu (`AdminReviewController` `/Admin/Reviews`) | 02f6cc9 |
 | 2026-08-29 | 3.2 | Araç detayında yorum sıralama (`?rsort=`) + "daha fazla göster" (ilk 5) | 56462a0 |
 | 2026-08-29 | 3.2 | Yorumlara "faydalı" oyu — `ReviewLike` DbSet + unique index (migration `ReviewLikeVote`) + `ToggleReviewLike` AJAX | 1300873 |
+| 2026-08-29 | 3.3 | Erişilebilirlik: skip-link + icon buton `aria-label` + görünür odak + autocomplete klavye navigasyonu + `aria-expanded` | _(bu commit)_ |
 | 2026-08-27 | 1.3, 1.10 | Railway `DATABASE_URL` ayrıştırma + Docker healthcheck düzeltme + deploy rehberi | 93c5dbb |
 | 2026-08-27 | deploy | Postgres bağlantı çözümü + `railway.json` | 1e7fb51 |
 | 2026-08-27 | deploy | `PORT` env dinleme + healthcheck timeout | 1c974f8 |
