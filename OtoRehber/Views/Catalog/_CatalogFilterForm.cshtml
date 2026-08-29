@@ -1,0 +1,81 @@
+@model Dictionary<string, string?>
+@{
+    string? V(string k) => Model.TryGetValue(k, out var v) ? v : null;
+    var cs = V("searchQuery");
+    var cbr = V("brand");
+    var cseg = V("segment");
+    var csort = V("sortBy");
+    var cpMin = V("priceMin");
+    var cpMax = V("priceMax");
+    var cScore = V("minScore");
+}
+<form method="get" action="/araclar" class="space-y-4">
+    <div>
+        <label class="label" for="f-search">Arama</label>
+        <input id="f-search" type="text" name="searchQuery" value="@cs" placeholder="Marka veya model" class="input" />
+    </div>
+
+    <div>
+        <label class="label" for="f-brand">Marka</label>
+        <select id="f-brand" name="brand" class="select">
+            <option value="">Tüm markalar</option>
+            @if (ViewBag.Brands != null)
+            {
+                foreach (var b in ViewBag.Brands)
+                {
+                    <option value="@b" selected="@(cbr == (string)b)">@b</option>
+                }
+            }
+        </select>
+    </div>
+
+    <div>
+        <label class="label" for="f-segment">Segment</label>
+        <select id="f-segment" name="segment" class="select">
+            <option value="">Tüm segmentler</option>
+            @if (ViewBag.Segments != null)
+            {
+                foreach (var s in ViewBag.Segments)
+                {
+                    <option value="@s" selected="@(cseg == (string)s)">@s</option>
+                }
+            }
+        </select>
+    </div>
+
+    <div>
+        <label class="label">Fiyat aralığı (₺)</label>
+        <div class="flex items-center gap-2">
+            <input type="number" name="priceMin" value="@cpMin" min="0" step="50000" placeholder="Min" class="input" />
+            <span class="text-content-muted">–</span>
+            <input type="number" name="priceMax" value="@cpMax" min="0" step="50000" placeholder="Maks" class="input" />
+        </div>
+    </div>
+
+    <div>
+        <label class="label" for="f-score">Min. güvenilirlik</label>
+        <select id="f-score" name="minScore" class="select">
+            <option value="">Farketmez</option>
+            <option value="6" selected="@(cScore == "6")">6+ </option>
+            <option value="7" selected="@(cScore == "7")">7+ </option>
+            <option value="8" selected="@(cScore == "8")">8+ </option>
+            <option value="9" selected="@(cScore == "9")">9+ </option>
+        </select>
+    </div>
+
+    <div>
+        <label class="label" for="f-sort">Sıralama</label>
+        <select id="f-sort" name="sortBy" class="select">
+            <option value="" selected="@string.IsNullOrEmpty(csort)">En yeni</option>
+            <option value="score_desc" selected="@(csort == "score_desc")">Güvenilirlik (yüksek → düşük)</option>
+            <option value="score_asc" selected="@(csort == "score_asc")">Güvenilirlik (düşük → yüksek)</option>
+            <option value="price_asc" selected="@(csort == "price_asc")">Fiyat (artan)</option>
+            <option value="price_desc" selected="@(csort == "price_desc")">Fiyat (azalan)</option>
+        </select>
+    </div>
+
+    <div class="flex gap-2 pt-1">
+        <button type="submit" class="btn-primary flex-1"><i class="fa-solid fa-filter"></i> Uygula</button>
+        <a href="/araclar" class="btn-ghost" title="Temizle"><i class="fa-solid fa-rotate-left"></i></a>
+    </div>
+</form>

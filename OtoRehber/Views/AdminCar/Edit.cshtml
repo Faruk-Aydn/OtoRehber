@@ -43,15 +43,11 @@
                 <div>
                     <label asp-for="Segment" class="block text-sm font-medium text-gray-700 mb-2">Segment</label>
                     <select asp-for="Segment" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5">
-                        <option value="A Segmenti">A Segmenti</option>
-                        <option value="B Segmenti">B Segmenti</option>
-                        <option value="C Segmenti">C Segmenti</option>
-                        <option value="D Segmenti">D Segmenti</option>
-                        <option value="E Segmenti">E Segmenti</option>
-                        <option value="SUV">SUV</option>
-                        <option value="Ticari">Ticari</option>
-                        <option value="Spor">Spor</option>
-                        <option value="Elektrikli">Elektrikli</option>
+                        <option value="">Seçin…</option>
+                        @foreach (var seg in OtoRehber.Domain.CarSegments.All)
+                        {
+                            <option value="@seg">@seg</option>
+                        }
                     </select>
                     <span asp-validation-for="Segment" class="text-red-500 text-xs mt-1 block"></span>
                 </div>

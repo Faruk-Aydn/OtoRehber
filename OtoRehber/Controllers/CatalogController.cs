@@ -27,11 +27,12 @@ namespace OtoRehber.Controllers
 
         // GET: /araclar  — filtre + sıralama + sayfalama
         [HttpGet("/araclar")]
-        public async Task<IActionResult> Index(string? searchQuery, string? segment, string? brand, string? sortBy, int page = 1)
+        public async Task<IActionResult> Index(string? searchQuery, string? segment, string? brand, string? sortBy,
+            long? priceMin = null, long? priceMax = null, double? minScore = null, int page = 1)
         {
             const int pageSize = 12;
 
-            var query = CarCatalogQuery.ApplyFilters(_context.Cars.AsNoTracking(), searchQuery, segment, brand);
+            var query = CarCatalogQuery.ApplyFilters(_context.Cars.AsNoTracking(), searchQuery, segment, brand, priceMin, priceMax, minScore);
             var total = await query.CountAsync();
             var totalPages = Math.Max(1, (int)Math.Ceiling(total / (double)pageSize));
             page = Math.Clamp(page, 1, totalPages);
@@ -47,13 +48,8 @@ namespace OtoRehber.Controllers
                 e.AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5);
                 return await _context.Cars.AsNoTracking().Select(c => c.Brand).Distinct().OrderBy(b => b).ToListAsync();
             });
-            ViewBag.Segments = await _cache.GetOrCreateAsync("catalog:segments", async e =>
-            {
-                e.AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10);
-                return await _context.Cars.AsNoTracking()
-                    .Where(c => c.Segment != null && c.Segment != "")
-                    .Select(c => c.Segment).Distinct().OrderBy(s => s).ToListAsync();
-            });
+            // Segment seçenekleri sabit listeden (CarSegments) gelir.
+            ViewBag.Segments = OtoRehber.Domain.CarSegments.All;
 
             ViewData["Title"] = "Tüm Araçlar";
             ViewData["Description"] = "OtoRehber'deki tüm araçları markaya, segmente ve fiyata göre filtreleyin; güvenilirlik puanları ve kullanıcı yorumlarıyla karşılaştırın.";
@@ -64,6 +60,9 @@ namespace OtoRehber.Controllers
             ViewData["CurrentSegment"] = segment;
             ViewData["CurrentBrand"] = brand;
             ViewData["CurrentSort"] = sortBy;
+            ViewData["CurrentPriceMin"] = priceMin;
+            ViewData["CurrentPriceMax"] = priceMax;
+            ViewData["CurrentMinScore"] = minScore;
             return View(cars.ToListDto());
         }
 

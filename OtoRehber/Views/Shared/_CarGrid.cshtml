@@ -1,0 +1,8 @@
+@model IEnumerable<OtoRehber.Domain.DTOs.CarListDto>
+@* Ortak araç grid'i — Catalog/List, Catalog/Index vb. paylaşır. ViewData["Ratings"]/["ShowCompare"] çağıran view'da ayarlanır. *@
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    @foreach (var car in Model)
+    {
+        <partial name="_CarCard" model="car" />
+    }
+</div>

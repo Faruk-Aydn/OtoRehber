@@ -186,6 +186,9 @@ namespace OtoRehber.Controllers
         {
             ModelState.Remove("UserFeedbackSummary"); // İsteğe bağlı olabilir
 
+            if (!OtoRehber.Domain.CarSegments.IsValid(carDto.Segment))
+                ModelState.AddModelError(nameof(carDto.Segment), "Geçerli bir segment seçin.");
+
             if (imageFile != null && imageFile.Length > 0 && !IsValidImage(imageFile))
             {
                 ModelState.AddModelError(nameof(imageFile), "Geçersiz görsel. Sadece JPG, PNG, WEBP veya GIF (maks. 5 MB) yükleyebilirsiniz.");
@@ -238,6 +241,9 @@ namespace OtoRehber.Controllers
             }
 
             ModelState.Remove("UserFeedbackSummary"); // İsteğe bağlı, formda yoksa patlamasın diye
+
+            if (!OtoRehber.Domain.CarSegments.IsValid(carDto.Segment))
+                ModelState.AddModelError(nameof(carDto.Segment), "Geçerli bir segment seçin.");
 
             if (imageFile != null && imageFile.Length > 0 && !IsValidImage(imageFile))
             {

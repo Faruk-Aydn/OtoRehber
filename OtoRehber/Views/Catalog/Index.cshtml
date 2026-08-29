@@ -6,76 +6,130 @@
     var cseg = ViewData["CurrentSegment"] as string;
     var cbr = ViewData["CurrentBrand"] as string;
     var csort = ViewData["CurrentSort"] as string;
+    var cpMin = ViewData["CurrentPriceMin"] as long?;
+    var cpMax = ViewData["CurrentPriceMax"] as long?;
+    var cScore = ViewData["CurrentMinScore"] as double?;
+
+    var routeAll = new Dictionary<string, string?>
+    {
+        ["searchQuery"] = cs,
+        ["brand"] = cbr,
+        ["segment"] = cseg,
+        ["sortBy"] = csort,
+        ["priceMin"] = cpMin?.ToString(),
+        ["priceMax"] = cpMax?.ToString(),
+        ["minScore"] = cScore?.ToString(System.Globalization.CultureInfo.InvariantCulture),
+    };
+    Dictionary<string, string?> RouteWithout(string key)
+    {
+        var d = new Dictionary<string, string?>(routeAll);
+        d.Remove(key);
+        return d;
+    }
+    var rmSearch = RouteWithout("searchQuery");
+    var rmBrand = RouteWithout("brand");
+    var rmSegment = RouteWithout("segment");
+    var rmPriceMin = RouteWithout("priceMin");
+    var rmPriceMax = RouteWithout("priceMax");
+    var rmMinScore = RouteWithout("minScore");
+    var hasAnyFilter = !string.IsNullOrEmpty(cs) || !string.IsNullOrEmpty(cbr) || !string.IsNullOrEmpty(cseg)
+        || cpMin is > 0 || cpMax is > 0 || cScore is > 0;
 }
 
-<div class="max-w-7xl mx-auto py-8 px-4">
-    <div class="flex items-end justify-between flex-wrap gap-3 mb-6">
-        <div>
-            <h1 class="text-3xl font-extrabold text-gray-900 dark:text-white">Tüm Araçlar</h1>
-            <p class="text-gray-500 dark:text-gray-400 mt-1">@ViewBag.Total araç</p>
-        </div>
+<div class="max-w-7xl mx-auto py-8">
+    <div class="mb-6">
+        <h1 class="text-2xl sm:text-3xl font-bold text-content tracking-tight">Tüm araçlar</h1>
+        <p class="text-content-muted mt-1">@ViewBag.Total araç bulundu</p>
     </div>
 
-    <form method="get" class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-4 mb-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        <input type="text" name="searchQuery" value="@cs" placeholder="Marka veya model ara"
-               class="p-2.5 border border-gray-300 dark:border-gray-600 dark:bg-gray-900 rounded-lg text-sm focus:ring-primary focus:border-primary" />
-        <select name="brand" onchange="this.form.submit()" class="p-2.5 border border-gray-300 dark:border-gray-600 dark:bg-gray-900 rounded-lg text-sm">
-            <option value="">Tüm markalar</option>
-            @if (ViewBag.Brands != null)
-            {
-                foreach (var b in ViewBag.Brands)
-                {
-                    <option value="@b" selected="@(cbr == (string)b)">@b</option>
-                }
-            }
-        </select>
-        <select name="segment" onchange="this.form.submit()" class="p-2.5 border border-gray-300 dark:border-gray-600 dark:bg-gray-900 rounded-lg text-sm">
-            <option value="">Tüm segmentler</option>
-            @if (ViewBag.Segments != null)
-            {
-                foreach (var s in ViewBag.Segments)
-                {
-                    <option value="@s" selected="@(cseg == (string)s)">@s segmenti</option>
-                }
-            }
-        </select>
-        <div class="flex gap-2">
-            <select name="sortBy" onchange="this.form.submit()" class="flex-1 p-2.5 border border-gray-300 dark:border-gray-600 dark:bg-gray-900 rounded-lg text-sm">
-                <option value="" selected="@string.IsNullOrEmpty(csort)">En yeni</option>
-                <option value="score_desc" selected="@(csort == "score_desc")">Güvenilirlik ↓</option>
-                <option value="price_asc" selected="@(csort == "price_asc")">Fiyat ↑</option>
-                <option value="price_desc" selected="@(csort == "price_desc")">Fiyat ↓</option>
-            </select>
-            <button type="submit" class="bg-primary hover:bg-blue-700 text-white font-semibold px-4 rounded-lg text-sm">Filtrele</button>
-        </div>
-    </form>
+    <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
+        <!-- Filtre paneli -->
+        <aside class="mb-6 lg:mb-0">
+            <details class="lg:hidden card mb-4" @(hasAnyFilter ? "open" : "")>
+                <summary class="card-pad cursor-pointer font-semibold text-content flex items-center justify-between">
+                    <span><i class="fa-solid fa-sliders mr-2 text-content-muted"></i>Filtreler</span>
+                    <i class="fa-solid fa-chevron-down text-content-muted text-sm"></i>
+                </summary>
+                <div class="px-5 pb-5">
+                    @await Html.PartialAsync("_CatalogFilterForm", (object)routeAll)
+                </div>
+            </details>
+            <div class="hidden lg:block lg:sticky lg:top-20">
+                <div class="card card-pad">
+                    <h2 class="section-title mb-4"><i class="fa-solid fa-sliders mr-2 text-content-muted"></i>Filtreler</h2>
+                    @await Html.PartialAsync("_CatalogFilterForm", (object)routeAll)
+                </div>
+            </div>
+        </aside>
 
-    @if (Model.Any())
-    {
-        <div id="car-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            @foreach (var car in Model)
+        <!-- Sonuçlar -->
+        <div>
+            @if (hasAnyFilter)
             {
-                <partial name="_CarCard" model="car" />
+                <div class="flex flex-wrap items-center gap-2 mb-5">
+                    @if (!string.IsNullOrEmpty(cs))
+                    {
+                        <a asp-controller="Catalog" asp-action="Index" asp-all-route-data="rmSearch" class="chip">Arama: @cs <span aria-hidden="true">✕</span></a>
+                    }
+                    @if (!string.IsNullOrEmpty(cbr))
+                    {
+                        <a asp-controller="Catalog" asp-action="Index" asp-all-route-data="rmBrand" class="chip">Marka: @cbr <span aria-hidden="true">✕</span></a>
+                    }
+                    @if (!string.IsNullOrEmpty(cseg))
+                    {
+                        <a asp-controller="Catalog" asp-action="Index" asp-all-route-data="rmSegment" class="chip">Segment: @cseg <span aria-hidden="true">✕</span></a>
+                    }
+                    @if (cpMin is > 0)
+                    {
+                        <a asp-controller="Catalog" asp-action="Index" asp-all-route-data="rmPriceMin" class="chip">Min @cpMin.Value.ToString("N0") ₺ <span aria-hidden="true">✕</span></a>
+                    }
+                    @if (cpMax is > 0)
+                    {
+                        <a asp-controller="Catalog" asp-action="Index" asp-all-route-data="rmPriceMax" class="chip">Maks @cpMax.Value.ToString("N0") ₺ <span aria-hidden="true">✕</span></a>
+                    }
+                    @if (cScore is > 0)
+                    {
+                        <a asp-controller="Catalog" asp-action="Index" asp-all-route-data="rmMinScore" class="chip">Puan @cScore.Value.ToString("0.#")+ <span aria-hidden="true">✕</span></a>
+                    }
+                    <a href="/araclar" class="text-xs font-medium text-brand-600 hover:underline ml-1">Tümünü temizle</a>
+                </div>
             }
-        </div>
-    }
-    else
-    {
-        <div class="text-center py-16 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700">
-            <i class="fa-solid fa-car-burst text-3xl text-gray-400 mb-3"></i>
-            <p class="text-gray-500">Filtrenize uygun araç bulunamadı.</p>
-            <a href="/araclar" class="mt-4 inline-block text-primary font-semibold hover:underline">Filtreleri temizle</a>
-        </div>
-    }
 
-    @if (ViewBag.TotalPages > 1)
-    {
-        <div class="mt-8 flex justify-center gap-2 flex-wrap">
-            @for (int i = 1; i <= ViewBag.TotalPages; i++)
+            @if (Model.Any())
             {
-                <a asp-route-page="@i" asp-route-searchQuery="@cs" asp-route-brand="@cbr" asp-route-segment="@cseg" asp-route-sortBy="@csort"
-                   class="px-3 py-1.5 rounded-lg text-sm font-medium @(i == ViewBag.Page ? "bg-primary text-white" : "bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:border-primary")">@i</a>
+                <div id="car-grid" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                    @foreach (var car in Model)
+                    {
+                        <partial name="_CarCard" model="car" />
+                    }
+                </div>
+            }
+            else
+            {
+                <div class="card card-pad text-center py-16">
+                    <i class="fa-solid fa-car-burst text-3xl text-content-muted mb-3"></i>
+                    <p class="text-content-muted">Filtrenize uygun araç bulunamadı.</p>
+                    <a href="/araclar" class="btn-secondary btn-sm mt-4">Filtreleri temizle</a>
+                </div>
+            }
+
+            @if (ViewBag.TotalPages > 1)
+            {
+                <nav class="mt-8 flex justify-center gap-1.5 flex-wrap" aria-label="Sayfalama">
+                    @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                    {
+                        var pageData = new Dictionary<string, string?>(routeAll) { ["page"] = i.ToString() };
+                        if (i == ViewBag.Page)
+                        {
+                            <span class="w-10 h-10 flex items-center justify-center rounded-lg bg-brand-600 text-white text-sm font-semibold">@i</span>
+                        }
+                        else
+                        {
+                            <a asp-controller="Catalog" asp-action="Index" asp-all-route-data="pageData" class="w-10 h-10 flex items-center justify-center rounded-lg border border-border bg-surface text-content text-sm font-medium hover:border-brand-300 transition-colors">@i</a>
+                        }
+                    }
+                </nav>
             }
         </div>
-    }
+    </div>
 </div>
