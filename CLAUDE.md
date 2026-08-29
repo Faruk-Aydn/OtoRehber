@@ -281,7 +281,10 @@ Development: `dotnet user-secrets`. Production: environment variable.
 - [x] `sitemap.xml`, `robots.txt` (3.3)
 - [x] Admin: yorum moderasyonu — `AdminReviewController` (`/Admin/Reviews`): tüm yorumlar (25/sayfa),
   araç/kullanıcı/puan/tarih + sil (audit + leaderboard cache invalidate). `AdminCar` panelinden link.
-- [ ] Admin: kullanıcı yönetimi, güvenli toplu import UI
+- [x] Admin: kullanıcı yönetimi — `AdminUserController` (`/Admin/Users`): liste (30/sayfa, e-posta arama),
+  yorum/garaj sayısı, admin rolü ver/al (kendine değil), hesap kilidi aç, kullanıcı sil (garaj elle + yorumlar cascade, audit).
+  `AdminCar` panelinden link.
+- [ ] Admin: güvenli toplu import UI
 - [ ] Blog/haber (opsiyonel, SEO)
 
 ### 3.2 Özellikler
@@ -346,6 +349,7 @@ Development: `dotnet user-secrets`. Production: environment variable.
 | 2026-08-29 | 3.2 | Araç detayında yorum sıralama (`?rsort=`) + "daha fazla göster" (ilk 5) | 56462a0 |
 | 2026-08-29 | 3.2 | Yorumlara "faydalı" oyu — `ReviewLike` DbSet + unique index (migration `ReviewLikeVote`) + `ToggleReviewLike` AJAX | 1300873 |
 | 2026-08-29 | 3.3 | Erişilebilirlik: skip-link + icon buton `aria-label` + görünür odak + autocomplete klavye navigasyonu + `aria-expanded` | 2a61c5c |
+| 2026-08-29 | 3.1 | Admin kullanıcı yönetimi (`AdminUserController` `/Admin/Users`): liste/arama, admin rolü, kilit aç, sil | _(bu commit)_ |
 | 2026-08-27 | 1.3, 1.10 | Railway `DATABASE_URL` ayrıştırma + Docker healthcheck düzeltme + deploy rehberi | 93c5dbb |
 | 2026-08-27 | deploy | Postgres bağlantı çözümü + `railway.json` | 1e7fb51 |
 | 2026-08-27 | deploy | `PORT` env dinleme + healthcheck timeout | 1c974f8 |

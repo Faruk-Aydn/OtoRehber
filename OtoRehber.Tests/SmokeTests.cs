@@ -84,6 +84,8 @@ public class SmokeTests : IClassFixture<CustomWebApplicationFactory>
 
     [Theory]
     [InlineData("/AdminCar")]
+    [InlineData("/Admin/Reviews")]
+    [InlineData("/Admin/Users")]
     [InlineData("/Manage")]
     [InlineData("/Manage/DeleteAccount")]
     [InlineData("/Garage")]
