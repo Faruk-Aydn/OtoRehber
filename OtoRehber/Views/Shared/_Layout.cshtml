@@ -60,104 +60,117 @@
         }
     </script>
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans min-h-screen flex flex-col overflow-x-hidden selection:bg-primary selection:text-white transition-colors duration-300">
+<body class="bg-surface-2 text-content font-sans min-h-screen flex flex-col overflow-x-hidden">
 
     <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[300] focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg">
         İçeriğe geç
     </a>
 
-    <!-- Glassmorphism Navbar -->
-    <header class="bg-white/80 dark:bg-gray-800/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50 shadow-sm transition-all duration-300">
-        <nav class="container mx-auto px-4 py-3 md:py-4">
+    <header class="bg-surface border-b border-border sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-3">
             <div class="flex justify-between items-center gap-3">
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="text-xl md:text-2xl font-extrabold tracking-tight text-primary dark:text-blue-400 flex items-center gap-2 shrink-0">
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="text-xl font-bold tracking-tight text-brand-600 flex items-center gap-2 shrink-0">
                     <i class="fa-solid fa-car-side"></i>OtoRehber
                 </a>
 
                 @{
-                    var linkCls = "text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 font-medium transition flex items-center gap-1";
+                    var linkCls = "text-content-muted hover:text-content font-medium transition-colors";
                 }
 
                 <!-- MASAÜSTÜ menü (lg+) -->
-                <div class="hidden lg:flex items-center gap-x-4 xl:gap-x-6">
-                    <button id="theme-toggle" type="button" aria-label="Karanlık/aydınlık tema değiştir" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg p-2.5 transition-colors focus:ring-2 focus:ring-primary outline-none">
-                        <i id="theme-toggle-dark-icon" class="fa-solid fa-moon hidden text-lg" aria-hidden="true"></i>
-                        <i id="theme-toggle-light-icon" class="fa-solid fa-sun hidden text-lg text-yellow-400" aria-hidden="true"></i>
-                    </button>
+                <div class="hidden lg:flex items-center gap-x-5">
                     <a asp-controller="Home" asp-action="Index" class="@linkCls">Ana Sayfa</a>
-                    <a href="/araclar" class="@linkCls"><i class="fa-solid fa-car"></i> Tüm Araçlar</a>
-                    <a asp-controller="Compare" asp-action="Index" class="@linkCls"><i class="fa-solid fa-scale-balanced"></i> Karşılaştırma</a>
-                    <a asp-controller="AiWizard" asp-action="Index" class="@linkCls"><i class="fa-solid fa-wand-magic-sparkles text-purple-500"></i> AI Sihirbaz</a>
-                    <a asp-controller="Stats" asp-action="Index" class="@linkCls"><i class="fa-solid fa-chart-pie text-indigo-500"></i> İstatistikler</a>
+                    <a href="/araclar" class="@linkCls">Tüm Araçlar</a>
+                    <a asp-controller="Compare" asp-action="Index" class="@linkCls">Karşılaştırma</a>
+                    <a asp-controller="AiWizard" asp-action="Index" class="@linkCls">AI Sihirbaz</a>
+                    <a asp-controller="Stats" asp-action="Index" class="@linkCls">İstatistikler</a>
 
                     <div class="relative" id="navbar-search-wrap">
-                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm pointer-events-none" aria-hidden="true"></i>
+                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-content-muted text-sm pointer-events-none" aria-hidden="true"></i>
                         <input id="navbar-search-input" type="search" placeholder="Araç ara..." autocomplete="off"
                                aria-label="Araç ara" role="combobox" aria-expanded="false" aria-controls="navbar-search-results" aria-autocomplete="list"
-                               class="bg-gray-100 dark:bg-gray-700 border-0 rounded-xl pl-9 pr-4 py-2 text-sm text-gray-800 dark:text-gray-200 placeholder-gray-400 focus:ring-2 focus:ring-primary outline-none w-40 lg:w-44 transition-all focus:w-52 lg:focus:w-56" />
-                        <div id="navbar-search-results" role="listbox" class="hidden absolute top-full right-0 mt-1 w-72 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 z-50 overflow-hidden"></div>
+                               class="bg-surface-3 border border-border rounded-lg pl-9 pr-3 py-2 text-sm text-content placeholder:text-content-muted/70 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30 outline-none w-44 transition-colors" />
+                        <div id="navbar-search-results" role="listbox" class="hidden absolute top-full right-0 mt-1 w-72 bg-surface rounded-lg shadow-lg border border-border z-50 overflow-hidden"></div>
                     </div>
+
+                    <button id="theme-toggle" type="button" aria-label="Karanlık/aydınlık tema değiştir" class="text-content-muted hover:text-content hover:bg-surface-3 rounded-lg p-2 transition-colors focus:ring-2 focus:ring-brand-500 outline-none">
+                        <i id="theme-toggle-dark-icon" class="fa-solid fa-moon hidden" aria-hidden="true"></i>
+                        <i id="theme-toggle-light-icon" class="fa-solid fa-sun hidden" aria-hidden="true"></i>
+                    </button>
 
                     @if (User.Identity?.IsAuthenticated == true)
                     {
-                        <a asp-controller="Garage" asp-action="Index" class="@linkCls"><i class="fa-solid fa-heart text-red-500"></i> Garajım</a>
-                        <a asp-controller="Manage" asp-action="Index" class="@linkCls text-sm"><i class="fa-solid fa-circle-user"></i> Hesabım</a>
-                        @if (User.IsInRole("Admin"))
-                        {
-                            <a asp-controller="AdminCar" asp-action="Index" class="bg-primary hover:bg-blue-700 text-white px-3 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-2 shadow-md"><i class="fa-solid fa-gear"></i> Admin</a>
-                        }
-                        <form asp-controller="Account" asp-action="Logout" method="post" class="inline">
-                            <button type="submit" class="@linkCls text-sm"><i class="fa-solid fa-arrow-right-from-bracket"></i> Çıkış</button>
-                        </form>
+                        <div class="relative" id="account-menu-wrap">
+                            <button id="account-menu-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="account-menu"
+                                    class="flex items-center gap-1.5 text-content-muted hover:text-content font-medium transition-colors focus:ring-2 focus:ring-brand-500 outline-none rounded-lg px-1 py-1">
+                                <i class="fa-solid fa-circle-user text-lg"></i>
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </button>
+                            <div id="account-menu" class="hidden absolute top-full right-0 mt-1 w-48 bg-surface rounded-lg shadow-lg border border-border z-50 overflow-hidden py-1">
+                                <a asp-controller="Garage" asp-action="Index" class="block px-4 py-2.5 text-sm text-content hover:bg-surface-3 transition-colors"><i class="fa-solid fa-heart w-4 text-content-muted"></i> Garajım</a>
+                                <a asp-controller="Manage" asp-action="Index" class="block px-4 py-2.5 text-sm text-content hover:bg-surface-3 transition-colors"><i class="fa-solid fa-gear w-4 text-content-muted"></i> Hesabım</a>
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    <a asp-controller="AdminCar" asp-action="Index" class="block px-4 py-2.5 text-sm text-content hover:bg-surface-3 transition-colors"><i class="fa-solid fa-toolbox w-4 text-content-muted"></i> Admin Panel</a>
+                                }
+                                <div class="border-t border-border my-1"></div>
+                                <form asp-controller="Account" asp-action="Logout" method="post">
+                                    <button type="submit" class="w-full text-left px-4 py-2.5 text-sm text-content hover:bg-surface-3 transition-colors"><i class="fa-solid fa-arrow-right-from-bracket w-4 text-content-muted"></i> Çıkış</button>
+                                </form>
+                            </div>
+                        </div>
                     }
                     else
                     {
-                        <a asp-controller="Account" asp-action="Register" class="@linkCls text-sm"><i class="fa-solid fa-user-plus"></i> Kayıt Ol</a>
-                        <a asp-controller="Account" asp-action="Login" class="@linkCls text-sm"><i class="fa-solid fa-lock"></i> Giriş</a>
+                        <a asp-controller="Account" asp-action="Login" class="@linkCls text-sm">Giriş</a>
+                        <a asp-controller="Account" asp-action="Register" class="btn-primary btn-sm">Kayıt Ol</a>
                     }
                 </div>
 
                 <!-- MOBİL/TABLET: tema + hamburger -->
                 <div class="flex lg:hidden items-center gap-1">
-                    <button id="theme-toggle-m" type="button" aria-label="Karanlık/aydınlık tema değiştir" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg p-2.5 focus:ring-2 focus:ring-primary outline-none">
+                    <button id="theme-toggle-m" type="button" aria-label="Karanlık/aydınlık tema değiştir" class="text-content-muted hover:text-content hover:bg-surface-3 rounded-lg p-2.5 focus:ring-2 focus:ring-brand-500 outline-none">
                         <i class="theme-dark-icon fa-solid fa-moon hidden text-lg" aria-hidden="true"></i>
-                        <i class="theme-light-icon fa-solid fa-sun hidden text-lg text-yellow-400" aria-hidden="true"></i>
+                        <i class="theme-light-icon fa-solid fa-sun hidden text-lg" aria-hidden="true"></i>
                     </button>
-                    <button id="mobile-menu-btn" type="button" aria-label="Menü" aria-expanded="false" aria-controls="mobile-menu" class="text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg p-2.5 focus:ring-2 focus:ring-primary outline-none">
+                    <button id="mobile-menu-btn" type="button" aria-label="Menü" aria-expanded="false" aria-controls="mobile-menu" class="text-content hover:bg-surface-3 rounded-lg p-2.5 focus:ring-2 focus:ring-brand-500 outline-none">
                         <i class="fa-solid fa-bars text-xl" aria-hidden="true"></i>
                     </button>
                 </div>
             </div>
 
             <!-- MOBİL menü paneli -->
-            <div id="mobile-menu" class="hidden lg:hidden mt-3 pb-2 space-y-1 border-t border-gray-200 dark:border-gray-700 pt-3">
+            @{
+                var mLink = "block px-3 py-2.5 rounded-lg text-content-muted hover:text-content hover:bg-surface-3 font-medium transition-colors";
+            }
+            <div id="mobile-menu" class="hidden lg:hidden mt-3 pb-2 space-y-1 border-t border-border pt-3">
                 <div class="relative mb-2">
-                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm pointer-events-none"></i>
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-content-muted text-sm pointer-events-none"></i>
                     <input id="navbar-search-input-m" type="text" placeholder="Araç ara..." autocomplete="off"
-                           class="w-full bg-gray-100 dark:bg-gray-700 border-0 rounded-xl pl-9 pr-4 py-2.5 text-sm text-gray-800 dark:text-gray-200 placeholder-gray-400 focus:ring-2 focus:ring-primary outline-none" />
-                    <div id="navbar-search-results-m" class="hidden mt-1 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden"></div>
+                           class="w-full bg-surface-3 border border-border rounded-lg pl-9 pr-3 py-2.5 text-sm text-content placeholder:text-content-muted/70 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30 outline-none" />
+                    <div id="navbar-search-results-m" class="hidden mt-1 bg-surface rounded-lg shadow-lg border border-border overflow-hidden"></div>
                 </div>
-                <a asp-controller="Home" asp-action="Index" class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 @linkCls">Ana Sayfa</a>
-                <a href="/araclar" class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 @linkCls"><i class="fa-solid fa-car"></i> Tüm Araçlar</a>
-                <a asp-controller="Compare" asp-action="Index" class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 @linkCls"><i class="fa-solid fa-scale-balanced"></i> Karşılaştırma</a>
-                <a asp-controller="AiWizard" asp-action="Index" class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 @linkCls"><i class="fa-solid fa-wand-magic-sparkles text-purple-500"></i> AI Sihirbaz</a>
-                <a asp-controller="Stats" asp-action="Index" class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 @linkCls"><i class="fa-solid fa-chart-pie text-indigo-500"></i> İstatistikler</a>
+                <a asp-controller="Home" asp-action="Index" class="@mLink">Ana Sayfa</a>
+                <a href="/araclar" class="@mLink">Tüm Araçlar</a>
+                <a asp-controller="Compare" asp-action="Index" class="@mLink">Karşılaştırma</a>
+                <a asp-controller="AiWizard" asp-action="Index" class="@mLink">AI Sihirbaz</a>
+                <a asp-controller="Stats" asp-action="Index" class="@mLink">İstatistikler</a>
                 @if (User.Identity?.IsAuthenticated == true)
                 {
-                    <a asp-controller="Garage" asp-action="Index" class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 @linkCls"><i class="fa-solid fa-heart text-red-500"></i> Garajım</a>
-                    <a asp-controller="Manage" asp-action="Index" class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 @linkCls"><i class="fa-solid fa-circle-user"></i> Hesabım</a>
+                    <a asp-controller="Garage" asp-action="Index" class="@mLink">Garajım</a>
+                    <a asp-controller="Manage" asp-action="Index" class="@mLink">Hesabım</a>
                     @if (User.IsInRole("Admin"))
                     {
-                        <a asp-controller="AdminCar" asp-action="Index" class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 @linkCls"><i class="fa-solid fa-gear"></i> Admin Panel</a>
+                        <a asp-controller="AdminCar" asp-action="Index" class="@mLink">Admin Panel</a>
                     }
                     <form asp-controller="Account" asp-action="Logout" method="post">
-                        <button type="submit" class="w-full text-left px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 @linkCls"><i class="fa-solid fa-arrow-right-from-bracket"></i> Çıkış</button>
+                        <button type="submit" class="w-full text-left @mLink">Çıkış</button>
                     </form>
                 }
                 else
                 {
-                    <a asp-controller="Account" asp-action="Login" class="block px-3 py-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 @linkCls"><i class="fa-solid fa-lock"></i> Giriş Yap</a>
-                    <a asp-controller="Account" asp-action="Register" class="block mt-1 bg-primary text-white text-center px-3 py-2.5 rounded-lg font-semibold"><i class="fa-solid fa-user-plus mr-1"></i> Kayıt Ol</a>
+                    <a asp-controller="Account" asp-action="Login" class="@mLink">Giriş Yap</a>
+                    <a asp-controller="Account" asp-action="Register" class="btn-primary w-full mt-1">Kayıt Ol</a>
                 }
             </div>
         </nav>
@@ -172,60 +185,60 @@
     <!-- ===== GLOBAL TOAST BİLDİRİM SİSTEMİ ===== -->
     @if (TempData["SuccessMessage"] != null)
     {
-        <div id="toast-success" class="fixed top-4 right-4 left-4 sm:left-auto z-[200] flex items-center gap-3 bg-white dark:bg-gray-800 border-l-4 border-green-500 shadow-2xl rounded-xl px-5 py-4 sm:max-w-sm transition-all duration-500" role="alert">
-            <div class="flex-shrink-0 w-9 h-9 bg-green-100 rounded-full flex items-center justify-center">
-                <i class="fa-solid fa-circle-check text-green-600"></i>
+        <div id="toast-success" class="fixed top-4 right-4 left-4 sm:left-auto z-[200] flex items-center gap-3 bg-surface border border-border border-l-4 border-l-emerald-500 shadow-lg rounded-xl px-5 py-4 sm:max-w-sm transition-all duration-500" role="alert">
+            <div class="flex-shrink-0 w-9 h-9 bg-emerald-50 dark:bg-emerald-500/15 rounded-full flex items-center justify-center">
+                <i class="fa-solid fa-circle-check text-emerald-600 dark:text-emerald-400"></i>
             </div>
             <div>
-                <p class="text-sm font-semibold text-gray-800 dark:text-gray-100">Başarılı!</p>
-                <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">@TempData["SuccessMessage"]</p>
+                <p class="text-sm font-semibold text-content">Başarılı!</p>
+                <p class="text-xs text-content-muted mt-0.5">@TempData["SuccessMessage"]</p>
             </div>
-            <button onclick="closeToast('toast-success')" class="ml-auto text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+            <button onclick="closeToast('toast-success')" class="ml-auto text-content-muted hover:text-content">
                 <i class="fa-solid fa-xmark"></i>
             </button>
         </div>
     }
     @if (TempData["ErrorMessage"] != null)
     {
-        <div id="toast-error" class="fixed top-4 right-4 left-4 sm:left-auto z-[200] flex items-center gap-3 bg-white dark:bg-gray-800 border-l-4 border-red-500 shadow-2xl rounded-xl px-5 py-4 sm:max-w-sm transition-all duration-500" role="alert">
-            <div class="flex-shrink-0 w-9 h-9 bg-red-100 rounded-full flex items-center justify-center">
-                <i class="fa-solid fa-circle-xmark text-red-600"></i>
+        <div id="toast-error" class="fixed top-4 right-4 left-4 sm:left-auto z-[200] flex items-center gap-3 bg-surface border border-border border-l-4 border-l-red-500 shadow-lg rounded-xl px-5 py-4 sm:max-w-sm transition-all duration-500" role="alert">
+            <div class="flex-shrink-0 w-9 h-9 bg-red-50 dark:bg-red-500/15 rounded-full flex items-center justify-center">
+                <i class="fa-solid fa-circle-xmark text-red-600 dark:text-red-400"></i>
             </div>
             <div>
-                <p class="text-sm font-semibold text-gray-800 dark:text-gray-100">Hata!</p>
-                <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">@TempData["ErrorMessage"]</p>
+                <p class="text-sm font-semibold text-content">Hata!</p>
+                <p class="text-xs text-content-muted mt-0.5">@TempData["ErrorMessage"]</p>
             </div>
-            <button onclick="closeToast('toast-error')" class="ml-auto text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+            <button onclick="closeToast('toast-error')" class="ml-auto text-content-muted hover:text-content">
                 <i class="fa-solid fa-xmark"></i>
             </button>
         </div>
     }
     @if (TempData["InfoMessage"] != null)
     {
-        <div id="toast-info" class="fixed top-4 right-4 left-4 sm:left-auto z-[200] flex items-center gap-3 bg-white dark:bg-gray-800 border-l-4 border-blue-500 shadow-2xl rounded-xl px-5 py-4 sm:max-w-sm transition-all duration-500" role="alert">
-            <div class="flex-shrink-0 w-9 h-9 bg-blue-100 rounded-full flex items-center justify-center">
-                <i class="fa-solid fa-circle-info text-blue-600"></i>
+        <div id="toast-info" class="fixed top-4 right-4 left-4 sm:left-auto z-[200] flex items-center gap-3 bg-surface border border-border border-l-4 border-l-brand-500 shadow-lg rounded-xl px-5 py-4 sm:max-w-sm transition-all duration-500" role="alert">
+            <div class="flex-shrink-0 w-9 h-9 bg-brand-50 dark:bg-brand-500/15 rounded-full flex items-center justify-center">
+                <i class="fa-solid fa-circle-info text-brand-600 dark:text-brand-400"></i>
             </div>
             <div>
-                <p class="text-sm font-semibold text-gray-800 dark:text-gray-100">Bilgi</p>
-                <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">@TempData["InfoMessage"]</p>
+                <p class="text-sm font-semibold text-content">Bilgi</p>
+                <p class="text-xs text-content-muted mt-0.5">@TempData["InfoMessage"]</p>
             </div>
-            <button onclick="closeToast('toast-info')" class="ml-auto text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+            <button onclick="closeToast('toast-info')" class="ml-auto text-content-muted hover:text-content">
                 <i class="fa-solid fa-xmark"></i>
             </button>
         </div>
     }
 
-    <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-8 mt-auto transition-colors duration-300">
-        <div class="container mx-auto px-4 text-center text-gray-500 dark:text-gray-400 text-sm">
+    <footer class="bg-surface border-t border-border py-8 mt-auto">
+        <div class="container mx-auto px-4 text-center text-content-muted text-sm">
             @await Component.InvokeAsync("CatalogMenu")
             <nav class="flex flex-wrap justify-center gap-x-5 gap-y-2 mb-4">
-                <a asp-controller="Home" asp-action="Hakkimizda" class="hover:text-primary dark:hover:text-blue-400 transition">Hakkımızda</a>
-                <a asp-controller="Home" asp-action="Iletisim" class="hover:text-primary dark:hover:text-blue-400 transition">İletişim</a>
-                <a asp-controller="Home" asp-action="Privacy" class="hover:text-primary dark:hover:text-blue-400 transition">Gizlilik Politikası</a>
-                <a asp-controller="Home" asp-action="Kvkk" class="hover:text-primary dark:hover:text-blue-400 transition">KVKK Aydınlatma Metni</a>
-                <a asp-controller="Home" asp-action="KullanimKosullari" class="hover:text-primary dark:hover:text-blue-400 transition">Kullanım Koşulları</a>
-                <a asp-controller="Home" asp-action="Cerez" class="hover:text-primary dark:hover:text-blue-400 transition">Çerez Politikası</a>
+                <a asp-controller="Home" asp-action="Hakkimizda" class="hover:text-content transition-colors">Hakkımızda</a>
+                <a asp-controller="Home" asp-action="Iletisim" class="hover:text-content transition-colors">İletişim</a>
+                <a asp-controller="Home" asp-action="Privacy" class="hover:text-content transition-colors">Gizlilik Politikası</a>
+                <a asp-controller="Home" asp-action="Kvkk" class="hover:text-content transition-colors">KVKK Aydınlatma Metni</a>
+                <a asp-controller="Home" asp-action="KullanimKosullari" class="hover:text-content transition-colors">Kullanım Koşulları</a>
+                <a asp-controller="Home" asp-action="Cerez" class="hover:text-content transition-colors">Çerez Politikası</a>
             </nav>
             <p>&copy; @DateTime.UtcNow.Year OtoRehber. İçerikler bilgilendirme amaçlıdır, bağlayıcı değildir.</p>
         </div>
@@ -292,40 +305,40 @@
         });
     </script>
 
-    <!-- AI Chatbot Asistanı (V3) -->
+    <!-- AI Chatbot Asistanı -->
     <div id="aiChatWidget" class="fixed bottom-4 right-4 z-[100]">
         <!-- Chat Butonu -->
-        <button id="aiChatBtn" type="button" onclick="toggleChat()" aria-label="Yapay zeka asistanını aç" aria-expanded="false" aria-controls="aiChatWindow" class="bg-indigo-600 hover:bg-indigo-700 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:shadow-2xl transition-all transform hover:scale-110 focus:ring-4 focus:ring-indigo-300 outline-none">
+        <button id="aiChatBtn" type="button" onclick="toggleChat()" aria-label="Yapay zeka asistanını aç" aria-expanded="false" aria-controls="aiChatWindow" class="bg-brand-600 hover:bg-brand-700 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg transition-colors focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 focus:ring-offset-surface-2 outline-none">
             <i class="fa-solid fa-robot text-2xl" aria-hidden="true"></i>
         </button>
 
         <!-- Chat Penceresi -->
-        <div id="aiChatWindow" class="hidden absolute bottom-16 right-0 w-[calc(100vw-2rem)] max-w-sm bg-white/95 dark:bg-gray-800/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden flex flex-col transition-all origin-bottom-right h-[70vh] max-h-[500px] min-h-[360px]">
+        <div id="aiChatWindow" class="hidden absolute bottom-16 right-0 w-[calc(100vw-2rem)] max-w-sm bg-surface rounded-xl shadow-xl border border-border overflow-hidden flex flex-col origin-bottom-right h-[70vh] max-h-[500px] min-h-[360px]">
             <!-- Header -->
-            <div class="bg-indigo-600 p-4 flex justify-between items-center text-white">
+            <div class="bg-brand-600 p-4 flex justify-between items-center text-white">
                 <div class="flex items-center gap-2">
                     <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
                         <i class="fa-solid fa-robot"></i>
                     </div>
                     <div>
-                        <h3 class="font-bold text-sm">OtoRehber AI</h3>
-                        <p class="text-xs text-indigo-200">Araç Öneri Asistanı</p>
+                        <h3 class="font-semibold text-sm">OtoRehber AI</h3>
+                        <p class="text-xs text-brand-100">Araç Öneri Asistanı</p>
                     </div>
                 </div>
-                <button onclick="toggleChat()" class="text-white hover:text-gray-200 focus:outline-none">
+                <button onclick="toggleChat()" class="text-white/80 hover:text-white focus:outline-none">
                     <i class="fa-solid fa-xmark text-lg"></i>
                 </button>
             </div>
 
             <!-- Messages Box -->
-            <div id="aiChatMessages" class="flex-1 p-4 overflow-y-auto bg-gray-50/50 dark:bg-gray-900/50 space-y-4">
+            <div id="aiChatMessages" class="flex-1 p-4 overflow-y-auto bg-surface-2 space-y-4">
                 <!-- Karşılama Mesajı -->
                 <div class="flex items-start gap-2.5">
-                    <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0">
-                        <i class="fa-solid fa-robot text-indigo-600 text-xs"></i>
+                    <div class="w-8 h-8 rounded-full bg-brand-50 dark:bg-brand-500/15 flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-robot text-brand-600 dark:text-brand-400 text-xs"></i>
                     </div>
                     <div class="flex flex-col gap-1 w-full max-w-[85%]">
-                        <div class="bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 text-gray-800 dark:text-gray-100 p-3 rounded-e-xl rounded-es-xl text-sm shadow-sm">
+                        <div class="bg-surface border border-border text-content p-3 rounded-e-xl rounded-es-xl text-sm">
                             Merhaba! Ben OtoRehber AI Asistanı. Sana sistemimizdeki araçlar arasından en uygununu önerebilirim. Bütçen veya aradığın özellikler neler?
                         </div>
                     </div>
@@ -333,16 +346,20 @@
             </div>
 
             <!-- Input Box -->
-            <div class="p-3 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+            <div class="p-3 bg-surface border-t border-border">
                 <form id="aiChatForm" onsubmit="sendAiMessage(event)" class="flex gap-2">
-                    <input type="text" id="aiChatInput" autocomplete="off" placeholder="Mesajınızı yazın..." class="flex-1 bg-gray-100 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 text-sm border-0 rounded-full px-4 py-2 focus:ring-2 focus:ring-indigo-500 outline-none">
-                    <button type="submit" id="aiChatSubmit" class="w-10 h-10 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white flex items-center justify-center transition-colors">
+                    <input type="text" id="aiChatInput" autocomplete="off" placeholder="Mesajınızı yazın..." class="flex-1 bg-surface-3 border border-border text-content placeholder:text-content-muted/70 text-sm rounded-full px-4 py-2 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30 outline-none">
+                    <button type="submit" id="aiChatSubmit" class="w-10 h-10 rounded-full bg-brand-600 hover:bg-brand-700 text-white flex items-center justify-center transition-colors shrink-0">
                         <i class="fa-solid fa-paper-plane text-sm"></i>
                     </button>
                 </form>
             </div>
         </div>
     </div>
+
+    <!-- Markdown (AI yanıtları) — self-host -->
+    <script src="~/lib/marked/marked.min.js" asp-append-version="true"></script>
+    <script src="~/lib/dompurify/purify.min.js" asp-append-version="true"></script>
 
     <!-- AI Chatbot Javascript -->
     <script>
@@ -409,40 +426,40 @@
             scrollToBottom();
         }
 
-        function escapeHtml(str) {
-            const div = document.createElement('div');
-            div.textContent = str;
-            return div.innerHTML;
+        function renderMarkdown(text) {
+            // marked ile markdown -> HTML, ardından DOMPurify ile temizle (XSS koruması).
+            try {
+                return DOMPurify.sanitize(marked.parse(text ?? '', { breaks: true }));
+            } catch (e) {
+                const div = document.createElement('div');
+                div.textContent = text ?? '';
+                return div.innerHTML;
+            }
         }
 
         function appendMessage(sender, text) {
             const msgBox = document.getElementById('aiChatMessages');
-
-            // Önce HTML olarak yorumlanabilecek her şeyi escape et (XSS koruması),
-            // sonra sadece kendi eklediğimiz basit markdown biçimlendirmesini uygula.
-            let formattedText = escapeHtml(text);
-            formattedText = formattedText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-            formattedText = formattedText.replace(/\n/g, '<br/>');
-
             let html = '';
             if (sender === 'user') {
+                const div = document.createElement('div');
+                div.textContent = text ?? '';
                 html = `
                 <div class="flex items-start gap-2.5 justify-end">
                     <div class="flex flex-col gap-1 w-full max-w-[85%] items-end">
-                        <div class="bg-indigo-600 text-white p-3 rounded-s-xl rounded-ee-xl text-sm shadow-sm">
-                            ${formattedText}
+                        <div class="bg-brand-600 text-white p-3 rounded-s-xl rounded-ee-xl text-sm whitespace-pre-wrap">
+                            ${div.innerHTML}
                         </div>
                     </div>
                 </div>`;
             } else {
                 html = `
                 <div class="flex items-start gap-2.5">
-                    <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0">
-                        <i class="fa-solid fa-robot text-indigo-600 text-xs"></i>
+                    <div class="w-8 h-8 rounded-full bg-brand-50 dark:bg-brand-500/15 flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-robot text-brand-600 dark:text-brand-400 text-xs"></i>
                     </div>
                     <div class="flex flex-col gap-1 w-full max-w-[85%]">
-                        <div class="bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 text-gray-800 dark:text-gray-100 p-3 rounded-e-xl rounded-es-xl text-sm shadow-sm">
-                            ${formattedText}
+                        <div class="prose-oto prose-sm bg-surface border border-border p-3 rounded-e-xl rounded-es-xl text-sm">
+                            ${renderMarkdown(text)}
                         </div>
                     </div>
                 </div>`;
@@ -454,13 +471,13 @@
             const msgBox = document.getElementById('aiChatMessages');
             const html = `
             <div id="${id}" class="flex items-start gap-2.5">
-                <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0">
-                    <i class="fa-solid fa-robot text-indigo-600 text-xs"></i>
+                <div class="w-8 h-8 rounded-full bg-brand-50 dark:bg-brand-500/15 flex items-center justify-center flex-shrink-0">
+                    <i class="fa-solid fa-robot text-brand-600 dark:text-brand-400 text-xs"></i>
                 </div>
-                <div class="bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 p-3 rounded-e-xl rounded-es-xl shadow-sm flex gap-1 items-center h-10">
-                    <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
-                    <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
-                    <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+                <div class="bg-surface border border-border p-3 rounded-e-xl rounded-es-xl flex gap-1 items-center h-10">
+                    <div class="w-2 h-2 bg-content-muted rounded-full animate-bounce"></div>
+                    <div class="w-2 h-2 bg-content-muted rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                    <div class="w-2 h-2 bg-content-muted rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
                 </div>
             </div>`;
             msgBox.insertAdjacentHTML('beforeend', html);
@@ -535,6 +552,22 @@
             });
             // Menüdeki bir bağlantıya tıklanınca kapat
             menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+
+            // Hesap dropdown menüsü (masaüstü)
+            const accBtn = document.getElementById('account-menu-btn');
+            const accMenu = document.getElementById('account-menu');
+            if (accBtn && accMenu) {
+                const closeAcc = () => { accMenu.classList.add('hidden'); accBtn.setAttribute('aria-expanded', 'false'); };
+                accBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const open = accMenu.classList.toggle('hidden');
+                    accBtn.setAttribute('aria-expanded', open ? 'false' : 'true');
+                });
+                document.addEventListener('click', (e) => {
+                    if (!document.getElementById('account-menu-wrap')?.contains(e.target)) closeAcc();
+                });
+                document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAcc(); });
+            }
         });
     </script>
 
@@ -555,17 +588,17 @@
                         const res = await fetch(`/api/Search/suggest?q=${encodeURIComponent(q)}`);
                         const data = await res.json();
                         if (!data.length) {
-                            results.innerHTML = '<div class="p-4 text-sm text-gray-400 text-center">Sonuç bulunamadı</div>';
+                            results.innerHTML = '<div class="p-4 text-sm text-content-muted text-center">Sonuç bulunamadı</div>';
                             results.classList.remove('hidden'); return;
                         }
                         results.innerHTML = data.map(item => `
                             <a href="/Car/Details/${item.id}" role="option"
-                               class="ac-item flex items-center justify-between px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700 aria-selected:bg-gray-100 dark:aria-selected:bg-gray-700 border-b border-gray-100 dark:border-gray-700 last:border-0 transition group">
+                               class="ac-item flex items-center justify-between px-4 py-3 hover:bg-surface-3 aria-selected:bg-surface-3 border-b border-border last:border-0 transition-colors group">
                                 <div>
-                                    <p class="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-primary">${item.label}</p>
-                                    <p class="text-xs text-gray-400">${item.segment} Segmenti</p>
+                                    <p class="text-sm font-semibold text-content group-hover:text-brand-600">${item.label}</p>
+                                    <p class="text-xs text-content-muted">${item.segment} Segmenti</p>
                                 </div>
-                                <span class="text-xs font-bold text-yellow-600 bg-yellow-50 dark:bg-yellow-900/20 px-2 py-0.5 rounded">⭐ ${item.score}</span>
+                                <span class="text-xs font-semibold text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-500/15 px-2 py-0.5 rounded">★ ${item.score}</span>
                             </a>`).join('');
                         results.classList.remove('hidden');
                         input.setAttribute('aria-expanded', 'true');

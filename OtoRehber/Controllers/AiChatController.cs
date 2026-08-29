@@ -59,8 +59,7 @@ namespace OtoRehber.Controllers
             // Yapay zekaya soruyoruz
             var responseText = await _aiService.GetCarRecommendationAsync(message, availableCarsContext);
 
-            // Gelen cevaptaki Markdown yıldızlarını HTML'e veya JS'in daha kolay parse edebileceği bir şeye çevirebiliriz (isteğe bağlı)
-            // Ama frontend'de marked.js kullanmak daha profesyoneldir. Biz şimdilik olduğu gibi dönüyoruz.
+            // Ham Markdown döndürülür; istemci tarafında marked + DOMPurify ile güvenli şekilde render edilir (_Layout).
             return Ok(new { response = responseText });
         }
     }
