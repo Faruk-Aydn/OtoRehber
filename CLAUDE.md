@@ -339,7 +339,7 @@ Development: `dotnet user-secrets`. Production: environment variable.
 | 2026-08-28 | fix | `AdminSeed:ResetPassword=true` bayrağı — mevcut admin şifresini sıfırlar (unutulan şifre kurtarma) | b22800c |
 | 2026-08-29 | 3.1 | Marka/segment landing sayfaları (`CatalogController`, `/marka/{slug}` + `/segment/{slug}`) + ortak `_CarCard` partial | 6746bb5 |
 | 2026-08-29 | 3.1 | Footer marka/segment menüsü (`CatalogMenuViewComponent`) + admin yorum moderasyonu (`AdminReviewController` `/Admin/Reviews`) | 02f6cc9 |
-| 2026-08-29 | 3.2 | Araç detayında yorum sıralama (`?rsort=`) + "daha fazla göster" (ilk 5) | _(bu commit)_ |
+| 2026-08-29 | 3.2 | Araç detayında yorum sıralama (`?rsort=`) + "daha fazla göster" (ilk 5) | 56462a0 |
 | 2026-08-27 | 1.3, 1.10 | Railway `DATABASE_URL` ayrıştırma + Docker healthcheck düzeltme + deploy rehberi | 93c5dbb |
 | 2026-08-27 | deploy | Postgres bağlantı çözümü + `railway.json` | 1e7fb51 |
 | 2026-08-27 | deploy | `PORT` env dinleme + healthcheck timeout | 1c974f8 |
