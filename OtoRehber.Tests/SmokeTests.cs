@@ -124,6 +124,6 @@ public class SmokeTests : IClassFixture<CustomWebApplicationFactory>
     public async Task CarDetails_RendersReviewSection()
     {
         var html = await _client.GetStringAsync("/Car/Details/1");
-        Assert.Contains("Topluluk Yorumları", html);
+        Assert.Contains("Topluluk yorumları", html);
     }
 }

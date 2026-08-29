@@ -50,18 +50,15 @@
         };
     }
     var _jsonLdString = System.Text.Json.JsonSerializer.Serialize(_jsonLd);
+    var _gallery = (ViewBag.Gallery as List<string>) ?? new List<string>();
 }
 
 <script type="application/ld+json">@Html.Raw(_jsonLdString)</script>
 
-
-<!-- Hero Section -->
-<div class="bg-white dark:bg-gray-800 rounded-2xl shadow-md overflow-hidden mb-8 border border-gray-200 dark:border-gray-700" data-aos="fade-down">
+<!-- Hero -->
+<div class="card overflow-hidden mb-8" data-aos="fade-down">
     <div class="md:flex">
-        @{
-            var _gallery = (ViewBag.Gallery as List<string>) ?? new List<string>();
-        }
-        <div class="md:shrink-0 bg-gray-200 dark:bg-gray-700 md:w-1/3 min-h-[250px] text-gray-400 dark:text-gray-500 relative overflow-hidden">
+        <div class="md:shrink-0 bg-surface-3 md:w-1/3 min-h-[250px] text-content-muted relative overflow-hidden">
             @if (_gallery.Count > 0)
             {
                 <img id="gallery-main" src="@_gallery[0]" alt="@Model.Brand @Model.ModelName" class="absolute inset-0 w-full h-full object-cover" />
@@ -71,7 +68,7 @@
                         @foreach (var g in _gallery)
                         {
                             <button type="button" onclick="document.getElementById('gallery-main').src=this.dataset.src" data-src="@g"
-                                    class="flex-shrink-0 w-14 h-10 rounded-md overflow-hidden border-2 border-white/70 hover:border-white focus:border-primary outline-none">
+                                    class="flex-shrink-0 w-14 h-10 rounded-md overflow-hidden border-2 border-white/70 hover:border-white focus:border-brand-500 outline-none">
                                 <img src="@g" alt="" class="w-full h-full object-cover" />
                             </button>
                         }
@@ -80,57 +77,51 @@
             }
             else
             {
-                <div class="absolute inset-0 flex items-center justify-center"><i class="fa-solid fa-car-side text-8xl"></i></div>
+                <div class="absolute inset-0 flex items-center justify-center"><i class="fa-solid fa-car-side text-8xl text-content-muted/40"></i></div>
             }
         </div>
-        <div class="p-8 md:w-2/3 flex flex-col justify-center">
-            <div class="flex justify-between items-start">
+        <div class="p-6 sm:p-8 md:w-2/3 flex flex-col justify-center">
+            <div class="flex justify-between items-start gap-3">
                 <div>
                     <div class="flex items-center flex-wrap gap-2 mb-2">
-                        <a href="/marka/@OtoRehber.Controllers.CatalogController.Slugify(Model.Brand)" class="uppercase tracking-wide text-xs px-2 py-1 rounded bg-gray-900 text-white font-bold hover:bg-primary transition">
-                            @Model.Brand
-                        </a>
-                        <a href="/segment/@OtoRehber.Controllers.CatalogController.Slugify(Model.Segment)" class="uppercase tracking-wide text-xs px-2 py-1 rounded bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300 font-bold border border-blue-200 dark:border-blue-800 hover:bg-blue-200 transition">
-                            @Model.Segment segmenti
-                        </a>
-                        <span class="uppercase tracking-wide text-xs px-2 py-1 rounded bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300 font-bold border border-gray-200 dark:border-gray-600 flex items-center">
-                            <i class="fa-regular fa-calendar-days mr-1"></i> @Model.ProductionYears
-                        </span>
+                        <a href="/marka/@OtoRehber.Controllers.CatalogController.Slugify(Model.Brand)" class="badge-muted uppercase tracking-wide hover:text-content transition-colors">@Model.Brand</a>
+                        <a href="/segment/@OtoRehber.Controllers.CatalogController.Slugify(Model.Segment)" class="badge-brand uppercase tracking-wide">@Model.Segment segmenti</a>
+                        <span class="badge-muted uppercase tracking-wide"><i class="fa-regular fa-calendar-days"></i> @Model.ProductionYears</span>
                     </div>
-                    <h1 class="mt-1 text-3xl font-extrabold text-gray-900 dark:text-white leading-tight">@Model.Brand @Model.ModelName</h1>
+                    <h1 class="mt-1 text-2xl sm:text-3xl font-bold text-content leading-tight tracking-tight">@Model.Brand @Model.ModelName</h1>
                 </div>
-                <button type="button" onclick="toggleGarageHome(@Model.Id, this)" class="bg-gray-100 p-3 w-12 h-12 rounded-full shadow-sm border border-gray-200 z-10 flex items-center justify-center text-gray-400 hover:text-red-500 hover:scale-110 transition-all focus:ring-2 focus:ring-primary outline-none" title="Garaja Ekle" aria-label="Bu aracı garajıma ekle/çıkar">
+                <button type="button" onclick="toggleGarageHome(@Model.Id, this)" class="bg-surface-3 p-3 w-12 h-12 rounded-full border border-border flex items-center justify-center text-content-muted hover:text-red-500 transition-colors focus:ring-2 focus:ring-brand-500 outline-none shrink-0" title="Garaja Ekle" aria-label="Bu aracı garajıma ekle/çıkar">
                     <i class="fa-solid fa-heart text-xl" aria-hidden="true"></i>
                 </button>
             </div>
-            
-            <div class="mt-4 bg-gray-50 dark:bg-gray-900/50 rounded-xl p-4 border border-gray-100 dark:border-gray-700">
+
+            <div class="mt-4 rounded-lg bg-surface-2 p-4 border border-border">
                 <div class="flex items-start gap-3">
-                    <div class="mt-1 bg-white dark:bg-gray-800 p-2 rounded-lg shadow-sm border border-gray-200 dark:border-gray-600 text-gray-500 dark:text-gray-400">
-                        <i class="fa-solid fa-engine text-lg"></i>
+                    <div class="mt-0.5 bg-surface p-2 rounded-lg border border-border text-content-muted">
+                        <i class="fa-solid fa-gears text-lg"></i>
                     </div>
                     <div>
-                        <div class="text-xs text-gray-500 dark:text-gray-400 font-semibold uppercase mb-1">Motor & Şanzıman Kombinasyonu</div>
-                        <p class="text-gray-800 dark:text-gray-200 font-medium text-sm leading-relaxed">@Model.Engine</p>
+                        <div class="text-xs text-content-muted font-semibold uppercase mb-1">Motor &amp; şanzıman</div>
+                        <p class="text-content font-medium text-sm leading-relaxed">@Model.Engine</p>
                     </div>
                 </div>
             </div>
-            
-            <div class="mt-6 flex flex-wrap gap-4">
-                <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800/50 rounded-lg p-4 flex-1 min-w-[150px]">
-                    <div class="text-blue-500 dark:text-blue-400 text-sm font-semibold mb-1">Uzman Güvenilirlik Puanı</div>
-                    <div class="text-2xl font-bold text-gray-900 dark:text-white"><i class="fa-solid fa-star text-yellow-400 mr-2"></i>@Model.ReliabilityScore / 10</div>
+
+            <div class="mt-6 grid grid-cols-2 @(_ratedCount > 0 ? "sm:grid-cols-3" : "sm:grid-cols-2") gap-3">
+                <div class="rounded-lg border border-border bg-surface-2 p-4">
+                    <div class="text-content-muted text-xs font-semibold uppercase mb-1">Uzman puanı</div>
+                    <div class="text-xl font-bold text-content"><i class="fa-solid fa-star text-amber-500 mr-1.5"></i>@Model.ReliabilityScore<span class="text-content-muted text-sm">/10</span></div>
                 </div>
                 @if (_ratedCount > 0)
                 {
-                    <div class="bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-100 dark:border-indigo-800/50 rounded-lg p-4 flex-1 min-w-[150px]">
-                        <div class="text-indigo-500 dark:text-indigo-400 text-sm font-semibold mb-1">Kullanıcı Puanı (@_ratedCount)</div>
-                        <div class="text-2xl font-bold text-gray-900 dark:text-white"><i class="fa-solid fa-users text-indigo-400 mr-2"></i>@_avgRating.ToString("0.#") / 10</div>
+                    <div class="rounded-lg border border-border bg-surface-2 p-4">
+                        <div class="text-content-muted text-xs font-semibold uppercase mb-1">Kullanıcı (@_ratedCount)</div>
+                        <div class="text-xl font-bold text-content"><i class="fa-solid fa-users text-content-muted mr-1.5"></i>@_avgRating.ToString("0.#")<span class="text-content-muted text-sm">/10</span></div>
                     </div>
                 }
-                <div class="bg-green-50 dark:bg-green-900/20 border border-green-100 dark:border-green-800/50 rounded-lg p-4 flex-1 min-w-[150px]">
-                    <div class="text-green-600 dark:text-green-400 text-sm font-semibold mb-1">Piyasa Fiyatı</div>
-                    <div class="text-xl font-bold text-gray-900 dark:text-white"><i class="fa-solid fa-tag text-green-500 mr-2"></i>@Model.MinPrice.ToString("N0") - @Model.MaxPrice.ToString("N0") TL</div>
+                <div class="rounded-lg border border-border bg-surface-2 p-4 col-span-2 sm:col-span-1">
+                    <div class="text-content-muted text-xs font-semibold uppercase mb-1">Piyasa fiyatı</div>
+                    <div class="text-base font-bold text-content"><i class="fa-solid fa-tag text-content-muted mr-1.5"></i>@Model.MinPrice.ToString("N0") – @Model.MaxPrice.ToString("N0") ₺</div>
                 </div>
             </div>
 
@@ -139,10 +130,8 @@
             }
             @if (_priceHistory != null && _priceHistory.Count >= 2)
             {
-                <div class="mt-6 bg-gray-50 dark:bg-gray-900/50 rounded-xl p-4 border border-gray-100 dark:border-gray-700">
-                    <div class="text-xs text-gray-500 dark:text-gray-400 font-semibold uppercase mb-3">
-                        <i class="fa-solid fa-chart-line mr-1"></i> Fiyat Geçmişi
-                    </div>
+                <div class="mt-6 rounded-lg bg-surface-2 p-4 border border-border">
+                    <div class="text-xs text-content-muted font-semibold uppercase mb-3"><i class="fa-solid fa-chart-line mr-1"></i> Fiyat geçmişi</div>
                     <div class="h-56"><canvas id="priceHistoryChart"></canvas></div>
                 </div>
             }
@@ -151,106 +140,86 @@
 </div>
 
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-    
-    <!-- Sol Kolon: Uzman Özeti & Artılar/Eksiler -->
     <div class="lg:col-span-2 space-y-8">
-        
-        <!-- Uzman Özeti -->
-        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm p-6 border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="100">
-            <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4 border-b dark:border-gray-700 pb-2"><i class="fa-solid fa-quote-left text-primary mr-2"></i>Uzman Özeti</h2>
-            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-                @Model.ExpertSummary
-            </p>
+        <div class="card card-pad" data-aos="fade-up" data-aos-delay="100">
+            <h2 class="section-title mb-4 border-b border-border pb-2"><i class="fa-solid fa-quote-left text-content-muted mr-2"></i>Uzman özeti</h2>
+            <p class="text-content-muted leading-relaxed">@Model.ExpertSummary</p>
         </div>
 
-        <!-- Kullanıcı Geri Bildirimleri -->
-        @if(!string.IsNullOrEmpty(Model.UserFeedbackSummary))
+        @if (!string.IsNullOrEmpty(Model.UserFeedbackSummary))
         {
-            <div class="bg-indigo-50/50 rounded-2xl shadow-sm p-6 border border-indigo-100 mt-6" data-aos="fade-up" data-aos-delay="200">
-                <h2 class="text-xl font-bold text-gray-900 mb-4 border-b border-indigo-100 pb-2 flex items-center">
-                    <i class="fa-solid fa-users text-indigo-500 mr-2"></i>Kullanıcı Yorumları & Forum Özeti
-                </h2>
-                <p class="text-gray-700 leading-relaxed italic">
-                    "@Model.UserFeedbackSummary"
-                </p>
+            <div class="card card-pad" data-aos="fade-up" data-aos-delay="200">
+                <h2 class="section-title mb-4 border-b border-border pb-2"><i class="fa-solid fa-users text-content-muted mr-2"></i>Kullanıcı yorumları &amp; forum özeti</h2>
+                <p class="text-content-muted leading-relaxed italic">"@Model.UserFeedbackSummary"</p>
             </div>
         }
 
-        <!-- Artılar ve Eksiler Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Artılar -->
-            <div class="bg-green-50/50 rounded-2xl shadow-sm p-6 border border-green-100" data-aos="fade-up" data-aos-delay="300">
-                <h3 class="text-lg font-bold text-success mb-4 flex items-center"><i class="fa-solid fa-circle-check mr-2"></i>Artılar</h3>
+            <div class="card card-pad" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="text-base font-semibold text-emerald-600 dark:text-emerald-400 mb-4 flex items-center"><i class="fa-solid fa-circle-check mr-2"></i>Artılar</h3>
                 <ul class="space-y-3">
-                    @if(Model.ProsConsList != null && Model.ProsConsList.Any(p => p.Type == "Pro"))
+                    @if (Model.ProsConsList != null && Model.ProsConsList.Any(p => p.Type == "Pro"))
                     {
-                        foreach(var pro in Model.ProsConsList.Where(p => p.Type == "Pro"))
+                        foreach (var pro in Model.ProsConsList.Where(p => p.Type == "Pro"))
                         {
-                            <li class="flex items-start">
-                                <i class="fa-solid fa-check text-success mt-1 mr-3"></i>
-                                <span class="text-gray-700">@pro.Description</span>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-emerald-500 mt-1"></i>
+                                <span class="text-content-muted text-sm">@pro.Description</span>
                             </li>
                         }
                     }
                     else
                     {
-                        <li class="text-gray-500 italic">Veri bulunamadı.</li>
+                        <li class="text-content-muted italic text-sm">Veri bulunamadı.</li>
                     }
                 </ul>
             </div>
-            
-            <!-- Eksiler -->
-            <div class="bg-red-50/50 rounded-2xl shadow-sm p-6 border border-red-100" data-aos="fade-up" data-aos-delay="300">
-                <h3 class="text-lg font-bold text-danger mb-4 flex items-center"><i class="fa-solid fa-circle-xmark mr-2"></i>Eksiler</h3>
+
+            <div class="card card-pad" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="text-base font-semibold text-red-600 dark:text-red-400 mb-4 flex items-center"><i class="fa-solid fa-circle-xmark mr-2"></i>Eksiler</h3>
                 <ul class="space-y-3">
-                    @if(Model.ProsConsList != null && Model.ProsConsList.Any(p => p.Type == "Con"))
+                    @if (Model.ProsConsList != null && Model.ProsConsList.Any(p => p.Type == "Con"))
                     {
-                        foreach(var con in Model.ProsConsList.Where(p => p.Type == "Con"))
+                        foreach (var con in Model.ProsConsList.Where(p => p.Type == "Con"))
                         {
-                            <li class="flex items-start">
-                                <i class="fa-solid fa-xmark text-danger mt-1 mr-3"></i>
-                                <span class="text-gray-700">@con.Description</span>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                                <span class="text-content-muted text-sm">@con.Description</span>
                             </li>
                         }
                     }
                     else
                     {
-                        <li class="text-gray-500 italic">Veri bulunamadı.</li>
+                        <li class="text-content-muted italic text-sm">Veri bulunamadı.</li>
                     }
                 </ul>
             </div>
         </div>
-
     </div>
 
-    <!-- Sağ Kolon: Kronik Sorunlar -->
     <div class="space-y-6">
-        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-            <div class="bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 p-5">
-                <h2 class="text-lg font-bold text-gray-900 dark:text-white flex items-center">
-                    <i class="fa-solid fa-triangle-exclamation text-orange-500 mr-2"></i>Bilinen Kronik Sorunlar
-                </h2>
-                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Tahmini tamir maliyetleri: <span class="font-bold text-gray-700 dark:text-gray-300">~@Model.EstimatedMaintenanceCostEUR € / Yıl</span></p>
+        <div class="card overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+            <div class="bg-surface-2 border-b border-border p-5">
+                <h2 class="section-title flex items-center"><i class="fa-solid fa-triangle-exclamation text-amber-500 mr-2"></i>Bilinen kronik sorunlar</h2>
+                <p class="text-sm text-content-muted mt-1">Tahmini tamir maliyeti: <span class="font-semibold text-content">~@Model.EstimatedMaintenanceCostEUR € / yıl</span></p>
             </div>
-            
-            <div class="divide-y divide-gray-100 dark:divide-gray-700 p-2">
+            <div class="divide-y divide-border p-2">
                 @if (Model.ChronicIssues != null && Model.ChronicIssues.Any())
                 {
                     foreach (var issue in Model.ChronicIssues)
                     {
-                        var severityColor = issue.Severity.ToLower() == "kritik" ? "text-red-600 bg-red-100 border-red-200 dark:bg-red-900/30 dark:border-red-800" :
-                                          issue.Severity.ToLower() == "orta" ? "text-orange-600 bg-orange-100 border-orange-200 dark:bg-orange-900/30 dark:border-orange-800" :
-                                          "text-yellow-600 bg-yellow-100 border-yellow-200 dark:bg-yellow-900/30 dark:border-yellow-800";
-                        
-                        <div class="p-4 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition rounded-lg m-1">
-                            <div class="flex justify-between items-start mb-2">
-                                <h4 class="font-semibold text-gray-900 dark:text-gray-100">@issue.IssueTitle</h4>
-                                <span class="text-xs font-bold px-2 py-1 rounded border @severityColor">@issue.Severity</span>
+                        var sev = issue.Severity.ToLowerInvariant();
+                        var severityCls = sev == "kritik" ? "badge bg-red-50 text-red-700 dark:bg-red-500/15 dark:text-red-300"
+                            : sev == "orta" ? "badge bg-amber-50 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300"
+                            : "badge bg-surface-3 text-content-muted";
+                        <div class="p-4 rounded-lg m-1">
+                            <div class="flex justify-between items-start gap-2 mb-2">
+                                <h4 class="font-semibold text-content text-sm">@issue.IssueTitle</h4>
+                                <span class="@severityCls shrink-0">@issue.Severity</span>
                             </div>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">@issue.Description</p>
-                            
-                            <div class="flex items-center justify-between text-xs font-medium bg-gray-50 dark:bg-gray-900 p-2 rounded border border-gray-100 dark:border-gray-700">
-                                <span class="text-gray-500 dark:text-gray-400"><i class="fa-regular fa-calendar mr-1"></i>Riskli Yıllar: <span class="text-gray-700 dark:text-gray-300">@issue.AffectedYears</span></span>
+                            <p class="text-sm text-content-muted mb-3">@issue.Description</p>
+                            <div class="flex items-center justify-between text-xs font-medium bg-surface-2 p-2 rounded border border-border">
+                                <span class="text-content-muted"><i class="fa-regular fa-calendar mr-1"></i>Riskli yıllar: <span class="text-content">@issue.AffectedYears</span></span>
                                 <span class="text-red-500"><i class="fa-solid fa-screwdriver-wrench mr-1"></i>~@issue.EstimatedCostEUR €</span>
                             </div>
                         </div>
@@ -258,8 +227,8 @@
                 }
                 else
                 {
-                    <div class="p-8 text-center text-gray-500 dark:text-gray-400">
-                        <i class="fa-solid fa-clipboard-check text-3xl mb-2 text-green-400"></i>
+                    <div class="p-8 text-center text-content-muted">
+                        <i class="fa-solid fa-clipboard-check text-3xl mb-2 text-emerald-500"></i>
                         <p>Bilinen kritik bir sorun raporlanmamış.</p>
                     </div>
                 }
@@ -268,59 +237,39 @@
     </div>
 </div>
 
-<!-- Kilometre Bakım Çizelgesi (Mileage Milestones) -->
-@if(Model.MileageMilestones != null && Model.MileageMilestones.Any())
+@if (Model.MileageMilestones != null && Model.MileageMilestones.Any())
 {
-<div class="mt-8 bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden" data-aos="fade-up">
-    <div class="bg-gray-50 border-b border-gray-200 p-5">
-        <h2 class="text-xl font-bold text-gray-900 flex items-center">
-            <i class="fa-solid fa-route text-primary mr-2"></i>Kritik Kilometre Bakım Barajları
-        </h2>
-    </div>
-    <div class="p-6">
-        <div class="relative border-l-2 border-primary ml-3 space-y-8">
-            @foreach(var ms in Model.MileageMilestones)
-            {
-                <div class="relative pl-6">
-                    <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-primary ring-4 ring-white"></div>
-                    <div class="bg-gray-50 border border-gray-100 rounded-lg p-4 shadow-sm hover:shadow-md transition">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-lg font-bold text-gray-900">@ms.Mileage</h3>
-                            <span class="text-sm font-bold text-red-500 bg-red-50 px-2 py-1 rounded border border-red-100">
-                                ~@ms.EstimatedCostEUR €
-                            </span>
+    <div class="card overflow-hidden mt-8" data-aos="fade-up">
+        <div class="bg-surface-2 border-b border-border p-5">
+            <h2 class="section-title flex items-center"><i class="fa-solid fa-route text-content-muted mr-2"></i>Kritik kilometre bakım barajları</h2>
+        </div>
+        <div class="p-6">
+            <div class="relative border-l-2 border-brand-500 ml-3 space-y-8">
+                @foreach (var ms in Model.MileageMilestones)
+                {
+                    <div class="relative pl-6">
+                        <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-brand-500 ring-4 ring-surface"></div>
+                        <div class="rounded-lg bg-surface-2 border border-border p-4">
+                            <div class="flex justify-between items-start gap-2 mb-2">
+                                <h3 class="text-base font-semibold text-content">@ms.Mileage</h3>
+                                <span class="badge bg-red-50 text-red-700 dark:bg-red-500/15 dark:text-red-300 shrink-0">~@ms.EstimatedCostEUR €</span>
+                            </div>
+                            <p class="text-content-muted text-sm">@ms.ExpectedIssues</p>
                         </div>
-                        <p class="text-gray-700">@ms.ExpectedIssues</p>
                     </div>
-                </div>
-            }
+                }
+            </div>
         </div>
     </div>
-</div>
 }
 
-<!-- Kullanıcı Yorumları ve Puanlama Alanı -->
-<div class="mt-8 bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden" data-aos="fade-up">
-    <div class="bg-indigo-50 border-b border-indigo-100 p-5">
-        <h2 class="text-xl font-bold text-gray-900 flex items-center">
-            <i class="fa-solid fa-star text-yellow-400 mr-2"></i>Senin Puanın Ne?
-        </h2>
+<!-- Kullanıcı yorumları -->
+<div class="card overflow-hidden mt-8" data-aos="fade-up">
+    <div class="bg-surface-2 border-b border-border p-5">
+        <h2 class="section-title flex items-center"><i class="fa-solid fa-star text-amber-500 mr-2"></i>Senin puanın ne?</h2>
     </div>
-    
-    <div class="p-6">
-        @if (TempData["SuccessMessage"] != null)
-        {
-            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4" role="alert">
-                <span class="block sm:inline">@TempData["SuccessMessage"]</span>
-            </div>
-        }
-        @if (TempData["ErrorMessage"] != null)
-        {
-            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4" role="alert">
-                <span class="block sm:inline">@TempData["ErrorMessage"]</span>
-            </div>
-        }
 
+    <div class="p-6">
         @{
             var _currentUserId = ViewBag.CurrentUserId as string;
             var _myReview = _currentUserId != null
@@ -332,36 +281,31 @@
         {
             <form asp-controller="Car" asp-action="AddReview" method="post" class="space-y-4 mb-8">
                 <input type="hidden" name="carId" value="@Model.Id" />
-
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Araca Puanınız (1-10)</label>
-                    <select name="rating" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition bg-white">
-                        <option value="">Puan Seçin</option>
+                    <label class="label">Araca puanınız (1-10)</label>
+                    <select name="rating" required class="select">
+                        <option value="">Puan seçin</option>
                         @for (int i = 10; i >= 1; i--)
                         {
-                            <option value="@i">@i Yıldız</option>
+                            <option value="@i">@i / 10</option>
                         }
                     </select>
                 </div>
-
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Yorumunuz (Kronik sorun tecrübeleriniz, artı/eksileriniz)</label>
-                    <textarea name="comment" required minlength="10" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition" placeholder="Bu aracı X yıldır kullanıyorum, şanzımanı ile ilgili..."></textarea>
+                    <label class="label">Yorumunuz (kronik sorun tecrübeleriniz, artı/eksileriniz)</label>
+                    <textarea name="comment" required minlength="10" rows="3" class="textarea" placeholder="Bu aracı X yıldır kullanıyorum, şanzımanı ile ilgili..."></textarea>
                 </div>
-
-                <button type="submit" class="bg-primary hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition duration-200 shadow-md">
-                    <i class="fa-solid fa-paper-plane mr-2"></i> Yorumu Gönder
-                </button>
+                <button type="submit" class="btn-primary"><i class="fa-solid fa-paper-plane"></i> Yorumu gönder</button>
             </form>
         }
         else if (_myReview != null)
         {
-            <div id="my-review" class="mb-8 bg-indigo-50/60 border border-indigo-100 rounded-xl p-4">
+            <div id="my-review" class="mb-8 rounded-lg border border-border bg-surface-2 p-4">
                 <div class="flex items-center justify-between mb-2">
-                    <p class="font-semibold text-gray-800"><i class="fa-solid fa-user-pen text-indigo-500 mr-1"></i> Senin yorumun</p>
-                    <div class="flex gap-2">
+                    <p class="font-semibold text-content text-sm"><i class="fa-solid fa-user-pen text-content-muted mr-1"></i> Senin yorumun</p>
+                    <div class="flex gap-3">
                         <button type="button" onclick="document.getElementById('my-review-display').classList.toggle('hidden');document.getElementById('my-review-edit').classList.toggle('hidden');"
-                                class="text-sm text-indigo-600 hover:underline"><i class="fa-solid fa-pen"></i> Düzenle</button>
+                                class="text-sm text-brand-600 hover:underline"><i class="fa-solid fa-pen"></i> Düzenle</button>
                         <form asp-controller="Car" asp-action="DeleteReview" method="post" onsubmit="return confirm('Yorumunuz silinsin mi?');" class="inline">
                             <input type="hidden" name="reviewId" value="@_myReview.Id" />
                             <button type="submit" class="text-sm text-red-600 hover:underline"><i class="fa-solid fa-trash-can"></i> Sil</button>
@@ -369,34 +313,33 @@
                     </div>
                 </div>
                 <div id="my-review-display">
-                    <p class="text-sm text-gray-600 mb-1">Puan: <strong>@_myReview.Rating/10</strong></p>
-                    <p class="text-gray-700 text-sm">@_myReview.Comment</p>
+                    <p class="text-sm text-content-muted mb-1">Puan: <strong class="text-content">@_myReview.Rating/10</strong></p>
+                    <p class="text-content text-sm">@_myReview.Comment</p>
                 </div>
                 <form id="my-review-edit" asp-controller="Car" asp-action="EditReview" method="post" class="hidden space-y-3 mt-2">
                     <input type="hidden" name="reviewId" value="@_myReview.Id" />
-                    <select name="rating" required class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white">
+                    <select name="rating" required class="select">
                         @for (int i = 10; i >= 1; i--)
                         {
-                            <option value="@i" selected="@(i == _myReview.Rating)">@i Yıldız</option>
+                            <option value="@i" selected="@(i == _myReview.Rating)">@i / 10</option>
                         }
                     </select>
-                    <textarea name="comment" required minlength="10" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">@_myReview.Comment</textarea>
-                    <button type="submit" class="bg-primary hover:bg-blue-700 text-white font-semibold py-1.5 px-4 rounded-lg text-sm">Kaydet</button>
+                    <textarea name="comment" required minlength="10" rows="3" class="textarea">@_myReview.Comment</textarea>
+                    <button type="submit" class="btn-primary btn-sm">Kaydet</button>
                 </form>
             </div>
         }
         else
         {
-            <div class="mb-8 text-center py-6 bg-gray-50 rounded-xl border border-dashed border-gray-300">
-                <p class="text-gray-600 mb-3">Yorum yapabilmek için giriş yapmalısınız.</p>
-                <a asp-controller="Account" asp-action="Login" asp-route-returnUrl="@Url.Action("Details", "Car", new { id = Model.Id })"
-                   class="inline-flex items-center bg-primary hover:bg-blue-700 text-white font-semibold py-2 px-5 rounded-lg transition">
-                    <i class="fa-solid fa-lock mr-2"></i> Giriş Yap
+            <div class="mb-8 text-center py-6 rounded-lg border border-dashed border-border bg-surface-2">
+                <p class="text-content-muted mb-3">Yorum yapabilmek için giriş yapmalısınız.</p>
+                <a asp-controller="Account" asp-action="Login" asp-route-returnUrl="@Url.Action("Details", "Car", new { id = Model.Id })" class="btn-primary btn-sm">
+                    <i class="fa-solid fa-lock"></i> Giriş yap
                 </a>
             </div>
         }
 
-        <div class="border-t border-gray-200 pt-6 mt-6">
+        <div class="border-t border-border pt-6 mt-6">
             @{
                 var _rsort = (Context.Request.Query["rsort"].ToString() ?? "new").ToLowerInvariant();
                 var _allOther = (Model.Reviews ?? new List<OtoRehber.Domain.Entities.CarReview>())
@@ -411,10 +354,10 @@
             }
 
             <div class="flex items-center justify-between flex-wrap gap-2 mb-4">
-                <h3 class="text-lg font-bold text-gray-800 dark:text-gray-100">Topluluk Yorumları (@Model.Reviews?.Count)</h3>
+                <h3 class="section-title">Topluluk yorumları (@Model.Reviews?.Count)</h3>
                 @if (_otherReviews.Count > 1)
                 {
-                    <select onchange="location.href='?rsort=' + this.value" class="text-sm border border-gray-300 dark:border-gray-600 dark:bg-gray-900 rounded-lg px-2 py-1.5">
+                    <select onchange="location.href='?rsort=' + this.value" class="select w-auto text-sm py-1.5">
                         <option value="new" selected="@(_rsort == "new")">En yeni</option>
                         <option value="rating_desc" selected="@(_rsort == "rating_desc")">En yüksek puan</option>
                         <option value="rating_asc" selected="@(_rsort == "rating_asc")">En düşük puan</option>
@@ -428,31 +371,31 @@
                 <div class="space-y-4" id="review-list">
                     @foreach (var review in _otherReviews)
                     {
-                        <div class="review-item bg-gray-50 dark:bg-gray-900/40 rounded-xl p-4 border border-gray-100 dark:border-gray-700 flex gap-4 @(_revI++ >= _revPageSize ? "hidden" : "")">
+                        <div class="review-item rounded-lg bg-surface-2 p-4 border border-border flex gap-4 @(_revI++ >= _revPageSize ? "hidden" : "")">
                             <div class="flex-shrink-0">
-                                <div class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-700 font-bold text-lg">
+                                <div class="w-10 h-10 rounded-full bg-brand-50 dark:bg-brand-500/15 flex items-center justify-center text-brand-700 dark:text-brand-300 font-semibold">
                                     @review.UserName.Substring(0, 1).ToUpper()
                                 </div>
                             </div>
                             <div class="flex-1">
                                 <div class="flex items-center justify-between mb-1">
-                                    <h4 class="font-bold text-gray-900 dark:text-gray-100">@review.UserName</h4>
-                                    <span class="text-xs text-gray-500">@review.CreatedAt.ToString("dd MMM yyyy")</span>
+                                    <h4 class="font-semibold text-content text-sm">@review.UserName</h4>
+                                    <span class="text-xs text-content-muted">@review.CreatedAt.ToString("dd MMM yyyy")</span>
                                 </div>
                                 <div class="flex items-center mb-2">
-                                    <div class="flex text-yellow-400 text-sm">
+                                    <div class="flex text-amber-500 text-sm">
                                         @for (int i = 0; i < review.Rating; i++)
                                         {
                                             <i class="fa-solid fa-star"></i>
                                         }
                                         @for (int i = review.Rating; i < 10; i++)
                                         {
-                                            <i class="fa-regular fa-star text-gray-300"></i>
+                                            <i class="fa-regular fa-star text-content-muted/40"></i>
                                         }
                                     </div>
-                                    <span class="ml-2 text-sm font-medium text-gray-600 dark:text-gray-400">@review.Rating/10</span>
+                                    <span class="ml-2 text-sm font-medium text-content-muted">@review.Rating/10</span>
                                 </div>
-                                <p class="text-gray-700 dark:text-gray-300 text-sm">@review.Comment</p>
+                                <p class="text-content text-sm">@review.Comment</p>
                                 @{
                                     var _rl = ViewBag.ReviewLikes as IDictionary<int, (int Count, bool Voted)>;
                                     (int Count, bool Voted) _rlv = _rl != null && _rl.TryGetValue(review.Id, out var _v) ? _v : (0, false);
@@ -461,7 +404,7 @@
                                 @if (!_ownReview)
                                 {
                                     <button type="button" onclick="toggleReviewLike(this, @review.Id)"
-                                            class="review-like-btn mt-2 inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full border transition @(_rlv.Voted ? "bg-primary/10 border-primary text-primary" : "border-gray-300 dark:border-gray-600 text-gray-500 hover:border-primary hover:text-primary")"
+                                            class="review-like-btn mt-2 inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full border transition-colors @(_rlv.Voted ? "bg-brand-50 border-brand-500 text-brand-600 dark:bg-brand-500/15 dark:text-brand-300" : "border-border text-content-muted hover:border-brand-400 hover:text-brand-600")"
                                             aria-pressed="@(_rlv.Voted ? "true" : "false")">
                                         <i class="fa-regular fa-thumbs-up"></i>
                                         <span>Faydalı</span>
@@ -470,7 +413,7 @@
                                 }
                                 else if (_rlv.Count > 0)
                                 {
-                                    <p class="mt-2 text-xs text-gray-400"><i class="fa-regular fa-thumbs-up mr-1"></i>@_rlv.Count kişi faydalı buldu</p>
+                                    <p class="mt-2 text-xs text-content-muted"><i class="fa-regular fa-thumbs-up mr-1"></i>@_rlv.Count kişi faydalı buldu</p>
                                 }
                             </div>
                         </div>
@@ -479,15 +422,15 @@
                 @if (_otherReviews.Count > _revPageSize)
                 {
                     <button type="button" id="show-more-reviews" onclick="document.querySelectorAll('#review-list .review-item.hidden').forEach(e=>e.classList.remove('hidden')); this.remove();"
-                            class="mt-4 w-full py-2.5 text-sm font-semibold text-primary bg-blue-50 dark:bg-blue-900/20 rounded-xl hover:bg-blue-100 dark:hover:bg-blue-900/40 transition">
+                            class="btn-secondary w-full mt-4">
                         @(_otherReviews.Count - _revPageSize) yorum daha göster
                     </button>
                 }
             }
             else
             {
-                <div class="text-center py-6 text-gray-500 bg-gray-50 rounded-xl border border-dashed border-gray-300">
-                    <i class="fa-regular fa-comments text-3xl mb-2 text-gray-400"></i>
+                <div class="text-center py-6 text-content-muted rounded-lg bg-surface-2 border border-dashed border-border">
+                    <i class="fa-regular fa-comments text-3xl mb-2"></i>
                     <p>@(_myReview != null ? "Bu araca başka yorum yapılmamış." : "Henüz yorum yapılmamış. İlk yorumu siz yapın!")</p>
                 </div>
             }
@@ -496,8 +439,8 @@
 </div>
 
 <div class="mt-8 text-center">
-    <a asp-controller="Home" asp-action="Index" class="inline-flex items-center text-gray-500 hover:text-primary font-medium transition">
-        <i class="fa-solid fa-arrow-left mr-2"></i> Vitrine Dön
+    <a asp-controller="Home" asp-action="Index" class="inline-flex items-center text-content-muted hover:text-content font-medium transition-colors">
+        <i class="fa-solid fa-arrow-left mr-2"></i> Vitrine dön
     </a>
 </div>
 
@@ -529,8 +472,8 @@
                     responsive: true, maintainAspectRatio: false,
                     plugins: { legend: { display: false } },
                     scales: {
-                        y: { ticks: { color: dark ? '#9ca3af' : '#6b7280', callback: function (v) { return (v / 1000) + 'K'; } }, grid: { color: dark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.05)' } },
-                        x: { ticks: { color: dark ? '#9ca3af' : '#6b7280' }, grid: { display: false } }
+                        y: { ticks: { color: dark ? '#94a3b8' : '#64748b', callback: function (v) { return (v / 1000) + 'K'; } }, grid: { color: dark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)' } },
+                        x: { ticks: { color: dark ? '#94a3b8' : '#64748b' }, grid: { display: false } }
                     }
                 }
             });
@@ -549,11 +492,11 @@
             const countEl = btn.querySelector('.review-like-count');
             countEl.textContent = data.count > 0 ? `(${data.count})` : '';
             btn.setAttribute('aria-pressed', data.voted ? 'true' : 'false');
-            btn.classList.toggle('bg-primary/10', data.voted);
-            btn.classList.toggle('border-primary', data.voted);
-            btn.classList.toggle('text-primary', data.voted);
-            btn.classList.toggle('border-gray-300', !data.voted);
-            btn.classList.toggle('text-gray-500', !data.voted);
+            btn.classList.toggle('bg-brand-50', data.voted);
+            btn.classList.toggle('border-brand-500', data.voted);
+            btn.classList.toggle('text-brand-600', data.voted);
+            btn.classList.toggle('border-border', !data.voted);
+            btn.classList.toggle('text-content-muted', !data.voted);
         } catch (e) { /* yoksay */ }
         finally { btn.disabled = false; }
     }

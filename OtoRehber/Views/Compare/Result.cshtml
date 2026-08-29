@@ -2,136 +2,120 @@
 
 @{
     ViewData["Title"] = "Karşılaştırma Sonucu";
-    // Markdig kütüphanesi kurulu değilse diye basit bir HTML parse yapalım veya direkt gösterelim. 
-    // Projede Markdig varsa Markdown.Parse kullanılabilir. Şimdilik düz string gösterelim (JS ile veya basit replace).
 }
 
-<div class="max-w-6xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+<div class="max-w-5xl mx-auto py-8">
     <div class="mb-6">
-        <a asp-action="Index" class="inline-flex items-center text-gray-500 hover:text-indigo-600 font-medium transition">
-            <i class="fa-solid fa-arrow-left mr-2"></i> Yeni Karşılaştırma Yap
+        <a asp-action="Index" class="inline-flex items-center text-content-muted hover:text-content font-medium transition-colors">
+            <i class="fa-solid fa-arrow-left mr-2"></i> Yeni karşılaştırma yap
         </a>
     </div>
 
-    <!-- Karşılaştırma Tablosu -->
-    <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-xl overflow-hidden border border-gray-200 dark:border-gray-700 mb-12" data-aos="fade-up">
-        
-        <!-- Header Row -->
-        <div class="grid grid-cols-2 bg-gray-50 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
-            <!-- Car 1 Header -->
-            <div class="p-6 sm:p-10 text-center border-r border-gray-200 dark:border-gray-700">
-                <div class="w-20 h-20 mx-auto bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-blue-600 dark:text-blue-400 mb-4 shadow-sm">
-                    <i class="fa-solid fa-car-side text-3xl"></i>
+    <div class="card overflow-hidden mb-10" data-aos="fade-up">
+        <div class="grid grid-cols-2 bg-surface-2 border-b border-border">
+            <div class="p-6 sm:p-8 text-center border-r border-border">
+                <div class="w-16 h-16 mx-auto bg-surface-3 rounded-full flex items-center justify-center text-content-muted mb-3">
+                    <i class="fa-solid fa-car-side text-2xl"></i>
                 </div>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white">@Model.Car1.Brand</h2>
-                <h3 class="text-xl text-gray-600 dark:text-gray-400 font-medium">@Model.Car1.ModelName</h3>
+                <h2 class="text-xl sm:text-2xl font-bold text-content">@Model.Car1.Brand</h2>
+                <h3 class="text-content-muted font-medium">@Model.Car1.ModelName</h3>
             </div>
-            
-            <!-- Car 2 Header -->
-            <div class="p-6 sm:p-10 text-center relative">
-                <!-- VS Badge Centered -->
-                <div class="absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center text-white font-black border-4 border-white dark:border-gray-800 shadow-md">
-                    VS
+            <div class="p-6 sm:p-8 text-center">
+                <div class="w-16 h-16 mx-auto bg-surface-3 rounded-full flex items-center justify-center text-content-muted mb-3">
+                    <i class="fa-solid fa-car text-2xl"></i>
                 </div>
-
-                <div class="w-20 h-20 mx-auto bg-indigo-100 dark:bg-indigo-900/30 rounded-full flex items-center justify-center text-indigo-600 dark:text-indigo-400 mb-4 shadow-sm">
-                    <i class="fa-solid fa-car text-3xl"></i>
-                </div>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white">@Model.Car2.Brand</h2>
-                <h3 class="text-xl text-gray-600 dark:text-gray-400 font-medium">@Model.Car2.ModelName</h3>
+                <h2 class="text-xl sm:text-2xl font-bold text-content">@Model.Car2.Brand</h2>
+                <h3 class="text-content-muted font-medium">@Model.Car2.ModelName</h3>
             </div>
         </div>
 
-
-        <!-- Radar Chart Alanı -->
-        <div class="p-6 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
-            <h3 class="text-center text-lg font-bold text-gray-700 dark:text-gray-300 mb-4">Görsel Karşılaştırma Analizi</h3>
+        <div class="p-6 border-b border-border">
+            <h3 class="text-center section-title mb-4">Görsel karşılaştırma analizi</h3>
             <div class="w-full max-w-lg mx-auto aspect-square">
                 <canvas id="compareRadarChart"></canvas>
             </div>
         </div>
 
-        <!-- Body Rows -->
-        <div class="divide-y divide-gray-200 dark:divide-gray-700">
-            
-            <!-- Segment -->
-            <div class="grid grid-cols-2 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
-                <div class="p-4 sm:p-6 text-center border-r border-gray-200 dark:border-gray-700 relative">
-                    <span class="absolute top-2 left-2 text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest hidden sm:block">Segment</span>
-                    <p class="text-lg font-bold text-gray-800 dark:text-gray-200">@Model.Car1.Segment</p>
-                </div>
-                <div class="p-4 sm:p-6 text-center relative">
-                    <span class="absolute top-2 right-2 text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest hidden sm:block">Segment</span>
-                    <p class="text-lg font-bold text-gray-800 dark:text-gray-200">@Model.Car2.Segment</p>
-                </div>
-            </div>
-
-            <!-- Motor -->
-            <div class="grid grid-cols-2 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
-                <div class="p-4 sm:p-6 text-center border-r border-gray-200 dark:border-gray-700">
-                    <span class="block text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-1 sm:hidden">Motor</span>
-                    <p class="text-gray-700 dark:text-gray-300">@Model.Car1.Engine</p>
+        <div class="divide-y divide-border">
+            <div class="grid grid-cols-2">
+                <div class="p-4 sm:p-6 text-center border-r border-border">
+                    <span class="block text-[10px] font-semibold text-content-muted uppercase tracking-widest mb-1">Segment</span>
+                    <p class="font-semibold text-content">@Model.Car1.Segment</p>
                 </div>
                 <div class="p-4 sm:p-6 text-center">
-                    <span class="block text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-1 sm:hidden">Motor</span>
-                    <p class="text-gray-700 dark:text-gray-300">@Model.Car2.Engine</p>
+                    <span class="block text-[10px] font-semibold text-content-muted uppercase tracking-widest mb-1">Segment</span>
+                    <p class="font-semibold text-content">@Model.Car2.Segment</p>
                 </div>
             </div>
 
-            <!-- Fiyat -->
-            <div class="grid grid-cols-2 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
-                <div class="p-4 sm:p-6 text-center border-r border-gray-200 dark:border-gray-700">
-                    <span class="block text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-1 sm:hidden">Fiyat</span>
-                    <p class="text-green-600 dark:text-green-500 font-bold">@Model.Car1.MinPrice.ToString("N0") - @Model.Car1.MaxPrice.ToString("N0") TL</p>
+            <div class="grid grid-cols-2">
+                <div class="p-4 sm:p-6 text-center border-r border-border">
+                    <span class="block text-[10px] font-semibold text-content-muted uppercase tracking-widest mb-1">Motor</span>
+                    <p class="text-content-muted text-sm">@Model.Car1.Engine</p>
                 </div>
                 <div class="p-4 sm:p-6 text-center">
-                    <span class="block text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-1 sm:hidden">Fiyat</span>
-                    <p class="text-green-600 dark:text-green-500 font-bold">@Model.Car2.MinPrice.ToString("N0") - @Model.Car2.MaxPrice.ToString("N0") TL</p>
+                    <span class="block text-[10px] font-semibold text-content-muted uppercase tracking-widest mb-1">Motor</span>
+                    <p class="text-content-muted text-sm">@Model.Car2.Engine</p>
                 </div>
             </div>
 
-            <!-- Güvenilirlik -->
-            <div class="grid grid-cols-2 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
-                <div class="p-4 sm:p-6 text-center border-r border-gray-200 dark:border-gray-700">
-                    <span class="block text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-2 sm:hidden">Güvenilirlik</span>
-                    <div class="inline-flex items-center justify-center w-12 h-12 rounded-full @(Model.Car1.ReliabilityScore >= 8 ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400" : Model.Car1.ReliabilityScore >= 6 ? "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400" : "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400") font-black text-lg">
-                        @Model.Car1.ReliabilityScore
-                    </div>
+            <div class="grid grid-cols-2">
+                <div class="p-4 sm:p-6 text-center border-r border-border">
+                    <span class="block text-[10px] font-semibold text-content-muted uppercase tracking-widest mb-1">Fiyat</span>
+                    <p class="text-content font-semibold">@Model.Car1.MinPrice.ToString("N0") – @Model.Car1.MaxPrice.ToString("N0") ₺</p>
                 </div>
                 <div class="p-4 sm:p-6 text-center">
-                    <span class="block text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-2 sm:hidden">Güvenilirlik</span>
-                    <div class="inline-flex items-center justify-center w-12 h-12 rounded-full @(Model.Car2.ReliabilityScore >= 8 ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400" : Model.Car2.ReliabilityScore >= 6 ? "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400" : "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400") font-black text-lg">
-                        @Model.Car2.ReliabilityScore
-                    </div>
+                    <span class="block text-[10px] font-semibold text-content-muted uppercase tracking-widest mb-1">Fiyat</span>
+                    <p class="text-content font-semibold">@Model.Car2.MinPrice.ToString("N0") – @Model.Car2.MaxPrice.ToString("N0") ₺</p>
                 </div>
             </div>
 
-            <!-- Artılar / Eksiler -->
-            <div class="grid grid-cols-2 bg-gray-50 dark:bg-gray-900">
-                <div class="p-4 sm:p-6 border-r border-gray-200 dark:border-gray-700">
-                    <h4 class="font-bold text-green-600 dark:text-green-400 mb-2 flex items-center"><i class="fa-solid fa-plus-circle mr-2"></i> Artılar</h4>
-                    <ul class="list-disc list-inside text-sm text-gray-600 dark:text-gray-400 mb-4 space-y-1">
-                        @foreach(var pro in Model.Car1.ProsConsList.Where(p => p.Type == "Pro")) {
+            @{
+                string ScoreCls(double s) => s >= 8
+                    ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300"
+                    : s >= 6 ? "bg-amber-50 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300"
+                    : "bg-red-50 text-red-700 dark:bg-red-500/15 dark:text-red-300";
+            }
+            <div class="grid grid-cols-2">
+                <div class="p-4 sm:p-6 text-center border-r border-border">
+                    <span class="block text-[10px] font-semibold text-content-muted uppercase tracking-widest mb-2">Güvenilirlik</span>
+                    <div class="inline-flex items-center justify-center w-12 h-12 rounded-full font-bold @ScoreCls(Model.Car1.ReliabilityScore)">@Model.Car1.ReliabilityScore</div>
+                </div>
+                <div class="p-4 sm:p-6 text-center">
+                    <span class="block text-[10px] font-semibold text-content-muted uppercase tracking-widest mb-2">Güvenilirlik</span>
+                    <div class="inline-flex items-center justify-center w-12 h-12 rounded-full font-bold @ScoreCls(Model.Car2.ReliabilityScore)">@Model.Car2.ReliabilityScore</div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 bg-surface-2">
+                <div class="p-4 sm:p-6 border-r border-border">
+                    <h4 class="font-semibold text-emerald-600 dark:text-emerald-400 mb-2 flex items-center"><i class="fa-solid fa-plus-circle mr-2"></i> Artılar</h4>
+                    <ul class="list-disc list-inside text-sm text-content-muted mb-4 space-y-1">
+                        @foreach (var pro in Model.Car1.ProsConsList.Where(p => p.Type == "Pro"))
+                        {
                             <li>@pro.Description</li>
                         }
                     </ul>
-                    <h4 class="font-bold text-red-600 dark:text-red-400 mb-2 flex items-center"><i class="fa-solid fa-minus-circle mr-2"></i> Eksiler</h4>
-                    <ul class="list-disc list-inside text-sm text-gray-600 dark:text-gray-400 space-y-1">
-                        @foreach(var con in Model.Car1.ProsConsList.Where(p => p.Type == "Con")) {
+                    <h4 class="font-semibold text-red-600 dark:text-red-400 mb-2 flex items-center"><i class="fa-solid fa-minus-circle mr-2"></i> Eksiler</h4>
+                    <ul class="list-disc list-inside text-sm text-content-muted space-y-1">
+                        @foreach (var con in Model.Car1.ProsConsList.Where(p => p.Type == "Con"))
+                        {
                             <li>@con.Description</li>
                         }
                     </ul>
                 </div>
                 <div class="p-4 sm:p-6">
-                    <h4 class="font-bold text-green-600 dark:text-green-400 mb-2 flex items-center"><i class="fa-solid fa-plus-circle mr-2"></i> Artılar</h4>
-                    <ul class="list-disc list-inside text-sm text-gray-600 dark:text-gray-400 mb-4 space-y-1">
-                        @foreach(var pro in Model.Car2.ProsConsList.Where(p => p.Type == "Pro")) {
+                    <h4 class="font-semibold text-emerald-600 dark:text-emerald-400 mb-2 flex items-center"><i class="fa-solid fa-plus-circle mr-2"></i> Artılar</h4>
+                    <ul class="list-disc list-inside text-sm text-content-muted mb-4 space-y-1">
+                        @foreach (var pro in Model.Car2.ProsConsList.Where(p => p.Type == "Pro"))
+                        {
                             <li>@pro.Description</li>
                         }
                     </ul>
-                    <h4 class="font-bold text-red-600 dark:text-red-400 mb-2 flex items-center"><i class="fa-solid fa-minus-circle mr-2"></i> Eksiler</h4>
-                    <ul class="list-disc list-inside text-sm text-gray-600 dark:text-gray-400 space-y-1">
-                        @foreach(var con in Model.Car2.ProsConsList.Where(p => p.Type == "Con")) {
+                    <h4 class="font-semibold text-red-600 dark:text-red-400 mb-2 flex items-center"><i class="fa-solid fa-minus-circle mr-2"></i> Eksiler</h4>
+                    <ul class="list-disc list-inside text-sm text-content-muted space-y-1">
+                        @foreach (var con in Model.Car2.ProsConsList.Where(p => p.Type == "Con"))
+                        {
                             <li>@con.Description</li>
                         }
                     </ul>
@@ -140,123 +124,83 @@
         </div>
     </div>
 
-    <!-- AI Verdict (Yapay Zeka Kararı) -->
-    <div class="relative bg-gradient-to-br from-indigo-900 to-purple-900 rounded-3xl shadow-2xl p-8 sm:p-12 text-white overflow-hidden" data-aos="zoom-in" data-aos-delay="200">
-        <!-- Dekoratif Arka Plan İkonu -->
-        <i class="fa-solid fa-robot absolute -bottom-10 -right-10 text-[200px] text-white opacity-5 transform -rotate-12"></i>
-        
-        <div class="relative z-10">
-            <div class="flex items-center mb-6">
-                <div class="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mr-4 border border-white/30">
-                    <i class="fa-solid fa-brain text-2xl text-purple-300"></i>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-extrabold text-white">Yapay Zeka Uzman Görüşü</h3>
-                    <p class="text-indigo-200">OtoRehber AI, bu iki aracı sizin için kıyasladı.</p>
-                </div>
+    <!-- AI hakem yorumu -->
+    <div class="rounded-2xl bg-slate-900 border border-slate-800 p-6 sm:p-10 text-white" data-aos="zoom-in" data-aos-delay="200">
+        <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center border border-white/15">
+                <i class="fa-solid fa-brain text-xl text-brand-300"></i>
             </div>
+            <div>
+                <h3 class="text-xl font-bold text-white">Yapay zeka uzman görüşü</h3>
+                <p class="text-slate-400 text-sm">OtoRehber AI, bu iki aracı sizin için kıyasladı.</p>
+            </div>
+        </div>
 
-            <div class="prose prose-invert prose-lg max-w-none ai-verdict-content">
-                <!-- Ham markdown metni HTML-encode edilmiş halde tutulur; JS ile parse + sanitize edilip basılır -->
-                <div id="ai-verdict-raw" class="hidden">@Model.AiVerdict</div>
-                <div id="ai-verdict-formatted"></div>
-            </div>
+        <div class="prose prose-invert max-w-none ai-verdict-content">
+            <div id="ai-verdict-raw" class="hidden">@Model.AiVerdict</div>
+            <div id="ai-verdict-formatted"></div>
         </div>
     </div>
 </div>
 
 @section Scripts {
     <script src="~/lib/chartjs/chart.umd.min.js" asp-append-version="true"></script>
-    <script src="~/lib/marked/marked.min.js" asp-append-version="true"></script>
-    <script src="~/lib/dompurify/purify.min.js" asp-append-version="true"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // AI kararını markdown olarak parse edip sanitize ederek bas
+        document.addEventListener("DOMContentLoaded", function () {
             var rawVerdictEl = document.getElementById('ai-verdict-raw');
             var rawVerdict = rawVerdictEl.innerText || rawVerdictEl.textContent;
             document.getElementById('ai-verdict-formatted').innerHTML = DOMPurify.sanitize(marked.parse(rawVerdict));
 
             var ctx = document.getElementById('compareRadarChart').getContext('2d');
-            
-            // Veri hazırlığı (Örnekleme ve normalize etme)
-            // Güvenilirlik: Zaten 1-10 arası
-            // Bakım Ekonomisi: (10 - Maliyet / 100) -> 100 Euro = 9 Puan, 500 Euro = 5 Puan
             const car1MaintScore = Math.max(1, 10 - (@Model.Car1.EstimatedMaintenanceCostEUR / 100));
             const car2MaintScore = Math.max(1, 10 - (@Model.Car2.EstimatedMaintenanceCostEUR / 100));
-            
-            // Demo amaçlı tutarlı sahte puanlar (Gerçek projede DB'den gelir)
             const car1Perf = (@Model.Car1.Id * 3 % 5) + 5;
             const car1Conf = (@Model.Car1.Id * 7 % 5) + 5;
             const car1Sec = (@Model.Car1.Id * 11 % 5) + 5;
-
             const car2Perf = (@Model.Car2.Id * 3 % 5) + 5;
             const car2Conf = (@Model.Car2.Id * 7 % 5) + 5;
             const car2Sec = (@Model.Car2.Id * 11 % 5) + 5;
+            const dark = document.documentElement.classList.contains('dark');
 
-            const data = {
-                labels: ['Güvenilirlik', 'Bakım Ekonomisi', 'Performans', 'Konfor', 'Güvenlik'],
-                datasets: [
-                    {
-                        label: @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.Car1.Brand + " " + Model.Car1.ModelName)),
-                        data: [@Model.Car1.ReliabilityScore, car1MaintScore, car1Perf, car1Conf, car1Sec],
-                        backgroundColor: 'rgba(37, 99, 235, 0.2)', // Blue
-                        borderColor: 'rgba(37, 99, 235, 1)',
-                        pointBackgroundColor: 'rgba(37, 99, 235, 1)',
-                        borderWidth: 2,
-                    },
-                    {
-                        label: @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.Car2.Brand + " " + Model.Car2.ModelName)),
-                        data: [@Model.Car2.ReliabilityScore, car2MaintScore, car2Perf, car2Conf, car2Sec],
-                        backgroundColor: 'rgba(79, 70, 229, 0.2)', // Indigo
-                        borderColor: 'rgba(79, 70, 229, 1)',
-                        pointBackgroundColor: 'rgba(79, 70, 229, 1)',
-                        borderWidth: 2,
-                    }
-                ]
-            };
-
-            const config = {
+            new Chart(ctx, {
                 type: 'radar',
-                data: data,
+                data: {
+                    labels: ['Güvenilirlik', 'Bakım ekonomisi', 'Performans', 'Konfor', 'Güvenlik'],
+                    datasets: [
+                        {
+                            label: @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.Car1.Brand + " " + Model.Car1.ModelName)),
+                            data: [@Model.Car1.ReliabilityScore, car1MaintScore, car1Perf, car1Conf, car1Sec],
+                            backgroundColor: 'rgba(37, 99, 235, 0.2)',
+                            borderColor: 'rgba(37, 99, 235, 1)',
+                            pointBackgroundColor: 'rgba(37, 99, 235, 1)',
+                            borderWidth: 2,
+                        },
+                        {
+                            label: @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.Car2.Brand + " " + Model.Car2.ModelName)),
+                            data: [@Model.Car2.ReliabilityScore, car2MaintScore, car2Perf, car2Conf, car2Sec],
+                            backgroundColor: 'rgba(100, 116, 139, 0.2)',
+                            borderColor: 'rgba(100, 116, 139, 1)',
+                            pointBackgroundColor: 'rgba(100, 116, 139, 1)',
+                            borderWidth: 2,
+                        }
+                    ]
+                },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
                     scales: {
                         r: {
-                            min: 0,
-                            max: 10,
-                            ticks: {
-                                stepSize: 2,
-                                display: false // Rakamları gizle kalabalık olmasın
-                            },
-                            grid: {
-                                color: document.documentElement.classList.contains('dark') ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'
-                            },
-                            pointLabels: {
-                                font: {
-                                    size: 13,
-                                    weight: 'bold'
-                                },
-                                color: document.documentElement.classList.contains('dark') ? '#cbd5e1' : '#475569'
-                            }
+                            min: 0, max: 10,
+                            ticks: { stepSize: 2, display: false },
+                            grid: { color: dark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)' },
+                            pointLabels: { font: { size: 13, weight: 'bold' }, color: dark ? '#cbd5e1' : '#475569' }
                         }
                     },
                     plugins: {
-                        legend: {
-                            position: 'bottom',
-                            labels: {
-                                color: document.documentElement.classList.contains('dark') ? '#f1f5f9' : '#1e293b',
-                                font: {
-                                    size: 14,
-                                    weight: 'bold'
-                                }
-                            }
-                        }
+                        legend: { position: 'bottom', labels: { color: dark ? '#f1f5f9' : '#1e293b', font: { size: 14, weight: 'bold' } } }
                     }
                 }
-            };
-
-            new Chart(ctx, config);
+            });
         });
     </script>
 }
