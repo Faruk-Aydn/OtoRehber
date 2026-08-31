@@ -1,0 +1,245 @@
+[
+  {
+    "brand": "Kia",
+    "modelName": "Rio (JB, 2005-2011)",
+    "productionYears": "2005-2011",
+    "engine": "1.4 16V 97 HP (G4EE, Benzin/LPG) + 5 İleri Manuel",
+    "segment": "B",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
+    "reliabilityScore": 7.8,
+    "minPrice": 170000,
+    "maxPrice": 300000,
+    "estimatedMaintenanceCostEUR": 190,
+    "expertSummary": "İkinci nesil Rio (JB), Hyundai Accent Era ile platform ve motor paylaşan, ucuz ve dertsiz bir B segmenti sedanıydı. 1.4 16V (G4EE) atmosferik motor turbosuz, port enjeksiyonlu, LPG'ye tam uyumlu ve dayanıklıdır; kayış trigerlidir (90 bin km periyot). 97 HP şehir içi için yeterli. O dönem Kore araçlarının zayıf noktası ince kaporta boyası ve sert iç plastiklerdi. Günlük dille: \"Accent Era'nın Kia ikizi; ucuz, LPG dostu, dertsiz. Kayış triger periyodunu takip et, kaportası ince.\" İlk otomobil ve filo kullanımı için mantıklı.",
+    "userFeedbackSummary": "Kullanıcılar dertsizliği ve ucuz işletmeyi övüyor. Şikayetler: ince kaporta ve boya, sert iç plastikler, ateşleme bobini/buji tekleme, gaz kelebeği, ön takım burç sesleri, klima performansı. Kayış triger ve LPG subap ayarı takip edilmeli.",
+    "chronicIssues": [
+      { "title": "Triger kayışı seti değişiminin aksatılması", "description": "G4EE kayış trigerlidir; kayış+gergi+su pompası 90 bin km'de değişmezse kopar, motor hasar görür. LPG'de periyot daha kısa.", "severity": "Orta", "estimatedCostEUR": 180, "affectedYears": "2005-2011" },
+      { "title": "Ateşleme bobini, buji ve gaz kelebeği", "description": "Yaşa bağlı bobin zayıflaması (tekleme), gaz kelebeği kurumu (rölanti dengesizliği). Bobin+buji seti ve kelebek temizliği/adaptasyonu.", "severity": "Düşük", "estimatedCostEUR": 130, "affectedYears": "2005-2011" },
+      { "title": "İnce kaporta/boya ve ön takım burçları", "description": "Boya ince, taş izi kolay; 80-120 bin km'de ön salıncak burçları ve rot başlarında ses. Boya bakımı ve ön takım revizyonu.", "severity": "Düşük", "estimatedCostEUR": 150, "affectedYears": "2005-2011" }
+    ],
+    "pros": ["Çok ucuz alım ve işletme, LPG'ye tam uyum", "Dayanıklı ve basit G4EE motoru", "Geniş bagajlı sedan", "Ucuz ve bol yedek parça"],
+    "cons": ["İnce kaporta ve çabuk çizilen boya", "Sert iç plastikler, düşük malzeme kalitesi", "Kayış triger periyodik masrafı", "Yol sesi yalıtımı orta"],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, filtreler, gaz kelebeği temizliği, LPG'de subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 150 },
+      { "mileage": "90.000 km", "expectedIssues": "Triger kayış seti + su pompası + gergi, bobin seti, ön takım revizyonu, fren disk-balata.", "estimatedCostEUR": 350 },
+      { "mileage": "200.000 km", "expectedIssues": "İkinci triger seti, debriyaj seti, motor takozları, klima kompresörü, süspansiyon yenileme.", "estimatedCostEUR": 400 }
+    ]
+  },
+  {
+    "brand": "Kia",
+    "modelName": "Rio (UB, 2011-2017)",
+    "productionYears": "2011-2017",
+    "engine": "1.4 CVVT 100 HP (G4FA, Benzin/LPG) + 6 İleri Manuel",
+    "segment": "B",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
+    "reliabilityScore": 7.9,
+    "minPrice": 320000,
+    "maxPrice": 520000,
+    "estimatedMaintenanceCostEUR": 200,
+    "expertSummary": "Üçüncü nesil Rio (UB), Hyundai Accent Blue ile kardeş — 'Tiger Nose' tasarımıyla belirgin sıçrama yaptı, geniş bagajıyla filo/taksi favorisi oldu. 1.4 CVVT (G4FA) atmosferik motor **zincir trigerli**, LPG'ye tam uyumlu ve dertsizdir — kayış triger masrafı YOK. 100 HP dolu araçta orta. Günlük dille: \"Accent Blue'nun Kia ikizi; zincir triger + LPG uyumu + kocaman bagaj. Ucuz, dertsiz aile/filo aracı.\" Şehir içi ve filo kullanımı için ideal.",
+    "userFeedbackSummary": "Kullanıcılar zincir trigeri, LPG ekonomisini ve tasarımı övüyor. Şikayetler: 100 HP'nin dolu araçta orta kalması, sert plastikler ve iç gıcırtılar, ateşleme bobini, gaz kelebeği, ön takım burç sesleri, boya inceliği. LPG'li örneklerde subap ayarı sorulmalı.",
+    "chronicIssues": [
+      { "title": "Ateşleme bobini, buji ve gaz kelebeği kirlenmesi", "description": "Yaşa bağlı bobin zayıflaması (tekleme), gaz kelebeği kurumu (rölanti dengesizliği). Bobin+buji seti ve kelebek temizliği/adaptasyonu; LPG'de periyot kısa.", "severity": "Düşük", "estimatedCostEUR": 130, "affectedYears": "2011-2017" },
+      { "title": "Ön süspansiyon burçları ve amortisör üst takoz sesi", "description": "Türkiye yollarında 60-100 bin km'de ön takım tıkırtısı; salıncak burçları ve üst takozlar yenilenir. Parça ucuz.", "severity": "Düşük", "estimatedCostEUR": 140, "affectedYears": "2011-2017" },
+      { "title": "İç mekan gıcırtıları ve boya inceliği", "description": "Torpido/kapı panelinde gıcırtı; boya ince, taş izi kolay. Keçe/takoz takviyesi ve boya bakımı.", "severity": "Düşük", "estimatedCostEUR": 100, "affectedYears": "2011-2017" }
+    ],
+    "pros": ["Zincir triger — kayış değişim masrafı YOK", "LPG'ye tam uyumlu, dertsiz atmosferik motor", "Segment üstü bagaj, filo/taksi dostu", "Ucuz alım ve işletme, bol parça"],
+    "cons": ["100 HP dolu araçta ve rampada orta", "Sert plastikler, iç gıcırtılar", "Boya ince, taş izi kolay", "Yol sesi yalıtımı orta"],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, hava/polen filtresi, gaz kelebeği temizliği, LPG'de subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 150 },
+      { "mileage": "120.000 km", "expectedIssues": "Ön süspansiyon revizyonu, bobin seti, debriyaj kontrolü, amortisörler, LPG regülatör bakımı.", "estimatedCostEUR": 320 },
+      { "mileage": "200.000 km", "expectedIssues": "Debriyaj seti, su pompası, motor takozları, klima kompresörü, süspansiyon yenileme.", "estimatedCostEUR": 400 }
+    ]
+  },
+  {
+    "brand": "Kia",
+    "modelName": "Cerato (TD, 2008-2013)",
+    "productionYears": "2008-2013",
+    "engine": "1.6 CVVT 124 HP (G4FC, Benzin/LPG) + 4 İleri Otomatik (tork konvertörlü)",
+    "segment": "C",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
+    "reliabilityScore": 7.7,
+    "minPrice": 320000,
+    "maxPrice": 520000,
+    "estimatedMaintenanceCostEUR": 230,
+    "expertSummary": "İkinci nesil Cerato (TD, bazı pazarlarda Forte), C segmentinde ucuz alım, geniş kabin ve iyi donanımla dikkat çekti. 1.6 CVVT (G4FC 'Gamma') atmosferik motor **zincir trigerli**, LPG'ye tam uyumlu ve çok dayanıklı — Hyundai/Kia'nın en dertsiz motorlarından. Otomatiği 4 ileri gerçek tork konvertörlü (in-house), sağlam ama otoyolda devir yüksek. Günlük dille: \"Ucuza donanımlı C sedan; zincir triger + LPG uyumu + dertsiz 4 ileri otomatik. Sadece 4 vites otoyolda yorucu.\" Aile ve şehir içi kullanım için mantıklı.",
+    "userFeedbackSummary": "Kullanıcılar fiyat/donanım/iç hacim dengesini ve motorun dertsizliğini övüyor. Şikayetler: 4 vites yüzünden otoyolda yüksek devir ve yakıt, sert plastikler, ön takım burç sesleri, bobin tekleme, boya inceliği. Şanzıman yağı geçmişi sorulmalı; motor tarafında ciddi kronik yok.",
+    "chronicIssues": [
+      { "title": "Otomatik şanzıman yağının ihmal edilmesi", "description": "4 ileri tork konvertörlü şanzıman sağlamdır ama yağı 60 bin km'de değişmezse geç/sert vites geçişi başlar. Pan açtırıp yağ+filtre yeterli.", "severity": "Düşük", "estimatedCostEUR": 160, "affectedYears": "2008-2013" },
+      { "title": "Ateşleme bobini ve gaz kelebeği", "description": "Bobin zayıflaması (tekleme), gaz kelebeği kurumu (rölanti dengesizliği). Bobin+buji seti ve kelebek temizliği/adaptasyonu; LPG'de periyot kısa.", "severity": "Düşük", "estimatedCostEUR": 130, "affectedYears": "2008-2013" },
+      { "title": "Ön süspansiyon burçları ve boya inceliği", "description": "60-100 bin km'de ön takım tıkırtısı; boya ince, taş izi kolay. Ön takım revizyonu ve boya bakımı.", "severity": "Düşük", "estimatedCostEUR": 150, "affectedYears": "2008-2013" }
+    ],
+    "pros": ["Zincir triger, LPG uyumlu, çok dertsiz Gamma motor", "DSG/CVT yok: dayanıklı 4 ileri tork konvertörlü otomatik", "Ucuza donanımlı, geniş kabin", "Bol parça, yaygın servis"],
+    "cons": ["Sadece 4 ileri: otoyolda yüksek devir ve yakıt", "Sert plastikler, boya ince", "Ön süspansiyon burçları erken ses yapıyor", "Yol sesi yalıtımı orta"],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, filtreler, gaz kelebeği temizliği, şanzıman yağ+filtre, LPG'de subap ayarı.", "estimatedCostEUR": 200 },
+      { "mileage": "120.000 km", "expectedIssues": "Ön süspansiyon revizyonu, bobin seti, ikinci şanzıman yağı, amortisörler, LPG regülatör bakımı.", "estimatedCostEUR": 350 },
+      { "mileage": "200.000 km", "expectedIssues": "Motor takozları, klima kompresörü, süspansiyon yenileme, direksiyon rot, su pompası kontrolü.", "estimatedCostEUR": 380 }
+    ]
+  },
+  {
+    "brand": "Kia",
+    "modelName": "Cerato (YD, 2013-2018)",
+    "productionYears": "2013-2018",
+    "engine": "1.6 GDI 135 HP (G4FD, Benzin) + 6 İleri Otomatik (tork konvertörlü)",
+    "segment": "C",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
+    "reliabilityScore": 7.2,
+    "minPrice": 450000,
+    "maxPrice": 720000,
+    "estimatedMaintenanceCostEUR": 280,
+    "expertSummary": "Üçüncü nesil Cerato (YD), Hyundai Elantra MD ile kardeş; olgun tasarım, kaliteli kabin, geniş bagaj. 1.6 GDI (G4FD) direkt enjeksiyonlu benzinli motor 135 HP + 164 Nm ile canlı; **zincir trigerli**. Ama direkt enjeksiyon nedeniyle emme supabı karbon birikimi olur ve LPG önerilmez; bazı G4FD motorlarda yüksek yağ tüketimi bildirildi — servis geçmişi ve yağ seviyesi kontrol edilmeli. Otomatiği 6 ileri gerçek tork konvertörlü, sağlam. Günlük dille: \"Kaliteli C sedan + sağlam otomatik; ama direkt enjeksiyon — LPG takma, yağ seviyesini takip et.\"",
+    "userFeedbackSummary": "Kullanıcılar iç kaliteyi, sürüş konforunu ve otomatiğin düzgünlüğünü övüyor. Şikayetler: yağ tüketimi (bakımsız örnekler), emme supabı karbon birikimi (güç kaybı, rölanti dengesizliği), yüksek basınç yakıt pompası sesi, multimedya donması. Kısa periyot kaliteli yağ ve seviye takibi önemli.",
+    "chronicIssues": [
+      { "title": "Motor yağ tüketimi (G4FD, bakımsız örnekler)", "description": "Bazı 1.6 GDI motorlarda, özellikle geç yağ değişimi olan örneklerde piston segmanı/silindir aşınması ve yüksek yağ tüketimi görülür. Yağ seviyesi düzenli kontrol, kısa periyot kaliteli yağ; ileri durumda revizyon pahalı.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2013-2018" },
+      { "title": "Emme supaplarında karbon birikimi (direkt enjeksiyon)", "description": "Direkt enjeksiyon emme supaplarını yakıt yıkamaz; kurum birikir, güç kaybı ve rölanti dengesizliği. Ceviz kabuğu püskürtme temizliği yapılır.", "severity": "Orta", "estimatedCostEUR": 280, "affectedYears": "2013-2018" },
+      { "title": "Yüksek basınç yakıt pompası ve ön takım burçları", "description": "HPFP tik sesi ve bazı örneklerde arıza; 60-100 bin km'de ön süspansiyon burçları. Pompa değişimi ve ön takım revizyonu.", "severity": "Düşük", "estimatedCostEUR": 250, "affectedYears": "2013-2018" }
+    ],
+    "pros": ["Olgun ve kaliteli C sedan, geniş bagaj", "Canlı 135 HP GDI motor, zincir triger", "Sağlam 6 ileri tork konvertörlü otomatik", "Uzun garanti geçmişi, bol parça"],
+    "cons": ["Direkt enjeksiyon: LPG uyumsuzluğu ve emme karbon birikimi", "Yağ tüketimi riski (bakımsız örnekler)", "Yüksek basınç pompası sesi/arızası", "Multimedya donması"],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre (kısa periyot, seviye takibi), bujiler, hava/polen filtresi, şanzıman yağı kontrolü.", "estimatedCostEUR": 180 },
+      { "mileage": "120.000 km", "expectedIssues": "Emme supabı karbon temizliği, HPFP kontrolü, ön takım revizyonu, şanzıman yağ+filtre.", "estimatedCostEUR": 500 },
+      { "mileage": "200.000 km", "expectedIssues": "Segman/yağ tüketimi kontrolü, su pompası, zincir triger kontrolü, süspansiyon yenileme, ikinci şanzıman yağı.", "estimatedCostEUR": 600 }
+    ]
+  },
+  {
+    "brand": "Kia",
+    "modelName": "Ceed (ED, 2006-2012)",
+    "productionYears": "2006-2012",
+    "engine": "1.6 CVVT 122 HP (G4FC, Benzin/LPG) + 5 İleri Manuel",
+    "segment": "C",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
+    "reliabilityScore": 7.8,
+    "minPrice": 260000,
+    "maxPrice": 440000,
+    "estimatedMaintenanceCostEUR": 220,
+    "expertSummary": "İlk nesil Ceed (ED), Kia'nın Avrupa'da tasarlanıp üretilen ilk C hatchback'i — 7 yıl garantiyle geldi ve güvenilirlik algısını kökten değiştirdi. 1.6 CVVT (G4FC 'Gamma') atmosferik motor **zincir trigerli**, LPG'ye tam uyumlu ve çok dayanıklı. Kritik konular: gaz kelebeği, bobin, ön amortisör üst takoz, arka fren disk aşınması. Günlük dille: \"Avrupa yapımı, zincir trigerli, LPG dostu ilk 'güvenilir Kia'; ucuz ve dertsiz bir C hatchback.\" Aile ve şehir içi kullanım için mantıklı.",
+    "userFeedbackSummary": "Kullanıcılar güvenilirliği, garanti geçmişini ve zincir trigeri övüyor. Şikayetler: gaz kelebeği kaynaklı rölanti dengesizliği, bobin tekleme, ön amortisör üst takoz sesi, arka fren disklerinin çabuk aşınması, yol sesi yalıtımı orta. LPG'li örneklerde subap ayarı sorulmalı.",
+    "chronicIssues": [
+      { "title": "Gaz kelebeği kirlenmesi ve ateşleme bobini", "description": "Gaz kelebeği kurum bağlar (dalgalı rölanti, motor stop); bobin zayıflar (tekleme). Temizlik+adaptasyon ve bobin+buji seti.", "severity": "Düşük", "estimatedCostEUR": 150, "affectedYears": "2006-2012" },
+      { "title": "Ön amortisör üst takoz ve arka fren disk aşınması", "description": "Direksiyon çevirirken tıkırtı (üst takoz); arka fren diskleri erken aşınır. Üst takoz ve arka fren komple.", "severity": "Düşük", "estimatedCostEUR": 200, "affectedYears": "2006-2012" },
+      { "title": "Su pompası ve devirdaim kayışı", "description": "Yüksek km'de su pompası sızdırabilir; devirdaim kayışıyla birlikte yenilenir.", "severity": "Düşük", "estimatedCostEUR": 160, "affectedYears": "2006-2012" }
+    ],
+    "pros": ["Avrupa yapımı, zincir trigerli, LPG uyumlu Gamma motor", "7 yıl garanti geçmişi — güçlü güvenilirlik algısı", "İyi sürüş dengesi ve gövde", "Ucuz parça, yaygın servis"],
+    "cons": ["Gaz kelebeği kaynaklı rölanti dengesizliği", "Arka fren diskleri çabuk aşınıyor", "Yol sesi yalıtımı orta", "İç plastik kalitesi C segmenti seviyesinde"],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, filtreler, gaz kelebeği temizliği, LPG'de subap ayarı, ön/arka fren kontrolü.", "estimatedCostEUR": 160 },
+      { "mileage": "120.000 km", "expectedIssues": "Ön takım revizyonu (üst takoz, burç), bobin seti, su pompası+devirdaim, arka fren komple, debriyaj kontrolü.", "estimatedCostEUR": 350 },
+      { "mileage": "200.000 km", "expectedIssues": "Debriyaj seti, motor takozları, klima kompresörü, süspansiyon yenileme, direksiyon rot.", "estimatedCostEUR": 400 }
+    ]
+  },
+  {
+    "brand": "Kia",
+    "modelName": "Ceed (JD, 2012-2018)",
+    "productionYears": "2012-2018",
+    "engine": "1.6 CRDi 128 HP (D4FB \"U2\", Dizel Turbo) + 6 İleri Manuel",
+    "segment": "C",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
+    "reliabilityScore": 7.5,
+    "minPrice": 400000,
+    "maxPrice": 650000,
+    "estimatedMaintenanceCostEUR": 300,
+    "expertSummary": "İkinci nesil Ceed (JD), Hyundai i30 GD ile kardeş — olgun, kaliteli ve iyi süren bir C hatchback. 1.6 CRDi (D4FB, 'U2' ailesi, 128 HP) dizeli uzun yolda 4-4.5 lt yakan, sessiz ve dayanıklı bir motordur. Ama **kayış trigerlidir** (90 bin km periyot — kritik) ve dizel klasikleri geçerli: EGR soğutucu, DPF (şehir içi), enjektör, çift kütleli volan. Günlük dille: \"Sessiz, ekonomik, kaliteli C hatchback dizel; ama kayış triger periyodunu ASLA kaçırma, EGR/DPF ve enjektöre dikkat.\" Uzun yol ağırlıklı kullanıcı için mantıklı.",
+    "userFeedbackSummary": "Kullanıcılar yakıt ekonomisini, sessizliği ve iç kaliteyi övüyor. Şikayetler: kayış triger periyodunun kritikliği, EGR soğutucu (antifriz kaçağı), DPF tıkanması (şehir içi), enjektör revizyonu, çift kütleli volan + debriyaj, turbo. Kaliteli mazot ve ara sıra uzun yol şart.",
+    "chronicIssues": [
+      { "title": "Triger kayışı seti (kritik periyot)", "description": "D4FB kayış trigerlidir; kayış+gergi+su pompası seti 90 bin km'de değişmezse kayış kopar/atlar ve subap-piston teması motora ağır hasar verir. Periyot ihmal edilmemeli.", "severity": "Kritik", "estimatedCostEUR": 350, "affectedYears": "2012-2018" },
+      { "title": "EGR soğutucu ve DPF tıkanması", "description": "Şehir içi kullanımda EGR soğutucusu çatlar (antifriz kaçağı) ve DPF dolar; güç kaybı, arıza lambası, rejenerasyon sorunu. Uzun yol + soğutucu/DPF yenileme.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2012-2018" },
+      { "title": "Enjektör ve çift kütleli volan (DMF) aşınması", "description": "Common-rail enjektörler debisini şaşırır; DMF + debriyaj rölantide takırtı ve kalkışta titreme yapar. Enjektör revizyonu ve DMF+debriyaj seti.", "severity": "Orta", "estimatedCostEUR": 550, "affectedYears": "2012-2018" }
+    ],
+    "pros": ["Çok düşük yakıt tüketimi (uzun yol 4-4.5 lt), sessiz", "Avrupa tasarımı, kaliteli C hatchback", "7 yıl garanti geçmişi, bol parça", "İyi sürüş dengesi"],
+    "cons": ["Kayış triger — periyot ihmali motor hasarı (kritik)", "EGR soğutucu / DPF / enjektör gibi dizel bakımları", "Çift kütleli volan + debriyaj masrafı", "Sürekli kısa mesafe şehir içi kullanıma uygun değil"],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR/DPF ilk kontrol, triger kayış durumu kontrolü.", "estimatedCostEUR": 170 },
+      { "mileage": "90.000 km", "expectedIssues": "Triger kayış seti + su pompası + gergi (KRİTİK), EGR soğutucu kontrolü, enjektör kontrolü, debriyaj kontrolü.", "estimatedCostEUR": 450 },
+      { "mileage": "180.000 km", "expectedIssues": "İkinci kayış seti, EGR/DPF temizliği, çift kütleli volan+debriyaj, turbo kontrolü, ön takım revizyonu.", "estimatedCostEUR": 900 }
+    ]
+  },
+  {
+    "brand": "Kia",
+    "modelName": "Sportage (SL, 2010-2015)",
+    "productionYears": "2010-2015",
+    "engine": "2.0 CRDi 136 HP (D4HA, Dizel Turbo) + 6 İleri Otomatik (tork konvertörlü)",
+    "segment": "SUV",
+    "bodyType": "SUV",
+    "drivetrain": "Önden Çekiş",
+    "reliabilityScore": 7.4,
+    "minPrice": 550000,
+    "maxPrice": 900000,
+    "estimatedMaintenanceCostEUR": 400,
+    "expertSummary": "Üçüncü nesil Sportage (SL), Hyundai Tucson ix35 ile kardeş — keskin tasarımı, geniş kabini ve donanımıyla C-SUV segmentinde çok sattı. 2.0 CRDi (D4HA, 136 HP + 320 Nm) dizel motor **zincir trigerlidir** (kayış derdi yok) — bu bir avantaj. Kritik konular: EGR ve emme kurumu, DPF (şehir içi), enjektör, turbo. Otomatiği 6 ileri gerçek tork konvertörlü, sağlam. Ağır gövde süspansiyon ve fren aşınmasını hızlandırır. Günlük dille: \"Ucuza donanımlı C-SUV; zincir trigerli dizel + sağlam otomatik, ama EGR/DPF ve turbosuna dikkat.\"",
+    "userFeedbackSummary": "Kullanıcılar fiyat/donanım/iç hacim dengesini ve zincir trigeri övüyor. Şikayetler: EGR ve emme kurumu, DPF tıkanması (şehir içi), enjektör revizyonu, turbo, ön süspansiyon burçları (ağır gövde), direksiyon açı sensörü, panoramik cam tavan su kaçağı. Zincir triger uzun ömürlü.",
+    "chronicIssues": [
+      { "title": "EGR valfi ve emme manifoldu kurumlanması", "description": "Şehir içi düşük devir kullanımda EGR ve emme yolları kurum bağlar; güç kaybı, rölanti dengesizliği, arıza lambası. Temizlik veya yenileme.", "severity": "Orta", "estimatedCostEUR": 300, "affectedYears": "2010-2015" },
+      { "title": "DPF tıkanması ve turbo VNT", "description": "Kısa mesafe şehir kullanımında DPF dolar; turbo kayıcı kanatları kurum bağlar. Güç kaybı, arıza lambası, rejenerasyon sorunu. Uzun yol + temizlik/yenileme.", "severity": "Orta", "estimatedCostEUR": 500, "affectedYears": "2010-2015" },
+      { "title": "Panoramik cam tavan su kaçağı ve ön süspansiyon burçları", "description": "Panoramik tavanlı örneklerde drenaj kanalları tıkanınca su içeri sızar; ağır gövde nedeniyle ön süspansiyon burçları erken biter. Drenaj temizliği ve ön takım revizyonu.", "severity": "Düşük", "estimatedCostEUR": 250, "affectedYears": "2010-2015" }
+    ],
+    "pros": ["Ucuza donanımlı ve geniş C-SUV", "Zincir trigerli 2.0 CRDi dizel (kayış periyot derdi yok)", "Sağlam 6 ileri tork konvertörlü otomatik", "Yüksek sürüş pozisyonu, 7 yıl garanti geçmişi"],
+    "cons": ["EGR/emme/DPF/turbo gibi dizel bakımları", "Ağır gövde: süspansiyon ve fren aşınması hızlı", "Panoramik tavan su kaçağı riski", "Yüksek parça ve işçilik maliyeti"],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR/DPF ilk kontrol, şanzıman yağı kontrolü, panoramik tavan drenaj temizliği.", "estimatedCostEUR": 220 },
+      { "mileage": "150.000 km", "expectedIssues": "EGR/emme/DPF temizliği, enjektör kontrolü, turbo kontrolü, ön takım revizyonu, şanzıman yağ+filtre.", "estimatedCostEUR": 800 },
+      { "mileage": "250.000 km", "expectedIssues": "Zincir triger kontrolü, turbo revizyonu ihtimali, DPF değişimi, su pompası, süspansiyon komple.", "estimatedCostEUR": 900 }
+    ]
+  },
+  {
+    "brand": "Kia",
+    "modelName": "Sportage (QL, 2015-2021)",
+    "productionYears": "2015-2021",
+    "engine": "1.6 CRDi 136 HP (D4FE \"U3\", Dizel Turbo) + 7 İleri DSG DCT (Kuru/Islak Çift Kavrama)",
+    "segment": "SUV",
+    "bodyType": "SUV",
+    "drivetrain": "Önden Çekiş",
+    "reliabilityScore": 7.1,
+    "minPrice": 850000,
+    "maxPrice": 1400000,
+    "estimatedMaintenanceCostEUR": 420,
+    "expertSummary": "Dördüncü nesil Sportage (QL), Hyundai Tucson TL ile kardeş — çok daha modern kabin, teknoloji ve daha rafine sürüş. 1.6 CRDi ('U3' D4FE, 136 HP) dizel + Hyundai/Kia'nın 7 ileri DCT'si (çift kavrama). U3 motoru zincir trigerlidir; DCT ise dur-kalk trafikte ısınma, kavrama titremesi ve mekatronik yazılım güncellemeleri gerektiren bir birimdir. Ayrıca EGR ve emme kurumu, DPF, AdBlue'lu geç örneklerde NOx sensörü. Günlük dille: \"Modern ve donanımlı C-SUV; ama DCT'yi test sür, yazılım güncel örneği ara; EGR/DPF/AdBlue bakımını göze al.\"",
+    "userFeedbackSummary": "Kullanıcılar tasarımı, kabini ve donanımı çok övüyor. Şikayetler: DCT'nin dur-kalk trafikte tereddüdü ve kavrama titremesi, mekatronik yazılım güncellemeleri, EGR/emme kurumu, DPF tıkanması (şehir içi), AdBlue/NOx sensörü (geç örnekler). Yazılım güncel ve DCT yağı bakımlı örnek şart.",
+    "chronicIssues": [
+      { "title": "7 ileri DCT (çift kavrama) tereddüt, titreme ve mekatronik", "description": "Çift kavrama şanzıman dur-kalk trafikte ısınır; kalkışta tereddüt, kavrama titremesi ve mekatronik arızası (sarsıntı, arıza lambası). Yazılım güncellemesi + kavrama/mekatronik revizyonu gündeme gelir.", "severity": "Kritik", "estimatedCostEUR": 800, "affectedYears": "2015-2021" },
+      { "title": "EGR valfi, emme manifoldu ve DPF kurumlanması", "description": "Şehir içi kullanımda EGR, emme yolları ve DPF kurum bağlar; güç kaybı, arıza lambası, rejenerasyon sorunu. Uzun yol + temizlik/değişim.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2015-2021" },
+      { "title": "AdBlue / NOx sensörü ve dozaj ünitesi arızası (geç örnekler)", "description": "Euro 6d AdBlue'lu örneklerde NOx sensörleri ve dozaj pompası arızalanır; 'X km sonra çalışmayacak' uyarısı. Sensör/pompa pahalıdır.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2018-2021" }
+    ],
+    "pros": ["Modern kabin, teknoloji ve rafine sürüş", "Zincir trigerli 'U3' dizel motor", "Geniş iç hacim, güçlü ikinci el talebi", "7 yıl garanti geçmişi"],
+    "cons": ["7 ileri DCT: dur-kalk tereddüt, titreme, mekatronik riski", "EGR/emme/DPF gibi dizel bakımları", "AdBlue/NOx sensörü arızası (geç örnekler)", "Yüksek satın alma ve bakım maliyeti"],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, DCT yağı ve yazılım güncelleme, EGR/DPF ilk kontrol, AdBlue seviyesi.", "estimatedCostEUR": 280 },
+      { "mileage": "150.000 km", "expectedIssues": "DCT kavrama/mekatronik kontrolü, EGR/emme/DPF temizliği, enjektör kontrolü, turbo kontrolü, ön takım revizyonu.", "estimatedCostEUR": 850 },
+      { "mileage": "250.000 km", "expectedIssues": "Zincir triger kontrolü, DCT revizyonu ihtimali, turbo revizyonu, DPF değişimi, NOx sensörleri, süspansiyon.", "estimatedCostEUR": 1000 }
+    ]
+  },
+  {
+    "brand": "Kia",
+    "modelName": "Picanto (TA, 2011-2017)",
+    "productionYears": "2011-2017",
+    "engine": "1.25 Kappa 85 HP (G4LA, Benzin/LPG) + 5 İleri Manuel",
+    "segment": "A",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
+    "reliabilityScore": 7.9,
+    "minPrice": 300000,
+    "maxPrice": 480000,
+    "estimatedMaintenanceCostEUR": 180,
+    "expertSummary": "İkinci nesil Picanto (TA), A segmentinde park kolaylığı, ferah kabin ve çok düşük işletme maliyetiyle şehir içi kullanımın favorisiydi. 1.25 Kappa (G4LA) atmosferik motor **zincir trigerli**, LPG'ye tam uyumlu ve çok dertsizdir — kayış triger masrafı YOK. 85 HP hafif gövdeyi şehir içinde iyi taşır, otoyolda zayıf. Günlük dille: \"En ucuz işletmeli şehir arabalarından; zincir triger + LPG uyumu + park canavarı. İlk otomobil için ideal.\"",
+    "userFeedbackSummary": "Kullanıcılar park kolaylığını, düşük yakıtı ve zincir trigeri övüyor. Şikayetler: 85 HP'nin otoyolda yetersizliği, sert süspansiyon, yol sesi yalıtımı zayıf, küçük bagaj, ateşleme bobini, ön takım burç sesleri. LPG'li örneklerde subap ayarı sorulmalı.",
+    "chronicIssues": [
+      { "title": "Ateşleme bobini ve gaz kelebeği kirlenmesi", "description": "Yaşa bağlı bobin zayıflaması (tekleme), gaz kelebeği kurumu (rölanti dengesizliği). Bobin+buji seti ve kelebek temizliği/adaptasyonu; LPG'de periyot kısa.", "severity": "Düşük", "estimatedCostEUR": 110, "affectedYears": "2011-2017" },
+      { "title": "Ön süspansiyon burçları ve amortisör üst takoz sesi", "description": "Türkiye yollarında 60-100 bin km'de ön takım tıkırtısı; salıncak burçları ve üst takozlar yenilenir. Parça ucuz.", "severity": "Düşük", "estimatedCostEUR": 120, "affectedYears": "2011-2017" },
+      { "title": "Klima kokusu ve rölanti dalgalanması", "description": "Nemli havada evaporatörden küf kokusu; gaz kelebeği kurumu rölanti dengesizliği yapar. Klima temizliği, polen filtresi ve kelebek adaptasyonu.", "severity": "Düşük", "estimatedCostEUR": 100, "affectedYears": "2011-2017" }
+    ],
+    "pros": ["Zincir triger — kayış değişim masrafı YOK", "LPG'ye tam uyumlu, çok dertsiz Kappa motor", "Park kolaylığı, ferah kabin, düşük yakıt", "En ucuz işletme ve parça maliyeti, 7 yıl garanti geçmişi"],
+    "cons": ["85 HP otoyolda yetersiz", "Sert süspansiyon, zayıf yol sesi yalıtımı", "Küçük bagaj", "Otoyol/uzun yol konforu düşük"],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, hava/polen filtresi, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 130 },
+      { "mileage": "120.000 km", "expectedIssues": "Ön süspansiyon revizyonu, bobin seti, debriyaj kontrolü, klima bakımı, LPG regülatör bakımı.", "estimatedCostEUR": 260 },
+      { "mileage": "200.000 km", "expectedIssues": "Debriyaj seti, su pompası, motor takozları, klima kompresörü, süspansiyon yenileme.", "estimatedCostEUR": 360 }
+    ]
+  }
+]
