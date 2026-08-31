@@ -10,12 +10,10 @@ namespace OtoRehber.Services
     {
         public string? SearchQuery { get; set; }
         public string[]? Brand { get; set; }
-        public string[]? Segment { get; set; }
         public string[]? Fuel { get; set; }
         public string[]? Transmission { get; set; }
         public string[]? BodyType { get; set; }
         public string[]? Drivetrain { get; set; }
-        public string[]? Condition { get; set; }
 
         /// <summary>Motor gücü hazır aralık id'leri (CarSpecs.PowerBuckets), çoklu seçim.</summary>
         public string[]? Power { get; set; }
@@ -39,9 +37,9 @@ namespace OtoRehber.Services
 
         public bool HasAny =>
             !string.IsNullOrWhiteSpace(SearchQuery)
-            || Clean(Brand).Any() || Clean(Segment).Any() || Clean(Fuel).Any()
+            || Clean(Brand).Any() || Clean(Fuel).Any()
             || Clean(Transmission).Any() || Clean(BodyType).Any() || Clean(Drivetrain).Any()
-            || Clean(Condition).Any() || Clean(Power).Any() || Clean(Cc).Any()
+            || Clean(Power).Any() || Clean(Cc).Any()
             || PriceMin is > 0 || PriceMax is > 0 || MinScore is > 0
             || YearMin is > 0 || YearMax is > 0;
     }

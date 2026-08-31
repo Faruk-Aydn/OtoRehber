@@ -18,12 +18,10 @@
     }
     if (!string.IsNullOrWhiteSpace(f.SearchQuery)) pairs.Add(("searchQuery", f.SearchQuery.Trim(), $"Arama: {f.SearchQuery.Trim()}"));
     AddArr("brand", f.Brand, "Marka");
-    AddArr("segment", f.Segment, "Segment");
     AddArr("fuel", f.Fuel, "Yakıt");
     AddArr("transmission", f.Transmission, "Vites");
     AddArr("bodyType", f.BodyType, "Kasa");
     AddArr("drivetrain", f.Drivetrain, "Çekiş");
-    AddArr("condition", f.Condition, "Durum");
     foreach (var id in CarFilter.Clean(f.Power))
         pairs.Add(("power", id, $"Güç: {OtoRehber.Domain.CarSpecs.PowerLabel(id) ?? id}"));
     foreach (var id in CarFilter.Clean(f.Cc))
@@ -44,9 +42,26 @@
 }
 
 <div class="max-w-7xl mx-auto py-8">
-    <div class="mb-6">
-        <h1 class="text-2xl sm:text-3xl font-bold text-content tracking-tight">Tüm araçlar</h1>
-        <p class="text-content-muted mt-1">@ViewBag.Total araç bulundu</p>
+    <div class="mb-6 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
+        <div>
+            <h1 class="text-2xl sm:text-3xl font-bold text-content tracking-tight">Tüm araçlar</h1>
+            <p class="text-content-muted mt-1">@ViewBag.Total araç bulundu</p>
+        </div>
+        <form method="get" action="/araclar" class="flex items-center gap-2 shrink-0">
+            @foreach (var p in pairs)
+            {
+                <input type="hidden" name="@p.Key" value="@p.Val" />
+            }
+            <label for="sort" class="text-sm text-content-muted whitespace-nowrap">Sırala</label>
+            <select id="sort" name="sortBy" class="select py-1.5 text-sm w-auto" onchange="this.form.submit()">
+                <option value="" selected="@string.IsNullOrEmpty(f.SortBy)">En yeni</option>
+                <option value="score_desc" selected="@(f.SortBy == "score_desc")">Güvenilirlik (yüksek → düşük)</option>
+                <option value="score_asc" selected="@(f.SortBy == "score_asc")">Güvenilirlik (düşük → yüksek)</option>
+                <option value="price_asc" selected="@(f.SortBy == "price_asc")">Fiyat (artan)</option>
+                <option value="price_desc" selected="@(f.SortBy == "price_desc")">Fiyat (azalan)</option>
+                <option value="year_desc" selected="@(f.SortBy == "year_desc")">Model yılı (yeni → eski)</option>
+            </select>
+        </form>
     </div>
 
     <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">

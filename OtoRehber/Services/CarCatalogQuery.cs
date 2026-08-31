@@ -21,9 +21,6 @@ namespace OtoRehber.Services
             var brand = CarFilter.Clean(f.Brand);
             if (brand.Length > 0) query = query.Where(c => brand.Contains(c.Brand));
 
-            var segment = CarFilter.Clean(f.Segment);
-            if (segment.Length > 0) query = query.Where(c => segment.Contains(c.Segment));
-
             var fuel = CarFilter.Clean(f.Fuel);
             if (fuel.Length > 0) query = query.Where(c => c.FuelType != null && fuel.Contains(c.FuelType));
 
@@ -35,9 +32,6 @@ namespace OtoRehber.Services
 
             var drive = CarFilter.Clean(f.Drivetrain);
             if (drive.Length > 0) query = query.Where(c => c.Drivetrain != null && drive.Contains(c.Drivetrain));
-
-            var cond = CarFilter.Clean(f.Condition);
-            if (cond.Length > 0) query = query.Where(c => c.Condition != null && cond.Contains(c.Condition));
 
             // Fiyat: aracın [MinPrice, MaxPrice] aralığı filtre aralığıyla kesişiyorsa dahil.
             if (f.PriceMin is > 0) query = query.Where(c => c.MaxPrice >= f.PriceMin);

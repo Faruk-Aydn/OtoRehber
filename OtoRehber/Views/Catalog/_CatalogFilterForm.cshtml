@@ -2,15 +2,12 @@
 @{
     var f = (ViewBag.Filter as CarFilter) ?? new CarFilter();
     var brands = (ViewBag.Brands as IEnumerable<string>) ?? System.Array.Empty<string>();
-    var segs = (ViewBag.Segments as IEnumerable<string>) ?? OtoRehber.Domain.CarSegments.All;
 
     var selBrand = CarFilter.Clean(f.Brand);
-    var selSeg = CarFilter.Clean(f.Segment);
     var selFuel = CarFilter.Clean(f.Fuel);
     var selTrans = CarFilter.Clean(f.Transmission);
     var selBody = CarFilter.Clean(f.BodyType);
     var selDrive = CarFilter.Clean(f.Drivetrain);
-    var selCond = CarFilter.Clean(f.Condition);
     var selPower = CarFilter.Clean(f.Power);
     var selCc = CarFilter.Clean(f.Cc);
 }
@@ -60,13 +57,13 @@
         <input id="f-search" type="text" name="searchQuery" value="@f.SearchQuery" placeholder="Marka veya model" class="input" />
     </div>
 
+    <input type="hidden" name="sortBy" value="@f.SortBy" />
+
     @Section("Marka", "brand", brands, selBrand, true)
-    @Section("Segment", "segment", segs, selSeg, false)
     @Section("Yakıt / Motor tipi", "fuel", OtoRehber.Domain.CarSpecs.FuelTypes, selFuel, false)
     @Section("Vites", "transmission", OtoRehber.Domain.CarSpecs.Transmissions, selTrans, false)
     @Section("Kasa tipi", "bodyType", OtoRehber.Domain.CarSpecs.BodyTypes, selBody, false)
     @Section("Çekiş", "drivetrain", OtoRehber.Domain.CarSpecs.Drivetrains, selDrive, false)
-    @Section("Araç durumu", "condition", OtoRehber.Domain.CarSpecs.Conditions, selCond, false)
 
     <details class="group [&_summary::-webkit-details-marker]:hidden">
         <summary class="flex cursor-pointer items-center justify-between font-semibold text-content border-b border-border pb-2">
@@ -111,18 +108,6 @@
             </div>
         </div>
     </details>
-
-    <div>
-        <label class="label" for="f-sort">Sıralama</label>
-        <select id="f-sort" name="sortBy" class="select">
-            <option value="" selected="@string.IsNullOrEmpty(f.SortBy)">En yeni</option>
-            <option value="score_desc" selected="@(f.SortBy == "score_desc")">Güvenilirlik (yüksek → düşük)</option>
-            <option value="score_asc" selected="@(f.SortBy == "score_asc")">Güvenilirlik (düşük → yüksek)</option>
-            <option value="price_asc" selected="@(f.SortBy == "price_asc")">Fiyat (artan)</option>
-            <option value="price_desc" selected="@(f.SortBy == "price_desc")">Fiyat (azalan)</option>
-            <option value="year_desc" selected="@(f.SortBy == "year_desc")">Model yılı (yeni → eski)</option>
-        </select>
-    </div>
 
     <div class="flex gap-2 pt-1">
         <button type="submit" class="btn-primary flex-1"><i class="fa-solid fa-filter"></i> Uygula</button>

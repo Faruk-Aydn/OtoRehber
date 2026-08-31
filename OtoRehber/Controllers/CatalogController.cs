@@ -47,11 +47,10 @@ namespace OtoRehber.Controllers
                 e.AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5);
                 return await _context.Cars.AsNoTracking().Select(c => c.Brand).Distinct().OrderBy(b => b).ToListAsync();
             });
-            ViewBag.Segments = OtoRehber.Domain.CarSegments.All;
             ViewBag.Filter = filter;
 
             ViewData["Title"] = "Tüm Araçlar";
-            ViewData["Description"] = "OtoRehber'deki tüm araçları marka, segment, yakıt, vites, kasa tipi, fiyat ve yıla göre filtreleyin; güvenilirlik puanları ve kullanıcı yorumlarıyla karşılaştırın.";
+            ViewData["Description"] = "OtoRehber'deki tüm araçları marka, yakıt, vites, kasa tipi, fiyat ve yıla göre filtreleyin; güvenilirlik puanları ve kullanıcı yorumlarıyla karşılaştırın.";
             ViewBag.Total = total;
             ViewBag.Page = page;
             ViewBag.TotalPages = totalPages;
