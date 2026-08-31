@@ -1,0 +1,422 @@
+[
+  {
+    "brand": "Opel",
+    "modelName": "Corsa (C, 2000-2006)",
+    "productionYears": "2000-2006",
+    "engine": "1.2 16V 75 HP (Z12XE, Benzin/LPG) + 5 İleri Manuel",
+    "segment": "B",
+    "reliabilityScore": 7.4,
+    "minPrice": 150000,
+    "maxPrice": 280000,
+    "estimatedMaintenanceCostEUR": 210,
+    "expertSummary": "Corsa C, B segmentinde park kolaylığı, ferah kabin ve yaygın servis ağıyla bir dönem çok sattı. 1.2 16V (Z12XE) atmosferik motor turbosuz, LPG'ye uygun, basittir; zincir trigerlidir (kayış derdi yok). 75 HP hafif gövdeyi şehir içinde idare eder, otoyolda zayıf. Kritik konular: gaz kelebeği ve rölanti motoru arızası (dalgalı rölanti, motor stop), su pompası (plastik), ateşleme bobini, ön takım. Günlük dille: \"Ucuz, ferah ve dertsiz bir şehir arabası; zincir triger + LPG uyumu. Rölanti motoru ve su pompasına dikkat.\"",
+    "userFeedbackSummary": "Kullanıcılar ferah kabini, park kolaylığını ve zincir trigeri övüyor. Şikayetler: gaz kelebeği/rölanti motoru arızası (dalgalı rölanti, gaz kesince stop), plastik su pompası sızıntısı, bobin tekleme, ön takım burç sesleri, kalorifer rezistansı, direksiyon kolonu takozu. LPG'li örneklerde subap ayarı sorulmalı.",
+    "chronicIssues": [
+      { "title": "Gaz kelebeği / rölanti kontrol motoru arızası", "description": "Z12XE'de gaz kelebeği ve rölanti kontrol motoru kurum bağlar veya elektronik arıza yapar; dalgalı rölanti, gaz kesince ani motor stop, arıza lambası. Temizlik+adaptasyon veya kelebek/motor değişimi.", "severity": "Orta", "estimatedCostEUR": 180, "affectedYears": "2000-2006" },
+      { "title": "Plastik gövdeli su pompası sızıntısı", "description": "Entegre plastik su pompası zamanla sızdırır veya hararet yapar. Metal gövdeli güncellenmiş parçayla değişir.", "severity": "Düşük", "estimatedCostEUR": 180, "affectedYears": "2000-2006" },
+      { "title": "Ateşleme bobini ve ön takım burç sesleri", "description": "Bobin zayıflaması (tekleme, arıza lambası); 80-120 bin km'de ön salıncak burçları ve rot başlarında ses. Bobin+buji ve ön takım revizyonu.", "severity": "Düşük", "estimatedCostEUR": 150, "affectedYears": "2000-2006" }
+    ],
+    "pros": [
+      "Zincir triger — kayış değişim masrafı YOK",
+      "LPG'ye uygun basit atmosferik motor",
+      "Ferah kabin, park kolaylığı",
+      "Yaygın servis ağı, ucuz parça"
+    ],
+    "cons": [
+      "Gaz kelebeği/rölanti motoru kaynaklı stop klasik",
+      "75 HP otoyolda zayıf",
+      "Plastik su pompası ve bobin arızaları",
+      "Eski nesil güvenlik ve donanım"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, hava/polen filtresi, gaz kelebeği temizliği, LPG'de subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 150 },
+      { "mileage": "120.000 km", "expectedIssues": "Su pompası, ön takım revizyonu (burç, rot, rotil), bobin seti, debriyaj kontrolü, direksiyon kolonu takozu.", "estimatedCostEUR": 350 },
+      { "mileage": "200.000 km", "expectedIssues": "Debriyaj seti, motor takozları, klima kompresörü, kalorifer rezistansı, süspansiyon yenileme.", "estimatedCostEUR": 400 }
+    ]
+  },
+  {
+    "brand": "Opel",
+    "modelName": "Corsa (D, 2006-2014)",
+    "productionYears": "2006-2014",
+    "engine": "1.4 16V 90 HP (A14XER/Z14XEP, Benzin/LPG) + 5 İleri Manuel",
+    "segment": "B",
+    "reliabilityScore": 7.6,
+    "minPrice": 280000,
+    "maxPrice": 460000,
+    "estimatedMaintenanceCostEUR": 220,
+    "expertSummary": "Corsa D, öncekine göre daha büyük, daha sağlam gövdeli ve daha olgun bir B segmenti aracıydı; Fiat Grande Punto ile platform paylaşır. 1.4 16V atmosferik motor turbosuz, LPG'ye uygun; erken A14XEP kayış, geç A14XER zincir trigerlidir (alırken kontrol et). 90 HP şehir içi için yeterli, otoyolda orta. Kritik konular: elektrikli direksiyon (EPS) kolonu/motoru arızası (Grande Punto ile paylaşılan kronik), su pompası, bobin, gaz kelebeği. Günlük dille: \"Olgun ve sağlam bir B segmenti; LPG'ye uygun. Elektrikli direksiyon arızasına ve triger tipine dikkat et.\"",
+    "userFeedbackSummary": "Kullanıcılar olgunluğu ve gövde sağlamlığını beğeniyor. Şikayetler: elektrikli direksiyon (EPS) motoru/kolonu arızası (direksiyon ağırlaşır, uyarı lambası), su pompası sızıntısı, bobin tekleme, gaz kelebeği kaynaklı rölanti dengesizliği, ön takım burç sesleri. Triger tipi (kayış/zincir) motor koduna göre değişir.",
+    "chronicIssues": [
+      { "title": "Elektrikli direksiyon (EPS) kolonu / motoru arızası", "description": "Corsa D ve Grande Punto ile paylaşılan kronik: elektrikli direksiyon motoru/kolonu arızalanınca direksiyon aşırı ağırlaşır ve uyarı lambası yanar; park zorlaşır. Kolon/motor revizyonu veya değişimi gerekir.", "severity": "Orta", "estimatedCostEUR": 300, "affectedYears": "2006-2014" },
+      { "title": "Su pompası / termostat sızıntısı", "description": "Yüksek km'de su pompası veya termostat gövdesi sızdırabilir; hararet ve antifriz kaybı. Set halinde yenilenir.", "severity": "Düşük", "estimatedCostEUR": 180, "affectedYears": "2006-2014" },
+      { "title": "Ateşleme bobini, gaz kelebeği ve ön takım burçları", "description": "Bobin zayıflaması (tekleme), gaz kelebeği kurumu (rölanti dengesizliği) ve 80-120 bin km'de ön takım sesleri. Bobin+kelebek temizliği ve ön takım revizyonu.", "severity": "Düşük", "estimatedCostEUR": 200, "affectedYears": "2006-2014" }
+    ],
+    "pros": [
+      "Öncekine göre daha sağlam gövde ve daha olgun kabin",
+      "LPG'ye uygun atmosferik motor",
+      "İyi çarpışma güvenliği (5 yıldız)",
+      "Yaygın servis ağı, ucuz parça"
+    ],
+    "cons": [
+      "Elektrikli direksiyon (EPS) arızası — bilinen kronik dert",
+      "Su pompası ve bobin arızaları",
+      "90 HP otoyolda orta seviye",
+      "Triger tipi motor koduna göre değişir (kontrol şart)"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, filtreler, gaz kelebeği temizliği, EPS ve su pompası kontrolü, LPG'de subap ayarı.", "estimatedCostEUR": 160 },
+      { "mileage": "120.000 km", "expectedIssues": "Su pompası+termostat, EPS motoru kontrolü/revizyonu, ön takım revizyonu, bobin seti, triger (kayışsa) seti.", "estimatedCostEUR": 400 },
+      { "mileage": "200.000 km", "expectedIssues": "Debriyaj seti, motor takozları, klima kompresörü, süspansiyon yenileme, direksiyon rot.", "estimatedCostEUR": 420 }
+    ]
+  },
+  {
+    "brand": "Opel",
+    "modelName": "Corsa (D, 2006-2014)",
+    "productionYears": "2006-2014",
+    "engine": "1.3 CDTI 90 HP (Dizel Turbo, Fiat-Multijet türevi) + 5 İleri Manuel",
+    "segment": "B",
+    "reliabilityScore": 7.3,
+    "minPrice": 300000,
+    "maxPrice": 490000,
+    "estimatedMaintenanceCostEUR": 290,
+    "expertSummary": "Corsa D'nin 1.3 CDTI dizeli, aslında Fiat'ın 1.3 Multijet motorudur (GM-Fiat ortaklığı): uzun yolda 4-4.5 lt yakar, torklu, zincir trigerlidir. Fiat Multijet'in tüm kronikleri geçerli: emme manifoldu (swirl klape) ve EGR kurumu, turbo kayıcı kanat, DPF'li geç örneklerde tıkanma. Ayrıca Corsa D'nin EPS direksiyon arızası burada da var. Günlük dille: \"Fiat 1.3 Multijet motoru + Corsa gövdesi; ucuz yakıt, zincir triger, ama emme manifoldu/EGR ve EPS'ye dikkat.\" Uzun yol ağırlıklı ekonomi arayan için mantıklı.",
+    "userFeedbackSummary": "Kullanıcılar yakıt tüketimini ve zincir trigeri övüyor. Şikayetler: emme manifoldu klape motoru, EGR kurumu, turbo kayıcı kanat, DPF (geç örnekler), elektrikli direksiyon (EPS) arızası, çift kütleli volan. Zincir triger uzun ömürlü; kaliteli mazot enjektör ömrünü uzatır.",
+    "chronicIssues": [
+      { "title": "Emme manifoldu (swirl klape) ve EGR kurumlanması", "description": "Fiat 1.3 Multijet türevinde emme manifoldundaki girdap klapeleri ve EGR kurum bağlar; güç kaybı, rölanti dengesizliği, arıza lambası. Manifold değişir/temizlenir, EGR yenilenir.", "severity": "Orta", "estimatedCostEUR": 250, "affectedYears": "2006-2014" },
+      { "title": "Turbo kayıcı kanat (VNT) tıkanması ve DPF (geç örnekler)", "description": "Kurumdan turbonun değişken kanatları ve (geç örneklerde) partikül filtresi tıkanır; rampada güç düşüşü, arıza lambası. Temizlik veya turbo/DPF yenileme.", "severity": "Orta", "estimatedCostEUR": 380, "affectedYears": "2006-2014" },
+      { "title": "Elektrikli direksiyon (EPS) kolonu / motoru arızası", "description": "Corsa D kroniği: EPS motoru/kolonu arızalanınca direksiyon ağırlaşır, uyarı lambası yanar. Kolon/motor revizyonu veya değişimi.", "severity": "Orta", "estimatedCostEUR": 300, "affectedYears": "2006-2014" }
+    ],
+    "pros": [
+      "Çok düşük yakıt tüketimi (uzun yol 4-4.5 lt)",
+      "Zincir triger — kayış değişim masrafı yok",
+      "Torklu Fiat Multijet motoru, bol parça",
+      "Yaygın servis ağı"
+    ],
+    "cons": [
+      "Emme manifoldu/EGR/turbo kurumu — periyodik dizel bakımı",
+      "Elektrikli direksiyon (EPS) arızası",
+      "Çift kütleli volan + debriyaj masrafı",
+      "DPF'li geç örneklerde şehir içi tıkanma"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR ilk kontrol, EPS kontrolü, ön takım kontrolü.", "estimatedCostEUR": 160 },
+      { "mileage": "150.000 km", "expectedIssues": "Emme manifoldu/EGR temizliği, turbo VNT kontrolü, enjektör kontrolü, çift kütleli volan+debriyaj, EPS kontrolü, ön takım revizyonu.", "estimatedCostEUR": 650 },
+      { "mileage": "250.000 km", "expectedIssues": "Zincir triger kontrolü, su pompası, turbo revizyonu ihtimali, DPF temizliği/değişimi, süspansiyon yenileme.", "estimatedCostEUR": 700 }
+    ]
+  },
+  {
+    "brand": "Opel",
+    "modelName": "Astra (G, 1998-2009)",
+    "productionYears": "1998-2009",
+    "engine": "1.6 16V 100 HP (Z16XE, Benzin/LPG) + 5 İleri Manuel",
+    "segment": "C",
+    "reliabilityScore": 7.6,
+    "minPrice": 160000,
+    "maxPrice": 320000,
+    "estimatedMaintenanceCostEUR": 250,
+    "expertSummary": "Astra G (Türkiye'de uzun süre 'Astra Classic' adıyla üretildi), C segmentinde ucuz alım, kolay parça ve dayanıklılıkla bilinir. 1.6 16V (Z16XE) atmosferik motor turbosuz, LPG'ye uygun, kayış trigerlidir. 100 HP yeterli ama coşkusuz. Kritik konular: gaz kelebeği ve rölanti motoru (dalgalı rölanti, stop), su pompası (plastik), ön/arka fren disk-balata, kaporta pası. Günlük dille: \"Eski ama sağlam ve ucuz; LPG tak, öğrenci/ilk otomobil için dertsiz ulaşım. Rölanti motoru ve pasa dikkat.\"",
+    "userFeedbackSummary": "Kullanıcılar dayanıklılığı ve ucuz parçayı övüyor. Şikayetler: gaz kelebeği/rölanti motoru arızası, plastik su pompası, bobin tekleme, ön takım burç sesleri, kaporta pası (arka çamurluk, eşik), kalorifer rezistansı. Kayış triger ve LPG subap ayarı takip edilmeli.",
+    "chronicIssues": [
+      { "title": "Gaz kelebeği / rölanti kontrol motoru arızası", "description": "Z16XE'de gaz kelebeği ve rölanti motoru kurum bağlar veya elektronik arıza yapar; dalgalı rölanti, gaz kesince ani motor stop, arıza lambası. Temizlik+adaptasyon veya kelebek/motor değişimi.", "severity": "Orta", "estimatedCostEUR": 180, "affectedYears": "1998-2009" },
+      { "title": "Plastik gövdeli su pompası ve triger kayışı", "description": "Plastik su pompası sızdırır; 1.6 16V kayış trigerlidir, kayış+gergi+su pompası 90 bin km'de değişmelidir. İhmal edilirse kayış kopar, motor hasar görür.", "severity": "Orta", "estimatedCostEUR": 250, "affectedYears": "1998-2009" },
+      { "title": "Kaporta pası ve ön takım burçları", "description": "Arka çamurluk/eşik pası; 80-120 bin km'de ön salıncak burçları ve rot başlarında ses. Pas kontrolü ve ön takım revizyonu.", "severity": "Orta", "estimatedCostEUR": 200, "affectedYears": "1998-2009" }
+    ],
+    "pros": [
+      "Çok ucuz alım fiyatı, LPG'ye uygun motor",
+      "Dayanıklı ve basit mekanik, bol parça",
+      "Yaygın servis ağı, kolay tamir",
+      "Geniş bagaj (sedan/HB)"
+    ],
+    "cons": [
+      "Gaz kelebeği/rölanti motoru kaynaklı stop klasik",
+      "Plastik su pompası ve kayış triger masrafı",
+      "Kaporta pası riski",
+      "Eski nesil güvenlik, düşük ikinci el değeri"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, filtreler, gaz kelebeği temizliği, LPG'de subap ayarı, ön takım kontrolü, pas kontrolü.", "estimatedCostEUR": 160 },
+      { "mileage": "90.000 km", "expectedIssues": "Triger kayış seti + su pompası + gergi, bobin seti, ön takım revizyonu, fren disk-balata.", "estimatedCostEUR": 380 },
+      { "mileage": "200.000 km", "expectedIssues": "İkinci triger seti, debriyaj seti, motor takozları, kaporta pas onarımı, klima kompresörü.", "estimatedCostEUR": 450 }
+    ]
+  },
+  {
+    "brand": "Opel",
+    "modelName": "Astra (H, 2004-2014)",
+    "productionYears": "2004-2014",
+    "engine": "1.6 Twinport 105 HP (Z16XEP, Benzin/LPG) + 5 İleri Manuel",
+    "segment": "C",
+    "reliabilityScore": 7.5,
+    "minPrice": 280000,
+    "maxPrice": 470000,
+    "estimatedMaintenanceCostEUR": 260,
+    "expertSummary": "Astra H (Türkiye'de 'Astra Classic III' adıyla 2014'e kadar üretildi), C segmentinde çok yaygın bir aile aracıdır. 1.6 Twinport (Z16XEP) motor atmosferik, LPG'ye uygun, kayış trigerlidir. Twinport, emme manifoldunda iki kademeli hava girişi kullanır — bu manifoldun klape mekanizması ve conta contası kronik olarak sorun çıkarır (rölanti dalgalanması, yalancı hava). Ayrıca su pompası (plastik), gaz kelebeği, bobin. Günlük dille: \"Yaygın, ucuz parçalı, LPG dostu bir aile aracı; Twinport emme manifoldu contası ve su pompasına dikkat.\"",
+    "userFeedbackSummary": "Kullanıcılar yaygınlığı, ucuz parçayı ve LPG uyumunu övüyor. Şikayetler: Twinport emme manifoldu klape/conta arızası (yalancı hava, dalgalı rölanti), plastik su pompası, gaz kelebeği, bobin tekleme, ön takım burç sesleri, kalorifer rezistansı. Kayış triger periyodu takip edilmeli.",
+    "chronicIssues": [
+      { "title": "Twinport emme manifoldu klape / conta arızası", "description": "Z16XEP'in iki kademeli emme manifoldundaki klape mekanizması ve contası zamanla bozulur; yalancı hava girer, rölanti dalgalanır, güç kaybı ve arıza lambası olur. Manifold conta/klape yenileme veya manifold değişimi.", "severity": "Orta", "estimatedCostEUR": 220, "affectedYears": "2004-2014" },
+      { "title": "Plastik gövdeli su pompası ve triger kayışı", "description": "Plastik su pompası sızdırır; 1.6 Twinport kayış trigerlidir, kayış+gergi+su pompası 90-100 bin km'de değişmelidir.", "severity": "Orta", "estimatedCostEUR": 250, "affectedYears": "2004-2014" },
+      { "title": "Gaz kelebeği, ateşleme bobini ve ön takım burçları", "description": "Gaz kelebeği kurumu (rölanti dengesizliği), bobin zayıflaması (tekleme) ve 80-120 bin km'de ön takım sesleri. Temizlik, bobin+buji ve ön takım revizyonu.", "severity": "Düşük", "estimatedCostEUR": 200, "affectedYears": "2004-2014" }
+    ],
+    "pros": [
+      "Çok yaygın, ucuz ve bol yedek parça",
+      "LPG'ye uygun atmosferik motor",
+      "Geniş bagaj, iyi aile aracı",
+      "Yaygın servis ağı, düşük işletme gideri"
+    ],
+    "cons": [
+      "Twinport emme manifoldu klape/conta kroniği",
+      "Plastik su pompası ve kayış triger masrafı",
+      "Gaz kelebeği ve bobin arızaları",
+      "Yol sesi yalıtımı ve süspansiyon konforu orta"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, filtreler, gaz kelebeği temizliği, Twinport manifold kontrolü, LPG'de subap ayarı.", "estimatedCostEUR": 160 },
+      { "mileage": "100.000 km", "expectedIssues": "Triger kayış seti + su pompası + gergi, Twinport manifold conta/klape, bobin seti, ön takım revizyonu.", "estimatedCostEUR": 420 },
+      { "mileage": "200.000 km", "expectedIssues": "İkinci triger seti, debriyaj seti, motor takozları, klima kompresörü, süspansiyon yenileme.", "estimatedCostEUR": 450 }
+    ]
+  },
+  {
+    "brand": "Opel",
+    "modelName": "Astra (H, 2004-2014)",
+    "productionYears": "2004-2014",
+    "engine": "1.3 CDTI 90 HP (Dizel Turbo, Fiat-Multijet türevi) + 6 İleri Manuel",
+    "segment": "C",
+    "reliabilityScore": 7.3,
+    "minPrice": 300000,
+    "maxPrice": 500000,
+    "estimatedMaintenanceCostEUR": 300,
+    "expertSummary": "Astra H'nin 1.3 CDTI dizeli, Fiat'ın 1.3 Multijet motorudur (GM-Fiat ortaklığı): C segmenti gövde için mütevazı ama uzun yolda 4-4.5 lt yakan, zincir trigerli, ekonomik bir motor. Fiat Multijet kronikleri geçerli: emme manifoldu (swirl klape) ve EGR kurumu, turbo kayıcı kanat, DPF (geç örnekler). 90 HP dolu araçta zorlanır. Günlük dille: \"Fiat 1.3 Multijet + Astra gövdesi; ucuz yakıt, zincir triger, ama emme manifoldu/EGR bakımı ister ve C segmentine 90 HP az.\" Uzun yol ağırlıklı ekonomi arayan için mantıklı.",
+    "userFeedbackSummary": "Kullanıcılar yakıt ekonomisini ve zincir trigeri övüyor. Şikayetler: emme manifoldu klape motoru, EGR kurumu, turbo kayıcı kanat, DPF (geç örnekler), 90 HP'nin C segmentinde yetersizliği, çift kütleli volan. Zincir triger uzun ömürlü.",
+    "chronicIssues": [
+      { "title": "Emme manifoldu (swirl klape) ve EGR kurumlanması", "description": "Fiat 1.3 Multijet türevinde emme manifoldundaki girdap klapeleri ve EGR kurum bağlar; güç kaybı, rölanti dengesizliği, arıza lambası. Manifold değişir/temizlenir, EGR yenilenir.", "severity": "Orta", "estimatedCostEUR": 250, "affectedYears": "2004-2014" },
+      { "title": "Turbo kayıcı kanat (VNT) tıkanması ve DPF (geç örnekler)", "description": "Kurumdan turbonun değişken kanatları ve (geç örneklerde) partikül filtresi tıkanır; rampada güç düşüşü, arıza lambası. Temizlik veya turbo/DPF yenileme.", "severity": "Orta", "estimatedCostEUR": 380, "affectedYears": "2004-2014" },
+      { "title": "Çift kütleli volan (DMF) ve debriyaj aşınması", "description": "Rölantide takırtı, kalkışta titreme; DMF + debriyaj seti birlikte değişir. İşçilik uzun, parça pahalı.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2004-2014" }
+    ],
+    "pros": [
+      "Çok düşük yakıt tüketimi (uzun yol 4-4.5 lt)",
+      "Zincir triger — kayış değişim masrafı yok",
+      "Torklu Fiat Multijet motoru, bol parça",
+      "Geniş bagaj, yaygın servis"
+    ],
+    "cons": [
+      "Emme manifoldu/EGR/turbo kurumu — periyodik dizel bakımı",
+      "90 HP C segmenti gövde için zayıf",
+      "Çift kütleli volan + debriyaj masrafı",
+      "DPF'li geç örneklerde şehir içi tıkanma"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR ilk kontrol, ön takım kontrolü.", "estimatedCostEUR": 160 },
+      { "mileage": "150.000 km", "expectedIssues": "Emme manifoldu/EGR temizliği, turbo VNT kontrolü, enjektör kontrolü, çift kütleli volan+debriyaj, ön takım revizyonu.", "estimatedCostEUR": 650 },
+      { "mileage": "250.000 km", "expectedIssues": "Zincir triger kontrolü, su pompası, turbo revizyonu ihtimali, DPF temizliği/değişimi, süspansiyon yenileme.", "estimatedCostEUR": 700 }
+    ]
+  },
+  {
+    "brand": "Opel",
+    "modelName": "Astra (H, 2004-2014)",
+    "productionYears": "2004-2014",
+    "engine": "1.7 CDTI 100 HP (Z17DTH, Isuzu türevi) + 5 İleri Manuel",
+    "segment": "C",
+    "reliabilityScore": 7.6,
+    "minPrice": 320000,
+    "maxPrice": 520000,
+    "estimatedMaintenanceCostEUR": 300,
+    "expertSummary": "Astra H'nin 1.7 CDTI (Z17DTH) dizeli, Isuzu kaynaklı sağlam bir motordur — Fiat 1.3'e göre daha tok (240 Nm), daha rafine ve blok olarak çok dayanıklı. Zincir trigerlidir. Kritik konular yine turbo kayıcı kanat, EGR kurumu, enjektör (Denso/Bosch); bu yıllarda DPF çoğunlukla yoktu. Çift kütleli volan orta km'de gider. Günlük dille: \"Astra H'nin en dayanıklı dizeli; Isuzu bloğu sağlam, sadece turbo/EGR ve çift kütleli volanı hesaba kat.\" Uzun yol ağırlıklı kullanıcı için iyi seçim.",
+    "userFeedbackSummary": "Kullanıcılar bu motorun dayanıklılığını çok övüyor; 300 bin km+ örnekler yaygın. Şikayetler: turbo kayıcı kanat tıkanması, EGR kurumu, enjektör revizyonu (yüksek km), çift kütleli volan + debriyaj, mazot kaçağı (enjektör geri dönüş boruları). Kaliteli mazot enjektör ömrünü belirler.",
+    "chronicIssues": [
+      { "title": "Turbo VNT tıkanması ve EGR kurumu", "description": "Kurumdan turbonun değişken kanatları ve EGR sıkışır/kirlenir; rampada güç düşüşü, arıza lambası, limp mode. Temizlik veya yenileme.", "severity": "Orta", "estimatedCostEUR": 320, "affectedYears": "2004-2014" },
+      { "title": "Enjektör ve geri dönüş borusu kaçağı", "description": "Common-rail enjektörler ve plastik geri dönüş boruları zamanla kaçırır; is, tekleme, mazot kokusu, güç kaybı. Boru seti ucuz, enjektör revizyonu pahalı.", "severity": "Orta", "estimatedCostEUR": 350, "affectedYears": "2004-2014" },
+      { "title": "Çift kütleli volan (DMF) ve debriyaj aşınması", "description": "Rölantide takırtı, kalkışta titreme; DMF + debriyaj seti birlikte değişir. İşçilik uzun, parça pahalı.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2004-2014" }
+    ],
+    "pros": [
+      "Isuzu kaynaklı çok dayanıklı motor bloğu, zincir triger",
+      "Fiat 1.3'ten daha tok ve rafine (240 Nm)",
+      "Düşük yakıt tüketimi, yüksek km potansiyeli",
+      "Bol parça, yaygın servis"
+    ],
+    "cons": [
+      "Turbo VNT / EGR kurumu — periyodik dizel bakımı",
+      "Enjektör ve geri dönüş borusu kaçağı",
+      "Çift kütleli volan + debriyaj masrafı",
+      "Yol sesi yalıtımı ve süspansiyon konforu orta"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR/turbo ilk kontrol, enjektör geri dönüş borusu kontrolü.", "estimatedCostEUR": 160 },
+      { "mileage": "150.000 km", "expectedIssues": "EGR/turbo temizliği, enjektör kontrolü, geri dönüş boru seti, çift kütleli volan+debriyaj, ön takım revizyonu.", "estimatedCostEUR": 650 },
+      { "mileage": "300.000 km", "expectedIssues": "Zincir triger kontrolü, su pompası, turbo revizyonu, enjektör revizyonu, süspansiyon komple.", "estimatedCostEUR": 800 }
+    ]
+  },
+  {
+    "brand": "Opel",
+    "modelName": "Astra (J, 2009-2015)",
+    "productionYears": "2009-2015",
+    "engine": "1.6 16V 115 HP (A16XER, Benzin/LPG) + 5 İleri Manuel",
+    "segment": "C",
+    "reliabilityScore": 7.4,
+    "minPrice": 400000,
+    "maxPrice": 650000,
+    "estimatedMaintenanceCostEUR": 280,
+    "expertSummary": "Astra J, öncekine göre çok daha ağır, daha büyük ve daha kaliteli iç mekanlı bir C hatchback/sedandı. 1.6 16V (A16XER) atmosferik motor turbosuz, LPG'ye uygun, zincir trigerlidir. Ağır gövdeye 115 HP mütevazı kalır — otoyol geçişleri ve dolu araç planlı olur. Kritik konular: su pompası, PCV valfi ve yağ eksiltme, elektrikli direksiyon kolonu, ateşleme bobini, ön amortisör üst takoz. Günlük dille: \"Kaliteli kabin, ağır ve sağlam gövde; ama 115 HP bu ağırlığa az, yağ eksiltme ve su pompasına dikkat.\" Şehir + hafif yol kullanımı için mantıklı.",
+    "userFeedbackSummary": "Kullanıcılar iç kaliteyi ve gövde sağlamlığını beğeniyor; performansı 'ağır gövdeye yeterli değil' buluyor. Şikayetler: yağ eksiltme (PCV valfi), su pompası sızıntısı, elektrikli direksiyon kolonu arızası, bobin tekleme, ön amortisör üst takoz sesi, ağır gövde nedeniyle fren ve lastik aşınması. LPG'li örneklerde subap ayarı sorulmalı.",
+    "chronicIssues": [
+      { "title": "PCV valfi arızası ve yağ eksiltme", "description": "A16XER'de karter havalandırma (PCV) valfi arızalanınca motor yağ tüketir, mavi duman ve rölanti dengesizliği olur. PCV membranı/valfi yenilenir.", "severity": "Orta", "estimatedCostEUR": 180, "affectedYears": "2009-2015" },
+      { "title": "Su pompası sızıntısı", "description": "Yüksek km'de su pompası sızdırabilir veya hararet yapar; termostatla birlikte yenilenir.", "severity": "Düşük", "estimatedCostEUR": 180, "affectedYears": "2009-2015" },
+      { "title": "Elektrikli direksiyon kolonu ve ön amortisör üst takoz", "description": "Elektrikli direksiyon kolonu arızasında direksiyon ağırlaşır/uyarı lambası; 80-120 bin km'de ön amortisör üst takoz sesi. Kolon revizyonu ve üst takoz yenileme.", "severity": "Orta", "estimatedCostEUR": 280, "affectedYears": "2009-2015" }
+    ],
+    "pros": [
+      "Segment üstü iç kalite ve gövde sağlamlığı",
+      "Zincir triger, LPG'ye uygun atmosferik motor",
+      "Geniş bagaj ve iyi çarpışma güvenliği",
+      "Yaygın servis ağı"
+    ],
+    "cons": [
+      "Ağır gövdeye 115 HP mütevazı",
+      "PCV/yağ eksiltme ve su pompası arızaları",
+      "Elektrikli direksiyon kolonu arızası",
+      "Ağır gövde: fren ve lastik aşınması hızlı"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, filtreler, PCV valfi kontrolü, su pompası kontrolü, LPG'de subap ayarı.", "estimatedCostEUR": 160 },
+      { "mileage": "120.000 km", "expectedIssues": "Su pompası+termostat, PCV valfi, ön takım revizyonu, direksiyon kolonu kontrolü, bobin seti, debriyaj kontrolü.", "estimatedCostEUR": 400 },
+      { "mileage": "200.000 km", "expectedIssues": "Debriyaj seti, motor takozları, klima kompresörü, süspansiyon yenileme, fren komple.", "estimatedCostEUR": 450 }
+    ]
+  },
+  {
+    "brand": "Opel",
+    "modelName": "Astra (J, 2009-2015)",
+    "productionYears": "2009-2015",
+    "engine": "1.6 CDTI 136 HP (B16DTH \"Fısıltı Dizel\") + 6 İleri Manuel",
+    "segment": "C",
+    "reliabilityScore": 7.2,
+    "minPrice": 450000,
+    "maxPrice": 720000,
+    "estimatedMaintenanceCostEUR": 360,
+    "expertSummary": "Astra J'nin (geç makyaj yıllarında) sunulan 1.6 CDTI (B16DTH), Opel'in 'Whisper Diesel / Fısıltı Dizel' diye pazarladığı, alüminyum bloklu, sessiz ve verimli yeni nesil dizelidir: 136 HP + 320 Nm, uzun yolda 4-4.5 lt. Ama bu motorun bilinen konuları var: bazı örneklerde motor yağına mazot karışması (DPF rejenerasyon kaynaklı yağ seviyesi yükselmesi), zincir triger gerdirici (bazı üretimler), EGR ve DPF (şehir içi). Bu düz vitesli versiyon Aisin otomatiğin masraf riskini taşımaz. Günlük dille: \"Sessiz ve ekonomik modern dizel; ama yağ seviyesini takip et (mazot karışması) ve DPF için ara sıra uzun yola çık.\"",
+    "userFeedbackSummary": "Kullanıcılar sessizliği ve yakıt ekonomisini övüyor. Şikayetler: motor yağ seviyesinin yükselmesi (DPF rejenerasyonunda mazot karışması), EGR kurumu, DPF tıkanması (şehir içi), bazı örneklerde zincir gerdirici sesi, AdBlue'lu geç örneklerde NOx sensörü. Yağ seviyesi takibi ve ara sıra uzun yol şart.",
+    "chronicIssues": [
+      { "title": "Motor yağına mazot karışması (DPF rejenerasyon kaynaklı)", "description": "Kısa mesafe/şehir içi kullanımda DPF rejenerasyonu tamamlanamaz; her denemede yanmamış mazot silindir duvarından yağa karışır, yağ seviyesi yükselir ve yağlama özelliği düşer. Yağ seviyesi düzenli kontrol, kısa periyot yağ ve ara sıra uzun yol şart.", "severity": "Orta", "estimatedCostEUR": 200, "affectedYears": "2009-2015" },
+      { "title": "EGR valfi ve DPF (partikül filtresi) tıkanması", "description": "Şehir içi kullanımda EGR kurum bağlar, DPF dolar; güç kaybı, arıza lambası, rejenerasyon sorunu. Uzun yol + temizlik/değişim gerekir.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2009-2015" },
+      { "title": "Zincir triger gerdirici sesi (bazı üretimler) ve NOx sensörü", "description": "Bazı erken üretim B16DTH'lerde soğuk çalıştırmada zincir gerdirici sesi; AdBlue'lu örneklerde NOx sensörü arızası. Gerdirici/zincir seti veya sensör değişimi.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2009-2015" }
+    ],
+    "pros": [
+      "Sessiz, verimli ve torklu modern dizel (136 HP, 320 Nm)",
+      "Çok düşük yakıt tüketimi (uzun yol 4-4.5 lt)",
+      "DSG/robotize yok — dayanıklı düz vites",
+      "Segment üstü iç kalite ve gövde"
+    ],
+    "cons": [
+      "Yağa mazot karışması — yağ seviyesi takibi şart",
+      "EGR/DPF gibi dizel bakımları, şehir içine uygun değil",
+      "Bazı üretimlerde zincir gerdirici sesi",
+      "AdBlue/NOx sensörü arızası (geç örnekler)"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre (seviye takibi), yakıt/hava filtresi, EGR/DPF ilk kontrol, zincir sesi dinleme, AdBlue seviyesi.", "estimatedCostEUR": 180 },
+      { "mileage": "150.000 km", "expectedIssues": "EGR/DPF temizliği, zincir triger kontrolü, enjektör kontrolü, turbo kontrolü, debriyaj seti, ön takım revizyonu.", "estimatedCostEUR": 750 },
+      { "mileage": "250.000 km", "expectedIssues": "Zincir triger seti, DPF değişimi ihtimali, turbo revizyonu ihtimali, NOx sensörleri, süspansiyon yenileme.", "estimatedCostEUR": 850 }
+    ]
+  },
+  {
+    "brand": "Opel",
+    "modelName": "Astra (J, 2009-2015)",
+    "productionYears": "2009-2015",
+    "engine": "1.6 CDTI 136 HP (B16DTH \"Fısıltı Dizel\") + 6 İleri Otomatik (Aisin/GM 6T40)",
+    "segment": "C",
+    "reliabilityScore": 7.3,
+    "minPrice": 500000,
+    "maxPrice": 780000,
+    "estimatedMaintenanceCostEUR": 400,
+    "expertSummary": "Astra J'nin 1.6 CDTI + 6 ileri Aisin (GM 6T40) tork konvertörlü otomatik kombinasyonu, sessiz dizel + gerçek tam otomatik (DSG/robotize DEĞİL) isteyenler için. Aisin 6T40 şanzıman genel olarak sağlamdır ama 60 bin km'de yağ ister; ihmal edilende geç/sert vites geçişi ve solenoid arızası başlar. Motor tarafı düz vitesli B16DTH ile aynı: yağa mazot karışması, EGR/DPF. Günlük dille: \"Sessiz dizel + güvenilir tam otomatik; şanzıman yağ geçmişini sor, motorun yağ seviyesini takip et.\" Aile ve uzun yol kullanımı için mantıklı.",
+    "userFeedbackSummary": "Kullanıcılar Aisin otomatiğin düzgünlüğünü ve dizel sessizliğini övüyor. Şikayetler: şanzıman yağı ihmal edilmişse geç/sert vites geçişi ve solenoid arızası, motor yağ seviyesinin yükselmesi (mazot karışması), EGR/DPF tıkanması, NOx sensörü (geç örnekler). Şanzıman yağı geçmişi kritik.",
+    "chronicIssues": [
+      { "title": "Aisin 6T40 otomatik şanzıman yağı ihmali ve solenoid arızası", "description": "6 ileri tork konvertörlü şanzıman sağlamdır ama yağı 60 bin km'de değişmezse valf gövdesi solenoidlerinde tıkanma olur; geç/sert vites geçişi, kalkışta darbe, arıza lambası. Yağ+filtre ve gerekirse valf gövdesi revizyonu.", "severity": "Orta", "estimatedCostEUR": 350, "affectedYears": "2009-2015" },
+      { "title": "Motor yağına mazot karışması (DPF rejenerasyon kaynaklı)", "description": "Kısa mesafe/şehir içi kullanımda DPF rejenerasyonu tamamlanamaz; yanmamış mazot yağa karışır, yağ seviyesi yükselir. Yağ seviyesi takibi, kısa periyot yağ ve ara sıra uzun yol şart.", "severity": "Orta", "estimatedCostEUR": 200, "affectedYears": "2009-2015" },
+      { "title": "EGR valfi ve DPF tıkanması", "description": "Şehir içi kullanımda EGR kurum bağlar, DPF dolar; güç kaybı, arıza lambası, rejenerasyon sorunu. Uzun yol + temizlik/değişim gerekir.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2009-2015" }
+    ],
+    "pros": [
+      "Sessiz, verimli dizel + gerçek tam otomatik (DSG/robotize değil)",
+      "Aisin 6T40 genel olarak dayanıklı şanzıman",
+      "Segment üstü iç kalite ve gövde",
+      "Düşük yakıt tüketimi"
+    ],
+    "cons": [
+      "Şanzıman yağı ihmal edilmişse solenoid/valf gövdesi masrafı",
+      "Yağa mazot karışması — yağ seviyesi takibi şart",
+      "EGR/DPF gibi dizel bakımları, şehir içine uygun değil",
+      "AdBlue/NOx sensörü arızası (geç örnekler)"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre (seviye takibi), Aisin şanzıman yağ+filtre, yakıt/hava filtresi, EGR/DPF ilk kontrol.", "estimatedCostEUR": 280 },
+      { "mileage": "150.000 km", "expectedIssues": "İkinci şanzıman yağı, EGR/DPF temizliği, zincir triger kontrolü, enjektör kontrolü, ön takım revizyonu.", "estimatedCostEUR": 800 },
+      { "mileage": "250.000 km", "expectedIssues": "Şanzıman valf gövdesi kontrolü, zincir triger seti, DPF değişimi ihtimali, turbo revizyonu ihtimali, süspansiyon yenileme.", "estimatedCostEUR": 900 }
+    ]
+  },
+  {
+    "brand": "Opel",
+    "modelName": "Astra (K, 2015-2021)",
+    "productionYears": "2015-2021",
+    "engine": "1.4 Turbo 150 HP (B14XFT/D14XFT) + 6 İleri Manuel",
+    "segment": "C",
+    "reliabilityScore": 7.0,
+    "minPrice": 650000,
+    "maxPrice": 1050000,
+    "estimatedMaintenanceCostEUR": 340,
+    "expertSummary": "Astra K, Astra J'nin ~200 kg hafiflemiş, çok daha modern ve verimli halidir — sürüş dinamiği belirgin iyileşti. 1.4 Turbo (150 HP, 245 Nm) benzinli motor, dört silindirli, direkt enjeksiyonlu ve zincir trigerlidir. Direkt enjeksiyon nedeniyle LPG önerilmez ve emme supabı karbon birikimi olur. Ayrıca bu motor ailesinde yağ eksiltme (PCV/turbo keçesi) ve su pompası bilinen konulardır. Günlük dille: \"Hafif, dinamik ve güçlü; ama direkt enjeksiyonlu turbo — LPG takma, yağ seviyesini takip et, emme karbonuna hazır ol.\"",
+    "userFeedbackSummary": "Kullanıcılar hafiflik, sürüş keyfi ve performansı övüyor. Şikayetler: yağ eksiltme (PCV valfi/turbo keçesi), emme supabı karbon birikimi (güç kaybı, rölanti dengesizliği), su pompası sızıntısı, turbo/wastegate sesi, IntelliLink multimedya donması. Kısa periyot kaliteli yağ ve seviye takibi önemli.",
+    "chronicIssues": [
+      { "title": "Motor yağ eksiltme (PCV valfi / turbo keçesi)", "description": "1.4 Turbo ailesinde PCV valfi membranı yırtılır veya turbo keçesi yağ geçirir; yağ eksiltme, mavi duman, rölanti dengesizliği. PCV/keçe yenileme; kısa periyot yağ ve seviye takibi şart.", "severity": "Orta", "estimatedCostEUR": 250, "affectedYears": "2015-2021" },
+      { "title": "Emme supaplarında karbon birikimi (direkt enjeksiyon)", "description": "Direkt enjeksiyon emme supaplarını yakıt yıkamaz; kurum birikir, güç kaybı ve rölanti dengesizliği. Ceviz kabuğu püskürtme temizliği yapılır.", "severity": "Orta", "estimatedCostEUR": 280, "affectedYears": "2015-2021" },
+      { "title": "Su pompası / termostat sızıntısı", "description": "Yüksek km'de entegre su pompası+termostat modülü sızdırır veya hararet yapar; modül değişir.", "severity": "Düşük", "estimatedCostEUR": 220, "affectedYears": "2015-2021" }
+    ],
+    "pros": [
+      "Astra J'ye göre ~200 kg hafif — dinamik ve güçlü",
+      "Zincir trigerli, torklu 1.4 Turbo motor",
+      "Modern kabin, düşük yakıt (uzun yol 5.5-6 lt)",
+      "İyi sürüş dinamiği ve gövde kontrolü"
+    ],
+    "cons": [
+      "Direkt enjeksiyon: LPG uyumsuzluğu ve emme karbon birikimi",
+      "Yağ eksiltme (PCV/turbo keçesi) — seviye takibi şart",
+      "Su pompası ve turbo/wastegate arızaları",
+      "IntelliLink multimedya donması"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre (kısa periyot, seviye takibi), bujiler, PCV valfi kontrolü, turbo kaçak kontrolü, su pompası kontrolü.", "estimatedCostEUR": 180 },
+      { "mileage": "120.000 km", "expectedIssues": "PCV/turbo keçesi kontrolü, emme supabı karbon temizliği, su pompası, ön takım revizyonu, debriyaj kontrolü.", "estimatedCostEUR": 500 },
+      { "mileage": "200.000 km", "expectedIssues": "Turbo revizyonu ihtimali, zincir triger kontrolü, ikinci su pompası, süspansiyon yenileme.", "estimatedCostEUR": 600 }
+    ]
+  },
+  {
+    "brand": "Opel",
+    "modelName": "Insignia (A, 2008-2017)",
+    "productionYears": "2008-2017",
+    "engine": "2.0 CDTI 160 HP (A20DTH) + 6 İleri Manuel",
+    "segment": "D",
+    "reliabilityScore": 7.2,
+    "minPrice": 420000,
+    "maxPrice": 780000,
+    "estimatedMaintenanceCostEUR": 420,
+    "expertSummary": "Insignia A, D segmentinde 'ucuza büyük ve gösterişli' arayanların favorisiydi: geniş gövde, alçak ve iddialı tasarım, konforlu şasi. 2.0 CDTI (A20DTH, 160 HP + 350 Nm) motor uzun yolda 5.5-6 lt yakan, torklu, zincir trigerli bir ünitedir. Kritik konular: enjektör, EGR ve emme kurumu, DPF (şehir içi), turbo, çift kütleli volan, su pompası. Ağır gövde süspansiyon ve fren aşınmasını hızlandırır. Günlük dille: \"Ucuza D segmenti prestij + güç; ama dizel bakımları, çift kütleli volan ve ağır gövde giderlerini hesaba kat.\" Uzun yol ağırlıklı, alan ve güç isteyen için mantıklı.",
+    "userFeedbackSummary": "Kullanıcılar tasarımı, iç hacmi ve konforu çok övüyor; 'bu para bu araç' diyorlar. Şikayetler: enjektör revizyonu, EGR ve emme kurumu, DPF tıkanması (şehir içi), turbo, çift kütleli volan + debriyaj, su pompası, ön/arka süspansiyon burçları (ağır gövde), elektronik/multimedya arızaları, yüksek parça maliyeti.",
+    "chronicIssues": [
+      { "title": "Enjektör, EGR ve emme manifoldu kurumlanması", "description": "Common-rail enjektörler zamanla debisini şaşırır; şehir içi kullanımda EGR ve emme yolları kurum bağlar. Güç kaybı, is, arıza lambası. Enjektör revizyonu + EGR/emme temizliği.", "severity": "Orta", "estimatedCostEUR": 500, "affectedYears": "2008-2017" },
+      { "title": "DPF tıkanması ve turbo VNT", "description": "Kısa mesafe şehir kullanımında DPF dolar; turbo kayıcı kanatları kurum bağlar. Güç kaybı, arıza lambası, rejenerasyon sorunu. Uzun yol + temizlik/yenileme.", "severity": "Orta", "estimatedCostEUR": 500, "affectedYears": "2008-2017" },
+      { "title": "Çift kütleli volan (DMF), debriyaj ve süspansiyon aşınması", "description": "Ağır gövde + torklu dizel debriyaj/DMF ömrünü kısaltır; ön/arka süspansiyon burçları da hızlı biter. Set halinde ve komple revizyon gerekir.", "severity": "Orta", "estimatedCostEUR": 700, "affectedYears": "2008-2017" }
+    ],
+    "pros": [
+      "D segmentinde iddialı tasarım ve prestij, ucuz alım",
+      "Torklu ve güçlü 2.0 CDTI motor (160 HP, 350 Nm), zincir triger",
+      "Çok geniş iç hacim, konforlu şasi",
+      "Düşük yakıt (uzun yol 5.5-6 lt)"
+    ],
+    "cons": [
+      "Enjektör/EGR/DPF/turbo gibi dizel bakımları",
+      "Çift kütleli volan + debriyaj + süspansiyon masrafı (ağır gövde)",
+      "Yüksek parça ve işçilik maliyeti",
+      "Elektronik/multimedya arızaları"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR/DPF ilk kontrol, ön/arka takım kontrolü.", "estimatedCostEUR": 200 },
+      { "mileage": "150.000 km", "expectedIssues": "Enjektör revizyonu, EGR/emme/DPF temizliği, çift kütleli volan+debriyaj, turbo kontrolü, ön/arka süspansiyon revizyonu, su pompası.", "estimatedCostEUR": 1000 },
+      { "mileage": "250.000 km", "expectedIssues": "Zincir triger kontrolü, turbo revizyonu, DPF değişimi, direksiyon kutusu, süspansiyon komple.", "estimatedCostEUR": 1100 }
+    ]
+  }
+]
