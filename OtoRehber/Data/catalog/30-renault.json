@@ -11,17 +11,59 @@
     "estimatedMaintenanceCostEUR": 190,
     "expertSummary": "Clio 2, Türkiye'de bir dönem taksi ve ilk otomobil pazarının belkemiğiydi. 1.4 8V (E7J) motor son derece basit, LPG'ye tam uyumlu ve doğru bakımla çok uzun ömürlüdür; kayış trigerlidir (60-90 bin km periyot). Mekanik dertsiz, asıl konular elektrik ve kaporta tarafında: komütatör (sinyal/silecek kolu), cam krikosu, gösterge, arka çamurluk pası. Ön takım hızlı aşınır ama parça bedava sayılır. Günlük dille: \"En ucuz, en kolay tamir edilen araçlardan; motoru dertsiz, küçük elektrik arızalarına ve pasa hazır ol.\"",
     "userFeedbackSummary": "Kullanıcılar 'ucuz ve idare eder' diyor; taksiciler yüksek km örneklerden bahsediyor. Şikayetler: komütatör arızası (sinyal/korna/silecek çalışmaz), cam krikosu, gösterge ibresi takılması, arka çamurluk pası, klima soğutma zayıflığı, ön takım sesleri. Kayış triger ve LPG'de subap ayarı takip edilmeli.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Sinyal/silecek kolu (komütatör) ve cam krikosu arızası", "description": "Direksiyon altı kumanda kolları kontak kaybeder (sinyal, korna, silecek çalışmaz); cam krikoları kopar. Tek tek ucuz ama yaygın.", "severity": "Düşük", "estimatedCostEUR": 90, "affectedYears": "1998-2005" },
-      { "title": "Arka çamurluk ve eşik pası", "description": "İnce sac ve zayıf boya koruması nedeniyle arka çamurluk içleri, davlumbazlar ve eşiklerde pas. Alırken mutlaka kontrol; ilerlemişse kaynak/değişim.", "severity": "Orta", "estimatedCostEUR": 180, "affectedYears": "1998-2005" },
-      { "title": "Ön takım (rot, salıncak, rotil) hızlı aşınması", "description": "Türkiye yol şartlarında 60-100 bin km'de ön takım sesleri; komple revizyon. Parça ucuz.", "severity": "Düşük", "estimatedCostEUR": 150, "affectedYears": "1998-2005" }
+      {
+        "title": "Sinyal/silecek kolu (komütatör) ve cam krikosu arızası",
+        "description": "Direksiyon altı kumanda kolları kontak kaybeder (sinyal, korna, silecek çalışmaz); cam krikoları kopar. Tek tek ucuz ama yaygın.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 90,
+        "affectedYears": "1998-2005"
+      },
+      {
+        "title": "Arka çamurluk ve eşik pası",
+        "description": "İnce sac ve zayıf boya koruması nedeniyle arka çamurluk içleri, davlumbazlar ve eşiklerde pas. Alırken mutlaka kontrol; ilerlemişse kaynak/değişim.",
+        "severity": "Orta",
+        "estimatedCostEUR": 180,
+        "affectedYears": "1998-2005"
+      },
+      {
+        "title": "Ön takım (rot, salıncak, rotil) hızlı aşınması",
+        "description": "Türkiye yol şartlarında 60-100 bin km'de ön takım sesleri; komple revizyon. Parça ucuz.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 150,
+        "affectedYears": "1998-2005"
+      }
     ],
-    "pros": ["Çok ucuz alım ve işletme, LPG'ye tam uyum", "Basit mekanik, kolay ve ucuz tamir", "Bol yedek parça", "B segmentine göre iyi süspansiyon konforu"],
-    "cons": ["Komütatör, cam krikosu gibi kronik elektrik arızaları", "Arka çamurluk/eşik pası riski", "Eski nesil güvenlik ve donanım", "Zayıf klima ve ses yalıtımı"],
+    "pros": [
+      "Çok ucuz alım ve işletme, LPG'ye tam uyum",
+      "Basit mekanik, kolay ve ucuz tamir",
+      "Bol yedek parça",
+      "B segmentine göre iyi süspansiyon konforu"
+    ],
+    "cons": [
+      "Komütatör, cam krikosu gibi kronik elektrik arızaları",
+      "Arka çamurluk/eşik pası riski",
+      "Eski nesil güvenlik ve donanım",
+      "Zayıf klima ve ses yalıtımı"
+    ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Triger kayış seti, yağ+filtre, bujiler, LPG subap ayarı, ön takım kontrolü, pas kontrolü.", "estimatedCostEUR": 160 },
-      { "mileage": "120.000 km", "expectedIssues": "İkinci triger seti, debriyaj seti, ön takım revizyonu, komütatör/cam krikosu, amortisörler.", "estimatedCostEUR": 280 },
-      { "mileage": "200.000 km", "expectedIssues": "Su pompası, motor takozları, marş/alternatör, kaporta pas onarımı, klima kompresörü.", "estimatedCostEUR": 300 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Triger kayış seti, yağ+filtre, bujiler, LPG subap ayarı, ön takım kontrolü, pas kontrolü.",
+        "estimatedCostEUR": 160
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "İkinci triger seti, debriyaj seti, ön takım revizyonu, komütatör/cam krikosu, amortisörler.",
+        "estimatedCostEUR": 280
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Su pompası, motor takozları, marş/alternatör, kaporta pas onarımı, klima kompresörü.",
+        "estimatedCostEUR": 300
+      }
     ]
   },
   {
@@ -36,17 +78,59 @@
     "estimatedMaintenanceCostEUR": 210,
     "expertSummary": "Clio 2'nin sportif motoru 1.6 16V (K4M): piyasanın en çok aranan, LPG'ye tam uyumlu, doğru bakımla 300 bin km+ giden bir ünite. K4M'nin bilinen tek zaafı eksantrik ayar kasnağı (dephaser) tıkırtısıdır. Küçük gövdede 110 HP canlı bir sürüş verir. Gerisi Clio 2 klasiği: komütatör, cam krikosu, ön takım, kaporta pası. Günlük dille: \"Clio 2'nin en keyifli motoru; K4M altın değerinde, sadece dephaser sesini dinle ve LPG'lisi düzgün olsun.\"",
     "userFeedbackSummary": "Kullanıcılar K4M motoru çok övüyor; 'bu motor bitmez' diyorlar. Şikayetler: dephaser (eksantrik kasnağı) tıkırtısı, komütatör, cam krikosu, ön takım sesleri, kaporta pası. LPG'li örneklerde subap ayarı ve yağ bakımı sorulmalı.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Eksantrik ayar kasnağı (dephaser) tıkırtısı", "description": "K4M motorda VVT kasnağı zamanla boşluk yapar; soğuk çalıştırmada metalik tıkırtı. Kasnak değişimiyle çözülür; ihmal edilirse triger atlayabilir.", "severity": "Orta", "estimatedCostEUR": 180, "affectedYears": "1998-2005" },
-      { "title": "Sinyal/silecek kolu (komütatör) ve cam krikosu arızası", "description": "Direksiyon altı kollar kontak kaybeder; cam krikoları kopar. Tek tek ucuz ama yaygın.", "severity": "Düşük", "estimatedCostEUR": 90, "affectedYears": "1998-2005" },
-      { "title": "Arka çamurluk/eşik pası ve ön takım aşınması", "description": "Yaşa bağlı pas; 60-100 bin km'de ön takım sesleri. Kontrol ve revizyon gerekir.", "severity": "Orta", "estimatedCostEUR": 200, "affectedYears": "1998-2005" }
+      {
+        "title": "Eksantrik ayar kasnağı (dephaser) tıkırtısı",
+        "description": "K4M motorda VVT kasnağı zamanla boşluk yapar; soğuk çalıştırmada metalik tıkırtı. Kasnak değişimiyle çözülür; ihmal edilirse triger atlayabilir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 180,
+        "affectedYears": "1998-2005"
+      },
+      {
+        "title": "Sinyal/silecek kolu (komütatör) ve cam krikosu arızası",
+        "description": "Direksiyon altı kollar kontak kaybeder; cam krikoları kopar. Tek tek ucuz ama yaygın.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 90,
+        "affectedYears": "1998-2005"
+      },
+      {
+        "title": "Arka çamurluk/eşik pası ve ön takım aşınması",
+        "description": "Yaşa bağlı pas; 60-100 bin km'de ön takım sesleri. Kontrol ve revizyon gerekir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 200,
+        "affectedYears": "1998-2005"
+      }
     ],
-    "pros": ["Efsane dayanıklılıkta, LPG dostu K4M motor", "Küçük gövdede canlı ve keyifli sürüş", "Ucuz alım, bol ve ucuz parça", "İyi süspansiyon konforu"],
-    "cons": ["Dephaser kasnağı tıkırtısı", "Komütatör, cam krikosu gibi elektrik arızaları", "Kaporta pası ve hızlı aşınan ön takım", "Eski nesil güvenlik ve donanım"],
+    "pros": [
+      "Efsane dayanıklılıkta, LPG dostu K4M motor",
+      "Küçük gövdede canlı ve keyifli sürüş",
+      "Ucuz alım, bol ve ucuz parça",
+      "İyi süspansiyon konforu"
+    ],
+    "cons": [
+      "Dephaser kasnağı tıkırtısı",
+      "Komütatör, cam krikosu gibi elektrik arızaları",
+      "Kaporta pası ve hızlı aşınan ön takım",
+      "Eski nesil güvenlik ve donanım"
+    ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Triger kayış seti, yağ+filtre, bujiler, dephaser sesi dinleme, LPG subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 190 },
-      { "mileage": "120.000 km", "expectedIssues": "İkinci triger seti + dephaser kasnağı, debriyaj seti, ön takım revizyonu, cam krikoları, amortisörler.", "estimatedCostEUR": 350 },
-      { "mileage": "200.000 km", "expectedIssues": "Su pompası, motor takozları, kaporta pas onarımı, klima kompresörü, süspansiyon.", "estimatedCostEUR": 380 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Triger kayış seti, yağ+filtre, bujiler, dephaser sesi dinleme, LPG subap ayarı, ön takım kontrolü.",
+        "estimatedCostEUR": 190
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "İkinci triger seti + dephaser kasnağı, debriyaj seti, ön takım revizyonu, cam krikoları, amortisörler.",
+        "estimatedCostEUR": 350
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Su pompası, motor takozları, kaporta pas onarımı, klima kompresörü, süspansiyon.",
+        "estimatedCostEUR": 380
+      }
     ]
   },
   {
@@ -61,17 +145,59 @@
     "estimatedMaintenanceCostEUR": 280,
     "expertSummary": "Clio 2'nin dizeli 1.5 dCi (K9K), dünyanın en çok üretilen dizellerinden birinin erken versiyonudur: uzun yolda 3.5-4 lt yakan, torklu, yaygın ve parçası bol bir motor. Bu yıllarda DPF yoktu — şehir içi için görece huzurlu. Kritik nokta enjektörler (bu erken K9K'lerde Bosch/Delphi) ve turbodur. Kayış trigerlidir. Günlük dille: \"Yakıtı inanılmaz düşük, uzun yol arabası; enjektör geçmişini sor, kaliteli mazot kullan.\" Ağırlıklı uzun yol yapan, ekonomi odaklı kullanıcı için mantıklı.",
     "userFeedbackSummary": "Kullanıcılar yakıt tüketimini 'efsane' buluyor. Şikayetler: enjektör arızası (soğukta zor çalışma, is, çekişte boşluk), turbo kayıcı kanat, EGR kurumu, çift kütleli volan (bazı versiyonlarda). Kaliteli mazot ve düzenli yağ enjektör ömrünü belirliyor.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "1.5 dCi enjektör arızası", "description": "Common-rail enjektörler zamanla debisini şaşırır; soğukta zor çalışma, is, tekleme, geri dönüş kaçağı. Kaliteli mazot şart. 4 enjektör revize/değişim.", "severity": "Orta", "estimatedCostEUR": 380, "affectedYears": "1998-2005" },
-      { "title": "Turbo VNT tıkanması ve EGR kurumu", "description": "Kurumdan turbonun değişken kanatları ve EGR sıkışır/kirlenir; rampada güç düşüşü, arıza lambası. Temizlik veya yenileme.", "severity": "Orta", "estimatedCostEUR": 320, "affectedYears": "1998-2005" },
-      { "title": "Komütatör, cam krikosu ve ön takım aşınması", "description": "Clio 2 klasiği elektrik arızaları ve 60-100 bin km'de ön takım sesleri. Kontrol ve revizyon.", "severity": "Düşük", "estimatedCostEUR": 150, "affectedYears": "1998-2005" }
+      {
+        "title": "1.5 dCi enjektör arızası",
+        "description": "Common-rail enjektörler zamanla debisini şaşırır; soğukta zor çalışma, is, tekleme, geri dönüş kaçağı. Kaliteli mazot şart. 4 enjektör revize/değişim.",
+        "severity": "Orta",
+        "estimatedCostEUR": 380,
+        "affectedYears": "1998-2005"
+      },
+      {
+        "title": "Turbo VNT tıkanması ve EGR kurumu",
+        "description": "Kurumdan turbonun değişken kanatları ve EGR sıkışır/kirlenir; rampada güç düşüşü, arıza lambası. Temizlik veya yenileme.",
+        "severity": "Orta",
+        "estimatedCostEUR": 320,
+        "affectedYears": "1998-2005"
+      },
+      {
+        "title": "Komütatör, cam krikosu ve ön takım aşınması",
+        "description": "Clio 2 klasiği elektrik arızaları ve 60-100 bin km'de ön takım sesleri. Kontrol ve revizyon.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 150,
+        "affectedYears": "1998-2005"
+      }
     ],
-    "pros": ["Sınıfının en düşük yakıt tüketimi (uzun yol 3.5-4 lt)", "Torklu, yaygın ve parçası bol K9K dizel", "DPF yok — şehir içi için görece huzurlu", "Ucuz alım"],
-    "cons": ["Enjektör/turbo/EGR gibi dizel bakımları", "Clio 2 klasiği elektrik arızaları ve kaporta pası", "Kaba ve sesli motor karakteri", "Eski nesil güvenlik"],
+    "pros": [
+      "Sınıfının en düşük yakıt tüketimi (uzun yol 3.5-4 lt)",
+      "Torklu, yaygın ve parçası bol K9K dizel",
+      "DPF yok — şehir içi için görece huzurlu",
+      "Ucuz alım"
+    ],
+    "cons": [
+      "Enjektör/turbo/EGR gibi dizel bakımları",
+      "Clio 2 klasiği elektrik arızaları ve kaporta pası",
+      "Kaba ve sesli motor karakteri",
+      "Eski nesil güvenlik"
+    ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR ilk kontrol, triger kayış seti kontrolü.", "estimatedCostEUR": 170 },
-      { "mileage": "150.000 km", "expectedIssues": "Enjektör revizyonu, EGR/turbo temizliği, triger kayış seti, debriyaj seti, ön takım revizyonu.", "estimatedCostEUR": 650 },
-      { "mileage": "250.000 km", "expectedIssues": "İkinci triger seti, su pompası, turbo revizyonu ihtimali, süspansiyon yenileme.", "estimatedCostEUR": 700 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR ilk kontrol, triger kayış seti kontrolü.",
+        "estimatedCostEUR": 170
+      },
+      {
+        "mileage": "150.000 km",
+        "expectedIssues": "Enjektör revizyonu, EGR/turbo temizliği, triger kayış seti, debriyaj seti, ön takım revizyonu.",
+        "estimatedCostEUR": 650
+      },
+      {
+        "mileage": "250.000 km",
+        "expectedIssues": "İkinci triger seti, su pompası, turbo revizyonu ihtimali, süspansiyon yenileme.",
+        "estimatedCostEUR": 700
+      }
     ]
   },
   {
@@ -86,17 +212,59 @@
     "estimatedMaintenanceCostEUR": 190,
     "expertSummary": "Symbol (bazı pazarlarda Thalia), Clio 2'nin bagajlı sedan kardeşidir — aynı mekanik, ayrı ve daha uzun gövde, kocaman bagaj. 1.4 8V (E7J) motor Clio 2'dekiyle aynı: basit, LPG uyumlu, dayanıklı, kayış trigerli. Türkiye'de taksi ve filo olarak çok sattı; bagaj hacmi B segmentinin çok üstünde. Günlük dille: \"Clio 2 sağlamlığını sedan ve dev bagaj isteyene; en ucuz işletmeli aile sedanlarından, LPG'yle çok ekonomik.\"",
     "userFeedbackSummary": "Kullanıcılar bagaj hacmini ve ucuz işletmeyi çok övüyor; taksiciler yüksek km örneklerden bahsediyor. Şikayetler Clio 2 ile aynı: komütatör, cam krikosu, gösterge, arka çamurluk pası, ön takım sesleri. Kayış triger ve LPG subap ayarı takip edilmeli.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Sinyal/silecek kolu (komütatör) ve cam krikosu arızası", "description": "Direksiyon altı kollar kontak kaybeder; cam krikoları kopar. Ucuz ama yaygın.", "severity": "Düşük", "estimatedCostEUR": 90, "affectedYears": "2000-2008" },
-      { "title": "Arka çamurluk ve eşik pası", "description": "İnce sac ve zayıf boya koruması; arka çamurluk içleri ve eşiklerde pas. Alırken kontrol şart.", "severity": "Orta", "estimatedCostEUR": 180, "affectedYears": "2000-2008" },
-      { "title": "Ön takım hızlı aşınması", "description": "Türkiye yollarında 60-100 bin km'de ön takım sesleri; komple revizyon. Parça ucuz.", "severity": "Düşük", "estimatedCostEUR": 150, "affectedYears": "2000-2008" }
+      {
+        "title": "Sinyal/silecek kolu (komütatör) ve cam krikosu arızası",
+        "description": "Direksiyon altı kollar kontak kaybeder; cam krikoları kopar. Ucuz ama yaygın.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 90,
+        "affectedYears": "2000-2008"
+      },
+      {
+        "title": "Arka çamurluk ve eşik pası",
+        "description": "İnce sac ve zayıf boya koruması; arka çamurluk içleri ve eşiklerde pas. Alırken kontrol şart.",
+        "severity": "Orta",
+        "estimatedCostEUR": 180,
+        "affectedYears": "2000-2008"
+      },
+      {
+        "title": "Ön takım hızlı aşınması",
+        "description": "Türkiye yollarında 60-100 bin km'de ön takım sesleri; komple revizyon. Parça ucuz.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 150,
+        "affectedYears": "2000-2008"
+      }
     ],
-    "pros": ["B segmentinin çok üstünde bagaj hacmi", "Basit, LPG uyumlu, dayanıklı motor", "En ucuz işletme ve parça maliyeti", "İyi süspansiyon konforu"],
-    "cons": ["Komütatör, cam krikosu gibi elektrik arızaları", "Kaporta pası riski", "Eski nesil güvenlik ve donanım", "Düşük ikinci el değeri"],
+    "pros": [
+      "B segmentinin çok üstünde bagaj hacmi",
+      "Basit, LPG uyumlu, dayanıklı motor",
+      "En ucuz işletme ve parça maliyeti",
+      "İyi süspansiyon konforu"
+    ],
+    "cons": [
+      "Komütatör, cam krikosu gibi elektrik arızaları",
+      "Kaporta pası riski",
+      "Eski nesil güvenlik ve donanım",
+      "Düşük ikinci el değeri"
+    ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Triger kayış seti, yağ+filtre, bujiler, LPG subap ayarı, ön takım kontrolü, pas kontrolü.", "estimatedCostEUR": 160 },
-      { "mileage": "120.000 km", "expectedIssues": "İkinci triger seti, debriyaj seti, ön takım revizyonu, komütatör/cam krikosu, amortisörler.", "estimatedCostEUR": 280 },
-      { "mileage": "200.000 km", "expectedIssues": "Su pompası, motor takozları, marş/alternatör, kaporta pas onarımı, klima kompresörü.", "estimatedCostEUR": 300 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Triger kayış seti, yağ+filtre, bujiler, LPG subap ayarı, ön takım kontrolü, pas kontrolü.",
+        "estimatedCostEUR": 160
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "İkinci triger seti, debriyaj seti, ön takım revizyonu, komütatör/cam krikosu, amortisörler.",
+        "estimatedCostEUR": 280
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Su pompası, motor takozları, marş/alternatör, kaporta pas onarımı, klima kompresörü.",
+        "estimatedCostEUR": 300
+      }
     ]
   },
   {
@@ -111,17 +279,59 @@
     "estimatedMaintenanceCostEUR": 240,
     "expertSummary": "Clio 3, öncekine göre daha büyük, daha sağlam gövdeli ve daha konforlu. 1.2 16V (D4F) atmosferik motor turbosuz, LPG'ye uygun ama küçük hacmi nedeniyle klima açıkken ve yüklüyken zorlanır. Kritik konular: bobin/buji tekleme, gaz kelebeği kirlenmesi, su pompası, ayrıca Renault'ya özgü kartlı kontak/direksiyon kilidi (ELV) — Megane 2'deki kadar sık değil ama görülür. Kayış trigerlidir. Günlük dille: \"Öncekinden daha olgun ve konforlu; motoru küçük ama dertsiz, elektroniğine ve kartına dikkat.\"",
     "userFeedbackSummary": "Kullanıcılar konfor ve iç kaliteyi öncekinden iyi buluyor. Şikayetler: 1.2 motorun yüklüyken/klimayla güçsüzlüğü, bobin tekleme, gaz kelebeği kaynaklı rölanti dengesizliği, su pompası sızıntısı, kartlı kontak okumama, cam krikosu, klima paneli arızaları.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Kartlı kontak / direksiyon kilidi (ELV) arızası", "description": "Kart-anahtar okuyucu ve elektronik direksiyon kilidi yaşa bağlı arıza yapar; araç çalışmaz, direksiyon kilitli kalır. ELV mekanizması veya okuyucu yenilenir. Megane 2'ye göre daha seyrek.", "severity": "Orta", "estimatedCostEUR": 220, "affectedYears": "2005-2012" },
-      { "title": "Su pompası / termostat ve bobin arızası", "description": "Su pompası sızdırır veya hararet yapar; bobin zayıflayınca tekleme ve arıza lambası. Pompa+termostat ve bobin+buji seti ile çözülür.", "severity": "Düşük", "estimatedCostEUR": 170, "affectedYears": "2005-2012" },
-      { "title": "Konfor elektroniği arızaları (cam krikosu, klima paneli)", "description": "Cam krikoları kopar, klima/kalorifer paneli tuşları çalışmaz, park sensörü arıza yapar. Ucuz ama sık.", "severity": "Düşük", "estimatedCostEUR": 120, "affectedYears": "2005-2012" }
+      {
+        "title": "Kartlı kontak / direksiyon kilidi (ELV) arızası",
+        "description": "Kart-anahtar okuyucu ve elektronik direksiyon kilidi yaşa bağlı arıza yapar; araç çalışmaz, direksiyon kilitli kalır. ELV mekanizması veya okuyucu yenilenir. Megane 2'ye göre daha seyrek.",
+        "severity": "Orta",
+        "estimatedCostEUR": 220,
+        "affectedYears": "2005-2012"
+      },
+      {
+        "title": "Su pompası / termostat ve bobin arızası",
+        "description": "Su pompası sızdırır veya hararet yapar; bobin zayıflayınca tekleme ve arıza lambası. Pompa+termostat ve bobin+buji seti ile çözülür.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 170,
+        "affectedYears": "2005-2012"
+      },
+      {
+        "title": "Konfor elektroniği arızaları (cam krikosu, klima paneli)",
+        "description": "Cam krikoları kopar, klima/kalorifer paneli tuşları çalışmaz, park sensörü arıza yapar. Ucuz ama sık.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 120,
+        "affectedYears": "2005-2012"
+      }
     ],
-    "pros": ["Öncekine göre daha sağlam gövde ve daha iyi konfor", "LPG'ye uygun, dertsiz atmosferik motor", "İyi çarpışma güvenliği (5 yıldız)", "Ucuz parça, yaygın servis"],
-    "cons": ["1.2 motor yüklüyken ve klimayla güçsüz", "Kart/ELV ve konfor elektroniği arızaları", "İç malzeme ve multimedya vasat", "Düşük ikinci el değeri"],
+    "pros": [
+      "Öncekine göre daha sağlam gövde ve daha iyi konfor",
+      "LPG'ye uygun, dertsiz atmosferik motor",
+      "İyi çarpışma güvenliği (5 yıldız)",
+      "Ucuz parça, yaygın servis"
+    ],
+    "cons": [
+      "1.2 motor yüklüyken ve klimayla güçsüz",
+      "Kart/ELV ve konfor elektroniği arızaları",
+      "İç malzeme ve multimedya vasat",
+      "Düşük ikinci el değeri"
+    ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Triger kayış seti, yağ+filtre, bujiler, LPG subap ayarı, bobin ve su pompası kontrolü.", "estimatedCostEUR": 180 },
-      { "mileage": "120.000 km", "expectedIssues": "İkinci triger seti, debriyaj seti, su pompası+termostat, ön takım revizyonu, ELV/kart kontrolü.", "estimatedCostEUR": 380 },
-      { "mileage": "200.000 km", "expectedIssues": "Motor takozları, bobin seti, klima kompresörü, konfor modülleri, süspansiyon yenileme.", "estimatedCostEUR": 380 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Triger kayış seti, yağ+filtre, bujiler, LPG subap ayarı, bobin ve su pompası kontrolü.",
+        "estimatedCostEUR": 180
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "İkinci triger seti, debriyaj seti, su pompası+termostat, ön takım revizyonu, ELV/kart kontrolü.",
+        "estimatedCostEUR": 380
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Motor takozları, bobin seti, klima kompresörü, konfor modülleri, süspansiyon yenileme.",
+        "estimatedCostEUR": 380
+      }
     ]
   },
   {
@@ -136,17 +346,59 @@
     "estimatedMaintenanceCostEUR": 300,
     "expertSummary": "Clio 3'ün 1.5 dCi (K9K, 85 HP) motoru, çok düşük bütçeyle uzun yol yapanların favorisi: uzun yolda 3.5-4 lt yakan, torklu, yaygın bir dizel. K9K'nin kritik noktası enjektörler (Delphi — geri dönüş kaçağı, is, zor çalışma) ve turbodur. Bu yılların çoğunda DPF yoktu ya da basitti. Kayış trigerlidir. Günlük dille: \"Yakıtı harika, uzun yol arabası; enjektör ve turbo geçmişini sor, kaliteli mazot kullan.\" Ağırlıklı uzun yol yapan için ideal.",
     "userFeedbackSummary": "Kullanıcılar yakıt tüketimini 'inanılmaz' buluyor. Şikayetler: enjektör arızası (soğukta zor çalışma, is, çekişte boşluk), turbo kayıcı kanat, EGR kurumu, kartlı kontak, cam krikosu. Kaliteli mazot enjektör ömrünü belirliyor.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "1.5 dCi enjektör (Delphi) arızası", "description": "Common-rail enjektörler debisini şaşırır; soğukta zor çalışma, is, tekleme, geri dönüş kaçağı yüksekliği. Kaliteli mazot şart. 4 enjektör revize/değişim.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2005-2012" },
-      { "title": "Turbo VNT tıkanması ve EGR kurumu", "description": "Kurumdan turbonun kayıcı kanatları ve EGR sıkışır/kirlenir; rampada güç düşüşü, arıza lambası, limp mode. Temizlik veya yenileme.", "severity": "Orta", "estimatedCostEUR": 320, "affectedYears": "2005-2012" },
-      { "title": "Kartlı kontak / ELV ve konfor elektroniği arızaları", "description": "Kart okuyucu ve direksiyon kilidi arızası; cam krikosu, klima paneli arızaları. Kontrol ve parça değişimi.", "severity": "Orta", "estimatedCostEUR": 250, "affectedYears": "2005-2012" }
+      {
+        "title": "1.5 dCi enjektör (Delphi) arızası",
+        "description": "Common-rail enjektörler debisini şaşırır; soğukta zor çalışma, is, tekleme, geri dönüş kaçağı yüksekliği. Kaliteli mazot şart. 4 enjektör revize/değişim.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2005-2012"
+      },
+      {
+        "title": "Turbo VNT tıkanması ve EGR kurumu",
+        "description": "Kurumdan turbonun kayıcı kanatları ve EGR sıkışır/kirlenir; rampada güç düşüşü, arıza lambası, limp mode. Temizlik veya yenileme.",
+        "severity": "Orta",
+        "estimatedCostEUR": 320,
+        "affectedYears": "2005-2012"
+      },
+      {
+        "title": "Kartlı kontak / ELV ve konfor elektroniği arızaları",
+        "description": "Kart okuyucu ve direksiyon kilidi arızası; cam krikosu, klima paneli arızaları. Kontrol ve parça değişimi.",
+        "severity": "Orta",
+        "estimatedCostEUR": 250,
+        "affectedYears": "2005-2012"
+      }
     ],
-    "pros": ["Çok düşük yakıt tüketimi (uzun yol 3.5-4 lt)", "Torklu, yaygın ve parçası bol K9K dizel", "Daha sağlam gövde ve iyi güvenlik", "Ucuz parça"],
-    "cons": ["Enjektör/turbo/EGR gibi dizel bakımları", "Kart/ELV ve konfor elektroniği arızaları", "Kaba motor karakteri", "Düşük ikinci el değeri"],
+    "pros": [
+      "Çok düşük yakıt tüketimi (uzun yol 3.5-4 lt)",
+      "Torklu, yaygın ve parçası bol K9K dizel",
+      "Daha sağlam gövde ve iyi güvenlik",
+      "Ucuz parça"
+    ],
+    "cons": [
+      "Enjektör/turbo/EGR gibi dizel bakımları",
+      "Kart/ELV ve konfor elektroniği arızaları",
+      "Kaba motor karakteri",
+      "Düşük ikinci el değeri"
+    ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR ilk kontrol, triger kayış seti kontrolü.", "estimatedCostEUR": 170 },
-      { "mileage": "150.000 km", "expectedIssues": "Enjektör revizyonu, EGR/turbo temizliği, triger kayış seti, debriyaj seti, ön takım, ELV/kart kontrolü.", "estimatedCostEUR": 750 },
-      { "mileage": "250.000 km", "expectedIssues": "İkinci triger seti, su pompası, turbo revizyonu ihtimali, süspansiyon yenileme.", "estimatedCostEUR": 750 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR ilk kontrol, triger kayış seti kontrolü.",
+        "estimatedCostEUR": 170
+      },
+      {
+        "mileage": "150.000 km",
+        "expectedIssues": "Enjektör revizyonu, EGR/turbo temizliği, triger kayış seti, debriyaj seti, ön takım, ELV/kart kontrolü.",
+        "estimatedCostEUR": 750
+      },
+      {
+        "mileage": "250.000 km",
+        "expectedIssues": "İkinci triger seti, su pompası, turbo revizyonu ihtimali, süspansiyon yenileme.",
+        "estimatedCostEUR": 750
+      }
     ]
   },
   {
@@ -161,17 +413,59 @@
     "estimatedMaintenanceCostEUR": 320,
     "expertSummary": "Clio 4, tasarımı ve iç kalitesiyle B segmentinin en çok tercih edilenlerinden. 0.9 TCe (H4Bt) 3 silindirli turbo benzinli motor küçük hacmine göre canlıdır (135 Nm), şehir içinde yeterli, otoyolda 3. kişi/yükle zorlanır. 3 silindir olduğu için rölantide hafif titreşim normaldir. Kritik konular: turbo (yağlama kanalı kurumu), ateşleme bobini, PCV, zamanla gelen yağ eksiltme. Günlük dille: \"Şehir arabası olarak keyifli ve şık; turbolu küçük motorun bakımını aksatma, kısa periyot yağ kullan.\"",
     "userFeedbackSummary": "Kullanıcılar tasarım, iç mekan ve şehir içi çevikliği seviyor. Şikayetler: 3 silindir titreşimi ve sesi, otoyolda güç yetersizliği, yağ eksiltme (özellikle ilk yıllar ve bakımsız örnekler), turbo sesi, bobin tekleme, R-Link ekran donması, direksiyon açısı sınırlı olduğu için lastik aşınması.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Motor yağ eksiltme ve turbo yağlama kanalı kurumu", "description": "0.9 TCe bazı örneklerde yağ eksiltir; turbo yağ besleme borusu kurum bağlarsa turbo ömrü kısalır. Kısa periyot yağ (max 10 bin km), kaliteli yağ ve motoru soğutmadan kapatmama önemlidir.", "severity": "Orta", "estimatedCostEUR": 300, "affectedYears": "2012-2019" },
-      { "title": "Ateşleme bobini ve buji tekleme", "description": "3 bobinden biri zayıflayınca belirgin tekleme ve arıza lambası. Bobin+buji seti; turbo motorda periyot kısa.", "severity": "Düşük", "estimatedCostEUR": 120, "affectedYears": "2012-2019" },
-      { "title": "R-Link multimedya ve konfor elektroniği arızaları", "description": "R-Link ekranı donar/yeniden başlar; cam krikosu, klima paneli ve park sensörü arızaları. Yazılım güncellemesi ve parça değişimi.", "severity": "Düşük", "estimatedCostEUR": 150, "affectedYears": "2012-2019" }
+      {
+        "title": "Motor yağ eksiltme ve turbo yağlama kanalı kurumu",
+        "description": "0.9 TCe bazı örneklerde yağ eksiltir; turbo yağ besleme borusu kurum bağlarsa turbo ömrü kısalır. Kısa periyot yağ (max 10 bin km), kaliteli yağ ve motoru soğutmadan kapatmama önemlidir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 300,
+        "affectedYears": "2012-2019"
+      },
+      {
+        "title": "Ateşleme bobini ve buji tekleme",
+        "description": "3 bobinden biri zayıflayınca belirgin tekleme ve arıza lambası. Bobin+buji seti; turbo motorda periyot kısa.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 120,
+        "affectedYears": "2012-2019"
+      },
+      {
+        "title": "R-Link multimedya ve konfor elektroniği arızaları",
+        "description": "R-Link ekranı donar/yeniden başlar; cam krikosu, klima paneli ve park sensörü arızaları. Yazılım güncellemesi ve parça değişimi.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 150,
+        "affectedYears": "2012-2019"
+      }
     ],
-    "pros": ["Şık dış tasarım ve segment üstü iç mekan hissi", "Şehir içinde canlı, ekonomik turbo motor", "İyi süspansiyon konforu", "Uygun fiyat ve makul parça maliyeti"],
-    "cons": ["3 silindir titreşim/ses, otoyolda güç yetersizliği", "Yağ eksiltme ve turbo bakımına duyarlılık", "R-Link ve konfor elektroniği arızaları", "Arka koltuk ve bagaj B segmenti ortalaması"],
+    "pros": [
+      "Şık dış tasarım ve segment üstü iç mekan hissi",
+      "Şehir içinde canlı, ekonomik turbo motor",
+      "İyi süspansiyon konforu",
+      "Uygun fiyat ve makul parça maliyeti"
+    ],
+    "cons": [
+      "3 silindir titreşim/ses, otoyolda güç yetersizliği",
+      "Yağ eksiltme ve turbo bakımına duyarlılık",
+      "R-Link ve konfor elektroniği arızaları",
+      "Arka koltuk ve bagaj B segmenti ortalaması"
+    ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre (kısa periyot), bujiler, hava/polen filtresi, turbo kaçak kontrolü, yazılım güncelleme.", "estimatedCostEUR": 150 },
-      { "mileage": "120.000 km", "expectedIssues": "Triger kayış seti, debriyaj kontrolü, bobin seti, PCV valfi, ön takım revizyonu, turbo kontrolü.", "estimatedCostEUR": 400 },
-      { "mileage": "180.000 km", "expectedIssues": "Turbo revizyonu ihtimali, su pompası, ikinci triger seti, süspansiyon yenileme, klima kompresörü.", "estimatedCostEUR": 500 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Yağ+filtre (kısa periyot), bujiler, hava/polen filtresi, turbo kaçak kontrolü, yazılım güncelleme.",
+        "estimatedCostEUR": 150
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "Triger kayış seti, debriyaj kontrolü, bobin seti, PCV valfi, ön takım revizyonu, turbo kontrolü.",
+        "estimatedCostEUR": 400
+      },
+      {
+        "mileage": "180.000 km",
+        "expectedIssues": "Turbo revizyonu ihtimali, su pompası, ikinci triger seti, süspansiyon yenileme, klima kompresörü.",
+        "estimatedCostEUR": 500
+      }
     ]
   },
   {
@@ -186,17 +480,59 @@
     "estimatedMaintenanceCostEUR": 320,
     "expertSummary": "Clio 4'ün 1.5 dCi 90 HP manuel versiyonu, düşük bütçeyle çok uzun yol yapanların favorisi: uzun yolda 3.5-4 lt yakan, torklu, yaygın ve parçası bol bir dizel. K9K motoru dünyanın en çok üretilen dizellerinden; kritik nokta enjektörler (Delphi/Continental) ve turbodur. DPF'li Euro 5/6 örneklerde sürekli şehir içinde tıkanma olur. Günlük dille: \"Yakıtı inanılmaz düşük, uzun yol arabası; enjektör ve DPF'sine dikkat, kaliteli mazot kullan.\" Ağırlıklı uzun yol yapan için ideal.",
     "userFeedbackSummary": "Kullanıcılar yakıt tüketimini 'efsane' buluyor. Şikayetler: enjektör arızası, turbo kayıcı kanat, EGR kurumu, DPF tıkanması (şehir içi), R-Link ekran donması, lastik aşınması. Kaliteli mazot ve düzenli yağ enjektör ömrünü belirliyor.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "1.5 dCi enjektör (Delphi) arızası", "description": "Common-rail enjektörler debisini şaşırır; soğukta zor çalışma, is, tekleme, geri dönüş kaçağı. Kaliteli mazot şart. 4 enjektör revize/değişim.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2012-2019" },
-      { "title": "DPF tıkanması ve EGR kurumu (şehir içi)", "description": "Kısa mesafe kullanımda DPF dolar, rejenerasyon tamamlanamaz; EGR kurum bağlar. Güç kaybı, arıza lambası. Uzun yol + temizlik/değişim gerekir.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2013-2019" },
-      { "title": "Turbo VNT tıkanması", "description": "Kurumdan turbonun değişken kanatları sıkışır; rampada güç düşüşü, arıza lambası, limp mode. Temizlik veya turbo revizyonu.", "severity": "Orta", "estimatedCostEUR": 300, "affectedYears": "2012-2019" }
+      {
+        "title": "1.5 dCi enjektör (Delphi) arızası",
+        "description": "Common-rail enjektörler debisini şaşırır; soğukta zor çalışma, is, tekleme, geri dönüş kaçağı. Kaliteli mazot şart. 4 enjektör revize/değişim.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2012-2019"
+      },
+      {
+        "title": "DPF tıkanması ve EGR kurumu (şehir içi)",
+        "description": "Kısa mesafe kullanımda DPF dolar, rejenerasyon tamamlanamaz; EGR kurum bağlar. Güç kaybı, arıza lambası. Uzun yol + temizlik/değişim gerekir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2013-2019"
+      },
+      {
+        "title": "Turbo VNT tıkanması",
+        "description": "Kurumdan turbonun değişken kanatları sıkışır; rampada güç düşüşü, arıza lambası, limp mode. Temizlik veya turbo revizyonu.",
+        "severity": "Orta",
+        "estimatedCostEUR": 300,
+        "affectedYears": "2012-2019"
+      }
     ],
-    "pros": ["Sınıfının en düşük yakıt tüketimi (uzun yol 3.5-4 lt)", "Torklu, yaygın ve parçası bol K9K dizel", "Şık tasarım ve iyi süspansiyon konforu", "Dayanıklı manuel şanzıman"],
-    "cons": ["Enjektör/turbo/EGR/DPF gibi dizel bakımları", "Sürekli şehir içi kullanıma uygun değil (DPF)", "R-Link ve konfor elektroniği arızaları", "Arka koltuk ve bagaj B segmenti ortalaması"],
+    "pros": [
+      "Sınıfının en düşük yakıt tüketimi (uzun yol 3.5-4 lt)",
+      "Torklu, yaygın ve parçası bol K9K dizel",
+      "Şık tasarım ve iyi süspansiyon konforu",
+      "Dayanıklı manuel şanzıman"
+    ],
+    "cons": [
+      "Enjektör/turbo/EGR/DPF gibi dizel bakımları",
+      "Sürekli şehir içi kullanıma uygun değil (DPF)",
+      "R-Link ve konfor elektroniği arızaları",
+      "Arka koltuk ve bagaj B segmenti ortalaması"
+    ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR ilk kontrol, triger kayış seti kontrolü, yazılım güncelleme.", "estimatedCostEUR": 170 },
-      { "mileage": "150.000 km", "expectedIssues": "Enjektör revizyonu, EGR/DPF temizliği, turbo VNT kontrolü, triger kayış seti, debriyaj kontrolü, ön takım.", "estimatedCostEUR": 700 },
-      { "mileage": "250.000 km", "expectedIssues": "İkinci triger seti, su pompası, turbo revizyonu, DPF değişimi ihtimali, süspansiyon yenileme.", "estimatedCostEUR": 750 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR ilk kontrol, triger kayış seti kontrolü, yazılım güncelleme.",
+        "estimatedCostEUR": 170
+      },
+      {
+        "mileage": "150.000 km",
+        "expectedIssues": "Enjektör revizyonu, EGR/DPF temizliği, turbo VNT kontrolü, triger kayış seti, debriyaj kontrolü, ön takım.",
+        "estimatedCostEUR": 700
+      },
+      {
+        "mileage": "250.000 km",
+        "expectedIssues": "İkinci triger seti, su pompası, turbo revizyonu, DPF değişimi ihtimali, süspansiyon yenileme.",
+        "estimatedCostEUR": 750
+      }
     ]
   },
   {
@@ -211,17 +547,59 @@
     "estimatedMaintenanceCostEUR": 320,
     "expertSummary": "Symbol 3, Clio 4'ün bagajlı sedan kardeşidir — aynı mekanik, ayrı ve daha uzun gövde, B segmentinin çok üstünde bagaj. 1.5 dCi 90 HP motoru Clio 4 dizeliyle aynıdır: çok düşük yakıt, torklu, yaygın. Türkiye'de taksi ve filo olarak çok satıldı. DPF'li örnekler şehir içinde tıkanır. Günlük dille: \"Clio 4 dizelinin sedan ve kocaman bagaj hali; taksi/filo klasiği, enjektör ve DPF'sine dikkat.\" Aile + uzun yol + geniş bagaj isteyen için mantıklı.",
     "userFeedbackSummary": "Kullanıcılar bagaj hacmini ve yakıt ekonomisini çok övüyor. Şikayetler Clio 4 dizeliyle aynı: enjektör, turbo VNT, EGR, DPF (şehir içi), iç plastik kalitesi, R-Link donması. Taksi kullanılmış örneklerde debriyaj ve ön takım daha yıpranmış.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "1.5 dCi enjektör (Delphi) arızası", "description": "Common-rail enjektörler debisini şaşırır; soğukta zor çalışma, is, tekleme. Kaliteli mazot şart. 4 enjektör revize/değişim.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2013-2022" },
-      { "title": "DPF tıkanması ve EGR kurumu (şehir içi)", "description": "Kısa mesafe kullanımda DPF dolar; EGR kurum bağlar. Güç kaybı, arıza lambası. Uzun yol + temizlik/değişim gerekir.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2013-2022" },
-      { "title": "Turbo VNT tıkanması ve iç plastik/multimedya", "description": "Turbo kayıcı kanatları kurum bağlar; sert plastikler gıcırdar, R-Link donar. Turbo temizliği, keçe takviyesi, yazılım güncelleme.", "severity": "Orta", "estimatedCostEUR": 300, "affectedYears": "2013-2022" }
+      {
+        "title": "1.5 dCi enjektör (Delphi) arızası",
+        "description": "Common-rail enjektörler debisini şaşırır; soğukta zor çalışma, is, tekleme. Kaliteli mazot şart. 4 enjektör revize/değişim.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2013-2022"
+      },
+      {
+        "title": "DPF tıkanması ve EGR kurumu (şehir içi)",
+        "description": "Kısa mesafe kullanımda DPF dolar; EGR kurum bağlar. Güç kaybı, arıza lambası. Uzun yol + temizlik/değişim gerekir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2013-2022"
+      },
+      {
+        "title": "Turbo VNT tıkanması ve iç plastik/multimedya",
+        "description": "Turbo kayıcı kanatları kurum bağlar; sert plastikler gıcırdar, R-Link donar. Turbo temizliği, keçe takviyesi, yazılım güncelleme.",
+        "severity": "Orta",
+        "estimatedCostEUR": 300,
+        "affectedYears": "2013-2022"
+      }
     ],
-    "pros": ["B segmentinin çok üstünde bagaj hacmi", "Çok düşük yakıt tüketimi, yaygın K9K dizel", "Ucuz parça, yaygın servis, taksi dostu", "Uygun fiyat"],
-    "cons": ["Enjektör/turbo/EGR/DPF gibi dizel bakımları", "Sert plastikler, orta iç kalite", "Taksi kullanılmış örneklerde yıpranma", "R-Link ve konfor elektroniği arızaları"],
+    "pros": [
+      "B segmentinin çok üstünde bagaj hacmi",
+      "Çok düşük yakıt tüketimi, yaygın K9K dizel",
+      "Ucuz parça, yaygın servis, taksi dostu",
+      "Uygun fiyat"
+    ],
+    "cons": [
+      "Enjektör/turbo/EGR/DPF gibi dizel bakımları",
+      "Sert plastikler, orta iç kalite",
+      "Taksi kullanılmış örneklerde yıpranma",
+      "R-Link ve konfor elektroniği arızaları"
+    ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR ilk kontrol, triger kayış seti kontrolü.", "estimatedCostEUR": 170 },
-      { "mileage": "150.000 km", "expectedIssues": "Enjektör revizyonu, EGR/DPF temizliği, turbo VNT kontrolü, triger kayış seti, debriyaj seti, ön takım revizyonu.", "estimatedCostEUR": 700 },
-      { "mileage": "250.000 km", "expectedIssues": "İkinci triger seti, su pompası, turbo revizyonu, DPF değişimi ihtimali, süspansiyon yenileme.", "estimatedCostEUR": 750 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR ilk kontrol, triger kayış seti kontrolü.",
+        "estimatedCostEUR": 170
+      },
+      {
+        "mileage": "150.000 km",
+        "expectedIssues": "Enjektör revizyonu, EGR/DPF temizliği, turbo VNT kontrolü, triger kayış seti, debriyaj seti, ön takım revizyonu.",
+        "estimatedCostEUR": 700
+      },
+      {
+        "mileage": "250.000 km",
+        "expectedIssues": "İkinci triger seti, su pompası, turbo revizyonu, DPF değişimi ihtimali, süspansiyon yenileme.",
+        "estimatedCostEUR": 750
+      }
     ]
   },
   {
@@ -236,17 +614,59 @@
     "estimatedMaintenanceCostEUR": 230,
     "expertSummary": "Megane 1, artık iyice yaşlanmış bir C segmenti klasiği; alım fiyatı çok düşük, kaporta ve elektrik yaşına göre yıpranmış. Değerli tarafı K4M 1.6 16V motorudur: piyasanın en çok aranan, LPG'ye tam uyumlu, doğru bakımla 300 bin km+ giden bir ünite. K4M'nin bilinen tek zaafı dephaser (eksantrik ayar kasnağı) tıkırtısıdır. Gerisi yaş kaynaklı: cam krikosu, kalorifer rezistansı, ön takım, kaporta pası, tavan döşemesi sarkması. Günlük dille: \"Araba eski ve dertli ama motor bloğu altın; sadece motoru için, ucuzsa ve LPG'lisi düzgünse düşün.\"",
     "userFeedbackSummary": "Kullanıcılar 'motoru ölmüyor ama gerisi dağılıyor' diyor. Sık şikayetler: dephaser tıkırtısı, cam krikosu, kalorifer rezistansı, ön takım sesleri, kaporta pası, iç döşeme yıpranması, elektrik arızaları.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Eksantrik ayar kasnağı (dephaser) tıkırtısı", "description": "K4M motorda VVT kasnağı zamanla boşluk yapar; soğuk çalıştırmada metalik tıkırtı. Kasnak değişimiyle çözülür; ihmal edilirse triger atlayabilir.", "severity": "Orta", "estimatedCostEUR": 180, "affectedYears": "1996-2003" },
-      { "title": "Kaporta pası ve iç döşeme yıpranması", "description": "Yaşa bağlı arka çamurluk/eşik pası, tavan döşemesi sarkması, koltuk aşınması, plastik kırıkları yaygındır.", "severity": "Orta", "estimatedCostEUR": 200, "affectedYears": "1996-2003" },
-      { "title": "Cam krikosu, kalorifer rezistansı ve elektrik arızaları", "description": "Cam krikoları kopar, kalorifer üfleme rezistansı yanar, gösterge ve iç aydınlatma arızaları. Ucuz ama sık.", "severity": "Düşük", "estimatedCostEUR": 110, "affectedYears": "1996-2003" }
+      {
+        "title": "Eksantrik ayar kasnağı (dephaser) tıkırtısı",
+        "description": "K4M motorda VVT kasnağı zamanla boşluk yapar; soğuk çalıştırmada metalik tıkırtı. Kasnak değişimiyle çözülür; ihmal edilirse triger atlayabilir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 180,
+        "affectedYears": "1996-2003"
+      },
+      {
+        "title": "Kaporta pası ve iç döşeme yıpranması",
+        "description": "Yaşa bağlı arka çamurluk/eşik pası, tavan döşemesi sarkması, koltuk aşınması, plastik kırıkları yaygındır.",
+        "severity": "Orta",
+        "estimatedCostEUR": 200,
+        "affectedYears": "1996-2003"
+      },
+      {
+        "title": "Cam krikosu, kalorifer rezistansı ve elektrik arızaları",
+        "description": "Cam krikoları kopar, kalorifer üfleme rezistansı yanar, gösterge ve iç aydınlatma arızaları. Ucuz ama sık.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 110,
+        "affectedYears": "1996-2003"
+      }
     ],
-    "pros": ["Efsane dayanıklılıkta, LPG dostu K4M motor", "Çok ucuz alım fiyatı", "Bol ve ucuz yedek parça", "İyi ön koltuk konforu"],
-    "cons": ["Yaş kaynaklı kaporta pası ve iç yıpranma", "Sık elektrik ve konfor arızaları", "Eski nesil güvenlik ve donanım", "Çok düşük ikinci el değeri, zor satılır"],
+    "pros": [
+      "Efsane dayanıklılıkta, LPG dostu K4M motor",
+      "Çok ucuz alım fiyatı",
+      "Bol ve ucuz yedek parça",
+      "İyi ön koltuk konforu"
+    ],
+    "cons": [
+      "Yaş kaynaklı kaporta pası ve iç yıpranma",
+      "Sık elektrik ve konfor arızaları",
+      "Eski nesil güvenlik ve donanım",
+      "Çok düşük ikinci el değeri, zor satılır"
+    ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Triger kayış seti, yağ+filtre, bujiler, dephaser sesi dinleme, LPG subap ayarı, pas kontrolü.", "estimatedCostEUR": 200 },
-      { "mileage": "120.000 km", "expectedIssues": "İkinci triger seti + dephaser kasnağı, debriyaj seti, ön takım revizyonu, kalorifer rezistansı, cam krikoları.", "estimatedCostEUR": 350 },
-      { "mileage": "200.000 km", "expectedIssues": "Su pompası, motor takozları, kaporta pas onarımı, iç döşeme, klima kompresörü, süspansiyon.", "estimatedCostEUR": 380 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Triger kayış seti, yağ+filtre, bujiler, dephaser sesi dinleme, LPG subap ayarı, pas kontrolü.",
+        "estimatedCostEUR": 200
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "İkinci triger seti + dephaser kasnağı, debriyaj seti, ön takım revizyonu, kalorifer rezistansı, cam krikoları.",
+        "estimatedCostEUR": 350
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Su pompası, motor takozları, kaporta pas onarımı, iç döşeme, klima kompresörü, süspansiyon.",
+        "estimatedCostEUR": 380
+      }
     ]
   },
   {
@@ -261,18 +681,66 @@
     "estimatedMaintenanceCostEUR": 300,
     "expertSummary": "Megane 2, tasarımıyla döneminde çığır açtı ama ikinci elde 'ucuz ama dertli' etiketiyle anılır. Kalp olan K4M 1.6 16V VVT motor aslında sağlamdır, LPG'ye çok uygundur ve 300 bin km görür; asıl sorun çevre birimlerinde ve elektronikte. Kartlı kontak, direksiyon kilidi kolonu (ELV), cam krikoları, ısıtıcı rezistansı ve çeşitli beyin/sensör arızaları klasiktir. Ön takım (özellikle rot başı ve salıncak) hızlı aşınır. Günlük dille: \"Motoru korkma, ama elektroniğine ve küçük parçalarına hazır ol; bakımlı ve ekspertizli al.\"",
     "userFeedbackSummary": "Forumlarda motor övülür, gerisi eleştirilir. En sık: kartlı kontağın okumaması, direksiyon kilidi (ELV) arızası (direksiyon kilitli kalır), cam krikosu kopması, kalorifer rezistansı ve klima paneli arızası, ön takımdan gelen sesler, eksantrik ayar kasnağı (dephaser) tıkırtısı.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Kartlı kontak / direksiyon kilidi kolonu (ELV) arızası", "description": "Renault'nun kart-anahtar sistemi ve elektronik direksiyon kilidi (ELV) yaşa bağlı arıza yapar; araç çalışmaz, direksiyon kilitli kalır, 'anahtar algılanmadı' uyarısı. ELV mekanizması veya kart okuyucu yenilenir.", "severity": "Orta", "estimatedCostEUR": 250, "affectedYears": "2003-2009" },
-      { "title": "Eksantrik ayar kasnağı (dephaser) tıkırtısı", "description": "K4M motorda VVT kasnağı zamanla boşluk yapar; soğuk çalıştırmada metalik tıkırtı. Kasnak değişimiyle çözülür; ihmal edilirse triger atlayabilir.", "severity": "Orta", "estimatedCostEUR": 200, "affectedYears": "2003-2009" },
-      { "title": "Cam krikosu, kalorifer rezistansı ve konfor elektroniği arızaları", "description": "Cam krikoları kırılır/kopar, klima-kalorifer üfleme rezistansı yanar, gösterge ve tavan lambası modülleri arıza yapar. Tek tek ucuz ama sık.", "severity": "Düşük", "estimatedCostEUR": 120, "affectedYears": "2003-2009" },
-      { "title": "Ön takım (rot başı, salıncak, rotil) hızlı aşınması", "description": "Türkiye yollarında 60-100 bin km'de ön takım sesleri; komple revizyon gerekir. Parça ucuz.", "severity": "Orta", "estimatedCostEUR": 180, "affectedYears": "2003-2009" }
+      {
+        "title": "Kartlı kontak / direksiyon kilidi kolonu (ELV) arızası",
+        "description": "Renault'nun kart-anahtar sistemi ve elektronik direksiyon kilidi (ELV) yaşa bağlı arıza yapar; araç çalışmaz, direksiyon kilitli kalır, 'anahtar algılanmadı' uyarısı. ELV mekanizması veya kart okuyucu yenilenir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 250,
+        "affectedYears": "2003-2009"
+      },
+      {
+        "title": "Eksantrik ayar kasnağı (dephaser) tıkırtısı",
+        "description": "K4M motorda VVT kasnağı zamanla boşluk yapar; soğuk çalıştırmada metalik tıkırtı. Kasnak değişimiyle çözülür; ihmal edilirse triger atlayabilir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 200,
+        "affectedYears": "2003-2009"
+      },
+      {
+        "title": "Cam krikosu, kalorifer rezistansı ve konfor elektroniği arızaları",
+        "description": "Cam krikoları kırılır/kopar, klima-kalorifer üfleme rezistansı yanar, gösterge ve tavan lambası modülleri arıza yapar. Tek tek ucuz ama sık.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 120,
+        "affectedYears": "2003-2009"
+      },
+      {
+        "title": "Ön takım (rot başı, salıncak, rotil) hızlı aşınması",
+        "description": "Türkiye yollarında 60-100 bin km'de ön takım sesleri; komple revizyon gerekir. Parça ucuz.",
+        "severity": "Orta",
+        "estimatedCostEUR": 180,
+        "affectedYears": "2003-2009"
+      }
     ],
-    "pros": ["Dayanıklı ve LPG dostu K4M 1.6 motor", "Çok uygun satın alma fiyatı", "Ucuz ve bol yedek parça", "İyi ön koltuk konforu ve yol tutuş"],
-    "cons": ["Kart/ELV, cam krikosu, rezistans gibi kronik elektronik arızalar", "Ön takım hızlı aşınıyor", "Düşük ikinci el değeri, zor satılır", "Kaporta pas noktaları (arka çamurluk, bagaj eşiği)"],
+    "pros": [
+      "Dayanıklı ve LPG dostu K4M 1.6 motor",
+      "Çok uygun satın alma fiyatı",
+      "Ucuz ve bol yedek parça",
+      "İyi ön koltuk konforu ve yol tutuş"
+    ],
+    "cons": [
+      "Kart/ELV, cam krikosu, rezistans gibi kronik elektronik arızalar",
+      "Ön takım hızlı aşınıyor",
+      "Düşük ikinci el değeri, zor satılır",
+      "Kaporta pas noktaları (arka çamurluk, bagaj eşiği)"
+    ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Triger kayış seti (K4M kayışlı), yağ+filtre, bujiler, ön takım kontrolü, dephaser sesi dinleme.", "estimatedCostEUR": 220 },
-      { "mileage": "120.000 km", "expectedIssues": "İkinci triger seti, debriyaj kontrolü, ELV/kart sistemi, cam krikoları, kalorifer rezistansı, süspansiyon.", "estimatedCostEUR": 350 },
-      { "mileage": "200.000 km", "expectedIssues": "Su pompası, dephaser kasnağı, ön takım komple, motor takozları, klima kompresörü, pas onarımı.", "estimatedCostEUR": 400 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Triger kayış seti (K4M kayışlı), yağ+filtre, bujiler, ön takım kontrolü, dephaser sesi dinleme.",
+        "estimatedCostEUR": 220
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "İkinci triger seti, debriyaj kontrolü, ELV/kart sistemi, cam krikoları, kalorifer rezistansı, süspansiyon.",
+        "estimatedCostEUR": 350
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Su pompası, dephaser kasnağı, ön takım komple, motor takozları, klima kompresörü, pas onarımı.",
+        "estimatedCostEUR": 400
+      }
     ]
   },
   {
@@ -287,17 +755,59 @@
     "estimatedMaintenanceCostEUR": 330,
     "expertSummary": "Megane 2'nin 1.5 dCi (K9K, 105 HP) dizeli, çok düşük yakıt (uzun yol 4-4.5 lt) ve makul tork sunar. K9K motoru yaygın ve parçası bol; kritik nokta enjektörler (Delphi) ve turbodur. DPF'li geç örnekler şehir içinde tıkanır. Motor tarafı Megane 2 benzinlisinden daha huzurlu ama Renault elektroniği (kart/ELV, cam krikosu, rezistans) yine geçerli. Günlük dille: \"Yakıtı harika, motoru sağlam; ama Megane 2 elektroniğine ve enjektöre dikkat.\" Ağırlıklı uzun yol yapan için mantıklı.",
     "userFeedbackSummary": "Kullanıcılar yakıt ekonomisini övüyor; motor yüksek km'ye çıkıyor. Şikayetler: enjektör arızası, turbo VNT, EGR kurumu, DPF (geç örnekler), kart/ELV arızası, cam krikosu, kalorifer rezistansı, ön takım. Kaliteli mazot enjektör ömrünü belirliyor.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "1.5 dCi enjektör (Delphi) arızası", "description": "Common-rail enjektörler debisini şaşırır; soğukta zor çalışma, is, tekleme, geri dönüş kaçağı. Kaliteli mazot şart. 4 enjektör revize/değişim.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2003-2009" },
-      { "title": "Turbo VNT tıkanması ve EGR kurumu", "description": "Kurumdan turbonun kayıcı kanatları ve EGR sıkışır/kirlenir; rampada güç düşüşü, arıza lambası, limp mode. Temizlik veya yenileme.", "severity": "Orta", "estimatedCostEUR": 320, "affectedYears": "2003-2009" },
-      { "title": "Kartlı kontak / ELV ve konfor elektroniği arızaları", "description": "Kart okuyucu ve direksiyon kilidi arızası; cam krikosu, kalorifer rezistansı, klima paneli arızaları. Kontrol ve parça değişimi.", "severity": "Orta", "estimatedCostEUR": 250, "affectedYears": "2003-2009" }
+      {
+        "title": "1.5 dCi enjektör (Delphi) arızası",
+        "description": "Common-rail enjektörler debisini şaşırır; soğukta zor çalışma, is, tekleme, geri dönüş kaçağı. Kaliteli mazot şart. 4 enjektör revize/değişim.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2003-2009"
+      },
+      {
+        "title": "Turbo VNT tıkanması ve EGR kurumu",
+        "description": "Kurumdan turbonun kayıcı kanatları ve EGR sıkışır/kirlenir; rampada güç düşüşü, arıza lambası, limp mode. Temizlik veya yenileme.",
+        "severity": "Orta",
+        "estimatedCostEUR": 320,
+        "affectedYears": "2003-2009"
+      },
+      {
+        "title": "Kartlı kontak / ELV ve konfor elektroniği arızaları",
+        "description": "Kart okuyucu ve direksiyon kilidi arızası; cam krikosu, kalorifer rezistansı, klima paneli arızaları. Kontrol ve parça değişimi.",
+        "severity": "Orta",
+        "estimatedCostEUR": 250,
+        "affectedYears": "2003-2009"
+      }
     ],
-    "pros": ["Çok düşük yakıt tüketimi", "Yaygın ve parçası bol K9K dizel", "Benzinlisinden daha huzurlu motor", "İyi ön koltuk konforu"],
-    "cons": ["Enjektör/turbo/EGR gibi dizel bakımları", "Kart/ELV ve konfor elektroniği arızaları", "Ön takım hızlı aşınıyor", "Düşük ikinci el değeri"],
+    "pros": [
+      "Çok düşük yakıt tüketimi",
+      "Yaygın ve parçası bol K9K dizel",
+      "Benzinlisinden daha huzurlu motor",
+      "İyi ön koltuk konforu"
+    ],
+    "cons": [
+      "Enjektör/turbo/EGR gibi dizel bakımları",
+      "Kart/ELV ve konfor elektroniği arızaları",
+      "Ön takım hızlı aşınıyor",
+      "Düşük ikinci el değeri"
+    ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR ilk kontrol, triger kayış seti kontrolü.", "estimatedCostEUR": 180 },
-      { "mileage": "150.000 km", "expectedIssues": "Enjektör revizyonu, EGR/turbo temizliği, triger kayış seti, debriyaj seti, ELV/kart, ön takım revizyonu.", "estimatedCostEUR": 750 },
-      { "mileage": "250.000 km", "expectedIssues": "İkinci triger seti, su pompası, turbo revizyonu, DPF (varsa) temizliği, süspansiyon yenileme.", "estimatedCostEUR": 750 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR ilk kontrol, triger kayış seti kontrolü.",
+        "estimatedCostEUR": 180
+      },
+      {
+        "mileage": "150.000 km",
+        "expectedIssues": "Enjektör revizyonu, EGR/turbo temizliği, triger kayış seti, debriyaj seti, ELV/kart, ön takım revizyonu.",
+        "estimatedCostEUR": 750
+      },
+      {
+        "mileage": "250.000 km",
+        "expectedIssues": "İkinci triger seti, su pompası, turbo revizyonu, DPF (varsa) temizliği, süspansiyon yenileme.",
+        "estimatedCostEUR": 750
+      }
     ]
   },
   {
@@ -312,17 +822,59 @@
     "estimatedMaintenanceCostEUR": 280,
     "expertSummary": "Megane 3 hatchback, Megane 2'ye göre çok daha sağlam gövdeli ve elektronik olarak olgunlaşmış bir C hatchback. 1.6 16V (K4M) atmosferik motor turbosuz, LPG'ye tam uyumlu, dertsiz; dephaser kasnağı sesi tek klasik konusu. 110 HP yeterli ama coşkusuz. Kart/ELV arızaları Megane 2'ye göre çok azaldı ama tamamen bitmedi. Günlük dille: \"Megane 2'nin elektronik kabusu geride kaldı; K4M motor LPG'yle dertsiz gider. HB gövde, orta bagaj.\" Şehir içi + orta yol, LPG düşünen için mantıklı.",
     "userFeedbackSummary": "Kullanıcılar Megane 2'ye göre çok daha az elektronik dert bildiriyor. Şikayetler: dephaser kasnağı tıkırtısı, 110 HP'nin dolu araçta orta kalması, R-Link/multimedya donması, cam krikosu, ön takım burç sesleri, hatchback bagajın orta hacmi. LPG'li örneklerde subap ayarı sorulmalı.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Eksantrik ayar kasnağı (dephaser) tıkırtısı", "description": "K4M motorda VVT kasnağı zamanla boşluk yapar; soğuk çalıştırmada metalik tıkırtı. Kasnak değişimiyle çözülür; ihmal edilirse triger atlayabilir.", "severity": "Orta", "estimatedCostEUR": 180, "affectedYears": "2009-2016" },
-      { "title": "Kartlı kontak / ELV arızası (azalmış ama var)", "description": "Kart okuyucu ve elektronik direksiyon kilidi nadiren arıza yapar; araç çalışmaz, direksiyon kilitli kalır. Megane 2'ye göre çok daha seyrek.", "severity": "Orta", "estimatedCostEUR": 220, "affectedYears": "2009-2016" },
-      { "title": "Multimedya donması ve konfor elektroniği", "description": "R-Link/Carminat ekranı donar; cam krikosu, klima paneli, park sensörü arızaları. Yazılım güncelleme ve parça değişimi.", "severity": "Düşük", "estimatedCostEUR": 150, "affectedYears": "2009-2016" }
+      {
+        "title": "Eksantrik ayar kasnağı (dephaser) tıkırtısı",
+        "description": "K4M motorda VVT kasnağı zamanla boşluk yapar; soğuk çalıştırmada metalik tıkırtı. Kasnak değişimiyle çözülür; ihmal edilirse triger atlayabilir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 180,
+        "affectedYears": "2009-2016"
+      },
+      {
+        "title": "Kartlı kontak / ELV arızası (azalmış ama var)",
+        "description": "Kart okuyucu ve elektronik direksiyon kilidi nadiren arıza yapar; araç çalışmaz, direksiyon kilitli kalır. Megane 2'ye göre çok daha seyrek.",
+        "severity": "Orta",
+        "estimatedCostEUR": 220,
+        "affectedYears": "2009-2016"
+      },
+      {
+        "title": "Multimedya donması ve konfor elektroniği",
+        "description": "R-Link/Carminat ekranı donar; cam krikosu, klima paneli, park sensörü arızaları. Yazılım güncelleme ve parça değişimi.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 150,
+        "affectedYears": "2009-2016"
+      }
     ],
-    "pros": ["Megane 2'ye göre çok daha sağlam gövde ve olgun elektronik", "LPG'ye tam uyumlu, dertsiz K4M motor (dephaser hariç)", "İyi ön koltuk konforu ve otoyol yalıtımı", "Ucuz parça, yaygın servis"],
-    "cons": ["Dephaser kasnağı tıkırtısı", "110 HP dolu araçta orta seviye", "Multimedya ve bazı konfor elektroniği arızaları", "Hatchback bagajı orta hacimde"],
+    "pros": [
+      "Megane 2'ye göre çok daha sağlam gövde ve olgun elektronik",
+      "LPG'ye tam uyumlu, dertsiz K4M motor (dephaser hariç)",
+      "İyi ön koltuk konforu ve otoyol yalıtımı",
+      "Ucuz parça, yaygın servis"
+    ],
+    "cons": [
+      "Dephaser kasnağı tıkırtısı",
+      "110 HP dolu araçta orta seviye",
+      "Multimedya ve bazı konfor elektroniği arızaları",
+      "Hatchback bagajı orta hacimde"
+    ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Triger kayış seti, yağ+filtre, bujiler, dephaser sesi dinleme, LPG subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 200 },
-      { "mileage": "120.000 km", "expectedIssues": "İkinci triger seti + dephaser kasnağı, debriyaj seti, ön takım revizyonu, ELV/kart kontrolü, multimedya güncelleme.", "estimatedCostEUR": 400 },
-      { "mileage": "200.000 km", "expectedIssues": "Su pompası, motor takozları, klima kompresörü, konfor modülleri, süspansiyon yenileme.", "estimatedCostEUR": 420 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Triger kayış seti, yağ+filtre, bujiler, dephaser sesi dinleme, LPG subap ayarı, ön takım kontrolü.",
+        "estimatedCostEUR": 200
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "İkinci triger seti + dephaser kasnağı, debriyaj seti, ön takım revizyonu, ELV/kart kontrolü, multimedya güncelleme.",
+        "estimatedCostEUR": 400
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Su pompası, motor takozları, klima kompresörü, konfor modülleri, süspansiyon yenileme.",
+        "estimatedCostEUR": 420
+      }
     ]
   },
   {
@@ -337,17 +889,59 @@
     "estimatedMaintenanceCostEUR": 400,
     "expertSummary": "Megane 3 HB'nin 1.5 dCi 110 HP + 6 ileri EDC kombinasyonu, ikinci el piyasasının hızlı satan otomatik dizellerinden: ucuz yakıt (uzun yol 4-4.5 lt), makul fiyat. K9K motoru yaygın; kritik nokta enjektörler (Delphi/Continental) ve turbodur. EDC şanzıman kuru çift kavramadır (Getrag 6DCT250) — dur-kalk trafikte kavrama ve mekatronik ısınması, titreme ve arıza riski taşır. Bakımlı, kavraması/mekatroniği revize edilmiş örnek uzun süre gider. Günlük dille: \"Yakıtı harika; EDC'sini test sür, ekspertizde şanzıman adaptasyonuna baktır.\" Uzun yol ağırlıklı için mantıklı, yoğun şehir trafiği için riskli.",
     "userFeedbackSummary": "Kullanıcılar yakıt tüketimini çok seviyor. Şikayetler: EDC şanzımanın kalkışta gecikmesi/tik sesi, dur-kalkta titreme, ileri km'de kavrama ve mekatronik arızası (sarsıntı, vites atmama, arıza lambası); enjektör revizyonu; turbo kayıcı kanat; EGR/DPF kurumu; süspansiyon burç sesleri.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "EDC (kuru) çift kavrama ve mekatronik arızası", "description": "Getrag kuru çift kavrama dur-kalk trafikte ısınır; kalkışta gecikme, titreme, sarsıntı ve mekatronik arızası (vites atmama, arıza lambası). Kavrama seti veya mekatronik revizyonu gerekir.", "severity": "Kritik", "estimatedCostEUR": 850, "affectedYears": "2009-2016" },
-      { "title": "1.5 dCi enjektör (Delphi) arızası", "description": "Common-rail enjektörler zamanla debisini şaşırır; soğukta zor çalışma, is, tekleme, geri dönüş kaçağı. Kaliteli mazot şart. 4 enjektör revize/değişim.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2009-2016" },
-      { "title": "Turbo VNT tıkanması ve EGR/DPF kurumlanması", "description": "Şehir içi düşük devir kullanımında turbonun değişken kanatları, EGR ve DPF kurum bağlar; rampada güç düşüşü, arıza lambası, limp mode. Temizlik veya yenileme.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2009-2016" }
+      {
+        "title": "EDC (kuru) çift kavrama ve mekatronik arızası",
+        "description": "Getrag kuru çift kavrama dur-kalk trafikte ısınır; kalkışta gecikme, titreme, sarsıntı ve mekatronik arızası (vites atmama, arıza lambası). Kavrama seti veya mekatronik revizyonu gerekir.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 850,
+        "affectedYears": "2009-2016"
+      },
+      {
+        "title": "1.5 dCi enjektör (Delphi) arızası",
+        "description": "Common-rail enjektörler zamanla debisini şaşırır; soğukta zor çalışma, is, tekleme, geri dönüş kaçağı. Kaliteli mazot şart. 4 enjektör revize/değişim.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2009-2016"
+      },
+      {
+        "title": "Turbo VNT tıkanması ve EGR/DPF kurumlanması",
+        "description": "Şehir içi düşük devir kullanımında turbonun değişken kanatları, EGR ve DPF kurum bağlar; rampada güç düşüşü, arıza lambası, limp mode. Temizlik veya yenileme.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2009-2016"
+      }
     ],
-    "pros": ["Çok düşük yakıt tüketimi", "Uygun fiyat, bol parça", "İyi otoyol konforu ve sessizliği", "Otomatik konfor + dizel ekonomisi (çalışırken)"],
-    "cons": ["EDC kuru kavrama ve mekatronik riski", "Enjektör/turbo/EGR/DPF gibi dizel bakımları", "Şehir içi yoğun trafik şanzımanı yoruyor", "İç malzeme kalitesi ve multimedya vasat"],
+    "pros": [
+      "Çok düşük yakıt tüketimi",
+      "Uygun fiyat, bol parça",
+      "İyi otoyol konforu ve sessizliği",
+      "Otomatik konfor + dizel ekonomisi (çalışırken)"
+    ],
+    "cons": [
+      "EDC kuru kavrama ve mekatronik riski",
+      "Enjektör/turbo/EGR/DPF gibi dizel bakımları",
+      "Şehir içi yoğun trafik şanzımanı yoruyor",
+      "İç malzeme kalitesi ve multimedya vasat"
+    ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EDC yağ ve adaptasyon kontrolü, EGR ilk kontrol.", "estimatedCostEUR": 220 },
-      { "mileage": "150.000 km", "expectedIssues": "Enjektör revizyonu, EDC kavrama seti ihtimali, turbo/EGR/DPF temizliği, triger kayış seti, ön takım.", "estimatedCostEUR": 800 },
-      { "mileage": "220.000 km", "expectedIssues": "Mekatronik revizyonu ihtimali, ikinci triger seti, turbo revizyonu, su pompası, süspansiyon yenileme.", "estimatedCostEUR": 900 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EDC yağ ve adaptasyon kontrolü, EGR ilk kontrol.",
+        "estimatedCostEUR": 220
+      },
+      {
+        "mileage": "150.000 km",
+        "expectedIssues": "Enjektör revizyonu, EDC kavrama seti ihtimali, turbo/EGR/DPF temizliği, triger kayış seti, ön takım.",
+        "estimatedCostEUR": 800
+      },
+      {
+        "mileage": "220.000 km",
+        "expectedIssues": "Mekatronik revizyonu ihtimali, ikinci triger seti, turbo revizyonu, su pompası, süspansiyon yenileme.",
+        "estimatedCostEUR": 900
+      }
     ]
   },
   {
@@ -362,17 +956,59 @@
     "estimatedMaintenanceCostEUR": 400,
     "expertSummary": "Fluence, Megane 3'ün sedan kardeşidir — aynı platform, aynı motorlar, ayrı ve daha resmi bir sedan gövde, segmentin en geniş bagajlarından biri. 1.5 dCi 110 HP + 6 ileri EDC kombinasyonu Megane 3 HB'deki ile mekanik olarak aynıdır: ucuz yakıt, makul fiyat, ama EDC kuru çift kavrama dur-kalk trafikte zorlanır. Türkiye'de filo ve aile aracı olarak çok satıldı. Günlük dille: \"Megane 3 EDC dizelinin sedan ve kocaman bagaj hali; yakıtı harika ama EDC'yi test sür, ekspertiz şart.\" Uzun yol ve aile kullanımı için mantıklı.",
     "userFeedbackSummary": "Kullanıcılar geniş bagajı ve yakıt ekonomisini çok övüyor. Şikayetler Megane 3 EDC ile aynı: EDC şanzımanın kalkışta gecikmesi/tik sesi, dur-kalkta titreme, ileri km'de kavrama ve mekatronik arızası, enjektör revizyonu, turbo VNT, EGR/DPF kurumu. Filo kullanılmış örneklerde yıpranma daha fazla.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "EDC (kuru) çift kavrama ve mekatronik arızası", "description": "Getrag kuru çift kavrama dur-kalk trafikte ısınır; kalkışta gecikme, titreme, sarsıntı ve mekatronik arızası (vites atmama, arıza lambası). Kavrama seti veya mekatronik revizyonu gerekir.", "severity": "Kritik", "estimatedCostEUR": 850, "affectedYears": "2009-2016" },
-      { "title": "1.5 dCi enjektör (Delphi) arızası", "description": "Common-rail enjektörler debisini şaşırır; soğukta zor çalışma, is, tekleme, geri dönüş kaçağı. Kaliteli mazot şart. 4 enjektör revize/değişim.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2009-2016" },
-      { "title": "Turbo VNT tıkanması ve EGR/DPF kurumlanması", "description": "Şehir içi düşük devir kullanımında turbonun değişken kanatları, EGR ve DPF kurum bağlar; rampada güç düşüşü, arıza lambası. Temizlik veya yenileme.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2009-2016" }
+      {
+        "title": "EDC (kuru) çift kavrama ve mekatronik arızası",
+        "description": "Getrag kuru çift kavrama dur-kalk trafikte ısınır; kalkışta gecikme, titreme, sarsıntı ve mekatronik arızası (vites atmama, arıza lambası). Kavrama seti veya mekatronik revizyonu gerekir.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 850,
+        "affectedYears": "2009-2016"
+      },
+      {
+        "title": "1.5 dCi enjektör (Delphi) arızası",
+        "description": "Common-rail enjektörler debisini şaşırır; soğukta zor çalışma, is, tekleme, geri dönüş kaçağı. Kaliteli mazot şart. 4 enjektör revize/değişim.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2009-2016"
+      },
+      {
+        "title": "Turbo VNT tıkanması ve EGR/DPF kurumlanması",
+        "description": "Şehir içi düşük devir kullanımında turbonun değişken kanatları, EGR ve DPF kurum bağlar; rampada güç düşüşü, arıza lambası. Temizlik veya yenileme.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2009-2016"
+      }
     ],
-    "pros": ["Segmentin en geniş bagajlarından biri", "Çok düşük yakıt tüketimi", "Uygun fiyat, bol parça", "Otoyol konforu ve sessizliği iyi"],
-    "cons": ["EDC kuru kavrama ve mekatronik riski", "Enjektör/turbo/EGR/DPF gibi dizel bakımları", "Şehir içi yoğun trafik şanzımanı yoruyor", "İç malzeme kalitesi ve multimedya vasat"],
+    "pros": [
+      "Segmentin en geniş bagajlarından biri",
+      "Çok düşük yakıt tüketimi",
+      "Uygun fiyat, bol parça",
+      "Otoyol konforu ve sessizliği iyi"
+    ],
+    "cons": [
+      "EDC kuru kavrama ve mekatronik riski",
+      "Enjektör/turbo/EGR/DPF gibi dizel bakımları",
+      "Şehir içi yoğun trafik şanzımanı yoruyor",
+      "İç malzeme kalitesi ve multimedya vasat"
+    ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EDC yağ ve adaptasyon kontrolü, EGR ilk kontrol.", "estimatedCostEUR": 220 },
-      { "mileage": "150.000 km", "expectedIssues": "Enjektör revizyonu, EDC kavrama seti ihtimali, turbo/EGR/DPF temizliği, triger kayış seti, ön takım.", "estimatedCostEUR": 800 },
-      { "mileage": "220.000 km", "expectedIssues": "Mekatronik revizyonu ihtimali, ikinci triger seti, turbo revizyonu, su pompası, süspansiyon yenileme.", "estimatedCostEUR": 900 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EDC yağ ve adaptasyon kontrolü, EGR ilk kontrol.",
+        "estimatedCostEUR": 220
+      },
+      {
+        "mileage": "150.000 km",
+        "expectedIssues": "Enjektör revizyonu, EDC kavrama seti ihtimali, turbo/EGR/DPF temizliği, triger kayış seti, ön takım.",
+        "estimatedCostEUR": 800
+      },
+      {
+        "mileage": "220.000 km",
+        "expectedIssues": "Mekatronik revizyonu ihtimali, ikinci triger seti, turbo revizyonu, su pompası, süspansiyon yenileme.",
+        "estimatedCostEUR": 900
+      }
     ]
   },
   {
@@ -387,17 +1023,59 @@
     "estimatedMaintenanceCostEUR": 280,
     "expertSummary": "Fluence'in 1.6 16V (K4M) benzinli + düz vites versiyonu, dizelin ve EDC'nin masrafını istemeyen, LPG düşünen aileler için en akıllı seçenektir: K4M motor LPG'ye tam uyumlu, dertsiz (dephaser hariç), geniş bagaj, ucuz parça. 110 HP dolu araçta orta seviye. Günlük dille: \"Fluence'in LPG'yle dertsiz gidecek hali; EDC ve dizel masrafı yok, sadece dephaser sesini dinle.\" Aile + orta yol + geniş bagaj + LPG isteyen için mantıklı.",
     "userFeedbackSummary": "Kullanıcılar geniş bagajı, LPG ekonomisini ve düz vitesin dertsizliğini övüyor. Şikayetler: dephaser kasnağı tıkırtısı, 110 HP'nin dolu araçta orta kalması, R-Link donması, cam krikosu, ön takım burç sesleri. LPG'li örneklerde subap ayarı sorulmalı.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Eksantrik ayar kasnağı (dephaser) tıkırtısı", "description": "K4M motorda VVT kasnağı zamanla boşluk yapar; soğuk çalıştırmada metalik tıkırtı. Kasnak değişimiyle çözülür; ihmal edilirse triger atlayabilir.", "severity": "Orta", "estimatedCostEUR": 180, "affectedYears": "2009-2016" },
-      { "title": "Kartlı kontak / ELV arızası (azalmış ama var)", "description": "Kart okuyucu ve elektronik direksiyon kilidi nadiren arıza yapar. Megane 2'ye göre çok daha seyrek.", "severity": "Orta", "estimatedCostEUR": 220, "affectedYears": "2009-2016" },
-      { "title": "Multimedya donması ve konfor elektroniği", "description": "R-Link/Carminat ekranı donar; cam krikosu, klima paneli, park sensörü arızaları. Yazılım güncelleme ve parça değişimi.", "severity": "Düşük", "estimatedCostEUR": 150, "affectedYears": "2009-2016" }
+      {
+        "title": "Eksantrik ayar kasnağı (dephaser) tıkırtısı",
+        "description": "K4M motorda VVT kasnağı zamanla boşluk yapar; soğuk çalıştırmada metalik tıkırtı. Kasnak değişimiyle çözülür; ihmal edilirse triger atlayabilir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 180,
+        "affectedYears": "2009-2016"
+      },
+      {
+        "title": "Kartlı kontak / ELV arızası (azalmış ama var)",
+        "description": "Kart okuyucu ve elektronik direksiyon kilidi nadiren arıza yapar. Megane 2'ye göre çok daha seyrek.",
+        "severity": "Orta",
+        "estimatedCostEUR": 220,
+        "affectedYears": "2009-2016"
+      },
+      {
+        "title": "Multimedya donması ve konfor elektroniği",
+        "description": "R-Link/Carminat ekranı donar; cam krikosu, klima paneli, park sensörü arızaları. Yazılım güncelleme ve parça değişimi.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 150,
+        "affectedYears": "2009-2016"
+      }
     ],
-    "pros": ["Segmentin en geniş bagajlarından biri", "LPG'ye tam uyumlu, dertsiz K4M motor (dephaser hariç)", "EDC ve dizel masrafı yok — dayanıklı düz vites", "Ucuz parça, yaygın servis"],
-    "cons": ["Dephaser kasnağı tıkırtısı", "110 HP dolu araçta orta seviye", "Multimedya ve bazı konfor elektroniği arızaları", "Direksiyon ve şasi hissi sıradan"],
+    "pros": [
+      "Segmentin en geniş bagajlarından biri",
+      "LPG'ye tam uyumlu, dertsiz K4M motor (dephaser hariç)",
+      "EDC ve dizel masrafı yok — dayanıklı düz vites",
+      "Ucuz parça, yaygın servis"
+    ],
+    "cons": [
+      "Dephaser kasnağı tıkırtısı",
+      "110 HP dolu araçta orta seviye",
+      "Multimedya ve bazı konfor elektroniği arızaları",
+      "Direksiyon ve şasi hissi sıradan"
+    ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Triger kayış seti, yağ+filtre, bujiler, dephaser sesi dinleme, LPG subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 200 },
-      { "mileage": "120.000 km", "expectedIssues": "İkinci triger seti + dephaser kasnağı, debriyaj seti, ön takım revizyonu, ELV/kart kontrolü, multimedya güncelleme.", "estimatedCostEUR": 400 },
-      { "mileage": "200.000 km", "expectedIssues": "Su pompası, motor takozları, klima kompresörü, konfor modülleri, süspansiyon yenileme.", "estimatedCostEUR": 420 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Triger kayış seti, yağ+filtre, bujiler, dephaser sesi dinleme, LPG subap ayarı, ön takım kontrolü.",
+        "estimatedCostEUR": 200
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "İkinci triger seti + dephaser kasnağı, debriyaj seti, ön takım revizyonu, ELV/kart kontrolü, multimedya güncelleme.",
+        "estimatedCostEUR": 400
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Su pompası, motor takozları, klima kompresörü, konfor modülleri, süspansiyon yenileme.",
+        "estimatedCostEUR": 420
+      }
     ]
   },
   {
@@ -412,17 +1090,59 @@
     "estimatedMaintenanceCostEUR": 300,
     "expertSummary": "İkinci nesil Kangoo, esnaf ve kalabalık aile taşımacılığında Türkiye'nin klasiğidir: yüksek tavan, kayar kapı(lar), geniş bagaj, düşük yakıt. 1.5 dCi 90 HP motoru şehir içinde 5 lt, uzun yolda 4.5 lt yakar ve yaygındır. Kritik nokta enjektörler ve turbodur; DPF'li geç modeller kısa mesafe kullanımda tıkanır. Süspansiyon konforu ticari seviye (arka torsiyon aks); boşken sert, yüklüyken oturur. Günlük dille: \"Ucuz yakıt, kocaman iç hacim; ticari yorulmuşluğunu, enjektör ve DPF'sini iyi bak.\" Şehir içi ticari veya kalabalık aile için mantıklı.",
     "userFeedbackSummary": "Kullanıcılar yakıt ve iç hacimden çok memnun; esnaf 400 bin km yapmış örneklerden bahsediyor. Şikayetler: enjektör arızası, turbo kayıcı kanat, EGR kurumu, DPF (şehir içi), kayar kapı ray/kilit mekanizması, boşken sert süspansiyon ve yol sesi, klima performansı, direksiyon rot sesleri.",
+    "bodyType": "MPV",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "1.5 dCi enjektör arızası", "description": "Common-rail enjektörler debisini şaşırır; soğukta zor çalışma, is, tekleme, geri dönüş kaçağı. Kaliteli mazot şart, 4 enjektör revize/değişim.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2008-2020" },
-      { "title": "Turbo VNT tıkanması ve EGR/DPF kurumu", "description": "Kurumdan turbonun kayıcı kanatları, EGR ve (geç modellerde) DPF sıkışır/tıkanır; rampada güç düşüşü, arıza lambası. Temizlik veya yenileme.", "severity": "Orta", "estimatedCostEUR": 380, "affectedYears": "2008-2020" },
-      { "title": "Kayar kapı ray, makara ve kilit mekanizması arızası", "description": "Yan kayar kapı(lar)ın rayları, makaraları ve kilit mekanizması kullanımla aşınır; kapı zor açılır/kapanır, ses yapar, tam kapanmaz. Ray+makara+kilit revizyonu.", "severity": "Düşük", "estimatedCostEUR": 150, "affectedYears": "2008-2020" }
+      {
+        "title": "1.5 dCi enjektör arızası",
+        "description": "Common-rail enjektörler debisini şaşırır; soğukta zor çalışma, is, tekleme, geri dönüş kaçağı. Kaliteli mazot şart, 4 enjektör revize/değişim.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2008-2020"
+      },
+      {
+        "title": "Turbo VNT tıkanması ve EGR/DPF kurumu",
+        "description": "Kurumdan turbonun kayıcı kanatları, EGR ve (geç modellerde) DPF sıkışır/tıkanır; rampada güç düşüşü, arıza lambası. Temizlik veya yenileme.",
+        "severity": "Orta",
+        "estimatedCostEUR": 380,
+        "affectedYears": "2008-2020"
+      },
+      {
+        "title": "Kayar kapı ray, makara ve kilit mekanizması arızası",
+        "description": "Yan kayar kapı(lar)ın rayları, makaraları ve kilit mekanizması kullanımla aşınır; kapı zor açılır/kapanır, ses yapar, tam kapanmaz. Ray+makara+kilit revizyonu.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 150,
+        "affectedYears": "2008-2020"
+      }
     ],
-    "pros": ["Şehir içi çok düşük yakıt tüketimi", "Yüksek tavan, kayar kapı, geniş yükleme alanı", "Yaygın ve parçası bol K9K dizel", "Ucuz işletme ve parça maliyeti"],
-    "cons": ["Ticari seviye konfor: sert süspansiyon, yol sesi", "Enjektör/turbo/EGR/DPF gibi dizel bakımları", "Ticari kullanımdan yıpranma (debriyaj, ön takım)", "Kayar kapı mekanizması bakım ister"],
+    "pros": [
+      "Şehir içi çok düşük yakıt tüketimi",
+      "Yüksek tavan, kayar kapı, geniş yükleme alanı",
+      "Yaygın ve parçası bol K9K dizel",
+      "Ucuz işletme ve parça maliyeti"
+    ],
+    "cons": [
+      "Ticari seviye konfor: sert süspansiyon, yol sesi",
+      "Enjektör/turbo/EGR/DPF gibi dizel bakımları",
+      "Ticari kullanımdan yıpranma (debriyaj, ön takım)",
+      "Kayar kapı mekanizması bakım ister"
+    ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR ilk kontrol, kayar kapı yağlama, debriyaj kontrolü.", "estimatedCostEUR": 160 },
-      { "mileage": "150.000 km", "expectedIssues": "Enjektör revizyonu, EGR/turbo/DPF temizliği, triger kayış seti, debriyaj seti, ön takım revizyonu, kayar kapı revizyonu.", "estimatedCostEUR": 650 },
-      { "mileage": "250.000 km", "expectedIssues": "İkinci triger seti, su pompası, turbo revizyonu ihtimali, DPF değişimi ihtimali, arka torsiyon aks bakımı.", "estimatedCostEUR": 650 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR ilk kontrol, kayar kapı yağlama, debriyaj kontrolü.",
+        "estimatedCostEUR": 160
+      },
+      {
+        "mileage": "150.000 km",
+        "expectedIssues": "Enjektör revizyonu, EGR/turbo/DPF temizliği, triger kayış seti, debriyaj seti, ön takım revizyonu, kayar kapı revizyonu.",
+        "estimatedCostEUR": 650
+      },
+      {
+        "mileage": "250.000 km",
+        "expectedIssues": "İkinci triger seti, su pompası, turbo revizyonu ihtimali, DPF değişimi ihtimali, arka torsiyon aks bakımı.",
+        "estimatedCostEUR": 650
+      }
     ]
   }
 ]

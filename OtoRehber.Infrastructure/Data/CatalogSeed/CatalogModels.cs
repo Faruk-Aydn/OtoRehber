@@ -18,6 +18,19 @@ namespace OtoRehber.Infrastructure.Data.CatalogSeed
         public string UserFeedbackSummary { get; set; } = "";
         public string? ImageUrl { get; set; }
 
+        // Yapılandırılmış özellikler — boş bırakılanları seeder Engine/ProductionYears'ten türetir.
+        public string? FuelType { get; set; }
+        public string? Transmission { get; set; }
+        public string? BodyType { get; set; }
+        public string? Drivetrain { get; set; }
+        public string? Condition { get; set; }
+        public int? PowerHp { get; set; }
+        public int? EngineDisplacementCc { get; set; }
+        public int? YearStart { get; set; }
+        public int? YearEnd { get; set; }
+        public int? RangeKm { get; set; }
+        public int? FastChargeMinutes { get; set; }
+
         public List<CatalogChronicIssue> ChronicIssues { get; set; } = new();
         public List<string> Pros { get; set; } = new();
         public List<string> Cons { get; set; } = new();

@@ -1,52 +1,47 @@
+@using OtoRehber.Services
 @model IEnumerable<OtoRehber.Domain.DTOs.CarListDto>
 @{
     ViewData["Ratings"] = ViewBag.CarRatings;
     ViewData["ShowCompare"] = false;
-    var cs = ViewData["CurrentSearch"] as string;
-    var cseg = ViewData["CurrentSegment"] as string[] ?? Array.Empty<string>();
-    var cbr = ViewData["CurrentBrand"] as string[] ?? Array.Empty<string>();
-    var csort = ViewData["CurrentSort"] as string;
-    var cpMin = ViewData["CurrentPriceMin"] as long?;
-    var cpMax = ViewData["CurrentPriceMax"] as long?;
-    var cScore = ViewData["CurrentMinScore"] as double?;
+    var f = (ViewBag.Filter as CarFilter) ?? new CarFilter();
 
-    var routeBase = new Dictionary<string, string?>
+    // Tüm aktif filtreyi (anahtar, değer) çiftleri olarak topla — çipler ve sayfalama bundan üretilir.
+    var pairs = new List<(string Key, string Val, string Label)>();
+    void AddArr(string key, string[]? arr, string labelPrefix)
     {
-        ["searchQuery"] = cs,
-        ["sortBy"] = csort,
-        ["priceMin"] = cpMin?.ToString(),
-        ["priceMax"] = cpMax?.ToString(),
-        ["minScore"] = cScore?.ToString(System.Globalization.CultureInfo.InvariantCulture),
-    };
-    
-    // For pagination we need a string representation that includes arrays, but Dictionary<string, string> doesn't support arrays nicely. 
-    // We will build query strings manually for chips and pagination.
-    
-    var hasAnyFilter = !string.IsNullOrEmpty(cs) || cbr.Any() || cseg.Any()
-        || cpMin is > 0 || cpMax is > 0 || cScore is > 0;
-        
-    string BuildQuery(Dictionary<string, string?> dict, string[]? brands = null, string[]? segments = null)
-    {
-        var q = new List<string>();
-        foreach (var kv in dict)
-        {
-            if (!string.IsNullOrEmpty(kv.Value))
-                q.Add($"{kv.Key}={Uri.EscapeDataString(kv.Value)}");
-        }
-        if (brands != null)
-        {
-            foreach (var b in brands)
-                q.Add($"brand={Uri.EscapeDataString(b)}");
-        }
-        if (segments != null)
-        {
-            foreach (var s in segments)
-                q.Add($"segment={Uri.EscapeDataString(s)}");
-        }
-        return "?" + string.Join("&", q);
+        foreach (var v in CarFilter.Clean(arr))
+            pairs.Add((key, v, $"{labelPrefix}: {v}"));
     }
-    
-    var baseQueryWithArrays = BuildQuery(routeBase, cbr, cseg);
+    void AddNum(string key, long? val, string label)
+    {
+        if (val is > 0) pairs.Add((key, val.Value.ToString(System.Globalization.CultureInfo.InvariantCulture), label));
+    }
+    if (!string.IsNullOrWhiteSpace(f.SearchQuery)) pairs.Add(("searchQuery", f.SearchQuery.Trim(), $"Arama: {f.SearchQuery.Trim()}"));
+    AddArr("brand", f.Brand, "Marka");
+    AddArr("segment", f.Segment, "Segment");
+    AddArr("fuel", f.Fuel, "Yakıt");
+    AddArr("transmission", f.Transmission, "Vites");
+    AddArr("bodyType", f.BodyType, "Kasa");
+    AddArr("drivetrain", f.Drivetrain, "Çekiş");
+    AddArr("condition", f.Condition, "Durum");
+    AddNum("priceMin", f.PriceMin, $"Min {f.PriceMin?.ToString("N0")} ₺");
+    AddNum("priceMax", f.PriceMax, $"Maks {f.PriceMax?.ToString("N0")} ₺");
+    AddNum("minScore", (long?)(f.MinScore is > 0 ? (long)f.MinScore : null), $"Puan {f.MinScore?.ToString("0.#")}+");
+    AddNum("yearMin", f.YearMin, $"{f.YearMin} ve sonrası");
+    AddNum("yearMax", f.YearMax, $"{f.YearMax} ve öncesi");
+    AddNum("powerMin", f.PowerMin, $"Min {f.PowerMin} HP");
+    AddNum("powerMax", f.PowerMax, $"Maks {f.PowerMax} HP");
+    AddNum("ccMin", f.CcMin, $"Min {f.CcMin} cm³");
+    AddNum("ccMax", f.CcMax, $"Maks {f.CcMax} cm³");
+    if (!string.IsNullOrEmpty(f.SortBy)) { }
+
+    string Build(IEnumerable<(string Key, string Val, string Label)> ps, int? page = null)
+    {
+        var parts = ps.Select(p => $"{p.Key}={Uri.EscapeDataString(p.Val)}").ToList();
+        if (!string.IsNullOrEmpty(f.SortBy)) parts.Add($"sortBy={Uri.EscapeDataString(f.SortBy)}");
+        if (page is > 1) parts.Add($"page={page}");
+        return parts.Count == 0 ? "" : "?" + string.Join("&", parts);
+    }
 }
 
 <div class="max-w-7xl mx-auto py-8">
@@ -56,9 +51,8 @@
     </div>
 
     <div class="lg:grid lg:grid-cols-[280px_1fr] lg:gap-8">
-        <!-- Filtre paneli -->
         <aside class="mb-6 lg:mb-0">
-            <details class="lg:hidden card mb-4" @(hasAnyFilter ? "open" : "")>
+            <details class="lg:hidden card mb-4"@(f.HasAny ? " open" : "")>
                 <summary class="card-pad cursor-pointer font-semibold text-content flex items-center justify-between">
                     <span><i class="fa-solid fa-sliders mr-2 text-content-muted"></i>Filtreler</span>
                     <i class="fa-solid fa-chevron-down text-content-muted text-sm"></i>
@@ -75,40 +69,14 @@
             </div>
         </aside>
 
-        <!-- Sonuçlar -->
         <div>
-            @if (hasAnyFilter)
+            @if (pairs.Any())
             {
                 <div class="flex flex-wrap items-center gap-2 mb-5">
-                    @if (!string.IsNullOrEmpty(cs))
+                    @for (int i = 0; i < pairs.Count; i++)
                     {
-                        var d = new Dictionary<string, string?>(routeBase) { ["searchQuery"] = null };
-                        <a href="/araclar@(BuildQuery(d, cbr, cseg))" class="chip">Arama: @cs <span aria-hidden="true">✕</span></a>
-                    }
-                    @foreach (var brand in cbr)
-                    {
-                        var newBrands = cbr.Where(b => b != brand).ToArray();
-                        <a href="/araclar@(BuildQuery(routeBase, newBrands, cseg))" class="chip">Marka: @brand <span aria-hidden="true">✕</span></a>
-                    }
-                    @foreach (var segment in cseg)
-                    {
-                        var newSegments = cseg.Where(s => s != segment).ToArray();
-                        <a href="/araclar@(BuildQuery(routeBase, cbr, newSegments))" class="chip">Segment: @segment <span aria-hidden="true">✕</span></a>
-                    }
-                    @if (cpMin is > 0)
-                    {
-                        var d = new Dictionary<string, string?>(routeBase) { ["priceMin"] = null };
-                        <a href="/araclar@(BuildQuery(d, cbr, cseg))" class="chip">Min @cpMin.Value.ToString("N0") ₺ <span aria-hidden="true">✕</span></a>
-                    }
-                    @if (cpMax is > 0)
-                    {
-                        var d = new Dictionary<string, string?>(routeBase) { ["priceMax"] = null };
-                        <a href="/araclar@(BuildQuery(d, cbr, cseg))" class="chip">Maks @cpMax.Value.ToString("N0") ₺ <span aria-hidden="true">✕</span></a>
-                    }
-                    @if (cScore is > 0)
-                    {
-                        var d = new Dictionary<string, string?>(routeBase) { ["minScore"] = null };
-                        <a href="/araclar@(BuildQuery(d, cbr, cseg))" class="chip">Puan @cScore.Value.ToString("0.#")+ <span aria-hidden="true">✕</span></a>
+                        var without = pairs.Where((_, idx) => idx != i);
+                        <a href="/araclar@(Build(without))" class="chip">@pairs[i].Label <span aria-hidden="true">✕</span></a>
                     }
                     <a href="/araclar" class="text-xs font-medium text-brand-600 hover:underline ml-1">Tümünü temizle</a>
                 </div>
@@ -135,17 +103,15 @@
             @if (ViewBag.TotalPages > 1)
             {
                 <nav class="mt-8 flex justify-center gap-1.5 flex-wrap" aria-label="Sayfalama">
-                    @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                    @for (int p = 1; p <= ViewBag.TotalPages; p++)
                     {
-                        var pageRoute = new Dictionary<string, string?>(routeBase) { ["page"] = i.ToString() };
-                        var pageUrl = "/araclar" + BuildQuery(pageRoute, cbr, cseg);
-                        if (i == ViewBag.Page)
+                        if (p == ViewBag.Page)
                         {
-                            <span class="w-10 h-10 flex items-center justify-center rounded-lg bg-brand-600 text-white text-sm font-semibold">@i</span>
+                            <span class="w-10 h-10 flex items-center justify-center rounded-lg bg-brand-600 text-white text-sm font-semibold">@p</span>
                         }
                         else
                         {
-                            <a href="@pageUrl" class="w-10 h-10 flex items-center justify-center rounded-lg border border-border bg-surface text-content text-sm font-medium hover:border-brand-300 transition-colors">@i</a>
+                            <a href="/araclar@(Build(pairs, p))" class="w-10 h-10 flex items-center justify-center rounded-lg border border-border bg-surface text-content text-sm font-medium hover:border-brand-300 transition-colors">@p</a>
                         }
                     }
                 </nav>

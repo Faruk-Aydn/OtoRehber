@@ -40,12 +40,29 @@
             <span><i class="fa-regular fa-calendar-days mr-1"></i>@Model.ProductionYears</span>
             <span class="text-border">·</span>
             <span class="uppercase tracking-wider font-medium">@Model.Segment</span>
-            @if (!string.IsNullOrEmpty(Model.Engine))
+            @if (!string.IsNullOrEmpty(Model.BodyType))
             {
-                <span class="text-border">·</span>
-                <span class="line-clamp-1" title="@Model.Engine">@Model.Engine</span>
+                <span class="text-border">·</span><span>@Model.BodyType</span>
             }
         </div>
+        <div class="flex flex-wrap items-center gap-x-2 gap-y-1 mt-1 text-xs text-content-muted">
+            @if (!string.IsNullOrEmpty(Model.FuelType))
+            {
+                <span class="badge-muted">@Model.FuelType</span>
+            }
+            @if (!string.IsNullOrEmpty(Model.Transmission))
+            {
+                <span class="badge-muted">@Model.Transmission</span>
+            }
+            @if (Model.PowerHp is > 0)
+            {
+                <span class="badge-muted">@Model.PowerHp HP</span>
+            }
+        </div>
+        @if (!string.IsNullOrEmpty(Model.Engine))
+        {
+            <p class="mt-1.5 text-xs text-content-muted line-clamp-1" title="@Model.Engine">@Model.Engine</p>
+        }
 
         @if (hasRating)
         {

@@ -14,5 +14,11 @@ namespace OtoRehber.Domain.DTOs
         public string ExpertSummary { get; set; }
         public string UserFeedbackSummary { get; set; }
         public string? ImageUrl { get; set; }
+
+        public string? FuelType { get; set; }
+        public string? Transmission { get; set; }
+        public string? BodyType { get; set; }
+        public int? PowerHp { get; set; }
+        public int? EngineDisplacementCc { get; set; }
     }
 }

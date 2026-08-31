@@ -47,6 +47,17 @@ Her satır **tek bir gerçek varyantı** temsil eder. Birleştirme yasak:
     kasa kardeşlerinde kronik/pros/cons ortak olabilir; giriş cümlesi kasa tipine göre
     (bagaj, aile, ticari) uyarlanır.
 
+## Yapılandırılmış özellikler (filtreleme)
+
+`bodyType` ve `drivetrain` **elle** girilir:
+- `bodyType` ∈ `Hatchback | Sedan | Station Wagon | SUV | MPV | Coupe | Cabrio | Pickup | Panelvan`
+- `drivetrain` ∈ `Önden Çekiş | Arkadan İtiş | 4WD | AWD`
+
+`fuelType`, `transmission`, `powerHp`, `engineDisplacementCc`, `yearStart`, `yearEnd`, `condition`
+**boş bırakılır** — seeder (`CatalogSpecInference`) `engine` + `productionYears` metninden türetir.
+Türetme yanlışsa JSON'da açıkça değer vererek geçersiz kıl (`fuelType`, `transmission` ∈ `Manuel|Otomatik`,
+`condition` ∈ `İkinci El|Sıfır`). Elektrikli araçlarda `rangeKm` + `fastChargeMinutes` elle verilir.
+
 ## Şema
 
 ```jsonc
@@ -62,7 +73,10 @@ Her satır **tek bir gerçek varyantı** temsil eder. Birleştirme yasak:
   "estimatedMaintenanceCostEUR": 260,
   "expertSummary": "…",
   "userFeedbackSummary": "…",
+  "bodyType": "Sedan",               // elle
+  "drivetrain": "Önden Çekiş",        // elle
   "imageUrl": null,                  // opsiyonel
+  // fuelType / transmission / powerHp / engineDisplacementCc / yearStart / yearEnd / condition → seeder türetir
   "chronicIssues": [
     { "title": "…", "description": "…", "severity": "Orta", "estimatedCostEUR": 200, "affectedYears": "2013-2016" }
   ],

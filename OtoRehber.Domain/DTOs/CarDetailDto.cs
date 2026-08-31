@@ -19,6 +19,18 @@ namespace OtoRehber.Domain.DTOs
         public int EstimatedMaintenanceCostEUR { get; set; }
         public string? ImageUrl { get; set; }
 
+        public string? FuelType { get; set; }
+        public string? Transmission { get; set; }
+        public string? BodyType { get; set; }
+        public string? Drivetrain { get; set; }
+        public string? Condition { get; set; }
+        public int? PowerHp { get; set; }
+        public int? EngineDisplacementCc { get; set; }
+        public int? YearStart { get; set; }
+        public int? YearEnd { get; set; }
+        public int? RangeKm { get; set; }
+        public int? FastChargeMinutes { get; set; }
+
         // Navigation properties (İdealde bunlar da kendi DTO'larına map'lenir)
         public List<ProsCons> ProsConsList { get; set; } = new List<ProsCons>();
         public List<ChronicIssue> ChronicIssues { get; set; } = new List<ChronicIssue>();

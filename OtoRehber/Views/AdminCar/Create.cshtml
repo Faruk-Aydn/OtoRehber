@@ -50,6 +50,68 @@
                     <span asp-validation-for="Segment" class="text-red-500 text-xs mt-1 block"></span>
                 </div>
 
+                <!-- Yakıt tipi -->
+                <div>
+                    <label asp-for="FuelType" class="block text-sm font-medium text-gray-700 mb-2">Yakıt tipi</label>
+                    <select asp-for="FuelType" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5">
+                        <option value="">Otomatik türet</option>
+                        @foreach (var v in OtoRehber.Domain.CarSpecs.FuelTypes) { <option value="@v">@v</option> }
+                    </select>
+                </div>
+                <!-- Vites -->
+                <div>
+                    <label asp-for="Transmission" class="block text-sm font-medium text-gray-700 mb-2">Vites</label>
+                    <select asp-for="Transmission" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5">
+                        <option value="">Otomatik türet</option>
+                        @foreach (var v in OtoRehber.Domain.CarSpecs.Transmissions) { <option value="@v">@v</option> }
+                    </select>
+                </div>
+                <!-- Kasa tipi -->
+                <div>
+                    <label asp-for="BodyType" class="block text-sm font-medium text-gray-700 mb-2">Kasa tipi</label>
+                    <select asp-for="BodyType" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5">
+                        <option value="">Belirtilmedi</option>
+                        @foreach (var v in OtoRehber.Domain.CarSpecs.BodyTypes) { <option value="@v">@v</option> }
+                    </select>
+                </div>
+                <!-- Çekiş -->
+                <div>
+                    <label asp-for="Drivetrain" class="block text-sm font-medium text-gray-700 mb-2">Çekiş</label>
+                    <select asp-for="Drivetrain" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5">
+                        <option value="">Belirtilmedi</option>
+                        @foreach (var v in OtoRehber.Domain.CarSpecs.Drivetrains) { <option value="@v">@v</option> }
+                    </select>
+                </div>
+                <!-- Araç durumu -->
+                <div>
+                    <label asp-for="Condition" class="block text-sm font-medium text-gray-700 mb-2">Araç durumu</label>
+                    <select asp-for="Condition" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5">
+                        <option value="">İkinci El</option>
+                        @foreach (var v in OtoRehber.Domain.CarSpecs.Conditions) { <option value="@v">@v</option> }
+                    </select>
+                </div>
+                <!-- Güç / Hacim / Yıl -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label asp-for="PowerHp" class="block text-sm font-medium text-gray-700 mb-2">Güç (HP)</label>
+                        <input asp-for="PowerHp" type="number" min="0" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="Otomatik türet" />
+                    </div>
+                    <div>
+                        <label asp-for="EngineDisplacementCc" class="block text-sm font-medium text-gray-700 mb-2">Hacim (cm³)</label>
+                        <input asp-for="EngineDisplacementCc" type="number" min="0" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="Otomatik türet" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label asp-for="YearStart" class="block text-sm font-medium text-gray-700 mb-2">Yıl (başlangıç)</label>
+                        <input asp-for="YearStart" type="number" min="1950" max="2100" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" />
+                    </div>
+                    <div>
+                        <label asp-for="YearEnd" class="block text-sm font-medium text-gray-700 mb-2">Yıl (bitiş)</label>
+                        <input asp-for="YearEnd" type="number" min="1950" max="2100" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" />
+                    </div>
+                </div>
+
                 <!-- Fiyat Skalası -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>

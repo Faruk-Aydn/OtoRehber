@@ -100,9 +100,29 @@
                     <div class="mt-0.5 bg-surface p-2 rounded-lg border border-border text-content-muted">
                         <i class="fa-solid fa-gears text-lg"></i>
                     </div>
-                    <div>
+                    <div class="min-w-0">
                         <div class="text-xs text-content-muted font-semibold uppercase mb-1">Motor &amp; şanzıman</div>
                         <p class="text-content font-medium text-sm leading-relaxed">@Model.Engine</p>
+                        @{
+                            var specs = new List<string>();
+                            if (!string.IsNullOrEmpty(Model.FuelType)) specs.Add(Model.FuelType);
+                            if (!string.IsNullOrEmpty(Model.Transmission)) specs.Add(Model.Transmission);
+                            if (!string.IsNullOrEmpty(Model.BodyType)) specs.Add(Model.BodyType);
+                            if (!string.IsNullOrEmpty(Model.Drivetrain)) specs.Add(Model.Drivetrain);
+                            if (Model.PowerHp is > 0) specs.Add($"{Model.PowerHp} HP");
+                            if (Model.EngineDisplacementCc is > 0) specs.Add($"{Model.EngineDisplacementCc} cm³");
+                            if (Model.RangeKm is > 0) specs.Add($"{Model.RangeKm} km menzil");
+                            if (Model.FastChargeMinutes is > 0) specs.Add($"~{Model.FastChargeMinutes} dk hızlı şarj");
+                        }
+                        @if (specs.Count > 0)
+                        {
+                            <div class="flex flex-wrap gap-1.5 mt-2">
+                                @foreach (var s in specs)
+                                {
+                                    <span class="badge-muted">@s</span>
+                                }
+                            </div>
+                        }
                     </div>
                 </div>
             </div>

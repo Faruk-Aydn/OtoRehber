@@ -11,6 +11,8 @@
     "estimatedMaintenanceCostEUR": 520,
     "expertSummary": "Passat B7, Türkiye D segmentinin uzun süre satış lideriydi: prestijli, geniş, iyi yalıtımlı bir aile/filo sedanı. 1.6 TDI (CAYC) 105 HP motor, D segmenti gövdeyi taşımak için 'yeterli ama coşkusuz'; asıl cazibesi düşük yakıt (uzun yol 4.5 lt) ve vergi avantajı. Buradaki şanzıman DQ200 kuru kavramalı DSG'dir ve B7'deki en tartışmalı nokta budur: 1.6 TDI'nin torkuyla kuru kavrama dur-kalk trafikte zorlanır, titreme ve mekatronik arızası riski taşır. Ayrıca CAYC motorda enjektör kalibrasyonu, EGR ve DPF konuları öne çıkar. Bakımlı, mekatroniği/kavraması yenilenmiş örnek uzun süre gidebilir. Günlük dille: \"Prestijli ve konforlu; ama 1.6 TDI + kuru DSG ikilisi ekspertizsiz alınmaz, servis kaydı şart.\"",
     "userFeedbackSummary": "Kullanıcılar konfor, iç hacim ve yakıt ekonomisini seviyor. Şikayetler: DQ200 kavrama titremesi ve mekatronik arızası, CAYC enjektör kalibrasyon sorunu (tekleme, is), EGR/DPF tıkanması (şehir içi), elektronik el freni ve direksiyon kilit kolonu (ELV) arızası, park sensörü/kamera, multimedya (RNS 510) donması, süspansiyon burç sesleri. DSG yağ değişimi (mekatronik hidroliği) ihmal edilmemeli. 105 HP performans beklentisi olanlar hayal kırıklığına uğruyor.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
       {
         "title": "DQ200 (kuru) DSG mekatronik ve kavrama arızası",
@@ -76,6 +78,8 @@
     "estimatedMaintenanceCostEUR": 700,
     "expertSummary": "E90 320d, ikinci el 'uygun fiyatlı premium D sedan' arayanların favorisidir: arkadan itiş, 50:50 ağırlık dağılımı, direksiyon hissi ve 380 Nm torkla otoyol keyfi. ZF 6 ileri Steptronic şanzıman tork konvertörlüdür (DSG değil) ve sağlamdır — sadece 80-100 bin km'de yağ ister. ASIL kritik nokta N47 dizel motorun triger zincirinin MOTORUN ARKASINDA (kavrama tarafında) olmasıdır: zincir uzarsa/atarsa motor hurdaya çıkar ve değişim için motorun sökülmesi gerektiğinden işçilik çok pahalıdır. Ayrıca emme manifoldu (swirl flap) kurumu, EGR, turbo ve yağ soğutucu contası klasik konulardır. Günlük dille: \"Sürmesi bağımlılık yapar ama N47 zincirini duymadan alma; bakım cebini yakar.\" Sadece bilinçli, bütçesi geniş, iyi BMW ustası olan kullanıcı için.",
     "userFeedbackSummary": "Kullanıcılar sürüş keyfinden vazgeçemiyor ama 'para deposu' diyor. En korkulan konu N47 triger zinciri sesi (soğuk çalıştırmada arkadan 'çıtırtı/hırıltı') — duyulursa acil müdahale gerekir. Diğer sık konular: emme manifoldu swirl flap kırılması, EGR soğutucu çatlağı (soğuk su kaçağı), turbo, yağ soğutucu ve karter conta sızıntıları, DPF, direksiyon rot/rotil, arka porya rulmanı. Bakımlı, zinciri değişmiş örnek çok keyifli; bakımsızı kabus.",
+    "bodyType": "Sedan",
+    "drivetrain": "Arkadan İtiş",
     "chronicIssues": [
       {
         "title": "N47 triger zinciri uzaması / atlaması (motorun arkasında)",
@@ -148,6 +152,8 @@
     "estimatedMaintenanceCostEUR": 650,
     "expertSummary": "W204 makyajlı kasa (2011-2014), ikinci elde 'uygun fiyatlı yıldız' arayanların en dengeli tercihidir. Makyaj öncesi C180'ler eski M271 Kompresör motorluyken, 2012 sonrası C180'e yeni M274 1.6 turbo motor geldi: daha rafine, daha ekonomik ve makyaj öncesindeki M271 eksantrik dişli/zincir sorununu geride bıraktı. Şanzıman 7G-Tronic Plus (722.9) tork konvertörlüdür — DSG/kuru kavrama DEĞİL, sarsıntısız ve sağlamdır, 60-80 bin km'de yağ+filtre ister. M274 motorun bilinen konuları: zincir gergi ve triger kızağı (yüksek km), turbo, PCV valfi, su pompası ve direkt enjeksiyon karbon birikimi. Günlük dille: \"Yıldız prestiji + arıza yapmayan gerçek otomatik; ama Mercedes bakım fiyatlarına hazır ol, makyajlı M274'lü olanı ara.\"",
     "userFeedbackSummary": "Kullanıcılar prestij, sürüş konforu ve 7G-Tronic'in düzgünlüğünü seviyor. M274 motor M271'e göre çok daha az sorunlu. Şikayetler: yüksek km'de triger zinciri kızak/gergi sesi, turbo ve wastegate sesi, su pompası sızıntısı, direksiyon açı sensörü ve park sensörü arızaları, COMAND multimedya donması, süspansiyon burç sesleri, arka koltuğun dar oluşu. Bakım ve parça pahalı ama huzurlu bir sahiplik; makyaj öncesi M271'lilerden kaçının.",
+    "bodyType": "Sedan",
+    "drivetrain": "Arkadan İtiş",
     "chronicIssues": [
       {
         "title": "M274 triger zinciri gergi ve kızak (kılavuz) aşınması",

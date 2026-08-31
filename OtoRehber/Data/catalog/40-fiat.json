@@ -11,10 +11,30 @@
     "estimatedMaintenanceCostEUR": 210,
     "expertSummary": "Egea sedan, Türkiye'de yıllarca en çok satan otomobil oldu: ucuz alım, düşük işletme, geniş bagaj (520 lt), yerli servis ağı. 1.4 Fire (95 HP) atmosferik motor turbosuz ve direkt enjeksiyonsuzdur — LPG'ye kusursuz uyar ve dertsizdir; zincir triger değil kayış trigerlidir (60-70 bin km periyot). 95 HP dolu araçta ve rampada zorlanır, otoyol geçişlerini planlamak gerekir. İç malzeme sert plastik, yalıtım ve süspansiyon konforu orta. Günlük dille: \"Performansı boşver; en ucuz işletmeli, LPG'yle en dertsiz geniş bagajlı sedan. Kayış triger periyodunu ve süspansiyon burçlarını takip et.\"",
     "userFeedbackSummary": "Kullanıcılar fiyat/bagaj/işletme dengesinden çok memnun. Şikayetler: 95 HP'nin yetersizliği (özellikle LPG'de ve klimayla), sert süspansiyon ve yol sesi, iç plastik gıcırtıları, ön süspansiyon burç/rot sesleri (Türkiye yolunda erken), debriyaj pedalı sesi, klima performansı. Motor tarafında ciddi kronik yok; kayış triger ve LPG subap ayarı takip edilmeli.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Ön süspansiyon burçları, rot başı ve amortisör üst takoz sesi", "description": "Türkiye yol şartlarında 40-80 bin km gibi erken bir dönemde ön salıncak burçları, rot başları ve amortisör üst takozlarında tıkırtı başlar. Parça ucuz, sık tekrarlayan bir kalem.", "severity": "Orta", "estimatedCostEUR": 150, "affectedYears": "2015-2020" },
-      { "title": "Triger kayışı seti değişiminin aksatılması", "description": "1.4 Fire kayış trigerlidir; kayış+gergi 60-70 bin km'de değişmezse kopar, subap-piston teması motoru hasarlar. LPG'li araçlarda periyot daha kısa tutulur.", "severity": "Orta", "estimatedCostEUR": 150, "affectedYears": "2015-2020" },
-      { "title": "İç mekan gıcırtıları ve konfor ekipmanı arızaları", "description": "Torpido, kapı paneli ve tavan döşemesinde gıcırtı; cam krikosu, dikiz aynası katlama motoru, klima paneli ve U-Connect ekranı arızaları. Kozmetik/ucuz ama sık.", "severity": "Düşük", "estimatedCostEUR": 120, "affectedYears": "2015-2020" }
+      {
+        "title": "Ön süspansiyon burçları, rot başı ve amortisör üst takoz sesi",
+        "description": "Türkiye yol şartlarında 40-80 bin km gibi erken bir dönemde ön salıncak burçları, rot başları ve amortisör üst takozlarında tıkırtı başlar. Parça ucuz, sık tekrarlayan bir kalem.",
+        "severity": "Orta",
+        "estimatedCostEUR": 150,
+        "affectedYears": "2015-2020"
+      },
+      {
+        "title": "Triger kayışı seti değişiminin aksatılması",
+        "description": "1.4 Fire kayış trigerlidir; kayış+gergi 60-70 bin km'de değişmezse kopar, subap-piston teması motoru hasarlar. LPG'li araçlarda periyot daha kısa tutulur.",
+        "severity": "Orta",
+        "estimatedCostEUR": 150,
+        "affectedYears": "2015-2020"
+      },
+      {
+        "title": "İç mekan gıcırtıları ve konfor ekipmanı arızaları",
+        "description": "Torpido, kapı paneli ve tavan döşemesinde gıcırtı; cam krikosu, dikiz aynası katlama motoru, klima paneli ve U-Connect ekranı arızaları. Kozmetik/ucuz ama sık.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 120,
+        "affectedYears": "2015-2020"
+      }
     ],
     "pros": [
       "Segmentinin en ucuz işletmeli ve en uygun fiyatlı araçlarından",
@@ -29,9 +49,21 @@
       "Kayış triger — periyodik masraf"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Triger kayış seti, yağ+filtre, bujiler, hava/polen filtresi, LPG'de subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 180 },
-      { "mileage": "120.000 km", "expectedIssues": "İkinci triger seti, ön süspansiyon revizyonu (burç, rot, rotil), debriyaj seti, amortisörler, LPG regülatör bakımı.", "estimatedCostEUR": 350 },
-      { "mileage": "200.000 km", "expectedIssues": "Su pompası, motor takozları, marş/alternatör revizyonu, klima kompresörü, direksiyon kutusu.", "estimatedCostEUR": 400 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Triger kayış seti, yağ+filtre, bujiler, hava/polen filtresi, LPG'de subap ayarı, ön takım kontrolü.",
+        "estimatedCostEUR": 180
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "İkinci triger seti, ön süspansiyon revizyonu (burç, rot, rotil), debriyaj seti, amortisörler, LPG regülatör bakımı.",
+        "estimatedCostEUR": 350
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Su pompası, motor takozları, marş/alternatör revizyonu, klima kompresörü, direksiyon kutusu.",
+        "estimatedCostEUR": 400
+      }
     ]
   },
   {
@@ -46,10 +78,30 @@
     "estimatedMaintenanceCostEUR": 240,
     "expertSummary": "Egea'nın en dengeli otomatik kombinasyonu: 1.6 E.Torq (110 HP) atmosferik benzinli motor + 6 ileri Aisin tork konvertörlü tam otomatik. Bu şanzıman DSG/robotize DEĞİLDİR — Dualogic'in sarsıntı ve masraf riskini taşımaz, sadece 60 bin km'de yağ ister. E.Torq motor zincir trigerlidir (kayış derdi yok), yağ yakmaz. Direkt enjeksiyon olmadığı için LPG de takılabilir. Günlük dille: \"Egea'da otomatik istiyorsan alacağın bu; Dualogic'ten uzak dur, 1.6 + Aisin ikilisi Egea'nın en huzurlusu.\" Aile ve şehir içi kullanım için mantıklı.",
     "userFeedbackSummary": "Kullanıcılar Aisin otomatiğin düzgünlüğünü ve E.Torq motorun dertsizliğini övüyor; Dualogic'e göre çok daha memnunlar. Şikayetler: 110 HP + otomatik kombinasyonunun şehirde tembelliği ve yakıtın 9-10 lt'ye çıkması, ön süspansiyon burç sesleri, sert plastikler, U-Connect ekranı donması. Şanzıman yağı geçmişi sorulmalı.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Aisin otomatik şanzıman yağının ihmal edilmesi", "description": "6 ileri Aisin tork konvertörlü şanzıman sağlamdır ama yağı 60 bin km'de değişmezse geç ve sert vites geçişi, kalkışta darbe başlar. Pan açtırıp yağ+filtre yapmak yeterli.", "severity": "Düşük", "estimatedCostEUR": 200, "affectedYears": "2015-2020" },
-      { "title": "Ön süspansiyon burçları, rot başı ve amortisör üst takoz sesi", "description": "Türkiye yollarında 40-80 bin km'de ön takım tıkırtısı başlar; burç, rot, rotil ve üst takoz revizyonu. Parça ucuz, sık tekrarlayan kalem.", "severity": "Orta", "estimatedCostEUR": 150, "affectedYears": "2015-2020" },
-      { "title": "İç mekan gıcırtıları ve konfor ekipmanı arızaları", "description": "Torpido/kapı paneli gıcırtısı; cam krikosu, ayna katlama motoru, U-Connect ekranı ve klima paneli arızaları.", "severity": "Düşük", "estimatedCostEUR": 120, "affectedYears": "2015-2020" }
+      {
+        "title": "Aisin otomatik şanzıman yağının ihmal edilmesi",
+        "description": "6 ileri Aisin tork konvertörlü şanzıman sağlamdır ama yağı 60 bin km'de değişmezse geç ve sert vites geçişi, kalkışta darbe başlar. Pan açtırıp yağ+filtre yapmak yeterli.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 200,
+        "affectedYears": "2015-2020"
+      },
+      {
+        "title": "Ön süspansiyon burçları, rot başı ve amortisör üst takoz sesi",
+        "description": "Türkiye yollarında 40-80 bin km'de ön takım tıkırtısı başlar; burç, rot, rotil ve üst takoz revizyonu. Parça ucuz, sık tekrarlayan kalem.",
+        "severity": "Orta",
+        "estimatedCostEUR": 150,
+        "affectedYears": "2015-2020"
+      },
+      {
+        "title": "İç mekan gıcırtıları ve konfor ekipmanı arızaları",
+        "description": "Torpido/kapı paneli gıcırtısı; cam krikosu, ayna katlama motoru, U-Connect ekranı ve klima paneli arızaları.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 120,
+        "affectedYears": "2015-2020"
+      }
     ],
     "pros": [
       "DSG/Dualogic yok: dayanıklı Aisin tork konvertörlü tam otomatik",
@@ -64,9 +116,21 @@
       "Sert plastikler, orta yalıtım ve süspansiyon konforu"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, filtreler, fren hidroliği, Aisin şanzıman yağ+filtre, ön takım kontrolü.", "estimatedCostEUR": 250 },
-      { "mileage": "120.000 km", "expectedIssues": "Ön süspansiyon revizyonu, devirdaim + su pompası kontrolü, amortisörler, ikinci şanzıman yağı, klima bakımı.", "estimatedCostEUR": 380 },
-      { "mileage": "200.000 km", "expectedIssues": "Motor takozları, marş/alternatör revizyonu, klima kompresörü, direksiyon kutusu, süspansiyon yenileme.", "estimatedCostEUR": 420 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Yağ+filtre, bujiler, filtreler, fren hidroliği, Aisin şanzıman yağ+filtre, ön takım kontrolü.",
+        "estimatedCostEUR": 250
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "Ön süspansiyon revizyonu, devirdaim + su pompası kontrolü, amortisörler, ikinci şanzıman yağı, klima bakımı.",
+        "estimatedCostEUR": 380
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Motor takozları, marş/alternatör revizyonu, klima kompresörü, direksiyon kutusu, süspansiyon yenileme.",
+        "estimatedCostEUR": 420
+      }
     ]
   },
   {
@@ -81,10 +145,30 @@
     "estimatedMaintenanceCostEUR": 210,
     "expertSummary": "Egea sedanın 1.6 E.Torq (110 HP) + düz vites versiyonu, 1.4 Fire'a göre gözle görülür daha canlı ve otoyolda daha rahattır (15 beygir + daha tok tork eğrisi). E.Torq motor zincir trigerlidir — 1.4 Fire'ın kayış triger masrafı yoktur, bu büyük bir avantaj. Direkt enjeksiyonsuz olduğu için LPG de takılabilir. Günlük dille: \"Egea alıyorsan 1.4 yerine 1.6 E.Torq düz vitesi al; zincir triger + daha iyi performans + LPG uyumu. Egea'nın en akıllı benzinlisi.\" Aile ve karma kullanım için ideal.",
     "userFeedbackSummary": "Kullanıcılar 1.4'e göre performans farkını ve zincir trigerin dertsizliğini övüyor. Şikayetler: ön süspansiyon burç/rot sesleri (erken), sert plastikler ve iç gıcırtılar, orta yol sesi yalıtımı, klima performansı, U-Connect donması. Motor tarafında ciddi kronik yok.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Ön süspansiyon burçları, rot başı ve amortisör üst takoz sesi", "description": "Türkiye yollarında 40-80 bin km'de ön takım tıkırtısı başlar; burç, rot, rotil ve üst takoz revizyonu. Parça ucuz, sık tekrarlayan kalem.", "severity": "Orta", "estimatedCostEUR": 150, "affectedYears": "2015-2020" },
-      { "title": "İç mekan gıcırtıları ve konfor ekipmanı arızaları", "description": "Torpido/kapı paneli gıcırtısı; cam krikosu, ayna katlama motoru, U-Connect ekranı ve klima paneli arızaları.", "severity": "Düşük", "estimatedCostEUR": 120, "affectedYears": "2015-2020" },
-      { "title": "Devirdaim (su) pompası ve termostat sızıntısı", "description": "Yüksek km'de su pompası veya termostat gövdesi sızdırabilir; hararet ve antifriz kaybı. Set halinde yenilenir.", "severity": "Düşük", "estimatedCostEUR": 160, "affectedYears": "2015-2020" }
+      {
+        "title": "Ön süspansiyon burçları, rot başı ve amortisör üst takoz sesi",
+        "description": "Türkiye yollarında 40-80 bin km'de ön takım tıkırtısı başlar; burç, rot, rotil ve üst takoz revizyonu. Parça ucuz, sık tekrarlayan kalem.",
+        "severity": "Orta",
+        "estimatedCostEUR": 150,
+        "affectedYears": "2015-2020"
+      },
+      {
+        "title": "İç mekan gıcırtıları ve konfor ekipmanı arızaları",
+        "description": "Torpido/kapı paneli gıcırtısı; cam krikosu, ayna katlama motoru, U-Connect ekranı ve klima paneli arızaları.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 120,
+        "affectedYears": "2015-2020"
+      },
+      {
+        "title": "Devirdaim (su) pompası ve termostat sızıntısı",
+        "description": "Yüksek km'de su pompası veya termostat gövdesi sızdırabilir; hararet ve antifriz kaybı. Set halinde yenilenir.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 160,
+        "affectedYears": "2015-2020"
+      }
     ],
     "pros": [
       "Zincir triger — kayış değişimi masrafı YOK",
@@ -99,9 +183,21 @@
       "1.4'e göre biraz daha yüksek alım fiyatı"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, hava/polen filtresi, fren hidroliği, ön takım kontrolü, LPG'de (varsa) subap ayarı.", "estimatedCostEUR": 150 },
-      { "mileage": "120.000 km", "expectedIssues": "Ön süspansiyon revizyonu (burç, rot, rotil), debriyaj kontrolü, su pompası+termostat, amortisörler.", "estimatedCostEUR": 320 },
-      { "mileage": "200.000 km", "expectedIssues": "Debriyaj seti, motor takozları, klima kompresörü, direksiyon kutusu, süspansiyon yenileme.", "estimatedCostEUR": 400 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Yağ+filtre, bujiler, hava/polen filtresi, fren hidroliği, ön takım kontrolü, LPG'de (varsa) subap ayarı.",
+        "estimatedCostEUR": 150
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "Ön süspansiyon revizyonu (burç, rot, rotil), debriyaj kontrolü, su pompası+termostat, amortisörler.",
+        "estimatedCostEUR": 320
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Debriyaj seti, motor takozları, klima kompresörü, direksiyon kutusu, süspansiyon yenileme.",
+        "estimatedCostEUR": 400
+      }
     ]
   },
   {
@@ -116,10 +212,30 @@
     "estimatedMaintenanceCostEUR": 280,
     "expertSummary": "Egea sedanın en ekonomik dizeli 1.3 Multijet (95 HP): uzun yolda 4-4.5 lt yakar, zincir triger kullanır (kayış derdi yok), bakımlı örnekleri 300 bin km görür. Küçük hacimli dizel olduğu için performansı mütevazı — 95 HP + 200 Nm şehir ve orta yol için yeterli, ağır yükte zorlanır. Dizel klasikleri: emme manifoldu (swirl klape) ve EGR kurumu, turbo kayıcı kanat, DPF (sürekli kısa şehir yolunda tıkanma). Günlük dille: \"Ucuz yakıt, zincir triger, kocaman bagaj; ama emme manifoldu ve DPF'sine dikkat, kısa şehir yolunda ezme.\" Uzun yol ağırlıklı ekonomi arayan için mantıklı.",
     "userFeedbackSummary": "Kullanıcılar yakıt tüketiminden çok memnun. Şikayetler: emme manifoldu klape motoru arızası (güç kaybı, arıza lambası), EGR kurumu, turbo kayıcı kanat tıkanması, DPF tıkanması (şehir içi), ön süspansiyon burç sesleri, sert plastikler. Zincir triger uzun ömürlü; kaliteli mazot enjektör ömrünü uzatır.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Emme manifoldu (swirl klape) ve EGR kurumlanması", "description": "1.3 Multijet'te emme manifoldundaki girdap klapeleri ve EGR kurum bağlar; güç kaybı, rölanti dengesizliği, arıza lambası. Manifold komple değişir veya temizlenir, EGR yenilenir.", "severity": "Orta", "estimatedCostEUR": 250, "affectedYears": "2015-2020" },
-      { "title": "Turbo kayıcı kanat (VNT) tıkanması", "description": "Kurumdan turbonun değişken kanatları sıkışır; rampada üfleme düşer, arıza lambası, limp mode. Erken temizlik, geç kalınırsa turbo revizyonu.", "severity": "Orta", "estimatedCostEUR": 300, "affectedYears": "2015-2020" },
-      { "title": "DPF tıkanması (şehir içi kullanım)", "description": "Kısa mesafe şehir içi kullanımda partikül filtresi dolar; güç kaybı ve servis rejenerasyonu gerekir. Ara sıra uzun yol önler; ileri seviyede temizlik/değişim pahalı.", "severity": "Orta", "estimatedCostEUR": 350, "affectedYears": "2015-2020" }
+      {
+        "title": "Emme manifoldu (swirl klape) ve EGR kurumlanması",
+        "description": "1.3 Multijet'te emme manifoldundaki girdap klapeleri ve EGR kurum bağlar; güç kaybı, rölanti dengesizliği, arıza lambası. Manifold komple değişir veya temizlenir, EGR yenilenir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 250,
+        "affectedYears": "2015-2020"
+      },
+      {
+        "title": "Turbo kayıcı kanat (VNT) tıkanması",
+        "description": "Kurumdan turbonun değişken kanatları sıkışır; rampada üfleme düşer, arıza lambası, limp mode. Erken temizlik, geç kalınırsa turbo revizyonu.",
+        "severity": "Orta",
+        "estimatedCostEUR": 300,
+        "affectedYears": "2015-2020"
+      },
+      {
+        "title": "DPF tıkanması (şehir içi kullanım)",
+        "description": "Kısa mesafe şehir içi kullanımda partikül filtresi dolar; güç kaybı ve servis rejenerasyonu gerekir. Ara sıra uzun yol önler; ileri seviyede temizlik/değişim pahalı.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2015-2020"
+      }
     ],
     "pros": [
       "Çok düşük yakıt tüketimi (uzun yol 4-4.5 lt)",
@@ -134,9 +250,21 @@
       "Sert plastikler, iç gıcırtılar, ön süspansiyon burç sesleri"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR ilk kontrol, ön takım kontrolü, fren hidroliği.", "estimatedCostEUR": 160 },
-      { "mileage": "150.000 km", "expectedIssues": "Emme manifoldu/EGR temizliği, turbo VNT kontrolü, enjektör kontrolü, debriyaj seti, ön takım revizyonu, DPF temizliği.", "estimatedCostEUR": 550 },
-      { "mileage": "250.000 km", "expectedIssues": "Zincir triger kontrolü, su pompası, turbo revizyonu ihtimali, DPF değişimi ihtimali, direksiyon kutusu.", "estimatedCostEUR": 650 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR ilk kontrol, ön takım kontrolü, fren hidroliği.",
+        "estimatedCostEUR": 160
+      },
+      {
+        "mileage": "150.000 km",
+        "expectedIssues": "Emme manifoldu/EGR temizliği, turbo VNT kontrolü, enjektör kontrolü, debriyaj seti, ön takım revizyonu, DPF temizliği.",
+        "estimatedCostEUR": 550
+      },
+      {
+        "mileage": "250.000 km",
+        "expectedIssues": "Zincir triger kontrolü, su pompası, turbo revizyonu ihtimali, DPF değişimi ihtimali, direksiyon kutusu.",
+        "estimatedCostEUR": 650
+      }
     ]
   },
   {
@@ -151,10 +279,30 @@
     "estimatedMaintenanceCostEUR": 300,
     "expertSummary": "Egea sedanın güçlü dizeli 1.6 Multijet (120 HP, 320 Nm): uzun yolda 4.5-5 lt yakar, otoyolda ve yüklü kullanımda 1.3'ten belirgin daha rahat, zincir triger kullanır. Bu motor Fiat/Opel/Suzuki'de yaygın kullanıldı; bilinen konuları EGR ve emme kurumu, turbo VNT, DPF (şehir içi) ve bazı örneklerde enjektör. Günlük dille: \"Egea'nın en dengeli dizeli; ucuz yakıt + yeterli güç + zincir triger. EGR/DPF ve turbosuna dikkat, kaliteli mazot kullan.\" Uzun yol ağırlıklı, güç de isteyen kullanıcı için ideal.",
     "userFeedbackSummary": "Kullanıcılar performans/ekonomi dengesini çok övüyor; 'Egea alınacaksa bu motor' diyenler çok. Şikayetler: EGR ve emme kurumu, turbo kayıcı kanat, DPF tıkanması (şehir içi), debriyaj/çift kütleli volan masrafı, ön süspansiyon burç sesleri. Zincir triger uzun ömürlü.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "EGR valfi ve emme manifoldu kurumlanması", "description": "1.6 Multijet'te düşük devir kullanımda EGR ve emme manifoldu kurum bağlar; güç kaybı, rölanti dengesizliği, arıza lambası. Temizlik veya EGR/manifold yenileme.", "severity": "Orta", "estimatedCostEUR": 250, "affectedYears": "2015-2020" },
-      { "title": "Turbo VNT tıkanması ve DPF (şehir içi)", "description": "Turbonun değişken kanatları ve partikül filtresi kurum bağlar; rampada güç düşüşü, arıza lambası, rejenerasyon sorunu. Temizlik/yenileme gerekir.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2015-2020" },
-      { "title": "Çift kütleli volan (DMF) ve debriyaj aşınması", "description": "Rölantide takırtı, kalkışta titreme; DMF + debriyaj seti birlikte değişir. İşçilik uzun, parça pahalı.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2015-2020" }
+      {
+        "title": "EGR valfi ve emme manifoldu kurumlanması",
+        "description": "1.6 Multijet'te düşük devir kullanımda EGR ve emme manifoldu kurum bağlar; güç kaybı, rölanti dengesizliği, arıza lambası. Temizlik veya EGR/manifold yenileme.",
+        "severity": "Orta",
+        "estimatedCostEUR": 250,
+        "affectedYears": "2015-2020"
+      },
+      {
+        "title": "Turbo VNT tıkanması ve DPF (şehir içi)",
+        "description": "Turbonun değişken kanatları ve partikül filtresi kurum bağlar; rampada güç düşüşü, arıza lambası, rejenerasyon sorunu. Temizlik/yenileme gerekir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2015-2020"
+      },
+      {
+        "title": "Çift kütleli volan (DMF) ve debriyaj aşınması",
+        "description": "Rölantide takırtı, kalkışta titreme; DMF + debriyaj seti birlikte değişir. İşçilik uzun, parça pahalı.",
+        "severity": "Orta",
+        "estimatedCostEUR": 450,
+        "affectedYears": "2015-2020"
+      }
     ],
     "pros": [
       "Ekonomi + yeterli güç dengesi (120 HP, 320 Nm)",
@@ -169,9 +317,21 @@
       "Sert plastikler, ön süspansiyon burç sesleri"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR ilk kontrol, ön takım kontrolü, fren hidroliği.", "estimatedCostEUR": 170 },
-      { "mileage": "150.000 km", "expectedIssues": "EGR/emme temizliği, turbo VNT kontrolü, enjektör kontrolü, çift kütleli volan+debriyaj, ön takım revizyonu, DPF temizliği.", "estimatedCostEUR": 750 },
-      { "mileage": "250.000 km", "expectedIssues": "Zincir triger kontrolü, su pompası, turbo revizyonu ihtimali, DPF değişimi ihtimali, direksiyon kutusu.", "estimatedCostEUR": 700 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR ilk kontrol, ön takım kontrolü, fren hidroliği.",
+        "estimatedCostEUR": 170
+      },
+      {
+        "mileage": "150.000 km",
+        "expectedIssues": "EGR/emme temizliği, turbo VNT kontrolü, enjektör kontrolü, çift kütleli volan+debriyaj, ön takım revizyonu, DPF temizliği.",
+        "estimatedCostEUR": 750
+      },
+      {
+        "mileage": "250.000 km",
+        "expectedIssues": "Zincir triger kontrolü, su pompası, turbo revizyonu ihtimali, DPF değişimi ihtimali, direksiyon kutusu.",
+        "estimatedCostEUR": 700
+      }
     ]
   },
   {
@@ -186,10 +346,30 @@
     "estimatedMaintenanceCostEUR": 210,
     "expertSummary": "Egea HB (hatchback), sedanla aynı platform, aynı motorlar; daha kısa arka gövde, sedandan küçük ama koltuk katlamayla esnek bagaj, daha genç görünüm. 1.4 Fire (95 HP) atmosferik motor LPG'ye kusursuz uyar, kayış trigerlidir. Mekanik ve kronik arızalar Egea sedanla birebir aynıdır (ön süspansiyon burçları erken, iç gıcırtılar). Günlük dille: \"Egea'yı hatchback ve daha genç görünüm isteyene; sedanın tüm ekonomisi, biraz daha küçük bagaj. Kayış triger ve süspansiyon burçlarını takip et.\"",
     "userFeedbackSummary": "Kullanıcılar hatchback pratikliğini ve düşük işletmeyi övüyor; bagajın sedandan küçük olması ana eleştiri. Diğer şikayetler Egea sedanla aynı: 95 HP yetersizliği, ön süspansiyon burç sesleri, sert plastikler ve gıcırtılar, orta yalıtım. Kayış triger ve LPG subap ayarı takip edilmeli.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Ön süspansiyon burçları, rot başı ve amortisör üst takoz sesi", "description": "Türkiye yollarında 40-80 bin km'de ön takım tıkırtısı başlar; burç, rot, rotil ve üst takoz revizyonu. Parça ucuz, sık tekrarlayan kalem.", "severity": "Orta", "estimatedCostEUR": 150, "affectedYears": "2016-2020" },
-      { "title": "Triger kayışı seti değişiminin aksatılması", "description": "1.4 Fire kayış trigerlidir; kayış+gergi 60-70 bin km'de değişmezse kopar, motor hasar görür. LPG'de periyot daha kısa.", "severity": "Orta", "estimatedCostEUR": 150, "affectedYears": "2016-2020" },
-      { "title": "İç mekan gıcırtıları ve konfor ekipmanı arızaları", "description": "Torpido/kapı paneli gıcırtısı; cam krikosu, ayna katlama motoru, U-Connect ekranı ve klima paneli arızaları.", "severity": "Düşük", "estimatedCostEUR": 120, "affectedYears": "2016-2020" }
+      {
+        "title": "Ön süspansiyon burçları, rot başı ve amortisör üst takoz sesi",
+        "description": "Türkiye yollarında 40-80 bin km'de ön takım tıkırtısı başlar; burç, rot, rotil ve üst takoz revizyonu. Parça ucuz, sık tekrarlayan kalem.",
+        "severity": "Orta",
+        "estimatedCostEUR": 150,
+        "affectedYears": "2016-2020"
+      },
+      {
+        "title": "Triger kayışı seti değişiminin aksatılması",
+        "description": "1.4 Fire kayış trigerlidir; kayış+gergi 60-70 bin km'de değişmezse kopar, motor hasar görür. LPG'de periyot daha kısa.",
+        "severity": "Orta",
+        "estimatedCostEUR": 150,
+        "affectedYears": "2016-2020"
+      },
+      {
+        "title": "İç mekan gıcırtıları ve konfor ekipmanı arızaları",
+        "description": "Torpido/kapı paneli gıcırtısı; cam krikosu, ayna katlama motoru, U-Connect ekranı ve klima paneli arızaları.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 120,
+        "affectedYears": "2016-2020"
+      }
     ],
     "pros": [
       "Ucuz işletme, LPG'ye kusursuz uyum",
@@ -204,9 +384,21 @@
       "Sert plastikler, orta yalıtım; kayış triger masrafı"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Triger kayış seti, yağ+filtre, bujiler, hava/polen filtresi, LPG'de subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 180 },
-      { "mileage": "120.000 km", "expectedIssues": "İkinci triger seti, ön süspansiyon revizyonu, debriyaj seti, amortisörler, LPG regülatör bakımı.", "estimatedCostEUR": 350 },
-      { "mileage": "200.000 km", "expectedIssues": "Su pompası, motor takozları, marş/alternatör revizyonu, klima kompresörü, direksiyon kutusu.", "estimatedCostEUR": 400 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Triger kayış seti, yağ+filtre, bujiler, hava/polen filtresi, LPG'de subap ayarı, ön takım kontrolü.",
+        "estimatedCostEUR": 180
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "İkinci triger seti, ön süspansiyon revizyonu, debriyaj seti, amortisörler, LPG regülatör bakımı.",
+        "estimatedCostEUR": 350
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Su pompası, motor takozları, marş/alternatör revizyonu, klima kompresörü, direksiyon kutusu.",
+        "estimatedCostEUR": 400
+      }
     ]
   },
   {
@@ -221,10 +413,30 @@
     "estimatedMaintenanceCostEUR": 300,
     "expertSummary": "Egea SW (Station Wagon), Türkiye'nin en ucuz büyük bagajlı station wagon'udur: 550 lt bagaj, koltuk yatınca ~1600 lt, uzun tavan hattı. 1.6 Multijet (120 HP) dizel + düz vites, SW'nin en mantıklı motoru — yüklü ve uzun yol kullanımına uygun, zincir triger, uzun yolda 4.5-5 lt. Mekanik ve kronik arızalar Egea sedan 1.6 Multijet ile aynıdır. Günlük dille: \"Kalabalık aile veya bagaj bağımlısı için en ucuz SW; dizel bakımlarını ve turbosunu iyi bak.\" Uzun yol + yük + kalabalık aile için ideal.",
     "userFeedbackSummary": "Kullanıcılar bagaj hacmini ve dizel/SW kombinasyonunun pratikliğini çok övüyor. Şikayetler: EGR ve emme kurumu, turbo kayıcı kanat, DPF (şehir içi), çift kütleli volan + debriyaj masrafı, ön süspansiyon burç sesleri, arka bagaj kapağı amortisör zayıflaması. Zincir triger uzun ömürlü.",
+    "bodyType": "Station Wagon",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "EGR valfi ve emme manifoldu kurumlanması", "description": "1.6 Multijet'te düşük devir kullanımda EGR ve emme manifoldu kurum bağlar; güç kaybı, rölanti dengesizliği, arıza lambası. Temizlik veya EGR/manifold yenileme.", "severity": "Orta", "estimatedCostEUR": 250, "affectedYears": "2016-2020" },
-      { "title": "Turbo VNT tıkanması ve DPF (şehir içi)", "description": "Turbonun değişken kanatları ve partikül filtresi kurum bağlar; rampada güç düşüşü, arıza lambası, rejenerasyon sorunu. Temizlik/yenileme gerekir.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2016-2020" },
-      { "title": "Çift kütleli volan (DMF) ve debriyaj aşınması", "description": "Rölantide takırtı, kalkışta titreme; DMF + debriyaj seti birlikte değişir. İşçilik uzun, parça pahalı.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2016-2020" }
+      {
+        "title": "EGR valfi ve emme manifoldu kurumlanması",
+        "description": "1.6 Multijet'te düşük devir kullanımda EGR ve emme manifoldu kurum bağlar; güç kaybı, rölanti dengesizliği, arıza lambası. Temizlik veya EGR/manifold yenileme.",
+        "severity": "Orta",
+        "estimatedCostEUR": 250,
+        "affectedYears": "2016-2020"
+      },
+      {
+        "title": "Turbo VNT tıkanması ve DPF (şehir içi)",
+        "description": "Turbonun değişken kanatları ve partikül filtresi kurum bağlar; rampada güç düşüşü, arıza lambası, rejenerasyon sorunu. Temizlik/yenileme gerekir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2016-2020"
+      },
+      {
+        "title": "Çift kütleli volan (DMF) ve debriyaj aşınması",
+        "description": "Rölantide takırtı, kalkışta titreme; DMF + debriyaj seti birlikte değişir. İşçilik uzun, parça pahalı.",
+        "severity": "Orta",
+        "estimatedCostEUR": 450,
+        "affectedYears": "2016-2020"
+      }
     ],
     "pros": [
       "Türkiye'nin en ucuz büyük bagajlı station wagon'u (550 lt / ~1600 lt)",
@@ -239,9 +451,21 @@
       "Sürekli kısa mesafe şehir içi kullanıma uygun değil"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR ilk kontrol, ön takım kontrolü, bagaj amortisör kontrolü.", "estimatedCostEUR": 170 },
-      { "mileage": "150.000 km", "expectedIssues": "EGR/emme temizliği, turbo VNT kontrolü, enjektör kontrolü, çift kütleli volan+debriyaj, ön takım revizyonu, DPF temizliği.", "estimatedCostEUR": 750 },
-      { "mileage": "250.000 km", "expectedIssues": "Zincir triger kontrolü, su pompası, turbo revizyonu ihtimali, DPF değişimi ihtimali, süspansiyon yenileme.", "estimatedCostEUR": 700 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR ilk kontrol, ön takım kontrolü, bagaj amortisör kontrolü.",
+        "estimatedCostEUR": 170
+      },
+      {
+        "mileage": "150.000 km",
+        "expectedIssues": "EGR/emme temizliği, turbo VNT kontrolü, enjektör kontrolü, çift kütleli volan+debriyaj, ön takım revizyonu, DPF temizliği.",
+        "estimatedCostEUR": 750
+      },
+      {
+        "mileage": "250.000 km",
+        "expectedIssues": "Zincir triger kontrolü, su pompası, turbo revizyonu ihtimali, DPF değişimi ihtimali, süspansiyon yenileme.",
+        "estimatedCostEUR": 700
+      }
     ]
   },
   {
@@ -256,10 +480,30 @@
     "estimatedMaintenanceCostEUR": 280,
     "expertSummary": "Linea, Türkiye'de üretilen, ucuz ve devasa bagajlı (500 lt) bir 'aile/filo sedanı' olarak binlerce sattı. 1.3 Multijet (90 HP) dizel motoru küçük hacmine göre torklu (200 Nm), uzun yolda 4-4.5 lt yakar, zincir triger kullanır. Dizel klasikleri geçerli: emme manifoldu (swirl klape) ve EGR kurumu, turbo kayıcı kanat, enjektör. DPF'li geç modeller şehir içinde tıkanır. İç malzeme sert plastik, süspansiyon konforu orta, kaporta ince. Günlük dille: \"Ucuz yakıt, ucuz parça, kocaman bagaj — pratik; ama emme manifoldu ve EGR'sine dikkat, kısa şehir yolunda ezme.\"",
     "userFeedbackSummary": "Kullanıcılar yakıt ekonomisi ve bagaj hacminden çok memnun. Şikayetler: emme manifoldu ve EGR kurumu (güç kaybı, arıza lambası), turbo kayıcı kanat tıkanması, direksiyon kutusu/rot sesleri, iç gıcırtılar, klima performansı, elektrik aksesuar arızaları. Zincir triger uzun ömürlü.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Emme manifoldu (swirl klape) ve EGR kurumlanması", "description": "1.3 Multijet'te emme manifoldundaki girdap klapeleri ve EGR kurum bağlar; güç kaybı, rölanti dengesizliği, arıza lambası. Manifold komple değişir veya temizlenir, EGR yenilenir.", "severity": "Orta", "estimatedCostEUR": 250, "affectedYears": "2007-2012" },
-      { "title": "Turbo kayıcı kanat (VNT) tıkanması", "description": "Kurumdan turbonun değişken kanatları sıkışır; rampada üfleme düşer, arıza lambası, limp mode. Erken temizlik, geç kalınırsa turbo revizyonu.", "severity": "Orta", "estimatedCostEUR": 300, "affectedYears": "2007-2012" },
-      { "title": "Direksiyon kutusu / rot sesleri ve iç gıcırtılar", "description": "Direksiyon kutusundan tıkırtı ve iç plastiklerden gıcırtı yaygındır; direksiyon kutusu revizyonu ve keçe/takoz takviyesi.", "severity": "Düşük", "estimatedCostEUR": 150, "affectedYears": "2007-2012" }
+      {
+        "title": "Emme manifoldu (swirl klape) ve EGR kurumlanması",
+        "description": "1.3 Multijet'te emme manifoldundaki girdap klapeleri ve EGR kurum bağlar; güç kaybı, rölanti dengesizliği, arıza lambası. Manifold komple değişir veya temizlenir, EGR yenilenir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 250,
+        "affectedYears": "2007-2012"
+      },
+      {
+        "title": "Turbo kayıcı kanat (VNT) tıkanması",
+        "description": "Kurumdan turbonun değişken kanatları sıkışır; rampada üfleme düşer, arıza lambası, limp mode. Erken temizlik, geç kalınırsa turbo revizyonu.",
+        "severity": "Orta",
+        "estimatedCostEUR": 300,
+        "affectedYears": "2007-2012"
+      },
+      {
+        "title": "Direksiyon kutusu / rot sesleri ve iç gıcırtılar",
+        "description": "Direksiyon kutusundan tıkırtı ve iç plastiklerden gıcırtı yaygındır; direksiyon kutusu revizyonu ve keçe/takoz takviyesi.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 150,
+        "affectedYears": "2007-2012"
+      }
     ],
     "pros": [
       "Çok düşük yakıt tüketimi, torklu küçük dizel",
@@ -274,9 +518,21 @@
       "Direksiyon ve şasi hissi sıradan"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR ilk kontrol, ön takım kontrolü, fren hidroliği.", "estimatedCostEUR": 160 },
-      { "mileage": "150.000 km", "expectedIssues": "Emme manifoldu/EGR temizliği, turbo VNT kontrolü, enjektör kontrolü, debriyaj seti, ön takım revizyonu.", "estimatedCostEUR": 500 },
-      { "mileage": "250.000 km", "expectedIssues": "Zincir triger kontrolü, su pompası, turbo revizyonu ihtimali, DPF temizliği, direksiyon kutusu.", "estimatedCostEUR": 600 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR ilk kontrol, ön takım kontrolü, fren hidroliği.",
+        "estimatedCostEUR": 160
+      },
+      {
+        "mileage": "150.000 km",
+        "expectedIssues": "Emme manifoldu/EGR temizliği, turbo VNT kontrolü, enjektör kontrolü, debriyaj seti, ön takım revizyonu.",
+        "estimatedCostEUR": 500
+      },
+      {
+        "mileage": "250.000 km",
+        "expectedIssues": "Zincir triger kontrolü, su pompası, turbo revizyonu ihtimali, DPF temizliği, direksiyon kutusu.",
+        "estimatedCostEUR": 600
+      }
     ]
   },
   {
@@ -291,10 +547,30 @@
     "estimatedMaintenanceCostEUR": 230,
     "expertSummary": "Linea'nın 1.4 Fire (77 HP) benzinli versiyonu, dizelin bakım masrafını istemeyen ve LPG düşünen alıcılar için en ucuz işletmeli seçenektir. Fire motor atmosferik, turbosuz — LPG'ye tam uyumlu ve neredeyse arızasız; kayış trigerlidir. 77 HP, C segmenti bir gövdeyi taşımak için oldukça zayıftır: dolu araçta, klima açıkken ve rampada belirgin şekilde hantaldır. Günlük dille: \"Güçten feragat et, dertsizlik ve ucuzluk kazanç; LPG tak, en ekonomik geniş bagajlı sedan senin.\" Şehir içi + kısa-orta yol, bütçe odaklı aile için mantıklı.",
     "userFeedbackSummary": "Kullanıcılar 'masrafsız' ve 'LPG ile su gibi' diyor. En büyük şikayet performans: yokuşta ve dolu araçta zorlanma, otoyolda 110+ hızda güçsüzlük ve yüksek devir. Ayrıca iç plastik gıcırtıları, yol sesi, klima performansı, elektrik aksesuar arızaları. Motor tarafında ciddi kronik yok; kayış triger periyodu ve LPG subap ayarı takip edilmeli.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Triger kayışı seti değişiminin aksatılması", "description": "Fire motor kayış trigerlidir; kayış+gergi 60 bin km'de değişmezse kopar ve motor hasar görür. LPG'li araçlarda periyot daha kısa tutulur.", "severity": "Orta", "estimatedCostEUR": 140, "affectedYears": "2007-2012" },
-      { "title": "LPG'li araçlarda subap ve subap yatağı aşınması (bakım geç yapılırsa)", "description": "Fire motor LPG dostu olsa da subap ayarının düzenli yapılması, kaliteli yağ ve gerekirse subap yatağı takviyesi önemlidir. İhmal edilende kompresyon düşüşü ve tekleme.", "severity": "Orta", "estimatedCostEUR": 280, "affectedYears": "2007-2012" },
-      { "title": "İç mekan gıcırtıları ve elektrik aksesuar arızaları", "description": "Torpido/kapı panelinde gıcırtı; cam krikosu, gösterge, iç aydınlatma arızaları. Kozmetik/ucuz ama sık.", "severity": "Düşük", "estimatedCostEUR": 90, "affectedYears": "2007-2012" }
+      {
+        "title": "Triger kayışı seti değişiminin aksatılması",
+        "description": "Fire motor kayış trigerlidir; kayış+gergi 60 bin km'de değişmezse kopar ve motor hasar görür. LPG'li araçlarda periyot daha kısa tutulur.",
+        "severity": "Orta",
+        "estimatedCostEUR": 140,
+        "affectedYears": "2007-2012"
+      },
+      {
+        "title": "LPG'li araçlarda subap ve subap yatağı aşınması (bakım geç yapılırsa)",
+        "description": "Fire motor LPG dostu olsa da subap ayarının düzenli yapılması, kaliteli yağ ve gerekirse subap yatağı takviyesi önemlidir. İhmal edilende kompresyon düşüşü ve tekleme.",
+        "severity": "Orta",
+        "estimatedCostEUR": 280,
+        "affectedYears": "2007-2012"
+      },
+      {
+        "title": "İç mekan gıcırtıları ve elektrik aksesuar arızaları",
+        "description": "Torpido/kapı panelinde gıcırtı; cam krikosu, gösterge, iç aydınlatma arızaları. Kozmetik/ucuz ama sık.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 90,
+        "affectedYears": "2007-2012"
+      }
     ],
     "pros": [
       "LPG'ye tam uyumlu, çok düşük yakıt gideri",
@@ -309,9 +585,21 @@
       "Kaporta ince, düşük ikinci el değeri"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Triger kayış seti, yağ+filtre, bujiler, LPG subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 190 },
-      { "mileage": "120.000 km", "expectedIssues": "İkinci triger seti, debriyaj seti, ön takım revizyonu, LPG regülatör bakımı, amortisörler.", "estimatedCostEUR": 300 },
-      { "mileage": "200.000 km", "expectedIssues": "Su pompası, subap ayarı/yatak takviyesi, motor takozları, klima kompresörü, süspansiyon.", "estimatedCostEUR": 340 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Triger kayış seti, yağ+filtre, bujiler, LPG subap ayarı, ön takım kontrolü.",
+        "estimatedCostEUR": 190
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "İkinci triger seti, debriyaj seti, ön takım revizyonu, LPG regülatör bakımı, amortisörler.",
+        "estimatedCostEUR": 300
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Su pompası, subap ayarı/yatak takviyesi, motor takozları, klima kompresörü, süspansiyon.",
+        "estimatedCostEUR": 340
+      }
     ]
   },
   {
@@ -326,10 +614,30 @@
     "estimatedMaintenanceCostEUR": 290,
     "expertSummary": "Linea'nın performans motoru 1.4 T-Jet (120 HP, 206 Nm): turbo benzinli, port enjeksiyonlu (direkt enjeksiyon DEĞİL, bu yüzden LPG takılabilir), zincir triger. Fire'ın hantallığından şikayetçi olanlar için Linea'yı gerçekten canlandırır. Bilinen konuları: turbo (yağlama kanalı kurumu, wastegate sesi), bobin, gaz kelebeği ve LPG'li örneklerde subap. Günlük dille: \"Linea'yı zevkli kılan motor; LPG de takılır (port enjeksiyon) ama turbolu motorun bakımını aksatma, kısa periyot yağ kullan.\" Performans + ekonomi dengesi arayan için mantıklı.",
     "userFeedbackSummary": "Kullanıcılar performansı ve LPG uyumluluğunu (turbo benzinli olmasına rağmen) çok seviyor. Şikayetler: turbo sesi ve yağlama kanalı kurumu, wastegate takırtısı, bobin tekleme, gaz kelebeği kirlenmesi, LPG'de subap ayarı ihmali, iç gıcırtılar. Kısa periyot kaliteli yağ turbo ömrünü belirliyor.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Turbo yağlama kanalı kurumu ve wastegate sesi", "description": "1.4 T-Jet'te turbo yağ besleme borusu kurum bağlarsa turbo ömrü kısalır; wastegate mekanizması takırdayabilir. Kısa periyot kaliteli yağ ve motoru soğutmadan kapatmama önemli. Turbo revizyonu pahalı.", "severity": "Orta", "estimatedCostEUR": 350, "affectedYears": "2007-2012" },
-      { "title": "Ateşleme bobini ve gaz kelebeği kirlenmesi", "description": "Bobin zayıflaması (tekleme, arıza lambası) ve gaz kelebeği kurumu (rölanti dengesizliği). Bobin seti + kelebek temizliği/adaptasyonu; turbo motorda periyot kısa.", "severity": "Düşük", "estimatedCostEUR": 150, "affectedYears": "2007-2012" },
-      { "title": "LPG'li araçlarda subap ve subap yatağı aşınması", "description": "T-Jet LPG'ye uygun (port enjeksiyon) ama subap ayarı ve kaliteli LPG yağlama katkısı gerekir. İhmal edilende kompresyon düşüşü ve tekleme.", "severity": "Orta", "estimatedCostEUR": 280, "affectedYears": "2007-2012" }
+      {
+        "title": "Turbo yağlama kanalı kurumu ve wastegate sesi",
+        "description": "1.4 T-Jet'te turbo yağ besleme borusu kurum bağlarsa turbo ömrü kısalır; wastegate mekanizması takırdayabilir. Kısa periyot kaliteli yağ ve motoru soğutmadan kapatmama önemli. Turbo revizyonu pahalı.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2007-2012"
+      },
+      {
+        "title": "Ateşleme bobini ve gaz kelebeği kirlenmesi",
+        "description": "Bobin zayıflaması (tekleme, arıza lambası) ve gaz kelebeği kurumu (rölanti dengesizliği). Bobin seti + kelebek temizliği/adaptasyonu; turbo motorda periyot kısa.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 150,
+        "affectedYears": "2007-2012"
+      },
+      {
+        "title": "LPG'li araçlarda subap ve subap yatağı aşınması",
+        "description": "T-Jet LPG'ye uygun (port enjeksiyon) ama subap ayarı ve kaliteli LPG yağlama katkısı gerekir. İhmal edilende kompresyon düşüşü ve tekleme.",
+        "severity": "Orta",
+        "estimatedCostEUR": 280,
+        "affectedYears": "2007-2012"
+      }
     ],
     "pros": [
       "Linea'yı gerçekten canlandıran torklu turbo motor",
@@ -344,9 +652,21 @@
       "Yakıt tüketimi Fire'dan yüksek, benzinde 8-9 lt"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre (kısa periyot), bujiler, hava/polen filtresi, turbo kaçak kontrolü, LPG subap ayarı.", "estimatedCostEUR": 170 },
-      { "mileage": "120.000 km", "expectedIssues": "Turbo kontrolü, bobin seti, gaz kelebeği temizliği, debriyaj seti, ön takım revizyonu, LPG regülatör bakımı.", "estimatedCostEUR": 450 },
-      { "mileage": "200.000 km", "expectedIssues": "Turbo revizyonu ihtimali, su pompası, motor takozları, subap ayarı, klima kompresörü, süspansiyon.", "estimatedCostEUR": 550 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Yağ+filtre (kısa periyot), bujiler, hava/polen filtresi, turbo kaçak kontrolü, LPG subap ayarı.",
+        "estimatedCostEUR": 170
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "Turbo kontrolü, bobin seti, gaz kelebeği temizliği, debriyaj seti, ön takım revizyonu, LPG regülatör bakımı.",
+        "estimatedCostEUR": 450
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Turbo revizyonu ihtimali, su pompası, motor takozları, subap ayarı, klima kompresörü, süspansiyon.",
+        "estimatedCostEUR": 550
+      }
     ]
   },
   {
@@ -361,10 +681,30 @@
     "estimatedMaintenanceCostEUR": 190,
     "expertSummary": "Albea, Türkiye'de bir dönem taksi ve filo denince akla ilk gelen sedandı: ucuz alım, bedava sayılan parça, her sanayinin bildiği motor, B segmenti üstü bagaj. 1.4 Fire (77 HP) motoru atmosferik, turbosuz, direkt enjeksiyonsuz — LPG'ye kusursuz uyar ve doğru bakımla 400.000 km görür; kayış trigerlidir. Teknik olarak çok basit, arıza teşhisi kolay. Karşılığında güvenlik ve konfor eski nesil, kaporta ince, pas noktaları (arka çamurluk, bagaj eşiği, kapı altları) yaygındır. Günlük dille: \"Görünüşü ve konforu unut; en ucuz, en kolay tamir edilen, LPG'yle en dertsiz araçlardan biri.\"",
     "userFeedbackSummary": "Kullanıcılar 'ucuzluk ve kolaylık' diyor; taksiciler 500 bin km yapmış örneklerden bahsediyor. Şikayetler: kaporta pası, iç plastiklerin ucuzluğu ve gıcırtı, süspansiyon sertliği ve yol sesi, klima soğutmasının zayıflığı, elektrikli aksesuar arızaları. Motor tarafında ciddi kronik yok; kayış triger periyodu ve LPG'de subap ayarı takip edilirse uzun ömürlü.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Kaporta pası (arka çamurluk, bagaj eşiği, kapı altları)", "description": "İnce sac ve zayıf boya koruması nedeniyle nemli iklimde ve yıkanmayan araçlarda pas başlar. Alırken çamurluk içleri, eşikler ve bagaj tabanı mutlaka kontrol edilir; ilerlemiş pas kaynak/değişim ister.", "severity": "Orta", "estimatedCostEUR": 200, "affectedYears": "2002-2012" },
-      { "title": "Triger kayışı değişiminin aksatılması", "description": "1.4 Fire kayış trigerlidir; kayış+gergi 60 bin km'de değişmezse kopar, subap-piston teması motoru hasarlar. LPG'li araçlarda periyot daha kısa tutulur.", "severity": "Orta", "estimatedCostEUR": 130, "affectedYears": "2002-2012" },
-      { "title": "Elektrikli aksesuar ve gösterge arızaları", "description": "Cam krikosu kopar, sinyal/silecek kolu kontak yapmaz, gösterge ibreleri takılır, iç aydınlatma sönük. Tek tek çok ucuz ama sık.", "severity": "Düşük", "estimatedCostEUR": 80, "affectedYears": "2002-2012" }
+      {
+        "title": "Kaporta pası (arka çamurluk, bagaj eşiği, kapı altları)",
+        "description": "İnce sac ve zayıf boya koruması nedeniyle nemli iklimde ve yıkanmayan araçlarda pas başlar. Alırken çamurluk içleri, eşikler ve bagaj tabanı mutlaka kontrol edilir; ilerlemiş pas kaynak/değişim ister.",
+        "severity": "Orta",
+        "estimatedCostEUR": 200,
+        "affectedYears": "2002-2012"
+      },
+      {
+        "title": "Triger kayışı değişiminin aksatılması",
+        "description": "1.4 Fire kayış trigerlidir; kayış+gergi 60 bin km'de değişmezse kopar, subap-piston teması motoru hasarlar. LPG'li araçlarda periyot daha kısa tutulur.",
+        "severity": "Orta",
+        "estimatedCostEUR": 130,
+        "affectedYears": "2002-2012"
+      },
+      {
+        "title": "Elektrikli aksesuar ve gösterge arızaları",
+        "description": "Cam krikosu kopar, sinyal/silecek kolu kontak yapmaz, gösterge ibreleri takılır, iç aydınlatma sönük. Tek tek çok ucuz ama sık.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 80,
+        "affectedYears": "2002-2012"
+      }
     ],
     "pros": [
       "Türkiye'nin en ucuz işletmeli araçlarından biri, LPG'ye tam uyum",
@@ -379,9 +719,21 @@
       "Ucuz iç malzeme, sık küçük elektrik arızaları"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Triger kayış seti, yağ+filtre, bujiler, LPG'de subap ayarı, ön takım kontrolü, pas kontrolü.", "estimatedCostEUR": 170 },
-      { "mileage": "120.000 km", "expectedIssues": "İkinci triger seti, debriyaj seti, ön takım revizyonu, amortisörler, LPG regülatör bakımı.", "estimatedCostEUR": 280 },
-      { "mileage": "200.000 km", "expectedIssues": "Su pompası, motor takozları, marş/alternatör revizyonu, kaporta pas onarımı, klima kompresörü.", "estimatedCostEUR": 320 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Triger kayış seti, yağ+filtre, bujiler, LPG'de subap ayarı, ön takım kontrolü, pas kontrolü.",
+        "estimatedCostEUR": 170
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "İkinci triger seti, debriyaj seti, ön takım revizyonu, amortisörler, LPG regülatör bakımı.",
+        "estimatedCostEUR": 280
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Su pompası, motor takozları, marş/alternatör revizyonu, kaporta pas onarımı, klima kompresörü.",
+        "estimatedCostEUR": 320
+      }
     ]
   },
   {
@@ -396,10 +748,30 @@
     "estimatedMaintenanceCostEUR": 250,
     "expertSummary": "Albea'nın dizeli 1.3 Multijet (70 HP), taksi ve filo kullanımında çok yaygındı: uzun yolda 4 lt yakan, torklu (145 Nm), zincir trigerli, bakımlı örnekleri 400 bin km görmüş bir motor. 70 HP bugünün standardında zayıf ama Albea'nın hafif gövdesini şehir içinde idare eder. Dizel klasikleri: emme manifoldu ve EGR kurumu, turbo kayıcı kanat, enjektör. Bu yıllarda DPF yoktu. Günlük dille: \"Taksi klasiği; motoru sağlam ve çok ekonomik, ama 70 HP yavaş ve emme manifoldu/EGR bakımı ister.\" Yüksek km yapan, ekonomi odaklı kullanıcı için.",
     "userFeedbackSummary": "Kullanıcılar yakıt tüketimini ve motor dayanıklılığını çok övüyor; taksiciler 500 bin km örneklerden bahsediyor. Şikayetler: emme manifoldu klape motoru, EGR kurumu, turbo kayıcı kanat, enjektör revizyonu, 70 HP'nin yavaşlığı, kaporta pası, elektrik arızaları. Zincir triger uzun ömürlü.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Emme manifoldu (swirl klape) ve EGR kurumlanması", "description": "1.3 Multijet'te emme manifoldundaki girdap klapeleri ve EGR kurum bağlar; güç kaybı, rölanti dengesizliği, arıza lambası. Manifold değişir/temizlenir, EGR yenilenir.", "severity": "Orta", "estimatedCostEUR": 220, "affectedYears": "2002-2012" },
-      { "title": "Turbo kayıcı kanat (VNT) tıkanması", "description": "Kurumdan turbonun değişken kanatları sıkışır; rampada üfleme düşer, arıza lambası, limp mode. Erken temizlik, geç kalınırsa turbo revizyonu.", "severity": "Orta", "estimatedCostEUR": 300, "affectedYears": "2002-2012" },
-      { "title": "Kaporta pası ve elektrik aksesuar arızaları", "description": "Arka çamurluk/eşik/bagaj tabanı pası; cam krikosu, sinyal kolu, gösterge arızaları. Alırken pas kontrolü şart.", "severity": "Orta", "estimatedCostEUR": 180, "affectedYears": "2002-2012" }
+      {
+        "title": "Emme manifoldu (swirl klape) ve EGR kurumlanması",
+        "description": "1.3 Multijet'te emme manifoldundaki girdap klapeleri ve EGR kurum bağlar; güç kaybı, rölanti dengesizliği, arıza lambası. Manifold değişir/temizlenir, EGR yenilenir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 220,
+        "affectedYears": "2002-2012"
+      },
+      {
+        "title": "Turbo kayıcı kanat (VNT) tıkanması",
+        "description": "Kurumdan turbonun değişken kanatları sıkışır; rampada üfleme düşer, arıza lambası, limp mode. Erken temizlik, geç kalınırsa turbo revizyonu.",
+        "severity": "Orta",
+        "estimatedCostEUR": 300,
+        "affectedYears": "2002-2012"
+      },
+      {
+        "title": "Kaporta pası ve elektrik aksesuar arızaları",
+        "description": "Arka çamurluk/eşik/bagaj tabanı pası; cam krikosu, sinyal kolu, gösterge arızaları. Alırken pas kontrolü şart.",
+        "severity": "Orta",
+        "estimatedCostEUR": 180,
+        "affectedYears": "2002-2012"
+      }
     ],
     "pros": [
       "Çok düşük yakıt tüketimi (uzun yol ~4 lt)",
@@ -414,9 +786,21 @@
       "Eski nesil güvenlik ve konfor"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR ilk kontrol, ön takım kontrolü, pas kontrolü.", "estimatedCostEUR": 150 },
-      { "mileage": "150.000 km", "expectedIssues": "Emme manifoldu/EGR temizliği, turbo VNT kontrolü, enjektör kontrolü, debriyaj seti, ön takım revizyonu.", "estimatedCostEUR": 500 },
-      { "mileage": "250.000 km", "expectedIssues": "Zincir triger kontrolü, su pompası, turbo revizyonu ihtimali, kaporta pas onarımı, direksiyon kutusu.", "estimatedCostEUR": 600 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR ilk kontrol, ön takım kontrolü, pas kontrolü.",
+        "estimatedCostEUR": 150
+      },
+      {
+        "mileage": "150.000 km",
+        "expectedIssues": "Emme manifoldu/EGR temizliği, turbo VNT kontrolü, enjektör kontrolü, debriyaj seti, ön takım revizyonu.",
+        "estimatedCostEUR": 500
+      },
+      {
+        "mileage": "250.000 km",
+        "expectedIssues": "Zincir triger kontrolü, su pompası, turbo revizyonu ihtimali, kaporta pas onarımı, direksiyon kutusu.",
+        "estimatedCostEUR": 600
+      }
     ]
   },
   {
@@ -431,10 +815,30 @@
     "estimatedMaintenanceCostEUR": 180,
     "expertSummary": "Palio hatchback, Albea/Siena üçlüsünün 5 kapılı hatchback üyesidir — aynı mekanik, daha pratik ve kısa gövde, katlanır arka koltuk. 1.2 8V (73 HP) atmosferik motor son derece basit, LPG'ye tam uyumlu ve dertsizdir; kayış trigerlidir. 73 HP hafif gövdeyi şehir içinde idare eder, otoyolda zayıf. Kaporta ince, pas noktaları (arka çamurluk, eşik) yaygın; iç malzeme çok ucuz. Günlük dille: \"En ucuz hatchback'lerden; motoru dertsiz, LPG tak, öğrenci/ilk otomobil için ucuz ulaşım. Pas ve elektrik arızalarına hazır ol.\"",
     "userFeedbackSummary": "Kullanıcılar 'ucuz ve idare eder' diyor. Şikayetler: kaporta pası, iç plastiklerin ucuzluğu ve gıcırtı, süspansiyon sertliği, klima performansı, elektrik aksesuar arızaları (cam krikosu, sinyal kolu, gösterge). Motor tarafında ciddi kronik yok; kayış triger ve LPG subap ayarı takip edilmeli.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Kaporta pası (arka çamurluk, eşik, kapı altları)", "description": "İnce sac ve zayıf boya koruması nedeniyle pas başlar. Alırken çamurluk içleri, eşikler ve bagaj tabanı kontrol edilir; ilerlemiş pas kaynak/değişim ister.", "severity": "Orta", "estimatedCostEUR": 180, "affectedYears": "1998-2003" },
-      { "title": "Triger kayışı değişiminin aksatılması", "description": "1.2 8V kayış trigerlidir; kayış+gergi 60 bin km'de değişmezse kopar, motor hasar görür. LPG'de periyot daha kısa.", "severity": "Orta", "estimatedCostEUR": 120, "affectedYears": "1998-2003" },
-      { "title": "Elektrikli aksesuar ve gösterge arızaları", "description": "Cam krikosu kopar, sinyal/silecek kolu kontak yapmaz, gösterge ibreleri takılır. Tek tek çok ucuz ama sık.", "severity": "Düşük", "estimatedCostEUR": 80, "affectedYears": "1998-2003" }
+      {
+        "title": "Kaporta pası (arka çamurluk, eşik, kapı altları)",
+        "description": "İnce sac ve zayıf boya koruması nedeniyle pas başlar. Alırken çamurluk içleri, eşikler ve bagaj tabanı kontrol edilir; ilerlemiş pas kaynak/değişim ister.",
+        "severity": "Orta",
+        "estimatedCostEUR": 180,
+        "affectedYears": "1998-2003"
+      },
+      {
+        "title": "Triger kayışı değişiminin aksatılması",
+        "description": "1.2 8V kayış trigerlidir; kayış+gergi 60 bin km'de değişmezse kopar, motor hasar görür. LPG'de periyot daha kısa.",
+        "severity": "Orta",
+        "estimatedCostEUR": 120,
+        "affectedYears": "1998-2003"
+      },
+      {
+        "title": "Elektrikli aksesuar ve gösterge arızaları",
+        "description": "Cam krikosu kopar, sinyal/silecek kolu kontak yapmaz, gösterge ibreleri takılır. Tek tek çok ucuz ama sık.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 80,
+        "affectedYears": "1998-2003"
+      }
     ],
     "pros": [
       "En ucuz hatchback seçeneklerinden, LPG'ye tam uyum",
@@ -449,9 +853,21 @@
       "Eski nesil güvenlik, sık küçük elektrik arızaları"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Triger kayış seti, yağ+filtre, bujiler, LPG'de subap ayarı, ön takım kontrolü, pas kontrolü.", "estimatedCostEUR": 150 },
-      { "mileage": "120.000 km", "expectedIssues": "İkinci triger seti, debriyaj seti, ön takım revizyonu, amortisörler, LPG regülatör bakımı.", "estimatedCostEUR": 260 },
-      { "mileage": "200.000 km", "expectedIssues": "Su pompası, motor takozları, marş/alternatör revizyonu, kaporta pas onarımı, klima kompresörü.", "estimatedCostEUR": 300 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Triger kayış seti, yağ+filtre, bujiler, LPG'de subap ayarı, ön takım kontrolü, pas kontrolü.",
+        "estimatedCostEUR": 150
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "İkinci triger seti, debriyaj seti, ön takım revizyonu, amortisörler, LPG regülatör bakımı.",
+        "estimatedCostEUR": 260
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Su pompası, motor takozları, marş/alternatör revizyonu, kaporta pas onarımı, klima kompresörü.",
+        "estimatedCostEUR": 300
+      }
     ]
   },
   {
@@ -466,10 +882,30 @@
     "estimatedMaintenanceCostEUR": 260,
     "expertSummary": "Siena, Palio/Albea üçlüsünün ilk sedan üyesidir (Albea'dan önce geldi). 1.6 16V motorun 'Speedgear' adı verilen CVT'li (kademesiz) versiyonu dönemine göre ilginç bir çözümdür: gerçek bir tork konvertörüyle kalkar ama içi çelik itme kayışlı klasik CVT'dir. Sorun, bu şanzımanın Türkiye'de ustasının ve yedek parçasının çok az olmasıdır — arıza yaparsa 'onaracak adam bulmak' başlı başına dert. Yağı özeldir ve düzenli değişmelidir. Motor (1.6 16V) LPG dostu ve dayanıklıdır. Günlük dille: \"Otomatik istiyorsan bile Speedgear'dan uzak dur; sağlam örneği bile riskli, arızası pahalı ve zor.\"",
     "userFeedbackSummary": "Kullanıcılar motoru sever, şanzımandan çekinir. Forumlarda 'Speedgear yaptı, tamir edecek yer bulamadım' ve 'yağını değiştirdim, 5 yıl sorunsuz' şeklinde uç yorumlar var. En sık: kalkışta titreme, rölantide sarsıntı, ivmede 'kayış kaçırma' hissi, arıza lambası. Şanzıman komple değişimi çok pahalı ve parça bulmak zor.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Speedgear CVT kayış/konik aşınması ve yağ ihmali", "description": "Özel CVT yağı düzenli değişmezse çelik itme kayışı ve konik yüzeyler aşınır; kalkışta titreme, ivmede zayıflık, arıza lambası ve sonunda şanzıman komple arızası. Parça ve usta bulmak Türkiye'de zor, maliyet yüksek.", "severity": "Kritik", "estimatedCostEUR": 900, "affectedYears": "1998-2004" },
-      { "title": "Tork konvertörü ve solenoid valf arızası", "description": "Kalkış tork konvertörü ve şanzıman içi solenoid valfler arıza yapar; sarsıntı, geç tepki, arıza lambası. Revizyon uzmanlık ister.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "1998-2004" },
-      { "title": "Kaporta pası ve elektrik arızaları", "description": "Arka çamurluk/eşik pası; cam krikosu, gösterge ve iç aydınlatma arızaları.", "severity": "Orta", "estimatedCostEUR": 180, "affectedYears": "1998-2004" }
+      {
+        "title": "Speedgear CVT kayış/konik aşınması ve yağ ihmali",
+        "description": "Özel CVT yağı düzenli değişmezse çelik itme kayışı ve konik yüzeyler aşınır; kalkışta titreme, ivmede zayıflık, arıza lambası ve sonunda şanzıman komple arızası. Parça ve usta bulmak Türkiye'de zor, maliyet yüksek.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 900,
+        "affectedYears": "1998-2004"
+      },
+      {
+        "title": "Tork konvertörü ve solenoid valf arızası",
+        "description": "Kalkış tork konvertörü ve şanzıman içi solenoid valfler arıza yapar; sarsıntı, geç tepki, arıza lambası. Revizyon uzmanlık ister.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "1998-2004"
+      },
+      {
+        "title": "Kaporta pası ve elektrik arızaları",
+        "description": "Arka çamurluk/eşik pası; cam krikosu, gösterge ve iç aydınlatma arızaları.",
+        "severity": "Orta",
+        "estimatedCostEUR": 180,
+        "affectedYears": "1998-2004"
+      }
     ],
     "pros": [
       "LPG dostu, dayanıklı 1.6 16V motor",
@@ -483,9 +919,21 @@
       "Düşük ve zor korunur ikinci el değeri"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Speedgear özel yağı, triger kayış seti, bujiler, LPG subap ayarı, pas kontrolü.", "estimatedCostEUR": 250 },
-      { "mileage": "120.000 km", "expectedIssues": "İkinci CVT yağı, tork konvertörü kontrolü, ön takım revizyonu, solenoid kontrolü, pas kontrolü.", "estimatedCostEUR": 350 },
-      { "mileage": "180.000 km", "expectedIssues": "CVT kayış/konik kontrolü veya revizyonu, su pompası, motor takozları, kaporta pas onarımı.", "estimatedCostEUR": 700 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Speedgear özel yağı, triger kayış seti, bujiler, LPG subap ayarı, pas kontrolü.",
+        "estimatedCostEUR": 250
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "İkinci CVT yağı, tork konvertörü kontrolü, ön takım revizyonu, solenoid kontrolü, pas kontrolü.",
+        "estimatedCostEUR": 350
+      },
+      {
+        "mileage": "180.000 km",
+        "expectedIssues": "CVT kayış/konik kontrolü veya revizyonu, su pompası, motor takozları, kaporta pas onarımı.",
+        "estimatedCostEUR": 700
+      }
     ]
   },
   {
@@ -500,10 +948,30 @@
     "estimatedMaintenanceCostEUR": 320,
     "expertSummary": "Doblo, Türkiye'de hem ticari (Cargo) hem aile aracı (Combi) olarak devasa sattı: yüksek tavan, kayar kapılar, kocaman iç hacim ve bagaj. D3 kasada arka süspansiyon bağımsız çift salıncaklıdır (Bi-link), bu da binek konforuna yakın bir sürüş verir. 1.6 Multijet dizel motor 105 HP + 290 Nm ile dolu araçta rahat, uzun yolda 5-5.5 lt yakar, zincir triger kullanır. Dizel klasikleri: EGR ve emme kurumu, turbo VNT, DPF (şehir içi), çift kütleli volan. Günlük dille: \"Kalabalık aile veya esnaf için iç hacim canavarı; dizel bakımlarını ve aracın ticari geçmişini iyi sorgula.\"",
     "userFeedbackSummary": "Kullanıcılar iç hacim, koltuk katlama esnekliği ve dizel torkundan çok memnun. Şikayetler: EGR ve emme manifoldu kurumu, turbo VNT tıkanması, DPF (şehir içi), çift kütleli volan + debriyaj, yol ve rüzgar sesi, sert plastikler, kayar kapı mekanizması ve ray arızaları. Zincir triger uzun ömürlü.",
+    "bodyType": "MPV",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "EGR valfi ve emme manifoldu kurumlanması", "description": "1.6 Multijet'te düşük devir kullanımda EGR ve emme manifoldu kurum bağlar; güç kaybı, rölanti dengesizliği, arıza lambası. Temizlik veya EGR/manifold yenileme.", "severity": "Orta", "estimatedCostEUR": 250, "affectedYears": "2010-2015" },
-      { "title": "Turbo VNT tıkanması ve DPF (şehir içi)", "description": "Turbonun değişken kanatları ve partikül filtresi kurum bağlar; rampada güç düşüşü, arıza lambası, rejenerasyon sorunu. Temizlik/yenileme gerekir.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2010-2015" },
-      { "title": "Kayar kapı ray ve mekanizma arızası", "description": "Yan kayar kapı(lar)ın rayları, makaraları ve kilit mekanizması yük/kullanımla aşınır; kapı zor açılır/kapanır, ses yapar. Ray+makara+kilit revizyonu.", "severity": "Düşük", "estimatedCostEUR": 150, "affectedYears": "2010-2015" }
+      {
+        "title": "EGR valfi ve emme manifoldu kurumlanması",
+        "description": "1.6 Multijet'te düşük devir kullanımda EGR ve emme manifoldu kurum bağlar; güç kaybı, rölanti dengesizliği, arıza lambası. Temizlik veya EGR/manifold yenileme.",
+        "severity": "Orta",
+        "estimatedCostEUR": 250,
+        "affectedYears": "2010-2015"
+      },
+      {
+        "title": "Turbo VNT tıkanması ve DPF (şehir içi)",
+        "description": "Turbonun değişken kanatları ve partikül filtresi kurum bağlar; rampada güç düşüşü, arıza lambası, rejenerasyon sorunu. Temizlik/yenileme gerekir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2010-2015"
+      },
+      {
+        "title": "Kayar kapı ray ve mekanizma arızası",
+        "description": "Yan kayar kapı(lar)ın rayları, makaraları ve kilit mekanizması yük/kullanımla aşınır; kapı zor açılır/kapanır, ses yapar. Ray+makara+kilit revizyonu.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 150,
+        "affectedYears": "2010-2015"
+      }
     ],
     "pros": [
       "Segmentinin en geniş iç hacmi ve bagajı",
@@ -518,9 +986,21 @@
       "Kayar kapı mekanizması bakım ister"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR ilk kontrol, kayar kapı ray yağlama, fren hidroliği.", "estimatedCostEUR": 170 },
-      { "mileage": "150.000 km", "expectedIssues": "EGR/emme temizliği, turbo VNT kontrolü, enjektör kontrolü, çift kütleli volan+debriyaj, ön takım revizyonu, kayar kapı revizyonu.", "estimatedCostEUR": 650 },
-      { "mileage": "250.000 km", "expectedIssues": "Zincir triger kontrolü, su pompası, turbo revizyonu ihtimali, DPF temizliği/değişimi, arka süspansiyon burçları.", "estimatedCostEUR": 700 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR ilk kontrol, kayar kapı ray yağlama, fren hidroliği.",
+        "estimatedCostEUR": 170
+      },
+      {
+        "mileage": "150.000 km",
+        "expectedIssues": "EGR/emme temizliği, turbo VNT kontrolü, enjektör kontrolü, çift kütleli volan+debriyaj, ön takım revizyonu, kayar kapı revizyonu.",
+        "estimatedCostEUR": 650
+      },
+      {
+        "mileage": "250.000 km",
+        "expectedIssues": "Zincir triger kontrolü, su pompası, turbo revizyonu ihtimali, DPF temizliği/değişimi, arka süspansiyon burçları.",
+        "estimatedCostEUR": 700
+      }
     ]
   },
   {
@@ -535,10 +1015,30 @@
     "estimatedMaintenanceCostEUR": 330,
     "expertSummary": "D4 makyajı Doblo'ya yeni ön yüz, güncellenmiş kabin ve donanım getirdi; mekanik olarak D3 platformu korundu (Bi-link arka süspansiyon). 1.6 Multijet (120 HP, 320 Nm) motor, D4'ün en güçlü ve dengeli dizeli — yüklü ve uzun yol kullanımına uygun, zincir triger. Dizel klasikleri D3 ile aynı: EGR/emme kurumu, turbo VNT, DPF, çift kütleli volan. Günlük dille: \"Doblo'nun en olgun hali; kalabalık aile veya esnaf için iç hacim canavarı, 120 HP dizel en mantıklısı. Ticari geçmişi ve dizel bakımlarını sorgula.\"",
     "userFeedbackSummary": "Kullanıcılar güncellenen kabini, iç hacmi ve 120 HP dizelin performansını övüyor. Şikayetler D3 ile aynı: EGR/emme kurumu, turbo VNT, DPF (şehir içi), çift kütleli volan + debriyaj, kayar kapı mekanizması, sert plastikler, yol sesi. Zincir triger uzun ömürlü.",
+    "bodyType": "MPV",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "EGR valfi ve emme manifoldu kurumlanması", "description": "1.6 Multijet'te düşük devir kullanımda EGR ve emme manifoldu kurum bağlar; güç kaybı, arıza lambası. Temizlik veya EGR/manifold yenileme.", "severity": "Orta", "estimatedCostEUR": 250, "affectedYears": "2015-2022" },
-      { "title": "Turbo VNT tıkanması ve DPF (şehir içi)", "description": "Turbonun değişken kanatları ve partikül filtresi kurum bağlar; rampada güç düşüşü, arıza lambası, rejenerasyon sorunu. Temizlik/yenileme gerekir.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2015-2022" },
-      { "title": "Çift kütleli volan (DMF) ve debriyaj aşınması; kayar kapı mekanizması", "description": "Rölantide takırtı, kalkışta titreme (DMF+debriyaj); kayar kapı rayı/makarası aşınır. Set halinde yenileme ve ray revizyonu.", "severity": "Orta", "estimatedCostEUR": 500, "affectedYears": "2015-2022" }
+      {
+        "title": "EGR valfi ve emme manifoldu kurumlanması",
+        "description": "1.6 Multijet'te düşük devir kullanımda EGR ve emme manifoldu kurum bağlar; güç kaybı, arıza lambası. Temizlik veya EGR/manifold yenileme.",
+        "severity": "Orta",
+        "estimatedCostEUR": 250,
+        "affectedYears": "2015-2022"
+      },
+      {
+        "title": "Turbo VNT tıkanması ve DPF (şehir içi)",
+        "description": "Turbonun değişken kanatları ve partikül filtresi kurum bağlar; rampada güç düşüşü, arıza lambası, rejenerasyon sorunu. Temizlik/yenileme gerekir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2015-2022"
+      },
+      {
+        "title": "Çift kütleli volan (DMF) ve debriyaj aşınması; kayar kapı mekanizması",
+        "description": "Rölantide takırtı, kalkışta titreme (DMF+debriyaj); kayar kapı rayı/makarası aşınır. Set halinde yenileme ve ray revizyonu.",
+        "severity": "Orta",
+        "estimatedCostEUR": 500,
+        "affectedYears": "2015-2022"
+      }
     ],
     "pros": [
       "Segmentinin en geniş iç hacmi ve bagajı, güncellenmiş kabin",
@@ -553,9 +1053,21 @@
       "Kayar kapı mekanizması bakım ister"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR ilk kontrol, kayar kapı ray yağlama, fren hidroliği.", "estimatedCostEUR": 180 },
-      { "mileage": "150.000 km", "expectedIssues": "EGR/emme temizliği, turbo VNT kontrolü, enjektör kontrolü, çift kütleli volan+debriyaj, ön takım revizyonu, kayar kapı revizyonu.", "estimatedCostEUR": 700 },
-      { "mileage": "250.000 km", "expectedIssues": "Zincir triger kontrolü, su pompası, turbo revizyonu ihtimali, DPF temizliği/değişimi, arka süspansiyon burçları.", "estimatedCostEUR": 750 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR ilk kontrol, kayar kapı ray yağlama, fren hidroliği.",
+        "estimatedCostEUR": 180
+      },
+      {
+        "mileage": "150.000 km",
+        "expectedIssues": "EGR/emme temizliği, turbo VNT kontrolü, enjektör kontrolü, çift kütleli volan+debriyaj, ön takım revizyonu, kayar kapı revizyonu.",
+        "estimatedCostEUR": 700
+      },
+      {
+        "mileage": "250.000 km",
+        "expectedIssues": "Zincir triger kontrolü, su pompası, turbo revizyonu ihtimali, DPF temizliği/değişimi, arka süspansiyon burçları.",
+        "estimatedCostEUR": 750
+      }
     ]
   },
   {
@@ -570,10 +1082,30 @@
     "estimatedMaintenanceCostEUR": 280,
     "expertSummary": "Fiorino, şehir içi dağıtım ve esnaf taşımacılığında Türkiye'nin en yaygın hafif ticarisidir: küçük dış ölçü, yüksek tavan, düşük yakıt. 1.3 Multijet (75 HP) dizel motor zincir trigerlidir, şehir içinde 4.5-5 lt yakar ve bakımlı örnekleri 300 bin km görür. Sürüş konforu ticari seviye (arka torsiyon bar aks; boşken sert, yüklüyken oturur). Dizel klasikleri: emme manifoldu/EGR kurumu, turbo VNT, enjektör; bu erken yıllarda DPF çoğunlukla yoktu. Günlük dille: \"Esnafın en ucuz işletmeli aracı; ticari yorulmuşluğunu ve dizel bakımlarını iyi bak.\"",
     "userFeedbackSummary": "Esnaf kullanıcılar yakıt ekonomisi ve pratikliği çok övüyor. Şikayetler: boşken sert süspansiyon ve yol sesi, EGR/emme kurumu, turbo VNT, enjektör revizyonu, debriyaj (yoğun dur-kalk), kayar kapı ray sesi, klima performansı. Zincir triger uzun ömürlü; kaliteli mazot enjektör ömrünü uzatır.",
+    "bodyType": "Panelvan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "EGR ve emme manifoldu kurumlanması", "description": "1.3 Multijet'te düşük devir şehir içi kullanımda EGR ve emme manifoldu klapesi kurum bağlar; güç kaybı, arıza lambası. Temizlik veya yenileme.", "severity": "Orta", "estimatedCostEUR": 220, "affectedYears": "2008-2016" },
-      { "title": "Turbo VNT tıkanması", "description": "Kurumdan turbo kayıcı kanatları sıkışır; rampada güç düşüşü, arıza lambası, limp mode. Temizlik veya turbo revizyonu.", "severity": "Orta", "estimatedCostEUR": 300, "affectedYears": "2008-2016" },
-      { "title": "Debriyaj ve ön takım hızlı aşınması (ticari kullanım)", "description": "Yoğun dur-kalk trafikte ve yüklü kullanımda debriyaj balata-baskısı, ön salıncak ve rot başları hızlı biter. Aracın ticari geçmişine göre planla.", "severity": "Orta", "estimatedCostEUR": 350, "affectedYears": "2008-2016" }
+      {
+        "title": "EGR ve emme manifoldu kurumlanması",
+        "description": "1.3 Multijet'te düşük devir şehir içi kullanımda EGR ve emme manifoldu klapesi kurum bağlar; güç kaybı, arıza lambası. Temizlik veya yenileme.",
+        "severity": "Orta",
+        "estimatedCostEUR": 220,
+        "affectedYears": "2008-2016"
+      },
+      {
+        "title": "Turbo VNT tıkanması",
+        "description": "Kurumdan turbo kayıcı kanatları sıkışır; rampada güç düşüşü, arıza lambası, limp mode. Temizlik veya turbo revizyonu.",
+        "severity": "Orta",
+        "estimatedCostEUR": 300,
+        "affectedYears": "2008-2016"
+      },
+      {
+        "title": "Debriyaj ve ön takım hızlı aşınması (ticari kullanım)",
+        "description": "Yoğun dur-kalk trafikte ve yüklü kullanımda debriyaj balata-baskısı, ön salıncak ve rot başları hızlı biter. Aracın ticari geçmişine göre planla.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2008-2016"
+      }
     ],
     "pros": [
       "Şehir içi çok düşük yakıt tüketimi",
@@ -588,9 +1120,21 @@
       "Güvenlik ve donanım temel seviye"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR ilk kontrol, debriyaj kontrolü, kayar kapı yağlama.", "estimatedCostEUR": 160 },
-      { "mileage": "150.000 km", "expectedIssues": "EGR/emme temizliği, turbo VNT kontrolü, enjektör kontrolü, debriyaj seti, ön takım revizyonu.", "estimatedCostEUR": 550 },
-      { "mileage": "250.000 km", "expectedIssues": "Zincir triger kontrolü, su pompası, turbo revizyonu ihtimali, arka aks/torsiyon bakımı.", "estimatedCostEUR": 600 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR ilk kontrol, debriyaj kontrolü, kayar kapı yağlama.",
+        "estimatedCostEUR": 160
+      },
+      {
+        "mileage": "150.000 km",
+        "expectedIssues": "EGR/emme temizliği, turbo VNT kontrolü, enjektör kontrolü, debriyaj seti, ön takım revizyonu.",
+        "estimatedCostEUR": 550
+      },
+      {
+        "mileage": "250.000 km",
+        "expectedIssues": "Zincir triger kontrolü, su pompası, turbo revizyonu ihtimali, arka aks/torsiyon bakımı.",
+        "estimatedCostEUR": 600
+      }
     ]
   }
 ]

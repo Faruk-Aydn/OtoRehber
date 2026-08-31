@@ -24,7 +24,12 @@ namespace OtoRehber.Domain.Mappings
             MaxPrice = c.MaxPrice,
             ExpertSummary = c.ExpertSummary,
             UserFeedbackSummary = c.UserFeedbackSummary,
-            ImageUrl = c.ImageUrl
+            ImageUrl = c.ImageUrl,
+            FuelType = c.FuelType,
+            Transmission = c.Transmission,
+            BodyType = c.BodyType,
+            PowerHp = c.PowerHp,
+            EngineDisplacementCc = c.EngineDisplacementCc
         };
 
         public static List<CarListDto> ToListDto(this IEnumerable<Car> cars)
@@ -45,6 +50,17 @@ namespace OtoRehber.Domain.Mappings
             MaxPrice = c.MaxPrice,
             EstimatedMaintenanceCostEUR = c.EstimatedMaintenanceCostEUR,
             ImageUrl = c.ImageUrl,
+            FuelType = c.FuelType,
+            Transmission = c.Transmission,
+            BodyType = c.BodyType,
+            Drivetrain = c.Drivetrain,
+            Condition = c.Condition,
+            PowerHp = c.PowerHp,
+            EngineDisplacementCc = c.EngineDisplacementCc,
+            YearStart = c.YearStart,
+            YearEnd = c.YearEnd,
+            RangeKm = c.RangeKm,
+            FastChargeMinutes = c.FastChargeMinutes,
             ProsConsList = c.ProsConsList ?? new List<ProsCons>(),
             ChronicIssues = c.ChronicIssues ?? new List<ChronicIssue>(),
             MileageMilestones = c.MileageMilestones ?? new List<MileageMilestone>(),
@@ -63,22 +79,24 @@ namespace OtoRehber.Domain.Mappings
             MinPrice = c.MinPrice,
             MaxPrice = c.MaxPrice,
             EstimatedMaintenanceCostEUR = c.EstimatedMaintenanceCostEUR,
-            ImageUrl = c.ImageUrl
+            ImageUrl = c.ImageUrl,
+            FuelType = c.FuelType,
+            Transmission = c.Transmission,
+            BodyType = c.BodyType,
+            Drivetrain = c.Drivetrain,
+            Condition = c.Condition,
+            PowerHp = c.PowerHp,
+            EngineDisplacementCc = c.EngineDisplacementCc,
+            YearStart = c.YearStart,
+            YearEnd = c.YearEnd
         };
 
-        public static Car ToEntity(this CarCreateDto d) => new()
+        public static Car ToEntity(this CarCreateDto d)
         {
-            Brand = d.Brand,
-            ModelName = d.ModelName,
-            Engine = d.Engine,
-            Segment = d.Segment,
-            ExpertSummary = d.ExpertSummary,
-            ReliabilityScore = d.ReliabilityScore,
-            MinPrice = d.MinPrice,
-            MaxPrice = d.MaxPrice,
-            EstimatedMaintenanceCostEUR = d.EstimatedMaintenanceCostEUR,
-            ImageUrl = d.ImageUrl
-        };
+            var car = new Car();
+            d.ApplyTo(car);
+            return car;
+        }
 
         /// <summary>
         /// DTO'daki alanları mevcut entity üzerine uygular. DTO'da olmayan alanlar
@@ -96,6 +114,17 @@ namespace OtoRehber.Domain.Mappings
             car.MaxPrice = d.MaxPrice;
             car.EstimatedMaintenanceCostEUR = d.EstimatedMaintenanceCostEUR;
             car.ImageUrl = d.ImageUrl;
+            car.FuelType = Blank(d.FuelType);
+            car.Transmission = Blank(d.Transmission);
+            car.BodyType = Blank(d.BodyType);
+            car.Drivetrain = Blank(d.Drivetrain);
+            car.Condition = Blank(d.Condition);
+            car.PowerHp = d.PowerHp is > 0 ? d.PowerHp : null;
+            car.EngineDisplacementCc = d.EngineDisplacementCc is > 0 ? d.EngineDisplacementCc : null;
+            car.YearStart = d.YearStart;
+            car.YearEnd = d.YearEnd;
         }
+
+        private static string? Blank(string? s) => string.IsNullOrWhiteSpace(s) ? null : s.Trim();
     }
 }

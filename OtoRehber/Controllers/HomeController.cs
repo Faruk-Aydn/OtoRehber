@@ -27,12 +27,11 @@ namespace OtoRehber.Controllers
             _cache = cache;
         }
 
-        public async Task<IActionResult> Index(string searchQuery, string[] segment, string[] brand, string sortBy, int page = 1)
+        public async Task<IActionResult> Index(OtoRehber.Services.CarFilter filter, int page = 1)
         {
             // Filtre + sıralama /araclar ile ortak (Services/CarCatalogQuery).
-            var carsQuery = OtoRehber.Services.CarCatalogQuery.ApplyFilters(
-                _context.Cars.AsNoTracking(), searchQuery, segment, brand);
-            carsQuery = OtoRehber.Services.CarCatalogQuery.ApplySort(carsQuery, sortBy);
+            var carsQuery = OtoRehber.Services.CarCatalogQuery.ApplyFilters(_context.Cars.AsNoTracking(), filter);
+            carsQuery = OtoRehber.Services.CarCatalogQuery.ApplySort(carsQuery, filter.SortBy);
 
             // Sayfalama (Pagination) — sınır kontrolü
             const int pageSize = 12;
@@ -55,12 +54,10 @@ namespace OtoRehber.Controllers
                 x => x.CarId,
                 x => (Avg: Math.Round((double)x.Sum / x.Count, 1), Count: x.Count));
 
-            // View'a parametreleri gönderelim ki filtreler seçili kalsın
-            ViewData["CurrentSearch"] = searchQuery;
-            ViewData["CurrentSegment"] = segment;
-            ViewData["CurrentBrand"] = brand;
-            ViewData["CurrentSort"] = sortBy;
-            
+            // Home hero'da yalnızca arama var; sayfalama linkleri arama + sıralamayı taşır.
+            ViewData["CurrentSearch"] = filter.SearchQuery;
+            ViewData["CurrentSort"] = filter.SortBy;
+
             ViewBag.CurrentPage = page;
             ViewBag.TotalPages = totalPages;
             

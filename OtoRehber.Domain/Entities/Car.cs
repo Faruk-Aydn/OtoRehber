@@ -41,6 +41,26 @@ namespace OtoRehber.Domain.Entities
         [MaxLength(20)]
         public string? Source { get; set; }
 
+        // --- Yapılandırılmış özellikler (filtreleme için; serbest metin Engine'den türetilir/elle girilir) ---
+        /// <summary>Benzin | Benzin+LPG | Dizel | Hibrit | Plug-in Hibrit | Elektrik | Benzin (Hafif Hibrit) | Dizel (Hafif Hibrit)</summary>
+        [MaxLength(24)] public string? FuelType { get; set; }
+        /// <summary>Manuel | Otomatik (ince detay — DSG/CVT/robotize — Engine metninde kalır)</summary>
+        [MaxLength(16)] public string? Transmission { get; set; }
+        /// <summary>Hatchback | Sedan | Station Wagon | SUV | MPV | Coupe | Cabrio | Pickup | Panelvan</summary>
+        [MaxLength(24)] public string? BodyType { get; set; }
+        /// <summary>Önden Çekiş | Arkadan İtiş | 4WD | AWD</summary>
+        [MaxLength(16)] public string? Drivetrain { get; set; }
+        /// <summary>İkinci El | Sıfır</summary>
+        [MaxLength(12)] public string? Condition { get; set; }
+        public int? PowerHp { get; set; }
+        public int? EngineDisplacementCc { get; set; }
+        public int? YearStart { get; set; }
+        public int? YearEnd { get; set; }
+        /// <summary>Elektrikli araçlarda menzil (km) — diğerlerinde null.</summary>
+        public int? RangeKm { get; set; }
+        /// <summary>Elektrikli araçlarda hızlı şarj süresi (dakika) — diğerlerinde null.</summary>
+        public int? FastChargeMinutes { get; set; }
+
         public List<ProsCons> ProsConsList { get; set; } = new List<ProsCons>();
         public List<ChronicIssue> ChronicIssues { get; set; } = new List<ChronicIssue>();
         public List<MileageMilestone> MileageMilestones { get; set; } = new List<MileageMilestone>();

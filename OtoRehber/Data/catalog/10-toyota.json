@@ -11,10 +11,30 @@
     "estimatedMaintenanceCostEUR": 200,
     "expertSummary": "Halk arasında \"sol kasa\" diye bilinen E120 Corolla, ikinci el piyasasında sorunsuzluğun ölçüsüdür. 3ZZ-FE 1.6 VVT-i motor zincir triger kullanır (kayış değişimi derdi yok), düşük devirde tork verir ve LPG'ye çok uyumludur. Bu düz vitesli versiyon en ucuz ve en dertsiz kombinasyondur; debriyaj ve şanzıman neredeyse hiç sorun çıkarmaz. Teknik olarak eski (çoğu pakette ESP/yan hava yastığı yok, iç plastikler sert, yalıtım zayıf) ama mekanik olarak neredeyse ölümsüzdür. Günlük dille: \"Bin, çevir, git; yolda kalma diye bir kelime yok.\" İlk otomobil, öğrenci, masrafsızlık isteyen aile için hâlâ en güvenli seçeneklerden.",
     "userFeedbackSummary": "Forumlarda en sık cümle \"pişman olmazsın\". Kullanıcılar 250-300 bin km'de motorun yağ yakmadan çalıştığını söylüyor. Şikayetler kozmetik: soluk far camları, ön kaportada taş izi, gıcırdayan iç plastikler, klima kompresörünün yaşa bağlı zayıflaması. LPG'li örneklerde subap ayarı ve yağ bakımının düzenli yapıldığını sorun. Ön takım Türkiye yollarında normal aşınır, parça ucuz.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Ateşleme bobini ve buji arızası (tekleme)", "description": "Yaşlanan bobinlerden biri zayıflayınca rölantide titreme ve gaza geç tepki olur; motor arıza lambası yanar. 4 bobin ayrı çalışır, genelde biri gider. Orijinal Denso bobin + iridyum buji ile kalıcı çözülür; LPG'de daha erken gelir.", "severity": "Düşük", "estimatedCostEUR": 120, "affectedYears": "2002-2007" },
-      { "title": "Ön salıncak burçları ve rot başı aşınması", "description": "Türkiye yol şartlarında 80-120 bin km'de ön takım sesleri başlar. Parça bol ve ucuz, işçilik kısa. İhmal edilirse lastik düzensiz aşınır.", "severity": "Düşük", "estimatedCostEUR": 90, "affectedYears": "2002-2007" },
-      { "title": "Debriyaj balata-baskı seti (yüksek km)", "description": "Düz vitesli 3ZZ-FE dayanıklıdır ama 180-220 bin km'de debriyaj seti + baskı + rulman yenilenmesi gereken normal bir giderdir.", "severity": "Düşük", "estimatedCostEUR": 200, "affectedYears": "2002-2007" }
+      {
+        "title": "Ateşleme bobini ve buji arızası (tekleme)",
+        "description": "Yaşlanan bobinlerden biri zayıflayınca rölantide titreme ve gaza geç tepki olur; motor arıza lambası yanar. 4 bobin ayrı çalışır, genelde biri gider. Orijinal Denso bobin + iridyum buji ile kalıcı çözülür; LPG'de daha erken gelir.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 120,
+        "affectedYears": "2002-2007"
+      },
+      {
+        "title": "Ön salıncak burçları ve rot başı aşınması",
+        "description": "Türkiye yol şartlarında 80-120 bin km'de ön takım sesleri başlar. Parça bol ve ucuz, işçilik kısa. İhmal edilirse lastik düzensiz aşınır.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 90,
+        "affectedYears": "2002-2007"
+      },
+      {
+        "title": "Debriyaj balata-baskı seti (yüksek km)",
+        "description": "Düz vitesli 3ZZ-FE dayanıklıdır ama 180-220 bin km'de debriyaj seti + baskı + rulman yenilenmesi gereken normal bir giderdir.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 200,
+        "affectedYears": "2002-2007"
+      }
     ],
     "pros": [
       "Efsane sorunsuzluk — motor ve düz vites arıza yapmıyor",
@@ -30,9 +50,21 @@
       "Sürüş dinamiği ve direksiyon hissi sıradan"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Bujiler, hava/polen filtresi, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 130 },
-      { "mileage": "120.000 km", "expectedIssues": "Ön takım revizyonu (salıncak, rot, rotil), amortisör kontrolü, devirdaim ve V kayışı, debriyaj kontrolü.", "estimatedCostEUR": 250 },
-      { "mileage": "200.000 km", "expectedIssues": "Debriyaj seti, su pompası, motor takozları, klima kompresörü kontrolü, ateşleme bobinleri.", "estimatedCostEUR": 350 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Bujiler, hava/polen filtresi, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.",
+        "estimatedCostEUR": 130
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "Ön takım revizyonu (salıncak, rot, rotil), amortisör kontrolü, devirdaim ve V kayışı, debriyaj kontrolü.",
+        "estimatedCostEUR": 250
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Debriyaj seti, su pompası, motor takozları, klima kompresörü kontrolü, ateşleme bobinleri.",
+        "estimatedCostEUR": 350
+      }
     ]
   },
   {
@@ -47,10 +79,30 @@
     "estimatedMaintenanceCostEUR": 220,
     "expertSummary": "E120 Corolla'nın otomatik versiyonu 4 ileri Aisin Super ECT (tork konvertörlü) şanzıman kullanır; sarsıntısız, geri kaydırmaz ve düzenli yağ değişimiyle 400.000 km'yi rahat görür. 3ZZ-FE 1.6 motor zincir trigerli, LPG dostu ve yağ yakmayan bir ünitedir. Tek 'eksisi' 4 vites olması: otoyolda 100 km/s'te devir yüksek gezer, bu da 7-8 lt/100 km yakıt demek. Günlük dille: \"Corolla'nın otomatiğini istiyorsan alacağın bu; MultiMode'lu (E140) olanlardan uzak dur, bu gerçek tam otomatik.\" Aile, ilk otomobil, düşük stres isteyen herkese uygundur.",
     "userFeedbackSummary": "Bu versiyon için şikayet bulmak zor. Kullanıcılar 'hiçbir şey yapmadı' diyor; 200 bin km'de motor yağ yakmıyor, şanzıman ilk günkü gibi. Eleştiriler: 4 vites yüzünden otoyolda yüksek devir ve yakıt, zayıf ses yalıtımı, demode donanım. Otomatik şanzıman yağının en az bir kez değişmiş olması artı puandır; hiç değişmemiş araçlarda geç ve sert vites geçişi başlar.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Ateşleme bobini zayıflaması", "description": "Yaşa bağlı bobinlerden biri zayıflar; rölantide titreme, gaza tepkisizlik, arıza lambası. Orijinal Denso bobinle kalıcı çözülür, LPG'de daha erken gelir.", "severity": "Düşük", "estimatedCostEUR": 110, "affectedYears": "2002-2007" },
-      { "title": "Otomatik şanzıman yağının hiç değişmemiş olması", "description": "Aisin sağlamdır ama 'ömürlük yağ' efsanesi yüzünden çoğu araçta 200.000 km boyunca yağ değişmemiştir. Bu araçlarda geç vites atma / hafif darbe başlar. Alırken pan açtırıp yağ+filtre, gerekiyorsa yağ devri yapmak şart.", "severity": "Orta", "estimatedCostEUR": 180, "affectedYears": "2002-2007" },
-      { "title": "Ön salıncak burçları ve rot başı aşınması", "description": "Türkiye yollarında 80-120 bin km'de ön takım sesleri. Parça bol ve ucuz.", "severity": "Düşük", "estimatedCostEUR": 90, "affectedYears": "2002-2007" }
+      {
+        "title": "Ateşleme bobini zayıflaması",
+        "description": "Yaşa bağlı bobinlerden biri zayıflar; rölantide titreme, gaza tepkisizlik, arıza lambası. Orijinal Denso bobinle kalıcı çözülür, LPG'de daha erken gelir.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 110,
+        "affectedYears": "2002-2007"
+      },
+      {
+        "title": "Otomatik şanzıman yağının hiç değişmemiş olması",
+        "description": "Aisin sağlamdır ama 'ömürlük yağ' efsanesi yüzünden çoğu araçta 200.000 km boyunca yağ değişmemiştir. Bu araçlarda geç vites atma / hafif darbe başlar. Alırken pan açtırıp yağ+filtre, gerekiyorsa yağ devri yapmak şart.",
+        "severity": "Orta",
+        "estimatedCostEUR": 180,
+        "affectedYears": "2002-2007"
+      },
+      {
+        "title": "Ön salıncak burçları ve rot başı aşınması",
+        "description": "Türkiye yollarında 80-120 bin km'de ön takım sesleri. Parça bol ve ucuz.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 90,
+        "affectedYears": "2002-2007"
+      }
     ],
     "pros": [
       "Corolla sorunsuzluğu + arıza yapmayan gerçek tam otomatik şanzıman",
@@ -66,9 +118,21 @@
       "Sürüş keyfi vasat"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Bujiler, filtreler, fren hidroliği, şanzıman yağı kontrolü, LPG'de subap ayarı.", "estimatedCostEUR": 150 },
-      { "mileage": "120.000 km", "expectedIssues": "Ön takım revizyonu, amortisör üst takozları, devirdaim kayışı, şanzıman yağ+filtre.", "estimatedCostEUR": 300 },
-      { "mileage": "200.000 km", "expectedIssues": "Su pompası, motor takozları, klima kompresörü, ateşleme bobinleri, ikinci şanzıman yağı.", "estimatedCostEUR": 400 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Bujiler, filtreler, fren hidroliği, şanzıman yağı kontrolü, LPG'de subap ayarı.",
+        "estimatedCostEUR": 150
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "Ön takım revizyonu, amortisör üst takozları, devirdaim kayışı, şanzıman yağ+filtre.",
+        "estimatedCostEUR": 300
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Su pompası, motor takozları, klima kompresörü, ateşleme bobinleri, ikinci şanzıman yağı.",
+        "estimatedCostEUR": 400
+      }
     ]
   },
   {
@@ -83,10 +147,30 @@
     "estimatedMaintenanceCostEUR": 260,
     "expertSummary": "E120 Corolla'nın dizeli 1.4 D-4D (1ND-TV) motoru kullanır; zincir trigerlidir ve blok olarak dayanıklıdır. 90 beygir bugünün standardında zayıf kalır ama ~200 Nm torkla şehir + orta yol için yeterlidir, 5-5.5 lt yakar. Common-rail dizel olduğu için enjektör, EGR ve turbo bakımına duyarlıdır; kısa mesafe şehir içinde sürekli çalışan araçlarda kurumlanma hızlanır. Günlük dille: \"Motor bloğu sağlam ama dizelin nazlı yerleri var; bakımlısını al, kısa yolda ezme, kaliteli mazot kullan.\" Uzun yol ağırlıklı, yüksek km yapan, yakıt ekonomisi arayan için mantıklı.",
     "userFeedbackSummary": "Kullanıcılar motor sağlamlığından memnun; 300 bin km üzeri örnekler yaygın. En çok konuşulan enjektör revizyonu (150-200 bin km) ve EGR temizliği. Turbo kelebek (manifold) kurum yapabiliyor. Debriyaj baskı-balata seti orta km'de yenilenmesi gereken normal bir gider. Zincir triger uzun ömürlü ama 250 bin km sonrası ses yaparsa set değişir.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Enjektör kalibrasyonu / revizyonu", "description": "Common-rail enjektörler zamanla debisini şaşırır; soğukta zor çalışma, is, tekleme ve yakıt artışı görülür. Kaliteli mazot ömrü uzatır. 4 enjektör birden revize edilir.", "severity": "Orta", "estimatedCostEUR": 350, "affectedYears": "2002-2007" },
-      { "title": "EGR valfi ve emme manifoldu kurumlanması", "description": "Şehir içi düşük devir kullanımında EGR ve emme yolları kurum bağlar; güç kaybı ve arıza lambası yapar. Temizlik veya EGR yenileme çözer.", "severity": "Orta", "estimatedCostEUR": 200, "affectedYears": "2002-2007" },
-      { "title": "Turbo kayıcı kanat (VNT) tıkanması", "description": "Kurumdan turbonun değişken kanatları sıkışır; rampada üfleme düşer, arıza lambası yanar. Erken müdahalede temizlikle, geç kalınırsa turbo revizyonuyla çözülür.", "severity": "Orta", "estimatedCostEUR": 300, "affectedYears": "2002-2007" }
+      {
+        "title": "Enjektör kalibrasyonu / revizyonu",
+        "description": "Common-rail enjektörler zamanla debisini şaşırır; soğukta zor çalışma, is, tekleme ve yakıt artışı görülür. Kaliteli mazot ömrü uzatır. 4 enjektör birden revize edilir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2002-2007"
+      },
+      {
+        "title": "EGR valfi ve emme manifoldu kurumlanması",
+        "description": "Şehir içi düşük devir kullanımında EGR ve emme yolları kurum bağlar; güç kaybı ve arıza lambası yapar. Temizlik veya EGR yenileme çözer.",
+        "severity": "Orta",
+        "estimatedCostEUR": 200,
+        "affectedYears": "2002-2007"
+      },
+      {
+        "title": "Turbo kayıcı kanat (VNT) tıkanması",
+        "description": "Kurumdan turbonun değişken kanatları sıkışır; rampada üfleme düşer, arıza lambası yanar. Erken müdahalede temizlikle, geç kalınırsa turbo revizyonuyla çözülür.",
+        "severity": "Orta",
+        "estimatedCostEUR": 300,
+        "affectedYears": "2002-2007"
+      }
     ],
     "pros": [
       "Dayanıklı motor bloğu, zincir triger",
@@ -101,9 +185,21 @@
       "Demode donanım ve yalıtım"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre (kaliteli dizel yağı), yakıt filtresi, hava filtresi, EGR ilk kontrol.", "estimatedCostEUR": 160 },
-      { "mileage": "150.000 km", "expectedIssues": "Enjektör kontrolü/revizyonu, debriyaj seti, EGR temizliği, turbo kelebek kontrolü, ön takım.", "estimatedCostEUR": 550 },
-      { "mileage": "250.000 km", "expectedIssues": "Zincir triger seti (ses varsa), su pompası, turbo revizyonu ihtimali, enjeksiyon pompası kontrolü.", "estimatedCostEUR": 700 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Yağ+filtre (kaliteli dizel yağı), yakıt filtresi, hava filtresi, EGR ilk kontrol.",
+        "estimatedCostEUR": 160
+      },
+      {
+        "mileage": "150.000 km",
+        "expectedIssues": "Enjektör kontrolü/revizyonu, debriyaj seti, EGR temizliği, turbo kelebek kontrolü, ön takım.",
+        "estimatedCostEUR": 550
+      },
+      {
+        "mileage": "250.000 km",
+        "expectedIssues": "Zincir triger seti (ses varsa), su pompası, turbo revizyonu ihtimali, enjeksiyon pompası kontrolü.",
+        "estimatedCostEUR": 700
+      }
     ]
   },
   {
@@ -118,10 +214,30 @@
     "estimatedMaintenanceCostEUR": 230,
     "expertSummary": "E140 Corolla'nın giriş motoru 1.33 Dual VVT-i (1NR-FE): zincir trigerli, 99 HP'lik, ekonomik bir ünite. C segmenti bir gövde için performansı düşüktür — dolu araçta ve rampada zorlanır, otoyol geçişlerini planlamak gerekir — ama şehir içi + hafif yol için yeterli ve çok az arıza çıkarır. Sadece manuel şanzımanla geldi. LPG'ye uyumludur (dual VVT-i motorlarda LPG için subap bakımına biraz daha dikkat). Günlük dille: \"Güçten feragat et, dertsizlik ve düşük yakıt kazanç; şehir arabası olarak sağlam.\" Bütçe odaklı, şehir ağırlıklı kullanan için mantıklı.",
     "userFeedbackSummary": "Kullanıcılar 'masrafsız ama yavaş' diyor. Motor tarafında ciddi kronik yok; 200 bin km sorunsuz örnekler yaygın. Şikayetler: performans yetersizliği (özellikle klimayla ve dolu araçta), zayıf yol sesi yalıtımı, sade iç mekan. LPG'li örneklerde subap ayarı ve yağ bakımını sorun. Ön amortisör üst takozu tıkırtısı klasik ve ucuz bir onarım.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Ön amortisör üst takoz ve rulman sesi", "description": "Direksiyon çevirirken 'tık tık' sesi; amortisör üst takozu ve rulmanı aşınır. Yaygın ve ucuz bir onarım.", "severity": "Düşük", "estimatedCostEUR": 120, "affectedYears": "2007-2010" },
-      { "title": "Ateşleme bobini zayıflaması", "description": "Yaşa bağlı bobinlerden biri zayıflar; rölantide titreme, tekleme, arıza lambası. Bobin+buji seti ile çözülür; LPG'de periyot kısadır.", "severity": "Düşük", "estimatedCostEUR": 110, "affectedYears": "2007-2010" },
-      { "title": "Su pompası sızıntısı (yüksek km)", "description": "150-200 bin km civarı su pompası sızdırabilir veya ses yapar; devirdaim kayışıyla birlikte yenilenir.", "severity": "Düşük", "estimatedCostEUR": 150, "affectedYears": "2007-2010" }
+      {
+        "title": "Ön amortisör üst takoz ve rulman sesi",
+        "description": "Direksiyon çevirirken 'tık tık' sesi; amortisör üst takozu ve rulmanı aşınır. Yaygın ve ucuz bir onarım.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 120,
+        "affectedYears": "2007-2010"
+      },
+      {
+        "title": "Ateşleme bobini zayıflaması",
+        "description": "Yaşa bağlı bobinlerden biri zayıflar; rölantide titreme, tekleme, arıza lambası. Bobin+buji seti ile çözülür; LPG'de periyot kısadır.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 110,
+        "affectedYears": "2007-2010"
+      },
+      {
+        "title": "Su pompası sızıntısı (yüksek km)",
+        "description": "150-200 bin km civarı su pompası sızdırabilir veya ses yapar; devirdaim kayışıyla birlikte yenilenir.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 150,
+        "affectedYears": "2007-2010"
+      }
     ],
     "pros": [
       "Zincir triger, dayanıklı ve ekonomik 1NR-FE motor",
@@ -136,9 +252,21 @@
       "Direksiyon ve şasi hissi sıradan"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Bujiler, filtreler, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 150 },
-      { "mileage": "120.000 km", "expectedIssues": "Ön takım revizyonu, amortisör üst takozları, devirdaim kayışı, debriyaj kontrolü.", "estimatedCostEUR": 280 },
-      { "mileage": "200.000 km", "expectedIssues": "Su pompası, motor takozları, klima kompresörü, ateşleme bobinleri, debriyaj seti.", "estimatedCostEUR": 400 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Bujiler, filtreler, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.",
+        "estimatedCostEUR": 150
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "Ön takım revizyonu, amortisör üst takozları, devirdaim kayışı, debriyaj kontrolü.",
+        "estimatedCostEUR": 280
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Su pompası, motor takozları, klima kompresörü, ateşleme bobinleri, debriyaj seti.",
+        "estimatedCostEUR": 400
+      }
     ]
   },
   {
@@ -153,10 +281,30 @@
     "estimatedMaintenanceCostEUR": 230,
     "expertSummary": "E140 Corolla'nın en dengeli motoru 1.6 Dual VVT-i (1ZR-FE): zincir trigerli, yağ yakmayan, LPG dostu ve 300 bin km+ giden bir ünite. Bu düz vitesli versiyon en huzurlu kombinasyondur — MultiMode'un karakter ve masraf riskini taşımaz. 124 HP şehir + orta yol için yeterli. Günlük dille: \"Corolla dizelini istemiyorsan, 1.6 benzinli düz vitesi al gözün kapalı — Corolla'nın en dertsizi.\" Aile, ilk otomobil, uzun ömür isteyen için ideal.",
     "userFeedbackSummary": "Motor için tam not: 250-300 bin km sorunsuz örnekler çok. Şikayetler kozmetik: yol sesi yalıtımı, sade iç mekan, direksiyon hissi. Debriyaj 180-220 bin km'de yenilenen normal bir gider. LPG'li örneklerde subap ayarı sorulmalı. Ön amortisör üst takozu tıkırtısı klasik.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Ön amortisör üst takoz ve rulman sesi", "description": "Direksiyon çevirirken tıkırtı; kule takozu+rulman yenilenir. Ucuz ve yaygın.", "severity": "Düşük", "estimatedCostEUR": 120, "affectedYears": "2007-2010" },
-      { "title": "Ateşleme bobini zayıflaması", "description": "Yaşa bağlı bobin zayıflar; tekleme, arıza lambası. Bobin+buji seti; LPG'de periyot kısa.", "severity": "Düşük", "estimatedCostEUR": 110, "affectedYears": "2007-2010" },
-      { "title": "Debriyaj balata-baskı seti (yüksek km)", "description": "180-220 bin km'de debriyaj seti + baskı + rulman yenilenmesi gereken normal bir giderdir.", "severity": "Düşük", "estimatedCostEUR": 220, "affectedYears": "2007-2010" }
+      {
+        "title": "Ön amortisör üst takoz ve rulman sesi",
+        "description": "Direksiyon çevirirken tıkırtı; kule takozu+rulman yenilenir. Ucuz ve yaygın.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 120,
+        "affectedYears": "2007-2010"
+      },
+      {
+        "title": "Ateşleme bobini zayıflaması",
+        "description": "Yaşa bağlı bobin zayıflar; tekleme, arıza lambası. Bobin+buji seti; LPG'de periyot kısa.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 110,
+        "affectedYears": "2007-2010"
+      },
+      {
+        "title": "Debriyaj balata-baskı seti (yüksek km)",
+        "description": "180-220 bin km'de debriyaj seti + baskı + rulman yenilenmesi gereken normal bir giderdir.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 220,
+        "affectedYears": "2007-2010"
+      }
     ],
     "pros": [
       "1ZR-FE motor çok dayanıklı, zincir triger, LPG uyumlu",
@@ -171,9 +319,21 @@
       "Otomatik isteyenler için bu motorda sadece MultiMode vardı (ayrı kayıt)"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Bujiler, filtreler, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 150 },
-      { "mileage": "120.000 km", "expectedIssues": "Ön takım revizyonu, amortisör üst takozları, devirdaim kayışı, debriyaj kontrolü.", "estimatedCostEUR": 280 },
-      { "mileage": "200.000 km", "expectedIssues": "Debriyaj seti, su pompası, motor takozları, klima kompresörü, ateşleme bobinleri.", "estimatedCostEUR": 420 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Bujiler, filtreler, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.",
+        "estimatedCostEUR": 150
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "Ön takım revizyonu, amortisör üst takozları, devirdaim kayışı, debriyaj kontrolü.",
+        "estimatedCostEUR": 280
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Debriyaj seti, su pompası, motor takozları, klima kompresörü, ateşleme bobinleri.",
+        "estimatedCostEUR": 420
+      }
     ]
   },
   {
@@ -188,10 +348,30 @@
     "estimatedMaintenanceCostEUR": 260,
     "expertSummary": "E140 Corolla'nın 1.6 benzinlisinin 'otomatik' seçeneği MultiMode'dur (M/M): aslında manuel bir vites kutusudur, debriyajı ve vites kollarını robot yönetir. Yani otomatik konforu beklerken yarı otomatik alırsınız — kalkışlarda 'boşa alıp tekrar bağlama' hissi, yokuşta geri kaçma ve trafikte yorucu davranış olağandır. Yazılım güncel, debriyaj sağlam ve aktüatör bakımlıysa yaşanabilir; değilse sürekli servis dostu olur. Motor (1ZR-FE) tarafı ise tam not. Günlük dille: \"Motoru al gözün kapalı, ama M/M vitesi mutlaka test sür; sevmezsen düz viteslisine ya da 2010 sonrası 4 ileri tam otomatiğe yönel.\"",
     "userFeedbackSummary": "Motor için 250-300 bin km sorunsuz örnekler çok. Şikayetlerin neredeyse tamamı M/M şanzımanda: 'çukur' hissi, kalkışta gecikme, yokuşta geri kaçma, zamanla debriyaj balatasının bitmesi ve aktüatör/pozisyon sensörü arızaları. Debriyaj+baskı+rulman seti + kalibrasyon masrafı orta-yüksek. Yazılım güncellemesi davranışı iyileştiriyor ama karakteri tam değiştirmiyor.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "MultiMode (M/M) debriyaj ve aktüatör aşınması", "description": "Robotlu tek kavrama şanzımanda debriyaj balatası zamanla biter; kalkışta kayma, titreme, vites atarken sarsıntı olur. Debriyaj seti + rulman + aktüatör kontrolü + kalibrasyon gerekir. Dur-kalk trafikte ömür kısalır.", "severity": "Kritik", "estimatedCostEUR": 700, "affectedYears": "2007-2010" },
-      { "title": "M/M vites pozisyon sensörü / hidrolik ünite arızası", "description": "Vites moduna girmeme, N'de kalma, arıza lambası ve 'vitese basın' uyarısı. Sensör veya aktüatör hidroliği yenilenir; yazılım kalibrasyonu şart.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2007-2010" },
-      { "title": "Ön amortisör üst takoz sesi", "description": "Direksiyon çevirirken tıkırtı; kule takozu ve rulmanı aşınır. Yaygın ve ucuz.", "severity": "Düşük", "estimatedCostEUR": 120, "affectedYears": "2007-2010" }
+      {
+        "title": "MultiMode (M/M) debriyaj ve aktüatör aşınması",
+        "description": "Robotlu tek kavrama şanzımanda debriyaj balatası zamanla biter; kalkışta kayma, titreme, vites atarken sarsıntı olur. Debriyaj seti + rulman + aktüatör kontrolü + kalibrasyon gerekir. Dur-kalk trafikte ömür kısalır.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 700,
+        "affectedYears": "2007-2010"
+      },
+      {
+        "title": "M/M vites pozisyon sensörü / hidrolik ünite arızası",
+        "description": "Vites moduna girmeme, N'de kalma, arıza lambası ve 'vitese basın' uyarısı. Sensör veya aktüatör hidroliği yenilenir; yazılım kalibrasyonu şart.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2007-2010"
+      },
+      {
+        "title": "Ön amortisör üst takoz sesi",
+        "description": "Direksiyon çevirirken tıkırtı; kule takozu ve rulmanı aşınır. Yaygın ve ucuz.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 120,
+        "affectedYears": "2007-2010"
+      }
     ],
     "pros": [
       "1ZR-FE motor çok dayanıklı, zincir triger, LPG uyumlu",
@@ -206,9 +386,21 @@
       "Sürüş dinamiği sıradan"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Bujiler, filtreler, fren hidroliği, M/M şanzıman yağı ve debriyaj kalınlığı kontrolü.", "estimatedCostEUR": 160 },
-      { "mileage": "120.000 km", "expectedIssues": "M/M debriyaj seti ihtimali, ön takım revizyonu, amortisör üst takozları, devirdaim kayışı.", "estimatedCostEUR": 550 },
-      { "mileage": "200.000 km", "expectedIssues": "Su pompası, motor takozları, ikinci debriyaj seti ihtimali, ateşleme bobinleri, klima kompresörü.", "estimatedCostEUR": 450 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Bujiler, filtreler, fren hidroliği, M/M şanzıman yağı ve debriyaj kalınlığı kontrolü.",
+        "estimatedCostEUR": 160
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "M/M debriyaj seti ihtimali, ön takım revizyonu, amortisör üst takozları, devirdaim kayışı.",
+        "estimatedCostEUR": 550
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Su pompası, motor takozları, ikinci debriyaj seti ihtimali, ateşleme bobinleri, klima kompresörü.",
+        "estimatedCostEUR": 450
+      }
     ]
   },
   {
@@ -223,10 +415,30 @@
     "estimatedMaintenanceCostEUR": 280,
     "expertSummary": "E140 Corolla'nın dizeli 1.4 D-4D (90 HP): blok olarak sağlam, ekonomik (4.5-5 lt) ama common-rail dizele özgü enjektör/EGR/turbo bakımlarına açık. Bu yılların çoğunda DPF yoktu ya da basitti; yine de kısa mesafe şehir içi kullanımda EGR ve emme kurumu hızlanır. Sadece düz vitesle geldi (bu motorun M/M'lisi E170'te var). Günlük dille: \"Yakıtı çok düşük, motoru sağlam; kısa şehir yolunda ezme, kaliteli mazot kullan.\" Yüksek km yapan, uzun yol ağırlıklı, ekonomi odaklı kullanıcı için mantıklı.",
     "userFeedbackSummary": "Kullanıcılar yakıt tüketimini çok seviyor; motor 300 bin km'ye çıkıyor. Şikayetler: enjektör revizyonu (150-200 bin km), EGR ve emme manifoldu kurumu, turbo kayıcı kanat, 90 HP'nin dolu araçta yetersizliği. Debriyaj orta km'de yenileniyor. Zincir triger uzun ömürlü.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Enjektör kalibrasyonu / revizyonu", "description": "Common-rail enjektörler debisini şaşırır; soğukta zor çalışma, is, tekleme, yakıt artışı. Kaliteli mazot ömrü uzatır. 4 enjektör birden revize.", "severity": "Orta", "estimatedCostEUR": 350, "affectedYears": "2007-2010" },
-      { "title": "EGR valfi ve emme manifoldu kurumlanması", "description": "Şehir içi düşük devir kullanımda EGR ve emme yolları kurum bağlar; güç kaybı, arıza lambası. Temizlik veya yenileme.", "severity": "Orta", "estimatedCostEUR": 220, "affectedYears": "2007-2010" },
-      { "title": "Turbo VNT tıkanması", "description": "Kurumdan turbonun değişken kanatları sıkışır; rampada üfleme düşer, arıza lambası. Erken temizlik, geç kalınırsa turbo revizyonu.", "severity": "Orta", "estimatedCostEUR": 300, "affectedYears": "2007-2010" }
+      {
+        "title": "Enjektör kalibrasyonu / revizyonu",
+        "description": "Common-rail enjektörler debisini şaşırır; soğukta zor çalışma, is, tekleme, yakıt artışı. Kaliteli mazot ömrü uzatır. 4 enjektör birden revize.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2007-2010"
+      },
+      {
+        "title": "EGR valfi ve emme manifoldu kurumlanması",
+        "description": "Şehir içi düşük devir kullanımda EGR ve emme yolları kurum bağlar; güç kaybı, arıza lambası. Temizlik veya yenileme.",
+        "severity": "Orta",
+        "estimatedCostEUR": 220,
+        "affectedYears": "2007-2010"
+      },
+      {
+        "title": "Turbo VNT tıkanması",
+        "description": "Kurumdan turbonun değişken kanatları sıkışır; rampada üfleme düşer, arıza lambası. Erken temizlik, geç kalınırsa turbo revizyonu.",
+        "severity": "Orta",
+        "estimatedCostEUR": 300,
+        "affectedYears": "2007-2010"
+      }
     ],
     "pros": [
       "Çok düşük yakıt tüketimi (uzun yolda 4.3-4.7 lt)",
@@ -241,9 +453,21 @@
       "Yol sesi yalıtımı orta"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre (dizel yağı), yakıt filtresi, hava filtresi, EGR kontrolü.", "estimatedCostEUR": 160 },
-      { "mileage": "150.000 km", "expectedIssues": "Enjektör kontrolü/revizyonu, debriyaj seti, EGR/emme temizliği, turbo kontrolü, ön takım revizyonu.", "estimatedCostEUR": 550 },
-      { "mileage": "250.000 km", "expectedIssues": "Zincir triger kontrolü, su pompası, turbo revizyonu ihtimali, enjeksiyon pompası kontrolü.", "estimatedCostEUR": 700 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Yağ+filtre (dizel yağı), yakıt filtresi, hava filtresi, EGR kontrolü.",
+        "estimatedCostEUR": 160
+      },
+      {
+        "mileage": "150.000 km",
+        "expectedIssues": "Enjektör kontrolü/revizyonu, debriyaj seti, EGR/emme temizliği, turbo kontrolü, ön takım revizyonu.",
+        "estimatedCostEUR": 550
+      },
+      {
+        "mileage": "250.000 km",
+        "expectedIssues": "Zincir triger kontrolü, su pompası, turbo revizyonu ihtimali, enjeksiyon pompası kontrolü.",
+        "estimatedCostEUR": 700
+      }
     ]
   },
   {
@@ -258,10 +482,30 @@
     "estimatedMaintenanceCostEUR": 240,
     "expertSummary": "2010 makyajıyla E140 Corolla'nın 1.6'sı Valvematic'e (1ZR-FAE, 132 HP) geçti: değişken supap kaldırma teknolojisiyle biraz daha güçlü ve verimli. Zincir trigerli, LPG dostu, yağ yakmayan bir ünite. Bu düz vitesli versiyon en huzurlu kombinasyon. Valvematic sistemi çok nadiren aktüatör arızası yapar; düzenli yağ bakımı olanlarda görülmez. Günlük dille: \"Makyajlı Corolla'nın 1.6 düz vitesi — sağlamlık + biraz daha güç; Corolla'nın en dengeli benzinlisi.\" Aile ve uzun ömür isteyen için ideal.",
     "userFeedbackSummary": "Kullanıcılar sorunsuzluktan çok memnun; 200 bin km'de motor yağ yakmıyor. Şikayetler kozmetik: yol sesi yalıtımı, sade iç mekan, direksiyon hissi. LPG'li örneklerde subap ayarı ve yağ bakımı sorulmalı. Debriyaj yüksek km'de yenilenen normal bir gider.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Valvematic aktüatör / mekanizma arızası", "description": "Valvematic sistemi supap kaldırma miktarını değiştirir; nadiren aktüatör motoru veya dişlisi arıza yapar (rölanti dalgalanması, güç kaybı, arıza lambası). Yağ bakımı düzenli olanlarda çok seyrek görülür.", "severity": "Orta", "estimatedCostEUR": 350, "affectedYears": "2010-2013" },
-      { "title": "Ön amortisör üst takoz ve rulman sesi", "description": "Direksiyon çevirirken tıkırtı; kule takozu+rulman yenilenir. Ucuz ve yaygın.", "severity": "Düşük", "estimatedCostEUR": 120, "affectedYears": "2010-2013" },
-      { "title": "Debriyaj balata-baskı seti (yüksek km)", "description": "180-220 bin km'de debriyaj seti + baskı + rulman yenilenmesi gereken normal bir giderdir.", "severity": "Düşük", "estimatedCostEUR": 220, "affectedYears": "2010-2013" }
+      {
+        "title": "Valvematic aktüatör / mekanizma arızası",
+        "description": "Valvematic sistemi supap kaldırma miktarını değiştirir; nadiren aktüatör motoru veya dişlisi arıza yapar (rölanti dalgalanması, güç kaybı, arıza lambası). Yağ bakımı düzenli olanlarda çok seyrek görülür.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2010-2013"
+      },
+      {
+        "title": "Ön amortisör üst takoz ve rulman sesi",
+        "description": "Direksiyon çevirirken tıkırtı; kule takozu+rulman yenilenir. Ucuz ve yaygın.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 120,
+        "affectedYears": "2010-2013"
+      },
+      {
+        "title": "Debriyaj balata-baskı seti (yüksek km)",
+        "description": "180-220 bin km'de debriyaj seti + baskı + rulman yenilenmesi gereken normal bir giderdir.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 220,
+        "affectedYears": "2010-2013"
+      }
     ],
     "pros": [
       "Zincir triger, yağ yakmayan, LPG uyumlu Valvematic motor",
@@ -276,9 +520,21 @@
       "Valvematic aktüatörü nadir de olsa masraflı bir kalem"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Bujiler, filtreler, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 150 },
-      { "mileage": "120.000 km", "expectedIssues": "Ön takım revizyonu, amortisör üst takozları, devirdaim kayışı, debriyaj kontrolü.", "estimatedCostEUR": 280 },
-      { "mileage": "200.000 km", "expectedIssues": "Debriyaj seti, su pompası, motor takozları, Valvematic kontrolü, ateşleme bobinleri.", "estimatedCostEUR": 430 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Bujiler, filtreler, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.",
+        "estimatedCostEUR": 150
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "Ön takım revizyonu, amortisör üst takozları, devirdaim kayışı, debriyaj kontrolü.",
+        "estimatedCostEUR": 280
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Debriyaj seti, su pompası, motor takozları, Valvematic kontrolü, ateşleme bobinleri.",
+        "estimatedCostEUR": 430
+      }
     ]
   },
   {
@@ -293,10 +549,30 @@
     "estimatedMaintenanceCostEUR": 240,
     "expertSummary": "2010 makyajıyla Toyota, çok şikayet edilen MultiMode'u bırakıp E140'ın 1.6'sına klasik 4 ileri Aisin tam otomatik (tork konvertörlü) şanzımanı geri getirdi. İkinci elde bu kasanın en çok aranan, en huzurlu kombinasyonudur: motor zaten efsane sağlamlıkta (1ZR-FAE Valvematic, zincir triger, LPG dostu), şanzıman ise sarsıntısız, geri kaydırmaz ve arıza yapmaz. Tek 'eksisi' 4 vites: otoyolda 100 km/s'te ~2.700 d/dk, bu da 7-7.5 lt demek. Günlük dille: \"Corolla'nın otomatiğini istiyorsan alacağın tam olarak bu; M/M'li olanlardan uzak dur.\" Aile, ilk otomobil, düşük stres isteyen herkese uygundur.",
     "userFeedbackSummary": "Bu versiyon için şikayet bulmak zor. Kullanıcılar 'hiçbir şey yapmadı' diyor. Eleştiriler: 4 vites yüzünden otoyolda yüksek devir ve yakıt, zayıf ses yalıtımı, sade/demode iç mekan. Otomatik şanzıman yağının en az bir kez değişmiş olması artı puandır.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Otomatik şanzıman yağının ihmal edilmesi", "description": "Şanzıman sağlam ama yağı hiç değişmemiş araçlarda geç ve sert vites geçişi başlar. Alırken pan açtırıp yağ+filtre yaptırmak, iç temizlik yapmak yeterli.", "severity": "Düşük", "estimatedCostEUR": 160, "affectedYears": "2010-2013" },
-      { "title": "Valvematic aktüatör / mekanizma arızası", "description": "Nadiren aktüatör motoru/dişlisi arıza yapar (rölanti dalgalanması, güç kaybı). Düzenli yağ bakımı olanlarda çok seyrek.", "severity": "Orta", "estimatedCostEUR": 350, "affectedYears": "2010-2013" },
-      { "title": "Ön amortisör üst takoz ve rulman sesi", "description": "Direksiyon çevirirken tıkırtı; kule takozu+rulman yenilenir. Ucuz ve yaygın.", "severity": "Düşük", "estimatedCostEUR": 120, "affectedYears": "2010-2013" }
+      {
+        "title": "Otomatik şanzıman yağının ihmal edilmesi",
+        "description": "Şanzıman sağlam ama yağı hiç değişmemiş araçlarda geç ve sert vites geçişi başlar. Alırken pan açtırıp yağ+filtre yaptırmak, iç temizlik yapmak yeterli.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 160,
+        "affectedYears": "2010-2013"
+      },
+      {
+        "title": "Valvematic aktüatör / mekanizma arızası",
+        "description": "Nadiren aktüatör motoru/dişlisi arıza yapar (rölanti dalgalanması, güç kaybı). Düzenli yağ bakımı olanlarda çok seyrek.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2010-2013"
+      },
+      {
+        "title": "Ön amortisör üst takoz ve rulman sesi",
+        "description": "Direksiyon çevirirken tıkırtı; kule takozu+rulman yenilenir. Ucuz ve yaygın.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 120,
+        "affectedYears": "2010-2013"
+      }
     ],
     "pros": [
       "Corolla sorunsuzluğu + arıza yapmayan gerçek tam otomatik şanzıman",
@@ -311,9 +587,21 @@
       "Sürüş keyfi/dinamiği vasat"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Bujiler, filtreler, fren hidroliği, şanzıman yağı kontrolü, LPG'de subap ayarı.", "estimatedCostEUR": 150 },
-      { "mileage": "120.000 km", "expectedIssues": "Ön takım revizyonu, amortisör üst takozları, devirdaim kayışı, şanzıman yağ+filtre.", "estimatedCostEUR": 300 },
-      { "mileage": "200.000 km", "expectedIssues": "Su pompası, motor takozları, klima kompresörü, ateşleme bobinleri, ikinci şanzıman yağı.", "estimatedCostEUR": 400 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Bujiler, filtreler, fren hidroliği, şanzıman yağı kontrolü, LPG'de subap ayarı.",
+        "estimatedCostEUR": 150
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "Ön takım revizyonu, amortisör üst takozları, devirdaim kayışı, şanzıman yağ+filtre.",
+        "estimatedCostEUR": 300
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Su pompası, motor takozları, klima kompresörü, ateşleme bobinleri, ikinci şanzıman yağı.",
+        "estimatedCostEUR": 400
+      }
     ]
   },
   {
@@ -328,10 +616,30 @@
     "estimatedMaintenanceCostEUR": 280,
     "expertSummary": "Makyajlı E140 Corolla'nın dizeli, önceki 1.4 D-4D 90 HP motorun devamıdır: blok sağlam, ekonomik (4.5-5 lt), zincir trigerli. Common-rail dizele özgü enjektör/EGR/turbo bakımları geçerli. Bu yıllarda DPF daha yaygın; kısa mesafe şehir içinde tıkanma riski var, ara sıra uzun yol şart. Sadece düz vitesle geldi. Günlük dille: \"Yakıtı süper, motoru sağlam; kısa şehir yolunda ezme, DPF'liyse ara sıra otoyola çık.\" Uzun yol ağırlıklı, yüksek km yapan için mantıklı.",
     "userFeedbackSummary": "Kullanıcılar yakıt ekonomisinden çok memnun; motor 300 bin km'ye çıkıyor. Şikayetler: enjektör revizyonu, EGR/emme kurumu, turbo kayıcı kanat, DPF'li örneklerde şehir içi tıkanma, 90 HP'nin yetersizliği. Debriyaj orta km'de yenileniyor.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Enjektör kalibrasyonu / revizyonu", "description": "Common-rail enjektörler debisini şaşırır; soğukta zor çalışma, is, tekleme. Kaliteli mazot şart. 4 enjektör revize.", "severity": "Orta", "estimatedCostEUR": 350, "affectedYears": "2010-2013" },
-      { "title": "EGR ve DPF (varsa) tıkanması", "description": "Şehir içi düşük devir kullanımda EGR kurum bağlar, DPF dolar; güç kaybı, arıza lambası, rejenerasyon sorunu. Uzun yol + temizlik/değişim gerekir.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2010-2013" },
-      { "title": "Turbo VNT tıkanması", "description": "Kurumdan turbonun değişken kanatları sıkışır; rampada güç düşüşü, arıza lambası. Temizlik veya turbo revizyonu.", "severity": "Orta", "estimatedCostEUR": 300, "affectedYears": "2010-2013" }
+      {
+        "title": "Enjektör kalibrasyonu / revizyonu",
+        "description": "Common-rail enjektörler debisini şaşırır; soğukta zor çalışma, is, tekleme. Kaliteli mazot şart. 4 enjektör revize.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2010-2013"
+      },
+      {
+        "title": "EGR ve DPF (varsa) tıkanması",
+        "description": "Şehir içi düşük devir kullanımda EGR kurum bağlar, DPF dolar; güç kaybı, arıza lambası, rejenerasyon sorunu. Uzun yol + temizlik/değişim gerekir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2010-2013"
+      },
+      {
+        "title": "Turbo VNT tıkanması",
+        "description": "Kurumdan turbonun değişken kanatları sıkışır; rampada güç düşüşü, arıza lambası. Temizlik veya turbo revizyonu.",
+        "severity": "Orta",
+        "estimatedCostEUR": 300,
+        "affectedYears": "2010-2013"
+      }
     ],
     "pros": [
       "Çok düşük yakıt tüketimi",
@@ -346,9 +654,21 @@
       "Sadece manuel şanzıman"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre (dizel yağı), yakıt/hava filtresi, EGR/DPF ilk kontrol.", "estimatedCostEUR": 160 },
-      { "mileage": "150.000 km", "expectedIssues": "Enjektör revizyonu, debriyaj seti, EGR/DPF temizliği, turbo kontrolü, ön takım revizyonu.", "estimatedCostEUR": 600 },
-      { "mileage": "250.000 km", "expectedIssues": "Zincir triger kontrolü, su pompası, turbo revizyonu ihtimali, DPF değişimi ihtimali.", "estimatedCostEUR": 750 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Yağ+filtre (dizel yağı), yakıt/hava filtresi, EGR/DPF ilk kontrol.",
+        "estimatedCostEUR": 160
+      },
+      {
+        "mileage": "150.000 km",
+        "expectedIssues": "Enjektör revizyonu, debriyaj seti, EGR/DPF temizliği, turbo kontrolü, ön takım revizyonu.",
+        "estimatedCostEUR": 600
+      },
+      {
+        "mileage": "250.000 km",
+        "expectedIssues": "Zincir triger kontrolü, su pompası, turbo revizyonu ihtimali, DPF değişimi ihtimali.",
+        "estimatedCostEUR": 750
+      }
     ]
   },
   {
@@ -363,10 +683,30 @@
     "estimatedMaintenanceCostEUR": 230,
     "expertSummary": "E170 Corolla'nın giriş motoru yine 1.33 Dual VVT-i (99 HP): zincir trigerli, ekonomik, dertsiz ama C segmenti bir gövde için performansı zayıf. Sadece düz vitesle geldi. Şehir içi + hafif yol için yeterli; otoyol geçişlerini ve rampayı planlamak gerekir. E140'a göre gövde daha geniş, iç mekan daha modern. Günlük dille: \"En ucuz E170; yavaş ama masrafsız ve sağlam bir şehir arabası.\" Bütçe odaklı, şehir ağırlıklı kullanan için mantıklı.",
     "userFeedbackSummary": "Kullanıcılar 'masrafsız ama yavaş' diyor; 150-200 bin km sorunsuz örnekler yaygın. Şikayetler: performans yetersizliği (klimayla ve dolu araçta belirgin), yol sesi yalıtımı hâlâ zayıf, sert gazda motor sesi. Ön amortisör üst takozu tıkırtısı klasik. LPG'li örneklerde subap ayarı sorulmalı.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Ön amortisör üst takoz ve rulman sesi", "description": "Direksiyon çevirirken tıkırtı; kule takozu+rulman yenilenir. Ucuz ve yaygın.", "severity": "Düşük", "estimatedCostEUR": 120, "affectedYears": "2013-2016" },
-      { "title": "Ön cam su kaçağı / rüzgar sesi ve far buğusu", "description": "Bazı örneklerde ön cam kenarından su sızması ve yüksek hızda rüzgar sesi bildirilir; far içi buğulanma da görülür. Cam fitili/far havalandırması ile çözülür.", "severity": "Düşük", "estimatedCostEUR": 90, "affectedYears": "2013-2016" },
-      { "title": "Ateşleme bobini zayıflaması", "description": "Yaşa bağlı bobin zayıflar; tekleme, arıza lambası. Bobin+buji seti; LPG'de periyot kısa.", "severity": "Düşük", "estimatedCostEUR": 110, "affectedYears": "2013-2016" }
+      {
+        "title": "Ön amortisör üst takoz ve rulman sesi",
+        "description": "Direksiyon çevirirken tıkırtı; kule takozu+rulman yenilenir. Ucuz ve yaygın.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 120,
+        "affectedYears": "2013-2016"
+      },
+      {
+        "title": "Ön cam su kaçağı / rüzgar sesi ve far buğusu",
+        "description": "Bazı örneklerde ön cam kenarından su sızması ve yüksek hızda rüzgar sesi bildirilir; far içi buğulanma da görülür. Cam fitili/far havalandırması ile çözülür.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 90,
+        "affectedYears": "2013-2016"
+      },
+      {
+        "title": "Ateşleme bobini zayıflaması",
+        "description": "Yaşa bağlı bobin zayıflar; tekleme, arıza lambası. Bobin+buji seti; LPG'de periyot kısa.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 110,
+        "affectedYears": "2013-2016"
+      }
     ],
     "pros": [
       "Zincir triger, dayanıklı ve ekonomik 1NR-FE motor",
@@ -381,9 +721,21 @@
       "Direksiyon ve şasi hissi keyifsiz"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Bujiler, filtreler, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 150 },
-      { "mileage": "120.000 km", "expectedIssues": "Ön takım revizyonu, amortisör üst takozları, devirdaim kayışı, debriyaj kontrolü.", "estimatedCostEUR": 280 },
-      { "mileage": "200.000 km", "expectedIssues": "Su pompası, motor takozları, klima kompresörü, ateşleme bobinleri, debriyaj seti.", "estimatedCostEUR": 400 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Bujiler, filtreler, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.",
+        "estimatedCostEUR": 150
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "Ön takım revizyonu, amortisör üst takozları, devirdaim kayışı, debriyaj kontrolü.",
+        "estimatedCostEUR": 280
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Su pompası, motor takozları, klima kompresörü, ateşleme bobinleri, debriyaj seti.",
+        "estimatedCostEUR": 400
+      }
     ]
   },
   {
@@ -398,10 +750,30 @@
     "estimatedMaintenanceCostEUR": 240,
     "expertSummary": "E170 Corolla'nın 1.6 Valvematic'i (132 HP) düz vitesle en huzurlu kombinasyondur: zincir trigerli, LPG dostu, yağ yakmayan motor + basit, dayanıklı manuel şanzıman. CVT'nin lastik bant hissini istemeyenler için ideal. 132 HP şehir + orta yol için yeterli, dolu araçta orta seviye. Günlük dille: \"Otomatik takıntın yoksa E170'in 1.6 düz vitesini al — Corolla sağlamlığı, en az dert.\" Aile, uzun ömür ve LPG düşünen için mantıklı.",
     "userFeedbackSummary": "Kullanıcı memnuniyeti çok yüksek; 150-200 bin km motor sorunsuz. Övülen: yakıt ekonomisi, düşük bakım gideri, geniş arka koltuk ve bagaj, boya/montaj kalitesi. Şikayetler: yol sesi yalıtımı hâlâ zayıf, direksiyon hissizliği, 132 HP'nin dolu araçta orta kalması. LPG'li örneklerde subap ayarı ve yağ bakımı sorgulanmalı.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Valvematic aktüatör / mekanizma arızası", "description": "Nadiren aktüatör motoru veya dişlisi arıza yapar (rölanti dalgalanması, güç kaybı, arıza lambası). Yağ bakımı düzenli olanlarda çok seyrek görülür.", "severity": "Orta", "estimatedCostEUR": 350, "affectedYears": "2013-2016" },
-      { "title": "Ön cam su kaçağı / rüzgar sesi ve far buğusu", "description": "Bazı örneklerde ön cam kenarından su sızması ve rüzgar sesi; far içi buğulanma. Cam fitili/far havalandırması ile çözülür.", "severity": "Düşük", "estimatedCostEUR": 90, "affectedYears": "2013-2016" },
-      { "title": "Ön amortisör üst takoz sesi", "description": "Direksiyon çevirirken tıkırtı; kule takozu+rulman yenilenir. Ucuz ve yaygın.", "severity": "Düşük", "estimatedCostEUR": 120, "affectedYears": "2013-2016" }
+      {
+        "title": "Valvematic aktüatör / mekanizma arızası",
+        "description": "Nadiren aktüatör motoru veya dişlisi arıza yapar (rölanti dalgalanması, güç kaybı, arıza lambası). Yağ bakımı düzenli olanlarda çok seyrek görülür.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2013-2016"
+      },
+      {
+        "title": "Ön cam su kaçağı / rüzgar sesi ve far buğusu",
+        "description": "Bazı örneklerde ön cam kenarından su sızması ve rüzgar sesi; far içi buğulanma. Cam fitili/far havalandırması ile çözülür.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 90,
+        "affectedYears": "2013-2016"
+      },
+      {
+        "title": "Ön amortisör üst takoz sesi",
+        "description": "Direksiyon çevirirken tıkırtı; kule takozu+rulman yenilenir. Ucuz ve yaygın.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 120,
+        "affectedYears": "2013-2016"
+      }
     ],
     "pros": [
       "Zincir triger, yağ yakmayan, LPG uyumlu Valvematic motor",
@@ -416,9 +788,21 @@
       "İç tasarım sade"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Bujiler, filtreler, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 150 },
-      { "mileage": "120.000 km", "expectedIssues": "Ön takım revizyonu, amortisör üst takozları, devirdaim kayışı, debriyaj kontrolü, klima bakımı.", "estimatedCostEUR": 300 },
-      { "mileage": "200.000 km", "expectedIssues": "Debriyaj seti, su pompası, motor takozları, Valvematic kontrolü, ateşleme bobinleri.", "estimatedCostEUR": 430 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Bujiler, filtreler, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.",
+        "estimatedCostEUR": 150
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "Ön takım revizyonu, amortisör üst takozları, devirdaim kayışı, debriyaj kontrolü, klima bakımı.",
+        "estimatedCostEUR": 300
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Debriyaj seti, su pompası, motor takozları, Valvematic kontrolü, ateşleme bobinleri.",
+        "estimatedCostEUR": 430
+      }
     ]
   },
   {
@@ -433,10 +817,30 @@
     "estimatedMaintenanceCostEUR": 260,
     "expertSummary": "E170 Corolla'nın 1.6 Valvematic + Multidrive S kombinasyonu, ikinci el C segmentinde 'sorunsuz otomatik' arayanların ilk durağıdır. Multidrive S bir CVT'dir ama Toyota'ya özgü bir farkla: kalkışta gerçek bir tork konvertörü kullanır (kayış yükü azalır, ömür uzar) ve manuel modda 7 sanal kademe sunar; bu yüzden Honda/Nissan CVT'lerine göre daha dayanıklı kabul edilir. Sürüşte sakin; sert gazda 'lastik bant' hissi ve motor sesinin devirde asılı kalması olağan. Günlük dille: \"Bas-git, yolda bırakmaz; ama spor bir his arıyorsan burada yok. CVT yağının değişmiş olması şart.\"",
     "userFeedbackSummary": "Kullanıcı memnuniyeti çok yüksek; 150-200 bin km'de motor ve CVT sorunsuz örnekler standart. Övülen: yakıt ekonomisi (şehir dışı 5.5-6 lt), düşük bakım gideri, geniş arka koltuk ve bagaj. Şikayetler: yol sesi yalıtımı zayıf, sert gazda CVT sesi ve tepki gecikmesi, 132 HP'nin dolu araçta yetersiz kalması, hissiz direksiyon. CVT yağının değişip değişmediği kritik.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "CVT yağının değiştirilmemiş olması", "description": "Multidrive S dayanıklıdır ama 'ömürlük yağ' söylemi yüzünden çoğu araçta hiç değişmemiştir. Yağ eskiyince kalkışta titreme, ivmede zayıflama ve uzun vadede konik/kayış aşınması olur. 60.000 km periyotla Toyota CVT yağı şart; alırken geçmişi sorun.", "severity": "Orta", "estimatedCostEUR": 200, "affectedYears": "2013-2016" },
-      { "title": "Valvematic aktüatör / mekanizma arızası", "description": "Nadiren aktüatör motoru veya dişlisi arıza yapar (rölanti dalgalanması, güç kaybı, arıza lambası). Yağ bakımı düzenli olanlarda çok seyrek.", "severity": "Orta", "estimatedCostEUR": 350, "affectedYears": "2013-2016" },
-      { "title": "Ön cam su kaçağı / rüzgar sesi ve far buğusu", "description": "Bazı örneklerde ön cam kenarından su sızması ve rüzgar sesi; far içi buğulanma. Cam fitili/far havalandırması ile çözülür.", "severity": "Düşük", "estimatedCostEUR": 90, "affectedYears": "2013-2016" }
+      {
+        "title": "CVT yağının değiştirilmemiş olması",
+        "description": "Multidrive S dayanıklıdır ama 'ömürlük yağ' söylemi yüzünden çoğu araçta hiç değişmemiştir. Yağ eskiyince kalkışta titreme, ivmede zayıflama ve uzun vadede konik/kayış aşınması olur. 60.000 km periyotla Toyota CVT yağı şart; alırken geçmişi sorun.",
+        "severity": "Orta",
+        "estimatedCostEUR": 200,
+        "affectedYears": "2013-2016"
+      },
+      {
+        "title": "Valvematic aktüatör / mekanizma arızası",
+        "description": "Nadiren aktüatör motoru veya dişlisi arıza yapar (rölanti dalgalanması, güç kaybı, arıza lambası). Yağ bakımı düzenli olanlarda çok seyrek.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2013-2016"
+      },
+      {
+        "title": "Ön cam su kaçağı / rüzgar sesi ve far buğusu",
+        "description": "Bazı örneklerde ön cam kenarından su sızması ve rüzgar sesi; far içi buğulanma. Cam fitili/far havalandırması ile çözülür.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 90,
+        "affectedYears": "2013-2016"
+      }
     ],
     "pros": [
       "Toyota sorunsuzluğu + görece dayanıklı CVT (tork konvertörlü kalkış)",
@@ -452,9 +856,21 @@
       "Direksiyon ve şasi hissi keyifsiz"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "CVT yağı (Toyota spesifikasyonu), bujiler, filtreler, fren hidroliği, LPG'de subap ayarı.", "estimatedCostEUR": 250 },
-      { "mileage": "120.000 km", "expectedIssues": "İkinci CVT yağı, ön takım revizyonu, devirdaim kayışı, amortisör kontrolü, klima bakımı.", "estimatedCostEUR": 350 },
-      { "mileage": "200.000 km", "expectedIssues": "Su pompası, motor takozları, CVT içi kontrol, ateşleme bobinleri, süspansiyon yenileme.", "estimatedCostEUR": 450 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "CVT yağı (Toyota spesifikasyonu), bujiler, filtreler, fren hidroliği, LPG'de subap ayarı.",
+        "estimatedCostEUR": 250
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "İkinci CVT yağı, ön takım revizyonu, devirdaim kayışı, amortisör kontrolü, klima bakımı.",
+        "estimatedCostEUR": 350
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Su pompası, motor takozları, CVT içi kontrol, ateşleme bobinleri, süspansiyon yenileme.",
+        "estimatedCostEUR": 450
+      }
     ]
   },
   {
@@ -469,10 +885,30 @@
     "estimatedMaintenanceCostEUR": 300,
     "expertSummary": "E170'in dizel + otomatik seçeneği 1.4 D-4D + MultiMode'dur; yani robotlu tek kavrama, gerçek otomatik değil. Vites geçişlerinde 'çukur' hissi, kalkışta gecikme ve yokuşta geri kaçma normaldir; düz vitesli D-4D'ye göre daha çok servis dostudur. Motor bloğu sağlam, yakıt çok düşük (4.5-5 lt), ama DPF'li ve şehir içinde sürekli kullanılıyorsa rejenerasyon sorunları yaşanır. Günlük dille: \"Yakıtı harika, motoru tamam; ama vitesi düz vitesin robotlusu — trafik seviyorsan düşün.\" Yüksek km yapan, uzun yol ağırlıklı, düz vitese sorun etmeyen için mantıklı.",
     "userFeedbackSummary": "Dizel motor yorumları genelde olumlu: yakıt tüketimi çok düşük, yüksek km'lere çıkıyor. Ana şikayet M/M şanzımanın karakteri ve zamanla gelen debriyaj/aktüatör masrafı. DPF'li örneklerde sürekli şehir içi kullananlar rejenerasyon sorunları ve is birikimi yaşıyor; ara sıra uzun yol şart. Enjektör revizyonu 150-200 bin km'de gündeme gelebilir.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "DPF (partikül filtresi) tıkanması", "description": "Kısa mesafe şehir içi kullanımda partikül filtresi dolar, rejenerasyon tamamlanamaz; güç kaybı, arıza lambası ve zorunlu servis rejenerasyonu gerekir. Haftada bir 20-30 dk uzun yol bunu önler. İleri seviyede DPF temizliği/değişimi pahalıdır.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2013-2016" },
-      { "title": "MultiMode debriyaj ve aktüatör aşınması", "description": "Robotlu tek kavrama debriyajı zamanla biter; kalkışta kayma/titreme, vites atarken sarsıntı. Debriyaj seti + rulman + kalibrasyon gerekir, dur-kalk trafikte ömrü kısalır.", "severity": "Kritik", "estimatedCostEUR": 700, "affectedYears": "2013-2016" },
-      { "title": "EGR valfi ve emme kurumlanması", "description": "Düşük devir şehir kullanımında EGR ve emme manifoldu kurum bağlar; güç kaybı ve arıza lambası. Temizlik veya EGR yenileme çözer.", "severity": "Orta", "estimatedCostEUR": 220, "affectedYears": "2013-2016" }
+      {
+        "title": "DPF (partikül filtresi) tıkanması",
+        "description": "Kısa mesafe şehir içi kullanımda partikül filtresi dolar, rejenerasyon tamamlanamaz; güç kaybı, arıza lambası ve zorunlu servis rejenerasyonu gerekir. Haftada bir 20-30 dk uzun yol bunu önler. İleri seviyede DPF temizliği/değişimi pahalıdır.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2013-2016"
+      },
+      {
+        "title": "MultiMode debriyaj ve aktüatör aşınması",
+        "description": "Robotlu tek kavrama debriyajı zamanla biter; kalkışta kayma/titreme, vites atarken sarsıntı. Debriyaj seti + rulman + kalibrasyon gerekir, dur-kalk trafikte ömrü kısalır.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 700,
+        "affectedYears": "2013-2016"
+      },
+      {
+        "title": "EGR valfi ve emme kurumlanması",
+        "description": "Düşük devir şehir kullanımında EGR ve emme manifoldu kurum bağlar; güç kaybı ve arıza lambası. Temizlik veya EGR yenileme çözer.",
+        "severity": "Orta",
+        "estimatedCostEUR": 220,
+        "affectedYears": "2013-2016"
+      }
     ],
     "pros": [
       "Çok düşük yakıt tüketimi (uzun yolda 4.3-4.7 lt)",
@@ -487,9 +923,21 @@
       "Enjektör/EGR/DPF gibi dizele özgü periyodik giderler"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre (dizel yağı), yakıt filtresi, hava filtresi, EGR kontrolü, M/M debriyaj kontrolü.", "estimatedCostEUR": 170 },
-      { "mileage": "150.000 km", "expectedIssues": "Enjektör kontrolü, M/M debriyaj seti ihtimali, DPF temizliği, ön takım revizyonu, turbo kontrolü.", "estimatedCostEUR": 650 },
-      { "mileage": "250.000 km", "expectedIssues": "Zincir triger kontrolü, su pompası, ikinci debriyaj seti, DPF değişim ihtimali, enjeksiyon pompası.", "estimatedCostEUR": 800 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Yağ+filtre (dizel yağı), yakıt filtresi, hava filtresi, EGR kontrolü, M/M debriyaj kontrolü.",
+        "estimatedCostEUR": 170
+      },
+      {
+        "mileage": "150.000 km",
+        "expectedIssues": "Enjektör kontrolü, M/M debriyaj seti ihtimali, DPF temizliği, ön takım revizyonu, turbo kontrolü.",
+        "estimatedCostEUR": 650
+      },
+      {
+        "mileage": "250.000 km",
+        "expectedIssues": "Zincir triger kontrolü, su pompası, ikinci debriyaj seti, DPF değişim ihtimali, enjeksiyon pompası.",
+        "estimatedCostEUR": 800
+      }
     ]
   },
   {
@@ -504,10 +952,30 @@
     "estimatedMaintenanceCostEUR": 260,
     "expertSummary": "2016 makyajıyla E170 Corolla LED farlar, güncellenmiş ön tampon ve iyileştirilmiş multimedya aldı; mekanik olarak 1.6 Valvematic + Multidrive S CVT aynı kaldı. İkinci elde 'sorunsuz otomatik C sedan' arayanların en güncel ve en huzurlu seçeneklerinden. CVT Toyota'ya özgü tork konvertörlü kalkışıyla dayanıklıdır; sert gazda lastik bant hissi olağandır. Günlük dille: \"E170'in en olgun hali; LED farlı, biraz daha modern kabin, aynı sağlam mekanik. CVT yağı geçmişi şart.\"",
     "userFeedbackSummary": "Kullanıcı memnuniyeti çok yüksek. Övülen: yakıt ekonomisi, düşük bakım, geniş arka koltuk/bagaj, güncellenen kabin ve LED farlar. Şikayetler: yol sesi yalıtımı hâlâ zayıf, sert gazda CVT sesi, 132 HP'nin dolu araçta orta kalması, hissiz direksiyon. CVT yağının değişmiş olması kritik.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "CVT yağının değiştirilmemiş olması", "description": "Multidrive S dayanıklıdır ama çoğu araçta yağ hiç değişmemiştir. Eskiyince kalkışta titreme, ivmede zayıflama ve uzun vadede konik/kayış aşınması. 60.000 km periyotla Toyota CVT yağı şart.", "severity": "Orta", "estimatedCostEUR": 200, "affectedYears": "2016-2019" },
-      { "title": "Valvematic aktüatör / mekanizma arızası", "description": "Nadiren aktüatör motoru/dişlisi arıza yapar; düzenli yağ bakımı olanlarda çok seyrek.", "severity": "Orta", "estimatedCostEUR": 350, "affectedYears": "2016-2019" },
-      { "title": "Multimedya (Toyota Touch) donması ve geri görüş kamerası arızası", "description": "Ekran donar/yeniden başlar, kamera görüntüsü kesilir. Yazılım güncelleme veya ünite/kamera değişimi.", "severity": "Düşük", "estimatedCostEUR": 150, "affectedYears": "2016-2019" }
+      {
+        "title": "CVT yağının değiştirilmemiş olması",
+        "description": "Multidrive S dayanıklıdır ama çoğu araçta yağ hiç değişmemiştir. Eskiyince kalkışta titreme, ivmede zayıflama ve uzun vadede konik/kayış aşınması. 60.000 km periyotla Toyota CVT yağı şart.",
+        "severity": "Orta",
+        "estimatedCostEUR": 200,
+        "affectedYears": "2016-2019"
+      },
+      {
+        "title": "Valvematic aktüatör / mekanizma arızası",
+        "description": "Nadiren aktüatör motoru/dişlisi arıza yapar; düzenli yağ bakımı olanlarda çok seyrek.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2016-2019"
+      },
+      {
+        "title": "Multimedya (Toyota Touch) donması ve geri görüş kamerası arızası",
+        "description": "Ekran donar/yeniden başlar, kamera görüntüsü kesilir. Yazılım güncelleme veya ünite/kamera değişimi.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 150,
+        "affectedYears": "2016-2019"
+      }
     ],
     "pros": [
       "Toyota sorunsuzluğu + görece dayanıklı CVT",
@@ -523,9 +991,21 @@
       "Direksiyon ve şasi hissi keyifsiz"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "CVT yağı (Toyota spesifikasyonu), bujiler, filtreler, fren hidroliği, LPG'de subap ayarı, yazılım güncelleme.", "estimatedCostEUR": 250 },
-      { "mileage": "120.000 km", "expectedIssues": "İkinci CVT yağı, ön takım revizyonu, devirdaim kayışı, amortisör kontrolü, klima bakımı.", "estimatedCostEUR": 350 },
-      { "mileage": "200.000 km", "expectedIssues": "Su pompası, motor takozları, CVT içi kontrol, ateşleme bobinleri, süspansiyon yenileme.", "estimatedCostEUR": 450 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "CVT yağı (Toyota spesifikasyonu), bujiler, filtreler, fren hidroliği, LPG'de subap ayarı, yazılım güncelleme.",
+        "estimatedCostEUR": 250
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "İkinci CVT yağı, ön takım revizyonu, devirdaim kayışı, amortisör kontrolü, klima bakımı.",
+        "estimatedCostEUR": 350
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Su pompası, motor takozları, CVT içi kontrol, ateşleme bobinleri, süspansiyon yenileme.",
+        "estimatedCostEUR": 450
+      }
     ]
   },
   {
@@ -540,10 +1020,30 @@
     "estimatedMaintenanceCostEUR": 300,
     "expertSummary": "Makyajlı E170'in dizel + otomatik seçeneği yine 1.4 D-4D + MultiMode'dur — robotlu tek kavrama, gerçek otomatik değil. Motor bloğu sağlam, yakıt çok düşük (4.3-4.7 lt), ama DPF'li ve şehir içinde sürekli kullanılıyorsa rejenerasyon sorunları kaçınılmaz. M/M karakteri (kalkışta gecikme, yokuşta geri kaçma) düz vitesli D-4D'ye göre daha çok servis dostu. Günlük dille: \"Yakıtı harika, LED farlı güncel kasa; ama M/M vitesi ve DPF'yi göze al, ara sıra uzun yola çık.\"",
     "userFeedbackSummary": "Dizel motor yorumları olumlu; yakıt çok düşük, yüksek km'lere çıkıyor. Ana şikayet M/M şanzımanın karakteri ve debriyaj/aktüatör masrafı; DPF'li örneklerde şehir içi tıkanma. Enjektör revizyonu 150-200 bin km'de gündeme gelebilir. Multimedya donması yaşa bağlı.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "DPF (partikül filtresi) tıkanması", "description": "Kısa mesafe şehir kullanımında DPF dolar, rejenerasyon tamamlanamaz; güç kaybı, arıza lambası, servis rejenerasyonu. Haftada bir uzun yol önler; ileri seviyede temizlik/değişim pahalı.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2016-2019" },
-      { "title": "MultiMode debriyaj ve aktüatör aşınması", "description": "Robotlu tek kavrama debriyajı zamanla biter; kalkışta kayma/titreme, vites atarken sarsıntı. Debriyaj seti + rulman + kalibrasyon; dur-kalk trafikte ömrü kısalır.", "severity": "Kritik", "estimatedCostEUR": 700, "affectedYears": "2016-2019" },
-      { "title": "EGR valfi ve emme kurumlanması", "description": "Düşük devir şehir kullanımında EGR ve emme manifoldu kurum bağlar; güç kaybı, arıza lambası. Temizlik veya EGR yenileme.", "severity": "Orta", "estimatedCostEUR": 220, "affectedYears": "2016-2019" }
+      {
+        "title": "DPF (partikül filtresi) tıkanması",
+        "description": "Kısa mesafe şehir kullanımında DPF dolar, rejenerasyon tamamlanamaz; güç kaybı, arıza lambası, servis rejenerasyonu. Haftada bir uzun yol önler; ileri seviyede temizlik/değişim pahalı.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2016-2019"
+      },
+      {
+        "title": "MultiMode debriyaj ve aktüatör aşınması",
+        "description": "Robotlu tek kavrama debriyajı zamanla biter; kalkışta kayma/titreme, vites atarken sarsıntı. Debriyaj seti + rulman + kalibrasyon; dur-kalk trafikte ömrü kısalır.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 700,
+        "affectedYears": "2016-2019"
+      },
+      {
+        "title": "EGR valfi ve emme kurumlanması",
+        "description": "Düşük devir şehir kullanımında EGR ve emme manifoldu kurum bağlar; güç kaybı, arıza lambası. Temizlik veya EGR yenileme.",
+        "severity": "Orta",
+        "estimatedCostEUR": 220,
+        "affectedYears": "2016-2019"
+      }
     ],
     "pros": [
       "Çok düşük yakıt tüketimi",
@@ -558,9 +1058,21 @@
       "Enjektör/EGR/DPF gibi dizel bakımları"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre (dizel yağı), yakıt/hava filtresi, EGR kontrolü, M/M debriyaj kontrolü.", "estimatedCostEUR": 170 },
-      { "mileage": "150.000 km", "expectedIssues": "Enjektör kontrolü, M/M debriyaj seti ihtimali, DPF temizliği, ön takım revizyonu, turbo kontrolü.", "estimatedCostEUR": 650 },
-      { "mileage": "250.000 km", "expectedIssues": "Zincir triger kontrolü, su pompası, ikinci debriyaj seti, DPF değişim ihtimali.", "estimatedCostEUR": 800 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Yağ+filtre (dizel yağı), yakıt/hava filtresi, EGR kontrolü, M/M debriyaj kontrolü.",
+        "estimatedCostEUR": 170
+      },
+      {
+        "mileage": "150.000 km",
+        "expectedIssues": "Enjektör kontrolü, M/M debriyaj seti ihtimali, DPF temizliği, ön takım revizyonu, turbo kontrolü.",
+        "estimatedCostEUR": 650
+      },
+      {
+        "mileage": "250.000 km",
+        "expectedIssues": "Zincir triger kontrolü, su pompası, ikinci debriyaj seti, DPF değişim ihtimali.",
+        "estimatedCostEUR": 800
+      }
     ]
   },
   {
@@ -575,10 +1087,30 @@
     "estimatedMaintenanceCostEUR": 240,
     "expertSummary": "Auris, Corolla'nın hatchback kardeşidir — aynı platform, aynı motorlar, daha kompakt gövde ve daha genç bir tasarım. İlk nesil (E150) Auris'in 1.6 Dual VVT-i (1ZR-FE) düz vitelisi, Corolla E140 1.6 düz vitesiyle mekanik olarak aynıdır: zincir trigerli, yağ yakmayan, LPG dostu, çok dayanıklı. Hatchback olduğu için bagaj Corolla sedandan küçük ama koltuk katlamayla esnek. Yüksek sürüş pozisyonu ve iç mekan tasarımı döneminde beğenildi. Günlük dille: \"Corolla'nın sağlamlığını hatchback isteyene; 1.6 düz vitesi en dertsizi.\" Şehir içi + aile kullanımı için mantıklı.",
     "userFeedbackSummary": "Kullanıcılar sorunsuzluğu ve yüksek sürüş pozisyonunu sever. Motor için 250 bin km sorunsuz örnekler var. Şikayetler: sert süspansiyon (bozuk yolda seken), yol sesi yalıtımı orta, iç plastiklerin çok sert oluşu, bagajın küçüklüğü. Debriyaj yüksek km'de yenilenen normal bir gider. LPG'li örneklerde subap ayarı sorulmalı.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Ön amortisör üst takoz ve rulman sesi", "description": "Direksiyon çevirirken tıkırtı; kule takozu+rulman yenilenir. Ucuz ve yaygın.", "severity": "Düşük", "estimatedCostEUR": 120, "affectedYears": "2007-2012" },
-      { "title": "Ateşleme bobini zayıflaması", "description": "Yaşa bağlı bobin zayıflar; tekleme, arıza lambası. Bobin+buji seti; LPG'de periyot kısa.", "severity": "Düşük", "estimatedCostEUR": 110, "affectedYears": "2007-2012" },
-      { "title": "Debriyaj balata-baskı seti (yüksek km)", "description": "180-220 bin km'de debriyaj seti + baskı + rulman yenilenmesi gereken normal bir giderdir.", "severity": "Düşük", "estimatedCostEUR": 220, "affectedYears": "2007-2012" }
+      {
+        "title": "Ön amortisör üst takoz ve rulman sesi",
+        "description": "Direksiyon çevirirken tıkırtı; kule takozu+rulman yenilenir. Ucuz ve yaygın.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 120,
+        "affectedYears": "2007-2012"
+      },
+      {
+        "title": "Ateşleme bobini zayıflaması",
+        "description": "Yaşa bağlı bobin zayıflar; tekleme, arıza lambası. Bobin+buji seti; LPG'de periyot kısa.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 110,
+        "affectedYears": "2007-2012"
+      },
+      {
+        "title": "Debriyaj balata-baskı seti (yüksek km)",
+        "description": "180-220 bin km'de debriyaj seti + baskı + rulman yenilenmesi gereken normal bir giderdir.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 220,
+        "affectedYears": "2007-2012"
+      }
     ],
     "pros": [
       "1ZR-FE motor çok dayanıklı, zincir triger, LPG uyumlu",
@@ -593,9 +1125,21 @@
       "Yol sesi yalıtımı orta"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Bujiler, filtreler, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 150 },
-      { "mileage": "120.000 km", "expectedIssues": "Ön takım revizyonu, amortisör üst takozları, devirdaim kayışı, debriyaj kontrolü.", "estimatedCostEUR": 280 },
-      { "mileage": "200.000 km", "expectedIssues": "Debriyaj seti, su pompası, motor takozları, klima kompresörü, ateşleme bobinleri.", "estimatedCostEUR": 420 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Bujiler, filtreler, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.",
+        "estimatedCostEUR": 150
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "Ön takım revizyonu, amortisör üst takozları, devirdaim kayışı, debriyaj kontrolü.",
+        "estimatedCostEUR": 280
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Debriyaj seti, su pompası, motor takozları, klima kompresörü, ateşleme bobinleri.",
+        "estimatedCostEUR": 420
+      }
     ]
   },
   {
@@ -610,10 +1154,30 @@
     "estimatedMaintenanceCostEUR": 260,
     "expertSummary": "İlk nesil Auris'in 1.6 benzinlisinin 'otomatik' seçeneği MultiMode'dur — Corolla E140'takiyle aynı: manuel bir kutu, debriyajı robot yönetir. Otomatik konforu beklerken yarı otomatik alırsınız: kalkışta gecikme, 'çukur' hissi, yokuşta geri kaçma. Motor (1ZR-FE) tarafı tam not. Günlük dille: \"Motoru harika, ama M/M vitesi test sür; sevmezsen düz viteslisini ara.\" Şehir içi kullanan ve M/M karakterine alışabilen için.",
     "userFeedbackSummary": "Motor sorunsuz; şikayetler M/M'de: kalkışta gecikme, sarsıntı, zamanla debriyaj ve aktüatör masrafı, yokuşta geri kaçma. Dur-kalk trafikte debriyaj ömrü kısalır. Yazılım güncellemesi davranışı hafif iyileştirir. Sert süspansiyon ve orta yalıtım Auris klasiği.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "MultiMode (M/M) debriyaj ve aktüatör aşınması", "description": "Robotlu tek kavrama debriyajı zamanla biter; kalkışta kayma, titreme, vites atarken sarsıntı. Debriyaj seti + rulman + aktüatör + kalibrasyon gerekir. Dur-kalk trafikte ömür kısalır.", "severity": "Kritik", "estimatedCostEUR": 700, "affectedYears": "2007-2012" },
-      { "title": "M/M vites pozisyon sensörü / hidrolik ünite arızası", "description": "Vites moduna girmeme, N'de kalma, 'vitese basın' uyarısı. Sensör veya aktüatör hidroliği yenilenir; yazılım kalibrasyonu şart.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2007-2012" },
-      { "title": "Ön amortisör üst takoz sesi", "description": "Direksiyon çevirirken tıkırtı; kule takozu+rulman yenilenir. Ucuz ve yaygın.", "severity": "Düşük", "estimatedCostEUR": 120, "affectedYears": "2007-2012" }
+      {
+        "title": "MultiMode (M/M) debriyaj ve aktüatör aşınması",
+        "description": "Robotlu tek kavrama debriyajı zamanla biter; kalkışta kayma, titreme, vites atarken sarsıntı. Debriyaj seti + rulman + aktüatör + kalibrasyon gerekir. Dur-kalk trafikte ömür kısalır.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 700,
+        "affectedYears": "2007-2012"
+      },
+      {
+        "title": "M/M vites pozisyon sensörü / hidrolik ünite arızası",
+        "description": "Vites moduna girmeme, N'de kalma, 'vitese basın' uyarısı. Sensör veya aktüatör hidroliği yenilenir; yazılım kalibrasyonu şart.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2007-2012"
+      },
+      {
+        "title": "Ön amortisör üst takoz sesi",
+        "description": "Direksiyon çevirirken tıkırtı; kule takozu+rulman yenilenir. Ucuz ve yaygın.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 120,
+        "affectedYears": "2007-2012"
+      }
     ],
     "pros": [
       "1ZR-FE motor çok dayanıklı, zincir triger, LPG uyumlu",
@@ -628,9 +1192,21 @@
       "Bagaj Corolla sedandan küçük"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Bujiler, filtreler, fren hidroliği, M/M şanzıman yağı ve debriyaj kalınlığı kontrolü.", "estimatedCostEUR": 160 },
-      { "mileage": "120.000 km", "expectedIssues": "M/M debriyaj seti ihtimali, ön takım revizyonu, amortisör üst takozları, devirdaim kayışı.", "estimatedCostEUR": 550 },
-      { "mileage": "200.000 km", "expectedIssues": "Su pompası, motor takozları, ikinci debriyaj seti ihtimali, ateşleme bobinleri, klima kompresörü.", "estimatedCostEUR": 450 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Bujiler, filtreler, fren hidroliği, M/M şanzıman yağı ve debriyaj kalınlığı kontrolü.",
+        "estimatedCostEUR": 160
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "M/M debriyaj seti ihtimali, ön takım revizyonu, amortisör üst takozları, devirdaim kayışı.",
+        "estimatedCostEUR": 550
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Su pompası, motor takozları, ikinci debriyaj seti ihtimali, ateşleme bobinleri, klima kompresörü.",
+        "estimatedCostEUR": 450
+      }
     ]
   },
   {
@@ -645,10 +1221,30 @@
     "estimatedMaintenanceCostEUR": 280,
     "expertSummary": "İlk nesil Auris'in dizeli 1.4 D-4D (90 HP): Corolla E140 dizeliyle aynı motor — blok sağlam, ekonomik (4.5-5 lt), zincir trigerli. Common-rail dizele özgü enjektör/EGR/turbo bakımları geçerli; DPF'li örneklerde şehir içi tıkanma. Sadece düz vitesle geldi. Günlük dille: \"Auris'in yakıt canavarı; motoru sağlam ama kısa şehir yolunda ezme.\" Uzun yol ağırlıklı, ekonomi odaklı kullanan için mantıklı.",
     "userFeedbackSummary": "Kullanıcılar yakıt ekonomisini çok seviyor; motor yüksek km'ye çıkıyor. Şikayetler: enjektör revizyonu, EGR/emme kurumu, turbo kayıcı kanat, DPF tıkanması (şehir içi), 90 HP'nin yetersizliği. Debriyaj orta km'de yenileniyor. Sert süspansiyon Auris klasiği.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Enjektör kalibrasyonu / revizyonu", "description": "Common-rail enjektörler debisini şaşırır; soğukta zor çalışma, is, tekleme. Kaliteli mazot şart. 4 enjektör revize.", "severity": "Orta", "estimatedCostEUR": 350, "affectedYears": "2007-2012" },
-      { "title": "EGR ve DPF (varsa) tıkanması", "description": "Şehir içi düşük devir kullanımda EGR kurum bağlar, DPF dolar; güç kaybı, arıza lambası, rejenerasyon sorunu. Uzun yol + temizlik/değişim gerekir.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2007-2012" },
-      { "title": "Turbo VNT tıkanması", "description": "Kurumdan turbonun değişken kanatları sıkışır; rampada güç düşüşü, arıza lambası. Temizlik veya turbo revizyonu.", "severity": "Orta", "estimatedCostEUR": 300, "affectedYears": "2007-2012" }
+      {
+        "title": "Enjektör kalibrasyonu / revizyonu",
+        "description": "Common-rail enjektörler debisini şaşırır; soğukta zor çalışma, is, tekleme. Kaliteli mazot şart. 4 enjektör revize.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2007-2012"
+      },
+      {
+        "title": "EGR ve DPF (varsa) tıkanması",
+        "description": "Şehir içi düşük devir kullanımda EGR kurum bağlar, DPF dolar; güç kaybı, arıza lambası, rejenerasyon sorunu. Uzun yol + temizlik/değişim gerekir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2007-2012"
+      },
+      {
+        "title": "Turbo VNT tıkanması",
+        "description": "Kurumdan turbonun değişken kanatları sıkışır; rampada güç düşüşü, arıza lambası. Temizlik veya turbo revizyonu.",
+        "severity": "Orta",
+        "estimatedCostEUR": 300,
+        "affectedYears": "2007-2012"
+      }
     ],
     "pros": [
       "Çok düşük yakıt tüketimi",
@@ -663,9 +1259,21 @@
       "Sert süspansiyon, orta yalıtım"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre (dizel yağı), yakıt/hava filtresi, EGR/DPF ilk kontrol.", "estimatedCostEUR": 160 },
-      { "mileage": "150.000 km", "expectedIssues": "Enjektör revizyonu, debriyaj seti, EGR/DPF temizliği, turbo kontrolü, ön takım revizyonu.", "estimatedCostEUR": 600 },
-      { "mileage": "250.000 km", "expectedIssues": "Zincir triger kontrolü, su pompası, turbo revizyonu ihtimali, DPF değişimi ihtimali.", "estimatedCostEUR": 750 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Yağ+filtre (dizel yağı), yakıt/hava filtresi, EGR/DPF ilk kontrol.",
+        "estimatedCostEUR": 160
+      },
+      {
+        "mileage": "150.000 km",
+        "expectedIssues": "Enjektör revizyonu, debriyaj seti, EGR/DPF temizliği, turbo kontrolü, ön takım revizyonu.",
+        "estimatedCostEUR": 600
+      },
+      {
+        "mileage": "250.000 km",
+        "expectedIssues": "Zincir triger kontrolü, su pompası, turbo revizyonu ihtimali, DPF değişimi ihtimali.",
+        "estimatedCostEUR": 750
+      }
     ]
   },
   {
@@ -680,10 +1288,30 @@
     "estimatedMaintenanceCostEUR": 240,
     "expertSummary": "İkinci nesil Auris (E180), daha keskin çizgili, biraz daha alçak ve dinamik bir hatchback. 1.6 Valvematic + düz vites kombinasyonu Corolla E170 1.6 düz vitesiyle mekanik olarak aynı: zincir trigerli, LPG dostu, yağ yakmaz, çok dayanıklı. Bu nesilde iç malzeme kalitesi ve sürüş dengesi öncekine göre iyileşti. Günlük dille: \"Corolla'nın sağlamlığı, daha genç ve dinamik bir kasa; 1.6 düz vitesi en dertsizi.\" Şehir içi + aile için mantıklı.",
     "userFeedbackSummary": "Kullanıcılar sorunsuzluğu ve iyileşen iç kaliteyi övüyor. Motor için 150-200 bin km sorunsuz örnekler yaygın. Şikayetler: yol sesi yalıtımı hâlâ orta, bagajın küçüklüğü, arka koltuk diz mesafesi. LPG'li örneklerde subap ayarı sorulmalı. Debriyaj yüksek km'de yenilenen normal bir gider.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Valvematic aktüatör / mekanizma arızası", "description": "Nadiren aktüatör motoru veya dişlisi arıza yapar (rölanti dalgalanması, güç kaybı, arıza lambası). Yağ bakımı düzenli olanlarda çok seyrek.", "severity": "Orta", "estimatedCostEUR": 350, "affectedYears": "2012-2015" },
-      { "title": "Ön amortisör üst takoz ve rulman sesi", "description": "Direksiyon çevirirken tıkırtı; kule takozu+rulman yenilenir. Ucuz ve yaygın.", "severity": "Düşük", "estimatedCostEUR": 120, "affectedYears": "2012-2015" },
-      { "title": "Debriyaj balata-baskı seti (yüksek km)", "description": "180-220 bin km'de debriyaj seti + baskı + rulman yenilenmesi gereken normal bir giderdir.", "severity": "Düşük", "estimatedCostEUR": 220, "affectedYears": "2012-2015" }
+      {
+        "title": "Valvematic aktüatör / mekanizma arızası",
+        "description": "Nadiren aktüatör motoru veya dişlisi arıza yapar (rölanti dalgalanması, güç kaybı, arıza lambası). Yağ bakımı düzenli olanlarda çok seyrek.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2012-2015"
+      },
+      {
+        "title": "Ön amortisör üst takoz ve rulman sesi",
+        "description": "Direksiyon çevirirken tıkırtı; kule takozu+rulman yenilenir. Ucuz ve yaygın.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 120,
+        "affectedYears": "2012-2015"
+      },
+      {
+        "title": "Debriyaj balata-baskı seti (yüksek km)",
+        "description": "180-220 bin km'de debriyaj seti + baskı + rulman yenilenmesi gereken normal bir giderdir.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 220,
+        "affectedYears": "2012-2015"
+      }
     ],
     "pros": [
       "Zincir triger, yağ yakmayan, LPG uyumlu Valvematic motor",
@@ -698,9 +1326,21 @@
       "Direksiyon hissi keyifsiz"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Bujiler, filtreler, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 150 },
-      { "mileage": "120.000 km", "expectedIssues": "Ön takım revizyonu, amortisör üst takozları, devirdaim kayışı, debriyaj kontrolü.", "estimatedCostEUR": 300 },
-      { "mileage": "200.000 km", "expectedIssues": "Debriyaj seti, su pompası, motor takozları, Valvematic kontrolü, ateşleme bobinleri.", "estimatedCostEUR": 430 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Bujiler, filtreler, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.",
+        "estimatedCostEUR": 150
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "Ön takım revizyonu, amortisör üst takozları, devirdaim kayışı, debriyaj kontrolü.",
+        "estimatedCostEUR": 300
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Debriyaj seti, su pompası, motor takozları, Valvematic kontrolü, ateşleme bobinleri.",
+        "estimatedCostEUR": 430
+      }
     ]
   },
   {
@@ -715,10 +1355,30 @@
     "estimatedMaintenanceCostEUR": 260,
     "expertSummary": "İkinci nesil Auris'in 1.6 Valvematic + Multidrive S CVT kombinasyonu, ikinci elde 'sorunsuz otomatik hatchback' arayanların seçeneği. CVT Toyota'ya özgü tork konvertörlü kalkışıyla dayanıklıdır; 60 bin km'de bir yağ ister. Sert gazda lastik bant hissi ve motor sesinin devirde asılı kalması olağandır. Günlük dille: \"Corolla CVT'sinin hatchback hali; sakin, ekonomik, sağlam. CVT yağı geçmişi şart.\"",
     "userFeedbackSummary": "Kullanıcı memnuniyeti yüksek; motor ve CVT 150-200 bin km sorunsuz örnekler yaygın. Şikayetler: sert gazda CVT sesi ve gecikme, yol sesi yalıtımı orta, bagajın küçüklüğü. CVT yağının değişip değişmediği kritik.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "CVT yağının değiştirilmemiş olması", "description": "Multidrive S dayanıklıdır ama çoğu araçta yağ hiç değişmemiştir. Eskiyince kalkışta titreme, ivmede zayıflama, uzun vadede konik/kayış aşınması. 60.000 km periyotla Toyota CVT yağı şart.", "severity": "Orta", "estimatedCostEUR": 200, "affectedYears": "2012-2015" },
-      { "title": "Valvematic aktüatör / mekanizma arızası", "description": "Nadiren aktüatör motoru/dişlisi arıza yapar; düzenli yağ bakımı olanlarda çok seyrek.", "severity": "Orta", "estimatedCostEUR": 350, "affectedYears": "2012-2015" },
-      { "title": "Ön amortisör üst takoz sesi", "description": "Direksiyon çevirirken tıkırtı; kule takozu+rulman yenilenir. Ucuz ve yaygın.", "severity": "Düşük", "estimatedCostEUR": 120, "affectedYears": "2012-2015" }
+      {
+        "title": "CVT yağının değiştirilmemiş olması",
+        "description": "Multidrive S dayanıklıdır ama çoğu araçta yağ hiç değişmemiştir. Eskiyince kalkışta titreme, ivmede zayıflama, uzun vadede konik/kayış aşınması. 60.000 km periyotla Toyota CVT yağı şart.",
+        "severity": "Orta",
+        "estimatedCostEUR": 200,
+        "affectedYears": "2012-2015"
+      },
+      {
+        "title": "Valvematic aktüatör / mekanizma arızası",
+        "description": "Nadiren aktüatör motoru/dişlisi arıza yapar; düzenli yağ bakımı olanlarda çok seyrek.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2012-2015"
+      },
+      {
+        "title": "Ön amortisör üst takoz sesi",
+        "description": "Direksiyon çevirirken tıkırtı; kule takozu+rulman yenilenir. Ucuz ve yaygın.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 120,
+        "affectedYears": "2012-2015"
+      }
     ],
     "pros": [
       "Toyota sorunsuzluğu + görece dayanıklı CVT",
@@ -733,9 +1393,21 @@
       "Direksiyon hissi keyifsiz"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "CVT yağı (Toyota spesifikasyonu), bujiler, filtreler, fren hidroliği, LPG'de subap ayarı.", "estimatedCostEUR": 250 },
-      { "mileage": "120.000 km", "expectedIssues": "İkinci CVT yağı, ön takım revizyonu, devirdaim kayışı, amortisör kontrolü, klima bakımı.", "estimatedCostEUR": 350 },
-      { "mileage": "200.000 km", "expectedIssues": "Su pompası, motor takozları, CVT içi kontrol, ateşleme bobinleri, süspansiyon yenileme.", "estimatedCostEUR": 450 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "CVT yağı (Toyota spesifikasyonu), bujiler, filtreler, fren hidroliği, LPG'de subap ayarı.",
+        "estimatedCostEUR": 250
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "İkinci CVT yağı, ön takım revizyonu, devirdaim kayışı, amortisör kontrolü, klima bakımı.",
+        "estimatedCostEUR": 350
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Su pompası, motor takozları, CVT içi kontrol, ateşleme bobinleri, süspansiyon yenileme.",
+        "estimatedCostEUR": 450
+      }
     ]
   },
   {
@@ -750,10 +1422,30 @@
     "estimatedMaintenanceCostEUR": 300,
     "expertSummary": "İkinci nesil Auris'in dizel + otomatik seçeneği 1.4 D-4D + MultiMode'dur — robotlu tek kavrama, gerçek otomatik değil. Motor bloğu sağlam, yakıt çok düşük, ama DPF'li ve şehir içinde sürekli kullanılıyorsa rejenerasyon sorunları yaşanır. M/M karakteri (kalkışta gecikme, yokuşta geri kaçma) düz vitesli D-4D'ye göre daha çok servis dostu. Günlük dille: \"Yakıtı harika ama M/M vitesi ve DPF'yi göze al.\" Uzun yol ağırlıklı, düz vitese sorun etmeyen için mantıklı.",
     "userFeedbackSummary": "Dizel motor yorumları olumlu; yakıt çok düşük, yüksek km'lere çıkıyor. Ana şikayet M/M şanzımanın karakteri ve debriyaj/aktüatör masrafı; DPF'li örneklerde şehir içi tıkanma. Enjektör revizyonu 150-200 bin km'de gündeme gelebilir.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "DPF (partikül filtresi) tıkanması", "description": "Kısa mesafe şehir kullanımında DPF dolar, rejenerasyon tamamlanamaz; güç kaybı, arıza lambası, servis rejenerasyonu. Haftada bir uzun yol önler; ileri seviyede temizlik/değişim pahalı.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2012-2015" },
-      { "title": "MultiMode debriyaj ve aktüatör aşınması", "description": "Robotlu tek kavrama debriyajı zamanla biter; kalkışta kayma/titreme, vites atarken sarsıntı. Debriyaj seti + rulman + kalibrasyon; dur-kalk trafikte ömrü kısalır.", "severity": "Kritik", "estimatedCostEUR": 700, "affectedYears": "2012-2015" },
-      { "title": "EGR valfi ve emme kurumlanması", "description": "Düşük devir şehir kullanımında EGR ve emme manifoldu kurum bağlar; güç kaybı, arıza lambası. Temizlik veya EGR yenileme.", "severity": "Orta", "estimatedCostEUR": 220, "affectedYears": "2012-2015" }
+      {
+        "title": "DPF (partikül filtresi) tıkanması",
+        "description": "Kısa mesafe şehir kullanımında DPF dolar, rejenerasyon tamamlanamaz; güç kaybı, arıza lambası, servis rejenerasyonu. Haftada bir uzun yol önler; ileri seviyede temizlik/değişim pahalı.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2012-2015"
+      },
+      {
+        "title": "MultiMode debriyaj ve aktüatör aşınması",
+        "description": "Robotlu tek kavrama debriyajı zamanla biter; kalkışta kayma/titreme, vites atarken sarsıntı. Debriyaj seti + rulman + kalibrasyon; dur-kalk trafikte ömrü kısalır.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 700,
+        "affectedYears": "2012-2015"
+      },
+      {
+        "title": "EGR valfi ve emme kurumlanması",
+        "description": "Düşük devir şehir kullanımında EGR ve emme manifoldu kurum bağlar; güç kaybı, arıza lambası. Temizlik veya EGR yenileme.",
+        "severity": "Orta",
+        "estimatedCostEUR": 220,
+        "affectedYears": "2012-2015"
+      }
     ],
     "pros": [
       "Çok düşük yakıt tüketimi",
@@ -768,9 +1460,21 @@
       "Enjektör/EGR/DPF gibi dizel bakımları"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre (dizel yağı), yakıt/hava filtresi, EGR kontrolü, M/M debriyaj kontrolü.", "estimatedCostEUR": 170 },
-      { "mileage": "150.000 km", "expectedIssues": "Enjektör kontrolü, M/M debriyaj seti ihtimali, DPF temizliği, ön takım revizyonu, turbo kontrolü.", "estimatedCostEUR": 650 },
-      { "mileage": "250.000 km", "expectedIssues": "Zincir triger kontrolü, su pompası, ikinci debriyaj seti, DPF değişim ihtimali.", "estimatedCostEUR": 800 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Yağ+filtre (dizel yağı), yakıt/hava filtresi, EGR kontrolü, M/M debriyaj kontrolü.",
+        "estimatedCostEUR": 170
+      },
+      {
+        "mileage": "150.000 km",
+        "expectedIssues": "Enjektör kontrolü, M/M debriyaj seti ihtimali, DPF temizliği, ön takım revizyonu, turbo kontrolü.",
+        "estimatedCostEUR": 650
+      },
+      {
+        "mileage": "250.000 km",
+        "expectedIssues": "Zincir triger kontrolü, su pompası, ikinci debriyaj seti, DPF değişim ihtimali.",
+        "estimatedCostEUR": 800
+      }
     ]
   },
   {
@@ -785,10 +1489,30 @@
     "estimatedMaintenanceCostEUR": 300,
     "expertSummary": "2015 makyajıyla Auris'e Toyota'nın küçük turbo benzinlisi 8NR-FTS (1.2 Turbo, 116 HP) eklendi. Atmosferik 1.6 Valvematic'e göre daha torklu (185 Nm) ve düşük devirde canlı; ama direkt enjeksiyonlu ve turbolu olduğu için Corolla'nın klasik atmosferiklerinden daha bakım-hassastır. Zincir trigerlidir. Direkt enjeksiyon nedeniyle LPG önerilmez ve emme supaplarında karbon birikimi olur. Günlük dille: \"Atmosferikten daha keyifli sürüş ama Toyota'nın en dertsiz motoru değil; LPG düşünüyorsan atmosferik 1.6'ya bak.\"",
     "userFeedbackSummary": "Kullanıcılar torku ve şehir içi canlılığı seviyor. Şikayetler: emme supaplarında karbon birikimi (güç kaybı, rölanti dengesizliği), bazı örneklerde yağ eksiltme, turbo/wastegate sesi, su pompası. Atmosferik motorlara alışkın olanlar 'daha çok bakım istiyor' diyor. Yol sesi yalıtımı orta.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Emme supaplarında karbon birikimi (direkt enjeksiyon)", "description": "8NR-FTS direkt enjeksiyonlu; emme supaplarını yakıt yıkamaz, zamanla kurum birikir. Güç kaybı, rölanti dengesizliği, kötü rölanti. Ceviz kabuğu püskürtme (walnut blasting) ile temizlenir.", "severity": "Orta", "estimatedCostEUR": 250, "affectedYears": "2015-2018" },
-      { "title": "Yağ eksiltme ve turbo/wastegate sesi", "description": "Bazı örnekler yağ eksiltir; wastegate mekanizması takırdayabilir. Kısa periyot kaliteli yağ, seviye takibi önemli. Turbo revizyonu pahalı.", "severity": "Orta", "estimatedCostEUR": 300, "affectedYears": "2015-2018" },
-      { "title": "Su pompası / termostat sızıntısı", "description": "Yüksek km'de su pompası sızdırabilir veya hararet yapar; termostatla birlikte yenilenir.", "severity": "Düşük", "estimatedCostEUR": 180, "affectedYears": "2015-2018" }
+      {
+        "title": "Emme supaplarında karbon birikimi (direkt enjeksiyon)",
+        "description": "8NR-FTS direkt enjeksiyonlu; emme supaplarını yakıt yıkamaz, zamanla kurum birikir. Güç kaybı, rölanti dengesizliği, kötü rölanti. Ceviz kabuğu püskürtme (walnut blasting) ile temizlenir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 250,
+        "affectedYears": "2015-2018"
+      },
+      {
+        "title": "Yağ eksiltme ve turbo/wastegate sesi",
+        "description": "Bazı örnekler yağ eksiltir; wastegate mekanizması takırdayabilir. Kısa periyot kaliteli yağ, seviye takibi önemli. Turbo revizyonu pahalı.",
+        "severity": "Orta",
+        "estimatedCostEUR": 300,
+        "affectedYears": "2015-2018"
+      },
+      {
+        "title": "Su pompası / termostat sızıntısı",
+        "description": "Yüksek km'de su pompası sızdırabilir veya hararet yapar; termostatla birlikte yenilenir.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 180,
+        "affectedYears": "2015-2018"
+      }
     ],
     "pros": [
       "Atmosferiğe göre daha torklu ve şehir içinde canlı",
@@ -803,9 +1527,21 @@
       "Yol sesi yalıtımı orta"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre (kısa periyot), bujiler, filtreler, turbo kaçak kontrolü, PCV valfi.", "estimatedCostEUR": 180 },
-      { "mileage": "120.000 km", "expectedIssues": "Emme supabı karbon temizliği, su pompası kontrolü, turbo kontrolü, ön takım revizyonu, debriyaj kontrolü.", "estimatedCostEUR": 450 },
-      { "mileage": "200.000 km", "expectedIssues": "Turbo revizyonu ihtimali, su pompası, zincir triger kontrolü, süspansiyon yenileme.", "estimatedCostEUR": 550 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Yağ+filtre (kısa periyot), bujiler, filtreler, turbo kaçak kontrolü, PCV valfi.",
+        "estimatedCostEUR": 180
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "Emme supabı karbon temizliği, su pompası kontrolü, turbo kontrolü, ön takım revizyonu, debriyaj kontrolü.",
+        "estimatedCostEUR": 450
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Turbo revizyonu ihtimali, su pompası, zincir triger kontrolü, süspansiyon yenileme.",
+        "estimatedCostEUR": 550
+      }
     ]
   },
   {
@@ -820,10 +1556,30 @@
     "estimatedMaintenanceCostEUR": 190,
     "expertSummary": "İkinci nesil Yaris (P9), B segmentinde park kolaylığı, yüksek koltuk pozisyonu ve Toyota sorunsuzluğuyla bilinir. 1.33 Dual VVT-i (1NR-FE) motor zincir trigerlidir, LPG'ye uygundur ve çok dayanıklıdır. Bu düz vitesli versiyon en dertsizi. Küçük gövdeye 100 HP şehir içinde yeterli, otoyolda devir yüksek gezer. Merkezi konumdaki gösterge paneli bazılarını rahatsız eder. Günlük dille: \"Küçük, dertsiz, park canavarı bir şehir arabası; 1.33 düz vitesi en akıllısı.\" İlk otomobil, şehir içi kullanım, kadın sürücüler için çok tercih edilir.",
     "userFeedbackSummary": "Kullanıcılar sorunsuzluğu, park kolaylığı ve düşük yakıtı çok övüyor. Motor 200-250 bin km sorunsuz. Şikayetler: merkezi gösterge paneli alışması, sert süspansiyon, yol sesi, küçük bagaj, elektrikli direksiyonun bazı örneklerde sertleşmesi. LPG'li örneklerde subap ayarı sorulmalı.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Elektrikli direksiyon (EPS) sertleşmesi / arızası", "description": "Bazı örneklerde elektrikli direksiyon kolonu sertleşir veya uyarı lambası yanar; kolon veya motor revizyonu gerekir. Yaygın değil ama bilinen bir konu.", "severity": "Orta", "estimatedCostEUR": 250, "affectedYears": "2005-2011" },
-      { "title": "Ateşleme bobini zayıflaması", "description": "Yaşa bağlı bobin zayıflar; tekleme, arıza lambası. Bobin+buji seti; LPG'de periyot kısa.", "severity": "Düşük", "estimatedCostEUR": 100, "affectedYears": "2005-2011" },
-      { "title": "Ön amortisör ve salıncak burcu sesi", "description": "Türkiye yollarında 80-120 bin km'de ön takım sesleri; salıncak burçları ve amortisör üst takozları yenilenir. Parça uygun.", "severity": "Düşük", "estimatedCostEUR": 130, "affectedYears": "2005-2011" }
+      {
+        "title": "Elektrikli direksiyon (EPS) sertleşmesi / arızası",
+        "description": "Bazı örneklerde elektrikli direksiyon kolonu sertleşir veya uyarı lambası yanar; kolon veya motor revizyonu gerekir. Yaygın değil ama bilinen bir konu.",
+        "severity": "Orta",
+        "estimatedCostEUR": 250,
+        "affectedYears": "2005-2011"
+      },
+      {
+        "title": "Ateşleme bobini zayıflaması",
+        "description": "Yaşa bağlı bobin zayıflar; tekleme, arıza lambası. Bobin+buji seti; LPG'de periyot kısa.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 100,
+        "affectedYears": "2005-2011"
+      },
+      {
+        "title": "Ön amortisör ve salıncak burcu sesi",
+        "description": "Türkiye yollarında 80-120 bin km'de ön takım sesleri; salıncak burçları ve amortisör üst takozları yenilenir. Parça uygun.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 130,
+        "affectedYears": "2005-2011"
+      }
     ],
     "pros": [
       "Toyota sorunsuzluğu, zincir triger, LPG uyumlu motor",
@@ -838,9 +1594,21 @@
       "Otoyolda yüksek devir"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Bujiler, filtreler, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 130 },
-      { "mileage": "120.000 km", "expectedIssues": "Ön takım revizyonu, amortisör üst takozları, devirdaim kayışı, debriyaj kontrolü, EPS kontrolü.", "estimatedCostEUR": 260 },
-      { "mileage": "200.000 km", "expectedIssues": "Debriyaj seti, su pompası, motor takozları, klima kompresörü, ateşleme bobinleri.", "estimatedCostEUR": 380 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Bujiler, filtreler, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.",
+        "estimatedCostEUR": 130
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "Ön takım revizyonu, amortisör üst takozları, devirdaim kayışı, debriyaj kontrolü, EPS kontrolü.",
+        "estimatedCostEUR": 260
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Debriyaj seti, su pompası, motor takozları, klima kompresörü, ateşleme bobinleri.",
+        "estimatedCostEUR": 380
+      }
     ]
   },
   {
@@ -855,10 +1623,30 @@
     "estimatedMaintenanceCostEUR": 200,
     "expertSummary": "Üçüncü nesil Yaris (P13), öncekinden daha büyük, daha olgun ve gösterge panelini sürücü önüne almış bir B segmenti aracı. 1.33 Dual VVT-i (1NR-FE) motor + düz vites, Toyota sorunsuzluğunun B segmenti temsilcisi: zincir trigerli, LPG dostu, çok dayanıklı. Şehir içinde çevik, otoyolda devir yüksek gezer. Günlük dille: \"Öncekinin sağlamlığı, daha modern ve büyük bir paket; 1.33 düz vitesi en akıllısı.\" İlk otomobil, şehir + hafif yol kullanımı için ideal.",
     "userFeedbackSummary": "Kullanıcılar sorunsuzluğu, düşük yakıtı ve öncekine göre iyileşen kabini övüyor. Motor 150-200 bin km sorunsuz. Şikayetler: sert süspansiyon, yol sesi yalıtımı orta, iç plastik kalitesi B segmenti seviyesinde, 100 HP'nin otoyolda yetersizliği. LPG'li örneklerde subap ayarı sorulmalı.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Ateşleme bobini zayıflaması", "description": "Yaşa bağlı bobin zayıflar; tekleme, arıza lambası. Bobin+buji seti; LPG'de periyot kısa.", "severity": "Düşük", "estimatedCostEUR": 100, "affectedYears": "2011-2020" },
-      { "title": "Ön amortisör ve salıncak burcu sesi", "description": "Türkiye yollarında 80-120 bin km'de ön takım sesleri; salıncak burçları ve amortisör üst takozları yenilenir. Parça uygun.", "severity": "Düşük", "estimatedCostEUR": 130, "affectedYears": "2011-2020" },
-      { "title": "Klima kokusu ve kompresör kavrama sesi", "description": "Nemli havada evaporatörden küf kokusu; temizlik ve polen filtresi ile geçer. Yüksek km'de kompresör kavraması ses yapabilir.", "severity": "Düşük", "estimatedCostEUR": 120, "affectedYears": "2011-2020" }
+      {
+        "title": "Ateşleme bobini zayıflaması",
+        "description": "Yaşa bağlı bobin zayıflar; tekleme, arıza lambası. Bobin+buji seti; LPG'de periyot kısa.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 100,
+        "affectedYears": "2011-2020"
+      },
+      {
+        "title": "Ön amortisör ve salıncak burcu sesi",
+        "description": "Türkiye yollarında 80-120 bin km'de ön takım sesleri; salıncak burçları ve amortisör üst takozları yenilenir. Parça uygun.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 130,
+        "affectedYears": "2011-2020"
+      },
+      {
+        "title": "Klima kokusu ve kompresör kavrama sesi",
+        "description": "Nemli havada evaporatörden küf kokusu; temizlik ve polen filtresi ile geçer. Yüksek km'de kompresör kavraması ses yapabilir.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 120,
+        "affectedYears": "2011-2020"
+      }
     ],
     "pros": [
       "Toyota sorunsuzluğu, zincir triger, LPG uyumlu motor",
@@ -873,9 +1661,21 @@
       "Direksiyon hissi sıradan"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Bujiler, filtreler, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 140 },
-      { "mileage": "120.000 km", "expectedIssues": "Ön takım revizyonu, amortisör üst takozları, devirdaim kayışı, debriyaj kontrolü, klima bakımı.", "estimatedCostEUR": 270 },
-      { "mileage": "200.000 km", "expectedIssues": "Debriyaj seti, su pompası, motor takozları, klima kompresörü, ateşleme bobinleri.", "estimatedCostEUR": 390 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Bujiler, filtreler, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.",
+        "estimatedCostEUR": 140
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "Ön takım revizyonu, amortisör üst takozları, devirdaim kayışı, debriyaj kontrolü, klima bakımı.",
+        "estimatedCostEUR": 270
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Debriyaj seti, su pompası, motor takozları, klima kompresörü, ateşleme bobinleri.",
+        "estimatedCostEUR": 390
+      }
     ]
   },
   {
@@ -890,10 +1690,30 @@
     "estimatedMaintenanceCostEUR": 230,
     "expertSummary": "P13 Yaris'in 'otomatik' seçeneği MultiMode'dur — Corolla/Auris'teki gibi robotlu tek kavrama, gerçek otomatik değil. Küçük gövdede M/M'nin kalkış gecikmesi ve yokuşta geri kaçması daha az rahatsız eder ama yine de dur-kalk trafikte debriyaj masrafı gündeme gelir. Motor (1NR-FE) tarafı tam not. Günlük dille: \"Motoru harika, ama M/M vitesi test sür; şehir içi için idare eder, trafik yoğunsa düz viteslisine bak.\"",
     "userFeedbackSummary": "Motor sorunsuz; şikayetler M/M'de: kalkışta gecikme, sarsıntı, zamanla debriyaj ve aktüatör masrafı. Küçük gövdede M/M karakteri Corolla'daki kadar rahatsız etmiyor ama dur-kalk trafikte debriyaj ömrü kısalıyor. Sert süspansiyon ve orta yalıtım Yaris klasiği.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "MultiMode (M/M) debriyaj ve aktüatör aşınması", "description": "Robotlu tek kavrama debriyajı zamanla biter; kalkışta kayma, titreme, vites atarken sarsıntı. Debriyaj seti + rulman + kalibrasyon gerekir. Dur-kalk trafikte ömür kısalır.", "severity": "Kritik", "estimatedCostEUR": 650, "affectedYears": "2011-2020" },
-      { "title": "M/M vites pozisyon sensörü / hidrolik ünite arızası", "description": "Vites moduna girmeme, N'de kalma, 'vitese basın' uyarısı. Sensör veya aktüatör hidroliği yenilenir; yazılım kalibrasyonu şart.", "severity": "Orta", "estimatedCostEUR": 380, "affectedYears": "2011-2020" },
-      { "title": "Ön amortisör ve salıncak burcu sesi", "description": "Türkiye yollarında 80-120 bin km'de ön takım sesleri. Parça uygun.", "severity": "Düşük", "estimatedCostEUR": 130, "affectedYears": "2011-2020" }
+      {
+        "title": "MultiMode (M/M) debriyaj ve aktüatör aşınması",
+        "description": "Robotlu tek kavrama debriyajı zamanla biter; kalkışta kayma, titreme, vites atarken sarsıntı. Debriyaj seti + rulman + kalibrasyon gerekir. Dur-kalk trafikte ömür kısalır.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 650,
+        "affectedYears": "2011-2020"
+      },
+      {
+        "title": "M/M vites pozisyon sensörü / hidrolik ünite arızası",
+        "description": "Vites moduna girmeme, N'de kalma, 'vitese basın' uyarısı. Sensör veya aktüatör hidroliği yenilenir; yazılım kalibrasyonu şart.",
+        "severity": "Orta",
+        "estimatedCostEUR": 380,
+        "affectedYears": "2011-2020"
+      },
+      {
+        "title": "Ön amortisör ve salıncak burcu sesi",
+        "description": "Türkiye yollarında 80-120 bin km'de ön takım sesleri. Parça uygun.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 130,
+        "affectedYears": "2011-2020"
+      }
     ],
     "pros": [
       "Toyota sorunsuzluğu, zincir triger, LPG uyumlu motor",
@@ -908,9 +1728,21 @@
       "100 HP otoyolda yetersiz"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Bujiler, filtreler, fren hidroliği, M/M şanzıman yağı ve debriyaj kalınlığı kontrolü.", "estimatedCostEUR": 150 },
-      { "mileage": "120.000 km", "expectedIssues": "M/M debriyaj seti ihtimali, ön takım revizyonu, amortisör üst takozları, devirdaim kayışı.", "estimatedCostEUR": 500 },
-      { "mileage": "200.000 km", "expectedIssues": "Su pompası, motor takozları, ikinci debriyaj seti ihtimali, ateşleme bobinleri, klima kompresörü.", "estimatedCostEUR": 430 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Bujiler, filtreler, fren hidroliği, M/M şanzıman yağı ve debriyaj kalınlığı kontrolü.",
+        "estimatedCostEUR": 150
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "M/M debriyaj seti ihtimali, ön takım revizyonu, amortisör üst takozları, devirdaim kayışı.",
+        "estimatedCostEUR": 500
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Su pompası, motor takozları, ikinci debriyaj seti ihtimali, ateşleme bobinleri, klima kompresörü.",
+        "estimatedCostEUR": 430
+      }
     ]
   },
   {
@@ -925,10 +1757,30 @@
     "estimatedMaintenanceCostEUR": 400,
     "expertSummary": "Vigo kasa Hilux, dünya çapında 'yıkılmaz pick-up' efsanesinin bir parçası: güçlü şasi, basit ve dayanıklı mekanik, ağır arazi ve yük şartlarına dayanım. 2.5 D-4D (2KD-FTV) motor 144 HP + 343 Nm ile yüklü kullanımda yeterli, uzun yolda 8-9 lt yakar. Kritik nokta bu motorun enjektör ve enjeksiyon pompası hassasiyetidir — kalitesiz mazot kullanılan örneklerde erken revizyon gelir; ayrıca EGR ve turbo kurumu. Zincir trigerlidir. Günlük dille: \"Doğru bakılırsa 500 bin km yapar; ama arazi/ticari yorulmuşluğunu ve enjektör geçmişini iyi sorgula, kaliteli mazot şart.\"",
     "userFeedbackSummary": "Kullanıcılar dayanıklılığa güveniyor; 400-500 bin km yapmış örnekler var. Şikayetler: enjektör revizyonu (özellikle kötü mazotla), enjeksiyon pompası, EGR/turbo kurumu, ağır kullanımda debriyaj ve şanzıman rulmanları, ön rot/rotil, arka makas yaprakları. 4x4 sistemli örneklerde ön aks ve kilit mekanizması kontrol edilmeli. Kabin konforu ve yalıtım ticari seviye.",
+    "bodyType": "Pickup",
+    "drivetrain": "4WD",
     "chronicIssues": [
-      { "title": "Enjektör ve enjeksiyon pompası arızası (mazot kalitesine bağlı)", "description": "2KD-FTV enjektörleri ve pompası kalitesiz mazota çok hassastır; is, tekleme, güç kaybı, soğukta zor çalışma. Kaliteli mazot ve yakıt filtresi periyodu ömrü belirler. Enjektör + pompa revizyonu pahalıdır.", "severity": "Orta", "estimatedCostEUR": 600, "affectedYears": "2005-2015" },
-      { "title": "EGR valfi ve turbo VNT kurumlanması", "description": "Şehir içi ve rölanti çalışma çok olan araçlarda EGR ve turbo kayıcı kanatları kurum bağlar; güç kaybı, arıza lambası, limp mode. Temizlik veya yenileme.", "severity": "Orta", "estimatedCostEUR": 350, "affectedYears": "2005-2015" },
-      { "title": "Ağır kullanımdan şanzıman/debriyaj ve arka makas yıpranması", "description": "Yük ve arazi kullanımı debriyaj setini, şanzıman rulmanlarını ve arka makas yapraklarını hızlı yıpratır. Aracın ticari/arazi geçmişine göre planla.", "severity": "Orta", "estimatedCostEUR": 500, "affectedYears": "2005-2015" }
+      {
+        "title": "Enjektör ve enjeksiyon pompası arızası (mazot kalitesine bağlı)",
+        "description": "2KD-FTV enjektörleri ve pompası kalitesiz mazota çok hassastır; is, tekleme, güç kaybı, soğukta zor çalışma. Kaliteli mazot ve yakıt filtresi periyodu ömrü belirler. Enjektör + pompa revizyonu pahalıdır.",
+        "severity": "Orta",
+        "estimatedCostEUR": 600,
+        "affectedYears": "2005-2015"
+      },
+      {
+        "title": "EGR valfi ve turbo VNT kurumlanması",
+        "description": "Şehir içi ve rölanti çalışma çok olan araçlarda EGR ve turbo kayıcı kanatları kurum bağlar; güç kaybı, arıza lambası, limp mode. Temizlik veya yenileme.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2005-2015"
+      },
+      {
+        "title": "Ağır kullanımdan şanzıman/debriyaj ve arka makas yıpranması",
+        "description": "Yük ve arazi kullanımı debriyaj setini, şanzıman rulmanlarını ve arka makas yapraklarını hızlı yıpratır. Aracın ticari/arazi geçmişine göre planla.",
+        "severity": "Orta",
+        "estimatedCostEUR": 500,
+        "affectedYears": "2005-2015"
+      }
     ],
     "pros": [
       "Efsane dayanıklılık, güçlü şasi, yüksek km potansiyeli",
@@ -943,9 +1795,21 @@
       "Yüksek yakıt tüketimi (8-10 lt)"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt filtresi (kaliteli), hava filtresi, EGR/turbo ilk kontrol, diferansiyel/şanzıman yağları.", "estimatedCostEUR": 250 },
-      { "mileage": "150.000 km", "expectedIssues": "Enjektör kontrolü/revizyonu, EGR/turbo temizliği, debriyaj seti, ön takım revizyonu, arka makas kontrolü, 4x4 aks kontrolü.", "estimatedCostEUR": 800 },
-      { "mileage": "300.000 km", "expectedIssues": "Enjeksiyon pompası revizyonu, turbo revizyonu, zincir triger kontrolü, şanzıman rulmanları, süspansiyon komple.", "estimatedCostEUR": 1000 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Dizel yağı+filtre, yakıt filtresi (kaliteli), hava filtresi, EGR/turbo ilk kontrol, diferansiyel/şanzıman yağları.",
+        "estimatedCostEUR": 250
+      },
+      {
+        "mileage": "150.000 km",
+        "expectedIssues": "Enjektör kontrolü/revizyonu, EGR/turbo temizliği, debriyaj seti, ön takım revizyonu, arka makas kontrolü, 4x4 aks kontrolü.",
+        "estimatedCostEUR": 800
+      },
+      {
+        "mileage": "300.000 km",
+        "expectedIssues": "Enjeksiyon pompası revizyonu, turbo revizyonu, zincir triger kontrolü, şanzıman rulmanları, süspansiyon komple.",
+        "estimatedCostEUR": 1000
+      }
     ]
   },
   {
@@ -960,10 +1824,30 @@
     "estimatedMaintenanceCostEUR": 420,
     "expertSummary": "Revo kasa Hilux, Vigo'nun dayanıklılığını koruyup kabin konforunu ve donanımı belirgin şekilde yükseltti — artık günlük binek olarak da kullanılabilir bir pick-up. 2.4 D-4D (2GD-FTV) motor 150 HP + 400 Nm ile yüklü kullanımda rahat, uzun yolda 7.5-8.5 lt yakar. Yeni nesil common-rail sistem Vigo'nun 2KD'sine göre daha rafine ama yine kaliteli mazot ister; DPF'li olduğu için sürekli kısa mesafe kullanımda tıkanma riski var. Zincir trigerlidir. Günlük dille: \"Vigo'nun sağlamlığı + gerçek binek konforu; DPF'sine ve kaliteli mazota dikkat, arazi/ticari geçmişini sorgula.\"",
     "userFeedbackSummary": "Kullanıcılar konfor artışını ve dayanıklılığı çok övüyor; günlük araç olarak da tercih ediliyor. Şikayetler: DPF tıkanması (sürekli şehir içi/kısa mesafe), bazı yıllarda motor yağına mazot karışması (rejenerasyon sorunu), EGR kurumu, ağır kullanımda debriyaj ve süspansiyon. Kaliteli mazot ve ara sıra uzun yol DPF için şart.",
+    "bodyType": "Pickup",
+    "drivetrain": "4WD",
     "chronicIssues": [
-      { "title": "DPF tıkanması ve motor yağına mazot karışması", "description": "Sürekli kısa mesafe/şehir içi kullanımda DPF rejenerasyonu tamamlanamaz; DPF dolar, güç düşer ve rejenerasyon denemeleri sırasında motor yağ seviyesi yükselir (mazot karışır). Yağ seviyesi takibi ve ara sıra uzun yol şart.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2015-2022" },
-      { "title": "EGR valfi ve emme kurumlanması", "description": "Düşük devir/rölanti çok çalışan araçlarda EGR ve emme yolları kurum bağlar; güç kaybı, arıza lambası. Temizlik veya EGR yenileme.", "severity": "Orta", "estimatedCostEUR": 300, "affectedYears": "2015-2022" },
-      { "title": "Ağır kullanımdan debriyaj, süspansiyon ve arka makas yıpranması", "description": "Yük ve arazi kullanımı debriyaj setini, ön takımı ve arka makas yapraklarını hızlı yıpratır. Aracın geçmişine göre planla.", "severity": "Orta", "estimatedCostEUR": 500, "affectedYears": "2015-2022" }
+      {
+        "title": "DPF tıkanması ve motor yağına mazot karışması",
+        "description": "Sürekli kısa mesafe/şehir içi kullanımda DPF rejenerasyonu tamamlanamaz; DPF dolar, güç düşer ve rejenerasyon denemeleri sırasında motor yağ seviyesi yükselir (mazot karışır). Yağ seviyesi takibi ve ara sıra uzun yol şart.",
+        "severity": "Orta",
+        "estimatedCostEUR": 450,
+        "affectedYears": "2015-2022"
+      },
+      {
+        "title": "EGR valfi ve emme kurumlanması",
+        "description": "Düşük devir/rölanti çok çalışan araçlarda EGR ve emme yolları kurum bağlar; güç kaybı, arıza lambası. Temizlik veya EGR yenileme.",
+        "severity": "Orta",
+        "estimatedCostEUR": 300,
+        "affectedYears": "2015-2022"
+      },
+      {
+        "title": "Ağır kullanımdan debriyaj, süspansiyon ve arka makas yıpranması",
+        "description": "Yük ve arazi kullanımı debriyaj setini, ön takımı ve arka makas yapraklarını hızlı yıpratır. Aracın geçmişine göre planla.",
+        "severity": "Orta",
+        "estimatedCostEUR": 500,
+        "affectedYears": "2015-2022"
+      }
     ],
     "pros": [
       "Vigo'nun dayanıklılığı + gerçek binek konforu ve donanımı",
@@ -978,9 +1862,21 @@
       "Kaliteli mazot ve düzenli bakım şart"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre (seviye takibi), yakıt/hava filtresi, EGR/DPF ilk kontrol, diferansiyel/şanzıman yağları.", "estimatedCostEUR": 280 },
-      { "mileage": "150.000 km", "expectedIssues": "Enjektör kontrolü, EGR/DPF temizliği, turbo kontrolü, debriyaj seti, ön takım revizyonu, arka makas kontrolü.", "estimatedCostEUR": 750 },
-      { "mileage": "300.000 km", "expectedIssues": "Zincir triger kontrolü, turbo revizyonu ihtimali, DPF değişimi ihtimali, süspansiyon komple, şanzıman rulmanları.", "estimatedCostEUR": 950 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Dizel yağı+filtre (seviye takibi), yakıt/hava filtresi, EGR/DPF ilk kontrol, diferansiyel/şanzıman yağları.",
+        "estimatedCostEUR": 280
+      },
+      {
+        "mileage": "150.000 km",
+        "expectedIssues": "Enjektör kontrolü, EGR/DPF temizliği, turbo kontrolü, debriyaj seti, ön takım revizyonu, arka makas kontrolü.",
+        "estimatedCostEUR": 750
+      },
+      {
+        "mileage": "300.000 km",
+        "expectedIssues": "Zincir triger kontrolü, turbo revizyonu ihtimali, DPF değişimi ihtimali, süspansiyon komple, şanzıman rulmanları.",
+        "estimatedCostEUR": 950
+      }
     ]
   }
 ]

@@ -11,10 +11,30 @@
     "estimatedMaintenanceCostEUR": 260,
     "expertSummary": "9N Polo, B segmentinde segment üstü gövde sağlamlığı ve kapı kapanma hissiyle bilinir. 1.4 16V (BBY) atmosferik benzinli motor turbosuz ve basittir; LPG'ye uygundur ve doğru bakımla uzun ömürlüdür ama kayış trigerlidir (90 bin km periyot). 75 HP şehir içi için yeterli, otoyolda zayıf. Kritik konular motorda değil, yaşa bağlı elektrik ve konfor birimlerinde: bobin, gaz kelebeği, cam krikosu, kalorifer rezistansı. Günlük dille: \"Sağlam gövde, basit motor; ama VW parça fiyatları Japon rakiplerin üstünde ve kayış triger masrafı var.\" Şehir içi kullanım, ilk otomobil için mantıklı.",
     "userFeedbackSummary": "Kullanıcılar gövde kalitesini ve sağlamlığını övüyor. Şikayetler: bobin tekleme, gaz kelebeği kaynaklı rölanti dengesizliği, cam krikosu, kalorifer üfleme rezistansı, ön takım sesleri, VW seviyesinde parça/işçilik maliyeti. Kayış triger periyodu ve LPG'de subap ayarı takip edilmeli.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Ateşleme bobini ve gaz kelebeği kirlenmesi", "description": "Yaşa bağlı bobin zayıflaması (tekleme, arıza lambası) ve gaz kelebeği kurumu (rölanti dengesizliği). Bobin seti + kelebek temizliği/adaptasyonu ile çözülür.", "severity": "Düşük", "estimatedCostEUR": 150, "affectedYears": "2002-2005" },
-      { "title": "Triger kayışı seti değişiminin aksatılması", "description": "1.4 16V kayış trigerlidir; kayış+gergi+su pompası 90 bin km'de değişmezse kayış kopar, subap-piston teması motora hasar verir. LPG'de periyot kısa.", "severity": "Orta", "estimatedCostEUR": 250, "affectedYears": "2002-2005" },
-      { "title": "Cam krikosu, kalorifer rezistansı ve elektrik arızaları", "description": "Cam krikoları kopar, kalorifer üfleme rezistansı yanar, gösterge ve iç aydınlatma arızaları. Tek tek ucuz ama sık.", "severity": "Düşük", "estimatedCostEUR": 110, "affectedYears": "2002-2005" }
+      {
+        "title": "Ateşleme bobini ve gaz kelebeği kirlenmesi",
+        "description": "Yaşa bağlı bobin zayıflaması (tekleme, arıza lambası) ve gaz kelebeği kurumu (rölanti dengesizliği). Bobin seti + kelebek temizliği/adaptasyonu ile çözülür.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 150,
+        "affectedYears": "2002-2005"
+      },
+      {
+        "title": "Triger kayışı seti değişiminin aksatılması",
+        "description": "1.4 16V kayış trigerlidir; kayış+gergi+su pompası 90 bin km'de değişmezse kayış kopar, subap-piston teması motora hasar verir. LPG'de periyot kısa.",
+        "severity": "Orta",
+        "estimatedCostEUR": 250,
+        "affectedYears": "2002-2005"
+      },
+      {
+        "title": "Cam krikosu, kalorifer rezistansı ve elektrik arızaları",
+        "description": "Cam krikoları kopar, kalorifer üfleme rezistansı yanar, gösterge ve iç aydınlatma arızaları. Tek tek ucuz ama sık.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 110,
+        "affectedYears": "2002-2005"
+      }
     ],
     "pros": [
       "Segment üstü gövde sağlamlığı ve kapı hissi",
@@ -29,9 +49,21 @@
       "Bakım/parça maliyeti Japon rakiplerin üstünde"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, hava/polen filtresi, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 170 },
-      { "mileage": "90.000 km", "expectedIssues": "Triger kayış seti + su pompası + gergi, bobin seti, gaz kelebeği temizliği, ön takım revizyonu.", "estimatedCostEUR": 400 },
-      { "mileage": "180.000 km", "expectedIssues": "İkinci triger seti, debriyaj seti, motor takozları, kalorifer rezistansı, klima kompresörü.", "estimatedCostEUR": 450 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Yağ+filtre, bujiler, hava/polen filtresi, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.",
+        "estimatedCostEUR": 170
+      },
+      {
+        "mileage": "90.000 km",
+        "expectedIssues": "Triger kayış seti + su pompası + gergi, bobin seti, gaz kelebeği temizliği, ön takım revizyonu.",
+        "estimatedCostEUR": 400
+      },
+      {
+        "mileage": "180.000 km",
+        "expectedIssues": "İkinci triger seti, debriyaj seti, motor takozları, kalorifer rezistansı, klima kompresörü.",
+        "estimatedCostEUR": 450
+      }
     ]
   },
   {
@@ -46,10 +78,30 @@
     "estimatedMaintenanceCostEUR": 320,
     "expertSummary": "9N Polo'nun 1.9 TDI (ATD/AXR) motoru, VW'nin efsane pompa enjektör (PD) dizelinin küçük gövdeye konmuş halidir: 240 Nm tork, 4-4.5 lt yakıt, çok dayanıklı blok. B segmenti bir araca bu motor 'fazla' gelir — çekişi keyifli. PD sisteminin kritik noktası eksantrik mili ve enjektör lifter takımıdır (yanlış yağ/geç bakımda aşınır). Ayrıca EGR ve turbo VNT kurumu. Günlük dille: \"Küçük araca büyük yürek; motoru tank gibi ama PD bakım noktalarına ve doğru yağa dikkat.\" Yüksek km + uzun yol + ekonomi arayan için akıllı seçim.",
     "userFeedbackSummary": "Kullanıcılar 'motoru ölmez' diyor; 400 bin km örnekler var. Şikayetler: enjektör revizyonu (150-200 bin km), EGR temizliği, turbo VNT tıkanması, çift kütleli volan + debriyaj masrafı. PD motorlarda VW 505.01/507.00 yağ ve doğru periyot şart.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Eksantrik mili ve enjektör lifter (PD) aşınması", "description": "Pompa enjektör motorunda eksantrik mili ve enjektörleri iten lifter takımı yanlış yağ veya geç bakımda aşınır; metalik tıkırtı, güç kaybı ve ağır durumda motor hasarı. Doğru yağ (VW 505.01/507.00) ve periyot kritik.", "severity": "Kritik", "estimatedCostEUR": 600, "affectedYears": "2002-2005" },
-      { "title": "Turbo VNT tıkanması", "description": "Kurumdan turbonun değişken kanatları sıkışır; rampada üfleme düşer, arıza lambası, limp mode. Erken temizlik, geç kalınırsa turbo revizyonu.", "severity": "Orta", "estimatedCostEUR": 350, "affectedYears": "2002-2005" },
-      { "title": "Çift kütleli volan (DMF) ve debriyaj aşınması", "description": "Rölantide takırtı, kalkışta titreme; DMF + debriyaj seti birlikte değişir. İşçilik uzun, parça pahalı.", "severity": "Orta", "estimatedCostEUR": 500, "affectedYears": "2002-2005" }
+      {
+        "title": "Eksantrik mili ve enjektör lifter (PD) aşınması",
+        "description": "Pompa enjektör motorunda eksantrik mili ve enjektörleri iten lifter takımı yanlış yağ veya geç bakımda aşınır; metalik tıkırtı, güç kaybı ve ağır durumda motor hasarı. Doğru yağ (VW 505.01/507.00) ve periyot kritik.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 600,
+        "affectedYears": "2002-2005"
+      },
+      {
+        "title": "Turbo VNT tıkanması",
+        "description": "Kurumdan turbonun değişken kanatları sıkışır; rampada üfleme düşer, arıza lambası, limp mode. Erken temizlik, geç kalınırsa turbo revizyonu.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2002-2005"
+      },
+      {
+        "title": "Çift kütleli volan (DMF) ve debriyaj aşınması",
+        "description": "Rölantide takırtı, kalkışta titreme; DMF + debriyaj seti birlikte değişir. İşçilik uzun, parça pahalı.",
+        "severity": "Orta",
+        "estimatedCostEUR": 500,
+        "affectedYears": "2002-2005"
+      }
     ],
     "pros": [
       "Efsane dayanıklılıkta PD dizel blok, yüksek km potansiyeli",
@@ -64,9 +116,21 @@
       "Kaba ve sesli motor karakteri"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Doğru dizel yağı+filtre, yakıt filtresi, hava filtresi, EGR ve turbo kaçak kontrolü.", "estimatedCostEUR": 190 },
-      { "mileage": "150.000 km", "expectedIssues": "Enjektör revizyonu, EGR temizliği, turbo VNT temizliği, çift kütleli volan+debriyaj, triger kayış seti.", "estimatedCostEUR": 900 },
-      { "mileage": "250.000 km", "expectedIssues": "İkinci triger seti, su pompası, turbo revizyonu ihtimali, süspansiyon yenileme.", "estimatedCostEUR": 700 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Doğru dizel yağı+filtre, yakıt filtresi, hava filtresi, EGR ve turbo kaçak kontrolü.",
+        "estimatedCostEUR": 190
+      },
+      {
+        "mileage": "150.000 km",
+        "expectedIssues": "Enjektör revizyonu, EGR temizliği, turbo VNT temizliği, çift kütleli volan+debriyaj, triger kayış seti.",
+        "estimatedCostEUR": 900
+      },
+      {
+        "mileage": "250.000 km",
+        "expectedIssues": "İkinci triger seti, su pompası, turbo revizyonu ihtimali, süspansiyon yenileme.",
+        "estimatedCostEUR": 700
+      }
     ]
   },
   {
@@ -81,10 +145,30 @@
     "estimatedMaintenanceCostEUR": 260,
     "expertSummary": "9N3, 9N Polo'nun 2005 makyajıdır: yeni ön yüz, 'Golf yüzü' farlar, iç mekan iyileştirmeleri. 1.4 16V (BUD) atmosferik motor turbosuz, LPG uyumlu ve basittir; kayış trigerlidir. 80 HP şehir içi için yeterli, otoyolda zayıf. Kritik konular yine elektrik/konfor birimlerinde. 9N'e göre montaj ve malzeme kalitesi biraz daha iyi. Günlük dille: \"9N'in makyajlısı; daha güzel yüz, aynı sağlam gövde, aynı basit motor. Kayış triger ve elektrik arızalarını göze al.\"",
     "userFeedbackSummary": "Kullanıcılar gövde kalitesini ve makyajlı yüzü beğeniyor. Şikayetler: bobin/kelebek kaynaklı rölanti dengesizliği, cam krikosu, kalorifer rezistansı, ön takım sesleri, VW seviyesinde parça maliyeti. Kayış triger periyodu ve LPG'de subap ayarı takip edilmeli.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Ateşleme bobini ve gaz kelebeği kirlenmesi", "description": "Yaşa bağlı bobin zayıflaması ve gaz kelebeği kurumu; tekleme, rölanti dengesizliği, arıza lambası. Bobin seti + kelebek temizliği/adaptasyonu.", "severity": "Düşük", "estimatedCostEUR": 150, "affectedYears": "2005-2009" },
-      { "title": "Triger kayışı seti değişiminin aksatılması", "description": "1.4 16V kayış trigerlidir; kayış+gergi+su pompası 90 bin km'de değişmezse kayış kopar, motor hasar görür. LPG'de periyot kısa.", "severity": "Orta", "estimatedCostEUR": 250, "affectedYears": "2005-2009" },
-      { "title": "Cam krikosu, kalorifer rezistansı ve elektrik arızaları", "description": "Cam krikoları kopar, kalorifer üfleme rezistansı yanar, gösterge arızaları. Ucuz ama sık.", "severity": "Düşük", "estimatedCostEUR": 110, "affectedYears": "2005-2009" }
+      {
+        "title": "Ateşleme bobini ve gaz kelebeği kirlenmesi",
+        "description": "Yaşa bağlı bobin zayıflaması ve gaz kelebeği kurumu; tekleme, rölanti dengesizliği, arıza lambası. Bobin seti + kelebek temizliği/adaptasyonu.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 150,
+        "affectedYears": "2005-2009"
+      },
+      {
+        "title": "Triger kayışı seti değişiminin aksatılması",
+        "description": "1.4 16V kayış trigerlidir; kayış+gergi+su pompası 90 bin km'de değişmezse kayış kopar, motor hasar görür. LPG'de periyot kısa.",
+        "severity": "Orta",
+        "estimatedCostEUR": 250,
+        "affectedYears": "2005-2009"
+      },
+      {
+        "title": "Cam krikosu, kalorifer rezistansı ve elektrik arızaları",
+        "description": "Cam krikoları kopar, kalorifer üfleme rezistansı yanar, gösterge arızaları. Ucuz ama sık.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 110,
+        "affectedYears": "2005-2009"
+      }
     ],
     "pros": [
       "Segment üstü gövde sağlamlığı, makyajlı modern yüz",
@@ -99,9 +183,21 @@
       "Bakım/parça maliyeti Japon rakiplerin üstünde"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, hava/polen filtresi, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 170 },
-      { "mileage": "90.000 km", "expectedIssues": "Triger kayış seti + su pompası + gergi, bobin seti, gaz kelebeği temizliği, ön takım revizyonu.", "estimatedCostEUR": 400 },
-      { "mileage": "180.000 km", "expectedIssues": "İkinci triger seti, debriyaj seti, motor takozları, kalorifer rezistansı, klima kompresörü.", "estimatedCostEUR": 450 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Yağ+filtre, bujiler, hava/polen filtresi, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.",
+        "estimatedCostEUR": 170
+      },
+      {
+        "mileage": "90.000 km",
+        "expectedIssues": "Triger kayış seti + su pompası + gergi, bobin seti, gaz kelebeği temizliği, ön takım revizyonu.",
+        "estimatedCostEUR": 400
+      },
+      {
+        "mileage": "180.000 km",
+        "expectedIssues": "İkinci triger seti, debriyaj seti, motor takozları, kalorifer rezistansı, klima kompresörü.",
+        "estimatedCostEUR": 450
+      }
     ]
   },
   {
@@ -116,10 +212,30 @@
     "estimatedMaintenanceCostEUR": 250,
     "expertSummary": "6R Polo, büyüyen gövdesi ve olgunlaşan tasarımıyla B segmentinin premium hissi veren seçeneğiydi. 1.4 16V (CGGB) atmosferik motor turbosuz, direkt enjeksiyonsuz ve LPG'ye uyumludur — 6R'nin en dertsiz motorudur. 85 HP şehir içi için yeterli, otoyolda zayıf. Zincir trigerlidir (bu motorda kayış derdi yok). Kritik konular: su pompası (plastik), bobin, ön takım. Günlük dille: \"6R'nin LPG'ye takılıp dertsiz gidecek motoru bu; TSI'lerin DSG ve zincir riskini istemeyen buradan alsın.\" Şehir içi + hafif yol kullanımı için mantıklı.",
     "userFeedbackSummary": "Kullanıcılar iç kaliteyi ve olgunluğu B segmentine göre çok beğeniyor. Şikayetler: 85 HP'nin otoyolda yetersizliği, plastik su pompası sızıntısı, bobin tekleme, sert süspansiyon (büyük jantlı paketler), ön takım burç sesleri. Zincir triger uzun ömürlü.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Plastik gövdeli su pompası / termostat arızası", "description": "Entegre plastik su pompası+termostat sızdırır veya hararet yapar. Metal gövdeli güncellenmiş parçayla değişir.", "severity": "Orta", "estimatedCostEUR": 220, "affectedYears": "2009-2014" },
-      { "title": "Ateşleme bobini zayıflaması", "description": "Yaşa bağlı bobin zayıflar; tekleme, arıza lambası. Bobin+buji seti; LPG'de periyot kısa.", "severity": "Düşük", "estimatedCostEUR": 120, "affectedYears": "2009-2014" },
-      { "title": "Ön amortisör ve salıncak burcu sesi", "description": "80-120 bin km'de ön takım tıkırtısı; büyük jantlı paketlerde daha erken. Salıncak burçları ve amortisör üst takozları yenilenir.", "severity": "Düşük", "estimatedCostEUR": 140, "affectedYears": "2009-2014" }
+      {
+        "title": "Plastik gövdeli su pompası / termostat arızası",
+        "description": "Entegre plastik su pompası+termostat sızdırır veya hararet yapar. Metal gövdeli güncellenmiş parçayla değişir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 220,
+        "affectedYears": "2009-2014"
+      },
+      {
+        "title": "Ateşleme bobini zayıflaması",
+        "description": "Yaşa bağlı bobin zayıflar; tekleme, arıza lambası. Bobin+buji seti; LPG'de periyot kısa.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 120,
+        "affectedYears": "2009-2014"
+      },
+      {
+        "title": "Ön amortisör ve salıncak burcu sesi",
+        "description": "80-120 bin km'de ön takım tıkırtısı; büyük jantlı paketlerde daha erken. Salıncak burçları ve amortisör üst takozları yenilenir.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 140,
+        "affectedYears": "2009-2014"
+      }
     ],
     "pros": [
       "Segment üstü iç kalite ve olgun tasarım",
@@ -134,9 +250,21 @@
       "Bakım/parça maliyeti B segmenti ortalamasının üstünde"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, filtreler, fren hidroliği, su pompası kontrolü, LPG'de subap ayarı.", "estimatedCostEUR": 160 },
-      { "mileage": "120.000 km", "expectedIssues": "Su pompası+termostat, ön takım revizyonu, devirdaim kayışı, bobin seti, debriyaj kontrolü.", "estimatedCostEUR": 380 },
-      { "mileage": "200.000 km", "expectedIssues": "Debriyaj seti, motor takozları, klima kompresörü, süspansiyon yenileme, direksiyon rot.", "estimatedCostEUR": 420 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Yağ+filtre, bujiler, filtreler, fren hidroliği, su pompası kontrolü, LPG'de subap ayarı.",
+        "estimatedCostEUR": 160
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "Su pompası+termostat, ön takım revizyonu, devirdaim kayışı, bobin seti, debriyaj kontrolü.",
+        "estimatedCostEUR": 380
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Debriyaj seti, motor takozları, klima kompresörü, süspansiyon yenileme, direksiyon rot.",
+        "estimatedCostEUR": 420
+      }
     ]
   },
   {
@@ -151,10 +279,30 @@
     "estimatedMaintenanceCostEUR": 450,
     "expertSummary": "6R Polo'nun 1.2 TSI + DSG kombinasyonu, B segmentinde otomatik + performans + düşük yakıt vaat eder ve sürmesi keyiflidir. Ama iki riskli nokta var: (1) 1.2 TSI (CBZB) ilk yıllarda zincir triger gerdiricisi zayıftır, atlarsa motor hasar görür; (2) DQ200 kuru kavrama dur-kalk trafikte ısınır, mekatronik ve kavrama aşınır. Ayrıca plastik su pompası ve turbo/wastegate konuları. Bakımlı, gerdiricisi güncellenmiş ve mekatroniği kontrol edilmiş bir örnek yaşanabilir. Günlük dille: \"Sürmesi zevkli ama 'kırık' örneği pahalıya patlar; ekspertizsiz alınmaz.\"",
     "userFeedbackSummary": "Bakımlı örnek sahipleri memnun, şanssız olanlar 'servisten çıkmadı' diyor. Şikayetler: DQ200 mekatronik arızası (vites atmama, sarsıntı), kuru kavrama titremesi, 1.2 TSI zincir gerdirici sesi ve (ilk yıllar) zincir atması, plastik su pompası, turbo sesi. DSG yağ (mekatronik hidroliği) ihmal edilmemeli.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "DQ200 (kuru) DSG mekatronik ünitesi arızası", "description": "Mekatronik içindeki hidrolik akümülatör ve kart arızalanır; vites atmama, ani sarsıntı, gösterge uyarısı ve yol ortasında kalma. Revizyonlu mekatronik veya değişim gerekir. Dur-kalk trafik ömrü kısaltır.", "severity": "Kritik", "estimatedCostEUR": 1000, "affectedYears": "2009-2014" },
-      { "title": "1.2 TSI zincir triger gerdiricisi zayıflığı (özellikle 2009-2012)", "description": "Erken üretim gerdiriciler basıncı tutamaz; soğuk çalıştırmada zincir sesi, ileri seviyede zincir atlaması ve motor hasarı. Güncellenmiş gerdirici + zincir seti ile kalıcı çözülür.", "severity": "Kritik", "estimatedCostEUR": 650, "affectedYears": "2009-2013" },
-      { "title": "Plastik su pompası ve kuru kavrama titremesi", "description": "Entegre plastik su pompası sızdırır; DSG kuru kavrama balatası aşınınca kalkışta titreme ve kayma. Su pompası ve çift kavrama seti + adaptasyon gerekir.", "severity": "Orta", "estimatedCostEUR": 700, "affectedYears": "2009-2014" }
+      {
+        "title": "DQ200 (kuru) DSG mekatronik ünitesi arızası",
+        "description": "Mekatronik içindeki hidrolik akümülatör ve kart arızalanır; vites atmama, ani sarsıntı, gösterge uyarısı ve yol ortasında kalma. Revizyonlu mekatronik veya değişim gerekir. Dur-kalk trafik ömrü kısaltır.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 1000,
+        "affectedYears": "2009-2014"
+      },
+      {
+        "title": "1.2 TSI zincir triger gerdiricisi zayıflığı (özellikle 2009-2012)",
+        "description": "Erken üretim gerdiriciler basıncı tutamaz; soğuk çalıştırmada zincir sesi, ileri seviyede zincir atlaması ve motor hasarı. Güncellenmiş gerdirici + zincir seti ile kalıcı çözülür.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 650,
+        "affectedYears": "2009-2013"
+      },
+      {
+        "title": "Plastik su pompası ve kuru kavrama titremesi",
+        "description": "Entegre plastik su pompası sızdırır; DSG kuru kavrama balatası aşınınca kalkışta titreme ve kayma. Su pompası ve çift kavrama seti + adaptasyon gerekir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 700,
+        "affectedYears": "2009-2014"
+      }
     ],
     "pros": [
       "Keyifli, hızlı ve akıcı DSG sürüş hissi",
@@ -169,9 +317,21 @@
       "Toplam bakım gideri B segmenti için çok yüksek"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre (VW 504.00), bujiler, DSG mekatronik hidrolik yağı, su pompası kontrolü, zincir sesi dinleme.", "estimatedCostEUR": 300 },
-      { "mileage": "120.000 km", "expectedIssues": "Zincir triger seti (ses varsa), DSG kavrama seti ihtimali, turbo/wastegate kontrolü, su pompası, ön takım.", "estimatedCostEUR": 900 },
-      { "mileage": "180.000 km", "expectedIssues": "Mekatronik revizyonu ihtimali, ikinci kavrama seti, enjektör temizliği, süspansiyon yenileme.", "estimatedCostEUR": 1000 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Yağ+filtre (VW 504.00), bujiler, DSG mekatronik hidrolik yağı, su pompası kontrolü, zincir sesi dinleme.",
+        "estimatedCostEUR": 300
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "Zincir triger seti (ses varsa), DSG kavrama seti ihtimali, turbo/wastegate kontrolü, su pompası, ön takım.",
+        "estimatedCostEUR": 900
+      },
+      {
+        "mileage": "180.000 km",
+        "expectedIssues": "Mekatronik revizyonu ihtimali, ikinci kavrama seti, enjektör temizliği, süspansiyon yenileme.",
+        "estimatedCostEUR": 1000
+      }
     ]
   },
   {
@@ -186,10 +346,30 @@
     "estimatedMaintenanceCostEUR": 340,
     "expertSummary": "6R Polo'nun 1.6 TDI (CAYB) common-rail dizeli, B segmentinde çok düşük yakıt (uzun yol 3.5-4 lt) ve makul tork sunar. VW'nin PD sonrası common-rail nesli; PD'nin eksantrik/lifter riski yok ama kendi konuları var: CAYC/CAYB motorlarda enjektör kalibrasyonu, EGR soğutucu (bazı yıllarda geri çağırma), DPF (şehir içi). Kayış trigerlidir (120-160 bin km). Günlük dille: \"Küçük araca çok düşük yakıtlı dizel; PD kadar 'ölümsüz' değil ama daha rafine. EGR/DPF ve enjektöre dikkat.\" Uzun yol ağırlıklı kullanıcı için mantıklı.",
     "userFeedbackSummary": "Kullanıcılar yakıt tüketimini çok seviyor. Şikayetler: enjektör kalibrasyon sorunu (tekleme, is), EGR soğutucu (soğuk su kaçağı), DPF tıkanması (şehir içi), triger kayışı periyodu, turbo. Kaliteli mazot ve ara sıra uzun yol şart.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "CAYB/CAYC enjektör kalibrasyonu ve EGR soğutucu arızası", "description": "Enjektörler zamanla debisini şaşırır (tekleme, is, güç kaybı); EGR soğutucusu bazı yıllarda çatlar (antifriz kaybı, buhar) — VW bu konuda geri çağırma yaptı. Enjektör kalibrasyonu/değişimi ve EGR soğutucu yenileme gerekir.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2009-2014" },
-      { "title": "DPF (partikül filtresi) tıkanması", "description": "Kısa mesafe şehir kullanımında DPF dolar, rejenerasyon tamamlanamaz; güç kaybı ve servis rejenerasyonu gerekir. Uzun yol önler; ileri seviyede temizlik/değişim pahalı.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2009-2014" },
-      { "title": "Triger kayışı seti ve su pompası", "description": "1.6 TDI kayış trigerlidir; 120-160 bin km'de kayış+gergi+su pompası seti değişmelidir. İhmal edilirse kayış kopar, motor hasar görür.", "severity": "Orta", "estimatedCostEUR": 380, "affectedYears": "2009-2014" }
+      {
+        "title": "CAYB/CAYC enjektör kalibrasyonu ve EGR soğutucu arızası",
+        "description": "Enjektörler zamanla debisini şaşırır (tekleme, is, güç kaybı); EGR soğutucusu bazı yıllarda çatlar (antifriz kaybı, buhar) — VW bu konuda geri çağırma yaptı. Enjektör kalibrasyonu/değişimi ve EGR soğutucu yenileme gerekir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2009-2014"
+      },
+      {
+        "title": "DPF (partikül filtresi) tıkanması",
+        "description": "Kısa mesafe şehir kullanımında DPF dolar, rejenerasyon tamamlanamaz; güç kaybı ve servis rejenerasyonu gerekir. Uzun yol önler; ileri seviyede temizlik/değişim pahalı.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2009-2014"
+      },
+      {
+        "title": "Triger kayışı seti ve su pompası",
+        "description": "1.6 TDI kayış trigerlidir; 120-160 bin km'de kayış+gergi+su pompası seti değişmelidir. İhmal edilirse kayış kopar, motor hasar görür.",
+        "severity": "Orta",
+        "estimatedCostEUR": 380,
+        "affectedYears": "2009-2014"
+      }
     ],
     "pros": [
       "Sınıfının en düşük yakıt tüketimi (uzun yol 3.5-4 lt)",
@@ -204,9 +384,21 @@
       "Bakım/parça maliyeti B segmenti ortalamasının üstünde"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR/DPF ilk kontrol, enjektör kodlama kontrolü.", "estimatedCostEUR": 180 },
-      { "mileage": "140.000 km", "expectedIssues": "Triger kayış seti+su pompası, EGR soğutucu kontrolü, DPF temizliği, enjektör kontrolü, debriyaj seti, ön takım.", "estimatedCostEUR": 700 },
-      { "mileage": "240.000 km", "expectedIssues": "İkinci kayış seti, turbo kontrolü, DPF değişimi ihtimali, süspansiyon yenileme.", "estimatedCostEUR": 750 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR/DPF ilk kontrol, enjektör kodlama kontrolü.",
+        "estimatedCostEUR": 180
+      },
+      {
+        "mileage": "140.000 km",
+        "expectedIssues": "Triger kayış seti+su pompası, EGR soğutucu kontrolü, DPF temizliği, enjektör kontrolü, debriyaj seti, ön takım.",
+        "estimatedCostEUR": 700
+      },
+      {
+        "mileage": "240.000 km",
+        "expectedIssues": "İkinci kayış seti, turbo kontrolü, DPF değişimi ihtimali, süspansiyon yenileme.",
+        "estimatedCostEUR": 750
+      }
     ]
   },
   {
@@ -221,10 +413,30 @@
     "estimatedMaintenanceCostEUR": 300,
     "expertSummary": "Golf 4, VW'nin 'iç mekan kalitesiyle sınıfını yeniden tanımladığı' nesildir — 20 yıl sonra bile kapı kapanış hissi ve malzeme dokusu şaşırtır. 1.6 8V (AKL/APF, halk arasında 'Hitler kafası' veya 'SR') atmosferik motor turbosuz, LPG'ye tam uyumlu ve çok dayanıklıdır; kayış trigerlidir. 100 HP yeterli ama coşkusuz. Kritik konular: emme manifoldu klape motoru, bobin, gaz kelebeği, ön süspansiyon ve arka aks burçları. Günlük dille: \"Eski ama içi hâlâ premium; motoru dertsiz, LPG tak, sağlam ve klasik bir Golf'e sahip ol.\" Şehir içi + orta yol için mantıklı.",
     "userFeedbackSummary": "Kullanıcılar iç kaliteyi ve gövde sağlamlığını hâlâ övüyor. Şikayetler: emme manifoldu klape motoru arızası, bobin/kelebek kaynaklı rölanti dengesizliği, ön takım ve arka aks burçları, yaşa bağlı elektrik arızaları (cam krikosu, merkezi kilit, ısıtıcı rezistans). LPG'li örneklerde subap ayarı önemli.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Emme manifoldu klape (swirl) motoru arızası", "description": "1.6 8V ve bazı motorlarda emme manifoldundaki klape mekanizması / motoru arızalanır; güç kaybı, rölanti dalgalanması ve arıza lambası. Manifold komple değişir.", "severity": "Orta", "estimatedCostEUR": 250, "affectedYears": "1998-2004" },
-      { "title": "Ateşleme bobini ve gaz kelebeği kirlenmesi", "description": "Yaşa bağlı bobin zayıflaması (tekleme) ve gaz kelebeği kurumu (rölanti dengesizliği). Bobin seti + kelebek temizliği/adaptasyonu.", "severity": "Düşük", "estimatedCostEUR": 150, "affectedYears": "1998-2004" },
-      { "title": "Ön süspansiyon ve arka aks burçları aşınması", "description": "Türkiye yol şartlarında 80-120 bin km'de ön salıncak, rot, rotil ve arka torsiyon aks burçlarında ses ve boşluk. Parça ve işçilik makul.", "severity": "Orta", "estimatedCostEUR": 200, "affectedYears": "1998-2004" }
+      {
+        "title": "Emme manifoldu klape (swirl) motoru arızası",
+        "description": "1.6 8V ve bazı motorlarda emme manifoldundaki klape mekanizması / motoru arızalanır; güç kaybı, rölanti dalgalanması ve arıza lambası. Manifold komple değişir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 250,
+        "affectedYears": "1998-2004"
+      },
+      {
+        "title": "Ateşleme bobini ve gaz kelebeği kirlenmesi",
+        "description": "Yaşa bağlı bobin zayıflaması (tekleme) ve gaz kelebeği kurumu (rölanti dengesizliği). Bobin seti + kelebek temizliği/adaptasyonu.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 150,
+        "affectedYears": "1998-2004"
+      },
+      {
+        "title": "Ön süspansiyon ve arka aks burçları aşınması",
+        "description": "Türkiye yol şartlarında 80-120 bin km'de ön salıncak, rot, rotil ve arka torsiyon aks burçlarında ses ve boşluk. Parça ve işçilik makul.",
+        "severity": "Orta",
+        "estimatedCostEUR": 200,
+        "affectedYears": "1998-2004"
+      }
     ],
     "pros": [
       "20 yıl sonra bile şaşırtan iç kalite ve gövde hissi",
@@ -239,9 +451,21 @@
       "Kayış triger periyodik gideri"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, hava/polen filtresi, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 180 },
-      { "mileage": "120.000 km", "expectedIssues": "Triger kayış seti + su pompası, ön takım revizyonu, arka aks burçları, bobin seti, emme manifoldu kontrolü.", "estimatedCostEUR": 450 },
-      { "mileage": "200.000 km", "expectedIssues": "İkinci triger seti, debriyaj seti, motor takozları, direksiyon kutusu, klima kompresörü, konfor modülleri.", "estimatedCostEUR": 500 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Yağ+filtre, bujiler, hava/polen filtresi, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.",
+        "estimatedCostEUR": 180
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "Triger kayış seti + su pompası, ön takım revizyonu, arka aks burçları, bobin seti, emme manifoldu kontrolü.",
+        "estimatedCostEUR": 450
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "İkinci triger seti, debriyaj seti, motor takozları, direksiyon kutusu, klima kompresörü, konfor modülleri.",
+        "estimatedCostEUR": 500
+      }
     ]
   },
   {
@@ -256,10 +480,30 @@
     "estimatedMaintenanceCostEUR": 340,
     "expertSummary": "Golf 4'ün 1.9 TDI (AHF/ASV, 110 HP) motoru, VW'nin 'dağıtım dişlili' (zincir/kayış değil, dişli tahrikli enjeksiyon pompası) klasik TDI'sidir ve efsane dayanıklılıktadır: 235 Nm tork, 4.5-5 lt yakıt, 500 bin km görmüş örnekler. Bu motor PD'den öncedir; eksantrik/lifter derdi YOKTUR. Kritik konular: enjeksiyon pompası (VP37) ve enjektör revizyonu, turbo VNT, EGR, çift kütleli volan. Günlük dille: \"TDI efsanesinin en 'ölümsüz' hali; bakımlısını al, gözün arkada kalmaz.\" Yüksek km + uzun yol + ekonomi arayan için en akıllı Golf 4 seçeneği.",
     "userFeedbackSummary": "Kullanıcılar 'bu motor bitmez' diyor; 400-500 bin km örnekler yaygın. Şikayetler: enjeksiyon pompası ve enjektör revizyonu (200 bin km+), turbo VNT tıkanması, EGR kurumu, çift kütleli volan + debriyaj. Kaliteli mazot enjeksiyon sistemini korur.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Enjeksiyon pompası (VP37) ve enjektör revizyonu", "description": "Dağıtım tipi enjeksiyon pompası ve enjektörler zamanla debisini şaşırır; is, tekleme, soğukta zor çalışma, güç kaybı. Kaliteli mazot ömrü uzatır. Pompa + enjektör revizyonu 200 bin km civarı gündeme gelir.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "1998-2004" },
-      { "title": "Turbo VNT tıkanması ve EGR kurumu", "description": "Kurumdan turbonun değişken kanatları ve EGR sıkışır/kirlenir; rampada güç düşüşü, arıza lambası, limp mode. Temizlik veya yenileme.", "severity": "Orta", "estimatedCostEUR": 350, "affectedYears": "1998-2004" },
-      { "title": "Çift kütleli volan (DMF) ve debriyaj aşınması", "description": "Rölantide takırtı, kalkışta titreme; DMF + debriyaj seti birlikte değişir. İşçilik uzun, parça pahalı.", "severity": "Orta", "estimatedCostEUR": 500, "affectedYears": "1998-2004" }
+      {
+        "title": "Enjeksiyon pompası (VP37) ve enjektör revizyonu",
+        "description": "Dağıtım tipi enjeksiyon pompası ve enjektörler zamanla debisini şaşırır; is, tekleme, soğukta zor çalışma, güç kaybı. Kaliteli mazot ömrü uzatır. Pompa + enjektör revizyonu 200 bin km civarı gündeme gelir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 450,
+        "affectedYears": "1998-2004"
+      },
+      {
+        "title": "Turbo VNT tıkanması ve EGR kurumu",
+        "description": "Kurumdan turbonun değişken kanatları ve EGR sıkışır/kirlenir; rampada güç düşüşü, arıza lambası, limp mode. Temizlik veya yenileme.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "1998-2004"
+      },
+      {
+        "title": "Çift kütleli volan (DMF) ve debriyaj aşınması",
+        "description": "Rölantide takırtı, kalkışta titreme; DMF + debriyaj seti birlikte değişir. İşçilik uzun, parça pahalı.",
+        "severity": "Orta",
+        "estimatedCostEUR": 500,
+        "affectedYears": "1998-2004"
+      }
     ],
     "pros": [
       "TDI efsanesinin en dayanıklı, en 'ölümsüz' hali (dişli tahrikli)",
@@ -274,9 +518,21 @@
       "Kaba ve sesli motor karakteri"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt filtresi, hava filtresi, EGR ve turbo kaçak kontrolü, triger kayış seti kontrolü.", "estimatedCostEUR": 190 },
-      { "mileage": "150.000 km", "expectedIssues": "Triger kayış seti + su pompası, EGR/turbo temizliği, çift kütleli volan+debriyaj, ön takım revizyonu.", "estimatedCostEUR": 800 },
-      { "mileage": "250.000 km", "expectedIssues": "Enjeksiyon pompası + enjektör revizyonu, ikinci kayış seti, turbo revizyonu ihtimali, süspansiyon.", "estimatedCostEUR": 900 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Dizel yağı+filtre, yakıt filtresi, hava filtresi, EGR ve turbo kaçak kontrolü, triger kayış seti kontrolü.",
+        "estimatedCostEUR": 190
+      },
+      {
+        "mileage": "150.000 km",
+        "expectedIssues": "Triger kayış seti + su pompası, EGR/turbo temizliği, çift kütleli volan+debriyaj, ön takım revizyonu.",
+        "estimatedCostEUR": 800
+      },
+      {
+        "mileage": "250.000 km",
+        "expectedIssues": "Enjeksiyon pompası + enjektör revizyonu, ikinci kayış seti, turbo revizyonu ihtimali, süspansiyon.",
+        "estimatedCostEUR": 900
+      }
     ]
   },
   {
@@ -291,10 +547,30 @@
     "estimatedMaintenanceCostEUR": 300,
     "expertSummary": "Bora, Golf 4'ün sedan kardeşidir — aynı platform, aynı motorlar, ayrı ve daha resmi bir tasarım, geniş bagajlı sedan gövde. 1.6 8V atmosferik motor Golf 4'tekiyle mekanik olarak aynıdır: turbosuz, LPG dostu, dayanıklı, kayış trigerli. Bora'nın kabini Golf 4'ün premium hissini taşır; sedan olduğu için bagaj çok geniş. Günlük dille: \"Golf 4 kalitesini sedan ve geniş bagaj isteyene; 1.6 8V motoru en dertsizi, LPG'yle çok ekonomik.\" Aile + orta yol kullanımı için mantıklı.",
     "userFeedbackSummary": "Kullanıcılar sedan gövde ve bagaj hacmini, Golf 4 kalitesini övüyor. Şikayetler Golf 4 ile aynı: emme manifoldu klape motoru, bobin/kelebek, ön takım ve arka aks burçları, yaşa bağlı elektrik arızaları. LPG'li örneklerde subap ayarı önemli.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Emme manifoldu klape (swirl) motoru arızası", "description": "Emme manifoldundaki klape mekanizması / motoru arızalanır; güç kaybı, rölanti dalgalanması, arıza lambası. Manifold komple değişir.", "severity": "Orta", "estimatedCostEUR": 250, "affectedYears": "1999-2005" },
-      { "title": "Ateşleme bobini ve gaz kelebeği kirlenmesi", "description": "Yaşa bağlı bobin zayıflaması ve gaz kelebeği kurumu; tekleme, rölanti dengesizliği. Bobin seti + kelebek temizliği/adaptasyonu.", "severity": "Düşük", "estimatedCostEUR": 150, "affectedYears": "1999-2005" },
-      { "title": "Ön süspansiyon ve arka aks burçları aşınması", "description": "80-120 bin km'de ön salıncak, rot, rotil ve arka torsiyon aks burçlarında ses ve boşluk. Parça ve işçilik makul.", "severity": "Orta", "estimatedCostEUR": 200, "affectedYears": "1999-2005" }
+      {
+        "title": "Emme manifoldu klape (swirl) motoru arızası",
+        "description": "Emme manifoldundaki klape mekanizması / motoru arızalanır; güç kaybı, rölanti dalgalanması, arıza lambası. Manifold komple değişir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 250,
+        "affectedYears": "1999-2005"
+      },
+      {
+        "title": "Ateşleme bobini ve gaz kelebeği kirlenmesi",
+        "description": "Yaşa bağlı bobin zayıflaması ve gaz kelebeği kurumu; tekleme, rölanti dengesizliği. Bobin seti + kelebek temizliği/adaptasyonu.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 150,
+        "affectedYears": "1999-2005"
+      },
+      {
+        "title": "Ön süspansiyon ve arka aks burçları aşınması",
+        "description": "80-120 bin km'de ön salıncak, rot, rotil ve arka torsiyon aks burçlarında ses ve boşluk. Parça ve işçilik makul.",
+        "severity": "Orta",
+        "estimatedCostEUR": 200,
+        "affectedYears": "1999-2005"
+      }
     ],
     "pros": [
       "Golf 4 iç kalitesi + geniş sedan bagajı",
@@ -309,9 +585,21 @@
       "Golf 4'e göre daha düşük ikinci el likiditesi"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, filtreler, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 180 },
-      { "mileage": "120.000 km", "expectedIssues": "Triger kayış seti + su pompası, ön takım revizyonu, arka aks burçları, bobin seti, emme manifoldu kontrolü.", "estimatedCostEUR": 450 },
-      { "mileage": "200.000 km", "expectedIssues": "İkinci triger seti, debriyaj seti, motor takozları, direksiyon kutusu, klima kompresörü.", "estimatedCostEUR": 500 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Yağ+filtre, bujiler, filtreler, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.",
+        "estimatedCostEUR": 180
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "Triger kayış seti + su pompası, ön takım revizyonu, arka aks burçları, bobin seti, emme manifoldu kontrolü.",
+        "estimatedCostEUR": 450
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "İkinci triger seti, debriyaj seti, motor takozları, direksiyon kutusu, klima kompresörü.",
+        "estimatedCostEUR": 500
+      }
     ]
   },
   {
@@ -326,10 +614,30 @@
     "estimatedMaintenanceCostEUR": 320,
     "expertSummary": "Golf 5, gövde sağlamlığını ve arka multilink süspansiyonu getiren nesildir — sürüş hissi Golf 4'ün çok üstünde. 1.6 8V (BSE/BGU) atmosferik motor turbosuz, direkt enjeksiyonsuz ve LPG'ye tam uyumludur; Golf 5'in en dertsiz motorudur (TSI'lerin zincir/DSG riski yok). Kayış trigerlidir. 102 HP yeterli ama coşkusuz. Kritik konular: emme manifoldu klape motoru, bobin, gaz kelebeği, ön/arka süspansiyon burçları. Günlük dille: \"Golf 5'in LPG'yle dertsiz gidecek motoru bu; sağlam gövde + iyi sürüş, sadece yaş kaynaklı elektrik arızalarına hazır ol.\"",
     "userFeedbackSummary": "Kullanıcılar 'Golf'ün en dertsizi' diyor. Şikayetler: emme manifoldu klape motoru arızası, bobin/kelebek rölanti dengesizliği, ön/arka süspansiyon burçları, yaşa bağlı elektrik/konfor arızaları (cam krikosu, kilit modülü, ısıtıcı rezistans). LPG'li örneklerde subap ayarı önemli.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Emme manifoldu klape (swirl) motoru arızası", "description": "1.6 8V motorlarda emme manifoldundaki klape mekanizması / motoru arızalanır; güç kaybı, rölanti dalgalanması, arıza lambası. Manifold komple değişir.", "severity": "Orta", "estimatedCostEUR": 250, "affectedYears": "2003-2009" },
-      { "title": "Ateşleme bobini ve gaz kelebeği kirlenmesi", "description": "Yaşa bağlı bobin zayıflaması ve gaz kelebeği kurumu; tekleme, rölanti dengesizliği. Bobin seti + kelebek temizliği/adaptasyonu.", "severity": "Düşük", "estimatedCostEUR": 150, "affectedYears": "2003-2009" },
-      { "title": "Ön/arka süspansiyon burçları aşınması", "description": "Türkiye yollarında 80-120 bin km'de ön salıncak, rot, rotil ve arka multilink kollarında ses ve boşluk. Multilink parçaları Golf 4'e göre biraz pahalı.", "severity": "Orta", "estimatedCostEUR": 250, "affectedYears": "2003-2009" }
+      {
+        "title": "Emme manifoldu klape (swirl) motoru arızası",
+        "description": "1.6 8V motorlarda emme manifoldundaki klape mekanizması / motoru arızalanır; güç kaybı, rölanti dalgalanması, arıza lambası. Manifold komple değişir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 250,
+        "affectedYears": "2003-2009"
+      },
+      {
+        "title": "Ateşleme bobini ve gaz kelebeği kirlenmesi",
+        "description": "Yaşa bağlı bobin zayıflaması ve gaz kelebeği kurumu; tekleme, rölanti dengesizliği. Bobin seti + kelebek temizliği/adaptasyonu.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 150,
+        "affectedYears": "2003-2009"
+      },
+      {
+        "title": "Ön/arka süspansiyon burçları aşınması",
+        "description": "Türkiye yollarında 80-120 bin km'de ön salıncak, rot, rotil ve arka multilink kollarında ses ve boşluk. Multilink parçaları Golf 4'e göre biraz pahalı.",
+        "severity": "Orta",
+        "estimatedCostEUR": 250,
+        "affectedYears": "2003-2009"
+      }
     ],
     "pros": [
       "Golf 4'ün çok üstünde sürüş hissi (arka multilink)",
@@ -344,9 +652,21 @@
       "Multilink süspansiyon parça maliyeti"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, filtreler, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 180 },
-      { "mileage": "120.000 km", "expectedIssues": "Triger kayış seti + su pompası, ön/arka süspansiyon revizyonu, bobin seti, emme manifoldu kontrolü.", "estimatedCostEUR": 480 },
-      { "mileage": "200.000 km", "expectedIssues": "İkinci triger seti, debriyaj seti, motor takozları, direksiyon kutusu, klima kompresörü, konfor modülleri.", "estimatedCostEUR": 520 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Yağ+filtre, bujiler, filtreler, fren hidroliği, LPG'de subap ayarı, ön takım kontrolü.",
+        "estimatedCostEUR": 180
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "Triger kayış seti + su pompası, ön/arka süspansiyon revizyonu, bobin seti, emme manifoldu kontrolü.",
+        "estimatedCostEUR": 480
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "İkinci triger seti, debriyaj seti, motor takozları, direksiyon kutusu, klima kompresörü, konfor modülleri.",
+        "estimatedCostEUR": 520
+      }
     ]
   },
   {
@@ -361,10 +681,30 @@
     "estimatedMaintenanceCostEUR": 350,
     "expertSummary": "Golf 5'in en huzurlu otomatik kombinasyonu: 1.6 8V atmosferik motor + 6 ileri Aisin (09G) Tiptronic tam otomatik şanzıman. Bu şanzıman DSG DEĞİLDİR — tork konvertörlüdür, arıza yapmaz, sadece 60 bin km'de yağ+filtre ister. 102 HP + otomatik araç 'tembel' hisseder ama şehir içi + orta yol için yeterli, otomatikte yakıt şehirde 9-10 lt. Günlük dille: \"Golf kalitesini istiyorsan ama DSG korkusu yaşamak istemiyorsan, 1.6 benzinli + Aisin otomatik tam sana göre.\"",
     "userFeedbackSummary": "Kullanıcılar 'Golf'ün en dertsizi' diyor. Aisin şanzıman şikayeti neredeyse yok — yağı değişmemiş araçlarda hafif sertlik. Motor için emme manifoldu klape motoru, bobin, gaz kelebeği klasik. Süspansiyon burçları orta km'de yenileniyor. Otomatikte şehir yakıtı yüksek.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Emme manifoldu klape (swirl) motoru arızası", "description": "1.6 8V motorlarda emme manifoldu klape mekanizması arızalanır; güç kaybı, rölanti dalgalanması, arıza lambası. Manifold komple değişir.", "severity": "Orta", "estimatedCostEUR": 250, "affectedYears": "2003-2009" },
-      { "title": "Aisin şanzıman yağının ihmal edilmesi", "description": "09G Aisin tork konvertörlü şanzıman sağlamdır ama 'ömürlük yağ' söylemi yüzünden çoğu araçta değişmemiştir; ihmal edilende geç/sert vites geçişi. 60 bin km'de yağ+filtre şart.", "severity": "Düşük", "estimatedCostEUR": 200, "affectedYears": "2003-2009" },
-      { "title": "Ateşleme bobini, gaz kelebeği ve süspansiyon burçları", "description": "Bobin zayıflaması, kelebek kurumu (rölanti dengesizliği) ve 80-120 bin km'de ön/arka süspansiyon burçları. Bobin+kelebek temizliği ve süspansiyon revizyonu.", "severity": "Orta", "estimatedCostEUR": 300, "affectedYears": "2003-2009" }
+      {
+        "title": "Emme manifoldu klape (swirl) motoru arızası",
+        "description": "1.6 8V motorlarda emme manifoldu klape mekanizması arızalanır; güç kaybı, rölanti dalgalanması, arıza lambası. Manifold komple değişir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 250,
+        "affectedYears": "2003-2009"
+      },
+      {
+        "title": "Aisin şanzıman yağının ihmal edilmesi",
+        "description": "09G Aisin tork konvertörlü şanzıman sağlamdır ama 'ömürlük yağ' söylemi yüzünden çoğu araçta değişmemiştir; ihmal edilende geç/sert vites geçişi. 60 bin km'de yağ+filtre şart.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 200,
+        "affectedYears": "2003-2009"
+      },
+      {
+        "title": "Ateşleme bobini, gaz kelebeği ve süspansiyon burçları",
+        "description": "Bobin zayıflaması, kelebek kurumu (rölanti dengesizliği) ve 80-120 bin km'de ön/arka süspansiyon burçları. Bobin+kelebek temizliği ve süspansiyon revizyonu.",
+        "severity": "Orta",
+        "estimatedCostEUR": 300,
+        "affectedYears": "2003-2009"
+      }
     ],
     "pros": [
       "DSG yok: dayanıklı Aisin tork konvertörlü tam otomatik",
@@ -379,9 +719,21 @@
       "Yaşa bağlı elektrik arızaları ve multilink parça maliyeti"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, hava/polen filtresi, fren hidroliği, Aisin şanzıman yağ+filtre.", "estimatedCostEUR": 250 },
-      { "mileage": "120.000 km", "expectedIssues": "Ön/arka süspansiyon revizyonu, bobin seti, emme manifoldu kontrolü, devirdaim + su pompası, triger kayış seti.", "estimatedCostEUR": 480 },
-      { "mileage": "200.000 km", "expectedIssues": "İkinci şanzıman yağı, motor takozları, direksiyon kutusu, klima kompresörü, konfor modülleri.", "estimatedCostEUR": 520 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Yağ+filtre, bujiler, hava/polen filtresi, fren hidroliği, Aisin şanzıman yağ+filtre.",
+        "estimatedCostEUR": 250
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "Ön/arka süspansiyon revizyonu, bobin seti, emme manifoldu kontrolü, devirdaim + su pompası, triger kayış seti.",
+        "estimatedCostEUR": 480
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "İkinci şanzıman yağı, motor takozları, direksiyon kutusu, klima kompresörü, konfor modülleri.",
+        "estimatedCostEUR": 520
+      }
     ]
   },
   {
@@ -396,11 +748,37 @@
     "estimatedMaintenanceCostEUR": 380,
     "expertSummary": "Golf 5'in efsane dizeli: 1.9 TDI (BKC/BXE/BLS) pompa enjektör (PD) motoru. Kaba ve sesli çalışır ama 250 Nm torku, 4.5-5 lt yakıtı ve blok dayanıklılığıyla 400 bin km görmüş örnekleri vardır. PD sisteminin kritik noktası eksantrik mili ve enjektör lifter takımıdır — bakımsız kalırsa eksantrik yalar. Ayrıca EGR, turbo VNT ve (BLS'de) DPF kurumu. Çift kütleli volan + debriyaj orta km'de gider. Günlük dille: \"Motor tank gibi ama nazlı bakım noktaları var; bakımlısını al, kalitesiz mazottan kaç, doğru yağı kullan.\"",
     "userFeedbackSummary": "Kullanıcılar motor sağlamlığından çok memnun. En çok konuşulan: enjektör revizyonu (150-200 bin km), EGR temizliği, turbo VNT tıkanması, çift kütleli volan + debriyaj seti masrafı. PD motorlarda özel VW 505.01/507.00 yağ şart. BLS motorlu DPF'li örnekler şehir içinde tıkanıyor.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Eksantrik mili ve enjektör lifter (PD) aşınması", "description": "Pompa enjektör motorunda eksantrik mili ve enjektörleri iten lifter takımı yanlış yağ veya geç bakımda aşınır; metalik tıkırtı, güç kaybı ve ağır durumda motor hasarı. Doğru yağ (VW 505.01/507.00) ve periyot kritik.", "severity": "Kritik", "estimatedCostEUR": 600, "affectedYears": "2003-2009" },
-      { "title": "Turbo VNT tıkanması ve EGR kurumu", "description": "Kurumdan turbonun değişken kanatları ve EGR sıkışır/kirlenir; rampada güç düşüşü, arıza lambası, limp mode. Temizlik veya yenileme.", "severity": "Orta", "estimatedCostEUR": 350, "affectedYears": "2003-2009" },
-      { "title": "Çift kütleli volan (DMF) ve debriyaj aşınması", "description": "Rölantide takırtı, kalkışta titreme; DMF + debriyaj seti birlikte değişir. İşçilik uzun, parça pahalı.", "severity": "Orta", "estimatedCostEUR": 550, "affectedYears": "2003-2009" },
-      { "title": "DPF (BLS motoru) kurumlanması", "description": "BLS motorlu DPF'li örneklerde kısa mesafe şehir kullanımında partikül filtresi tıkanır; güç kaybı, rejenerasyon sorunu, motor yağına mazot karışması. Uzun yol + temizlik/değişim gerekir.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2005-2009" }
+      {
+        "title": "Eksantrik mili ve enjektör lifter (PD) aşınması",
+        "description": "Pompa enjektör motorunda eksantrik mili ve enjektörleri iten lifter takımı yanlış yağ veya geç bakımda aşınır; metalik tıkırtı, güç kaybı ve ağır durumda motor hasarı. Doğru yağ (VW 505.01/507.00) ve periyot kritik.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 600,
+        "affectedYears": "2003-2009"
+      },
+      {
+        "title": "Turbo VNT tıkanması ve EGR kurumu",
+        "description": "Kurumdan turbonun değişken kanatları ve EGR sıkışır/kirlenir; rampada güç düşüşü, arıza lambası, limp mode. Temizlik veya yenileme.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2003-2009"
+      },
+      {
+        "title": "Çift kütleli volan (DMF) ve debriyaj aşınması",
+        "description": "Rölantide takırtı, kalkışta titreme; DMF + debriyaj seti birlikte değişir. İşçilik uzun, parça pahalı.",
+        "severity": "Orta",
+        "estimatedCostEUR": 550,
+        "affectedYears": "2003-2009"
+      },
+      {
+        "title": "DPF (BLS motoru) kurumlanması",
+        "description": "BLS motorlu DPF'li örneklerde kısa mesafe şehir kullanımında partikül filtresi tıkanır; güç kaybı, rejenerasyon sorunu, motor yağına mazot karışması. Uzun yol + temizlik/değişim gerekir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2005-2009"
+      }
     ],
     "pros": [
       "Efsane dayanıklılıkta blok, yüksek km potansiyeli",
@@ -415,9 +793,21 @@
       "Kaba ve sesli motor karakteri"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Doğru dizel yağı+filtre, yakıt filtresi, hava filtresi, EGR ve turbo kaçak kontrolü.", "estimatedCostEUR": 200 },
-      { "mileage": "150.000 km", "expectedIssues": "Enjektör revizyonu, EGR temizliği, turbo VNT temizliği, çift kütleli volan+debriyaj, triger kayış seti.", "estimatedCostEUR": 900 },
-      { "mileage": "250.000 km", "expectedIssues": "İkinci triger seti, su pompası, turbo revizyonu ihtimali, DPF temizliği/değişimi, süspansiyon yenileme.", "estimatedCostEUR": 800 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Doğru dizel yağı+filtre, yakıt filtresi, hava filtresi, EGR ve turbo kaçak kontrolü.",
+        "estimatedCostEUR": 200
+      },
+      {
+        "mileage": "150.000 km",
+        "expectedIssues": "Enjektör revizyonu, EGR temizliği, turbo VNT temizliği, çift kütleli volan+debriyaj, triger kayış seti.",
+        "estimatedCostEUR": 900
+      },
+      {
+        "mileage": "250.000 km",
+        "expectedIssues": "İkinci triger seti, su pompası, turbo revizyonu ihtimali, DPF temizliği/değişimi, süspansiyon yenileme.",
+        "estimatedCostEUR": 800
+      }
     ]
   },
   {
@@ -432,10 +822,30 @@
     "estimatedMaintenanceCostEUR": 450,
     "expertSummary": "Golf 5'in güçlü dizeli 2.0 TDI (BKD, 16 supap PD) 140 HP + 320 Nm ile canlıdır. Buradaki DSG DQ250 ıslak çift kavramalıdır — DQ200 kuru kavramaya göre çok daha dayanıklıdır (yağ banyosu), sadece 60 bin km'de yağ+filtre ister. Motor tarafında BKD 16V PD'nin bilinen konusu eksantrik mili aşınması ve emme manifoldu klapesidir. Ayrıca EGR, turbo, DPF. Günlük dille: \"Golf 5'in güçlü + görece güvenli DSG'li dizeli (ıslak kavrama); ama BKD eksantriği ve DSG yağını iyi bak.\"",
     "userFeedbackSummary": "Kullanıcılar performansı ve ıslak DSG'nin dayanıklılığını (kuru DQ200'e göre) övüyor. Şikayetler: BKD 16V motorda eksantrik mili aşınması ve emme manifoldu klape motoru, EGR/DPF kurumu, DSG yağ değişimi ihmali, çift kütleli volan. DSG yağı 60 bin km periyot şart.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "BKD 16V eksantrik mili aşınması ve emme manifoldu klapesi", "description": "2.0 TDI 16V (BKD) motorlarda eksantrik mili loblarında aşınma (tıkırtı, güç kaybı) ve emme manifoldundaki girdap klapelerinin kırılması bilinen konulardır. Eksantrik değişimi ve manifold yenileme gerekebilir.", "severity": "Kritik", "estimatedCostEUR": 700, "affectedYears": "2003-2009" },
-      { "title": "DSG DQ250 (ıslak) yağ/filtre ihmali ve mekatronik", "description": "Islak çift kavrama dayanıklıdır ama yağ+filtre 60 bin km'de değişmezse mekatronik ve kavrama aşınır; sarsıntı, sert geçiş, arıza uyarısı. Yağ değişimi periyodik şart.", "severity": "Orta", "estimatedCostEUR": 350, "affectedYears": "2003-2009" },
-      { "title": "EGR/DPF kurumlanması ve turbo VNT", "description": "Şehir içi kullanımda EGR ve DPF kurum bağlar, turbo kayıcı kanatları tıkanır; güç kaybı, arıza lambası, rejenerasyon sorunu. Temizlik/yenileme.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2003-2009" }
+      {
+        "title": "BKD 16V eksantrik mili aşınması ve emme manifoldu klapesi",
+        "description": "2.0 TDI 16V (BKD) motorlarda eksantrik mili loblarında aşınma (tıkırtı, güç kaybı) ve emme manifoldundaki girdap klapelerinin kırılması bilinen konulardır. Eksantrik değişimi ve manifold yenileme gerekebilir.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 700,
+        "affectedYears": "2003-2009"
+      },
+      {
+        "title": "DSG DQ250 (ıslak) yağ/filtre ihmali ve mekatronik",
+        "description": "Islak çift kavrama dayanıklıdır ama yağ+filtre 60 bin km'de değişmezse mekatronik ve kavrama aşınır; sarsıntı, sert geçiş, arıza uyarısı. Yağ değişimi periyodik şart.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2003-2009"
+      },
+      {
+        "title": "EGR/DPF kurumlanması ve turbo VNT",
+        "description": "Şehir içi kullanımda EGR ve DPF kurum bağlar, turbo kayıcı kanatları tıkanır; güç kaybı, arıza lambası, rejenerasyon sorunu. Temizlik/yenileme.",
+        "severity": "Orta",
+        "estimatedCostEUR": 450,
+        "affectedYears": "2003-2009"
+      }
     ],
     "pros": [
       "Canlı ve torklu 140 HP dizel",
@@ -450,9 +860,21 @@
       "Toplam bakım gideri yüksek"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre (doğru spesifikasyon), DSG yağ+filtre, yakıt/hava filtresi, EGR/DPF ilk kontrol, eksantrik sesi dinleme.", "estimatedCostEUR": 300 },
-      { "mileage": "140.000 km", "expectedIssues": "Eksantrik mili kontrolü, emme manifoldu, EGR/DPF temizliği, çift kütleli volan+debriyaj, triger kayış seti, ön takım.", "estimatedCostEUR": 950 },
-      { "mileage": "220.000 km", "expectedIssues": "DSG mekatronik kontrolü, turbo revizyonu ihtimali, DPF değişimi, süspansiyon yenileme.", "estimatedCostEUR": 1000 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Dizel yağı+filtre (doğru spesifikasyon), DSG yağ+filtre, yakıt/hava filtresi, EGR/DPF ilk kontrol, eksantrik sesi dinleme.",
+        "estimatedCostEUR": 300
+      },
+      {
+        "mileage": "140.000 km",
+        "expectedIssues": "Eksantrik mili kontrolü, emme manifoldu, EGR/DPF temizliği, çift kütleli volan+debriyaj, triger kayış seti, ön takım.",
+        "estimatedCostEUR": 950
+      },
+      {
+        "mileage": "220.000 km",
+        "expectedIssues": "DSG mekatronik kontrolü, turbo revizyonu ihtimali, DPF değişimi, süspansiyon yenileme.",
+        "estimatedCostEUR": 1000
+      }
     ]
   },
   {
@@ -467,10 +889,30 @@
     "estimatedMaintenanceCostEUR": 350,
     "expertSummary": "Jetta (1K), Golf 5'in sedan kardeşidir — aynı platform, aynı motorlar, ayrı sedan gövde ve çok geniş bagaj. 1.6 8V + Aisin 09G tork konvertörlü otomatik kombinasyonu Golf 5'teki ile mekanik olarak aynı: DSG değil, arıza yapmayan gerçek tam otomatik. Sedan gövde otoyol yalıtımını ve bagajı Golf'ten öne çıkarır. Günlük dille: \"Golf 5 sağlamlığı + geniş bagaj + DSG korkusu olmayan otomatik; aile için çok mantıklı.\" Aile + orta/uzun yol kullanımı için ideal.",
     "userFeedbackSummary": "Kullanıcılar geniş bagajı, otoyol konforunu ve Aisin otomatiğin dertsizliğini övüyor. Şikayetler Golf 5 ile aynı: emme manifoldu klape motoru, bobin/kelebek, süspansiyon burçları, yaşa bağlı elektrik arızaları. Otomatikte şehir yakıtı yüksek. Şanzıman yağı geçmişi sorulmalı.",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "Emme manifoldu klape (swirl) motoru arızası", "description": "1.6 8V motorlarda emme manifoldu klape mekanizması arızalanır; güç kaybı, rölanti dalgalanması, arıza lambası. Manifold komple değişir.", "severity": "Orta", "estimatedCostEUR": 250, "affectedYears": "2005-2010" },
-      { "title": "Aisin şanzıman yağının ihmal edilmesi", "description": "09G Aisin tork konvertörlü şanzıman sağlamdır ama yağı çoğu araçta değişmemiştir; ihmal edilende geç/sert vites geçişi. 60 bin km'de yağ+filtre şart.", "severity": "Düşük", "estimatedCostEUR": 200, "affectedYears": "2005-2010" },
-      { "title": "Ateşleme bobini, gaz kelebeği ve süspansiyon burçları", "description": "Bobin zayıflaması, kelebek kurumu ve 80-120 bin km'de ön/arka süspansiyon burçları. Bobin+kelebek temizliği ve süspansiyon revizyonu.", "severity": "Orta", "estimatedCostEUR": 300, "affectedYears": "2005-2010" }
+      {
+        "title": "Emme manifoldu klape (swirl) motoru arızası",
+        "description": "1.6 8V motorlarda emme manifoldu klape mekanizması arızalanır; güç kaybı, rölanti dalgalanması, arıza lambası. Manifold komple değişir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 250,
+        "affectedYears": "2005-2010"
+      },
+      {
+        "title": "Aisin şanzıman yağının ihmal edilmesi",
+        "description": "09G Aisin tork konvertörlü şanzıman sağlamdır ama yağı çoğu araçta değişmemiştir; ihmal edilende geç/sert vites geçişi. 60 bin km'de yağ+filtre şart.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 200,
+        "affectedYears": "2005-2010"
+      },
+      {
+        "title": "Ateşleme bobini, gaz kelebeği ve süspansiyon burçları",
+        "description": "Bobin zayıflaması, kelebek kurumu ve 80-120 bin km'de ön/arka süspansiyon burçları. Bobin+kelebek temizliği ve süspansiyon revizyonu.",
+        "severity": "Orta",
+        "estimatedCostEUR": 300,
+        "affectedYears": "2005-2010"
+      }
     ],
     "pros": [
       "Golf 5 sağlamlığı + geniş sedan bagajı",
@@ -485,9 +927,21 @@
       "Yaşa bağlı elektrik arızaları"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, filtreler, fren hidroliği, Aisin şanzıman yağ+filtre.", "estimatedCostEUR": 250 },
-      { "mileage": "120.000 km", "expectedIssues": "Ön/arka süspansiyon revizyonu, bobin seti, emme manifoldu kontrolü, devirdaim + su pompası, triger kayış seti.", "estimatedCostEUR": 480 },
-      { "mileage": "200.000 km", "expectedIssues": "İkinci şanzıman yağı, motor takozları, direksiyon kutusu, klima kompresörü.", "estimatedCostEUR": 500 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Yağ+filtre, bujiler, filtreler, fren hidroliği, Aisin şanzıman yağ+filtre.",
+        "estimatedCostEUR": 250
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "Ön/arka süspansiyon revizyonu, bobin seti, emme manifoldu kontrolü, devirdaim + su pompası, triger kayış seti.",
+        "estimatedCostEUR": 480
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "İkinci şanzıman yağı, motor takozları, direksiyon kutusu, klima kompresörü.",
+        "estimatedCostEUR": 500
+      }
     ]
   },
   {
@@ -502,10 +956,30 @@
     "estimatedMaintenanceCostEUR": 360,
     "expertSummary": "Golf 6, Golf 5 platformunun makyajlı ve iç kalitesi yükseltilmiş halidir. 1.6 TDI (CAYC) common-rail dizel motor, PD'nin eksantrik/lifter riskini geride bıraktı — daha sessiz ve rafine. Bu düz vitesli versiyon en huzurlu dizel Golf 6. Kritik konular: CAYC enjektör kalibrasyonu, EGR ve DPF (şehir içi), triger kayışı (120-160 bin km). Günlük dille: \"Golf 5 TDI'nin PD derdi yok; daha rafine dizel + basit düz vites. EGR/DPF ve enjektöre dikkat.\" Uzun yol ağırlıklı kullanıcı için mantıklı.",
     "userFeedbackSummary": "Kullanıcılar sessizliği, yakıt ekonomisini ve iç kaliteyi övüyor. Şikayetler: CAYC enjektör kalibrasyon sorunu (tekleme, is), EGR ve DPF tıkanması (şehir içi), triger kayışı periyodu, turbo. Kaliteli mazot ve ara sıra uzun yol şart.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "CAYC 1.6 TDI enjektör kalibrasyonu", "description": "Enjektörler zamanla debisini şaşırır; tekleme, is, güç kaybı, soğukta zor çalışma. Enjektör kalibrasyonu/değişimi gerekir; kaliteli mazot ömrü belirler.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2008-2013" },
-      { "title": "EGR soğutucusu ve DPF (partikül filtresi) tıkanması", "description": "Kısa mesafe şehir kullanımında EGR ve DPF kurum bağlar; güç kaybı, arıza lambası, rejenerasyon sorunu. Bazı yıllarda EGR soğutucu geri çağırma konusu oldu. Uzun yol + temizlik/değişim gerekir.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2008-2013" },
-      { "title": "Triger kayışı seti ve su pompası", "description": "1.6 TDI kayış trigerlidir; 120-160 bin km'de kayış+gergi+su pompası seti değişmelidir. İhmal edilirse kayış kopar, motor hasar görür.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2008-2013" }
+      {
+        "title": "CAYC 1.6 TDI enjektör kalibrasyonu",
+        "description": "Enjektörler zamanla debisini şaşırır; tekleme, is, güç kaybı, soğukta zor çalışma. Enjektör kalibrasyonu/değişimi gerekir; kaliteli mazot ömrü belirler.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2008-2013"
+      },
+      {
+        "title": "EGR soğutucusu ve DPF (partikül filtresi) tıkanması",
+        "description": "Kısa mesafe şehir kullanımında EGR ve DPF kurum bağlar; güç kaybı, arıza lambası, rejenerasyon sorunu. Bazı yıllarda EGR soğutucu geri çağırma konusu oldu. Uzun yol + temizlik/değişim gerekir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 450,
+        "affectedYears": "2008-2013"
+      },
+      {
+        "title": "Triger kayışı seti ve su pompası",
+        "description": "1.6 TDI kayış trigerlidir; 120-160 bin km'de kayış+gergi+su pompası seti değişmelidir. İhmal edilirse kayış kopar, motor hasar görür.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2008-2013"
+      }
     ],
     "pros": [
       "PD'nin eksantrik/lifter riski yok — rafine common-rail dizel",
@@ -520,9 +994,21 @@
       "Bakım/parça maliyeti yüksek"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR/DPF ilk kontrol, enjektör kodlama kontrolü.", "estimatedCostEUR": 180 },
-      { "mileage": "140.000 km", "expectedIssues": "Triger kayış seti+su pompası, EGR soğutucu kontrolü, DPF temizliği, enjektör kontrolü, debriyaj seti, ön takım.", "estimatedCostEUR": 750 },
-      { "mileage": "240.000 km", "expectedIssues": "İkinci kayış seti, turbo kontrolü, DPF değişimi ihtimali, süspansiyon yenileme.", "estimatedCostEUR": 800 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR/DPF ilk kontrol, enjektör kodlama kontrolü.",
+        "estimatedCostEUR": 180
+      },
+      {
+        "mileage": "140.000 km",
+        "expectedIssues": "Triger kayış seti+su pompası, EGR soğutucu kontrolü, DPF temizliği, enjektör kontrolü, debriyaj seti, ön takım.",
+        "estimatedCostEUR": 750
+      },
+      {
+        "mileage": "240.000 km",
+        "expectedIssues": "İkinci kayış seti, turbo kontrolü, DPF değişimi ihtimali, süspansiyon yenileme.",
+        "estimatedCostEUR": 800
+      }
     ]
   },
   {
@@ -537,10 +1023,30 @@
     "estimatedMaintenanceCostEUR": 480,
     "expertSummary": "Golf 6'nın 1.6 TDI + DSG kombinasyonu, ikinci elde çok aranan bir otomatik dizeldir: düşük yakıt, sessiz motor, hızlı DSG. Ama DQ200 kuru kavrama, dizelin torkuyla dur-kalk trafikte zorlanır — kavrama titremesi ve mekatronik arızası riski taşır. Ayrıca CAYC enjektör kalibrasyonu, EGR/DPF kurumu. Bakımlı, mekatroniği/kavraması yenilenmiş bir örnek uzun süre gidebilir; ihmal edilmiş olan pahalı onarım demektir. Günlük dille: \"Yakıtı efsane, sürmesi zevkli; ama 1.6 TDI + kuru DSG ikilisi ekspertizsiz alınmaz.\"",
     "userFeedbackSummary": "Kullanıcılar yakıt ve sürüş kalitesini seviyor. Şikayetler: DQ200 kavrama titremesi ve mekatronik arızası, CAYC enjektör kalibrasyonu, EGR/DPF tıkanması (şehir içi), turbo. DSG yağ (mekatronik hidroliği) ihmal edilmemeli.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "DQ200 (kuru) DSG mekatronik ve kavrama arızası", "description": "1.6 TDI torkuyla kuru çift kavrama dur-kalk trafikte zorlanır; kavrama titremesi/kayması ve mekatronik kart/hidrolik arızası (vites atmama, sarsıntı, uyarı). Kavrama seti veya mekatronik revizyonu gerekir.", "severity": "Kritik", "estimatedCostEUR": 950, "affectedYears": "2008-2013" },
-      { "title": "CAYC 1.6 TDI enjektör kalibrasyonu", "description": "Enjektörler zamanla debisini şaşırır; tekleme, is, güç kaybı, soğukta zor çalışma. Enjektör kalibrasyonu/değişimi gerekir.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2008-2013" },
-      { "title": "EGR soğutucusu ve DPF tıkanması", "description": "Şehir içi kullanımda EGR ve DPF kurum bağlar; güç kaybı, arıza lambası, rejenerasyon sorunu. Uzun yol + temizlik/değişim gerekir.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2008-2013" }
+      {
+        "title": "DQ200 (kuru) DSG mekatronik ve kavrama arızası",
+        "description": "1.6 TDI torkuyla kuru çift kavrama dur-kalk trafikte zorlanır; kavrama titremesi/kayması ve mekatronik kart/hidrolik arızası (vites atmama, sarsıntı, uyarı). Kavrama seti veya mekatronik revizyonu gerekir.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 950,
+        "affectedYears": "2008-2013"
+      },
+      {
+        "title": "CAYC 1.6 TDI enjektör kalibrasyonu",
+        "description": "Enjektörler zamanla debisini şaşırır; tekleme, is, güç kaybı, soğukta zor çalışma. Enjektör kalibrasyonu/değişimi gerekir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2008-2013"
+      },
+      {
+        "title": "EGR soğutucusu ve DPF tıkanması",
+        "description": "Şehir içi kullanımda EGR ve DPF kurum bağlar; güç kaybı, arıza lambası, rejenerasyon sorunu. Uzun yol + temizlik/değişim gerekir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 450,
+        "affectedYears": "2008-2013"
+      }
     ],
     "pros": [
       "Sınıfının en iyi yakıt ekonomilerinden (uzun yol 4-4.5 lt)",
@@ -555,9 +1061,21 @@
       "Toplam bakım gideri yüksek; ekspertiz şart"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, DSG mekatronik hidrolik yağı, EGR/DPF ilk kontrol, enjektör kodlama.", "estimatedCostEUR": 280 },
-      { "mileage": "140.000 km", "expectedIssues": "Triger kayış seti+su pompası, DSG kavrama seti ihtimali, EGR/DPF temizliği, enjektör kontrolü, ön takım.", "estimatedCostEUR": 900 },
-      { "mileage": "220.000 km", "expectedIssues": "Mekatronik revizyonu ihtimali, turbo kontrolü, DPF değişimi, süspansiyon yenileme.", "estimatedCostEUR": 1100 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, DSG mekatronik hidrolik yağı, EGR/DPF ilk kontrol, enjektör kodlama.",
+        "estimatedCostEUR": 280
+      },
+      {
+        "mileage": "140.000 km",
+        "expectedIssues": "Triger kayış seti+su pompası, DSG kavrama seti ihtimali, EGR/DPF temizliği, enjektör kontrolü, ön takım.",
+        "estimatedCostEUR": 900
+      },
+      {
+        "mileage": "220.000 km",
+        "expectedIssues": "Mekatronik revizyonu ihtimali, turbo kontrolü, DPF değişimi, süspansiyon yenileme.",
+        "estimatedCostEUR": 1100
+      }
     ]
   },
   {
@@ -572,10 +1090,30 @@
     "estimatedMaintenanceCostEUR": 480,
     "expertSummary": "Golf 6'nın 1.4 TSI (CAXA) + DSG kombinasyonu, ikinci elde en çok dikkat gerektiren paketlerden biridir. Sürüş çok keyifli ama iki riskli nokta var: (1) 1.4 TSI CAXA ilk yıllarda zincir triger gerdiricisi zayıftır, atlarsa motor hasar görür — bu motorun en pahalı arızası; (2) DQ200 kuru kavrama dur-kalk trafikte ısınır, mekatronik ve kavrama aşınır. Ayrıca plastik su pompası ve turbo/wastegate. Günlük dille: \"Sürmesi zevkli ama 'kırık' örneği çok pahalıya patlar; zincir sesi ve DSG adaptasyonu ekspertizde mutlaka bakılır.\"",
     "userFeedbackSummary": "Bakımlı örnek sahipleri memnun, şanssız olanlar 'servisten çıkmadı' diyor. Şikayetler: DQ200 mekatronik arızası (vites atmama, sarsıntı), kuru kavrama titremesi, 1.4 TSI CAXA zincir gerdirici sesi ve (ilk yıllar) zincir atması, plastik su pompası, turbo sesi. DSG yağ değişimi ihmal edilmemeli.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "1.4 TSI (CAXA) zincir triger gerdiricisi zayıflığı", "description": "Erken üretim gerdiriciler basıncı tutamaz; soğuk çalıştırmada zincir sesi, ileri seviyede zincir atlaması ve motor hasarı (bu motorun en pahalı arızası). Güncellenmiş gerdirici + zincir seti ile kalıcı çözülür.", "severity": "Kritik", "estimatedCostEUR": 700, "affectedYears": "2008-2013" },
-      { "title": "DQ200 (kuru) DSG mekatronik ünitesi arızası", "description": "Mekatronik içindeki hidrolik akümülatör ve kart arızalanır; vites atmama, ani sarsıntı, gösterge uyarısı, yol ortasında kalma. Revizyonlu mekatronik veya değişim gerekir. Dur-kalk trafik ömrü kısaltır.", "severity": "Kritik", "estimatedCostEUR": 1000, "affectedYears": "2008-2013" },
-      { "title": "Plastik su pompası ve kuru kavrama titremesi", "description": "Entegre plastik su pompası+termostat sızdırır; DSG kuru kavrama balatası aşınınca kalkışta titreme ve kayma. Su pompası (metal gövdeli) ve çift kavrama seti + adaptasyon gerekir.", "severity": "Orta", "estimatedCostEUR": 700, "affectedYears": "2008-2013" }
+      {
+        "title": "1.4 TSI (CAXA) zincir triger gerdiricisi zayıflığı",
+        "description": "Erken üretim gerdiriciler basıncı tutamaz; soğuk çalıştırmada zincir sesi, ileri seviyede zincir atlaması ve motor hasarı (bu motorun en pahalı arızası). Güncellenmiş gerdirici + zincir seti ile kalıcı çözülür.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 700,
+        "affectedYears": "2008-2013"
+      },
+      {
+        "title": "DQ200 (kuru) DSG mekatronik ünitesi arızası",
+        "description": "Mekatronik içindeki hidrolik akümülatör ve kart arızalanır; vites atmama, ani sarsıntı, gösterge uyarısı, yol ortasında kalma. Revizyonlu mekatronik veya değişim gerekir. Dur-kalk trafik ömrü kısaltır.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 1000,
+        "affectedYears": "2008-2013"
+      },
+      {
+        "title": "Plastik su pompası ve kuru kavrama titremesi",
+        "description": "Entegre plastik su pompası+termostat sızdırır; DSG kuru kavrama balatası aşınınca kalkışta titreme ve kayma. Su pompası (metal gövdeli) ve çift kavrama seti + adaptasyon gerekir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 700,
+        "affectedYears": "2008-2013"
+      }
     ],
     "pros": [
       "Keyifli, hızlı ve akıcı DSG sürüş hissi",
@@ -590,9 +1128,21 @@
       "Toplam bakım gideri Japon rakiplerin çok üstünde"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre (VW 504.00), bujiler, DSG mekatronik hidrolik yağı, su pompası kontrolü, zincir sesi dinleme.", "estimatedCostEUR": 300 },
-      { "mileage": "120.000 km", "expectedIssues": "Zincir triger seti (ses varsa), DSG kavrama seti ihtimali, turbo/wastegate kontrolü, su pompası, PCV valfi, ön takım.", "estimatedCostEUR": 950 },
-      { "mileage": "180.000 km", "expectedIssues": "Mekatronik revizyonu ihtimali, ikinci kavrama seti, enjektör temizliği, süspansiyon yenileme.", "estimatedCostEUR": 1100 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Yağ+filtre (VW 504.00), bujiler, DSG mekatronik hidrolik yağı, su pompası kontrolü, zincir sesi dinleme.",
+        "estimatedCostEUR": 300
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "Zincir triger seti (ses varsa), DSG kavrama seti ihtimali, turbo/wastegate kontrolü, su pompası, PCV valfi, ön takım.",
+        "estimatedCostEUR": 950
+      },
+      {
+        "mileage": "180.000 km",
+        "expectedIssues": "Mekatronik revizyonu ihtimali, ikinci kavrama seti, enjektör temizliği, süspansiyon yenileme.",
+        "estimatedCostEUR": 1100
+      }
     ]
   },
   {
@@ -607,10 +1157,30 @@
     "estimatedMaintenanceCostEUR": 380,
     "expertSummary": "Golf 7, MQB platformuyla hafifleyen ve iç kalitesi zirveye çıkan nesildir. 1.6 TDI (CLHA/CRKB) common-rail dizel + düz vites, Golf 7'nin en huzurlu dizel kombinasyonudur: DSG riski yok, sadece motor bakımları var. Kritik konular: EGR ve DPF (şehir içi), enjektör, triger kayışı (120-160 bin km), bazı yıllarda AdBlue (SCR). Günlük dille: \"Golf 7 kalitesi + düşük yakıt + DSG korkusu yok; EGR/DPF ve kayışa dikkat.\" Uzun yol ağırlıklı, ekonomi odaklı kullanıcı için mantıklı.",
     "userFeedbackSummary": "Kullanıcılar iç kaliteyi, yakıt ekonomisini ve sürüş rafinesini çok övüyor. Şikayetler: EGR ve DPF tıkanması (şehir içi), enjektör kurumu, triger kayışı periyodu, süspansiyon burç sesleri, multimedya (Discover) donması, park sensörü/kamera. AdBlue'lu (geç) modellerde NOx sensörü arızası pahalı.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "EGR soğutucusu ve DPF (partikül filtresi) tıkanması", "description": "Kısa mesafe şehir kullanımında EGR ve DPF kurum bağlar; güç kaybı, arıza lambası, rejenerasyon sorunu. Bazı yıllarda EGR soğutucu geri çağırma konusu oldu. Uzun yol + temizlik/değişim gerekir.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2012-2016" },
-      { "title": "Enjektör kurumu ve turbo VNT kontrolü", "description": "Common-rail enjektörler zamanla debisini şaşırır; turbo kayıcı kanatları kurum bağlar. Kaliteli mazot ömrü uzatır. Revizyon/temizlik gerekir.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2012-2016" },
-      { "title": "Triger kayışı seti ve su pompası", "description": "1.6 TDI kayış trigerlidir; 120-160 bin km'de kayış+gergi+su pompası seti değişmelidir. İhmal edilirse kayış kopar, motor hasar görür.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2012-2016" }
+      {
+        "title": "EGR soğutucusu ve DPF (partikül filtresi) tıkanması",
+        "description": "Kısa mesafe şehir kullanımında EGR ve DPF kurum bağlar; güç kaybı, arıza lambası, rejenerasyon sorunu. Bazı yıllarda EGR soğutucu geri çağırma konusu oldu. Uzun yol + temizlik/değişim gerekir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 450,
+        "affectedYears": "2012-2016"
+      },
+      {
+        "title": "Enjektör kurumu ve turbo VNT kontrolü",
+        "description": "Common-rail enjektörler zamanla debisini şaşırır; turbo kayıcı kanatları kurum bağlar. Kaliteli mazot ömrü uzatır. Revizyon/temizlik gerekir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2012-2016"
+      },
+      {
+        "title": "Triger kayışı seti ve su pompası",
+        "description": "1.6 TDI kayış trigerlidir; 120-160 bin km'de kayış+gergi+su pompası seti değişmelidir. İhmal edilirse kayış kopar, motor hasar görür.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2012-2016"
+      }
     ],
     "pros": [
       "Sınıfının en iyi yakıt ekonomisi (uzun yol 4-4.5 lt)",
@@ -625,9 +1195,21 @@
       "Multimedya/elektronik arızalar, yüksek bakım gideri"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR/DPF ilk kontrol, AdBlue seviyesi (varsa).", "estimatedCostEUR": 180 },
-      { "mileage": "140.000 km", "expectedIssues": "Triger kayış seti+su pompası, EGR/DPF temizliği, enjektör kontrolü, turbo VNT kontrolü, debriyaj seti, ön takım.", "estimatedCostEUR": 750 },
-      { "mileage": "240.000 km", "expectedIssues": "İkinci kayış seti, turbo kontrolü, DPF değişimi, NOx sensörleri (varsa), süspansiyon yenileme.", "estimatedCostEUR": 850 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR/DPF ilk kontrol, AdBlue seviyesi (varsa).",
+        "estimatedCostEUR": 180
+      },
+      {
+        "mileage": "140.000 km",
+        "expectedIssues": "Triger kayış seti+su pompası, EGR/DPF temizliği, enjektör kontrolü, turbo VNT kontrolü, debriyaj seti, ön takım.",
+        "estimatedCostEUR": 750
+      },
+      {
+        "mileage": "240.000 km",
+        "expectedIssues": "İkinci kayış seti, turbo kontrolü, DPF değişimi, NOx sensörleri (varsa), süspansiyon yenileme.",
+        "estimatedCostEUR": 850
+      }
     ]
   },
   {
@@ -642,10 +1224,30 @@
     "estimatedMaintenanceCostEUR": 500,
     "expertSummary": "Golf 7'nin ikinci elde en çok aranan kombinasyonu: 1.6 TDI + 7 ileri DQ200 DSG. Yakıt ekonomisi mükemmel (uzun yol 4-4.5 lt), sessiz-torklu dizel, hızlı ve akıcı DSG. Golf 6'ya göre motor daha rafine ve zincir yerine kayışa döndüğü için zincir gerdirici derdi yok. Riskler: DQ200 kuru kavrama (dur-kalk trafik, mekatronik/kavrama aşınması) ve EGR/DPF/enjektör kurumu, özellikle şehir içi. Günlük dille: \"Yakıtı efsane, sürmesi zevkli; ama DSG ve dizel bakımını cebine göre hesapla, ekspertizsiz alma.\" Uzun yol ağırlıklı kullanan için ideal.",
     "userFeedbackSummary": "Kullanıcılar yakıt tüketimi ve sürüş kalitesini çok seviyor; 'otoyol otomobili' diyorlar. Şikayetler: DQ200 kavrama titremesi ve mekatronik arızası, EGR ve DPF tıkanması (şehir içi), enjektör kurumu, süspansiyon burç sesleri, multimedya donması. DSG yağı ve triger kayışı periyodu ihmal edilmemeli.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "DQ200 (kuru) DSG mekatronik ve kavrama arızası", "description": "Kuru çift kavrama dur-kalk trafikte ısınır; kavrama titremesi/kayması ve mekatronik kart/hidrolik arızası (vites atmama, sarsıntı, uyarı). Kavrama seti veya mekatronik revizyonu gerekir.", "severity": "Kritik", "estimatedCostEUR": 900, "affectedYears": "2012-2016" },
-      { "title": "EGR soğutucusu ve DPF tıkanması", "description": "Kısa mesafe şehir kullanımında EGR ve DPF kurum bağlar; güç kaybı, arıza lambası, rejenerasyon sorunu. Uzun yol + temizlik/değişim gerekir.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2012-2016" },
-      { "title": "Triger kayışı seti ve su pompası", "description": "1.6 TDI kayış trigerlidir; 120-160 bin km'de kayış+gergi+su pompası seti değişmelidir. İhmal edilirse kayış kopar.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2012-2016" }
+      {
+        "title": "DQ200 (kuru) DSG mekatronik ve kavrama arızası",
+        "description": "Kuru çift kavrama dur-kalk trafikte ısınır; kavrama titremesi/kayması ve mekatronik kart/hidrolik arızası (vites atmama, sarsıntı, uyarı). Kavrama seti veya mekatronik revizyonu gerekir.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 900,
+        "affectedYears": "2012-2016"
+      },
+      {
+        "title": "EGR soğutucusu ve DPF tıkanması",
+        "description": "Kısa mesafe şehir kullanımında EGR ve DPF kurum bağlar; güç kaybı, arıza lambası, rejenerasyon sorunu. Uzun yol + temizlik/değişim gerekir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 450,
+        "affectedYears": "2012-2016"
+      },
+      {
+        "title": "Triger kayışı seti ve su pompası",
+        "description": "1.6 TDI kayış trigerlidir; 120-160 bin km'de kayış+gergi+su pompası seti değişmelidir. İhmal edilirse kayış kopar.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2012-2016"
+      }
     ],
     "pros": [
       "Sınıfının en iyi yakıt ekonomisi (uzun yol 4-4.5 lt)",
@@ -660,9 +1262,21 @@
       "Toplam bakım gideri yüksek; ekspertiz şart"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, DSG mekatronik hidrolik yağı, EGR/DPF ilk kontrol, AdBlue seviyesi.", "estimatedCostEUR": 300 },
-      { "mileage": "140.000 km", "expectedIssues": "Triger kayış seti+su pompası, DSG kavrama seti ihtimali, EGR/DPF temizliği, enjektör kontrolü, ön takım.", "estimatedCostEUR": 900 },
-      { "mileage": "220.000 km", "expectedIssues": "Mekatronik revizyonu ihtimali, turbo kontrolü, DPF değişimi, NOx sensörleri, süspansiyon yenileme.", "estimatedCostEUR": 1200 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, DSG mekatronik hidrolik yağı, EGR/DPF ilk kontrol, AdBlue seviyesi.",
+        "estimatedCostEUR": 300
+      },
+      {
+        "mileage": "140.000 km",
+        "expectedIssues": "Triger kayış seti+su pompası, DSG kavrama seti ihtimali, EGR/DPF temizliği, enjektör kontrolü, ön takım.",
+        "estimatedCostEUR": 900
+      },
+      {
+        "mileage": "220.000 km",
+        "expectedIssues": "Mekatronik revizyonu ihtimali, turbo kontrolü, DPF değişimi, NOx sensörleri, süspansiyon yenileme.",
+        "estimatedCostEUR": 1200
+      }
     ]
   },
   {
@@ -677,10 +1291,30 @@
     "estimatedMaintenanceCostEUR": 460,
     "expertSummary": "Golf 7'nin 1.4 TSI 122 HP + DSG kombinasyonu, dizel istemeyen ama otomatik ve performans arayanların tercihi. Bu motor Golf 6'daki sorunlu CAXA'nın devamı değil; MQB'yle gelen daha rafine, kayış trigerli, zincir gerdirici derdi büyük ölçüde çözülmüş bir ünite. Yine de TSI ailesine özgü karbon birikimi (direkt enjeksiyon), PCV ve su pompası konuları var. Şanzıman yine DQ200 kuru kavrama. Günlük dille: \"Golf 6'nın 1.4 TSI'sinden çok daha güvenli; ama DSG hâlâ DSG, LPG'yi bu direkt enjeksiyonlu motora takma.\"",
     "userFeedbackSummary": "Kullanıcılar motor tarafında Golf 6'ya göre çok daha az sorun bildiriyor. Şikayetler ağırlıkla DSG'de: kalkışta tik-tak, dur-kalkta titreme, uzun vadede mekatronik. Ayrıca emme supaplarında karbon birikimi (güç kaybı), su pompası sızıntısı, PCV valfi, nadiren turbo wastegate sesi.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "DQ200 (kuru) DSG kavrama ve mekatronik arızası", "description": "Kuru çift kavrama dur-kalk trafikte ısınır; kavrama titremesi ve mekatronik kart/hidrolik arızası. Kavrama seti veya mekatronik revizyonu gerekir.", "severity": "Kritik", "estimatedCostEUR": 850, "affectedYears": "2012-2016" },
-      { "title": "Emme supaplarında karbon birikimi (direkt enjeksiyon)", "description": "TSI direkt enjeksiyonlu olduğu için emme supaplarını yakıt yıkamaz; zamanla kurum birikir, güç kaybı ve rölanti dengesizliği olur. Ceviz kabuğu püskürtme temizliği yapılır.", "severity": "Orta", "estimatedCostEUR": 250, "affectedYears": "2012-2016" },
-      { "title": "Su pompası / termostat sızıntısı ve PCV valfi", "description": "Entegre su pompası+termostat modülü sızdırır veya hararet yapar; PCV valfi arızalanınca yağ tüketimi ve rölanti dengesizliği. Modül ve valf değişir.", "severity": "Orta", "estimatedCostEUR": 300, "affectedYears": "2012-2016" }
+      {
+        "title": "DQ200 (kuru) DSG kavrama ve mekatronik arızası",
+        "description": "Kuru çift kavrama dur-kalk trafikte ısınır; kavrama titremesi ve mekatronik kart/hidrolik arızası. Kavrama seti veya mekatronik revizyonu gerekir.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 850,
+        "affectedYears": "2012-2016"
+      },
+      {
+        "title": "Emme supaplarında karbon birikimi (direkt enjeksiyon)",
+        "description": "TSI direkt enjeksiyonlu olduğu için emme supaplarını yakıt yıkamaz; zamanla kurum birikir, güç kaybı ve rölanti dengesizliği olur. Ceviz kabuğu püskürtme temizliği yapılır.",
+        "severity": "Orta",
+        "estimatedCostEUR": 250,
+        "affectedYears": "2012-2016"
+      },
+      {
+        "title": "Su pompası / termostat sızıntısı ve PCV valfi",
+        "description": "Entegre su pompası+termostat modülü sızdırır veya hararet yapar; PCV valfi arızalanınca yağ tüketimi ve rölanti dengesizliği. Modül ve valf değişir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 300,
+        "affectedYears": "2012-2016"
+      }
     ],
     "pros": [
       "Golf 6'nın 1.4 TSI'sinden çok daha güvenilir, rafine motor",
@@ -695,9 +1329,21 @@
       "Bakım gideri yüksek"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre (VW 504.00), bujiler, DSG mekatronik hidrolik yağı, su pompası kontrolü, PCV valfi.", "estimatedCostEUR": 280 },
-      { "mileage": "120.000 km", "expectedIssues": "Triger kayış seti, DSG kavrama seti ihtimali, emme supabı karbon temizliği, turbo kontrolü, ön takım.", "estimatedCostEUR": 800 },
-      { "mileage": "180.000 km", "expectedIssues": "Mekatronik revizyonu ihtimali, su pompası, ikinci kayış seti, enjektör temizliği, süspansiyon yenileme.", "estimatedCostEUR": 900 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Yağ+filtre (VW 504.00), bujiler, DSG mekatronik hidrolik yağı, su pompası kontrolü, PCV valfi.",
+        "estimatedCostEUR": 280
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "Triger kayış seti, DSG kavrama seti ihtimali, emme supabı karbon temizliği, turbo kontrolü, ön takım.",
+        "estimatedCostEUR": 800
+      },
+      {
+        "mileage": "180.000 km",
+        "expectedIssues": "Mekatronik revizyonu ihtimali, su pompası, ikinci kayış seti, enjektör temizliği, süspansiyon yenileme.",
+        "estimatedCostEUR": 900
+      }
     ]
   },
   {
@@ -712,10 +1358,30 @@
     "estimatedMaintenanceCostEUR": 520,
     "expertSummary": "Golf 7.5, Golf 7'nin 2017 makyajıdır: LED matris far seçeneği, daha büyük dokunmatik ekran, dijital gösterge (Active Info Display) opsiyonu, güncellenmiş 1.6 TDI (DDYA, 115 HP). Mekanik olarak Golf 7 ile aynı: 1.6 TDI + DQ200 DSG. AdBlue (SCR) sistemi bu yıllarda standart, dolayısıyla NOx sensörü ve dozaj ünitesi arızaları eklenir. Günlük dille: \"Golf 7'nin en olgun hali; daha modern kabin ve teknoloji, aynı 1.6 TDI + kuru DSG mekaniği. AdBlue ve DSG'yi göze al.\"",
     "userFeedbackSummary": "Kullanıcılar teknoloji güncellemelerini ve yakıt ekonomisini çok övüyor. Şikayetler: DQ200 kavrama titremesi ve mekatronik, EGR/DPF tıkanması (şehir içi), AdBlue/NOx sensörü arızası (pahalı), dijital gösterge ve dokunmatik ekran donması, park sensörü/kamera. DSG ve triger kayışı periyodu ihmal edilmemeli.",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "DQ200 (kuru) DSG mekatronik ve kavrama arızası", "description": "Kuru çift kavrama dur-kalk trafikte ısınır; kavrama titremesi/kayması ve mekatronik arızası. Kavrama seti veya mekatronik revizyonu gerekir.", "severity": "Kritik", "estimatedCostEUR": 950, "affectedYears": "2017-2020" },
-      { "title": "AdBlue / SCR NOx sensörü ve dozaj ünitesi arızası", "description": "AdBlue dozaj pompası ve NOx sensörleri arızalanır; 'X km sonra çalışmayacak' uyarısı verir. Sensör ve pompa pahalıdır.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2017-2020" },
-      { "title": "EGR/DPF tıkanması ve triger kayışı seti", "description": "Şehir içi kullanımda EGR/DPF kurum bağlar; 1.6 TDI kayış trigerlidir, 120-160 bin km'de kayış+su pompası değişmelidir.", "severity": "Orta", "estimatedCostEUR": 500, "affectedYears": "2017-2020" }
+      {
+        "title": "DQ200 (kuru) DSG mekatronik ve kavrama arızası",
+        "description": "Kuru çift kavrama dur-kalk trafikte ısınır; kavrama titremesi/kayması ve mekatronik arızası. Kavrama seti veya mekatronik revizyonu gerekir.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 950,
+        "affectedYears": "2017-2020"
+      },
+      {
+        "title": "AdBlue / SCR NOx sensörü ve dozaj ünitesi arızası",
+        "description": "AdBlue dozaj pompası ve NOx sensörleri arızalanır; 'X km sonra çalışmayacak' uyarısı verir. Sensör ve pompa pahalıdır.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2017-2020"
+      },
+      {
+        "title": "EGR/DPF tıkanması ve triger kayışı seti",
+        "description": "Şehir içi kullanımda EGR/DPF kurum bağlar; 1.6 TDI kayış trigerlidir, 120-160 bin km'de kayış+su pompası değişmelidir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 500,
+        "affectedYears": "2017-2020"
+      }
     ],
     "pros": [
       "Golf 7'nin sürüş kalitesi + güncellenmiş kabin ve teknoloji",
@@ -730,9 +1396,21 @@
       "Dokunmatik ekran ve dijital gösterge donması, yüksek bakım gideri"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, DSG mekatronik hidrolik yağı, EGR/DPF ilk kontrol, AdBlue seviyesi.", "estimatedCostEUR": 320 },
-      { "mileage": "140.000 km", "expectedIssues": "Triger kayış seti+su pompası, DSG kavrama seti ihtimali, EGR/DPF temizliği, NOx sensörü kontrolü, enjektör, ön takım.", "estimatedCostEUR": 950 },
-      { "mileage": "220.000 km", "expectedIssues": "Mekatronik revizyonu ihtimali, turbo kontrolü, DPF değişimi, NOx sensörleri, süspansiyon yenileme.", "estimatedCostEUR": 1200 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, DSG mekatronik hidrolik yağı, EGR/DPF ilk kontrol, AdBlue seviyesi.",
+        "estimatedCostEUR": 320
+      },
+      {
+        "mileage": "140.000 km",
+        "expectedIssues": "Triger kayış seti+su pompası, DSG kavrama seti ihtimali, EGR/DPF temizliği, NOx sensörü kontrolü, enjektör, ön takım.",
+        "estimatedCostEUR": 950
+      },
+      {
+        "mileage": "220.000 km",
+        "expectedIssues": "Mekatronik revizyonu ihtimali, turbo kontrolü, DPF değişimi, NOx sensörleri, süspansiyon yenileme.",
+        "estimatedCostEUR": 1200
+      }
     ]
   },
   {
@@ -747,10 +1425,30 @@
     "estimatedMaintenanceCostEUR": 480,
     "expertSummary": "Golf 7.5'in benzinli amiral motoru 1.5 TSI Evo (DPCA, 150 HP): silindir kapatma (ACT), yüksek verim, 250 Nm tork. Güçlü ve keyifli ama iki bilinen konusu var: (1) erken üretim 1.5 TSI'lerde düşük hız/düşük devirde 'kekeleme' (juddering) — yazılım güncellemesi ve bazı örneklerde enjektör/yüksek basınç pompası değişimiyle çözüldü; (2) direkt enjeksiyon karbon birikimi. Şanzıman yine DQ200 kuru kavrama. Günlük dille: \"Güçlü ve verimli ama 1.5 TSI'nin kekeleme geçmişini ve DSG'yi sorgula; yazılımı güncel örneği ara.\"",
     "userFeedbackSummary": "Kullanıcılar performansı ve verimi övüyor. Şikayetler: düşük devirde kekeleme/tereddüt (özellikle 2017-2018 üretim, yazılımla iyileşir), emme supabı karbon birikimi, DQ200 kavrama titremesi, su pompası, turbo wastegate sesi. LPG bu motora önerilmez (direkt enjeksiyon).",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
     "chronicIssues": [
-      { "title": "1.5 TSI düşük devir kekeleme (juddering) — erken üretim", "description": "2017-2018 üretim 1.5 TSI Evo motorlarda düşük hız/düşük devirde titreme ve tereddüt bildirildi. VW yazılım güncellemesi yaptı; bazı örneklerde yüksek basınç pompası/enjektör değişimi gerekti. Alırken güncel yazılım ve davranış test edilmeli.", "severity": "Orta", "estimatedCostEUR": 300, "affectedYears": "2017-2019" },
-      { "title": "DQ200 (kuru) DSG kavrama ve mekatronik arızası", "description": "Kuru çift kavrama dur-kalk trafikte ısınır; kavrama titremesi ve mekatronik arızası. Kavrama seti veya mekatronik revizyonu gerekir.", "severity": "Kritik", "estimatedCostEUR": 850, "affectedYears": "2017-2020" },
-      { "title": "Emme supaplarında karbon birikimi ve su pompası", "description": "Direkt enjeksiyon emme supaplarını yakıt yıkamaz; kurum birikir. Entegre su pompası+termostat sızdırır. Karbon temizliği ve modül değişimi.", "severity": "Orta", "estimatedCostEUR": 350, "affectedYears": "2017-2020" }
+      {
+        "title": "1.5 TSI düşük devir kekeleme (juddering) — erken üretim",
+        "description": "2017-2018 üretim 1.5 TSI Evo motorlarda düşük hız/düşük devirde titreme ve tereddüt bildirildi. VW yazılım güncellemesi yaptı; bazı örneklerde yüksek basınç pompası/enjektör değişimi gerekti. Alırken güncel yazılım ve davranış test edilmeli.",
+        "severity": "Orta",
+        "estimatedCostEUR": 300,
+        "affectedYears": "2017-2019"
+      },
+      {
+        "title": "DQ200 (kuru) DSG kavrama ve mekatronik arızası",
+        "description": "Kuru çift kavrama dur-kalk trafikte ısınır; kavrama titremesi ve mekatronik arızası. Kavrama seti veya mekatronik revizyonu gerekir.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 850,
+        "affectedYears": "2017-2020"
+      },
+      {
+        "title": "Emme supaplarında karbon birikimi ve su pompası",
+        "description": "Direkt enjeksiyon emme supaplarını yakıt yıkamaz; kurum birikir. Entegre su pompası+termostat sızdırır. Karbon temizliği ve modül değişimi.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2017-2020"
+      }
     ],
     "pros": [
       "Güçlü, torklu ve verimli 1.5 TSI Evo motor (ACT)",
@@ -765,9 +1463,21 @@
       "Su pompası ve TSI klasiği bakımlar, yüksek bakım gideri"
     ],
     "milestones": [
-      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre (VW 504.00), bujiler, DSG mekatronik hidrolik yağı, su pompası kontrolü, yazılım güncelleme kontrolü.", "estimatedCostEUR": 300 },
-      { "mileage": "120.000 km", "expectedIssues": "Emme supabı karbon temizliği, DSG kavrama seti ihtimali, turbo kontrolü, su pompası, ön takım, devirdaim kayışı.", "estimatedCostEUR": 800 },
-      { "mileage": "180.000 km", "expectedIssues": "Mekatronik revizyonu ihtimali, yüksek basınç pompası kontrolü, ikinci su pompası, süspansiyon yenileme.", "estimatedCostEUR": 950 }
+      {
+        "mileage": "60.000 km",
+        "expectedIssues": "Yağ+filtre (VW 504.00), bujiler, DSG mekatronik hidrolik yağı, su pompası kontrolü, yazılım güncelleme kontrolü.",
+        "estimatedCostEUR": 300
+      },
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "Emme supabı karbon temizliği, DSG kavrama seti ihtimali, turbo kontrolü, su pompası, ön takım, devirdaim kayışı.",
+        "estimatedCostEUR": 800
+      },
+      {
+        "mileage": "180.000 km",
+        "expectedIssues": "Mekatronik revizyonu ihtimali, yüksek basınç pompası kontrolü, ikinci su pompası, süspansiyon yenileme.",
+        "estimatedCostEUR": 950
+      }
     ]
   }
 ]

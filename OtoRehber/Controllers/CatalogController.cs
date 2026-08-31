@@ -25,19 +25,18 @@ namespace OtoRehber.Controllers
             _cache = cache;
         }
 
-        // GET: /araclar  — filtre + sıralama + sayfalama
+        // GET: /araclar  — zengin filtre + sıralama + sayfalama
         [HttpGet("/araclar")]
-        public async Task<IActionResult> Index(string? searchQuery, string[]? segment, string[]? brand, string? sortBy,
-            long? priceMin = null, long? priceMax = null, double? minScore = null, int page = 1)
+        public async Task<IActionResult> Index(CarFilter filter, int page = 1)
         {
             const int pageSize = 12;
 
-            var query = CarCatalogQuery.ApplyFilters(_context.Cars.AsNoTracking(), searchQuery, segment, brand, priceMin, priceMax, minScore);
+            var query = CarCatalogQuery.ApplyFilters(_context.Cars.AsNoTracking(), filter);
             var total = await query.CountAsync();
             var totalPages = Math.Max(1, (int)Math.Ceiling(total / (double)pageSize));
             page = Math.Clamp(page, 1, totalPages);
 
-            var cars = await CarCatalogQuery.ApplySort(query, sortBy)
+            var cars = await CarCatalogQuery.ApplySort(query, filter.SortBy)
                 .Skip((page - 1) * pageSize).Take(pageSize)
                 .ToListAsync();
 
@@ -48,21 +47,14 @@ namespace OtoRehber.Controllers
                 e.AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5);
                 return await _context.Cars.AsNoTracking().Select(c => c.Brand).Distinct().OrderBy(b => b).ToListAsync();
             });
-            // Segment seçenekleri sabit listeden (CarSegments) gelir.
             ViewBag.Segments = OtoRehber.Domain.CarSegments.All;
+            ViewBag.Filter = filter;
 
             ViewData["Title"] = "Tüm Araçlar";
-            ViewData["Description"] = "OtoRehber'deki tüm araçları markaya, segmente ve fiyata göre filtreleyin; güvenilirlik puanları ve kullanıcı yorumlarıyla karşılaştırın.";
+            ViewData["Description"] = "OtoRehber'deki tüm araçları marka, segment, yakıt, vites, kasa tipi, fiyat ve yıla göre filtreleyin; güvenilirlik puanları ve kullanıcı yorumlarıyla karşılaştırın.";
             ViewBag.Total = total;
             ViewBag.Page = page;
             ViewBag.TotalPages = totalPages;
-            ViewData["CurrentSearch"] = searchQuery;
-            ViewData["CurrentSegment"] = segment;
-            ViewData["CurrentBrand"] = brand;
-            ViewData["CurrentSort"] = sortBy;
-            ViewData["CurrentPriceMin"] = priceMin;
-            ViewData["CurrentPriceMax"] = priceMax;
-            ViewData["CurrentMinScore"] = minScore;
             return View(cars.ToListDto());
         }
 

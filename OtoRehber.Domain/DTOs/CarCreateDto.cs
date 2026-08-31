@@ -38,5 +38,16 @@ namespace OtoRehber.Domain.DTOs
         public int EstimatedMaintenanceCostEUR { get; set; }
 
         public string? ImageUrl { get; set; }
+
+        // Yapılandırılmış özellikler (opsiyonel)
+        public string? FuelType { get; set; }
+        public string? Transmission { get; set; }
+        public string? BodyType { get; set; }
+        public string? Drivetrain { get; set; }
+        public string? Condition { get; set; }
+        [Range(0, 2000)] public int? PowerHp { get; set; }
+        [Range(0, 9000)] public int? EngineDisplacementCc { get; set; }
+        [Range(1950, 2100)] public int? YearStart { get; set; }
+        [Range(1950, 2100)] public int? YearEnd { get; set; }
     }
 }

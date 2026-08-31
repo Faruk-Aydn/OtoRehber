@@ -173,6 +173,26 @@ namespace OtoRehber.Infrastructure.Data.CatalogSeed
             car.ExpertSummary = src.ExpertSummary ?? "";
             car.UserFeedbackSummary = src.UserFeedbackSummary ?? "";
             car.ImageUrl = string.IsNullOrWhiteSpace(src.ImageUrl) ? null : Trim(src.ImageUrl!, 500);
+
+            // Yapılandırılmış özellikler: JSON'da boş olanları Engine/ProductionYears'ten türet.
+            CatalogSpecInference.Fill(src);
+            car.FuelType = Norm(src.FuelType, OtoRehber.Domain.CarSpecs.IsValidFuel);
+            car.Transmission = Norm(src.Transmission, OtoRehber.Domain.CarSpecs.IsValidTransmission);
+            car.BodyType = Norm(src.BodyType, OtoRehber.Domain.CarSpecs.IsValidBody);
+            car.Drivetrain = Norm(src.Drivetrain, OtoRehber.Domain.CarSpecs.IsValidDrivetrain);
+            car.Condition = Norm(src.Condition, OtoRehber.Domain.CarSpecs.IsValidCondition) ?? "İkinci El";
+            car.PowerHp = src.PowerHp is > 0 ? src.PowerHp : null;
+            car.EngineDisplacementCc = src.EngineDisplacementCc is > 0 ? src.EngineDisplacementCc : null;
+            car.YearStart = src.YearStart is > 1950 ? src.YearStart : null;
+            car.YearEnd = src.YearEnd is > 1950 ? src.YearEnd : null;
+            car.RangeKm = src.RangeKm is > 0 ? src.RangeKm : null;
+            car.FastChargeMinutes = src.FastChargeMinutes is > 0 ? src.FastChargeMinutes : null;
+        }
+
+        private static string? Norm(string? value, Func<string?, bool> isValid)
+        {
+            var v = value?.Trim();
+            return isValid(v) ? v : null;
         }
 
         private static string ClipSeverity(string? s)
