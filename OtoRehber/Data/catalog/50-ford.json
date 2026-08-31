@@ -1,0 +1,526 @@
+[
+  {
+    "brand": "Ford",
+    "modelName": "Fiesta (Mk6, 2008-2013)",
+    "productionYears": "2008-2013",
+    "engine": "1.4 Duratec 96 HP (Benzin, Atmosferik) + 5 İleri Manuel",
+    "segment": "B",
+    "reliabilityScore": 7.8,
+    "minPrice": 300000,
+    "maxPrice": 470000,
+    "estimatedMaintenanceCostEUR": 210,
+    "expertSummary": "Mk6 Fiesta, 'kinetik tasarım' diliyle B segmentinin en canlı görünen ve en iyi süren araçlarından biriydi — direksiyon hissi ve viraj tutuşu sınıf lideriydi. 1.4 Duratec atmosferik motor turbosuz, port enjeksiyonlu (LPG takılabilir), zincir trigerlidir — kayış triger masrafı yok. 96 HP şehir içi için yeterli, otoyolda orta. Kritik konular: bobin/buji tekleme, gaz kelebeği, ön amortisör üst takoz. Günlük dille: \"Sınıfının en keyifli süreni; motoru zincir trigerli ve dertsiz, LPG de takılır. Sert süspansiyon ve küçük bagaj tek eleştirisi.\"",
+    "userFeedbackSummary": "Kullanıcılar direksiyon hissini ve sürüş keyfini çok övüyor. Şikayetler: sert süspansiyon (bozuk yolda seken), küçük bagaj, arka diz mesafesi dar, yol sesi yalıtımı orta, bobin tekleme, gaz kelebeği kaynaklı rölanti dengesizliği, ön amortisör üst takoz sesi. Zincir triger uzun ömürlü.",
+    "chronicIssues": [
+      { "title": "Ateşleme bobini ve gaz kelebeği kirlenmesi", "description": "Yaşa bağlı bobin zayıflaması (tekleme, arıza lambası) ve gaz kelebeği kurumu (rölanti dengesizliği, motor stop). Bobin+buji seti ve kelebek temizliği/adaptasyonu.", "severity": "Düşük", "estimatedCostEUR": 130, "affectedYears": "2008-2013" },
+      { "title": "Ön amortisör üst takoz ve salıncak burcu sesi", "description": "Türkiye yollarında 60-100 bin km'de ön takımdan tıkırtı; kule takozu, rulman ve salıncak burçları yenilenir. Parça uygun.", "severity": "Düşük", "estimatedCostEUR": 140, "affectedYears": "2008-2013" },
+      { "title": "Su pompası / termostat sızıntısı", "description": "Yüksek km'de su pompası veya termostat gövdesi sızdırabilir; hararet ve antifriz kaybı. Set halinde yenilenir.", "severity": "Düşük", "estimatedCostEUR": 160, "affectedYears": "2008-2013" }
+    ],
+    "pros": [
+      "Sınıfının en iyi direksiyon hissi ve yol tutuşu",
+      "Zincir trigerli, LPG uyumlu atmosferik motor",
+      "Şık kinetik tasarım, iyi ön koltuk konforu",
+      "Ucuz parça, yaygın servis"
+    ],
+    "cons": [
+      "Sert süspansiyon, bozuk yolda seken sürüş",
+      "Küçük bagaj, dar arka diz mesafesi",
+      "Yol sesi yalıtımı orta",
+      "96 HP otoyolda orta seviye"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, hava/polen filtresi, fren hidroliği, LPG'de (varsa) subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 150 },
+      { "mileage": "120.000 km", "expectedIssues": "Ön takım revizyonu (üst takoz, burç, rot), su pompası+termostat, bobin seti, debriyaj kontrolü.", "estimatedCostEUR": 320 },
+      { "mileage": "200.000 km", "expectedIssues": "Debriyaj seti, motor takozları, klima kompresörü, direksiyon kutusu, süspansiyon yenileme.", "estimatedCostEUR": 400 }
+    ]
+  },
+  {
+    "brand": "Ford",
+    "modelName": "Fiesta (Mk6, 2008-2013)",
+    "productionYears": "2008-2013",
+    "engine": "1.6 TDCi 90 HP (Dizel Turbo) + 5 İleri Manuel",
+    "segment": "B",
+    "reliabilityScore": 7.4,
+    "minPrice": 320000,
+    "maxPrice": 500000,
+    "estimatedMaintenanceCostEUR": 300,
+    "expertSummary": "Mk6 Fiesta'nın 1.6 TDCi (90 HP) dizeli, PSA ile ortak geliştirilen DV6 ailesindendir: uzun yolda 3.5-4 lt yakar, torklu, kayış trigerlidir (160-180 bin km periyot). DV6'nın bilinen konuları: turbo yağlama borusu kurumu (turbonun en yaygın ölüm nedeni), EGR ve emme kurumu, DPF (şehir içi), enjektör. Yağ periyodu ve kalitesi turbo ömrünü belirler. Günlük dille: \"Yakıtı harika, sürmesi keyifli; ama DV6 turbosu bakıma çok bağımlı — yağ periyodunu asla kaçırma, kısa şehir yolunda ezme.\" Uzun yol ağırlıklı kullanıcı için mantıklı.",
+    "userFeedbackSummary": "Kullanıcılar yakıt ekonomisini ve sürüş keyfini övüyor. Şikayetler: turbo arızası (yağlama borusu kurumu), EGR ve emme kurumu, DPF tıkanması (şehir içi), enjektör, kayış triger periyodu. Yağ periyodu ve kalitesi turbo için kritik; kaliteli mazot enjektör ömrünü uzatır.",
+    "chronicIssues": [
+      { "title": "Turbo yağlama borusu kurumu ve turbo arızası", "description": "DV6 ailesinde turbo yağ besleme borusu kurum bağlar; yağlama kesilir, turbo aniden ölür ve parçaları motora girebilir. Yağ periyodu (max 10 bin km) ve kaliteli yağ şart; boru periyodik temizlenmeli/değişmeli.", "severity": "Kritik", "estimatedCostEUR": 500, "affectedYears": "2008-2013" },
+      { "title": "EGR valfi ve emme manifoldu kurumlanması", "description": "Şehir içi düşük devir kullanımda EGR ve emme yolları kurum bağlar; güç kaybı, arıza lambası. Temizlik veya yenileme.", "severity": "Orta", "estimatedCostEUR": 250, "affectedYears": "2008-2013" },
+      { "title": "DPF tıkanması (şehir içi) ve enjektör", "description": "Kısa mesafe kullanımda DPF dolar; enjektörler zamanla debisini şaşırır. Uzun yol + temizlik/revizyon gerekir.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2008-2013" }
+    ],
+    "pros": [
+      "Çok düşük yakıt tüketimi (uzun yol 3.5-4 lt)",
+      "Sınıfının en iyi direksiyon hissi ve yol tutuşu",
+      "Torklu, keyifli dizel karakteri",
+      "Ucuz parça, yaygın servis"
+    ],
+    "cons": [
+      "DV6 turbo yağlama borusu — bakıma çok bağımlı, kritik risk",
+      "EGR/emme/DPF gibi dizel bakımları",
+      "Sürekli kısa mesafe şehir içi kullanıma uygun değil",
+      "Sert süspansiyon, küçük bagaj"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre (max 10 bin km periyot), yakıt/hava filtresi, EGR ilk kontrol, turbo yağ borusu kontrolü.", "estimatedCostEUR": 170 },
+      { "mileage": "150.000 km", "expectedIssues": "Turbo yağ borusu değişimi, EGR/emme temizliği, enjektör kontrolü, kayış triger seti, debriyaj seti, DPF temizliği.", "estimatedCostEUR": 650 },
+      { "mileage": "250.000 km", "expectedIssues": "İkinci kayış seti, turbo revizyonu ihtimali, su pompası, DPF değişimi ihtimali, süspansiyon yenileme.", "estimatedCostEUR": 750 }
+    ]
+  },
+  {
+    "brand": "Ford",
+    "modelName": "Fiesta (Mk7 makyaj, 2013-2017)",
+    "productionYears": "2013-2017",
+    "engine": "1.0 EcoBoost 100 HP (Benzin Turbo, 3 Silindir) + 5 İleri Manuel",
+    "segment": "B",
+    "reliabilityScore": 6.8,
+    "minPrice": 400000,
+    "maxPrice": 620000,
+    "estimatedMaintenanceCostEUR": 320,
+    "expertSummary": "2013 makyajıyla Fiesta, Ford'un çok ödül alan 1.0 EcoBoost (3 silindir turbo) motorunu aldı: 100 HP + 170 Nm, dört silindirli 1.6'lara yakın performans, düşük yakıt. Ama bu motorun ciddi bir kronik geçmişi var: kayış triger 'ıslak kayış' tasarımıdır (kayış yağ banyosunda çalışır) ve zamanla ufalanıp yağ pompası süzgecini tıkar → yağ basıncı düşer → motor ağır hasar. Ayrıca bazı örneklerde silindir kafası çatlağı/soğutma sıvısı kaybı ve turbo. Günlük dille: \"Performans/verim harika ama ıslak kayış ve soğutma geçmişini mutlaka sorgula; servis kayıtsız EcoBoost alınmaz.\"",
+    "userFeedbackSummary": "Bakımlı örnek sahipleri performansı çok seviyor; şanssız olanlar 'motor gitti' diyor. Şikayetler: ıslak triger kayışının ufalanması ve yağ basıncı düşüşü (motor hasarı), soğutma sıvısı kaybı ve aşırı ısınma (bazı yıllar silindir kafası/conta), turbo, 3 silindir titreşimi. Kayış değişim periyodu (Ford sonradan 10 yıl/240 bin km'den ~6 yıl/150 bin km'ye çekti) kritik.",
+    "chronicIssues": [
+      { "title": "Islak triger kayışının ufalanması ve yağ pompası tıkanması", "description": "1.0 EcoBoost kayış trigeri yağ banyosunda çalışır; zamanla kayış malzemesi ufalanıp yağ pompası süzgecini ve kanalları tıkar. Yağ basıncı düşer, motor yatakları ve turbo hasar görür (çok pahalı). Ford periyodu kısalttı; kayış + yağ pompası süzgeci birlikte kontrol/değişim şart.", "severity": "Kritik", "estimatedCostEUR": 700, "affectedYears": "2013-2017" },
+      { "title": "Soğutma sıvısı kaybı ve aşırı ısınma (erken üretim)", "description": "Bazı yıllarda soğutma devresinde (özellikle silindir kafası bölgesi) çatlak/sızıntı; sinsi antifriz kaybı, hararet ve ağır durumda silindir kafası/conta hasarı. Soğutma seviyesi ve geçmişi kontrol edilmeli.", "severity": "Kritik", "estimatedCostEUR": 800, "affectedYears": "2013-2016" },
+      { "title": "Turbo ve PCV / karbon birikimi", "description": "Turbo wastegate sesi; direkt enjeksiyon nedeniyle emme supabı karbon birikimi (güç kaybı, rölanti dengesizliği). PCV valfi ve karbon temizliği.", "severity": "Orta", "estimatedCostEUR": 350, "affectedYears": "2013-2017" }
+    ],
+    "pros": [
+      "Küçük hacme göre güçlü ve torklu, düşük yakıt (ödüllü motor)",
+      "Fiesta'nın sınıf lideri direksiyon hissi ve yol tutuşu",
+      "Makyajlı kasa: güncellenmiş far ve kabin"
+    ],
+    "cons": [
+      "Islak triger kayışı — ufalanınca motor hasarı (kritik, pahalı)",
+      "Erken üretimde soğutma sıvısı kaybı / silindir kafası riski",
+      "Direkt enjeksiyon: karbon birikimi, LPG uyumsuzluğu",
+      "3 silindir titreşimi; servis kayıtsız alınmaz"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre (kısa periyot, doğru spesifikasyon), bujiler, soğutma seviyesi ve kaçak kontrolü, turbo kaçak kontrolü.", "estimatedCostEUR": 180 },
+      { "mileage": "120.000 km", "expectedIssues": "Islak triger kayışı + yağ pompası süzgeci kontrolü/değişimi, emme supabı karbon temizliği, PCV, ön takım, debriyaj.", "estimatedCostEUR": 700 },
+      { "mileage": "180.000 km", "expectedIssues": "İkinci kayış seti, turbo revizyonu ihtimali, su pompası, silindir kafası kontrolü, süspansiyon yenileme.", "estimatedCostEUR": 800 }
+    ]
+  },
+  {
+    "brand": "Ford",
+    "modelName": "Focus (Mk1, 1998-2004)",
+    "productionYears": "1998-2004",
+    "engine": "1.6 Zetec-SE 100 HP (Benzin, Atmosferik) + 5 İleri Manuel",
+    "segment": "C",
+    "reliabilityScore": 7.7,
+    "minPrice": 180000,
+    "maxPrice": 340000,
+    "estimatedMaintenanceCostEUR": 260,
+    "expertSummary": "İlk nesil Focus, 'C segmentinde sürüş dinamiğini yeniden tanımlayan' araç olarak anılır — arka bağımsız süspansiyonu (Control Blade) sayesinde bugün bile keyifli sürer. 1.6 Zetec-SE atmosferik motor turbosuz, LPG'ye uygun, dayanıklı; kayış trigerlidir. 100 HP yeterli ama coşkusuz. Yaş kaynaklı konular: kaporta pası (arka çamurluk, eşik), gösterge paneli arızası, ateşleme bobini, ön/arka süspansiyon burçları. Günlük dille: \"Eski ama hâlâ en keyifli sürenlerden; motoru dertsiz, LPG tak. Pas ve gösterge arızalarını göze al.\"",
+    "userFeedbackSummary": "Kullanıcılar sürüş dinamiğini ve gövde sağlamlığını hâlâ övüyor. Şikayetler: kaporta pası, gösterge paneli arızası (ibreler takılır/söner), bobin tekleme, ön/arka süspansiyon burçları, kalorifer rezistansı, cam krikosu. Kayış triger ve LPG subap ayarı takip edilmeli.",
+    "chronicIssues": [
+      { "title": "Kaporta pası (arka çamurluk, eşik, bagaj kapağı)", "description": "İnce sac ve yaş nedeniyle arka çamurluk içleri, eşikler ve bagaj kapağı alt kenarında pas. Alırken mutlaka kontrol; ilerlemişse kaynak/değişim.", "severity": "Orta", "estimatedCostEUR": 200, "affectedYears": "1998-2004" },
+      { "title": "Gösterge paneli arızası", "description": "Gösterge ibreleri takılır, kilometre/devir bilgisi kaybolur, aydınlatma söner. Panel revizyonu veya değişimi gerekir.", "severity": "Düşük", "estimatedCostEUR": 130, "affectedYears": "1998-2004" },
+      { "title": "Ateşleme bobini ve süspansiyon burçları", "description": "Bobin zayıflaması (tekleme); 80-120 bin km'de ön/arka süspansiyon burçları ve rot başlarında ses. Bobin+buji ve süspansiyon revizyonu.", "severity": "Düşük", "estimatedCostEUR": 180, "affectedYears": "1998-2004" }
+    ],
+    "pros": [
+      "Sınıfının hâlâ en keyifli sürenlerinden (Control Blade arka süspansiyon)",
+      "Dayanıklı, LPG uyumlu Zetec motor",
+      "Sağlam gövde ve iyi çarpışma güvenliği",
+      "Bol ve ucuz yedek parça"
+    ],
+    "cons": [
+      "Kaporta pası ve yaş kaynaklı yıpranma",
+      "Gösterge paneli arızası klasik",
+      "Eski nesil donanım ve yalıtım",
+      "Çok düşük ikinci el değeri"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Triger kayış seti, yağ+filtre, bujiler, LPG'de subap ayarı, ön/arka takım kontrolü, pas kontrolü.", "estimatedCostEUR": 200 },
+      { "mileage": "120.000 km", "expectedIssues": "İkinci triger seti, debriyaj seti, ön/arka süspansiyon revizyonu, gösterge kontrolü, bobin seti.", "estimatedCostEUR": 350 },
+      { "mileage": "200.000 km", "expectedIssues": "Su pompası, motor takozları, kaporta pas onarımı, klima kompresörü, direksiyon kutusu.", "estimatedCostEUR": 400 }
+    ]
+  },
+  {
+    "brand": "Ford",
+    "modelName": "Focus (Mk2, 2004-2008)",
+    "productionYears": "2004-2008",
+    "engine": "1.6 Duratec 100 HP (Benzin, Atmosferik) + 5 İleri Manuel",
+    "segment": "C",
+    "reliabilityScore": 7.8,
+    "minPrice": 320000,
+    "maxPrice": 520000,
+    "estimatedMaintenanceCostEUR": 250,
+    "expertSummary": "Mk2 Focus, ilk neslin sürüş keyfini koruyup gövde sağlamlığını ve iç kaliteyi yükseltti — C segmentinin en dengeli araçlarından biriydi. 1.6 Duratec atmosferik motor turbosuz, port enjeksiyonlu (LPG takılabilir), zincir trigerlidir — kayış triger masrafı YOK. 100 HP yeterli ama coşkusuz. Kritik konular: bobin/buji, gaz kelebeği (rölanti dengesizliği ve motor stop), ön amortisör üst takoz, direksiyon açı sensörü. Günlük dille: \"Focus'un en dertsiz benzinlisi; zincir triger + LPG uyumu + keyifli sürüş. Gaz kelebeği ve bobine dikkat.\"",
+    "userFeedbackSummary": "Kullanıcılar sürüş dengesini, gövde sağlamlığını ve zincir trigerin dertsizliğini övüyor. Şikayetler: gaz kelebeği kaynaklı rölanti dengesizliği ve ani motor stop, bobin tekleme, ön amortisör üst takoz sesi, direksiyon açı sensörü (ESP lambası), klima rölanti sesi. LPG'li örneklerde subap ayarı sorulmalı.",
+    "chronicIssues": [
+      { "title": "Gaz kelebeği kirlenmesi / arızası (rölanti stop)", "description": "1.6 Duratec'te gaz kelebeği kurum bağlar veya elektronik olarak arıza yapar; dalgalı rölanti, gaz kesince ani motor stop, arıza lambası. Temizlik+adaptasyon veya kelebek değişimi.", "severity": "Orta", "estimatedCostEUR": 180, "affectedYears": "2004-2008" },
+      { "title": "Ateşleme bobini ve buji tekleme", "description": "Yaşa bağlı bobin zayıflaması; rölantide titreme, gaza geç tepki, arıza lambası. Bobin+buji seti; LPG'de periyot kısa.", "severity": "Düşük", "estimatedCostEUR": 130, "affectedYears": "2004-2008" },
+      { "title": "Ön amortisör üst takoz ve direksiyon açı sensörü", "description": "Direksiyon çevirirken tıkırtı (üst takoz/rulman); direksiyon açı sensörü arızasında ESP/ABS lambası. Üst takoz yenileme ve sensör kalibrasyonu/değişimi.", "severity": "Düşük", "estimatedCostEUR": 200, "affectedYears": "2004-2008" }
+    ],
+    "pros": [
+      "Zincir triger — kayış değişim masrafı YOK",
+      "Port enjeksiyon — LPG takılabilir",
+      "Sınıfının en dengeli sürüş hislerinden biri",
+      "Sağlam gövde, iyi güvenlik, ucuz parça"
+    ],
+    "cons": [
+      "Gaz kelebeği kaynaklı rölanti stop klasik",
+      "100 HP coşkusuz",
+      "Bobin ve direksiyon sensörü arızaları",
+      "Yol sesi yalıtımı orta"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, hava/polen filtresi, gaz kelebeği temizliği, LPG'de subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 150 },
+      { "mileage": "120.000 km", "expectedIssues": "Ön takım revizyonu (üst takoz, burç, rot), bobin seti, direksiyon açı sensörü kontrolü, debriyaj kontrolü.", "estimatedCostEUR": 300 },
+      { "mileage": "200.000 km", "expectedIssues": "Debriyaj seti, su pompası, motor takozları, klima kompresörü, süspansiyon yenileme.", "estimatedCostEUR": 400 }
+    ]
+  },
+  {
+    "brand": "Ford",
+    "modelName": "Focus (Mk2, 2004-2008)",
+    "productionYears": "2004-2008",
+    "engine": "1.6 TDCi 90 HP (Dizel Turbo) + 5 İleri Manuel",
+    "segment": "C",
+    "reliabilityScore": 7.4,
+    "minPrice": 340000,
+    "maxPrice": 540000,
+    "estimatedMaintenanceCostEUR": 300,
+    "expertSummary": "Mk2 Focus'un 1.6 TDCi (90 HP) dizeli, PSA ortak DV6 motorudur: uzun yolda 4-4.5 lt yakar, torklu, kayış trigerlidir. DV6'nın kritik konusu turbo yağlama borusu kurumu (turbonun ani ölüm nedeni), EGR ve emme kurumu, DPF (bu yıllarda genelde yoktu), enjektör. Yağ periyodu ve kalitesi turbo ömrünü belirler. Günlük dille: \"Yakıtı düşük, keyifli sürer; ama DV6 turbosu bakıma bağımlı — yağ periyodunu kaçırma.\" Uzun yol ağırlıklı ekonomi arayan için mantıklı.",
+    "userFeedbackSummary": "Kullanıcılar yakıt tüketimini ve sürüş dengesini övüyor. Şikayetler: turbo arızası (yağlama borusu kurumu), EGR ve emme kurumu, enjektör revizyonu, kayış triger periyodu, çift kütleli volan. Yağ periyodu ve kaliteli mazot kritik.",
+    "chronicIssues": [
+      { "title": "Turbo yağlama borusu kurumu ve turbo arızası", "description": "DV6 ailesinde turbo yağ besleme borusu kurum bağlar; yağlama kesilir, turbo aniden ölür ve parçaları emme yoluyla motora girebilir. Yağ periyodu (max 10 bin km) ve kaliteli yağ şart; boru periyodik temizlenmeli/değişmeli.", "severity": "Kritik", "estimatedCostEUR": 500, "affectedYears": "2004-2008" },
+      { "title": "EGR valfi ve emme manifoldu kurumlanması", "description": "Şehir içi düşük devir kullanımda EGR ve emme yolları kurum bağlar; güç kaybı, arıza lambası. Temizlik veya yenileme.", "severity": "Orta", "estimatedCostEUR": 250, "affectedYears": "2004-2008" },
+      { "title": "Çift kütleli volan (DMF) ve debriyaj aşınması", "description": "Rölantide takırtı, kalkışta titreme; DMF + debriyaj seti birlikte değişir. İşçilik uzun, parça pahalı.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2004-2008" }
+    ],
+    "pros": [
+      "Düşük yakıt tüketimi (uzun yol 4-4.5 lt)",
+      "Sınıfının en dengeli sürüş hislerinden biri",
+      "Torklu dizel karakteri",
+      "Ucuz parça, yaygın servis"
+    ],
+    "cons": [
+      "DV6 turbo yağlama borusu — bakıma çok bağımlı, kritik risk",
+      "EGR/emme kurumu ve enjektör bakımları",
+      "Çift kütleli volan + debriyaj masrafı",
+      "Kayış triger periyodik gideri"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre (max 10 bin km periyot), yakıt/hava filtresi, EGR ilk kontrol, turbo yağ borusu kontrolü.", "estimatedCostEUR": 170 },
+      { "mileage": "150.000 km", "expectedIssues": "Turbo yağ borusu değişimi, EGR/emme temizliği, enjektör kontrolü, kayış triger seti, çift kütleli volan+debriyaj.", "estimatedCostEUR": 800 },
+      { "mileage": "250.000 km", "expectedIssues": "İkinci kayış seti, turbo revizyonu ihtimali, su pompası, süspansiyon yenileme.", "estimatedCostEUR": 700 }
+    ]
+  },
+  {
+    "brand": "Ford",
+    "modelName": "Focus (Mk2, 2004-2008)",
+    "productionYears": "2004-2008",
+    "engine": "1.6 TDCi 109 HP (Dizel Turbo) + 5 İleri Manuel",
+    "segment": "C",
+    "reliabilityScore": 7.4,
+    "minPrice": 350000,
+    "maxPrice": 560000,
+    "estimatedMaintenanceCostEUR": 300,
+    "expertSummary": "Mk2 Focus'un 1.6 TDCi'sinin 109 HP versiyonu, 90 HP ile aynı DV6 motorudur — sadece yazılım ve turbo basıncı farklıdır, bu yüzden otoyolda ve yüklü kullanımda gözle görülür daha rahattır. Kronik arızalar 90 HP ile birebir aynı: turbo yağlama borusu kurumu (kritik), EGR/emme kurumu, çift kütleli volan. Günlük dille: \"Aynı motorun daha güçlü hali; 90 yerine 109'u ara, otoyol geçişleri rahatlar. DV6 turbo bakımını yine aksatma.\" Uzun yol ağırlıklı, güç de isteyen kullanıcı için ideal.",
+    "userFeedbackSummary": "Kullanıcılar 90 HP'ye göre performans farkını ve otoyol rahatlığını övüyor. Şikayetler 90 HP ile aynı: turbo yağlama borusu kurumu, EGR/emme kurumu, enjektör, çift kütleli volan. Yağ periyodu ve kaliteli mazot kritik.",
+    "chronicIssues": [
+      { "title": "Turbo yağlama borusu kurumu ve turbo arızası", "description": "DV6'da turbo yağ besleme borusu kurum bağlar; yağlama kesilir, turbo aniden ölür. Yağ periyodu (max 10 bin km) ve kaliteli yağ şart; boru periyodik temizlenmeli/değişmeli.", "severity": "Kritik", "estimatedCostEUR": 500, "affectedYears": "2004-2008" },
+      { "title": "EGR valfi ve emme manifoldu kurumlanması", "description": "Şehir içi düşük devir kullanımda EGR ve emme yolları kurum bağlar; güç kaybı, arıza lambası. Temizlik veya yenileme.", "severity": "Orta", "estimatedCostEUR": 250, "affectedYears": "2004-2008" },
+      { "title": "Çift kütleli volan (DMF) ve debriyaj aşınması", "description": "Rölantide takırtı, kalkışta titreme; DMF + debriyaj seti birlikte değişir. İşçilik uzun, parça pahalı.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2004-2008" }
+    ],
+    "pros": [
+      "90 HP'ye göre belirgin daha iyi otoyol ve yüklü performansı",
+      "Düşük yakıt tüketimi",
+      "Sınıfının en dengeli sürüş hislerinden biri",
+      "Ucuz parça, yaygın servis"
+    ],
+    "cons": [
+      "DV6 turbo yağlama borusu — bakıma çok bağımlı, kritik risk",
+      "EGR/emme kurumu ve enjektör bakımları",
+      "Çift kütleli volan + debriyaj masrafı",
+      "Kayış triger periyodik gideri"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre (max 10 bin km periyot), yakıt/hava filtresi, EGR ilk kontrol, turbo yağ borusu kontrolü.", "estimatedCostEUR": 170 },
+      { "mileage": "150.000 km", "expectedIssues": "Turbo yağ borusu değişimi, EGR/emme temizliği, enjektör kontrolü, kayış triger seti, çift kütleli volan+debriyaj.", "estimatedCostEUR": 800 },
+      { "mileage": "250.000 km", "expectedIssues": "İkinci kayış seti, turbo revizyonu ihtimali, su pompası, süspansiyon yenileme.", "estimatedCostEUR": 700 }
+    ]
+  },
+  {
+    "brand": "Ford",
+    "modelName": "Focus (Mk2.5 makyaj, 2008-2011)",
+    "productionYears": "2008-2011",
+    "engine": "1.6 Ti-VCT 115 HP (Benzin, Atmosferik) + 5 İleri Manuel",
+    "segment": "C",
+    "reliabilityScore": 7.8,
+    "minPrice": 380000,
+    "maxPrice": 600000,
+    "estimatedMaintenanceCostEUR": 250,
+    "expertSummary": "2008 makyajıyla Focus yeni ön yüz, güncellenmiş kabin ve 1.6 Ti-VCT (değişken supap zamanlamalı, 115 HP) motoru aldı. Ti-VCT motor zincir trigerlidir, port enjeksiyonlu (LPG takılabilir), 1.6 Duratec'ten biraz daha güçlü ve verimli. Kritik konular: gaz kelebeği (rölanti stop), bobin, VCT kasnağı sesi, ön amortisör üst takoz. Günlük dille: \"Focus'un en dengeli benzinlisi; zincir triger + LPG uyumu + makyajlı modern kabin. Gaz kelebeği ve bobine dikkat.\" Aile + karma kullanım için ideal.",
+    "userFeedbackSummary": "Kullanıcılar sürüş dengesini, zincir trigeri ve makyajlı kabini övüyor. Şikayetler: gaz kelebeği kaynaklı rölanti dengesizliği ve motor stop, bobin tekleme, VCT kasnağı soğuk çalışma sesi, ön amortisör üst takoz, direksiyon açı sensörü. LPG'li örneklerde subap ayarı sorulmalı.",
+    "chronicIssues": [
+      { "title": "Gaz kelebeği kirlenmesi / arızası (rölanti stop)", "description": "Gaz kelebeği kurum bağlar veya elektronik arıza yapar; dalgalı rölanti, gaz kesince ani motor stop, arıza lambası. Temizlik+adaptasyon veya kelebek değişimi.", "severity": "Orta", "estimatedCostEUR": 180, "affectedYears": "2008-2011" },
+      { "title": "VCT (değişken supap) kasnağı sesi ve ateşleme bobini", "description": "Soğuk çalıştırmada VCT kasnağından tıkırtı; bobin zayıflayınca tekleme. Yağ bakımı düzenliyse kasnak sesi seyrek; bobin+buji seti ile çözülür.", "severity": "Düşük", "estimatedCostEUR": 200, "affectedYears": "2008-2011" },
+      { "title": "Ön amortisör üst takoz ve direksiyon açı sensörü", "description": "Direksiyon çevirirken tıkırtı (üst takoz/rulman); açı sensörü arızasında ESP/ABS lambası. Üst takoz yenileme ve sensör kalibrasyonu/değişimi.", "severity": "Düşük", "estimatedCostEUR": 200, "affectedYears": "2008-2011" }
+    ],
+    "pros": [
+      "Zincir triger — kayış değişim masrafı YOK",
+      "Port enjeksiyon — LPG takılabilir",
+      "Makyajlı modern kabin, iyi sürüş dengesi",
+      "Sağlam gövde, ucuz parça"
+    ],
+    "cons": [
+      "Gaz kelebeği kaynaklı rölanti stop klasik",
+      "VCT kasnağı sesi ve bobin arızaları",
+      "Yol sesi yalıtımı orta",
+      "115 HP orta seviye"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, hava/polen filtresi, gaz kelebeği temizliği, LPG'de subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 150 },
+      { "mileage": "120.000 km", "expectedIssues": "Ön takım revizyonu, bobin seti, VCT kasnağı kontrolü, direksiyon açı sensörü kontrolü, debriyaj kontrolü.", "estimatedCostEUR": 320 },
+      { "mileage": "200.000 km", "expectedIssues": "Debriyaj seti, su pompası, motor takozları, klima kompresörü, süspansiyon yenileme.", "estimatedCostEUR": 400 }
+    ]
+  },
+  {
+    "brand": "Ford",
+    "modelName": "Focus (Mk3, 2011-2014)",
+    "productionYears": "2011-2014",
+    "engine": "1.6 Ti-VCT 125 HP (Benzin, Atmosferik) + 6 İleri Powershift (DPS6, Kuru Çift Kavrama)",
+    "segment": "C",
+    "reliabilityScore": 5.8,
+    "minPrice": 430000,
+    "maxPrice": 680000,
+    "estimatedMaintenanceCostEUR": 480,
+    "expertSummary": "Mk3 Focus, tasarımı ve iç kalitesiyle segmentte öne çıktı; motor (1.6 Ti-VCT, zincir triger, LPG uyumlu) sağlamdır. SORUN ŞANZIMANDA: PowerShift (DPS6) kuru çift kavramalı otomatik, Ford'un en kötü üne sahip şanzımanıdır — kalkışta titreme (shudder), vites geçişlerinde tereddüt/sarsıntı, düşük hızda 'boşa alıp bağlama' hissi ve zamanla kavrama + TCM (kontrol modülü) arızası. ABD'de toplu davaya konu oldu. Kavrama ve TCM değişimi sık gündeme gelir. Günlük dille: \"Motoru iyi ama PowerShift'ten kaç; düz vitesli Mk3 ara ya da başka model bak. Otomatik şartsa kavrama/TCM geçmişini mutlaka sorgula.\"",
+    "userFeedbackSummary": "Kullanıcı yorumları büyük ölçüde PowerShift şikayeti: kalkışta ve düşük hızda titreme/sarsıntı, vites geçişlerinde darbe, 'debriyaj kokusu', arıza lambası, TCM arızası. Ford yazılım güncellemeleri ve garanti uzatması yaptı ama sorun karakteristik. Motor tarafında ciddi kronik az; gaz kelebeği ve bobin klasik.",
+    "chronicIssues": [
+      { "title": "PowerShift (DPS6) kuru kavrama titremesi ve aşınması", "description": "Kuru çift kavrama düşük hız ve dur-kalk trafikte ısınır; kalkışta ve manevrada belirgin titreme (shudder), sarsıntı, debriyaj kokusu ve zamanla kavrama balatalarının bitmesi. Kavrama seti + adaptasyon gerekir, kısa sürede tekrarlayabilir.", "severity": "Kritik", "estimatedCostEUR": 800, "affectedYears": "2011-2014" },
+      { "title": "PowerShift TCM (şanzıman kontrol modülü) arızası", "description": "TCM içindeki devre/lehim arızalanır; vites atmama, ani N'e düşme, arıza lambası, yol ortasında kalma. Modül değişimi + yazılım gerekir. Ford bazı pazarlarda garanti uzattı.", "severity": "Kritik", "estimatedCostEUR": 700, "affectedYears": "2011-2014" },
+      { "title": "Gaz kelebeği kirlenmesi ve ateşleme bobini", "description": "Gaz kelebeği kurumu (rölanti dengesizliği, motor stop) ve bobin zayıflaması (tekleme). Temizlik/adaptasyon ve bobin+buji seti.", "severity": "Düşük", "estimatedCostEUR": 180, "affectedYears": "2011-2014" }
+    ],
+    "pros": [
+      "Zincir trigerli, LPG uyumlu, dertsiz motor",
+      "Segment üstü iç kalite ve tasarım",
+      "İyi sürüş dinamiği ve gövde kontrolü",
+      "Şanzıman sağlamsa keyifli günlük araç"
+    ],
+    "cons": [
+      "PowerShift DPS6 kuru kavrama — Ford'un en kötü üne sahip otomatiği",
+      "Kavrama titremesi ve TCM arızası: sık ve pahalı",
+      "Otomatik örnekte ikinci el değeri baskılanıyor",
+      "Gaz kelebeği ve bobin klasiği"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, PowerShift kavrama ve TCM davranış kontrolü, gaz kelebeği temizliği, yazılım güncelleme.", "estimatedCostEUR": 200 },
+      { "mileage": "120.000 km", "expectedIssues": "PowerShift kavrama seti + adaptasyon (muhtemel), TCM kontrolü, ön takım revizyonu, bobin seti, debriyaj yok (DCT).", "estimatedCostEUR": 900 },
+      { "mileage": "180.000 km", "expectedIssues": "TCM değişimi ihtimali, ikinci kavrama seti, su pompası, süspansiyon yenileme, klima kompresörü.", "estimatedCostEUR": 950 }
+    ]
+  },
+  {
+    "brand": "Ford",
+    "modelName": "Focus (Mk3, 2011-2014)",
+    "productionYears": "2011-2014",
+    "engine": "1.6 TDCi 115 HP (Dizel Turbo) + 6 İleri Manuel",
+    "segment": "C",
+    "reliabilityScore": 7.3,
+    "minPrice": 450000,
+    "maxPrice": 700000,
+    "estimatedMaintenanceCostEUR": 340,
+    "expertSummary": "Mk3 Focus'un 1.6 TDCi (115 HP) dizeli + düz vites, PowerShift kabusundan kaçınmak isteyenler için doğru seçim: uzun yolda 4-4.5 lt yakar, torklu, kayış trigerlidir. Motor yine PSA ortak DV6 ailesindendir; kritik konular turbo yağlama borusu kurumu, EGR ve emme kurumu, DPF (şehir içi), enjektör. Günlük dille: \"Mk3 alacaksan dizel + düz vites al, PowerShift'ten uzak dur; ama DV6 turbo bakımını ve DPF'yi göze al.\" Uzun yol ağırlıklı kullanıcı için mantıklı.",
+    "userFeedbackSummary": "Kullanıcılar yakıt ekonomisini ve düz vitesin dertsizliğini (PowerShift'e göre) övüyor. Şikayetler: turbo yağlama borusu kurumu, EGR ve emme kurumu, DPF tıkanması (şehir içi), enjektör, kayış triger periyodu, çift kütleli volan. Yağ periyodu ve kaliteli mazot kritik.",
+    "chronicIssues": [
+      { "title": "Turbo yağlama borusu kurumu ve turbo arızası", "description": "DV6 ailesinde turbo yağ besleme borusu kurum bağlar; yağlama kesilir, turbo aniden ölür. Yağ periyodu (max 10 bin km) ve kaliteli yağ şart; boru periyodik temizlenmeli/değişmeli.", "severity": "Kritik", "estimatedCostEUR": 500, "affectedYears": "2011-2014" },
+      { "title": "EGR valfi, emme manifoldu ve DPF kurumlanması", "description": "Şehir içi düşük devir kullanımda EGR, emme yolları ve DPF kurum bağlar; güç kaybı, arıza lambası, rejenerasyon sorunu. Temizlik veya yenileme.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2011-2014" },
+      { "title": "Çift kütleli volan (DMF) ve debriyaj aşınması", "description": "Rölantide takırtı, kalkışta titreme; DMF + debriyaj seti birlikte değişir. İşçilik uzun, parça pahalı.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2011-2014" }
+    ],
+    "pros": [
+      "PowerShift yok — dayanıklı düz vites",
+      "Düşük yakıt tüketimi (uzun yol 4-4.5 lt)",
+      "Segment üstü iç kalite ve tasarım",
+      "İyi sürüş dinamiği"
+    ],
+    "cons": [
+      "DV6 turbo yağlama borusu — bakıma çok bağımlı, kritik risk",
+      "EGR/emme/DPF gibi dizel bakımları",
+      "Çift kütleli volan + debriyaj masrafı",
+      "Kayış triger periyodik gideri"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre (max 10 bin km periyot), yakıt/hava filtresi, EGR/DPF ilk kontrol, turbo yağ borusu kontrolü.", "estimatedCostEUR": 180 },
+      { "mileage": "150.000 km", "expectedIssues": "Turbo yağ borusu değişimi, EGR/emme/DPF temizliği, enjektör kontrolü, kayış triger seti, çift kütleli volan+debriyaj.", "estimatedCostEUR": 850 },
+      { "mileage": "250.000 km", "expectedIssues": "İkinci kayış seti, turbo revizyonu ihtimali, su pompası, DPF değişimi ihtimali, süspansiyon yenileme.", "estimatedCostEUR": 800 }
+    ]
+  },
+  {
+    "brand": "Ford",
+    "modelName": "Focus (Mk3.5 makyaj, 2014-2018)",
+    "productionYears": "2014-2018",
+    "engine": "1.5 TDCi 120 HP (Dizel Turbo) + 6 İleri Manuel",
+    "segment": "C",
+    "reliabilityScore": 7.4,
+    "minPrice": 600000,
+    "maxPrice": 950000,
+    "estimatedMaintenanceCostEUR": 340,
+    "expertSummary": "2014 makyajıyla Focus yeni ön yüz (Aston Martin tipi ızgara), güncellenmiş kabin ve SYNC multimedya aldı; 1.6 TDCi yerini Euro 6 uyumlu 1.5 TDCi'ye (120 HP) bıraktı. Motor yine DV5/DV6 türevi common-rail; kritik konular turbo, EGR ve emme kurumu, DPF (şehir içi), enjektör, AdBlue'lu geç örneklerde SCR. Kayış trigerlidir. Günlük dille: \"Makyajlı Focus, daha modern kabin ve Euro 6 dizel; PowerShift'ten kaçmak için yine düz vitesi seç. Turbo ve DPF bakımını göze al.\" Uzun yol ağırlıklı kullanıcı için mantıklı.",
+    "userFeedbackSummary": "Kullanıcılar güncellenen kabini, SYNC'i ve yakıt ekonomisini övüyor. Şikayetler: turbo, EGR ve emme kurumu, DPF tıkanması (şehir içi), enjektör, AdBlue/NOx sensörü (geç örnekler), SYNC ekranı donması, kayış triger periyodu. Yağ periyodu ve kaliteli mazot kritik.",
+    "chronicIssues": [
+      { "title": "Turbo, EGR ve emme manifoldu kurumlanması", "description": "Şehir içi düşük devir kullanımda turbo kayıcı kanatları, EGR ve emme yolları kurum bağlar; güç kaybı, arıza lambası. Temizlik veya yenileme.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2014-2018" },
+      { "title": "DPF tıkanması ve AdBlue/NOx sensörü (geç örnekler)", "description": "Kısa mesafe şehir kullanımında DPF dolar; AdBlue'lu Euro 6 örneklerde NOx sensörü ve dozaj ünitesi arızası. Uzun yol + temizlik/parça değişimi.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2015-2018" },
+      { "title": "SYNC multimedya donması ve kayış triger periyodu", "description": "SYNC ekranı donar/yeniden başlar; 1.5 TDCi kayış trigerlidir, 150-180 bin km'de set değişmelidir.", "severity": "Düşük", "estimatedCostEUR": 300, "affectedYears": "2014-2018" }
+    ],
+    "pros": [
+      "PowerShift yok — dayanıklı düz vites (bu motor+şanzıman)",
+      "Düşük yakıt tüketimi, Euro 6 dizel",
+      "Makyajlı modern kabin ve SYNC multimedya",
+      "İyi sürüş dinamiği ve gövde kontrolü"
+    ],
+    "cons": [
+      "Turbo/EGR/emme/DPF gibi dizel bakımları",
+      "AdBlue/NOx sensörü arızası (geç örnekler)",
+      "SYNC ekranı donması",
+      "Kayış triger periyodik gideri"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR/DPF ilk kontrol, AdBlue seviyesi (varsa), yazılım güncelleme.", "estimatedCostEUR": 180 },
+      { "mileage": "150.000 km", "expectedIssues": "Kayış triger seti, turbo/EGR/emme temizliği, enjektör kontrolü, DPF temizliği, debriyaj seti, ön takım revizyonu.", "estimatedCostEUR": 750 },
+      { "mileage": "250.000 km", "expectedIssues": "İkinci kayış seti, turbo revizyonu ihtimali, su pompası, DPF değişimi, NOx sensörleri, süspansiyon yenileme.", "estimatedCostEUR": 850 }
+    ]
+  },
+  {
+    "brand": "Ford",
+    "modelName": "Mondeo (Mk4, 2007-2014)",
+    "productionYears": "2007-2014",
+    "engine": "2.0 TDCi 140 HP (Dizel Turbo, DW10) + 6 İleri Manuel",
+    "segment": "D",
+    "reliabilityScore": 7.6,
+    "minPrice": 400000,
+    "maxPrice": 700000,
+    "estimatedMaintenanceCostEUR": 400,
+    "expertSummary": "Mk4 Mondeo, D segmentinde 'orta sınıfın Jaguar'ı' diye anılan, gövde kalitesi ve yol tutuşuyla premium hissi veren bir aile sedanı/hatchback. 2.0 TDCi (DW10, PSA ortak) 140 HP + 320 Nm motor, 5-5.5 lt yakan, dayanıklı bir ünite — 1.6'nın DV6 turbo derdi burada YOK, bu motor daha sağlam. Kritik konular: enjektör (Siemens/Continental), EGR ve emme kurumu, DPF (şehir içi), çift kütleli volan, turbo. Kayış trigerlidir. Günlük dille: \"Ucuza premium D sedan; motoru sağlam (DW10), enjektör ve DPF'sine dikkat, çift kütleli volanı hesaba kat.\" Uzun yol ağırlıklı aile için mantıklı.",
+    "userFeedbackSummary": "Kullanıcılar gövde kalitesini, yol tutuşunu ve iç hacmi çok övüyor; 'bu para bu araç' diyorlar. Şikayetler: enjektör revizyonu, EGR ve emme kurumu, DPF tıkanması (şehir içi), çift kütleli volan + debriyaj, turbo, ön/arka süspansiyon burçları (ağır gövde), park sensörü. Kayış triger periyodu takip edilmeli.",
+    "chronicIssues": [
+      { "title": "Enjektör (Siemens/Continental) arızası", "description": "Common-rail enjektörler zamanla debisini şaşırır; soğukta zor çalışma, is, tekleme, yakıt artışı. Kaliteli mazot ömrü uzatır. 4 enjektör revize/değişim; bazı enjektör tipleri pahalı.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2007-2014" },
+      { "title": "EGR valfi, emme manifoldu ve DPF kurumlanması", "description": "Şehir içi düşük devir kullanımda EGR, emme yolları ve DPF kurum bağlar; güç kaybı, arıza lambası, rejenerasyon sorunu. Temizlik veya yenileme.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2007-2014" },
+      { "title": "Çift kütleli volan (DMF) ve debriyaj aşınması", "description": "Rölantide takırtı, kalkışta titreme; DMF + debriyaj seti birlikte değişir. Ağır gövde nedeniyle ömür kısalabilir; işçilik uzun, parça pahalı.", "severity": "Orta", "estimatedCostEUR": 550, "affectedYears": "2007-2014" }
+    ],
+    "pros": [
+      "D segmentinde premium hissi, üstün yol tutuşu ve gövde kalitesi",
+      "Sağlam DW10 2.0 TDCi motor (1.6 DV6'nın turbo derdi yok)",
+      "Çok geniş iç hacim ve bagaj",
+      "Ucuza büyük araç"
+    ],
+    "cons": [
+      "Enjektör/EGR/DPF gibi dizel bakımları",
+      "Çift kütleli volan + debriyaj masrafı (ağır gövde)",
+      "Ağır gövde: süspansiyon ve fren aşınması hızlı",
+      "Yüksek parça ve işçilik maliyeti"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR/DPF ilk kontrol, ön/arka takım kontrolü.", "estimatedCostEUR": 200 },
+      { "mileage": "150.000 km", "expectedIssues": "Enjektör revizyonu, EGR/emme/DPF temizliği, kayış triger seti, çift kütleli volan+debriyaj, ön/arka süspansiyon revizyonu.", "estimatedCostEUR": 900 },
+      { "mileage": "250.000 km", "expectedIssues": "İkinci kayış seti, turbo revizyonu ihtimali, su pompası, DPF değişimi, direksiyon kutusu, süspansiyon komple.", "estimatedCostEUR": 950 }
+    ]
+  },
+  {
+    "brand": "Ford",
+    "modelName": "Mondeo (Mk4, 2007-2014)",
+    "productionYears": "2007-2014",
+    "engine": "1.6 TDCi 115 HP (Dizel Turbo) + 6 İleri Manuel",
+    "segment": "D",
+    "reliabilityScore": 7.0,
+    "minPrice": 380000,
+    "maxPrice": 640000,
+    "estimatedMaintenanceCostEUR": 380,
+    "expertSummary": "Mk4 Mondeo'nun 1.6 TDCi (115 HP) dizeli, ağır D segmenti gövdeyi hareket ettirmek için gerçekten yetersiz kalır — düz yolda idare eder ama yüklü, klimayla ve rampada zorlanır. Motor PSA ortak DV6 ailesindendir ve DV6'nın en bilinen zaafı turbo yağlama borusu kurumudur (turbonun ani ölüm nedeni). Yakıt avantajı da tartışmalı: küçük motor ağır gövdeyi zorlayınca 2.0 TDCi'ye yakın yakar. Günlük dille: \"Mondeo alacaksan 1.6'yı değil 2.0 TDCi'yi al; 1.6 hem yavaş hem DV6 turbo riski taşıyor.\" Sadece çok uygun fiyatlı ve bakımlı bir örnek düşünülebilir.",
+    "userFeedbackSummary": "Kullanıcılar 'ağır gövdeye 1.6 az' diyor. Şikayetler: DV6 turbo yağlama borusu kurumu ve turbo arızası, EGR/emme kurumu, DPF tıkanması, enjektör, performans yetersizliği, çift kütleli volan. Yağ periyodu ve kaliteli mazot kritik.",
+    "chronicIssues": [
+      { "title": "Turbo yağlama borusu kurumu ve turbo arızası", "description": "DV6 ailesinde turbo yağ besleme borusu kurum bağlar; yağlama kesilir, turbo aniden ölür ve parçaları motora girebilir. Yağ periyodu (max 10 bin km) ve kaliteli yağ şart; boru periyodik temizlenmeli/değişmeli.", "severity": "Kritik", "estimatedCostEUR": 550, "affectedYears": "2007-2014" },
+      { "title": "EGR valfi, emme manifoldu ve DPF kurumlanması", "description": "Şehir içi ve ağır gövdeyi zorlayan kullanımda EGR, emme yolları ve DPF kurum bağlar; güç kaybı, arıza lambası. Temizlik veya yenileme.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2007-2014" },
+      { "title": "Çift kütleli volan (DMF) ve debriyaj aşınması", "description": "Ağır gövde + küçük motor kombinasyonu debriyaj ve DMF ömrünü kısaltır; rölantide takırtı, kalkışta titreme. Set halinde değişir.", "severity": "Orta", "estimatedCostEUR": 550, "affectedYears": "2007-2014" }
+    ],
+    "pros": [
+      "D segmentinde premium hissi ve gövde kalitesi",
+      "Çok geniş iç hacim ve bagaj",
+      "Ucuza büyük araç",
+      "Düz yolda ekonomik (idealde 4.5-5 lt)"
+    ],
+    "cons": [
+      "Ağır gövde için 1.6 yetersiz — yüklü/rampada zorlanır",
+      "DV6 turbo yağlama borusu — bakıma çok bağımlı, kritik risk",
+      "EGR/emme/DPF gibi dizel bakımları; çift kütleli volan masrafı",
+      "Zorlanan motor beklenenden fazla yakar"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre (max 10 bin km periyot), yakıt/hava filtresi, EGR/DPF ilk kontrol, turbo yağ borusu kontrolü.", "estimatedCostEUR": 190 },
+      { "mileage": "150.000 km", "expectedIssues": "Turbo yağ borusu değişimi, EGR/emme/DPF temizliği, enjektör kontrolü, kayış triger seti, çift kütleli volan+debriyaj.", "estimatedCostEUR": 900 },
+      { "mileage": "250.000 km", "expectedIssues": "İkinci kayış seti, turbo revizyonu, su pompası, DPF değişimi, süspansiyon komple.", "estimatedCostEUR": 900 }
+    ]
+  },
+  {
+    "brand": "Ford",
+    "modelName": "Transit Connect (2002-2013)",
+    "productionYears": "2002-2013",
+    "engine": "1.8 TDCi 90 HP (Dizel Turbo) + 5 İleri Manuel",
+    "segment": "Ticari",
+    "reliabilityScore": 7.5,
+    "minPrice": 240000,
+    "maxPrice": 480000,
+    "estimatedMaintenanceCostEUR": 300,
+    "expertSummary": "İlk nesil Transit Connect, esnaf ve kargo taşımacılığında Türkiye'nin en dayanıklı hafif ticarilerinden biriydi: geniş yükleme alanı, yüksek tavan, sağlam şasi, Focus platformu kaynaklı iyi yol tutuş. 1.8 TDCi (Endura-DI türevi) dizel motor 90 HP + 220 Nm ile yüklü kullanıma uygun, kayış trigerlidir. Kritik konular: enjektör (özellikle kötü mazotla), turbo VNT, EGR kurumu, mazot pompası. Bu yıllarda DPF çoğunlukla yoktu. Günlük dille: \"Ticari klasiği; motoru sağlam ama enjektör ve mazot pompası mazot kalitesine hassas — kaliteli mazot kullan.\" Şehir içi/orta yol ticari kullanım için mantıklı.",
+    "userFeedbackSummary": "Esnaf kullanıcılar dayanıklılığı ve yükleme alanını çok övüyor; 400 bin km yapmış örnekler var. Şikayetler: enjektör arızası, mazot pompası (kötü mazotla), turbo VNT tıkanması, EGR kurumu, debriyaj (yoğun ticari kullanım), boşken sert süspansiyon ve yol sesi, kayar kapı ray sesi. Kaliteli mazot enjeksiyon sistemini korur.",
+    "chronicIssues": [
+      { "title": "Enjektör ve mazot pompası arızası (mazot kalitesine bağlı)", "description": "1.8 TDCi enjektörleri ve pompası kalitesiz mazota hassastır; is, tekleme, güç kaybı, soğukta zor çalışma. Kaliteli mazot ve yakıt filtresi periyodu ömrü belirler. Enjektör + pompa revizyonu pahalıdır.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2002-2013" },
+      { "title": "Turbo VNT tıkanması ve EGR kurumu", "description": "Kurumdan turbonun kayıcı kanatları ve EGR sıkışır/kirlenir; rampada güç düşüşü, arıza lambası, limp mode. Temizlik veya yenileme.", "severity": "Orta", "estimatedCostEUR": 320, "affectedYears": "2002-2013" },
+      { "title": "Debriyaj ve ön takım hızlı aşınması (ticari kullanım)", "description": "Yoğun dur-kalk trafikte ve yüklü kullanımda debriyaj balata-baskısı, ön salıncak ve rot başları hızlı biter. Aracın ticari geçmişine göre planla.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2002-2013" }
+    ],
+    "pros": [
+      "Sağlam şasi ve dayanıklı 1.8 TDCi motor",
+      "Geniş yükleme alanı, yüksek tavan",
+      "Focus platformu kaynaklı iyi yol tutuş",
+      "Ucuz parça, yaygın servis"
+    ],
+    "cons": [
+      "Enjektör/mazot pompası mazot kalitesine hassas",
+      "Turbo VNT / EGR kurumu",
+      "Ticari kullanımdan yıpranma (debriyaj, ön takım)",
+      "Boşken sert süspansiyon, yol sesi"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt filtresi (kaliteli), hava filtresi, EGR/turbo ilk kontrol, kayar kapı yağlama.", "estimatedCostEUR": 170 },
+      { "mileage": "150.000 km", "expectedIssues": "Enjektör kontrolü/revizyonu, EGR/turbo temizliği, kayış triger seti, debriyaj seti, ön takım revizyonu.", "estimatedCostEUR": 700 },
+      { "mileage": "300.000 km", "expectedIssues": "Mazot pompası revizyonu, ikinci kayış seti, turbo revizyonu, su pompası, süspansiyon komple.", "estimatedCostEUR": 850 }
+    ]
+  },
+  {
+    "brand": "Ford",
+    "modelName": "Transit Courier (2014-2023)",
+    "productionYears": "2014-2023",
+    "engine": "1.5 TDCi 75 HP (Dizel Turbo) + 5 İleri Manuel",
+    "segment": "Ticari",
+    "reliabilityScore": 7.5,
+    "minPrice": 350000,
+    "maxPrice": 620000,
+    "estimatedMaintenanceCostEUR": 290,
+    "expertSummary": "Transit Courier, Fiesta platformundan türetilmiş, Fiorino/Kangoo rakibi küçük panelvandır: düşük yakıt, kompakt dış ölçü, yüksek tavan, binek benzeri sürüş. 1.5 TDCi (75 HP) dizel motor şehir içinde 4.5-5 lt yakar, kayış trigerlidir. Kritik konular: turbo, EGR ve emme kurumu, DPF (şehir içi), enjektör. Günlük dille: \"Fiesta'nın sürüş konforunu isteyen esnaf için; ucuz yakıt, pratik yükleme. Dizel bakımlarını ve DPF'yi göze al.\" Şehir içi ticari kullanım için mantıklı.",
+    "userFeedbackSummary": "Esnaf kullanıcılar yakıt ekonomisini, kompakt ölçüyü ve binek benzeri sürüşü övüyor. Şikayetler: turbo, EGR ve emme kurumu, DPF tıkanması (sürekli kısa mesafe), enjektör, 75 HP'nin yüklü kullanımda yavaşlığı, boşken sert arka süspansiyon, kayar kapı ray sesi. Kaliteli mazot ve ara sıra uzun yol DPF için şart.",
+    "chronicIssues": [
+      { "title": "Turbo, EGR ve emme manifoldu kurumlanması", "description": "Şehir içi düşük devir kullanımda turbo kayıcı kanatları, EGR ve emme yolları kurum bağlar; güç kaybı, arıza lambası. Temizlik veya yenileme.", "severity": "Orta", "estimatedCostEUR": 350, "affectedYears": "2014-2023" },
+      { "title": "DPF (partikül filtresi) tıkanması", "description": "Sürekli kısa mesafe şehir içi kullanımda DPF dolar, rejenerasyon tamamlanamaz; güç kaybı ve servis rejenerasyonu gerekir. Ara sıra uzun yol önler; ileri seviyede temizlik/değişim pahalı.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2014-2023" },
+      { "title": "Enjektör kontrolü ve kayış triger periyodu", "description": "Common-rail enjektörler zamanla debisini şaşırır; 1.5 TDCi kayış trigerlidir, 150-180 bin km'de set değişmelidir. Kaliteli mazot enjektör ömrünü belirler.", "severity": "Orta", "estimatedCostEUR": 350, "affectedYears": "2014-2023" }
+    ],
+    "pros": [
+      "Şehir içi çok düşük yakıt tüketimi",
+      "Kompakt dış ölçü, yüksek tavan, pratik yükleme",
+      "Fiesta platformu kaynaklı binek benzeri sürüş konforu",
+      "Ucuz parça, yaygın servis"
+    ],
+    "cons": [
+      "Turbo/EGR/emme/DPF gibi dizel bakımları",
+      "75 HP yüklü kullanımda yavaş",
+      "Sürekli kısa mesafe şehir içi kullanımda DPF tıkanması",
+      "Boşken sert arka süspansiyon"
+    ],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR/DPF ilk kontrol, kayar kapı yağlama, fren hidroliği.", "estimatedCostEUR": 160 },
+      { "mileage": "150.000 km", "expectedIssues": "Kayış triger seti, turbo/EGR/emme temizliği, enjektör kontrolü, DPF temizliği, debriyaj seti, ön takım revizyonu.", "estimatedCostEUR": 650 },
+      { "mileage": "250.000 km", "expectedIssues": "İkinci kayış seti, turbo revizyonu ihtimali, su pompası, DPF değişimi ihtimali, arka süspansiyon bakımı.", "estimatedCostEUR": 650 }
+    ]
+  }
+]
