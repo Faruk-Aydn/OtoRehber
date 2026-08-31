@@ -1,0 +1,218 @@
+[
+  {
+    "brand": "Peugeot",
+    "modelName": "206 (1998-2009)",
+    "productionYears": "1998-2009",
+    "engine": "1.4 8V 75 HP (TU3, Benzin/LPG) + 5 İleri Manuel",
+    "segment": "B",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
+    "reliabilityScore": 7.3,
+    "minPrice": 130000,
+    "maxPrice": 260000,
+    "estimatedMaintenanceCostEUR": 200,
+    "expertSummary": "206, Türkiye'de bir dönem B segmentinin en çok satan aracıydı: şık tasarım, keyifli direksiyon hissi, ucuz alım. 1.4 8V (TU3) atmosferik motor turbosuz, LPG'ye tam uyumlu, basit ve dayanıklıdır; kayış trigerlidir (küçük hacim, 80-100 bin km periyot). 75 HP hafif gövdeyi şehir içinde iyi taşır, otoyolda zayıf. Kritik konular motorda değil: yaşa bağlı elektrik arızaları (cam krikosu, sinyal kolu, gösterge), kaporta pası (arka çamurluk, eşik), ön takım. Günlük dille: \"Şık ve keyifli süren ucuz bir klasik; motoru dertsiz, ama küçük elektrik arızalarına ve pasa hazır ol.\"",
+    "userFeedbackSummary": "Kullanıcılar tasarımı ve sürüş hissini hâlâ övüyor. Şikayetler: cam krikosu kopması, sinyal/silecek kolu arızası, gösterge paneli, arka çamurluk pası, ön takım burç sesleri, kalorifer rezistansı, klima performansı. Kayış triger ve LPG subap ayarı takip edilmeli.",
+    "chronicIssues": [
+      { "title": "Elektrik aksesuar arızaları (cam krikosu, sinyal kolu, gösterge)", "description": "Cam krikoları kopar, direksiyon altı kollar kontak kaybeder, gösterge ibreleri takılır. Tek tek ucuz ama yaygın.", "severity": "Düşük", "estimatedCostEUR": 100, "affectedYears": "1998-2009" },
+      { "title": "Kaporta pası (arka çamurluk, eşik, bagaj kapağı)", "description": "İnce sac ve yaş nedeniyle arka çamurluk içleri, eşikler ve bagaj kapağı alt kenarında pas. Alırken mutlaka kontrol; ilerlemişse kaynak/değişim.", "severity": "Orta", "estimatedCostEUR": 180, "affectedYears": "1998-2009" },
+      { "title": "Ön takım (rot, salıncak, rotil) ve kalorifer rezistansı", "description": "60-100 bin km'de ön takım sesleri; kalorifer üfleme rezistansı yanar. Ön takım revizyonu ve rezistans değişimi.", "severity": "Düşük", "estimatedCostEUR": 160, "affectedYears": "1998-2009" }
+    ],
+    "pros": ["Şık tasarım, keyifli direksiyon ve yol tutuş", "LPG'ye tam uyumlu, basit ve dayanıklı motor", "Çok ucuz alım, bol yedek parça", "İyi süspansiyon konforu"],
+    "cons": ["Yaşa bağlı elektrik/konfor arızaları", "Kaporta pası riski", "Eski nesil güvenlik ve donanım", "Kayış triger periyodik masrafı"],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Triger kayış seti, yağ+filtre, bujiler, LPG'de subap ayarı, ön takım kontrolü, pas kontrolü.", "estimatedCostEUR": 170 },
+      { "mileage": "120.000 km", "expectedIssues": "İkinci triger seti, debriyaj seti, ön takım revizyonu, cam krikosu/kollar, kalorifer rezistansı.", "estimatedCostEUR": 300 },
+      { "mileage": "200.000 km", "expectedIssues": "Su pompası, motor takozları, kaporta pas onarımı, klima kompresörü, süspansiyon yenileme.", "estimatedCostEUR": 380 }
+    ]
+  },
+  {
+    "brand": "Peugeot",
+    "modelName": "206 (1998-2009)",
+    "productionYears": "1998-2009",
+    "engine": "1.4 HDi 68 HP (DV4, Dizel Turbo) + 5 İleri Manuel",
+    "segment": "B",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
+    "reliabilityScore": 7.4,
+    "minPrice": 150000,
+    "maxPrice": 280000,
+    "estimatedMaintenanceCostEUR": 260,
+    "expertSummary": "206'nın 1.4 HDi (DV4, 68 HP) dizeli, çok düşük yakıt (uzun yol 3.5-4 lt) sunan, taksi ve filo kullanımında yaygın bir motordu. Blok olarak dayanıklıdır ama common-rail dizele özgü konuları var: turbo yağlama borusu kurumu (turbonun ani ölüm nedeni), EGR ve emme kurumu, enjektör. Kayış trigerlidir. 68 HP bugün çok zayıf. Günlük dille: \"Yakıtı harika ama 68 HP taş gibi yavaş; turbo yağlama borusuna dikkat, yağ periyodunu kaçırma.\" Sadece kısa-orta yol, ekonomi odaklı kullanım için.",
+    "userFeedbackSummary": "Kullanıcılar yakıt ekonomisini övüyor, performansı 'yok' buluyor. Şikayetler: turbo yağlama borusu kurumu ve turbo arızası, EGR ve emme kurumu, enjektör, kayış triger periyodu, 68 HP'nin yavaşlığı. Yağ periyodu ve kaliteli mazot kritik.",
+    "chronicIssues": [
+      { "title": "Turbo yağlama borusu kurumu ve turbo arızası", "description": "DV4/DV6 ailesinde turbo yağ besleme borusu kurum bağlar; yağlama kesilir, turbo aniden ölür. Yağ periyodu (max 10 bin km) ve kaliteli yağ şart; boru periyodik temizlenmeli/değişmeli.", "severity": "Kritik", "estimatedCostEUR": 450, "affectedYears": "1998-2009" },
+      { "title": "EGR valfi ve emme manifoldu kurumlanması", "description": "Şehir içi düşük devir kullanımda EGR ve emme yolları kurum bağlar; güç kaybı, arıza lambası. Temizlik veya yenileme.", "severity": "Orta", "estimatedCostEUR": 220, "affectedYears": "1998-2009" },
+      { "title": "Enjektör kontrolü ve kayış triger periyodu", "description": "Common-rail enjektörler debisini şaşırır; kayış trigeri 120-160 bin km'de değişmelidir. Kaliteli mazot enjektör ömrünü belirler.", "severity": "Orta", "estimatedCostEUR": 350, "affectedYears": "1998-2009" }
+    ],
+    "pros": ["Çok düşük yakıt tüketimi (uzun yol 3.5-4 lt)", "Dayanıklı DV4 motor bloğu", "Şık tasarım, keyifli direksiyon", "Ucuz alım, bol parça"],
+    "cons": ["68 HP çok zayıf — otoyol geçişleri hantal", "DV4 turbo yağlama borusu — bakıma çok bağımlı", "EGR/emme kurumu ve enjektör bakımları", "Yaşa bağlı elektrik arızaları ve kaporta pası"],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre (max 10 bin km periyot), yakıt/hava filtresi, EGR ilk kontrol, turbo yağ borusu kontrolü.", "estimatedCostEUR": 160 },
+      { "mileage": "150.000 km", "expectedIssues": "Turbo yağ borusu değişimi, EGR/emme temizliği, enjektör kontrolü, kayış triger seti, debriyaj seti, ön takım.", "estimatedCostEUR": 650 },
+      { "mileage": "250.000 km", "expectedIssues": "İkinci kayış seti, turbo revizyonu ihtimali, su pompası, kaporta pas onarımı, süspansiyon yenileme.", "estimatedCostEUR": 700 }
+    ]
+  },
+  {
+    "brand": "Peugeot",
+    "modelName": "301 (2012-2017)",
+    "productionYears": "2012-2017",
+    "engine": "1.6 VTi 115 HP (EC5, Benzin/LPG) + 5 İleri Manuel",
+    "segment": "C",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
+    "reliabilityScore": 7.7,
+    "minPrice": 350000,
+    "maxPrice": 560000,
+    "estimatedMaintenanceCostEUR": 220,
+    "expertSummary": "301, Peugeot'nun 'gelişmekte olan pazarlar' için tasarladığı ucuz, geniş bagajlı (506 lt) ve dayanıklı bir C sedandı — Türkiye'de filo ve taksi favorisi oldu. 1.6 VTi (EC5, önceki nesil TU5 türevi — EP6 DEĞİL) atmosferik motor turbosuz, LPG'ye tam uyumlu ve dertsizdir; kayış trigerlidir. 115 HP dolu araçta orta. Yüksek yol açıklığı Türkiye yollarına uygun. Günlük dille: \"Ucuz, kocaman bagajlı, LPG dostu, dertsiz filo sedanı; EP6 değil eski nesil motor — o yüzden sorunsuz. Kayış triger periyodunu takip et.\"",
+    "userFeedbackSummary": "Kullanıcılar bagajı, yüksek yol açıklığını ve LPG ekonomisini çok övüyor. Şikayetler: 115 HP'nin dolu araçta orta kalması, sert plastikler ve iç gıcırtılar, ateşleme bobini, ön takım burç sesleri, klima performansı, boya inceliği. LPG'li örneklerde subap ayarı sorulmalı.",
+    "chronicIssues": [
+      { "title": "Ateşleme bobini, buji ve gaz kelebeği kirlenmesi", "description": "Yaşa bağlı bobin zayıflaması (tekleme), gaz kelebeği kurumu (rölanti dengesizliği). Bobin+buji seti ve kelebek temizliği/adaptasyonu; LPG'de periyot kısa.", "severity": "Düşük", "estimatedCostEUR": 130, "affectedYears": "2012-2017" },
+      { "title": "Ön süspansiyon burçları ve amortisör üst takoz sesi", "description": "Türkiye yollarında 60-100 bin km'de ön takım tıkırtısı; salıncak burçları ve üst takozlar yenilenir. Parça ucuz.", "severity": "Düşük", "estimatedCostEUR": 140, "affectedYears": "2012-2017" },
+      { "title": "İç mekan gıcırtıları ve boya inceliği", "description": "Torpido/kapı panelinde gıcırtı; boya ince, taş izi kolay. Keçe/takoz takviyesi ve boya bakımı.", "severity": "Düşük", "estimatedCostEUR": 100, "affectedYears": "2012-2017" }
+    ],
+    "pros": ["506 lt segment üstü bagaj, yüksek yol açıklığı", "LPG'ye tam uyumlu, dertsiz EC5 motor (EP6 değil)", "Kayış trigerli ama basit atmosferik — sorunsuz", "Ucuz alım ve işletme, filo/taksi dostu"],
+    "cons": ["115 HP dolu araçta orta", "Sert plastikler, iç gıcırtılar, boya ince", "Ön süspansiyon burçları erken ses yapıyor", "Yol sesi yalıtımı orta"],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, hava/polen filtresi, gaz kelebeği temizliği, LPG'de subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 150 },
+      { "mileage": "120.000 km", "expectedIssues": "Triger kayış seti, ön süspansiyon revizyonu, bobin seti, debriyaj kontrolü, LPG regülatör bakımı.", "estimatedCostEUR": 350 },
+      { "mileage": "200.000 km", "expectedIssues": "İkinci triger seti, debriyaj seti, su pompası, motor takozları, klima kompresörü, süspansiyon.", "estimatedCostEUR": 400 }
+    ]
+  },
+  {
+    "brand": "Peugeot",
+    "modelName": "301 (2012-2017)",
+    "productionYears": "2012-2017",
+    "engine": "1.6 HDi 92 HP (DV6, Dizel Turbo) + 5 İleri Manuel",
+    "segment": "C",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
+    "reliabilityScore": 7.3,
+    "minPrice": 380000,
+    "maxPrice": 600000,
+    "estimatedMaintenanceCostEUR": 320,
+    "expertSummary": "301'in 1.6 HDi (DV6, 92 HP) dizeli, çok düşük yakıt (uzun yol 3.5-4 lt) ve kocaman bagajla filo/taksi için ideal görünür — ama DV6 motorunun en bilinen zaafı turbo yağlama borusu kurumudur: boru tıkanınca turbo aniden ölür ve parçaları emme yoluyla motora girip ağır hasar verir. Ayrıca EGR, emme kurumu, DPF (FAP — Eolys katkısı gerektirir), enjektör. Kayış trigerlidir. Günlük dille: \"Yakıtı ve bagajı harika ama DV6 turbo yağ borusu 'motor katili' — yağ periyodunu asla kaçırma, boruyu periyodik değiştir, FAP katkısını takip et.\" Servis kayıtsız alınmaz.",
+    "userFeedbackSummary": "Bakımlı örnek sahipleri yakıt ekonomisinden memnun; şanssız olanlar 'turbo gitti, motora girdi' diyor. Şikayetler: turbo yağlama borusu kurumu ve turbo/motor hasarı, EGR ve emme kurumu, DPF/FAP tıkanması ve Eolys katkı sistemi, enjektör, çift kütleli volan. Yağ periyodu ve kaliteli mazot kritik.",
+    "chronicIssues": [
+      { "title": "DV6 turbo yağlama borusu kurumu ve turbo/motor hasarı", "description": "1.6 HDi'nin en yaygın ölüm nedeni: turbo yağ besleme borusu kurum bağlar, yağlama kesilir, turbo aniden dağılır ve kanatları emme manifolduyla motora girer. Yağ periyodu (max 10 bin km, kaliteli yağ) ve borunun 60-80 bin km'de temizlenmesi/değişmesi şart.", "severity": "Kritik", "estimatedCostEUR": 600, "affectedYears": "2012-2017" },
+      { "title": "EGR valfi, emme manifoldu ve DPF/FAP tıkanması", "description": "Şehir içi kullanımda EGR ve emme yolları kurum bağlar; DPF (FAP) Eolys katkı sıvısı biterse temizlenmez ve tıkanır. Güç kaybı, arıza lambası, rejenerasyon sorunu.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2012-2017" },
+      { "title": "Enjektör, çift kütleli volan (DMF) ve kayış triger periyodu", "description": "Common-rail enjektörler debisini şaşırır; DMF+debriyaj rölantide takırtı yapar; kayış trigeri 120-160 bin km'de değişmelidir.", "severity": "Orta", "estimatedCostEUR": 550, "affectedYears": "2012-2017" }
+    ],
+    "pros": ["Çok düşük yakıt tüketimi (uzun yol 3.5-4 lt)", "506 lt segment üstü bagaj, yüksek yol açıklığı", "Ucuz alım, bol parça, filo/taksi dostu", "Torklu dizel karakteri"],
+    "cons": ["DV6 turbo yağ borusu — 'motor katili', bakıma çok bağımlı", "EGR/emme/DPF (FAP + Eolys) gibi dizel bakımları", "Çift kütleli volan + debriyaj masrafı", "Servis kayıtsız alınmaz"],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre (max 10 bin km periyot), yakıt/hava filtresi, turbo yağ borusu değişimi, EGR ilk kontrol, FAP/Eolys seviyesi.", "estimatedCostEUR": 200 },
+      { "mileage": "150.000 km", "expectedIssues": "İkinci turbo yağ borusu, EGR/emme/DPF temizliği, enjektör kontrolü, çift kütleli volan+debriyaj, kayış triger seti, ön takım.", "estimatedCostEUR": 850 },
+      { "mileage": "250.000 km", "expectedIssues": "Turbo revizyonu ihtimali, ikinci kayış seti, DPF değişimi, su pompası, süspansiyon yenileme.", "estimatedCostEUR": 850 }
+    ]
+  },
+  {
+    "brand": "Peugeot",
+    "modelName": "307 (2001-2008)",
+    "productionYears": "2001-2008",
+    "engine": "1.6 16V 110 HP (TU5JP4, Benzin/LPG) + 4 İleri Otomatik (AL4/DP0, tork konvertörlü)",
+    "segment": "C",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
+    "reliabilityScore": 6.3,
+    "minPrice": 200000,
+    "maxPrice": 360000,
+    "estimatedMaintenanceCostEUR": 320,
+    "expertSummary": "307, yüksek tavanı ve ferah kabiniyle döneminde beğenildi ama ikinci elde en çok dikkat gereken paketlerden biri, özellikle otomatiği. 1.6 16V (TU5) motor LPG'ye uygundur ve blok olarak dayanıklıdır (kayış trigerli). SORUN ŞANZIMANDA: AL4/DP0 4 ileri otomatik (PSA-Renault ortak) yağ ihmaline ve ısınmaya çok hassastır — solenoid, valf gövdesi ve tork konvertörü arızaları çok yaygındır, 'yenilenmiş' bile olsa kısa sürede tekrar edebilir. Günlük dille: \"Otomatik istiyorsan AL4'ten kaç; sadece yağı düzenli değişmiş, soğutucusu takılmış, servis kayıtlı bir örnek riske girer.\"",
+    "userFeedbackSummary": "Kullanıcı yorumlarının çoğu AL4 şikayeti: sarsıntı, kalkışta darbe, 3. vitese takılıp kalma (limp), arıza lambası, komple arıza. Yağı değişmiş ve soğutuculu örnekler daha uzun gidiyor. Motor tarafında bobin, gaz kelebeği, ön takım burçları klasik. İç plastikler gıcırdıyor.",
+    "chronicIssues": [
+      { "title": "AL4/DP0 4 ileri otomatik şanzıman arızası", "description": "PSA'nın 4 ileri otomatiği yağ ısınmasına ve ihmale çok hassastır; solenoidler, valf gövdesi ve tork konvertörü arıza yapar. Sarsıntı, kalkışta darbe, limp mode (3. viteste kalma), komple arıza. Ek yağ soğutucu ve 40-50 bin km yağ değişimi şart; revizyon kısa ömürlü olabilir.", "severity": "Kritik", "estimatedCostEUR": 700, "affectedYears": "2001-2008" },
+      { "title": "Ateşleme bobini, gaz kelebeği ve ön takım burçları", "description": "Bobin zayıflaması (tekleme), gaz kelebeği kurumu (rölanti dengesizliği) ve 60-100 bin km'de ön takım sesleri. Bobin+kelebek temizliği ve ön takım revizyonu.", "severity": "Düşük", "estimatedCostEUR": 200, "affectedYears": "2001-2008" },
+      { "title": "İç mekan gıcırtıları ve elektrik arızaları", "description": "Torpido/kapı panelinde gıcırtı; cam krikosu, gösterge ve konfor modülü arızaları. Kozmetik/ucuz ama sık.", "severity": "Düşük", "estimatedCostEUR": 120, "affectedYears": "2001-2008" }
+    ],
+    "pros": ["Yüksek tavan, ferah ve pratik kabin", "LPG'ye uygun, dayanıklı TU5 motor bloğu", "Ucuz alım fiyatı", "İyi süspansiyon konforu"],
+    "cons": ["AL4/DP0 4 ileri otomatik — çok riskli, pahalı arıza", "Bobin/kelebek ve ön takım arızaları", "İç gıcırtılar ve elektrik arızaları", "Düşük ve zor korunur ikinci el değeri"],
+    "milestones": [
+      { "mileage": "40.000 km", "expectedIssues": "Yağ+filtre, bujiler, AL4 şanzıman yağı (40-50 bin km periyot), gaz kelebeği temizliği, LPG'de subap ayarı.", "estimatedCostEUR": 220 },
+      { "mileage": "120.000 km", "expectedIssues": "AL4 yağ değişimi + soğutucu kontrolü, ön takım revizyonu, bobin seti, triger kayış seti, valf gövdesi kontrolü.", "estimatedCostEUR": 500 },
+      { "mileage": "180.000 km", "expectedIssues": "AL4 revizyonu/değişimi ihtimali, tork konvertörü, su pompası, motor takozları, süspansiyon yenileme.", "estimatedCostEUR": 800 }
+    ]
+  },
+  {
+    "brand": "Peugeot",
+    "modelName": "308 (T7, 2007-2013)",
+    "productionYears": "2007-2013",
+    "engine": "1.6 VTi 120 HP (EP6, Benzin) + 4 İleri Otomatik (AL4, tork konvertörlü)",
+    "segment": "C",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
+    "reliabilityScore": 6.0,
+    "minPrice": 280000,
+    "maxPrice": 460000,
+    "estimatedMaintenanceCostEUR": 400,
+    "expertSummary": "İlk nesil 308 (T7), 307'nin halefi — daha olgun tasarım, kaliteli kabin. Ama motor + şanzıman kombinasyonu ikinci elde riskli: 1.6 VTi (EP6, PSA-BMW 'Prince' ailesi) direkt/port karışık enjeksiyonlu, zincir trigerlidir AMA erken üretimde zincir gerdirici zayıftır (zincir atlar → motor hasar), ayrıca emme supabı karbon birikimi, yüksek yağ tüketimi ve termostat/su pompası sorunları çok yaygın. Şanzıman yine AL4/DP0. LPG bu motora önerilmez. Günlük dille: \"EP6 + AL4 ikilisi 'servisin evi'; sadece zinciri değişmiş, yağ tüketmeyen, AL4 yağı bakımlı bir örnek riske girer.\"",
+    "userFeedbackSummary": "Kullanıcı yorumları ağırlıklı şikayet: EP6'da zincir gerdirici sesi ve atması, yağ tüketimi (1000 km'de 1 lt'ye çıkan), emme karbon birikimi, termostat/su pompası, VVT elektromıknatısları; AL4 şanzımanda sarsıntı ve arıza. Bakımlı örnek bile 'her ay serviste' olabiliyor.",
+    "chronicIssues": [
+      { "title": "EP6 zincir triger gerdiricisi ve yağ tüketimi", "description": "Erken üretim EP6'da zincir gerdirici basıncı tutamaz; soğukta zincir sesi, ileri seviyede zincir atlaması ve motor hasarı. Ayrıca piston segmanları/valf lastikleri yağ tüketir (1000 km'de 0.5-1 lt). Güncellenmiş gerdirici+zincir seti ve segman revizyonu pahalı.", "severity": "Kritik", "estimatedCostEUR": 700, "affectedYears": "2007-2013" },
+      { "title": "AL4/DP0 4 ileri otomatik şanzıman arızası", "description": "PSA'nın 4 ileri otomatiği yağ ısınmasına çok hassastır; solenoid, valf gövdesi, tork konvertörü arızaları. Sarsıntı, darbe, limp mode. Yağ soğutucu ve 40-50 bin km yağ değişimi şart.", "severity": "Kritik", "estimatedCostEUR": 700, "affectedYears": "2007-2013" },
+      { "title": "Emme supabı karbon birikimi, termostat ve su pompası", "description": "Direkt enjeksiyon emme supaplarını yıkamaz (karbon); plastik termostat gövdesi ve su pompası sızdırır/hararet yapar. Karbon temizliği + termostat/pompa modülü.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2007-2013" }
+    ],
+    "pros": ["Olgun tasarım, kaliteli kabin (307'ye göre)", "İyi sürüş konforu ve gövde", "Geniş bagaj", "Ucuz alım fiyatı"],
+    "cons": ["EP6 zincir gerdirici + yağ tüketimi — pahalı riskler", "AL4/DP0 4 ileri otomatik — çok riskli", "Emme karbonu, termostat, su pompası — sürekli bakım", "LPG uyumsuz; toplam işletme maliyeti çok yüksek"],
+    "milestones": [
+      { "mileage": "40.000 km", "expectedIssues": "Yağ+filtre (seviye takibi), bujiler, AL4 şanzıman yağı, zincir sesi dinleme, termostat/su pompası kontrolü.", "estimatedCostEUR": 250 },
+      { "mileage": "100.000 km", "expectedIssues": "Zincir triger seti (ses varsa), emme supabı karbon temizliği, AL4 yağ+soğutucu, VVT elektromıknatıs, ön takım.", "estimatedCostEUR": 900 },
+      { "mileage": "160.000 km", "expectedIssues": "Segman/yağ tüketimi revizyonu ihtimali, AL4 revizyonu ihtimali, su pompası+termostat, süspansiyon yenileme.", "estimatedCostEUR": 1100 }
+    ]
+  },
+  {
+    "brand": "Peugeot",
+    "modelName": "308 (T9, 2013-2021)",
+    "productionYears": "2013-2021",
+    "engine": "1.6 BlueHDi 120 HP (DV6, Dizel Turbo) + 6 İleri EAT6 (Aisin, tork konvertörlü)",
+    "segment": "C",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
+    "reliabilityScore": 7.2,
+    "minPrice": 550000,
+    "maxPrice": 900000,
+    "estimatedMaintenanceCostEUR": 380,
+    "expertSummary": "İkinci nesil 308 (T9), 2014 Avrupa'da Yılın Otomobili — hafif EMP2 platformu, minimalist i-Cockpit kabin, çok düşük yakıt. 1.6 BlueHDi (DV6 ailesi, 120 HP) dizel motor + 6 ileri EAT6 (Aisin tork konvertörlü — DCT/AL4 DEĞİL, büyük güven avantajı). DV6'nın turbo yağ borusu bu geç nesilde iyileştirildi ama yine yağ periyoduna hassas; ayrıca EGR, DPF, AdBlue (BlueHDi'de standart) → NOx sensörü. Günlük dille: \"i-Cockpit'i seversen çok keyifli; Aisin otomatik güvenli, ama BlueHDi'nin AdBlue/NOx ve DPF bakımını göze al, yağ periyodunu kaçırma.\"",
+    "userFeedbackSummary": "Kullanıcılar tasarımı, i-Cockpit'i, yakıt ekonomisini ve Aisin otomatiği çok övüyor. Şikayetler: AdBlue/NOx sensörü arızası (pahalı), DPF tıkanması (şehir içi), EGR kurumu, i-Cockpit dokunmatik ekran donması, park sensörü/kamera, bazı örneklerde turbo. Yağ periyodu ve kaliteli mazot şart.",
+    "chronicIssues": [
+      { "title": "AdBlue / SCR NOx sensörü ve dozaj ünitesi arızası", "description": "BlueHDi'de AdBlue standart; NOx sensörleri ve dozaj pompası arızalanır, 'X km sonra çalışmayacak' uyarısı verir. Sensör ve pompa pahalıdır; kristalleşme sorunları da olur.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2013-2021" },
+      { "title": "DPF tıkanması ve EGR kurumu (şehir içi)", "description": "Kısa mesafe kullanımda DPF dolar, rejenerasyon tamamlanamaz; EGR kurum bağlar. Güç kaybı, arıza lambası. Uzun yol + temizlik/değişim.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2013-2021" },
+      { "title": "i-Cockpit dokunmatik ekran donması ve turbo/yağ borusu", "description": "Merkezi dokunmatik ekran donar/yeniden başlar (klima kontrolü de ekranda). DV6 turbo yağ borusu yağ periyodu ihmal edilirse yine risk taşır. Yazılım güncelleme ve boru kontrolü.", "severity": "Düşük", "estimatedCostEUR": 250, "affectedYears": "2013-2021" }
+    ],
+    "pros": ["2014 Avrupa'da Yılın Otomobili — hafif, verimli, keyifli", "Aisin EAT6 tork konvertörlü otomatik (DCT/AL4 değil)", "Çok düşük yakıt tüketimi, i-Cockpit kabin", "Geniş bagaj, iyi süspansiyon konforu"],
+    "cons": ["AdBlue/NOx sensörü arızası pahalı", "DPF/EGR gibi dizel bakımları, şehir içine uygun değil", "i-Cockpit ekranı donması (klima da ekranda)", "DV6 yağ borusu yağ periyoduna hassas"],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR/DPF ilk kontrol, AdBlue seviyesi, EAT6 şanzıman yağı kontrolü, yazılım güncelleme.", "estimatedCostEUR": 200 },
+      { "mileage": "150.000 km", "expectedIssues": "EGR/DPF temizliği, NOx sensörü kontrolü, turbo yağ borusu kontrolü, enjektör kontrolü, EAT6 yağı, ön takım revizyonu.", "estimatedCostEUR": 700 },
+      { "mileage": "250.000 km", "expectedIssues": "Turbo revizyonu ihtimali, DPF değişimi, NOx sensörleri, kayış triger seti, su pompası, süspansiyon yenileme.", "estimatedCostEUR": 850 }
+    ]
+  },
+  {
+    "brand": "Peugeot",
+    "modelName": "Partner (2008-2018)",
+    "productionYears": "2008-2018",
+    "engine": "1.6 HDi 92 HP (DV6, Dizel Turbo) + 5 İleri Manuel",
+    "segment": "Ticari",
+    "bodyType": "Panelvan",
+    "drivetrain": "Önden Çekiş",
+    "reliabilityScore": 7.3,
+    "minPrice": 280000,
+    "maxPrice": 560000,
+    "estimatedMaintenanceCostEUR": 320,
+    "expertSummary": "İkinci nesil Partner (Citroën Berlingo ile ikiz), esnaf ve kalabalık aile taşımacılığında Kangoo/Doblo'nun ana rakibi: yüksek tavan, kayar kapılar, geniş bagaj, düşük yakıt. 1.6 HDi (DV6, 92 HP) motor şehir içinde 5-5.5 lt yakar. Kritik nokta yine DV6 turbo yağlama borusu kurumudur (turbonun ani ölüm nedeni); ayrıca EGR/emme kurumu, DPF (FAP + Eolys), enjektör. Kayış trigerlidir. Günlük dille: \"Ucuz yakıt, kocaman iç hacim; ama DV6 turbo yağ borusuna dikkat, ticari yorulmuşluğunu ve DPF'yi sorgula.\"",
+    "userFeedbackSummary": "Esnaf kullanıcılar yakıt ve iç hacimden memnun. Şikayetler: turbo yağlama borusu kurumu ve turbo arızası, EGR/emme kurumu, DPF/FAP tıkanması ve Eolys katkı sistemi, enjektör, debriyaj (yoğun ticari kullanım), kayar kapı ray sesi, boşken sert süspansiyon. Yağ periyodu kritik.",
+    "chronicIssues": [
+      { "title": "DV6 turbo yağlama borusu kurumu ve turbo arızası", "description": "1.6 HDi'nin en yaygın ölüm nedeni: turbo yağ besleme borusu kurum bağlar, turbo aniden dağılır ve parçaları motora girer. Yağ periyodu (max 10 bin km) ve borunun 60-80 bin km'de değişmesi şart.", "severity": "Kritik", "estimatedCostEUR": 600, "affectedYears": "2008-2018" },
+      { "title": "EGR valfi, emme manifoldu ve DPF/FAP tıkanması", "description": "Şehir içi kullanımda EGR ve emme yolları kurum bağlar; DPF (FAP) Eolys katkısı biterse tıkanır. Güç kaybı, arıza lambası, rejenerasyon sorunu. Temizlik/yenileme.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2008-2018" },
+      { "title": "Enjektör, debriyaj ve kayar kapı mekanizması", "description": "Common-rail enjektörler debisini şaşırır; ticari kullanımda debriyaj hızlı biter; kayar kapı rayı/makarası aşınır. Revizyon ve ray bakımı.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2008-2018" }
+    ],
+    "pros": ["Şehir içi çok düşük yakıt tüketimi", "Yüksek tavan, kayar kapı, geniş yükleme alanı", "Kangoo/Doblo'ya rakip iç hacim ve konfor", "Ucuz parça, yaygın servis"],
+    "cons": ["DV6 turbo yağ borusu — 'motor katili', bakıma çok bağımlı", "EGR/emme/DPF (FAP+Eolys) gibi dizel bakımları", "Ticari kullanımdan yıpranma (debriyaj, ön takım)", "Boşken sert süspansiyon, kayar kapı bakımı"],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre (max 10 bin km periyot), yakıt/hava filtresi, turbo yağ borusu değişimi, EGR ilk kontrol, FAP/Eolys seviyesi, kayar kapı yağlama.", "estimatedCostEUR": 200 },
+      { "mileage": "150.000 km", "expectedIssues": "İkinci turbo yağ borusu, EGR/emme/DPF temizliği, enjektör kontrolü, debriyaj seti, kayış triger seti, ön takım revizyonu.", "estimatedCostEUR": 800 },
+      { "mileage": "250.000 km", "expectedIssues": "Turbo revizyonu ihtimali, ikinci kayış seti, DPF değişimi, su pompası, arka torsiyon aks bakımı.", "estimatedCostEUR": 800 }
+    ]
+  }
+]

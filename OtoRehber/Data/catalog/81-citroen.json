@@ -1,0 +1,137 @@
+[
+  {
+    "brand": "Citroën",
+    "modelName": "C3 (2002-2009)",
+    "productionYears": "2002-2009",
+    "engine": "1.4 8V 75 HP (TU3, Benzin/LPG) + 5 İleri Manuel",
+    "segment": "B",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
+    "reliabilityScore": 7.2,
+    "minPrice": 130000,
+    "maxPrice": 250000,
+    "estimatedMaintenanceCostEUR": 210,
+    "expertSummary": "İlk nesil C3, yüksek tavanı, panoramik ön camı (Exclusive) ve ferah kabiniyle B segmentinde farklı bir seçenekti. 1.4 8V (TU3) atmosferik motor turbosuz, LPG'ye tam uyumlu ve basittir; kayış trigerlidir. 75 HP hafif gövdeyi şehir içinde taşır. Citroën'e özgü konu hidrolik/elektro-hidrolik direksiyon ve konfor elektroniğidir; ayrıca yaşa bağlı elektrik ve süspansiyon arızaları. Günlük dille: \"Ferah ve farklı bir şehir arabası; motoru dertsiz ama Citroën elektroniğine ve panoramik cam contası su kaçağına dikkat.\"",
+    "userFeedbackSummary": "Kullanıcılar ferah kabini ve panoramik camı sever. Şikayetler: cam krikosu, konfor modülü (BSI) arızaları, panoramik cam contasından su kaçağı, ön takım burç sesleri, kalorifer rezistansı, klima performansı, boya inceliği. Kayış triger ve LPG subap ayarı takip edilmeli.",
+    "chronicIssues": [
+      { "title": "Konfor elektroniği (BSI/BSM) ve cam krikosu arızaları", "description": "Citroën'in gövde bilgisayarı (BSI) ve modülleri yaşa bağlı arıza yapar; cam krikoları kopar, aydınlatma/sinyal sorunları olur. Modül revizyonu veya parça değişimi.", "severity": "Orta", "estimatedCostEUR": 220, "affectedYears": "2002-2009" },
+      { "title": "Panoramik cam contası su kaçağı ve tavan döşemesi", "description": "Panoramik ön camlı (Exclusive) örneklerde conta yaşlanınca su içeri sızar, tavan döşemesi ve elektronik zarar görür. Conta yenileme.", "severity": "Düşük", "estimatedCostEUR": 150, "affectedYears": "2002-2009" },
+      { "title": "Ön takım, kalorifer rezistansı ve triger kayışı", "description": "60-100 bin km'de ön takım sesleri; kalorifer üfleme rezistansı yanar; kayış trigeri 100-120 bin km'de değişmelidir.", "severity": "Düşük", "estimatedCostEUR": 200, "affectedYears": "2002-2009" }
+    ],
+    "pros": ["Ferah, yüksek tavanlı ve farklı kabin", "LPG'ye tam uyumlu, basit TU3 motoru", "İyi süspansiyon konforu (Citroën)", "Ucuz alım, bol parça"],
+    "cons": ["Citroën konfor elektroniği (BSI) arızaları", "Panoramik cam su kaçağı riski", "Yaşa bağlı elektrik ve süspansiyon arızaları", "Boya ince, düşük ikinci el değeri"],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, filtreler, LPG'de subap ayarı, ön takım kontrolü, panoramik cam conta kontrolü.", "estimatedCostEUR": 160 },
+      { "mileage": "120.000 km", "expectedIssues": "Triger kayış seti, ön takım revizyonu, kalorifer rezistansı, BSI/modül kontrolü, debriyaj kontrolü.", "estimatedCostEUR": 380 },
+      { "mileage": "200.000 km", "expectedIssues": "İkinci triger seti, debriyaj seti, su pompası, motor takozları, klima kompresörü, süspansiyon yenileme.", "estimatedCostEUR": 400 }
+    ]
+  },
+  {
+    "brand": "Citroën",
+    "modelName": "C-Elysée (2012-2022)",
+    "productionYears": "2012-2022",
+    "engine": "1.6 VTi 115 HP (EC5, Benzin/LPG) + 5 İleri Manuel",
+    "segment": "C",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
+    "reliabilityScore": 7.7,
+    "minPrice": 350000,
+    "maxPrice": 580000,
+    "estimatedMaintenanceCostEUR": 220,
+    "expertSummary": "C-Elysée, Peugeot 301'in Citroën ikizidir — aynı platform, aynı motorlar, ayrı ön yüz. Ucuz, geniş bagajlı (506 lt), yüksek yol açıklıklı bir C sedan; Türkiye'de filo ve taksi favorisi oldu. 1.6 VTi (EC5, eski nesil — EP6 DEĞİL) atmosferik motor turbosuz, LPG'ye tam uyumlu ve dertsizdir; kayış trigerlidir. 115 HP dolu araçta orta. Günlük dille: \"301'in Citroën'i; ucuz, kocaman bagajlı, LPG dostu, dertsiz filo sedanı. EP6 değil eski nesil motor — o yüzden sorunsuz.\"",
+    "userFeedbackSummary": "Kullanıcılar bagajı, yüksek yol açıklığını ve LPG ekonomisini övüyor. Şikayetler: 115 HP'nin dolu araçta orta kalması, sert plastikler ve iç gıcırtılar, ateşleme bobini, ön takım burç sesleri, klima performansı, boya inceliği. LPG'li örneklerde subap ayarı sorulmalı.",
+    "chronicIssues": [
+      { "title": "Ateşleme bobini, buji ve gaz kelebeği kirlenmesi", "description": "Yaşa bağlı bobin zayıflaması (tekleme), gaz kelebeği kurumu (rölanti dengesizliği). Bobin+buji seti ve kelebek temizliği/adaptasyonu; LPG'de periyot kısa.", "severity": "Düşük", "estimatedCostEUR": 130, "affectedYears": "2012-2022" },
+      { "title": "Ön süspansiyon burçları ve amortisör üst takoz sesi", "description": "Türkiye yollarında 60-100 bin km'de ön takım tıkırtısı; salıncak burçları ve üst takozlar yenilenir. Parça ucuz.", "severity": "Düşük", "estimatedCostEUR": 140, "affectedYears": "2012-2022" },
+      { "title": "İç mekan gıcırtıları ve boya inceliği", "description": "Torpido/kapı panelinde gıcırtı; boya ince, taş izi kolay. Keçe/takoz takviyesi ve boya bakımı.", "severity": "Düşük", "estimatedCostEUR": 100, "affectedYears": "2012-2022" }
+    ],
+    "pros": ["506 lt segment üstü bagaj, yüksek yol açıklığı", "LPG'ye tam uyumlu, dertsiz EC5 motor (EP6 değil)", "Kayış trigerli ama basit atmosferik — sorunsuz", "Ucuz alım ve işletme, filo/taksi dostu"],
+    "cons": ["115 HP dolu araçta orta", "Sert plastikler, iç gıcırtılar, boya ince", "Ön süspansiyon burçları erken ses yapıyor", "Yol sesi yalıtımı orta"],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, hava/polen filtresi, gaz kelebeği temizliği, LPG'de subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 150 },
+      { "mileage": "120.000 km", "expectedIssues": "Triger kayış seti, ön süspansiyon revizyonu, bobin seti, debriyaj kontrolü, LPG regülatör bakımı.", "estimatedCostEUR": 350 },
+      { "mileage": "200.000 km", "expectedIssues": "İkinci triger seti, debriyaj seti, su pompası, motor takozları, klima kompresörü, süspansiyon.", "estimatedCostEUR": 400 }
+    ]
+  },
+  {
+    "brand": "Citroën",
+    "modelName": "C-Elysée (2012-2022)",
+    "productionYears": "2012-2022",
+    "engine": "1.6 HDi 92 HP (DV6, Dizel Turbo) + 5 İleri Manuel",
+    "segment": "C",
+    "bodyType": "Sedan",
+    "drivetrain": "Önden Çekiş",
+    "reliabilityScore": 7.3,
+    "minPrice": 380000,
+    "maxPrice": 620000,
+    "estimatedMaintenanceCostEUR": 320,
+    "expertSummary": "C-Elysée'nin 1.6 HDi (DV6, 92 HP) dizeli, Peugeot 301 HDi ile birebir aynıdır: çok düşük yakıt (uzun yol 3.5-4 lt), kocaman bagaj — ama DV6 motorunun turbo yağlama borusu kurumu 'motor katili' olarak bilinir. Boru tıkanınca turbo aniden ölür ve parçaları motora girer. Ayrıca EGR, emme kurumu, DPF (FAP + Eolys katkısı), enjektör. Kayış trigerlidir. Günlük dille: \"Yakıtı ve bagajı harika ama DV6 turbo yağ borusu tehlikeli — yağ periyodunu asla kaçırma, boruyu periyodik değiştir, FAP katkısını takip et.\" Servis kayıtsız alınmaz.",
+    "userFeedbackSummary": "Bakımlı örnek sahipleri yakıt ekonomisinden memnun; şanssız olanlar 'turbo motora girdi' diyor. Şikayetler: turbo yağlama borusu kurumu ve turbo/motor hasarı, EGR/emme kurumu, DPF/FAP tıkanması ve Eolys sistemi, enjektör, çift kütleli volan. Yağ periyodu ve kaliteli mazot kritik.",
+    "chronicIssues": [
+      { "title": "DV6 turbo yağlama borusu kurumu ve turbo/motor hasarı", "description": "1.6 HDi'nin en yaygın ölüm nedeni: turbo yağ besleme borusu kurum bağlar, turbo aniden dağılır ve kanatları motora girer. Yağ periyodu (max 10 bin km, kaliteli yağ) ve borunun 60-80 bin km'de değişmesi şart.", "severity": "Kritik", "estimatedCostEUR": 600, "affectedYears": "2012-2022" },
+      { "title": "EGR valfi, emme manifoldu ve DPF/FAP tıkanması", "description": "Şehir içi kullanımda EGR ve emme yolları kurum bağlar; DPF (FAP) Eolys katkısı biterse tıkanır. Güç kaybı, arıza lambası, rejenerasyon sorunu.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2012-2022" },
+      { "title": "Enjektör, çift kütleli volan (DMF) ve kayış triger periyodu", "description": "Common-rail enjektörler debisini şaşırır; DMF+debriyaj rölantide takırtı yapar; kayış trigeri 120-160 bin km'de değişmelidir.", "severity": "Orta", "estimatedCostEUR": 550, "affectedYears": "2012-2022" }
+    ],
+    "pros": ["Çok düşük yakıt tüketimi (uzun yol 3.5-4 lt)", "506 lt segment üstü bagaj, yüksek yol açıklığı", "Ucuz alım, bol parça, filo/taksi dostu", "Torklu dizel karakteri"],
+    "cons": ["DV6 turbo yağ borusu — 'motor katili', bakıma çok bağımlı", "EGR/emme/DPF (FAP + Eolys) gibi dizel bakımları", "Çift kütleli volan + debriyaj masrafı", "Servis kayıtsız alınmaz"],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre (max 10 bin km periyot), yakıt/hava filtresi, turbo yağ borusu değişimi, EGR ilk kontrol, FAP/Eolys seviyesi.", "estimatedCostEUR": 200 },
+      { "mileage": "150.000 km", "expectedIssues": "İkinci turbo yağ borusu, EGR/emme/DPF temizliği, enjektör kontrolü, çift kütleli volan+debriyaj, kayış triger seti, ön takım.", "estimatedCostEUR": 850 },
+      { "mileage": "250.000 km", "expectedIssues": "Turbo revizyonu ihtimali, ikinci kayış seti, DPF değişimi, su pompası, süspansiyon yenileme.", "estimatedCostEUR": 850 }
+    ]
+  },
+  {
+    "brand": "Citroën",
+    "modelName": "C4 (2010-2018)",
+    "productionYears": "2010-2018",
+    "engine": "1.6 VTi 120 HP (EP6, Benzin) + 4 İleri Otomatik (AL4, tork konvertörlü)",
+    "segment": "C",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
+    "reliabilityScore": 6.1,
+    "minPrice": 280000,
+    "maxPrice": 480000,
+    "estimatedMaintenanceCostEUR": 400,
+    "expertSummary": "İkinci nesil C4, konforlu şasisi, sessiz kabini ve rahat koltuklarıyla 'yastık gibi' bir C hatchback. Ama motor+şanzıman ikinci elde riskli: 1.6 VTi (EP6, PSA-BMW 'Prince') zincir trigerlidir ama erken üretimde zincir gerdirici zayıftır (zincir atlar → motor hasar); ayrıca emme supabı karbon birikimi, yüksek yağ tüketimi, termostat/su pompası. Şanzıman yine AL4/DP0 4 ileri. LPG bu motora önerilmez. Günlük dille: \"Konforu harika ama EP6+AL4 ikilisi çok bakım ister; sadece zinciri değişmiş, yağ tüketmeyen, AL4 yağı bakımlı örnek riske girer. Düz vitesli veya HDi'sini ara.\"",
+    "userFeedbackSummary": "Kullanıcılar konforu ve sessizliği çok övüyor, güvenilirliği eleştiriyor. Şikayetler: EP6'da zincir gerdirici sesi ve atması, yağ tüketimi, emme karbon birikimi, termostat/su pompası; AL4 şanzımanda sarsıntı ve arıza; elektronik/BSI arızaları. Bakımlı örnek bile sık serviste olabiliyor.",
+    "chronicIssues": [
+      { "title": "EP6 zincir triger gerdiricisi ve yağ tüketimi", "description": "Erken üretim EP6'da zincir gerdirici basıncı tutamaz; soğukta zincir sesi, zincir atlaması ve motor hasarı. Piston segmanları/valf lastikleri yağ tüketir. Güncellenmiş gerdirici+zincir seti ve segman revizyonu pahalı.", "severity": "Kritik", "estimatedCostEUR": 700, "affectedYears": "2010-2018" },
+      { "title": "AL4/DP0 4 ileri otomatik şanzıman arızası", "description": "PSA'nın 4 ileri otomatiği yağ ısınmasına çok hassastır; solenoid, valf gövdesi, tork konvertörü arızaları. Sarsıntı, darbe, limp mode. Yağ soğutucu ve 40-50 bin km yağ değişimi şart.", "severity": "Kritik", "estimatedCostEUR": 700, "affectedYears": "2010-2018" },
+      { "title": "Emme supabı karbon birikimi, termostat, su pompası ve BSI", "description": "Direkt enjeksiyon emme supaplarını yıkamaz (karbon); plastik termostat/su pompası modülü sızdırır; Citroën BSI/modül arızaları. Karbon temizliği, modül değişimi, BSI kontrolü.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2010-2018" }
+    ],
+    "pros": ["Sınıf lideri konfor, sessiz kabin, rahat koltuklar", "Geniş bagaj ve iç hacim", "İyi süspansiyon (Citroën yastık gibi)", "Ucuz alım fiyatı"],
+    "cons": ["EP6 zincir gerdirici + yağ tüketimi — pahalı riskler", "AL4/DP0 4 ileri otomatik — çok riskli", "Emme karbonu, termostat, BSI — sürekli bakım", "LPG uyumsuz; toplam işletme maliyeti çok yüksek"],
+    "milestones": [
+      { "mileage": "40.000 km", "expectedIssues": "Yağ+filtre (seviye takibi), bujiler, AL4 şanzıman yağı, zincir sesi dinleme, termostat/su pompası kontrolü.", "estimatedCostEUR": 250 },
+      { "mileage": "100.000 km", "expectedIssues": "Zincir triger seti (ses varsa), emme supabı karbon temizliği, AL4 yağ+soğutucu, BSI/modül kontrolü, ön takım.", "estimatedCostEUR": 900 },
+      { "mileage": "160.000 km", "expectedIssues": "Segman/yağ tüketimi revizyonu ihtimali, AL4 revizyonu ihtimali, su pompası+termostat, süspansiyon yenileme.", "estimatedCostEUR": 1100 }
+    ]
+  },
+  {
+    "brand": "Citroën",
+    "modelName": "Berlingo (2008-2018)",
+    "productionYears": "2008-2018",
+    "engine": "1.6 HDi 92 HP (DV6, Dizel Turbo) + 5 İleri Manuel",
+    "segment": "Ticari",
+    "bodyType": "Panelvan",
+    "drivetrain": "Önden Çekiş",
+    "reliabilityScore": 7.3,
+    "minPrice": 280000,
+    "maxPrice": 560000,
+    "estimatedMaintenanceCostEUR": 320,
+    "expertSummary": "İkinci nesil Berlingo, Peugeot Partner'ın Citroën ikizidir — aynı platform, aynı motorlar, ayrı ön yüz. Esnaf ve kalabalık aile için yüksek tavan, kayar kapılar, geniş bagaj ve düşük yakıt sunar; Multispace/Combi versiyonları binek olarak da çok satıldı. 1.6 HDi (DV6, 92 HP) motorun turbo yağlama borusu kurumu ana risktir; ayrıca EGR/emme kurumu, DPF (FAP + Eolys), enjektör. Kayış trigerlidir. Günlük dille: \"Partner'ın Citroën'i; ucuz yakıt, kocaman iç hacim, ama DV6 turbo yağ borusuna dikkat.\"",
+    "userFeedbackSummary": "Esnaf ve kalabalık aile kullanıcıları yakıt ve iç hacimden memnun. Şikayetler: turbo yağlama borusu kurumu ve turbo arızası, EGR/emme kurumu, DPF/FAP tıkanması ve Eolys sistemi, enjektör, debriyaj (yoğun kullanım), kayar kapı ray sesi, boşken sert süspansiyon. Yağ periyodu kritik.",
+    "chronicIssues": [
+      { "title": "DV6 turbo yağlama borusu kurumu ve turbo arızası", "description": "1.6 HDi'nin en yaygın ölüm nedeni: turbo yağ besleme borusu kurum bağlar, turbo aniden dağılır ve parçaları motora girer. Yağ periyodu (max 10 bin km) ve borunun 60-80 bin km'de değişmesi şart.", "severity": "Kritik", "estimatedCostEUR": 600, "affectedYears": "2008-2018" },
+      { "title": "EGR valfi, emme manifoldu ve DPF/FAP tıkanması", "description": "Şehir içi kullanımda EGR ve emme yolları kurum bağlar; DPF (FAP) Eolys katkısı biterse tıkanır. Güç kaybı, arıza lambası, rejenerasyon sorunu.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2008-2018" },
+      { "title": "Enjektör, debriyaj ve kayar kapı mekanizması", "description": "Common-rail enjektörler debisini şaşırır; ticari kullanımda debriyaj hızlı biter; kayar kapı rayı/makarası aşınır. Revizyon ve ray bakımı.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2008-2018" }
+    ],
+    "pros": ["Şehir içi çok düşük yakıt tüketimi", "Yüksek tavan, kayar kapı, geniş yükleme alanı", "Multispace/Combi ile binek konforu", "Ucuz parça, yaygın servis"],
+    "cons": ["DV6 turbo yağ borusu — 'motor katili', bakıma çok bağımlı", "EGR/emme/DPF (FAP + Eolys) gibi dizel bakımları", "Ticari kullanımdan yıpranma (debriyaj, ön takım)", "Boşken sert süspansiyon, kayar kapı bakımı"],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre (max 10 bin km periyot), yakıt/hava filtresi, turbo yağ borusu değişimi, EGR ilk kontrol, FAP/Eolys seviyesi, kayar kapı yağlama.", "estimatedCostEUR": 200 },
+      { "mileage": "150.000 km", "expectedIssues": "İkinci turbo yağ borusu, EGR/emme/DPF temizliği, enjektör kontrolü, debriyaj seti, kayış triger seti, ön takım revizyonu.", "estimatedCostEUR": 800 },
+      { "mileage": "250.000 km", "expectedIssues": "Turbo revizyonu ihtimali, ikinci kayış seti, DPF değişimi, su pompası, arka torsiyon aks bakımı.", "estimatedCostEUR": 800 }
+    ]
+  }
+]
