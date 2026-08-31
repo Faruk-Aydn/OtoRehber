@@ -27,7 +27,7 @@ namespace OtoRehber.Controllers
             _cache = cache;
         }
 
-        public async Task<IActionResult> Index(string searchQuery, string segment, string brand, string sortBy, int page = 1)
+        public async Task<IActionResult> Index(string searchQuery, string[] segment, string[] brand, string sortBy, int page = 1)
         {
             // Filtre + sıralama /araclar ile ortak (Services/CarCatalogQuery).
             var carsQuery = OtoRehber.Services.CarCatalogQuery.ApplyFilters(

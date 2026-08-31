@@ -27,7 +27,7 @@ namespace OtoRehber.Controllers
 
         // GET: /araclar  — filtre + sıralama + sayfalama
         [HttpGet("/araclar")]
-        public async Task<IActionResult> Index(string? searchQuery, string? segment, string? brand, string? sortBy,
+        public async Task<IActionResult> Index(string? searchQuery, string[]? segment, string[]? brand, string? sortBy,
             long? priceMin = null, long? priceMax = null, double? minScore = null, int page = 1)
         {
             const int pageSize = 12;

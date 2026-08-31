@@ -127,17 +127,16 @@
 {
     int currentPage = (int)ViewBag.CurrentPage;
     int totalPages  = (int)ViewBag.TotalPages;
-    string searchQuery = ViewData["CurrentSearch"]?.ToString()  ?? "";
-    string segment     = ViewData["CurrentSegment"]?.ToString() ?? "";
-    string brand       = ViewData["CurrentBrand"]?.ToString()   ?? "";
-    string sortBy      = ViewData["CurrentSort"]?.ToString()    ?? "";
+    // Home'da marka/segment filtre formu yok (hero = sade arama → /araclar). Sayfalama sadece arama + sıralama taşır.
+    string searchQuery = ViewData["CurrentSearch"]?.ToString() ?? "";
+    string sortBy      = ViewData["CurrentSort"]?.ToString()   ?? "";
     int startPage = Math.Max(1, currentPage - 2);
     int endPage   = Math.Min(totalPages, currentPage + 2);
 
     <nav class="mt-12 mb-4 flex items-center justify-center gap-1.5 flex-wrap" aria-label="Sayfalama">
         @if (currentPage > 1)
         {
-            <a asp-action="Index" asp-route-page="@(currentPage - 1)" asp-route-searchQuery="@searchQuery" asp-route-segment="@segment" asp-route-brand="@brand" asp-route-sortBy="@sortBy"
+            <a asp-action="Index" asp-route-page="@(currentPage - 1)" asp-route-searchQuery="@searchQuery" asp-route-sortBy="@sortBy"
                class="w-10 h-10 flex items-center justify-center rounded-lg border border-border bg-surface text-content-muted hover:text-content hover:border-brand-300 transition-colors text-sm">
                 <i class="fa-solid fa-angle-left"></i>
             </a>
@@ -154,7 +153,7 @@
             }
             else
             {
-                <a asp-action="Index" asp-route-page="@p" asp-route-searchQuery="@searchQuery" asp-route-segment="@segment" asp-route-brand="@brand" asp-route-sortBy="@sortBy"
+                <a asp-action="Index" asp-route-page="@p" asp-route-searchQuery="@searchQuery" asp-route-sortBy="@sortBy"
                    class="w-10 h-10 flex items-center justify-center rounded-lg border border-border bg-surface text-content text-sm font-medium hover:border-brand-300 transition-colors">@p</a>
             }
         }
@@ -164,7 +163,7 @@
         }
         @if (currentPage < totalPages)
         {
-            <a asp-action="Index" asp-route-page="@(currentPage + 1)" asp-route-searchQuery="@searchQuery" asp-route-segment="@segment" asp-route-brand="@brand" asp-route-sortBy="@sortBy"
+            <a asp-action="Index" asp-route-page="@(currentPage + 1)" asp-route-searchQuery="@searchQuery" asp-route-sortBy="@sortBy"
                class="w-10 h-10 flex items-center justify-center rounded-lg border border-border bg-surface text-content-muted hover:text-content hover:border-brand-300 transition-colors text-sm">
                 <i class="fa-solid fa-angle-right"></i>
             </a>

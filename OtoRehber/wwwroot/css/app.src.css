@@ -145,3 +145,10 @@
 .legal-doc a { color: theme('colors.brand.600'); text-decoration: underline; }
 .dark .legal-doc a { color: theme('colors.brand.400'); }
 .legal-doc .muted { color: rgb(var(--content-muted)); font-size: .875rem; }
+
+/* İnce, tema-uyumlu kaydırma çubuğu — /araclar filtre panelindeki marka/segment listeleri */
+.custom-scrollbar { scrollbar-width: thin; scrollbar-color: rgb(var(--border)) transparent; }
+.custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: rgb(var(--border)); border-radius: 9999px; }
+.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgb(var(--content-muted)); }

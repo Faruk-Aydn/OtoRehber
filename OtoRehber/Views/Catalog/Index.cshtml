@@ -3,37 +3,50 @@
     ViewData["Ratings"] = ViewBag.CarRatings;
     ViewData["ShowCompare"] = false;
     var cs = ViewData["CurrentSearch"] as string;
-    var cseg = ViewData["CurrentSegment"] as string;
-    var cbr = ViewData["CurrentBrand"] as string;
+    var cseg = ViewData["CurrentSegment"] as string[] ?? Array.Empty<string>();
+    var cbr = ViewData["CurrentBrand"] as string[] ?? Array.Empty<string>();
     var csort = ViewData["CurrentSort"] as string;
     var cpMin = ViewData["CurrentPriceMin"] as long?;
     var cpMax = ViewData["CurrentPriceMax"] as long?;
     var cScore = ViewData["CurrentMinScore"] as double?;
 
-    var routeAll = new Dictionary<string, string?>
+    var routeBase = new Dictionary<string, string?>
     {
         ["searchQuery"] = cs,
-        ["brand"] = cbr,
-        ["segment"] = cseg,
         ["sortBy"] = csort,
         ["priceMin"] = cpMin?.ToString(),
         ["priceMax"] = cpMax?.ToString(),
         ["minScore"] = cScore?.ToString(System.Globalization.CultureInfo.InvariantCulture),
     };
-    Dictionary<string, string?> RouteWithout(string key)
-    {
-        var d = new Dictionary<string, string?>(routeAll);
-        d.Remove(key);
-        return d;
-    }
-    var rmSearch = RouteWithout("searchQuery");
-    var rmBrand = RouteWithout("brand");
-    var rmSegment = RouteWithout("segment");
-    var rmPriceMin = RouteWithout("priceMin");
-    var rmPriceMax = RouteWithout("priceMax");
-    var rmMinScore = RouteWithout("minScore");
-    var hasAnyFilter = !string.IsNullOrEmpty(cs) || !string.IsNullOrEmpty(cbr) || !string.IsNullOrEmpty(cseg)
+    
+    // For pagination we need a string representation that includes arrays, but Dictionary<string, string> doesn't support arrays nicely. 
+    // We will build query strings manually for chips and pagination.
+    
+    var hasAnyFilter = !string.IsNullOrEmpty(cs) || cbr.Any() || cseg.Any()
         || cpMin is > 0 || cpMax is > 0 || cScore is > 0;
+        
+    string BuildQuery(Dictionary<string, string?> dict, string[]? brands = null, string[]? segments = null)
+    {
+        var q = new List<string>();
+        foreach (var kv in dict)
+        {
+            if (!string.IsNullOrEmpty(kv.Value))
+                q.Add($"{kv.Key}={Uri.EscapeDataString(kv.Value)}");
+        }
+        if (brands != null)
+        {
+            foreach (var b in brands)
+                q.Add($"brand={Uri.EscapeDataString(b)}");
+        }
+        if (segments != null)
+        {
+            foreach (var s in segments)
+                q.Add($"segment={Uri.EscapeDataString(s)}");
+        }
+        return "?" + string.Join("&", q);
+    }
+    
+    var baseQueryWithArrays = BuildQuery(routeBase, cbr, cseg);
 }
 
 <div class="max-w-7xl mx-auto py-8">
@@ -51,13 +64,13 @@
                     <i class="fa-solid fa-chevron-down text-content-muted text-sm"></i>
                 </summary>
                 <div class="px-5 pb-5">
-                    @await Html.PartialAsync("_CatalogFilterForm", (object)routeAll)
+                    @await Html.PartialAsync("_CatalogFilterForm")
                 </div>
             </details>
             <div class="hidden lg:block lg:sticky lg:top-20">
                 <div class="card card-pad">
                     <h2 class="section-title mb-4"><i class="fa-solid fa-sliders mr-2 text-content-muted"></i>Filtreler</h2>
-                    @await Html.PartialAsync("_CatalogFilterForm", (object)routeAll)
+                    @await Html.PartialAsync("_CatalogFilterForm")
                 </div>
             </div>
         </aside>
@@ -69,27 +82,33 @@
                 <div class="flex flex-wrap items-center gap-2 mb-5">
                     @if (!string.IsNullOrEmpty(cs))
                     {
-                        <a asp-controller="Catalog" asp-action="Index" asp-all-route-data="rmSearch" class="chip">Arama: @cs <span aria-hidden="true">✕</span></a>
+                        var d = new Dictionary<string, string?>(routeBase) { ["searchQuery"] = null };
+                        <a href="/araclar@(BuildQuery(d, cbr, cseg))" class="chip">Arama: @cs <span aria-hidden="true">✕</span></a>
                     }
-                    @if (!string.IsNullOrEmpty(cbr))
+                    @foreach (var brand in cbr)
                     {
-                        <a asp-controller="Catalog" asp-action="Index" asp-all-route-data="rmBrand" class="chip">Marka: @cbr <span aria-hidden="true">✕</span></a>
+                        var newBrands = cbr.Where(b => b != brand).ToArray();
+                        <a href="/araclar@(BuildQuery(routeBase, newBrands, cseg))" class="chip">Marka: @brand <span aria-hidden="true">✕</span></a>
                     }
-                    @if (!string.IsNullOrEmpty(cseg))
+                    @foreach (var segment in cseg)
                     {
-                        <a asp-controller="Catalog" asp-action="Index" asp-all-route-data="rmSegment" class="chip">Segment: @cseg <span aria-hidden="true">✕</span></a>
+                        var newSegments = cseg.Where(s => s != segment).ToArray();
+                        <a href="/araclar@(BuildQuery(routeBase, cbr, newSegments))" class="chip">Segment: @segment <span aria-hidden="true">✕</span></a>
                     }
                     @if (cpMin is > 0)
                     {
-                        <a asp-controller="Catalog" asp-action="Index" asp-all-route-data="rmPriceMin" class="chip">Min @cpMin.Value.ToString("N0") ₺ <span aria-hidden="true">✕</span></a>
+                        var d = new Dictionary<string, string?>(routeBase) { ["priceMin"] = null };
+                        <a href="/araclar@(BuildQuery(d, cbr, cseg))" class="chip">Min @cpMin.Value.ToString("N0") ₺ <span aria-hidden="true">✕</span></a>
                     }
                     @if (cpMax is > 0)
                     {
-                        <a asp-controller="Catalog" asp-action="Index" asp-all-route-data="rmPriceMax" class="chip">Maks @cpMax.Value.ToString("N0") ₺ <span aria-hidden="true">✕</span></a>
+                        var d = new Dictionary<string, string?>(routeBase) { ["priceMax"] = null };
+                        <a href="/araclar@(BuildQuery(d, cbr, cseg))" class="chip">Maks @cpMax.Value.ToString("N0") ₺ <span aria-hidden="true">✕</span></a>
                     }
                     @if (cScore is > 0)
                     {
-                        <a asp-controller="Catalog" asp-action="Index" asp-all-route-data="rmMinScore" class="chip">Puan @cScore.Value.ToString("0.#")+ <span aria-hidden="true">✕</span></a>
+                        var d = new Dictionary<string, string?>(routeBase) { ["minScore"] = null };
+                        <a href="/araclar@(BuildQuery(d, cbr, cseg))" class="chip">Puan @cScore.Value.ToString("0.#")+ <span aria-hidden="true">✕</span></a>
                     }
                     <a href="/araclar" class="text-xs font-medium text-brand-600 hover:underline ml-1">Tümünü temizle</a>
                 </div>
@@ -118,14 +137,15 @@
                 <nav class="mt-8 flex justify-center gap-1.5 flex-wrap" aria-label="Sayfalama">
                     @for (int i = 1; i <= ViewBag.TotalPages; i++)
                     {
-                        var pageData = new Dictionary<string, string?>(routeAll) { ["page"] = i.ToString() };
+                        var pageRoute = new Dictionary<string, string?>(routeBase) { ["page"] = i.ToString() };
+                        var pageUrl = "/araclar" + BuildQuery(pageRoute, cbr, cseg);
                         if (i == ViewBag.Page)
                         {
                             <span class="w-10 h-10 flex items-center justify-center rounded-lg bg-brand-600 text-white text-sm font-semibold">@i</span>
                         }
                         else
                         {
-                            <a asp-controller="Catalog" asp-action="Index" asp-all-route-data="pageData" class="w-10 h-10 flex items-center justify-center rounded-lg border border-border bg-surface text-content text-sm font-medium hover:border-brand-300 transition-colors">@i</a>
+                            <a href="@pageUrl" class="w-10 h-10 flex items-center justify-center rounded-lg border border-border bg-surface text-content text-sm font-medium hover:border-brand-300 transition-colors">@i</a>
                         }
                     }
                 </nav>

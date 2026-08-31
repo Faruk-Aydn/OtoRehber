@@ -9,8 +9,8 @@ namespace OtoRehber.Services
         public static IQueryable<Car> ApplyFilters(
             IQueryable<Car> query,
             string? search,
-            string? segment,
-            string? brand,
+            string[]? segment,
+            string[]? brand,
             long? priceMin = null,
             long? priceMax = null,
             double? minScore = null)
@@ -20,10 +20,10 @@ namespace OtoRehber.Services
                 var s = search.Trim().ToLowerInvariant();
                 query = query.Where(c => c.Brand.ToLower().Contains(s) || c.ModelName.ToLower().Contains(s));
             }
-            if (!string.IsNullOrWhiteSpace(segment))
-                query = query.Where(c => c.Segment == segment);
-            if (!string.IsNullOrWhiteSpace(brand))
-                query = query.Where(c => c.Brand == brand);
+            if (segment != null && segment.Any())
+                query = query.Where(c => segment.Contains(c.Segment));
+            if (brand != null && brand.Any())
+                query = query.Where(c => brand.Contains(c.Brand));
 
             // Aracın [MinPrice, MaxPrice] aralığı, filtre [priceMin, priceMax] ile kesişiyorsa dahil et.
             if (priceMin is > 0)

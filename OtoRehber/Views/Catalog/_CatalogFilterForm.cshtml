@@ -1,13 +1,11 @@
-@model Dictionary<string, string?>
 @{
-    string? V(string k) => Model.TryGetValue(k, out var v) ? v : null;
-    var cs = V("searchQuery");
-    var cbr = V("brand");
-    var cseg = V("segment");
-    var csort = V("sortBy");
-    var cpMin = V("priceMin");
-    var cpMax = V("priceMax");
-    var cScore = V("minScore");
+    var cs = ViewData["CurrentSearch"] as string;
+    var cseg = ViewData["CurrentSegment"] as string[] ?? Array.Empty<string>();
+    var cbr = ViewData["CurrentBrand"] as string[] ?? Array.Empty<string>();
+    var csort = ViewData["CurrentSort"] as string;
+    var cpMin = ViewData["CurrentPriceMin"] as long?;
+    var cpMax = ViewData["CurrentPriceMax"] as long?;
+    var cScore = ViewData["CurrentMinScore"] as double?;
 }
 <form method="get" action="/araclar" class="space-y-4">
     <div>
@@ -15,53 +13,79 @@
         <input id="f-search" type="text" name="searchQuery" value="@cs" placeholder="Marka veya model" class="input" />
     </div>
 
-    <div>
-        <label class="label" for="f-brand">Marka</label>
-        <select id="f-brand" name="brand" class="select">
-            <option value="">Tüm markalar</option>
+    <!-- Accordion: Markalar -->
+    <details class="group [&_summary::-webkit-details-marker]:hidden" open>
+        <summary class="flex cursor-pointer items-center justify-between font-semibold text-content border-b border-border pb-2">
+            Marka
+            <span class="transition group-open:-rotate-180">
+                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+        </summary>
+        <div class="mt-4 max-h-48 overflow-y-auto space-y-2 pr-2 custom-scrollbar">
             @if (ViewBag.Brands != null)
             {
-                foreach (var b in ViewBag.Brands)
+                foreach (string b in ViewBag.Brands)
                 {
-                    <option value="@b" selected="@(cbr == (string)b)">@b</option>
+                    <label class="flex items-center gap-2 cursor-pointer text-sm text-content hover:text-brand-600 transition-colors">
+                        <input type="checkbox" name="brand" value="@b" checked="@(cbr.Contains(b))" class="rounded border-border accent-brand-600 focus:ring-brand-600" />
+                        @b
+                    </label>
                 }
             }
-        </select>
-    </div>
+        </div>
+    </details>
 
-    <div>
-        <label class="label" for="f-segment">Segment</label>
-        <select id="f-segment" name="segment" class="select">
-            <option value="">Tüm segmentler</option>
+    <!-- Accordion: Segmentler -->
+    <details class="group [&_summary::-webkit-details-marker]:hidden" open>
+        <summary class="flex cursor-pointer items-center justify-between font-semibold text-content border-b border-border pb-2">
+            Segment
+            <span class="transition group-open:-rotate-180">
+                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+        </summary>
+        <div class="mt-4 max-h-48 overflow-y-auto space-y-2 pr-2 custom-scrollbar">
             @if (ViewBag.Segments != null)
             {
-                foreach (var s in ViewBag.Segments)
+                foreach (string s in ViewBag.Segments)
                 {
-                    <option value="@s" selected="@(cseg == (string)s)">@s</option>
+                    <label class="flex items-center gap-2 cursor-pointer text-sm text-content hover:text-brand-600 transition-colors">
+                        <input type="checkbox" name="segment" value="@s" checked="@(cseg.Contains(s))" class="rounded border-border accent-brand-600 focus:ring-brand-600" />
+                        @s
+                    </label>
                 }
             }
-        </select>
-    </div>
-
-    <div>
-        <label class="label">Fiyat aralığı (₺)</label>
-        <div class="flex items-center gap-2">
-            <input type="number" name="priceMin" value="@cpMin" min="0" step="50000" placeholder="Min" class="input" />
-            <span class="text-content-muted">–</span>
-            <input type="number" name="priceMax" value="@cpMax" min="0" step="50000" placeholder="Maks" class="input" />
         </div>
-    </div>
+    </details>
 
-    <div>
-        <label class="label" for="f-score">Min. güvenilirlik</label>
-        <select id="f-score" name="minScore" class="select">
-            <option value="">Farketmez</option>
-            <option value="6" selected="@(cScore == "6")">6+ </option>
-            <option value="7" selected="@(cScore == "7")">7+ </option>
-            <option value="8" selected="@(cScore == "8")">8+ </option>
-            <option value="9" selected="@(cScore == "9")">9+ </option>
-        </select>
-    </div>
+    <details class="group [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex cursor-pointer items-center justify-between font-semibold text-content border-b border-border pb-2">
+            Fiyat & Puan
+            <span class="transition group-open:-rotate-180">
+                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+        </summary>
+        <div class="mt-4 space-y-4">
+            <div>
+                <label class="label text-sm">Fiyat aralığı (₺)</label>
+                <div class="flex items-center gap-2">
+                    <input type="number" name="priceMin" value="@cpMin" min="0" step="50000" placeholder="Min" class="input form-input py-1.5" />
+                    <span class="text-content-muted">–</span>
+                    <input type="number" name="priceMax" value="@cpMax" min="0" step="50000" placeholder="Maks" class="input form-input py-1.5" />
+                </div>
+            </div>
+
+            <div>
+                <label class="label text-sm" for="f-score">Min. güvenilirlik</label>
+                <select id="f-score" name="minScore" class="select py-1.5">
+                    <option value="">Farketmez</option>
+                    <option value="6" selected="@(cScore == 6)">6+ </option>
+                    <option value="7" selected="@(cScore == 7)">7+ </option>
+                    <option value="8" selected="@(cScore == 8)">8+ </option>
+                    <option value="9" selected="@(cScore == 9)">9+ </option>
+                </select>
+            </div>
+        </div>
+    </details>
 
     <div>
         <label class="label" for="f-sort">Sıralama</label>
