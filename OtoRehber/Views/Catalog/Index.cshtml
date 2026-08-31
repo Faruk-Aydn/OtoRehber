@@ -24,16 +24,15 @@
     AddArr("bodyType", f.BodyType, "Kasa");
     AddArr("drivetrain", f.Drivetrain, "Çekiş");
     AddArr("condition", f.Condition, "Durum");
+    foreach (var id in CarFilter.Clean(f.Power))
+        pairs.Add(("power", id, $"Güç: {OtoRehber.Domain.CarSpecs.PowerLabel(id) ?? id}"));
+    foreach (var id in CarFilter.Clean(f.Cc))
+        pairs.Add(("cc", id, $"Hacim: {OtoRehber.Domain.CarSpecs.CcLabel(id) ?? id}"));
     AddNum("priceMin", f.PriceMin, $"Min {f.PriceMin?.ToString("N0")} ₺");
     AddNum("priceMax", f.PriceMax, $"Maks {f.PriceMax?.ToString("N0")} ₺");
     AddNum("minScore", (long?)(f.MinScore is > 0 ? (long)f.MinScore : null), $"Puan {f.MinScore?.ToString("0.#")}+");
     AddNum("yearMin", f.YearMin, $"{f.YearMin} ve sonrası");
     AddNum("yearMax", f.YearMax, $"{f.YearMax} ve öncesi");
-    AddNum("powerMin", f.PowerMin, $"Min {f.PowerMin} HP");
-    AddNum("powerMax", f.PowerMax, $"Maks {f.PowerMax} HP");
-    AddNum("ccMin", f.CcMin, $"Min {f.CcMin} cm³");
-    AddNum("ccMax", f.CcMax, $"Maks {f.CcMax} cm³");
-    if (!string.IsNullOrEmpty(f.SortBy)) { }
 
     string Build(IEnumerable<(string Key, string Val, string Label)> ps, int? page = null)
     {

@@ -17,15 +17,16 @@ namespace OtoRehber.Services
         public string[]? Drivetrain { get; set; }
         public string[]? Condition { get; set; }
 
+        /// <summary>Motor gücü hazır aralık id'leri (CarSpecs.PowerBuckets), çoklu seçim.</summary>
+        public string[]? Power { get; set; }
+        /// <summary>Motor hacmi hazır aralık id'leri (CarSpecs.CcBuckets), çoklu seçim.</summary>
+        public string[]? Cc { get; set; }
+
         public long? PriceMin { get; set; }
         public long? PriceMax { get; set; }
         public double? MinScore { get; set; }
         public int? YearMin { get; set; }
         public int? YearMax { get; set; }
-        public int? PowerMin { get; set; }
-        public int? PowerMax { get; set; }
-        public int? CcMin { get; set; }
-        public int? CcMax { get; set; }
 
         public string? SortBy { get; set; }
 
@@ -40,9 +41,8 @@ namespace OtoRehber.Services
             !string.IsNullOrWhiteSpace(SearchQuery)
             || Clean(Brand).Any() || Clean(Segment).Any() || Clean(Fuel).Any()
             || Clean(Transmission).Any() || Clean(BodyType).Any() || Clean(Drivetrain).Any()
-            || Clean(Condition).Any()
+            || Clean(Condition).Any() || Clean(Power).Any() || Clean(Cc).Any()
             || PriceMin is > 0 || PriceMax is > 0 || MinScore is > 0
-            || YearMin is > 0 || YearMax is > 0 || PowerMin is > 0 || PowerMax is > 0
-            || CcMin is > 0 || CcMax is > 0;
+            || YearMin is > 0 || YearMax is > 0;
     }
 }

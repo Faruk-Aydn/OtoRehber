@@ -1,0 +1,164 @@
+[
+  {
+    "brand": "Nissan",
+    "modelName": "Micra (K12, 2003-2010)",
+    "productionYears": "2003-2010",
+    "engine": "1.2 16V 80 HP (CR12DE, Benzin/LPG) + 5 İleri Manuel",
+    "segment": "B",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
+    "reliabilityScore": 7.9,
+    "minPrice": 160000,
+    "maxPrice": 290000,
+    "estimatedMaintenanceCostEUR": 190,
+    "expertSummary": "Üçüncü nesil Micra (K12), 'sevimli' tasarımı, ferah kabini ve dertsizliğiyle B segmentinde uzun süre popülerdi. 1.2 16V (CR12DE) atmosferik motor turbosuz, LPG'ye uygun, **zincir trigerli** ve çok dayanıklıdır — kayış triger masrafı YOK. 80 HP hafif gövdeyi şehir içinde iyi taşır, otoyolda zayıf. Kritik konular: elektrikli direksiyon (EPS) kolonu arızası (Micra/Note kroniği), gaz kelebeği, ateşleme bobini, ön takım. Günlük dille: \"Zincir triger + LPG uyumu + dertsiz Japon motoru; ucuz ve sağlam bir şehir arabası. Elektrikli direksiyona dikkat.\"",
+    "userFeedbackSummary": "Kullanıcılar dertsizliği, ferah kabini ve zincir trigeri övüyor. Şikayetler: elektrikli direksiyon (EPS) motoru/kolonu arızası (direksiyon ağırlaşır, uyarı lambası), gaz kelebeği kaynaklı rölanti dengesizliği, bobin tekleme, ön takım burç sesleri, klima performansı. LPG'li örneklerde subap ayarı sorulmalı.",
+    "chronicIssues": [
+      { "title": "Elektrikli direksiyon (EPS) kolonu / motoru arızası", "description": "Micra K12 ve Note'un bilinen kroniği: elektrikli direksiyon motoru/kolonu arızalanınca direksiyon aşırı ağırlaşır ve uyarı lambası yanar; park zorlaşır. Kolon/motor revizyonu veya değişimi. Bazı pazarlarda geri çağırma yapıldı.", "severity": "Orta", "estimatedCostEUR": 300, "affectedYears": "2003-2010" },
+      { "title": "Gaz kelebeği kirlenmesi ve ateşleme bobini", "description": "Gaz kelebeği kurum bağlar (dalgalı rölanti, motor stop); bobin zayıflar (tekleme). Temizlik+adaptasyon ve bobin+buji seti; LPG'de periyot kısa.", "severity": "Düşük", "estimatedCostEUR": 130, "affectedYears": "2003-2010" },
+      { "title": "Ön takım burçları ve kaporta pas noktaları", "description": "60-100 bin km'de ön salıncak burçları ve rot başlarında ses; arka çamurluk ve eşiklerde pas görülebilir. Ön takım revizyonu ve pas kontrolü.", "severity": "Düşük", "estimatedCostEUR": 150, "affectedYears": "2003-2010" }
+    ],
+    "pros": ["Zincir triger — kayış değişim masrafı YOK", "LPG'ye uygun, dertsiz ve dayanıklı Japon motoru", "Ferah kabin, park kolaylığı", "Ucuz alım ve işletme, bol parça"],
+    "cons": ["Elektrikli direksiyon (EPS) arızası — bilinen kronik dert", "80 HP otoyolda zayıf", "Kaporta pas noktaları riski", "Yol sesi yalıtımı orta"],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, hava/polen filtresi, gaz kelebeği temizliği, EPS kontrolü, LPG'de subap ayarı.", "estimatedCostEUR": 150 },
+      { "mileage": "120.000 km", "expectedIssues": "EPS motoru kontrolü/revizyonu, ön takım revizyonu, bobin seti, debriyaj kontrolü, pas kontrolü.", "estimatedCostEUR": 350 },
+      { "mileage": "200.000 km", "expectedIssues": "Debriyaj seti, su pompası, motor takozları, klima kompresörü, süspansiyon yenileme.", "estimatedCostEUR": 400 }
+    ]
+  },
+  {
+    "brand": "Nissan",
+    "modelName": "Micra (K13, 2010-2017)",
+    "productionYears": "2010-2017",
+    "engine": "1.2 12V 80 HP (HR12DE, Benzin/LPG) + 5 İleri Manuel",
+    "segment": "B",
+    "bodyType": "Hatchback",
+    "drivetrain": "Önden Çekiş",
+    "reliabilityScore": 7.8,
+    "minPrice": 300000,
+    "maxPrice": 480000,
+    "estimatedMaintenanceCostEUR": 190,
+    "expertSummary": "Dördüncü nesil Micra (K13), Hindistan üretimi, daha basit ve maliyet odaklı ama yine dertsiz bir B segmenti aracı. 1.2 12V (HR12DE) atmosferik 3 silindirli motor turbosuz, LPG'ye uygun, **zincir trigerli**. 3 silindir olduğu için rölantide hafif titreşim normaldir. 80 HP şehir içi için yeterli. İç malzeme K12'ye göre daha sade ve sert. Günlük dille: \"K12'nin halefi; daha ucuz ve sade ama zincir triger + LPG uyumu + dertsizlik devam ediyor. 3 silindir titreşimini göze al.\"",
+    "userFeedbackSummary": "Kullanıcılar düşük işletme maliyetini ve zincir trigeri övüyor. Şikayetler: 3 silindir titreşimi ve sesi, sade/sert iç plastikler, yol sesi yalıtımı zayıf, 80 HP'nin otoyolda yetersizliği, ateşleme bobini, ön takım burç sesleri. LPG'li örneklerde subap ayarı sorulmalı.",
+    "chronicIssues": [
+      { "title": "Ateşleme bobini, buji ve gaz kelebeği", "description": "Yaşa bağlı bobin zayıflaması (3 silindirde tekleme belirgin), gaz kelebeği kurumu (rölanti dengesizliği). Bobin+buji seti ve kelebek temizliği/adaptasyonu; LPG'de periyot kısa.", "severity": "Düşük", "estimatedCostEUR": 120, "affectedYears": "2010-2017" },
+      { "title": "Ön süspansiyon burçları ve amortisör üst takoz sesi", "description": "Türkiye yollarında 60-100 bin km'de ön takım tıkırtısı; salıncak burçları ve üst takozlar yenilenir. Parça ucuz.", "severity": "Düşük", "estimatedCostEUR": 130, "affectedYears": "2010-2017" },
+      { "title": "Sert iç plastik gıcırtıları ve zayıf yalıtım", "description": "Maliyet odaklı iç mekan; torpido/kapı panelinde gıcırtı, yol ve rüzgar sesi belirgin. Keçe/takoz takviyesi kısmi çözüm.", "severity": "Düşük", "estimatedCostEUR": 80, "affectedYears": "2010-2017" }
+    ],
+    "pros": ["Zincir triger — kayış değişim masrafı YOK", "LPG'ye uygun, dertsiz motor", "Çok düşük işletme ve parça maliyeti", "Park kolaylığı"],
+    "cons": ["3 silindir titreşim/ses", "Sade ve sert iç plastikler, zayıf yalıtım", "80 HP otoyolda yetersiz", "K12'ye göre daha ucuz his"],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, hava/polen filtresi, gaz kelebeği temizliği, LPG'de subap ayarı, ön takım kontrolü.", "estimatedCostEUR": 140 },
+      { "mileage": "120.000 km", "expectedIssues": "Ön süspansiyon revizyonu, bobin seti, debriyaj kontrolü, amortisörler, LPG regülatör bakımı.", "estimatedCostEUR": 280 },
+      { "mileage": "200.000 km", "expectedIssues": "Debriyaj seti, su pompası, motor takozları, klima kompresörü, süspansiyon yenileme.", "estimatedCostEUR": 380 }
+    ]
+  },
+  {
+    "brand": "Nissan",
+    "modelName": "Qashqai (J10, 2007-2013)",
+    "productionYears": "2007-2013",
+    "engine": "1.6 16V 117 HP (HR16DE, Benzin/LPG) + 5 İleri Manuel",
+    "segment": "SUV",
+    "bodyType": "SUV",
+    "drivetrain": "Önden Çekiş",
+    "reliabilityScore": 7.5,
+    "minPrice": 380000,
+    "maxPrice": 620000,
+    "estimatedMaintenanceCostEUR": 250,
+    "expertSummary": "İlk nesil Qashqai (J10), 'crossover' modasını başlatan araçlardan biri — yüksek sürüş pozisyonu, hatchback boyutları, uygun fiyat. 1.6 16V (HR16DE) atmosferik motor turbosuz, LPG'ye uygun, **zincir trigerli** ve dayanıklıdır. Bu düz vitesli benzinli versiyon en dertsiz kombinasyondur (CVT ve dizel risklerini taşımaz). Kritik konular: ön cam alt bölgesinde çatlama (bilinen kronik), ön süspansiyon burçları, gaz kelebeği, arka fren disk aşınması, panoramik cam su kaçağı. Günlük dille: \"Crossover pratikliği + zincir triger + LPG uyumu; düz vitesli 1.6 en akıllısı. Ön cam çatlamasına ve süspansiyon burçlarına dikkat.\"",
+    "userFeedbackSummary": "Kullanıcılar yüksek pozisyonu, pratikliği ve düz vitesli motorun dertsizliğini övüyor. Şikayetler: ön camın alt kenardan kendiliğinden çatlaması (çok yaygın kronik), ön süspansiyon burçları, arka fren diskleri erken aşınması, gaz kelebeği, panoramik cam su kaçağı, direksiyon açı sensörü. Zincir triger uzun ömürlü.",
+    "chronicIssues": [
+      { "title": "Ön cam kendiliğinden çatlaması", "description": "J10 Qashqai'nin çok bilinen kroniği: ön cam alt kenardan (genelde sürücü tarafı köşe) hiçbir darbe olmadan çatlar; gövde/cam gerilimi kaynaklı. Cam değişimi gerekir, bazen tekrarlar; kaliteli cam ve doğru montaj önemli.", "severity": "Orta", "estimatedCostEUR": 200, "affectedYears": "2007-2013" },
+      { "title": "Ön süspansiyon burçları, rot başı ve arka fren disk aşınması", "description": "Ağır crossover gövde nedeniyle 60-100 bin km'de ön salıncak burçları ve rot başları biter; arka fren diskleri erken aşınır. Ön takım revizyonu ve arka fren komple.", "severity": "Orta", "estimatedCostEUR": 250, "affectedYears": "2007-2013" },
+      { "title": "Panoramik cam tavan su kaçağı ve gaz kelebeği", "description": "Panoramik tavanlı örneklerde drenaj kanalları tıkanınca su içeri sızar; gaz kelebeği kurumu rölanti dengesizliği yapar. Drenaj temizliği ve kelebek adaptasyonu.", "severity": "Düşük", "estimatedCostEUR": 150, "affectedYears": "2007-2013" }
+    ],
+    "pros": ["Crossover pratikliği, yüksek sürüş pozisyonu", "Zincir trigerli, LPG uyumlu, dertsiz HR16DE motor", "CVT/dizel riski yok — düz vitesli en sağlamı", "Uygun fiyat, bol parça"],
+    "cons": ["Ön cam kendiliğinden çatlaması — yaygın kronik", "Ön süspansiyon burçları ve arka fren erken aşınıyor", "Panoramik tavan su kaçağı riski", "117 HP dolu araçta orta"],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Yağ+filtre, bujiler, filtreler, gaz kelebeği temizliği, ön/arka fren kontrolü, panoramik tavan drenaj temizliği, LPG'de subap ayarı.", "estimatedCostEUR": 160 },
+      { "mileage": "120.000 km", "expectedIssues": "Ön süspansiyon revizyonu (burç, rot, rotil), arka fren komple, bobin seti, debriyaj kontrolü, ön cam kontrolü.", "estimatedCostEUR": 380 },
+      { "mileage": "200.000 km", "expectedIssues": "Debriyaj seti, su pompası, motor takozları, klima kompresörü, süspansiyon yenileme, direksiyon rot.", "estimatedCostEUR": 420 }
+    ]
+  },
+  {
+    "brand": "Nissan",
+    "modelName": "Qashqai (J10, 2007-2013)",
+    "productionYears": "2007-2013",
+    "engine": "1.6 dCi 130 HP (R9M, Dizel Turbo) + Xtronic CVT",
+    "segment": "SUV",
+    "bodyType": "SUV",
+    "drivetrain": "Önden Çekiş",
+    "reliabilityScore": 6.2,
+    "minPrice": 420000,
+    "maxPrice": 680000,
+    "estimatedMaintenanceCostEUR": 450,
+    "expertSummary": "J10 Qashqai'nin dizel + otomatik seçeneği 1.6 dCi (R9M, Renault-Nissan ortak) + Xtronic CVT'dir ve ikinci elde en riskli paketlerden biridir. İki büyük sorun: (1) Xtronic CVT (JATCO) ağır crossover gövdeyle ve dizel torkuyla zorlanır — aşırı ısınma, titreme ve 120-160 bin km'de komple arıza yaygındır; soğutucusu ve yağı ihmal edilmemeli. (2) 1.6 dCi (R9M) motorun turbo, EGR, DPF ve enjektör konuları; ayrıca zincir trigeri gergi/zincir sesi yapabilir. Günlük dille: \"Sürmesi rahat ama CVT + R9M dizel ikilisi 'servis abonesi'; CVT geçmişi olmayan alınmaz, düz vitesli benzinliye yönel.\"",
+    "userFeedbackSummary": "Kullanıcı yorumları ağırlıklı CVT şikayeti: kalkışta titreme, ivmede zayıflama, 'kızarma' uyarısı (aşırı ısınma), yol ortasında kalma, komple değişim. R9M motorda turbo, EGR/DPF kurumu, enjektör ve zincir sesi. CVT + soğutucu yağı düzenli değişmiş, servis kayıtlı bir örnek şart.",
+    "chronicIssues": [
+      { "title": "Xtronic CVT (JATCO) aşırı ısınma ve komple arıza", "description": "Ağır crossover + dizel tork kombinasyonunda CVT aşırı ısınır; kalkışta titreme, ivmede zayıflama, aşırı ısınma uyarısı, 120-160 bin km'de kayış/pulley ve valf gövdesi arızası, komple değişim. Ek soğutucu ve 40-50 bin km yağ değişimi zorunlu.", "severity": "Kritik", "estimatedCostEUR": 1200, "affectedYears": "2007-2013" },
+      { "title": "1.6 dCi (R9M) turbo, EGR, DPF ve enjektör", "description": "Turbo kayıcı kanatları ve EGR kurum bağlar; DPF şehir içi tıkanır; enjektörler debisini şaşırır. Güç kaybı, arıza lambası, rejenerasyon sorunu. Temizlik/revizyon.", "severity": "Orta", "estimatedCostEUR": 500, "affectedYears": "2011-2013" },
+      { "title": "R9M zincir triger gergi/zincir sesi", "description": "Bazı R9M motorlarda soğuk çalıştırmada zincir triger gergisi ses yapar; ileri seviyede zincir seti değişir. Yağ bakımı düzenliyse seyrek.", "severity": "Orta", "estimatedCostEUR": 500, "affectedYears": "2011-2013" }
+    ],
+    "pros": ["Sürmesi rahat, sessiz, yüksek pozisyon", "Torklu ve ekonomik dizel (çalışırken)", "Crossover pratikliği ve iç hacim"],
+    "cons": ["Xtronic CVT — aşırı ısınma ve pahalı komple arıza riski", "R9M dizel turbo/EGR/DPF/enjektör bakımları", "R9M zincir gergi sesi", "Toplam işletme maliyeti çok yüksek; servis kayıtsız alınmaz"],
+    "milestones": [
+      { "mileage": "40.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, Xtronic CVT yağı (40-50 bin km, KRİTİK) + soğutucu kontrolü, EGR ilk kontrol.", "estimatedCostEUR": 350 },
+      { "mileage": "120.000 km", "expectedIssues": "İkinci CVT yağı + soğutucu, turbo/EGR/DPF temizliği, enjektör kontrolü, zincir sesi dinleme, ön takım revizyonu.", "estimatedCostEUR": 900 },
+      { "mileage": "160.000 km", "expectedIssues": "CVT revizyonu/değişimi ihtimali, turbo revizyonu, DPF değişimi, zincir triger seti, süspansiyon yenileme.", "estimatedCostEUR": 1400 }
+    ]
+  },
+  {
+    "brand": "Nissan",
+    "modelName": "Qashqai (J11, 2014-2021)",
+    "productionYears": "2014-2021",
+    "engine": "1.5 dCi 110 HP (K9K, Dizel Turbo) + 6 İleri Manuel",
+    "segment": "SUV",
+    "bodyType": "SUV",
+    "drivetrain": "Önden Çekiş",
+    "reliabilityScore": 7.4,
+    "minPrice": 700000,
+    "maxPrice": 1150000,
+    "estimatedMaintenanceCostEUR": 350,
+    "expertSummary": "İkinci nesil Qashqai (J11), daha olgun, kaliteli ve rafine bir C-SUV — tasarım ve iç kalite belirgin sıçradı. 1.5 dCi (K9K, Renault-Nissan ortak, 110 HP) dizel + 6 ileri düz vites, J11'in en huzurlu kombinasyonudur: CVT'nin ısınma riski yok, sadece motor bakımları var. K9K klasikleri: kayış triger (90-120 bin km), enjektör, EGR, DPF (şehir içi). Günlük dille: \"Rafine, kaliteli C-SUV; düz vitesli 1.5 dCi en akıllısı — CVT riskinden kaç. Kayış triger ve DPF bakımını göze al.\" Uzun yol ağırlıklı aile için mantıklı.",
+    "userFeedbackSummary": "Kullanıcılar iç kaliteyi, rafineliği ve yakıt ekonomisini övüyor. Şikayetler: kayış triger periyodu, enjektör revizyonu, EGR kurumu, DPF tıkanması (şehir içi), NissanConnect multimedya donması, ön süspansiyon burçları. Kaliteli mazot ve ara sıra uzun yol şart.",
+    "chronicIssues": [
+      { "title": "1.5 dCi (K9K) enjektör ve kayış triger periyodu", "description": "Common-rail enjektörler zamanla debisini şaşırır (soğukta zor çalışma, is); kayış trigeri 90-120 bin km'de değişmelidir. Kaliteli mazot enjektör ömrünü belirler.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2014-2021" },
+      { "title": "EGR valfi ve DPF tıkanması (şehir içi)", "description": "Kısa mesafe kullanımda EGR kurum bağlar, DPF dolar; güç kaybı, arıza lambası, rejenerasyon sorunu. Uzun yol + temizlik/değişim.", "severity": "Orta", "estimatedCostEUR": 400, "affectedYears": "2014-2021" },
+      { "title": "NissanConnect multimedya donması ve ön süspansiyon burçları", "description": "Multimedya ekranı donar/yeniden başlar, kamera/CarPlay kopar; 60-100 bin km'de ön süspansiyon burçları. Yazılım güncelleme ve ön takım revizyonu.", "severity": "Düşük", "estimatedCostEUR": 200, "affectedYears": "2014-2021" }
+    ],
+    "pros": ["Rafine, kaliteli ve sessiz C-SUV", "Düz vites — CVT ısınma riski yok", "Torklu ve ekonomik 1.5 dCi dizel", "Geniş iç hacim, güçlü ikinci el talebi"],
+    "cons": ["Kayış triger periyodik masrafı", "Enjektör/EGR/DPF gibi dizel bakımları, şehir içine uygun değil", "NissanConnect donması", "110 HP dolu araçta orta"],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR/DPF ilk kontrol, triger kayış durumu kontrolü, yazılım güncelleme.", "estimatedCostEUR": 180 },
+      { "mileage": "120.000 km", "expectedIssues": "Kayış triger seti + su pompası, enjektör kontrolü, EGR/DPF temizliği, turbo kontrolü, ön takım revizyonu, debriyaj kontrolü.", "estimatedCostEUR": 700 },
+      { "mileage": "220.000 km", "expectedIssues": "İkinci kayış seti, turbo revizyonu ihtimali, DPF değişimi, su pompası, süspansiyon yenileme.", "estimatedCostEUR": 800 }
+    ]
+  },
+  {
+    "brand": "Nissan",
+    "modelName": "Navara (D40, 2005-2015)",
+    "productionYears": "2005-2015",
+    "engine": "2.5 dCi 174 HP (YD25DDTi, Dizel Turbo) + 6 İleri Manuel",
+    "segment": "Ticari",
+    "bodyType": "Pickup",
+    "drivetrain": "4WD",
+    "reliabilityScore": 6.5,
+    "minPrice": 500000,
+    "maxPrice": 950000,
+    "estimatedMaintenanceCostEUR": 500,
+    "expertSummary": "D40 Navara, konforlu kabini ve güçlü 2.5 dCi motoruyla pick-up segmentinde Hilux'un ana rakibiydi. Ama D40'ın iki ciddi kroniği var: (1) 2.5 dCi (YD25DDTi) motorun krank mili yatak/yağ pompası zinciri aşınması — özellikle bakımsız ve ağır yük çeken örneklerde krank arızası (motor komple demek); (2) şasi paslanması — arka şasi ve süspansiyon bağlantı bölgelerinde ilerlemiş korozyon, bazı örneklerde şasi çatlaması. Ayrıca EGR/emme kurumu, turbo, enjektör. Günlük dille: \"Konforlu ama YD25 krank ve şasi pası ciddi — ekspertizde krank sesi ve şasi altı mutlaka bakılır. Bakımsız/pas var → uzak dur.\"",
+    "userFeedbackSummary": "Kullanıcılar konforu sever, güvenilirliği eleştirir. Şikayetler: YD25 krank mili yatak aşınması ve motor arızası, yağ pompası zinciri, şasi paslanması/çatlaması (özellikle nemli bölge), EGR/emme kurumu, turbo, enjektör, aşırı yağ tüketimi. Servis kayıtlı, şasisi temiz, krank sesi olmayan bir örnek şart.",
+    "chronicIssues": [
+      { "title": "YD25 krank mili yatak / yağ pompası zinciri aşınması", "description": "2.5 dCi'nin en ağır kroniği: ana/biyel yatakları ve yağ pompasını süren zincir aşınır; yağ basıncı düşer, krank vurması başlar ve motor komple gider. Ağır yük çekme ve geç yağ değişimi hızlandırır. Yağ basıncı ve krank sesi ekspertizde kritik.", "severity": "Kritik", "estimatedCostEUR": 1500, "affectedYears": "2005-2015" },
+      { "title": "Şasi paslanması ve çatlaması", "description": "Arka şasi kirişi, süspansiyon ve çeki demiri bağlantı bölgelerinde ilerlemiş korozyon; ağır durumda şasi çatlaması. Nissan bazı pazarlarda geri çağırma yaptı. Şasi altı boya/pas koruması ve düzenli kontrol şart.", "severity": "Kritik", "estimatedCostEUR": 700, "affectedYears": "2005-2015" },
+      { "title": "EGR/emme kurumu, turbo VNT ve enjektör", "description": "Şehir içi ve rölanti çalışma çok olan araçlarda EGR ve emme yolları, turbo kayıcı kanatları kurum bağlar; enjektörler debisini şaşırır. Temizlik/revizyon.", "severity": "Orta", "estimatedCostEUR": 450, "affectedYears": "2005-2015" }
+    ],
+    "pros": ["Konforlu kabin ve iyi donanım (Hilux'a göre)", "Güçlü 174 HP / 403 Nm motor", "Yük ve arazi yeteneği", "İkinci el talebi (bakımlı örnekte)"],
+    "cons": ["YD25 krank mili / yağ pompası zinciri — motor katili kronik", "Şasi paslanması ve çatlaması — kritik güvenlik konusu", "EGR/emme/turbo/enjektör dizel bakımları", "Yüksek onarım maliyeti; servis kayıtsız kesinlikle alınmaz"],
+    "milestones": [
+      { "mileage": "60.000 km", "expectedIssues": "Dizel yağı+filtre (kaliteli, kısa periyot), yakıt/hava filtresi, EGR/turbo kontrolü, yağ basıncı kontrolü, şasi altı pas kontrolü/koruma.", "estimatedCostEUR": 280 },
+      { "mileage": "150.000 km", "expectedIssues": "Krank mili yatak/yağ pompası zinciri kontrolü, EGR/emme temizliği, enjektör kontrolü, turbo kontrolü, debriyaj seti, şasi pas onarımı.", "estimatedCostEUR": 900 },
+      { "mileage": "250.000 km", "expectedIssues": "Krank/motor revizyonu ihtimali, turbo revizyonu, şasi/süspansiyon komple kontrol, enjeksiyon pompası, arka makas.", "estimatedCostEUR": 1400 }
+    ]
+  }
+]

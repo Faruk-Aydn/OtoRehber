@@ -1,4 +1,8 @@
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
+using OtoRehber.Domain;
 using OtoRehber.Domain.Entities;
 
 namespace OtoRehber.Services
@@ -45,13 +49,40 @@ namespace OtoRehber.Services
             if (f.YearMin is > 0) query = query.Where(c => c.YearEnd == null || c.YearEnd >= f.YearMin);
             if (f.YearMax is > 0) query = query.Where(c => c.YearStart == null || c.YearStart <= f.YearMax);
 
-            if (f.PowerMin is > 0) query = query.Where(c => c.PowerHp != null && c.PowerHp >= f.PowerMin);
-            if (f.PowerMax is > 0) query = query.Where(c => c.PowerHp != null && c.PowerHp <= f.PowerMax);
+            // Motor gücü / hacmi: seçili hazır aralıklar OR ile birleştirilir (boşluk atlamaz).
+            var powerRanges = CarFilter.Clean(f.Power).Select(CarSpecs.PowerRange).Where(r => r != null).Select(r => r!.Value).ToList();
+            if (powerRanges.Count > 0)
+                query = query.Where(BucketOr<Car>(c => c.PowerHp, powerRanges));
 
-            if (f.CcMin is > 0) query = query.Where(c => c.EngineDisplacementCc != null && c.EngineDisplacementCc >= f.CcMin);
-            if (f.CcMax is > 0) query = query.Where(c => c.EngineDisplacementCc != null && c.EngineDisplacementCc <= f.CcMax);
+            var ccRanges = CarFilter.Clean(f.Cc).Select(CarSpecs.CcRange).Where(r => r != null).Select(r => r!.Value).ToList();
+            if (ccRanges.Count > 0)
+                query = query.Where(BucketOr<Car>(c => c.EngineDisplacementCc, ccRanges));
 
             return query;
+        }
+
+        /// <summary>
+        /// `entity => value != null && ((value >= min1 && value <= max1) || (value >= min2 && value <= max2) ...)`
+        /// ifadesini kurar — çoklu hazır aralık seçimini SQL'e çevrilebilir tek bir OR koşuluna dönüştürür.
+        /// </summary>
+        private static Expression<Func<T, bool>> BucketOr<T>(Expression<Func<T, int?>> selector, List<(int Min, int Max)> ranges)
+        {
+            var p = selector.Parameters[0];
+            var val = selector.Body; // int?
+            var notNull = Expression.NotEqual(val, Expression.Constant(null, typeof(int?)));
+            var valInt = Expression.Convert(val, typeof(int)); // (int)value — null zaten notNull ile elenir
+
+            Expression? orChain = null;
+            foreach (var (min, max) in ranges)
+            {
+                var inRange = Expression.AndAlso(
+                    Expression.GreaterThanOrEqual(valInt, Expression.Constant(min)),
+                    Expression.LessThanOrEqual(valInt, Expression.Constant(max)));
+                orChain = orChain == null ? inRange : Expression.OrElse(orChain, inRange);
+            }
+
+            var body = Expression.AndAlso(notNull, orChain!);
+            return Expression.Lambda<Func<T, bool>>(body, p);
         }
 
         public static IQueryable<Car> ApplySort(IQueryable<Car> query, string? sortBy) => sortBy switch
