@@ -1,0 +1,1487 @@
+[
+  {
+    "brand": "BMW",
+    "modelName": "3 Serisi (E46, 1998-2005)",
+    "productionYears": "1998-2005",
+    "engine": "316i 1.6 105 HP (M43B19) + 5 İleri Manuel",
+    "segment": "D",
+    "reliabilityScore": 6.6,
+    "minPrice": 420000,
+    "maxPrice": 700000,
+    "estimatedMaintenanceCostEUR": 380,
+    "expertSummary": "E46, BMW'nin en çok sevilen 3 Serisi kasasıdır: arkadan itiş, dürüst direksiyon hissi ve zamansız tasarım. 316i buradaki giriş motorudur — eski nesil M43 tek eksantrikli 1.6, sadece 105 HP verir ve D segmenti gövde için yavaştır (0-100 ~12 sn), ama basit ve nispeten dayanıklıdır. Cazibesi ucuz alım fiyatı ve 'gerçek BMW şasisi'dir; hız değil. Kritik konu yaş: 20 yılı devirmiş her E46'da ön takım burçları, arka aks kulakları (çatlak), radyatör/genleşme kabı (plastik) ve elektrik arızaları beklenir. Günlük dille: \"Ucuz premium his; ama 316i yavaş, alırken kaportadan çok altını ve elektriğini kontrol ettir.\"",
+    "userFeedbackSummary": "Kullanıcılar sürüş dengesini, direksiyon hissini ve klasikleşen tasarımı seviyor; 316i sahipleri 'şehir içi yeter ama otoyolda çaresiz' diyor. Sık şikayetler: soğutma sistemi (plastik radyatör, termostat, su pompası kanadı), ön salıncak burçları ve rot/rotil sesi, arka aks bağlantı kulaklarında çatlak (kaynak gerekir), cam krikoları, far içi buğu, koltuk yan destek aşınması. Bakımı ustası bol ve parçası uygun, ama 'küçük küçük' masraf çıkarır.",
+    "bodyType": "Sedan",
+    "drivetrain": "Arkadan İtiş",
+    "chronicIssues": [
+      {
+        "title": "Soğutma sistemi plastik parça yorgunluğu",
+        "description": "Radyatör, genleşme (yedek su) kabı, termostat kovanı ve su pompası kanadı zamanla çatlar/kırılır; ani hararet ve conta riski. 100.000 km sonrası soğutma seti komple yenilenmeli.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "1998-2005"
+      },
+      {
+        "title": "Arka aks bağlantı kulakları çatlağı",
+        "description": "Arka aks taşıyıcının şaseye bağlandığı sac kulaklar metal yorgunluğundan çatlar; ağır vakalarda aks oynar. Erken tespitte kaynakla takviye edilir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 250,
+        "affectedYears": "1998-2005"
+      },
+      {
+        "title": "Ön takım burçları ve direksiyon kutusu sesleri",
+        "description": "Salıncak burçları, viraj demiri z-rotları ve rotiller aşınır; direksiyon kutusundan tık sesi gelir. Ön takım komple revizyonu tipiktir.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 300,
+        "affectedYears": "1998-2005"
+      }
+    ],
+    "pros": [
+      "Arkadan itiş, 50:50 denge ve dürüst direksiyon hissi",
+      "Zamansız tasarım, güçlü ikinci el talebi",
+      "M43 motoru basit, ustası ve parçası bol",
+      "Düşük alım fiyatı ile premium sahiplik"
+    ],
+    "cons": [
+      "105 HP D segmenti için yetersiz, otoyolda yorucu",
+      "Yaşa bağlı soğutma, ön takım ve elektrik masrafları",
+      "Arka aks kulak çatlağı gibi yapısal kontrol gerektiren konular",
+      "Bakımsız örnek çok yaygın; iyi ekspertiz şart"
+    ],
+    "milestones": [
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "Soğutma seti (radyatör, termostat, su pompası, hortumlar), buji+kablo, ön salıncak burçları, fren disk/balata.",
+        "estimatedCostEUR": 500
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Arka aks kulak kontrolü/kaynak, direksiyon kutusu, debriyaj seti, VANOS conta, eksoz askıları.",
+        "estimatedCostEUR": 700
+      },
+      {
+        "mileage": "300.000 km",
+        "expectedIssues": "Motor revizyonu ihtimali (segman/yağ tüketimi), tüm ön-arka takım, elektrik arıza taraması, kaporta pas onarımı.",
+        "estimatedCostEUR": 900
+      }
+    ]
+  },
+  {
+    "brand": "BMW",
+    "modelName": "3 Serisi (E46, 1998-2005)",
+    "productionYears": "2001-2005",
+    "engine": "318i 2.0 143 HP (N46B20, Valvetronic) + 5 İleri Manuel",
+    "segment": "D",
+    "reliabilityScore": 6.3,
+    "minPrice": 480000,
+    "maxPrice": 780000,
+    "estimatedMaintenanceCostEUR": 430,
+    "expertSummary": "E46 318i, makyaj sonrası yeni N46 Valvetronic motorla geldi: 2.0 litre, 143 HP, 316i'ye göre belirgin daha canlı ve şehir içi-otoyol dengesi iyi. Valvetronic (gaz kelebeksiz supap kontrolü) yakıtı düşürür ama bir zayıf nokta getirir: eksantrik mili muylu yatağı (bearing ledge) aşınması ve Valvetronic motor/eksantrik sensörü arızaları N42/N46'nın klasik konusudur. Ayrıca bu motor yağ yakar (yaşça normal kabul edilir), VANOS ünitesi ve DISA emme klapesi yorulur. Şasi tarafı 316i ile aynı yaş sorunlarını paylaşır. Günlük dille: \"316i'den çok daha keyifli; ama N46'nın eksantrik yatağı ve yağ yakması bilinmeli, ustası N42/N46 tecrübeli olmalı.\"",
+    "userFeedbackSummary": "Kullanıcılar performans/ekonomi dengesini ve motorun sessizliğini beğeniyor. Sık konular: eksantrik mili yatak aşınması (tık sesi, hata kodu), yağ yakma ve valf kapağı contası sızıntısı, Valvetronic motoru/eksantrik konum sensörü, DISA klapesi, soğutma plastikleri, ön takım burçları, cam krikoları. Bakımı 316i'den pahalı ama sürüş tatmini yüksek.",
+    "bodyType": "Sedan",
+    "drivetrain": "Arkadan İtiş",
+    "chronicIssues": [
+      {
+        "title": "N46 eksantrik mili muylu yatağı (bearing ledge) aşınması",
+        "description": "Silindir kapağındaki eksantrik yatak yüzeyi aşınır; tık sesi, düşük yağ basıncı uyarısı ve Valvetronic hata kodları görülür. Onarım kapağın işlenmesini/değişimini gerektirir, maliyetlidir.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 800,
+        "affectedYears": "2001-2005"
+      },
+      {
+        "title": "Valf kapağı contası / yağ ayırıcı ve yağ yakma",
+        "description": "Valf kapağı contası ve karter havalandırma (CCV) membranı sertleşir; yağ sızıntısı ve buhar yoluyla yağ tüketimi artar. Conta+CCV yenilenir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 300,
+        "affectedYears": "2001-2005"
+      },
+      {
+        "title": "DISA emme klapesi ve VANOS yorgunluğu",
+        "description": "DISA değişken emme klapesinin mili/o-ringi aşınır (emme kaçağı, rölanti dengesizliği); VANOS ünitesi conta yaşlanmasıyla performans/tık sesi verir. İkisi de revize edilir.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 250,
+        "affectedYears": "2001-2005"
+      }
+    ],
+    "pros": [
+      "N46 2.0: 316i'ye göre belirgin daha canlı, iyi otoyol",
+      "Valvetronic ile düşük yakıt tüketimi",
+      "Arkadan itiş şasi keyfi ve denge",
+      "Parça/usta bulunabilirliği yüksek"
+    ],
+    "cons": [
+      "N46 eksantrik yatak aşınması pahalı bir risk",
+      "Yağ yakma ve valf kapağı/CCV sızıntıları",
+      "DISA, VANOS, soğutma plastikleri gibi zincirleme küçük masraflar",
+      "Yaşa bağlı ön takım ve elektrik konuları"
+    ],
+    "milestones": [
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "Yağ+filtre, valf kapağı contası, CCV (karter havalandırma), buji+bobin, soğutma seti kontrolü, ön takım burçları.",
+        "estimatedCostEUR": 450
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Eksantrik yatak kontrolü, DISA/VANOS revizyonu, debriyaj seti, arka aks kulak kontrolü, direksiyon kutusu.",
+        "estimatedCostEUR": 800
+      },
+      {
+        "mileage": "300.000 km",
+        "expectedIssues": "Silindir kapağı revizyonu ihtimali, motor conta yenileme, tüm ön-arka takım, elektrik taraması.",
+        "estimatedCostEUR": 1100
+      }
+    ]
+  },
+  {
+    "brand": "BMW",
+    "modelName": "3 Serisi (E46, 1998-2005)",
+    "productionYears": "2001-2005",
+    "engine": "320d 2.0 150 HP (M47D20TÜ Dizel) + 5 İleri Manuel",
+    "segment": "D",
+    "reliabilityScore": 6.8,
+    "minPrice": 520000,
+    "maxPrice": 850000,
+    "estimatedMaintenanceCostEUR": 450,
+    "expertSummary": "E46 320d, ikinci el 'ekonomik premium sedan' arayışının klasiğidir: 150 HP ve 330 Nm torkla benzinli 320i'den bile hızlı hisseder, otoyolda 4.5-5 lt yakar. M47 dizel motor, N47'nin aksine triger ZİNCİRİ ÖNDEDİR (kolay erişim) ve genel olarak sağlam kabul edilir; asıl konular emme manifoldu girdap klapesi (swirl flap) kurumu, EGR, turbo aktüatörü ve enjektör yaşlanmasıdır. Şasi tarafı yine E46 yaş sorunlarını paylaşır. Günlük dille: \"Yakıtı ve torku ile keyifli; M47 zincirini dert etme ama swirl flap, EGR ve enjektörü kontrol ettir.\"",
+    "userFeedbackSummary": "Kullanıcılar tork, yakıt ekonomisi ve 'yorulmayan motor' hissini övüyor. Sık konular: swirl flap kurumu/kırılması, EGR tıkanması ve mesajlar, turbo VNT aktüatörü/kelebek sıkışması, enjektör debisi kaçması (tekleme, is), mazot ön ısıtma bujileri, ikili kütle volan (DMF) sesi, soğutma plastikleri, ön takım. Bakımlı 320d çok uzun ömürlü.",
+    "bodyType": "Sedan",
+    "drivetrain": "Arkadan İtiş",
+    "chronicIssues": [
+      {
+        "title": "Emme manifoldu girdap klapesi (swirl flap) kurumu",
+        "description": "Emme manifoldundaki klapeler kurum bağlar, mili aşınır; kopan parça silindire kaçarsa hasar verir. Manifold değişir veya klapeler iptal edilir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2001-2005"
+      },
+      {
+        "title": "EGR tıkanması ve turbo VNT aktüatörü",
+        "description": "EGR valfi ve borusu kurum bağlar (güç kaybı, mesaj); turbo değişken geometri kanatları ve aktüatörü sıkışır. Temizlik/aktüatör değişimi gerekir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2001-2005"
+      },
+      {
+        "title": "Enjektör debisi kaçması ve ikili kütle volan (DMF)",
+        "description": "Common-rail enjektörler zamanla debisini şaşırır (tekleme, is, sarsıntı); DMF yaylanma sesi verir. Enjektör revizyonu/değişimi ve DMF+debriyaj seti tipiktir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 600,
+        "affectedYears": "2001-2005"
+      }
+    ],
+    "pros": [
+      "150 HP / 330 Nm: benzinli 320i'den hızlı hisseder",
+      "Otoyol 4.5-5 lt, uzun menzil",
+      "M47 triger zinciri önde ve genelde sağlam",
+      "Arkadan itiş şasi keyfi + güçlü ikinci el talebi"
+    ],
+    "cons": [
+      "Swirl flap, EGR, turbo aktüatörü kurum masrafları",
+      "Enjektör ve DMF yaşlanması pahalı kalemler",
+      "E46 yaşına bağlı soğutma/ön takım/elektrik konuları",
+      "Kısa şehir içi kullanım motoru yorar (kurum)"
+    ],
+    "milestones": [
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR ve swirl flap temizliği, kızdırma bujileri, soğutma seti kontrolü.",
+        "estimatedCostEUR": 400
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Turbo VNT aktüatörü, enjektör kontrol/revizyon, DMF+debriyaj seti, ön takım, arka aks kulak kontrolü.",
+        "estimatedCostEUR": 1000
+      },
+      {
+        "mileage": "300.000 km",
+        "expectedIssues": "Turbo revizyonu, enjektör komple, su pompası+triger kontrolü, süspansiyon yenileme, elektrik taraması.",
+        "estimatedCostEUR": 1200
+      }
+    ],
+    "engineDisplacementCc": 1995
+  },
+  {
+    "brand": "BMW",
+    "modelName": "3 Serisi (E90/E91/E92, 2005-2012)",
+    "productionYears": "2005-2011",
+    "engine": "320i 2.0 170 HP (N46B20) + 6 İleri Manuel",
+    "segment": "D",
+    "reliabilityScore": 6.4,
+    "minPrice": 620000,
+    "maxPrice": 950000,
+    "estimatedMaintenanceCostEUR": 520,
+    "expertSummary": "E90, 3 Serisi'nin en çok satan kuşaklarından biri: daha büyük gövde, artan iç hacim, hâlâ dürüst arkadan itiş şasi. 320i (N46) 2.0 litre 170 HP verir — yeterli ama coşkulu değil; alıcıların çoğu 'benzinli, düşük vergili, otomatik olmayan sağlam BMW' istediği için tercih eder. N46 motorun klasik konuları eksantrik mili yatak aşınması, yağ yakma, valf kapağı/CCV sızıntısı ve VANOS'tur. E90 elektrik/konfor tarafı E46'dan karmaşıktır: FRM ışık modülü, cam krikoları, torpido/koltuk elektroniği. Günlük dille: \"Geniş ve prestijli; ama N46 yatağı ve E90 elektronik arızaları için para ayır, servis kaydı olan al.\"",
+    "userFeedbackSummary": "Kullanıcılar iç hacmi, sürüş dengesini ve benzinli sadeliği seviyor. Sık konular: N46 eksantrik yatak tık sesi, yağ yakma, valf kapağı contası, VANOS sesi, elektrikli su pompası (N-serisi değil ama bazı örneklerde), FRM ışık modülü arızası (sinyaller/farlar), cam krikoları, direksiyon açı sensörü, koltuk ısıtıcı. Manuel şanzıman sağlam; debriyaj+DMF yaşa bağlı.",
+    "bodyType": "Sedan",
+    "drivetrain": "Arkadan İtiş",
+    "chronicIssues": [
+      {
+        "title": "N46 eksantrik mili yatağı aşınması ve yağ yakma",
+        "description": "Silindir kapağı eksantrik yatak yüzeyi aşınır (tık sesi, yağ basıncı uyarısı); motor buhar yoluyla yağ tüketir. Kapak işleme/değişim ve CCV+conta yenileme gerekir.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 800,
+        "affectedYears": "2005-2011"
+      },
+      {
+        "title": "FRM (ayak bölgesi ışık modülü) arızası",
+        "description": "Akü değişimi/voltaj düşüşü sonrası FRM modülü kilitlenir; sinyaller, farlar ve cam düğmeleri çalışmaz. Modül yazılım kurtarma veya değişimi ile onarılır.",
+        "severity": "Orta",
+        "estimatedCostEUR": 250,
+        "affectedYears": "2005-2010"
+      },
+      {
+        "title": "VANOS, DISA ve cam krikosu yorgunluğu",
+        "description": "VANOS solenoid/conta yaşlanır (tık, performans); DISA emme klapesi o-ringi dağılır; ön cam krikoları kırılır. Parça parça revize edilir.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 300,
+        "affectedYears": "2005-2011"
+      }
+    ],
+    "pros": [
+      "Geniş gövde, artan iç hacim, premium iç kalite",
+      "Arkadan itiş denge ve direksiyon hissi",
+      "Benzinli sadelik: düşük vergi, kuru DSG yok",
+      "Manuel şanzıman sağlam, güçlü ikinci el talebi"
+    ],
+    "cons": [
+      "N46 eksantrik yatak aşınması + yağ yakma riski",
+      "FRM ve konfor elektroniği arızaları",
+      "170 HP D segmenti için coşkusuz",
+      "Bakım/parça E46'ya göre pahalı"
+    ],
+    "milestones": [
+      {
+        "mileage": "100.000 km",
+        "expectedIssues": "Yağ+filtre, valf kapağı contası, CCV, buji+bobin, fren disk/balata, ön salıncak burçları, akü.",
+        "estimatedCostEUR": 500
+      },
+      {
+        "mileage": "180.000 km",
+        "expectedIssues": "Eksantrik yatak kontrolü, VANOS/DISA revizyonu, debriyaj+DMF seti, FRM kontrolü, direksiyon açı sensörü.",
+        "estimatedCostEUR": 900
+      },
+      {
+        "mileage": "260.000 km",
+        "expectedIssues": "Silindir kapağı revizyonu ihtimali, su pompası+termostat, tüm ön-arka takım, elektrik arıza taraması.",
+        "estimatedCostEUR": 1100
+      }
+    ]
+  },
+  {
+    "brand": "BMW",
+    "modelName": "3 Serisi (E90/E91/E92, 2005-2012)",
+    "productionYears": "2005-2011",
+    "engine": "320i 2.0 170 HP (N46B20) + 6 İleri Steptronic (GM, tork konvertörlü)",
+    "segment": "D",
+    "reliabilityScore": 6.3,
+    "minPrice": 650000,
+    "maxPrice": 1000000,
+    "estimatedMaintenanceCostEUR": 560,
+    "expertSummary": "E90 320i'nin otomatikli versiyonu, GM kaynaklı 6 ileri tork konvertörlü Steptronic ile gelir — kuru çift kavrama DEĞİL, sarsıntısız ve genel olarak sağlamdır, ihmal edilmezse uzun ömürlüdür (60-80 bin km'de yağ+filtre ister; 'ömür boyu yağ' iddiası pratikte doğru değildir). Motor tarafı manuel 320i ile aynı N46 konularını (eksantrik yatak, yağ yakma, VANOS/DISA) paylaşır. Otomatik, 170 HP'yi biraz daha yumuşatır ve şehir içi konforu artırır; yakıt manuelden ~0.5-1 lt fazladır. Günlük dille: \"Konforlu ve sağlam otomatik; şanzıman yağını zamanında değiştir, motor için N46 kurallarını uygula.\"",
+    "userFeedbackSummary": "Kullanıcılar Steptronic'in yumuşaklığını ve şehir içi rahatlığını seviyor. Şanzıman şikayeti azdır ama yağ bakımı yapılmamış yüksek km örneklerde vites geçiş sertliği/kayma görülür. Motor konuları manuel ile aynı: N46 eksantrik yatak sesi, yağ yakma, valf kapağı/CCV, FRM modülü, cam krikoları. Mekatronik conta/adaptör flanşı yağ sızdırabilir.",
+    "bodyType": "Sedan",
+    "drivetrain": "Arkadan İtiş",
+    "chronicIssues": [
+      {
+        "title": "N46 eksantrik mili yatağı aşınması ve yağ yakma",
+        "description": "Silindir kapağı eksantrik yatak yüzeyi aşınır (tık sesi, yağ basıncı uyarısı); buhar yoluyla yağ tüketimi. Kapak işleme/değişim + CCV/conta yenileme.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 800,
+        "affectedYears": "2005-2011"
+      },
+      {
+        "title": "Steptronic yağ bakımı ihmali ve mekatronik flanş sızıntısı",
+        "description": "Şanzıman yağı+filtre 60-80 bin km'de değişmezse vites geçişleri sertleşir/kayar; şanzıman adaptör flanşı ve conta yağ sızdırır. Yağ+filtre bakımı ve conta yenileme.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2005-2011"
+      },
+      {
+        "title": "FRM ışık modülü ve konfor elektroniği",
+        "description": "Voltaj düşüşü sonrası FRM kilitlenir (sinyal/far/cam düğmesi); direksiyon açı sensörü ve koltuk elektroniği arıza verir. Yazılım kurtarma/parça değişimi.",
+        "severity": "Orta",
+        "estimatedCostEUR": 280,
+        "affectedYears": "2005-2010"
+      }
+    ],
+    "pros": [
+      "Sağlam GM tork konvertörlü Steptronic (kuru DSG değil)",
+      "Şehir içi konfor ve yumuşak vites geçişleri",
+      "Arkadan itiş denge, premium iç kalite",
+      "Benzinli: düşük vergi, güçlü ikinci el talebi"
+    ],
+    "cons": [
+      "N46 eksantrik yatak aşınması + yağ yakma riski",
+      "Şanzıman yağı ihmalinde geçiş sorunları",
+      "FRM ve konfor elektroniği arızaları",
+      "Manuelden ~0.5-1 lt fazla yakıt, bakım pahalı"
+    ],
+    "milestones": [
+      {
+        "mileage": "80.000 km",
+        "expectedIssues": "Steptronic yağ+filtre, motor yağ+filtre, valf kapağı contası/CCV, buji+bobin, ön fren.",
+        "estimatedCostEUR": 550
+      },
+      {
+        "mileage": "160.000 km",
+        "expectedIssues": "İkinci şanzıman yağı, eksantrik yatak kontrolü, VANOS/DISA, mekatronik flanş contası, ön-arka takım.",
+        "estimatedCostEUR": 850
+      },
+      {
+        "mileage": "240.000 km",
+        "expectedIssues": "Silindir kapağı revizyonu ihtimali, su pompası+termostat, şanzıman revizyonu ihtimali, süspansiyon yenileme.",
+        "estimatedCostEUR": 1300
+      }
+    ]
+  },
+  {
+    "brand": "BMW",
+    "modelName": "3 Serisi (E90/E91/E92, 2005-2012)",
+    "productionYears": "2005-2007",
+    "engine": "320d 2.0 163 HP (M47D20TÜ2 Dizel) + 6 İleri Manuel",
+    "segment": "D",
+    "reliabilityScore": 6.9,
+    "minPrice": 640000,
+    "maxPrice": 980000,
+    "estimatedMaintenanceCostEUR": 520,
+    "expertSummary": "E90'ın ilk (2005-2007 makyaj öncesi) 320d'si hâlâ M47 motorludur — bu ÖNEMLİ bir ayrımdır: M47'nin triger zinciri ÖNDEDİR ve N47'nin motor-arkası zincir kabusunu YAŞAMAZ. 163 HP / 340 Nm ile güçlü ve ekonomiktir (otoyol ~4.5 lt). Konular klasik dizel kalemleri: swirl flap kurumu, EGR, turbo aktüatörü, enjektör yaşlanması ve DPF (bu kuşakta DPF var). Bakımlı M47'li E90, N47'liye göre daha 'huzurlu' bir alımdır. Günlük dille: \"E90 almak istiyorsan ve dizel şartsa, 2007 öncesi M47'li 320d ara — zincir derdi yok, gerisi standart dizel bakımı.\"",
+    "userFeedbackSummary": "Kullanıcılar M47'nin dayanıklılığını ve 'zincir korkusu olmadan dizel BMW' olmasını özellikle vurguluyor. Sık konular: swirl flap, EGR tıkanması, turbo VNT aktüatörü, enjektör debisi, DPF dolması (şehir içi), DMF sesi, soğutma parçaları, FRM modülü. Şehirde çok kullanılan örneklerde DPF ve EGR daha erken sorun çıkarır.",
+    "bodyType": "Sedan",
+    "drivetrain": "Arkadan İtiş",
+    "chronicIssues": [
+      {
+        "title": "Swirl flap kurumu ve EGR tıkanması",
+        "description": "Emme manifoldu girdap klapeleri kurum bağlar/kırılır; EGR valfi ve borusu tıkanır (güç kaybı, mesaj). Manifold değişimi veya klape iptali + EGR temizliği.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2005-2007"
+      },
+      {
+        "title": "Turbo VNT aktüatörü ve enjektör debisi",
+        "description": "Turbo değişken kanat mekanizması sıkışır, aktüatör arızalanır; enjektörler zamanla debi kaçırır (tekleme, is). Aktüatör/enjektör revizyonu.",
+        "severity": "Orta",
+        "estimatedCostEUR": 500,
+        "affectedYears": "2005-2007"
+      },
+      {
+        "title": "DPF tıkanması ve ikili kütle volan (DMF)",
+        "description": "Kısa mesafe kullanımında DPF dolar (rejenerasyon tamamlanamaz); DMF yaylanma sesi verir. DPF temizliği/değişimi ve DMF+debriyaj seti.",
+        "severity": "Orta",
+        "estimatedCostEUR": 650,
+        "affectedYears": "2005-2007"
+      }
+    ],
+    "pros": [
+      "M47 motor: triger zinciri önde, N47 zincir riski YOK",
+      "163 HP / 340 Nm güçlü ve otoyol ~4.5 lt",
+      "Arkadan itiş denge + geniş E90 gövdesi",
+      "Manuel şanzıman sağlam, ikinci el talebi güçlü"
+    ],
+    "cons": [
+      "Swirl flap / EGR / turbo aktüatörü kurum masrafları",
+      "DPF ve enjektör yaşlanması pahalı kalemler",
+      "FRM ve konfor elektroniği arızaları",
+      "Kısa şehir içi kullanım motoru ve DPF'yi yorar"
+    ],
+    "milestones": [
+      {
+        "mileage": "100.000 km",
+        "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR+swirl flap temizliği, kızdırma bujileri, DPF durum kontrolü.",
+        "estimatedCostEUR": 450
+      },
+      {
+        "mileage": "180.000 km",
+        "expectedIssues": "Turbo VNT aktüatörü, enjektör kontrol/revizyon, DMF+debriyaj seti, su pompası+triger kontrolü, ön takım.",
+        "estimatedCostEUR": 1000
+      },
+      {
+        "mileage": "260.000 km",
+        "expectedIssues": "Turbo revizyonu, DPF değişimi, enjektör komple, süspansiyon yenileme, elektrik taraması.",
+        "estimatedCostEUR": 1300
+      }
+    ],
+    "engineDisplacementCc": 1995
+  },
+  {
+    "brand": "BMW",
+    "modelName": "3 Serisi (E90/E91/E92, 2005-2012)",
+    "productionYears": "2007-2012",
+    "engine": "320d 2.0 177 HP (N47D20 Dizel) + 6 İleri Manuel",
+    "segment": "D",
+    "reliabilityScore": 6.0,
+    "minPrice": 700000,
+    "maxPrice": 1100000,
+    "estimatedMaintenanceCostEUR": 620,
+    "expertSummary": "2007 makyajıyla E90 320d'ye yeni N47 dizel geldi: 177 HP, daha rafine ve ekonomik. ANCAK N47'nin triger zinciri MOTORUN ARKASINDA (kavrama tarafında) konumlanır; zincir ve gergisi uzarsa metalik ses gelir, ihmal edilirse zincir atlar ve subap-piston teması motoru hurdaya çıkarır — değişim için motor/şanzıman sökülür, işçilik çok pahalıdır. Bunun dışında swirl flap, EGR soğutucu çatlağı, turbo ve yağ sızıntıları klasiktir. Zinciri değişmiş/kontrollü bakımlı örnek çok keyiflidir; bakımsızı risklidir. Günlük dille: \"En çok bulunan E90 dizel; ama N47 zincirini soğukta dinlemeden, servis geçmişini görmeden alma.\"",
+    "userFeedbackSummary": "Kullanıcılar performans ve yakıt ekonomisini seviyor ama 'zincir' kelimesi herkesin aklında. Soğuk çalıştırmada arkadan gelen çıtırtı/hırıltı acil işarettir. Diğer sık konular: swirl flap, EGR soğutucu su kaçağı, turbo, yağ soğutucu/karter conta sızıntıları, DPF, DMF, direksiyon rot/rotil, FRM modülü. Zinciri yapılmış örnekte sahiplik keyifli.",
+    "bodyType": "Sedan",
+    "drivetrain": "Arkadan İtiş",
+    "chronicIssues": [
+      {
+        "title": "N47 triger zinciri uzaması / atlaması (motorun arkasında)",
+        "description": "Zincir kavrama tarafındadır; zincir+gergi zamanla uzar, soğukta metalik ses gelir. İhmal edilirse zincir atlar, motor hurdaya çıkar. Değişimde motor/şanzıman sökülür — yüksek işçilik.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 1600,
+        "affectedYears": "2007-2012"
+      },
+      {
+        "title": "Swirl flap kurumu ve EGR soğutucu çatlağı",
+        "description": "Emme klapeleri kurum bağlar/kırılır; EGR soğutucusu çatlayınca antifriz kaybı ve buhar olur. Manifold/klape iptali + EGR soğutucu değişimi.",
+        "severity": "Orta",
+        "estimatedCostEUR": 450,
+        "affectedYears": "2007-2012"
+      },
+      {
+        "title": "Turbo, yağ soğutucu ve karter conta sızıntıları + DPF",
+        "description": "Turbo, yağ soğutucu contası ve karter havalandırması sızdırır; şehir içi kullanımda DPF dolar. Birden fazla sızıntı bir arada gelir, DPF temizliği/değişimi gerekir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 550,
+        "affectedYears": "2007-2012"
+      }
+    ],
+    "pros": [
+      "177 HP / 350 Nm: canlı ve otoyol ~4.5 lt",
+      "En çok bulunan E90 dizel — parça/usta bol",
+      "Arkadan itiş denge + geniş gövde",
+      "Zinciri yapılmış bakımlı örnek uzun ömürlü"
+    ],
+    "cons": [
+      "N47 triger zinciri riski — en pahalı arıza kalemi",
+      "Swirl flap, EGR soğutucu, turbo, yağ sızıntısı zincirleme masraflar",
+      "DPF ve DMF yaşlanması",
+      "Bakımsız örnek çok yaygın; ekspertiz + servis geçmişi şart"
+    ],
+    "milestones": [
+      {
+        "mileage": "80.000 km",
+        "expectedIssues": "Dizel yağı+filtre (LL-04), yakıt/hava filtresi, EGR+swirl flap kontrolü, zincir sesi dinleme, DPF durumu.",
+        "estimatedCostEUR": 450
+      },
+      {
+        "mileage": "160.000 km",
+        "expectedIssues": "Triger zinciri seti (ses/uzama varsa), EGR soğutucu, swirl flap manifold, turbo kontrolü, DMF+debriyaj, ön takım.",
+        "estimatedCostEUR": 2100
+      },
+      {
+        "mileage": "240.000 km",
+        "expectedIssues": "Yağ soğutucu/karter contaları, DPF değişimi, enjektör kontrolü, turbo revizyonu, süspansiyon komple.",
+        "estimatedCostEUR": 1500
+      }
+    ],
+    "engineDisplacementCc": 1995
+  },
+  {
+    "brand": "BMW",
+    "modelName": "3 Serisi (E90/E91/E92, 2005-2012)",
+    "productionYears": "2010-2012",
+    "engine": "320d 2.0 184 HP (N47D20 Dizel, LCI) + 6 İleri Steptronic (ZF, tork konvertörlü)",
+    "segment": "D",
+    "reliabilityScore": 6.1,
+    "minPrice": 780000,
+    "maxPrice": 1250000,
+    "estimatedMaintenanceCostEUR": 650,
+    "expertSummary": "E90 LCI (2008 sonrası makyaj) 320d'nin geç dönem versiyonu 184 HP verir ve genelde ZF 6 ileri tork konvertörlü Steptronic ile eşleşir — bu şanzıman sağlamdır, kuru kavrama değildir, 80-100 bin km'de yağ ister. Motor yine N47'dir: triger zinciri arkada, aynı zincir riski geçerlidir. 184 HP + ZF otomatik kombinasyonu bu kuşağın en keyifli 320d'sidir ama en pahalı bakım kalemlerini de taşır (zincir + şanzıman + dizel kurumları). Günlük dille: \"En tatlı süren E90 dizel; ZF şanzımanı seversin ama N47 zinciri ve dizel kurumları için bütçe ayır.\"",
+    "userFeedbackSummary": "Kullanıcılar 184 HP + ZF ikilisinin akıcılığını çok seviyor; ZF şanzıman şikayeti azdır (yağ bakımı yapılırsa). Motor konuları 177 HP ile aynı: N47 zincir sesi, swirl flap, EGR soğutucu çatlağı, turbo/yağ sızıntısı, DPF, DMF. Yüksek km'de şanzıman adaptör flanşı ve mekatronik conta yağ sızdırır.",
+    "bodyType": "Sedan",
+    "drivetrain": "Arkadan İtiş",
+    "chronicIssues": [
+      {
+        "title": "N47 triger zinciri uzaması / atlaması (motorun arkasında)",
+        "description": "Zincir kavrama tarafındadır; uzarsa soğukta metalik ses gelir, atlarsa motor hurdaya çıkar. Değişimde motor/şanzıman sökülür — yüksek işçilik.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 1600,
+        "affectedYears": "2010-2012"
+      },
+      {
+        "title": "Swirl flap, EGR soğutucu çatlağı ve turbo/yağ sızıntıları",
+        "description": "Emme klapeleri kurum bağlar; EGR soğutucusu çatlar (antifriz kaybı); turbo ve yağ soğutucu contası sızdırır. Manifold/klape iptali + EGR soğutucu + conta yenileme.",
+        "severity": "Orta",
+        "estimatedCostEUR": 600,
+        "affectedYears": "2010-2012"
+      },
+      {
+        "title": "ZF Steptronic yağ bakımı ve mekatronik flanş sızıntısı",
+        "description": "Şanzıman yağı 80-100 bin km'de değişmezse geçiş sertliği/kayma başlar; adaptör flanşı ve mekatronik conta yağ sızdırır. Yağ+filtre bakımı ve conta yenileme.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2010-2012"
+      }
+    ],
+    "pros": [
+      "184 HP / 380 Nm + ZF tork konvertörlü otomatik — en akıcı E90 dizel",
+      "Sağlam ZF şanzıman (kuru kavrama değil)",
+      "Otoyol ~4.5-5 lt, güçlü tork",
+      "Arkadan itiş denge, LCI donanım ve iç kalite"
+    ],
+    "cons": [
+      "N47 triger zinciri riski — en pahalı arıza kalemi",
+      "Swirl flap, EGR soğutucu, turbo, yağ sızıntısı zincirleme masraflar",
+      "DPF, DMF ve şanzıman yağ bakımı gerekliliği",
+      "En yüksek bakım maliyetli E90 320d varyantı"
+    ],
+    "milestones": [
+      {
+        "mileage": "80.000 km",
+        "expectedIssues": "Dizel yağı+filtre, ZF şanzıman yağ+filtre, yakıt/hava filtresi, EGR+swirl flap kontrolü, zincir sesi dinleme.",
+        "estimatedCostEUR": 550
+      },
+      {
+        "mileage": "160.000 km",
+        "expectedIssues": "Triger zinciri seti (ses varsa), EGR soğutucu, swirl flap manifold, turbo kontrolü, ikinci ZF yağı, ön takım.",
+        "estimatedCostEUR": 2300
+      },
+      {
+        "mileage": "240.000 km",
+        "expectedIssues": "Yağ soğutucu/karter contaları, DPF değişimi, mekatronik flanş revizyonu, enjektör kontrolü, süspansiyon komple.",
+        "estimatedCostEUR": 1600
+      }
+    ],
+    "engineDisplacementCc": 1995
+  },
+  {
+    "brand": "BMW",
+    "modelName": "3 Serisi (F30/F31, 2012-2019)",
+    "productionYears": "2012-2015",
+    "engine": "316i 1.6 136 HP (N13B16 Turbo) + 6 İleri Manuel",
+    "segment": "D",
+    "reliabilityScore": 6.5,
+    "minPrice": 900000,
+    "maxPrice": 1350000,
+    "estimatedMaintenanceCostEUR": 560,
+    "expertSummary": "F30, 3 Serisi'nin modernleşen kuşağı: elektromekanik direksiyon, daha büyük ekran, iyi yalıtım, hâlâ arkadan itiş. 316i, 1.6 turbo N13 (PSA ile ortak Prince ailesi türevi) motorla 136 HP verir — şehir içi yeterli, otoyolda 'idare eder'. N13'ün klasik konuları zincir gergisi/kızak sesi, yüksek basınç yakıt pompası, turbo, karbon birikimi (direkt enjeksiyon) ve termostat/su pompasıdır. F30'da elektronik daha yoğundur (iDrive, elektrikli direksiyon, EPB el freni). Günlük dille: \"Modern ve konforlu bir BMW'yi uygun motorla almanın yolu; ama N13 zincir sesi ve yakıt pompasını kontrol ettir, 320i bulabiliyorsan onu tercih et.\"",
+    "userFeedbackSummary": "Kullanıcılar iç kaliteyi, yalıtımı ve düşük vergiyi seviyor; 136 HP'yi 'yeterli ama heyecansız' buluyor. Sık konular: N13 zincir kızak/gergi sesi, yüksek basınç yakıt pompası (HPFP) arızası, turbo wastegate sesi, emme supabı karbon birikimi, termostat+elektrikli su pompası, EPB elektronik el freni motoru, iDrive/donanım arızaları.",
+    "bodyType": "Sedan",
+    "drivetrain": "Arkadan İtiş",
+    "chronicIssues": [
+      {
+        "title": "N13 triger zinciri kızak/gergi sesi",
+        "description": "Zincir kılavuz kızakları ve gergisi aşınır; soğukta zincir sesi ve ileri seviyede triger atlaması riski. Zincir seti+gergi+kızak değişimi gerekir (ön taraf, motor sökümü yok).",
+        "severity": "Orta",
+        "estimatedCostEUR": 550,
+        "affectedYears": "2012-2015"
+      },
+      {
+        "title": "Yüksek basınç yakıt pompası (HPFP) ve turbo wastegate",
+        "description": "HPFP arızalanınca çalıştırma zorluğu, tekleme ve güç kaybı olur; turbo wastegate mekanizması takırdar. Pompa değişimi ve turbo kontrolü.",
+        "severity": "Orta",
+        "estimatedCostEUR": 450,
+        "affectedYears": "2012-2015"
+      },
+      {
+        "title": "Emme supabı karbon birikimi ve su pompası/termostat",
+        "description": "Direkt enjeksiyonda emme supaplarını yakıt yıkamaz; kurum birikir (güç kaybı, rölanti). Elektrikli su pompası ve termostat da yorulur. Ceviz kabuğu temizliği + soğutma yenileme.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2012-2015"
+      }
+    ],
+    "pros": [
+      "Modern F30 iç kalite, yalıtım ve donanım",
+      "Arkadan itiş denge, elektromekanik direksiyon hafif ama düzgün",
+      "1.6 turbo düşük vergi + makul yakıt",
+      "Güçlü ikinci el talebi ve marka değeri"
+    ],
+    "cons": [
+      "136 HP D segmenti için heyecansız",
+      "N13 zincir kızak/gergi ve HPFP masrafları",
+      "Direkt enjeksiyon karbon birikimi",
+      "EPB el freni ve iDrive elektronik arızaları"
+    ],
+    "milestones": [
+      {
+        "mileage": "90.000 km",
+        "expectedIssues": "Yağ+filtre, buji+bobin, mikrofiltre, fren disk/balata, termostat/su pompası kontrolü, zincir sesi dinleme.",
+        "estimatedCostEUR": 450
+      },
+      {
+        "mileage": "170.000 km",
+        "expectedIssues": "Zincir seti+gergi+kızak (ses varsa), HPFP, emme supabı karbon temizliği, turbo kontrolü, ön takım, EPB motoru.",
+        "estimatedCostEUR": 1100
+      },
+      {
+        "mileage": "250.000 km",
+        "expectedIssues": "Turbo revizyonu, debriyaj+DMF seti, su pompası+termostat, süspansiyon yenileme, iDrive/elektronik tarama.",
+        "estimatedCostEUR": 1200
+      }
+    ]
+  },
+  {
+    "brand": "BMW",
+    "modelName": "3 Serisi (F30/F31, 2012-2019)",
+    "productionYears": "2015-2019",
+    "engine": "318i 1.5 136 HP (B38A15 Turbo, 3 Silindir, LCI) + 8 İleri Steptronic (ZF, tork konvertörlü)",
+    "segment": "D",
+    "reliabilityScore": 7.2,
+    "minPrice": 1150000,
+    "maxPrice": 1650000,
+    "estimatedMaintenanceCostEUR": 480,
+    "expertSummary": "F30 LCI (2015 sonrası makyaj) ile 318i'ye yeni modüler B38 1.5 litre 3 silindirli turbo motor geldi — Mini ile ortak, 136 HP / 220 Nm. 3 silindir titreşimi rölantide hafif hissedilir ama dengeleme mili ile iyi bastırılmıştır; B38, eski N13'e göre daha az sorunlu ve daha modern kabul edilir. ZF 8 ileri tork konvertörlü Steptronic pürüzsüz ve sağlamdır. Konular: soğukta 3 silindir sesi, düşük km'de bile emme karbonu, turbo, VANOS solenoidi ve elektrikli su pompası. Günlük dille: \"F30'un en huzurlu benzinli/otomatik kombinasyonu; 3 silindiri kabullenirsen az dertli, ZF şanzıman çok iyi.\"",
+    "userFeedbackSummary": "Kullanıcılar ZF 8 ileri'nin akıcılığını, düşük yakıtı (şehir 7-8 lt) ve LCI iç/dış tasarımını çok beğeniyor. 3 silindir sesini bir kısım kullanıcı 'BMW'ye yakışmıyor' diye eleştiriyor. Sık konular: elektrikli su pompası, VANOS solenoid, emme supabı karbonu, turbo wastegate sesi, start-stop akü yönetimi, iDrive donması. Genel güvenilirlik F30 benzinliler içinde en iyilerden.",
+    "bodyType": "Sedan",
+    "drivetrain": "Arkadan İtiş",
+    "chronicIssues": [
+      {
+        "title": "Elektrikli su pompası ve VANOS solenoid arızası",
+        "description": "Elektrikli su pompası arızalanınca hararet/uyarı olur; VANOS solenoidleri kurum/elektrik arızasıyla performans ve rölanti sorunu yapar. Pompa/solenoid değişimi.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2015-2019"
+      },
+      {
+        "title": "Direkt enjeksiyon emme supabı karbon birikimi",
+        "description": "Emme supaplarını yakıt yıkamadığı için kurum birikir; güç kaybı, rölanti dengesizliği, soğuk çalışma sorunu. Ceviz kabuğu püskürtme ile temizlenir.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 250,
+        "affectedYears": "2015-2019"
+      },
+      {
+        "title": "Turbo wastegate sesi ve start-stop akü yönetimi",
+        "description": "Turbo wastegate mekanizması soğukta takırdar; AGM akü yaşlanınca start-stop devre dışı kalır ve elektronik uyarılar çıkar. Akü kodlamalı değişim, turbo kontrolü.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 300,
+        "affectedYears": "2015-2019"
+      }
+    ],
+    "pros": [
+      "ZF 8 ileri tork konvertörlü otomatik — çok pürüzsüz ve sağlam",
+      "B38 motor N13'e göre daha az dertli, modern",
+      "Düşük yakıt (şehir 7-8 lt) + düşük vergi",
+      "LCI iç/dış tasarım, iyi yalıtım, güçlü ikinci el"
+    ],
+    "cons": [
+      "3 silindir titreşim/ses hissi (rölantide)",
+      "136 HP dinamik sürüş beklentisini karşılamaz",
+      "Emme karbonu ve elektrikli su pompası konuları",
+      "Bakım/parça premium fiyatlı"
+    ],
+    "milestones": [
+      {
+        "mileage": "90.000 km",
+        "expectedIssues": "Yağ+filtre, buji, mikrofiltre, ZF şanzıman yağ+filtre kontrolü, AGM akü, fren disk/balata.",
+        "estimatedCostEUR": 400
+      },
+      {
+        "mileage": "170.000 km",
+        "expectedIssues": "Elektrikli su pompası, VANOS solenoid, emme supabı karbon temizliği, turbo kontrolü, ön takım, ZF yağ değişimi.",
+        "estimatedCostEUR": 850
+      },
+      {
+        "mileage": "250.000 km",
+        "expectedIssues": "Turbo revizyonu ihtimali, zincir kontrolü, süspansiyon yenileme, iDrive/elektronik tarama, klima kompresörü.",
+        "estimatedCostEUR": 1000
+      }
+    ]
+  },
+  {
+    "brand": "BMW",
+    "modelName": "3 Serisi (F30/F31, 2012-2019)",
+    "productionYears": "2012-2016",
+    "engine": "320i 2.0 184 HP (N20B20 Turbo) + 8 İleri Steptronic (ZF, tork konvertörlü)",
+    "segment": "D",
+    "reliabilityScore": 6.7,
+    "minPrice": 1050000,
+    "maxPrice": 1600000,
+    "estimatedMaintenanceCostEUR": 560,
+    "expertSummary": "F30 320i, 2.0 turbo N20 motorla 184 HP / 270 Nm verir — F30'un en dengeli benzinlisidir: 0-100 ~7.3 sn, otoyol keyfi tam, şehir yakıtı makul. ZF 8 ileri tork konvertörlü Steptronic mükemmele yakındır. N20'nin BİLİNEN zayıf noktası triger zinciri ve özellikle plastik zincir gergi kızağıdır: erken üretimlerde (2011-2013) kızak kırılıp zincir atlayabilir — 2015 sonrası revize parça geldi. Ayrıca yağ kaçağı (yağ filtre kanalı contası, valf kapağı), turbo ve elektrikli su pompası konuları vardır. Günlük dille: \"F30 alacaksan hedef bu: 320i + ZF. Ama N20 zincir kızağı geçmişini mutlaka sorgula, 2014+ tercih et.\"",
+    "userFeedbackSummary": "Kullanıcılar performans/konfor dengesini ve ZF şanzımanı çok övüyor. En kritik endişe N20 zincir gergi kızağı (soğukta zincir sesi = acil). Diğer konular: yağ filtre yuvası contası ve valf kapağı yağ kaçağı, elektrikli su pompası, turbo, VANOS, yüksek basınç yakıt pompası, emme karbonu. Zinciri revize edilmiş 2014+ örnekler çok memnun ediyor.",
+    "bodyType": "Sedan",
+    "drivetrain": "Arkadan İtiş",
+    "chronicIssues": [
+      {
+        "title": "N20 triger zinciri gergi kızağı kırılması",
+        "description": "Özellikle erken üretim (2011-2013) plastik zincir kızağı kırılır; zincir atlarsa motor hasarı olur. Soğukta zincir sesi uyarıdır. Revize kızak+zincir+gergi seti değişimi (ön taraf).",
+        "severity": "Kritik",
+        "estimatedCostEUR": 900,
+        "affectedYears": "2012-2015"
+      },
+      {
+        "title": "Yağ filtre yuvası contası ve valf kapağı yağ kaçağı",
+        "description": "Yağ filtre kanal contası ve valf kapağı zamanla sertleşir; yağ sızıntısı egzoz manifolduna damlarsa koku/duman olur. Conta setleri yenilenir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2012-2016"
+      },
+      {
+        "title": "Elektrikli su pompası, turbo ve HPFP",
+        "description": "Elektrikli su pompası arızalanır (hararet); turbo wastegate sesi ve yüksek basınç yakıt pompası arızası görülür. Parça bazlı değişim.",
+        "severity": "Orta",
+        "estimatedCostEUR": 450,
+        "affectedYears": "2012-2016"
+      }
+    ],
+    "pros": [
+      "184 HP / 270 Nm: F30'un en dengeli benzinlisi, 0-100 ~7.3 sn",
+      "ZF 8 ileri tork konvertörlü otomatik — sınıfının en iyisi",
+      "Arkadan itiş denge, otoyol konforu, iyi yalıtım",
+      "Güçlü ikinci el talebi"
+    ],
+    "cons": [
+      "N20 zincir kızağı kırılma riski (özellikle erken üretim)",
+      "Yağ filtre yuvası / valf kapağı yağ kaçağı",
+      "Elektrikli su pompası, turbo, HPFP masrafları",
+      "Bakım/parça premium fiyatlı"
+    ],
+    "milestones": [
+      {
+        "mileage": "90.000 km",
+        "expectedIssues": "Yağ+filtre, buji+bobin, ZF şanzıman yağ+filtre, yağ filtre yuvası contası kontrolü, zincir sesi dinleme.",
+        "estimatedCostEUR": 500
+      },
+      {
+        "mileage": "170.000 km",
+        "expectedIssues": "Zincir gergi kızağı seti (revize parça), elektrikli su pompası, valf kapağı contası, turbo/HPFP kontrolü, ön takım.",
+        "estimatedCostEUR": 1300
+      },
+      {
+        "mileage": "250.000 km",
+        "expectedIssues": "Turbo revizyonu, ikinci ZF yağı, emme supabı karbon temizliği, süspansiyon yenileme, elektronik tarama.",
+        "estimatedCostEUR": 1200
+      }
+    ]
+  },
+  {
+    "brand": "BMW",
+    "modelName": "3 Serisi (F30/F31, 2012-2019)",
+    "productionYears": "2012-2015",
+    "engine": "320d 2.0 163 HP (N47D20 Dizel) + 8 İleri Steptronic (ZF, tork konvertörlü)",
+    "segment": "D",
+    "reliabilityScore": 6.3,
+    "minPrice": 1000000,
+    "maxPrice": 1500000,
+    "estimatedMaintenanceCostEUR": 620,
+    "expertSummary": "F30 320d'nin ilk dönem (2012-2015) motoru hâlâ N47'dir (EfficientDynamics 163 HP) — yani motor-arkası triger zinciri riski bu araçlarda da geçerlidir. ZF 8 ileri tork konvertörlü Steptronic ise sağlamdır. 163 HP / 380 Nm ile ekonomiktir (otoyol 4-4.5 lt), F30 yalıtımıyla sessiz bir yol arkadaşıdır. Zincir dışında swirl flap, EGR soğutucu, turbo, DPF ve yağ sızıntıları klasiktir. Günlük dille: \"Sessiz, ekonomik, konforlu; ama 2015 öncesi F30 320d hâlâ N47 — zincir geçmişi ve servis kaydı olmadan alma; 2015+ B47'li tercih et.\"",
+    "userFeedbackSummary": "Kullanıcılar yakıt ekonomisini, ZF şanzımanı ve F30 sessizliğini seviyor. En büyük endişe N47 zinciri (soğukta ses). Diğer konular: swirl flap, EGR soğutucu çatlağı (antifriz kaybı), turbo, DPF dolması, enjektör, yağ soğutucu contası, EPB el freni. Bakımlı zinciri yapılmış örnek çok konforlu.",
+    "bodyType": "Sedan",
+    "drivetrain": "Arkadan İtiş",
+    "chronicIssues": [
+      {
+        "title": "N47 triger zinciri uzaması / atlaması (motorun arkasında)",
+        "description": "Zincir kavrama tarafındadır; uzarsa soğukta ses gelir, atlarsa motor hurdaya çıkar. Değişimde motor/şanzıman sökülür — yüksek işçilik.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 1700,
+        "affectedYears": "2012-2015"
+      },
+      {
+        "title": "Swirl flap, EGR soğutucu çatlağı ve DPF",
+        "description": "Emme klapeleri kurum bağlar; EGR soğutucusu çatlar (antifriz kaybı, buhar); şehir içi kullanımda DPF dolar. Manifold/klape iptali, EGR soğutucu, DPF temizliği/değişimi.",
+        "severity": "Orta",
+        "estimatedCostEUR": 600,
+        "affectedYears": "2012-2015"
+      },
+      {
+        "title": "Turbo, yağ soğutucu contası ve enjektör",
+        "description": "Turbo ve yağ soğutucu contası sızdırır; enjektörler zamanla debi kaçırır (tekleme, is). Conta yenileme ve enjektör revizyonu.",
+        "severity": "Orta",
+        "estimatedCostEUR": 500,
+        "affectedYears": "2012-2015"
+      }
+    ],
+    "pros": [
+      "163 HP / 380 Nm: ekonomik (otoyol 4-4.5 lt) ve yeterli tork",
+      "Sağlam ZF 8 ileri tork konvertörlü otomatik",
+      "F30 yalıtımı ile çok sessiz kabin",
+      "Arkadan itiş denge, güçlü ikinci el talebi"
+    ],
+    "cons": [
+      "N47 triger zinciri riski (2015 öncesi F30)",
+      "Swirl flap, EGR soğutucu, DPF, turbo masrafları",
+      "Enjektör ve yağ sızıntısı yaşlanması",
+      "Bakım/parça premium fiyatlı"
+    ],
+    "milestones": [
+      {
+        "mileage": "80.000 km",
+        "expectedIssues": "Dizel yağı+filtre, ZF şanzıman yağ+filtre, yakıt/hava filtresi, EGR+swirl flap kontrolü, zincir sesi dinleme.",
+        "estimatedCostEUR": 500
+      },
+      {
+        "mileage": "160.000 km",
+        "expectedIssues": "Triger zinciri seti (ses varsa), EGR soğutucu, swirl flap manifold, turbo kontrolü, ön takım, ikinci ZF yağı.",
+        "estimatedCostEUR": 2200
+      },
+      {
+        "mileage": "240.000 km",
+        "expectedIssues": "Yağ soğutucu contaları, DPF değişimi, enjektör revizyonu, süspansiyon komple, elektronik tarama.",
+        "estimatedCostEUR": 1500
+      }
+    ],
+    "engineDisplacementCc": 1995
+  },
+  {
+    "brand": "BMW",
+    "modelName": "3 Serisi (F30/F31, 2012-2019)",
+    "productionYears": "2015-2019",
+    "engine": "320d 2.0 190 HP (B47D20 Dizel, LCI) + 8 İleri Steptronic (ZF, tork konvertörlü)",
+    "segment": "D",
+    "reliabilityScore": 6.8,
+    "minPrice": 1250000,
+    "maxPrice": 1850000,
+    "estimatedMaintenanceCostEUR": 560,
+    "expertSummary": "F30 LCI ile 320d'ye yeni B47 dizel geldi: 190 HP / 400 Nm. B47, N47'nin bilinen triger zinciri sorununu büyük ölçüde çözmek için yeniden tasarlandı (daha sağlam zincir/gergi) — yine de zincir arkadadır, bu yüzden yüksek km'de ses için dinlenmelidir, ama arıza oranı N47'ye göre belirgin düşüktür. ZF 8 ileri Steptronic mükemmele yakın. Konular: EGR soğutucu (B47'de de görülür, bazı partiler geri çağırıldı), DPF/AdBlue (geç örnekler), turbo, yağ kaçağı. Günlük dille: \"F30 320d'nin alınacak hâli bu: 2015+ B47. Zincir derdi büyük ölçüde bitti; EGR soğutucu ve DPF/AdBlue'yu kontrol ettir.\"",
+    "userFeedbackSummary": "Kullanıcılar 190 HP + ZF akıcılığını, düşük yakıtı (otoyol ~4 lt) ve LCI donanımını çok beğeniyor. B47 zincir şikayeti N47'ye göre çok az. Sık konular: EGR soğutucu (geri çağırma partileri), DPF rejenerasyon (kısa mesafede), turbo, yağ filtre yuvası contası, AdBlue sistemi (geç örnekler), EPB el freni. Genel memnuniyet F30 dizeller içinde en yüksek.",
+    "bodyType": "Sedan",
+    "drivetrain": "Arkadan İtiş",
+    "chronicIssues": [
+      {
+        "title": "B47 EGR soğutucusu çatlağı (geri çağırma)",
+        "description": "EGR soğutucusu çatlayınca antifriz sızıntısı, buhar ve nadiren emme yangını riski oluşur; BMW bazı partiler için geri çağırma yaptı. Servis kaydından geri çağırmanın yapıldığı doğrulanmalı, gerekirse soğutucu değişir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2015-2019"
+      },
+      {
+        "title": "DPF / AdBlue sistemi ve kısa mesafe rejenerasyonu",
+        "description": "Sık kısa mesafede DPF rejenerasyonu tamamlanamaz (uyarı, yağ seyrelmesi); geç örneklerde AdBlue enjektörü/pompası ve NOx sensörü arıza yapar. Zorla rejenerasyon, sensör/enjektör değişimi.",
+        "severity": "Orta",
+        "estimatedCostEUR": 450,
+        "affectedYears": "2015-2019"
+      },
+      {
+        "title": "Turbo ve yağ filtre yuvası contası",
+        "description": "Turbo wastegate/aktüatör sesi ve yağ filtre kanal contası sızıntısı görülür. Conta yenileme ve turbo kontrolü.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 300,
+        "affectedYears": "2015-2019"
+      }
+    ],
+    "pros": [
+      "190 HP / 400 Nm: canlı ve çok ekonomik (otoyol ~4 lt)",
+      "B47 motor: N47 triger zinciri sorunu büyük ölçüde çözüldü",
+      "ZF 8 ileri tork konvertörlü otomatik — sınıfının en iyisi",
+      "LCI donanım, arkadan itiş denge, sessiz kabin"
+    ],
+    "cons": [
+      "EGR soğutucu geri çağırma geçmişi sorgulanmalı",
+      "DPF/AdBlue kısa mesafe hassasiyeti",
+      "Turbo ve yağ kaçağı yaşlanma kalemleri",
+      "En pahalı F30 320d alım fiyatı + premium bakım"
+    ],
+    "milestones": [
+      {
+        "mileage": "90.000 km",
+        "expectedIssues": "Dizel yağı+filtre, ZF şanzıman yağ+filtre, yakıt/hava filtresi, EGR soğutucu + geri çağırma kontrolü, AdBlue kontrol.",
+        "estimatedCostEUR": 450
+      },
+      {
+        "mileage": "180.000 km",
+        "expectedIssues": "Turbo kontrolü, yağ filtre yuvası contası, DPF durumu, NOx sensörü, ön takım, ikinci ZF yağı, zincir sesi kontrolü.",
+        "estimatedCostEUR": 950
+      },
+      {
+        "mileage": "260.000 km",
+        "expectedIssues": "DPF değişimi ihtimali, turbo revizyonu, enjektör kontrolü, süspansiyon yenileme, AdBlue pompa/enjektör.",
+        "estimatedCostEUR": 1300
+      }
+    ],
+    "engineDisplacementCc": 1995
+  },
+  {
+    "brand": "BMW",
+    "modelName": "5 Serisi (E39, 1995-2003)",
+    "productionYears": "2000-2003",
+    "engine": "520i 2.2 170 HP (M54B22) + 5 İleri Manuel",
+    "segment": "E",
+    "reliabilityScore": 6.7,
+    "minPrice": 450000,
+    "maxPrice": 800000,
+    "estimatedMaintenanceCostEUR": 480,
+    "expertSummary": "E39, birçok otomobil otoritesince 'tarihin en iyi 5 Serisi' 5'i sayılır: mükemmel şasi dengesi, sağlam gövde, zamansız tasarım. Makyaj sonrası 520i'de M54 2.2 litre 6 silindirli motor vardır — 170 HP ile E segmenti gövdeyi 'yeterli' taşır, ama asıl keyif 6 silindirin pürüzsüzlüğü ve sesidir. M54 sağlam bir motordur; klasik konuları DISA emme klapesi, VANOS conta, yağ ayırıcı (CCV) — soğuk iklimde donma, valf kapağı contası ve yağ yakmadır. E39'un yaşa bağlı konuları: soğutma plastikleri, ön-arka takım (özellikle arka üst salıncak), pixel dağılması (gösterge/klima ekranı), anahtar/ateşleme. Günlük dille: \"Efsane şasi, pürüzsüz 6 silindir; ama 20+ yaşında — soğutma, ön takım ve elektronik için hazır ol, bakımlısını bul.\"",
+    "userFeedbackSummary": "Kullanıcılar sürüş dengesini, gövde sağlamlığını ve 6 silindir sesini tutkuyla anlatıyor. Sık konular: soğutma sistemi plastikleri (radyatör, termostat, genleşme kabı, su pompası kanadı), DISA klapesi, CCV/yağ ayırıcı ve yağ yakma, VANOS sesi, arka üst salıncak kolları ve burçlar, gösterge/klima ekranı pixel dağılması, cam krikoları, far otomatiği. Bakımlı E39 hâlâ günlük kullanılabilir.",
+    "bodyType": "Sedan",
+    "drivetrain": "Arkadan İtiş",
+    "chronicIssues": [
+      {
+        "title": "Soğutma sistemi plastik parça yorgunluğu",
+        "description": "Radyatör, termostat kovanı, genleşme kabı ve su pompası kanadı çatlar/kırılır; ani hararet ve conta riski. 6 silindir motorda hararet ciddi hasar verir — soğutma seti komple yenilenmeli.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2000-2003"
+      },
+      {
+        "title": "DISA klapesi, VANOS ve CCV yağ ayırıcı",
+        "description": "DISA emme klapesi mili/o-ringi dağılır (emme kaçağı); VANOS conta yaşlanır (tık, performans); CCV membranı sertleşir, soğukta donar, yağ yakma artar. Parça parça revize edilir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2000-2003"
+      },
+      {
+        "title": "Arka üst salıncak kolları ve gösterge pixel dağılması",
+        "description": "Arka aks üst salıncak kolları ve burçları aşınır (arka aks belirsizliği, lastik yeme); gösterge ve klima ekranında pixel satırları kaybolur. Salıncak takımı ve ekran flex kablo onarımı.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 300,
+        "affectedYears": "1995-2003"
+      }
+    ],
+    "pros": [
+      "Efsane şasi dengesi ve gövde sağlamlığı",
+      "M54 6 silindirin pürüzsüzlüğü ve sesi",
+      "Zamansız tasarım, güçlü koleksiyon/ikinci el ilgisi",
+      "Parça bulunabilirliği ve usta tecrübesi yüksek"
+    ],
+    "cons": [
+      "20+ yaş: soğutma, ön-arka takım, elektronik masrafları",
+      "170 HP E segmenti için sadece yeterli",
+      "Yüksek yakıt (şehir 12-14 lt)",
+      "Bakımsız/çürük örnek çok yaygın; ekspertiz şart"
+    ],
+    "milestones": [
+      {
+        "mileage": "150.000 km",
+        "expectedIssues": "Soğutma seti komple, DISA/VANOS/CCV revizyonu, buji+kablo, valf kapağı contası, ön-arka takım burçları.",
+        "estimatedCostEUR": 700
+      },
+      {
+        "mileage": "250.000 km",
+        "expectedIssues": "Arka üst salıncak takımı, debriyaj seti, yağ keçeleri, direksiyon kutusu, gösterge/klima ekran onarımı.",
+        "estimatedCostEUR": 800
+      },
+      {
+        "mileage": "350.000 km",
+        "expectedIssues": "Motor conta yenileme, süspansiyon komple, kaporta pas onarımı, elektrik arıza taraması, klima kompresörü.",
+        "estimatedCostEUR": 1000
+      }
+    ]
+  },
+  {
+    "brand": "BMW",
+    "modelName": "5 Serisi (E39, 1995-2003)",
+    "productionYears": "2000-2003",
+    "engine": "525i 2.5 192 HP (M54B25) + 5 İleri Steptronic (tork konvertörlü)",
+    "segment": "E",
+    "reliabilityScore": 6.6,
+    "minPrice": 480000,
+    "maxPrice": 850000,
+    "estimatedMaintenanceCostEUR": 520,
+    "expertSummary": "E39 525i, 520i ile aynı efsane şasiyi daha büyük 2.5 litre M54 motorla (192 HP) birleştirir — 6 silindir daha rahat nefes alır, otomatikle birlikte tam bir 'otoyol krallığı' hissi verir. Steptronic 5 ileri tork konvertörlüdür (kuru kavrama değil), bakımı yapılırsa sağlamdır (60-80 bin km'de yağ). Motor konuları 520i ile birebir aynıdır (DISA, VANOS, CCV, soğutma). Otomatik, yüksek km'de mekatronik conta ve tork konvertörü kilitleme titremesi yapabilir. Günlük dille: \"En keyifli E39 benzinli/otomatik; şasi + 6 silindir + tork konvertörlü otomatik. Yakıtı yüksek, elektronik/soğutma için bütçe ayır.\"",
+    "userFeedbackSummary": "Kullanıcılar otoyol konforunu, 6 silindir gücünü ve Steptronic'in yumuşaklığını çok seviyor. Şanzıman şikayeti azdır ama yağ bakımı yapılmamış örneklerde geçiş sertliği/titreme görülür. Motor konuları 520i ile aynı: soğutma plastikleri, DISA, VANOS, CCV, yağ yakma. Arka üst salıncak, gösterge pixel, cam krikoları da ortak.",
+    "bodyType": "Sedan",
+    "drivetrain": "Arkadan İtiş",
+    "chronicIssues": [
+      {
+        "title": "Soğutma sistemi plastik parça yorgunluğu",
+        "description": "Radyatör, termostat, genleşme kabı ve su pompası kanadı çatlar; 6 silindir motorda hararet ciddi hasar verir. Soğutma seti komple yenilenmeli.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2000-2003"
+      },
+      {
+        "title": "Steptronic yağ ihmali ve tork konvertörü kilitleme titremesi",
+        "description": "Şanzıman yağı 60-80 bin km'de değişmezse geçişler sertleşir; tork konvertörü kilitleme debriyajı titreme (shudder) yapar. Yağ+filtre bakımı, ileri vakada konvertör/şanzıman revizyonu.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2000-2003"
+      },
+      {
+        "title": "DISA, VANOS, CCV ve arka üst salıncak",
+        "description": "DISA klapesi, VANOS conta ve CCV membranı yaşlanır (emme kaçağı, tık, yağ yakma); arka üst salıncak kolları aşınır. Parça parça revize edilir.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 350,
+        "affectedYears": "1995-2003"
+      }
+    ],
+    "pros": [
+      "Efsane E39 şasi + 192 HP 6 silindir",
+      "Sağlam 5 ileri tork konvertörlü Steptronic (kuru kavrama değil)",
+      "Üstün otoyol konforu ve gövde sağlamlığı",
+      "Güçlü koleksiyon/ikinci el ilgisi"
+    ],
+    "cons": [
+      "Yüksek yakıt (şehir 13-15 lt)",
+      "20+ yaş: soğutma, elektronik, ön-arka takım masrafları",
+      "Şanzıman yağı ihmalinde titreme/geçiş sorunu",
+      "Bakımsız örnek yaygın; ekspertiz şart"
+    ],
+    "milestones": [
+      {
+        "mileage": "120.000 km",
+        "expectedIssues": "Steptronic yağ+filtre, soğutma seti, DISA/VANOS/CCV, buji+kablo, valf kapağı contası, ön takım.",
+        "estimatedCostEUR": 700
+      },
+      {
+        "mileage": "220.000 km",
+        "expectedIssues": "İkinci şanzıman yağı, arka üst salıncak takımı, yağ keçeleri, direksiyon kutusu, gösterge/klima ekran onarımı.",
+        "estimatedCostEUR": 850
+      },
+      {
+        "mileage": "320.000 km",
+        "expectedIssues": "Şanzıman/konvertör revizyonu ihtimali, motor conta yenileme, süspansiyon komple, elektrik taraması.",
+        "estimatedCostEUR": 1200
+      }
+    ]
+  },
+  {
+    "brand": "BMW",
+    "modelName": "5 Serisi (E39, 1995-2003)",
+    "productionYears": "1998-2003",
+    "engine": "530d 3.0 193 HP (M57D30 Dizel) + 5 İleri Steptronic (tork konvertörlü)",
+    "segment": "E",
+    "reliabilityScore": 7.0,
+    "minPrice": 520000,
+    "maxPrice": 900000,
+    "estimatedMaintenanceCostEUR": 520,
+    "expertSummary": "E39 530d, ikinci el 'yaşayan efsane dizel' arayanların favorisidir: M57 3.0 litre sıralı 6 dizel, 193 HP / 410 Nm ile hem güçlü hem ekonomiktir (otoyol 6-6.5 lt) ve son derece dayanıklıdır — triger ZİNCİRİ ÖNDEDİR ve N47 tarzı zincir kabusu YOKTUR. Steptronic 5 ileri tork konvertörlüdür ve sağlamdır. Konular: swirl flap kurumu (M57'de klasiktir, iptal edilir), turbo VNT aktüatörü, EGR, enjektör (Bosch, revize edilebilir) ve E39 yaşına bağlı soğutma/ön-arka takım. Bakımlı 530d 500.000 km görebilir. Günlük dille: \"Dizel efsanesi; zincir derdi yok, swirl flapleri iptal ettir, gerisi standart dizel bakımı. Bakımlısı ömürlük.\"",
+    "userFeedbackSummary": "Kullanıcılar M57'nin dayanıklılığını, torkunu ve yakıt ekonomisini abartısız 'kusursuz' diye anlatıyor. Sık konular: swirl flap kurumu (kopan parça riski — iptal önerilir), turbo aktüatörü, EGR tıkanması, enjektör debisi, DMF sesi, soğutma plastikleri, arka üst salıncak, gösterge pixel. Bakımlı örnekte sahiplik çok huzurlu.",
+    "bodyType": "Sedan",
+    "drivetrain": "Arkadan İtiş",
+    "chronicIssues": [
+      {
+        "title": "M57 emme manifoldu swirl flap kurumu / kırılması",
+        "description": "Emme manifoldundaki girdap klapeleri kurum bağlar, mili kırılır; kopan parça silindire kaçarsa motor hasarı olur. Yaygın çözüm klapelerin iptali (blank manifold) veya manifold değişimi.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "1998-2003"
+      },
+      {
+        "title": "Turbo VNT aktüatörü ve EGR tıkanması",
+        "description": "Turbo değişken kanat mekanizması ve aktüatörü kurum/aşınmayla sıkışır (güç kaybı, aşırı basınç hatası); EGR valfi ve borusu tıkanır. Aktüatör değişimi + EGR temizliği.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "1998-2003"
+      },
+      {
+        "title": "Enjektör debisi ve ikili kütle volan (DMF)",
+        "description": "Bosch common-rail enjektörler zamanla debi kaçırır (tekleme, is, sarsıntı); DMF yaylanma sesi verir. Enjektör revizyonu ve DMF+debriyaj seti.",
+        "severity": "Orta",
+        "estimatedCostEUR": 600,
+        "affectedYears": "1998-2003"
+      }
+    ],
+    "pros": [
+      "M57 dizel: son derece dayanıklı, triger zinciri önde",
+      "193 HP / 410 Nm güçlü + otoyol 6-6.5 lt ekonomi",
+      "Efsane E39 şasi + sağlam tork konvertörlü Steptronic",
+      "Bakımlı örnek 400-500 bin km potansiyeli"
+    ],
+    "cons": [
+      "Swirl flap kurumu (iptal edilmeli)",
+      "Turbo aktüatörü, EGR, enjektör yaşlanması",
+      "20+ yaş: soğutma, ön-arka takım, elektronik masrafları",
+      "DMF ve yüksek parça maliyeti"
+    ],
+    "milestones": [
+      {
+        "mileage": "150.000 km",
+        "expectedIssues": "Dizel yağı+filtre, Steptronic yağ+filtre, yakıt/hava filtresi, swirl flap iptali, EGR temizliği, soğutma seti.",
+        "estimatedCostEUR": 550
+      },
+      {
+        "mileage": "250.000 km",
+        "expectedIssues": "Turbo VNT aktüatörü, enjektör revizyonu, DMF+debriyaj seti, arka üst salıncak, direksiyon kutusu.",
+        "estimatedCostEUR": 1100
+      },
+      {
+        "mileage": "380.000 km",
+        "expectedIssues": "Turbo revizyonu, enjektör komple, şanzıman revizyonu ihtimali, süspansiyon komple, motor conta yenileme.",
+        "estimatedCostEUR": 1400
+      }
+    ],
+    "engineDisplacementCc": 2993
+  },
+  {
+    "brand": "BMW",
+    "modelName": "5 Serisi (E60/E61, 2003-2010)",
+    "productionYears": "2007-2010",
+    "engine": "520d 2.0 177 HP (N47D20 Dizel) + 6 İleri Manuel",
+    "segment": "E",
+    "reliabilityScore": 6.1,
+    "minPrice": 600000,
+    "maxPrice": 950000,
+    "estimatedMaintenanceCostEUR": 640,
+    "expertSummary": "E60, tartışmalı 'Bangle' tasarımıyla gelen ama şasi ve teknoloji olarak çıtayı yükselten 5 Serisi'dir. Makyaj sonrası (2007+) 520d, yeni N47 dizeli taşır — 177 HP / 350 Nm, ekonomik (otoyol 4.5-5 lt) ama motor-arkası triger zinciri riski burada da geçerlidir. E60 elektronik/konfor açısından yoğundur: iDrive ilk nesil, aktif direksiyon, elektrikli el freni, xenon far modülleri — hepsi potansiyel arıza kaynağıdır. Manuel şanzıman sağlamdır. Günlük dille: \"Geniş, teknolojik, ekonomik; ama N47 zinciri + E60 elektronik cini birlikte gelir. Sadece iyi ekspertiz + servis kaydı ile alınır.\"",
+    "userFeedbackSummary": "Kullanıcılar iç hacmi, otoyol konforunu ve yakıt ekonomisini seviyor ama 'elektronik arıza yağmuru' şikayeti yaygın. Sık konular: N47 zincir sesi, swirl flap, EGR soğutucu çatlağı, turbo, DPF, DMF, elektrikli el freni motoru, aktif direksiyon (varsa), iDrive/CCC ünitesi donması, xenon far balast/modül, akü/IBS sensörü. Bakımlı örnek keyifli ama nadir.",
+    "bodyType": "Sedan",
+    "drivetrain": "Arkadan İtiş",
+    "chronicIssues": [
+      {
+        "title": "N47 triger zinciri uzaması / atlaması (motorun arkasında)",
+        "description": "Zincir kavrama tarafındadır; uzarsa soğukta metalik ses gelir, atlarsa motor hurdaya çıkar. Değişimde motor/şanzıman sökülür — yüksek işçilik.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 1600,
+        "affectedYears": "2007-2010"
+      },
+      {
+        "title": "Swirl flap, EGR soğutucu çatlağı ve DPF",
+        "description": "Emme klapeleri kurum bağlar/kırılır; EGR soğutucusu çatlar (antifriz kaybı, buhar); şehir içi kullanımda DPF dolar. Manifold/klape iptali, EGR soğutucu, DPF temizliği/değişimi.",
+        "severity": "Orta",
+        "estimatedCostEUR": 600,
+        "affectedYears": "2007-2010"
+      },
+      {
+        "title": "E60 elektronik/konfor arızaları (el freni, iDrive, xenon)",
+        "description": "Elektrikli el freni motoru arızalanır (fren açılmaz, uyarı); ilk nesil iDrive/CCC donar/yeniden başlar; xenon far balast ve modülleri arıza yapar. Modül/motor bazlı değişim, bazıları pahalı.",
+        "severity": "Orta",
+        "estimatedCostEUR": 500,
+        "affectedYears": "2003-2010"
+      }
+    ],
+    "pros": [
+      "Geniş E segmenti gövde, otoyol konforu",
+      "177 HP / 350 Nm ekonomik dizel (otoyol 4.5-5 lt)",
+      "Manuel şanzıman sağlam",
+      "Teknoloji donanımı (dönemine göre) zengin"
+    ],
+    "cons": [
+      "N47 triger zinciri riski — en pahalı arıza kalemi",
+      "Yoğun E60 elektronik/konfor arızaları",
+      "Swirl flap, EGR soğutucu, DPF, DMF masrafları",
+      "Bakımsız örnek çok yaygın; ekspertiz + servis kaydı şart"
+    ],
+    "milestones": [
+      {
+        "mileage": "100.000 km",
+        "expectedIssues": "Dizel yağı+filtre, yakıt/hava filtresi, EGR+swirl flap kontrolü, zincir sesi dinleme, akü+IBS sensörü, DPF durumu.",
+        "estimatedCostEUR": 450
+      },
+      {
+        "mileage": "180.000 km",
+        "expectedIssues": "Triger zinciri seti (ses varsa), EGR soğutucu, swirl flap manifold, turbo kontrolü, DMF+debriyaj, el freni motoru, ön takım.",
+        "estimatedCostEUR": 2200
+      },
+      {
+        "mileage": "260.000 km",
+        "expectedIssues": "Yağ soğutucu contaları, DPF değişimi, enjektör revizyonu, iDrive/xenon modülleri, süspansiyon komple.",
+        "estimatedCostEUR": 1600
+      }
+    ],
+    "engineDisplacementCc": 1995
+  },
+  {
+    "brand": "BMW",
+    "modelName": "5 Serisi (E60/E61, 2003-2010)",
+    "productionYears": "2005-2010",
+    "engine": "523i 2.5 177 HP (N52B25) + 6 İleri Steptronic (GM, tork konvertörlü)",
+    "segment": "E",
+    "reliabilityScore": 6.5,
+    "minPrice": 580000,
+    "maxPrice": 920000,
+    "estimatedMaintenanceCostEUR": 620,
+    "expertSummary": "E60 523i, benzinli ve 6 silindir isteyen ama vergi/yakıt için 530i'ye çıkmak istemeyenlerin tercihidir: N52 2.5 litre magnezyum-alüminyum bloklu sıralı 6, 177 HP, çok pürüzsüz ve karakterli. N52'nin klasik konuları valf kapağı contası yağ kaçağı, elektrikli su pompası ve termostat (bu motorun kaçınılmaz kalemi), VANOS conta, yağ ayırıcı ve DISA'dır. Zincir sorunu YOKTUR. GM 6 ileri tork konvertörlü Steptronic sağlamdır. Yakıt E60 gövdesinde şehir 13-15 lt'dir. Günlük dille: \"Pürüzsüz 6 silindirin tadını çıkar; ama N52 su pompası + valf kapağı contası kesin gelir, yakıtı da yüksek.\"",
+    "userFeedbackSummary": "Kullanıcılar N52'nin sessizliğini, karakterini ve zincir derdi olmamasını seviyor. Neredeyse herkes elektrikli su pompası+termostat değiştirdiğini söylüyor. Diğer konular: valf kapağı contası ve yağ ayırıcı sızıntısı, VANOS sesi, DISA, elektrikli el freni, iDrive, xenon modül, koltuk elektroniği. Yüksek yakıt tüketimi ana şikayet.",
+    "bodyType": "Sedan",
+    "drivetrain": "Arkadan İtiş",
+    "chronicIssues": [
+      {
+        "title": "N52 elektrikli su pompası ve termostat arızası",
+        "description": "Elektrikli su pompası ve elektronik termostat, N52 motorun kaçınılmaz arıza kalemidir; pompa arızalanınca hararet/uyarı olur. Genellikle birlikte değişir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2005-2010"
+      },
+      {
+        "title": "Valf kapağı contası ve yağ ayırıcı (CCV) yağ kaçağı",
+        "description": "Valf kapağı contası ve karter havalandırma membranı sertleşir; yağ sızıntısı egzoz manifolduna damlar (koku, duman). Conta+CCV setleri yenilenir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2005-2010"
+      },
+      {
+        "title": "VANOS, DISA ve E60 konfor elektroniği",
+        "description": "VANOS conta ve solenoid yaşlanır (tık, performans); DISA emme klapesi o-ringi dağılır; elektrikli el freni, iDrive ve xenon modülleri arıza yapar. Parça parça revize edilir.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2003-2010"
+      }
+    ],
+    "pros": [
+      "N52 pürüzsüz ve karakterli 6 silindir, zincir derdi YOK",
+      "Sağlam GM tork konvertörlü Steptronic",
+      "Geniş E segmenti gövde ve otoyol konforu",
+      "Benzinli sadelik: kuru DSG yok"
+    ],
+    "cons": [
+      "Elektrikli su pompası+termostat kesin masraf",
+      "Valf kapağı contası ve yağ ayırıcı sızıntıları",
+      "Yüksek yakıt (şehir 13-15 lt)",
+      "E60 konfor elektroniği arızaları + premium bakım"
+    ],
+    "milestones": [
+      {
+        "mileage": "100.000 km",
+        "expectedIssues": "Yağ+filtre, valf kapağı contası, CCV, buji+bobin, Steptronic yağ+filtre, fren disk/balata, ön takım.",
+        "estimatedCostEUR": 550
+      },
+      {
+        "mileage": "180.000 km",
+        "expectedIssues": "Elektrikli su pompası+termostat, VANOS/DISA revizyonu, el freni motoru, ikinci şanzıman yağı, direksiyon kutusu.",
+        "estimatedCostEUR": 900
+      },
+      {
+        "mileage": "260.000 km",
+        "expectedIssues": "Motor conta yenileme, süspansiyon komple, iDrive/xenon modülleri, klima kompresörü, elektrik taraması.",
+        "estimatedCostEUR": 1100
+      }
+    ]
+  },
+  {
+    "brand": "BMW",
+    "modelName": "5 Serisi (E60/E61, 2003-2010)",
+    "productionYears": "2004-2010",
+    "engine": "525d 2.5 197 HP (M57D25 Dizel) + 6 İleri Steptronic (ZF, tork konvertörlü)",
+    "segment": "E",
+    "reliabilityScore": 7.0,
+    "minPrice": 640000,
+    "maxPrice": 1000000,
+    "estimatedMaintenanceCostEUR": 600,
+    "expertSummary": "E60 525d, N47'nin zincir riskinden kaçınmak isteyip 520d'den daha fazla güç arayanların doğru tercihidir: M57 sıralı 6 dizel (2.5 litre, 197 HP / 400 Nm), triger zinciri ÖNDE ve çok dayanıklı. ZF 6 ileri tork konvertörlü Steptronic sağlamdır. Sıralı 6 dizelin sesi ve torku E60 gövdesinde çok tatmin edicidir; yakıt otoyolda 5.5-6 lt'dir. Konular: swirl flap kurumu (iptal edilir), turbo aktüatörü, EGR, enjektör, yağ soğutucu contası ve E60 elektroniği. Günlük dille: \"E60 dizel alacaksan 6 silindirli M57'li 525d ara — zincir derdi yok, güç bol; swirl flapleri iptal ettir.\"",
+    "userFeedbackSummary": "Kullanıcılar M57 6 silindirin gücünü, sesini ve zincir derdi olmamasını çok seviyor. Sık konular: swirl flap kurumu (iptal), turbo VNT aktüatörü, EGR tıkanması, enjektör debisi, yağ soğutucu contası sızıntısı, DPF (geç örnekler), elektrikli el freni, iDrive. Bakımlı 525d huzurlu ve uzun ömürlü.",
+    "bodyType": "Sedan",
+    "drivetrain": "Arkadan İtiş",
+    "chronicIssues": [
+      {
+        "title": "M57 swirl flap kurumu / kırılması",
+        "description": "Emme manifoldu girdap klapeleri kurum bağlar, mili kırılır; kopan parça silindire kaçarsa motor hasarı olur. Yaygın çözüm klape iptali veya manifold değişimi.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2004-2010"
+      },
+      {
+        "title": "Turbo VNT aktüatörü, EGR ve enjektör",
+        "description": "Turbo değişken kanat mekanizması sıkışır, aktüatör arızalanır; EGR tıkanır; enjektörler debi kaçırır (tekleme, is). Aktüatör/EGR/enjektör revizyonu.",
+        "severity": "Orta",
+        "estimatedCostEUR": 500,
+        "affectedYears": "2004-2010"
+      },
+      {
+        "title": "Yağ soğutucu contası ve E60 konfor elektroniği",
+        "description": "Yağ soğutucu contası sızdırır (yağ-antifriz karışımı riski); elektrikli el freni, iDrive ve xenon modülleri arıza yapar. Conta yenileme, modül bazlı değişim.",
+        "severity": "Orta",
+        "estimatedCostEUR": 450,
+        "affectedYears": "2003-2010"
+      }
+    ],
+    "pros": [
+      "M57 sıralı 6 dizel: dayanıklı, triger zinciri önde",
+      "197 HP / 400 Nm güçlü + otoyol 5.5-6 lt",
+      "Sağlam ZF tork konvertörlü Steptronic",
+      "Geniş E segmenti gövde, otoyol konforu"
+    ],
+    "cons": [
+      "Swirl flap kurumu (iptal edilmeli)",
+      "Turbo aktüatörü, EGR, enjektör masrafları",
+      "Yağ soğutucu contası ve E60 elektroniği arızaları",
+      "Premium bakım/parça maliyeti"
+    ],
+    "milestones": [
+      {
+        "mileage": "100.000 km",
+        "expectedIssues": "Dizel yağı+filtre, ZF şanzıman yağ+filtre, yakıt/hava filtresi, swirl flap iptali, EGR temizliği, akü+IBS.",
+        "estimatedCostEUR": 500
+      },
+      {
+        "mileage": "200.000 km",
+        "expectedIssues": "Turbo VNT aktüatörü, enjektör revizyonu, yağ soğutucu contası, DMF+debriyaj, el freni motoru, ön takım.",
+        "estimatedCostEUR": 1200
+      },
+      {
+        "mileage": "300.000 km",
+        "expectedIssues": "Turbo revizyonu, enjektör komple, ikinci ZF yağı, süspansiyon komple, iDrive/xenon modülleri.",
+        "estimatedCostEUR": 1400
+      }
+    ],
+    "engineDisplacementCc": 2497
+  },
+  {
+    "brand": "BMW",
+    "modelName": "5 Serisi (F10/F11, 2010-2017)",
+    "productionYears": "2011-2017",
+    "engine": "520i 2.0 184 HP (N20B20 Turbo) + 8 İleri Steptronic (ZF, tork konvertörlü)",
+    "segment": "E",
+    "reliabilityScore": 6.8,
+    "minPrice": 1150000,
+    "maxPrice": 1900000,
+    "estimatedMaintenanceCostEUR": 620,
+    "expertSummary": "F10, E60'ın tartışmalı tasarımından sonra 5 Serisi'ni klasik, oturaklı çizgiye döndürdü: geniş, sessiz, çok konforlu bir E segmenti sedan. 520i, 2.0 turbo N20 ile 184 HP / 270 Nm verir — E segmenti gövde için 'yeterli', 0-100 ~7.9 sn; alıcıların çoğu benzinli sadelik ve düşük vergi için tercih eder. N20'nin bilinen konusu triger zinciri gergi kızağıdır (2011-2013 üretimlerde kırılma riski, 2015+ revize). Ayrıca yağ filtre yuvası contası, elektrikli su pompası, turbo ve HPFP. ZF 8 ileri mükemmel. Günlük dille: \"Konforlu, sessiz, prestijli; ama N20 zincir kızağı geçmişini sorgula, 2014+ al, yakıtı da E segmenti için idealden yüksek.\"",
+    "userFeedbackSummary": "Kullanıcılar F10'un sessizliğini, konforunu ve ZF şanzımanı çok beğeniyor; 184 HP'yi 'ağırbaşlı ama yeterli' buluyor. Sık konular: N20 zincir gergi kızağı sesi, yağ filtre yuvası contası ve valf kapağı yağ kaçağı, elektrikli su pompası, turbo wastegate, HPFP, emme karbonu, iDrive, elektrikli el freni. 2014+ revize zincirli örnekler daha huzurlu.",
+    "bodyType": "Sedan",
+    "drivetrain": "Arkadan İtiş",
+    "chronicIssues": [
+      {
+        "title": "N20 triger zinciri gergi kızağı kırılması",
+        "description": "Erken üretim (2011-2013) plastik zincir kızağı kırılır; zincir atlarsa motor hasarı olur. Soğukta zincir sesi uyarıdır. Revize kızak+zincir+gergi seti değişimi (ön taraf).",
+        "severity": "Kritik",
+        "estimatedCostEUR": 950,
+        "affectedYears": "2011-2015"
+      },
+      {
+        "title": "Yağ filtre yuvası contası ve valf kapağı yağ kaçağı",
+        "description": "Yağ filtre kanal contası ve valf kapağı sertleşir; yağ sızıntısı egzoz bölgesine damlar (koku, duman). Conta setleri yenilenir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 350,
+        "affectedYears": "2011-2017"
+      },
+      {
+        "title": "Elektrikli su pompası, turbo ve HPFP",
+        "description": "Elektrikli su pompası arızalanır (hararet); turbo wastegate sesi ve yüksek basınç yakıt pompası arızası görülür; direkt enjeksiyon emme karbonu birikir. Parça bazlı değişim + karbon temizliği.",
+        "severity": "Orta",
+        "estimatedCostEUR": 500,
+        "affectedYears": "2011-2017"
+      }
+    ],
+    "pros": [
+      "F10 sessizlik, konfor ve oturaklı tasarım",
+      "ZF 8 ileri tork konvertörlü otomatik — sınıfının en iyisi",
+      "Benzinli sadelik, düşük vergi",
+      "Geniş iç hacim, güçlü ikinci el talebi"
+    ],
+    "cons": [
+      "N20 zincir kızağı kırılma riski (erken üretim)",
+      "Yağ filtre yuvası / valf kapağı yağ kaçağı",
+      "Elektrikli su pompası, turbo, HPFP masrafları",
+      "184 HP E segmenti için sadece yeterli; yakıt yüksek"
+    ],
+    "milestones": [
+      {
+        "mileage": "90.000 km",
+        "expectedIssues": "Yağ+filtre, buji+bobin, ZF şanzıman yağ+filtre, yağ filtre yuvası contası kontrolü, zincir sesi dinleme.",
+        "estimatedCostEUR": 500
+      },
+      {
+        "mileage": "170.000 km",
+        "expectedIssues": "Zincir gergi kızağı seti (revize parça), elektrikli su pompası, valf kapağı contası, turbo/HPFP kontrolü, ön takım.",
+        "estimatedCostEUR": 1300
+      },
+      {
+        "mileage": "250.000 km",
+        "expectedIssues": "Turbo revizyonu, ikinci ZF yağı, emme supabı karbon temizliği, süspansiyon yenileme, iDrive/elektronik tarama.",
+        "estimatedCostEUR": 1300
+      }
+    ]
+  },
+  {
+    "brand": "BMW",
+    "modelName": "5 Serisi (F10/F11, 2010-2017)",
+    "productionYears": "2010-2014",
+    "engine": "520d 2.0 184 HP (N47D20 Dizel) + 8 İleri Steptronic (ZF, tork konvertörlü)",
+    "segment": "E",
+    "reliabilityScore": 6.4,
+    "minPrice": 1100000,
+    "maxPrice": 1750000,
+    "estimatedMaintenanceCostEUR": 640,
+    "expertSummary": "F10 520d'nin ilk dönem (2010-2014) motoru N47'dir (184 HP / 380 Nm) — yani motor-arkası triger zinciri riski bu araçlarda da vardır. ZF 8 ileri tork konvertörlü Steptronic sağlamdır. F10 yalıtımıyla birleşince çok sessiz ve ekonomik (otoyol ~4.5 lt) bir E segmenti sedandır; Türkiye'de en çok satan F10 versiyonudur. Zincir dışında swirl flap, EGR soğutucu çatlağı (F10'da da geri çağırma oldu), turbo, DPF ve yağ sızıntıları klasiktir. Günlük dille: \"En çok bulunan F10; sessiz ve ekonomik ama 2014 öncesi N47 — zincir geçmişi + EGR soğutucu geri çağırması sorgulanmadan alınmaz.\"",
+    "userFeedbackSummary": "Kullanıcılar yakıt ekonomisini, F10 sessizliğini ve ZF şanzımanı çok beğeniyor. En büyük endişe N47 zinciri (soğukta ses). Diğer konular: swirl flap, EGR soğutucu çatlağı (geri çağırma), turbo, DPF dolması, enjektör, yağ soğutucu contası, elektrikli el freni, iDrive. Bakımlı zinciri yapılmış örnek çok konforlu.",
+    "bodyType": "Sedan",
+    "drivetrain": "Arkadan İtiş",
+    "chronicIssues": [
+      {
+        "title": "N47 triger zinciri uzaması / atlaması (motorun arkasında)",
+        "description": "Zincir kavrama tarafındadır; uzarsa soğukta metalik ses gelir, atlarsa motor hurdaya çıkar. Değişimde motor/şanzıman sökülür — yüksek işçilik.",
+        "severity": "Kritik",
+        "estimatedCostEUR": 1700,
+        "affectedYears": "2010-2014"
+      },
+      {
+        "title": "EGR soğutucu çatlağı (geri çağırma), swirl flap ve DPF",
+        "description": "EGR soğutucusu çatlar (antifriz kaybı, buhar, nadiren emme yangını riski) — BMW geri çağırma yaptı; emme klapeleri kurum bağlar; şehir içi kullanımda DPF dolar. Geri çağırma doğrulanmalı, EGR soğutucu/klape/DPF işlemleri.",
+        "severity": "Orta",
+        "estimatedCostEUR": 600,
+        "affectedYears": "2010-2014"
+      },
+      {
+        "title": "Turbo, yağ soğutucu contası ve enjektör",
+        "description": "Turbo ve yağ soğutucu contası sızdırır; enjektörler debi kaçırır (tekleme, is). Conta yenileme ve enjektör revizyonu.",
+        "severity": "Orta",
+        "estimatedCostEUR": 500,
+        "affectedYears": "2010-2014"
+      }
+    ],
+    "pros": [
+      "184 HP / 380 Nm: çok ekonomik (otoyol ~4.5 lt), yeterli tork",
+      "Sağlam ZF 8 ileri tork konvertörlü otomatik",
+      "F10 yalıtımı ile çok sessiz kabin",
+      "En çok bulunan F10 — parça/usta bol, güçlü ikinci el"
+    ],
+    "cons": [
+      "N47 triger zinciri riski (2014 öncesi F10)",
+      "EGR soğutucu geri çağırma geçmişi sorgulanmalı",
+      "Swirl flap, DPF, turbo, enjektör masrafları",
+      "Premium bakım/parça maliyeti"
+    ],
+    "milestones": [
+      {
+        "mileage": "90.000 km",
+        "expectedIssues": "Dizel yağı+filtre, ZF şanzıman yağ+filtre, yakıt/hava filtresi, EGR soğutucu + geri çağırma kontrolü, zincir sesi dinleme.",
+        "estimatedCostEUR": 500
+      },
+      {
+        "mileage": "170.000 km",
+        "expectedIssues": "Triger zinciri seti (ses varsa), EGR soğutucu, swirl flap manifold, turbo kontrolü, ön takım, ikinci ZF yağı, el freni motoru.",
+        "estimatedCostEUR": 2300
+      },
+      {
+        "mileage": "250.000 km",
+        "expectedIssues": "Yağ soğutucu contaları, DPF değişimi, enjektör revizyonu, süspansiyon komple, iDrive/elektronik tarama.",
+        "estimatedCostEUR": 1600
+      }
+    ],
+    "engineDisplacementCc": 1995
+  },
+  {
+    "brand": "BMW",
+    "modelName": "5 Serisi (F10/F11, 2010-2017)",
+    "productionYears": "2014-2017",
+    "engine": "520d 2.0 190 HP (B47D20 Dizel, LCI) + 8 İleri Steptronic (ZF, tork konvertörlü)",
+    "segment": "E",
+    "reliabilityScore": 7.0,
+    "minPrice": 1400000,
+    "maxPrice": 2200000,
+    "estimatedMaintenanceCostEUR": 580,
+    "expertSummary": "F10 LCI (2013 sonrası makyaj) ile 520d'ye yeni B47 dizel geldi: 190 HP / 400 Nm. B47, N47'nin triger zinciri sorununu çözmek için yeniden tasarlandı — zincir/gergi çok daha sağlam, arıza oranı belirgin düşük (yine de arkada olduğu için yüksek km'de ses dinlenir). ZF 8 ileri Steptronic mükemmel. F10 LCI, sessizliği, donanımı ve ~4 lt otoyol tüketimiyle uzun yol için ideal bir E segmenti sedandır. Konular: EGR soğutucu (B47'de de görülür), DPF/AdBlue, turbo, yağ kaçağı. Günlük dille: \"F10 520d'nin alınacak hâli: 2014+ B47 LCI. Zincir derdi büyük ölçüde bitti, EGR soğutucu ve AdBlue/DPF'yi kontrol ettir.\"",
+    "userFeedbackSummary": "Kullanıcılar 190 HP + ZF akıcılığını, çok düşük yakıtı ve F10 LCI konforunu 'uzun yol otomobili' diye övüyor. B47 zincir şikayeti çok az. Sık konular: EGR soğutucu, DPF rejenerasyon (kısa mesafe), AdBlue enjektör/pompa ve NOx sensörü (geç örnekler), turbo, yağ filtre yuvası contası, elektrikli el freni. Genel memnuniyet F10 dizeller içinde en yüksek.",
+    "bodyType": "Sedan",
+    "drivetrain": "Arkadan İtiş",
+    "chronicIssues": [
+      {
+        "title": "B47 EGR soğutucusu çatlağı",
+        "description": "EGR soğutucusu çatlayınca antifriz sızıntısı, buhar ve nadiren emme yangını riski oluşur; bazı partiler geri çağırıldı. Servis kaydından işlem doğrulanmalı, gerekirse soğutucu değişir.",
+        "severity": "Orta",
+        "estimatedCostEUR": 400,
+        "affectedYears": "2014-2017"
+      },
+      {
+        "title": "DPF / AdBlue sistemi ve kısa mesafe rejenerasyonu",
+        "description": "Sık kısa mesafede DPF rejenerasyonu tamamlanamaz (uyarı, yağ seyrelmesi); geç örneklerde AdBlue enjektörü/pompası ve NOx sensörü arıza yapar. Zorla rejenerasyon, sensör/enjektör değişimi.",
+        "severity": "Orta",
+        "estimatedCostEUR": 450,
+        "affectedYears": "2014-2017"
+      },
+      {
+        "title": "Turbo ve yağ filtre yuvası contası",
+        "description": "Turbo wastegate/aktüatör sesi ve yağ filtre kanal contası sızıntısı görülür. Conta yenileme ve turbo kontrolü.",
+        "severity": "Düşük",
+        "estimatedCostEUR": 300,
+        "affectedYears": "2014-2017"
+      }
+    ],
+    "pros": [
+      "190 HP / 400 Nm: canlı ve çok ekonomik (otoyol ~4 lt)",
+      "B47 motor: N47 triger zinciri sorunu büyük ölçüde çözüldü",
+      "ZF 8 ileri tork konvertörlü otomatik — sınıfının en iyisi",
+      "F10 LCI sessizlik, donanım ve uzun yol konforu"
+    ],
+    "cons": [
+      "EGR soğutucu geri çağırma geçmişi sorgulanmalı",
+      "DPF/AdBlue kısa mesafe hassasiyeti",
+      "Turbo ve yağ kaçağı yaşlanma kalemleri",
+      "En yüksek F10 520d alım fiyatı + premium bakım"
+    ],
+    "milestones": [
+      {
+        "mileage": "90.000 km",
+        "expectedIssues": "Dizel yağı+filtre, ZF şanzıman yağ+filtre, yakıt/hava filtresi, EGR soğutucu + geri çağırma kontrolü, AdBlue kontrol.",
+        "estimatedCostEUR": 450
+      },
+      {
+        "mileage": "180.000 km",
+        "expectedIssues": "Turbo kontrolü, yağ filtre yuvası contası, DPF durumu, NOx sensörü, ön takım, ikinci ZF yağı, zincir sesi kontrolü.",
+        "estimatedCostEUR": 950
+      },
+      {
+        "mileage": "260.000 km",
+        "expectedIssues": "DPF değişimi ihtimali, turbo revizyonu, enjektör kontrolü, AdBlue pompa/enjektör, süspansiyon yenileme.",
+        "estimatedCostEUR": 1400
+      }
+    ],
+    "engineDisplacementCc": 1995
+  }
+]
