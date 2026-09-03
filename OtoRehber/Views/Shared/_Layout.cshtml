@@ -340,11 +340,13 @@
                         <i class="fa-solid fa-robot text-brand-600 dark:text-brand-400 text-xs"></i>
                     </div>
                     <div class="flex flex-col gap-1 w-full max-w-[85%]">
-                        <div class="bg-surface border border-border text-content p-3 rounded-e-xl rounded-es-xl text-sm">
+                        <div id="aiChatWelcome" class="bg-surface border border-border text-content p-3 rounded-e-xl rounded-es-xl text-sm">
                             Merhaba! Ben OtoRehber AI Asistanı. OtoRehber verilerine dayanarak araçlar hakkındaki sorularını yanıtlarım (kronik sorunlar, bakım maliyeti, skorlar). Bütçene göre araç önerisi için <a href="/AiWizard" class="text-brand-600 hover:underline">AI Sihirbaz</a>'ı kullanabilirsin.
                         </div>
                     </div>
                 </div>
+                <!-- Sayfa bağlamına duyarlı hızlı sorular (araç detayında JS ile doldurulur) -->
+                <div id="aiChatQuick" class="flex flex-wrap gap-1.5"></div>
             </div>
 
             <!-- Input Box -->
@@ -368,10 +370,12 @@
         var _isCarDetails = string.Equals(ViewContext.RouteData.Values["controller"] as string, "Car", StringComparison.OrdinalIgnoreCase)
             && string.Equals(ViewContext.RouteData.Values["action"] as string, "Details", StringComparison.OrdinalIgnoreCase);
         var _chatCarId = _isCarDetails && int.TryParse(ViewContext.RouteData.Values["id"] as string, out var _cid) ? _cid.ToString() : "null";
+        var _chatCarLabel = ViewData["ChatCarLabel"] as string;
     }
     <script>
         // Araç detay sayfasındaysak chat'e o aracın bağlamını taşı (PRD v5 §4.8).
         window.__otoChatCarId = @Html.Raw(_chatCarId);
+        window.__otoChatCarLabel = @Html.Raw(_chatCarLabel is null ? "null" : System.Text.Json.JsonSerializer.Serialize(_chatCarLabel));
     </script>
     <script>
         // ===== ANTIFORGERY YARDIMCISI =====
@@ -504,6 +508,33 @@
             const msgBox = document.getElementById('aiChatMessages');
             msgBox.scrollTop = msgBox.scrollHeight;
         }
+
+        // PRD v5 §4.8 — araç detay sayfasında chat'i o araca göre bağlamlandır.
+        (function () {
+            if (!window.__otoChatCarId) return;
+            const label = window.__otoChatCarLabel || 'bu araç';
+            const w = document.getElementById('aiChatWelcome');
+            if (w) w.textContent = label + ' hakkında ne öğrenmek istersin? Yanıtlar OtoRehber verilerine dayanır.';
+            const quick = document.getElementById('aiChatQuick');
+            if (!quick) return;
+            const qs = [
+                ['Kronik sorunlar', 'Bu aracın bilinen kronik sorunları neler?'],
+                ['Yakıt tüketimi', 'Yakıt tüketimi ve motor tipi hakkında ne biliyoruz?'],
+                ['Bakım maliyeti', 'Bakım maliyetleri ve kilometre barajları ne durumda?'],
+                ['Değerlendirme', 'OtoRehber Skoru ve değerlendirmesi nedir, nedenleri neler?'],
+                ['Rakipleri', 'Bu aracın aynı segmentteki rakipleri hangileri?']
+            ];
+            quick.innerHTML = qs.map(function (q) {
+                return '<button type="button" class="chip text-xs" data-q="' + q[1].replace(/"/g, '&quot;') + '">' + q[0] + '</button>';
+            }).join('');
+            quick.querySelectorAll('button[data-q]').forEach(function (b) {
+                b.addEventListener('click', function () {
+                    const input = document.getElementById('aiChatInput');
+                    input.value = b.getAttribute('data-q');
+                    document.getElementById('aiChatForm').requestSubmit();
+                });
+            });
+        })();
 
         async function toggleGarageHome(carId, btnElement) {
             try {

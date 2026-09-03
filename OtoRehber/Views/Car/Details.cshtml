@@ -2,6 +2,7 @@
 @model OtoRehber.Domain.DTOs.CarDetailDto
 @{
     ViewData["Title"] = $"{Model.Brand} {Model.ModelName} İncelemesi";
+    ViewData["ChatCarLabel"] = $"{Model.Brand} {Model.ModelName}"; // §4.8 bağlam duyarlı chat
 
     var _plainSummary = System.Text.RegularExpressions.Regex.Replace(Model.ExpertSummary ?? "", "<.*?>|[#*_`>]", " ").Trim();
     if (_plainSummary.Length > 300) _plainSummary = _plainSummary.Substring(0, 297).TrimEnd() + "…";

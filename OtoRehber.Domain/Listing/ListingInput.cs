@@ -9,7 +9,7 @@ namespace OtoRehber.Domain.Listing
     /// </summary>
     public sealed class ListingInput
     {
-        /// <summary>Katalogdan seçilen kesin varyant.</summary>
+        /// <summary>Katalogdan seçilen tam varyant.</summary>
         public int CarId { get; init; }
 
         public int? Year { get; init; }

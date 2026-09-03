@@ -63,7 +63,14 @@ namespace OtoRehber.Domain.Ai
             }
             sb.AppendLine($"- Rutin yıllık bakım tahmini: {Money(car.EstimatedMaintenanceCostEUR, currency)}");
 
-            sb.AppendLine($"PİYASA: Fiyat aralığı {car.MinPrice:N0} - {car.MaxPrice:N0} ₺");
+            string conf = (car.DataConfidence?.Overall ?? DataConfidenceLevel.Unknown) switch
+            {
+                DataConfidenceLevel.High => "Yüksek",
+                DataConfidenceLevel.Medium => "Orta",
+                DataConfidenceLevel.Low => "Düşük",
+                _ => "Belirsiz"
+            };
+            sb.AppendLine($"PİYASA: Fiyat aralığı {car.MinPrice:N0} - {car.MaxPrice:N0} ₺ | Veri güvenilirliği: {conf}");
 
             return new AiContext { Text = sb.ToString(), IssueRefs = issueRefs, MaintenanceRefs = maintRefs };
         }

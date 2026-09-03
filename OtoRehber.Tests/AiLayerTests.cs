@@ -140,4 +140,16 @@ public class AiLayerTests
         Assert.Contains("issue-3", ctx.IssueRefs);
         Assert.Contains("maint-9", ctx.MaintenanceRefs);
     }
+
+    [Fact]
+    public void Context_IncludesMarketConfidence()
+    {
+        var car = new Car
+        {
+            Id = 1, Brand = "X", ModelName = "Y", Engine = "1.6", MinPrice = 100, MaxPrice = 200,
+            DataConfidence = new CarDataConfidence { Overall = DataConfidenceLevel.Medium }
+        };
+        var ctx = AiContextBuilder.ForVehicle(car, new ScoreResult { Overall = 7 });
+        Assert.Contains("Veri güvenilirliği: Orta", ctx.Text);
+    }
 }

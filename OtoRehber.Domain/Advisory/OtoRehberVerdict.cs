@@ -4,9 +4,9 @@ namespace OtoRehber.Domain.Advisory
 
     /// <summary>
     /// "OtoRehber Değerlendirmesi" (PRD v5 §2.2) — canonical OtoRehber Skoru'ndan
-    /// <b>sabit eşiklerle</b> türetilir. AI her seferinde yeniden karar vermez.
-    /// Yasak ifadeler ("Alınabilir", "Kesin alınır", "Kesinlikle alınmalı") kullanılmaz;
-    /// kullanıcıda "bu aracı kesin al" algısı oluşturmayacak dil.
+    /// <b>sabit eşiklerle</b> türetilir. AI her seferinde yeniden değerlendirmez.
+    /// PRD'nin yasakladığı zorlayıcı ifadeler kullanılmaz; kullanıcıda "bu aracı mutlaka al"
+    /// algısı oluşturmayan bir dil tercih edilir.
     /// </summary>
     public readonly record struct OtoRehberVerdict(string Label, VerdictTone Tone)
     {
