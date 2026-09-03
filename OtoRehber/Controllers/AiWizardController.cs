@@ -103,8 +103,11 @@ namespace OtoRehber.Controllers
             else
             {
                 var ctx = AiContextBuilder.ForCandidates(ordered, cur);
+                // §4.4: elenen "yakın" araçlar + kayıtlı sebepleri — AI bunları doğal dile çevirir, öneremez.
+                string? elim = result.NearMisses.Count == 0 ? null : string.Join("\n",
+                    result.NearMisses.Select(n => $"ARAÇ #{n.Car.Id} {n.Car.Brand} {n.Car.ModelName} — Elendi: {string.Join("; ", n.Reasons)}"));
                 explanation = await _aiService.ExplainWizardCandidatesAsync(
-                    ctx.Text, AiContextBuilder.ForPreferences(prefs), ctx.IssueRefs, ctx.MaintenanceRefs);
+                    ctx.Text, AiContextBuilder.ForPreferences(prefs), elim, ctx.IssueRefOwner, ctx.MaintenanceRefOwner);
             }
 
             // View modeli: kartlar backend'den; AI yalnızca açıklama.

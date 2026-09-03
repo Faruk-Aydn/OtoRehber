@@ -9,8 +9,9 @@ namespace OtoRehber.Domain.Ai
     public sealed class AiContext
     {
         public string Text { get; init; } = "";
-        public HashSet<string> IssueRefs { get; init; } = new();
-        public HashSet<string> MaintenanceRefs { get; init; } = new();
+        /// <summary>issue-ref → araç Id (claim doğrulaması kontrol 2 için).</summary>
+        public Dictionary<string, int> IssueRefOwner { get; init; } = new();
+        public Dictionary<string, int> MaintenanceRefOwner { get; init; } = new();
     }
 
     /// <summary>
@@ -23,8 +24,8 @@ namespace OtoRehber.Domain.Ai
         public static AiContext ForVehicle(Car car, ScoreResult score, ICurrencyFormatter? currency = null)
         {
             var sb = new StringBuilder();
-            var issueRefs = new HashSet<string>();
-            var maintRefs = new HashSet<string>();
+            var issueRefs = new Dictionary<string, int>();
+            var maintRefs = new Dictionary<string, int>();
 
             sb.AppendLine($"ARAÇ #{car.Id}: {car.Brand} {car.ModelName}");
             sb.AppendLine($"- Motor: {car.Engine}");
@@ -46,7 +47,7 @@ namespace OtoRehber.Domain.Ai
                 foreach (var i in car.ChronicIssues)
                 {
                     var refId = AiClaimValidator.IssueRef(i.Id);
-                    issueRefs.Add(refId);
+                    issueRefs[refId] = car.Id;
                     sb.AppendLine($"- [{refId}] {i.IssueTitle} — Şiddet: {i.Severity} — Tahmini: {Money(i.EstimatedCostEUR, currency)}");
                 }
             }
@@ -57,7 +58,7 @@ namespace OtoRehber.Domain.Ai
                 foreach (var m in car.MileageMilestones)
                 {
                     var refId = AiClaimValidator.MaintenanceRef(m.Id);
-                    maintRefs.Add(refId);
+                    maintRefs[refId] = car.Id;
                     sb.AppendLine($"- [{refId}] {m.Mileage}: {m.ExpectedIssues} — Tahmini: {Money(m.EstimatedCostEUR, currency)}");
                 }
             }
@@ -72,26 +73,26 @@ namespace OtoRehber.Domain.Ai
             };
             sb.AppendLine($"PİYASA: Fiyat aralığı {car.MinPrice:N0} - {car.MaxPrice:N0} ₺ | Veri güvenilirliği: {conf}");
 
-            return new AiContext { Text = sb.ToString(), IssueRefs = issueRefs, MaintenanceRefs = maintRefs };
+            return new AiContext { Text = sb.ToString(), IssueRefOwner = issueRefs, MaintenanceRefOwner = maintRefs };
         }
 
         public static AiContext ForCandidates(
             IEnumerable<(Car Car, int Rank, ScoreResult Score)> candidates, ICurrencyFormatter? currency = null)
         {
             var sb = new StringBuilder();
-            var issueRefs = new HashSet<string>();
-            var maintRefs = new HashSet<string>();
+            var issueRefs = new Dictionary<string, int>();
+            var maintRefs = new Dictionary<string, int>();
 
             foreach (var (car, rank, score) in candidates.OrderBy(c => c.Rank))
             {
                 sb.AppendLine($"=== ADAY {rank} ===");
                 var ctx = ForVehicle(car, score, currency);
                 sb.AppendLine(ctx.Text);
-                issueRefs.UnionWith(ctx.IssueRefs);
-                maintRefs.UnionWith(ctx.MaintenanceRefs);
+                foreach (var kv in ctx.IssueRefOwner) issueRefs[kv.Key] = kv.Value;
+                foreach (var kv in ctx.MaintenanceRefOwner) maintRefs[kv.Key] = kv.Value;
             }
 
-            return new AiContext { Text = sb.ToString(), IssueRefs = issueRefs, MaintenanceRefs = maintRefs };
+            return new AiContext { Text = sb.ToString(), IssueRefOwner = issueRefs, MaintenanceRefOwner = maintRefs };
         }
 
         public static string ForPreferences(WizardPreferences p)

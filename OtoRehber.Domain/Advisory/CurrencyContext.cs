@@ -24,7 +24,8 @@ namespace OtoRehber.Domain.Advisory
             : $"~{minEur:N0} – {maxEur:N0} €";
 
         public string? RateNote => HasRate
-            ? $"1 € = {EurToTry!.Value.ToString("N2")} ₺" + (string.IsNullOrWhiteSpace(RateDate) ? "" : $" · {RateDate} kuru")
+            ? $"1 € = {EurToTry!.Value.ToString("N2")} ₺" +
+              (string.IsNullOrWhiteSpace(RateDate) ? " (yaklaşık kur)" : $" · {RateDate} kuru")
             : null;
     }
 }

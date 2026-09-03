@@ -56,6 +56,8 @@ docker compose up --build
 | `Resend__ApiKey` | Resend API anahtarı (e-posta doğrulama/şifre sıfırlama için) |
 | `Resend__FromEmail` | Gönderen, örn. `OtoRehber <no-reply@alanadiniz.com>` |
 | `AllowedHosts` | Alan adınız, örn. `otorehber.com` |
+| `Currency__EurToTry` | (Opsiyonel) Bakım maliyetlerini ₺ göstermek için € kuru, örn. `48.5`. Boşsa € gösterilir. |
+| `Currency__RateDate` | (Opsiyonel) Kur tarihi, örn. `4 Eylül 2026`. |
 
 4. İlk dağıtımda Postgres şeması `context.Database.Migrate()` ile otomatik oluşturulur.
 5. Kalıcı disk (`/data/keys`) bağlamazsanız her yeniden başlatmada tüm kullanıcılar

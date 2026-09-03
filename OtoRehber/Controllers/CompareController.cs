@@ -84,8 +84,10 @@ namespace OtoRehber.Controllers
             };
             var ctx1 = AiContextBuilder.ForVehicle(car1, score1, cur);
             var ctx2 = AiContextBuilder.ForVehicle(car2, score2, cur);
-            var issueRefs = new HashSet<string>(ctx1.IssueRefs); issueRefs.UnionWith(ctx2.IssueRefs);
-            var maintRefs = new HashSet<string>(ctx1.MaintenanceRefs); maintRefs.UnionWith(ctx2.MaintenanceRefs);
+            var issueRefs = new Dictionary<string, int>(ctx1.IssueRefOwner);
+            foreach (var kv in ctx2.IssueRefOwner) issueRefs[kv.Key] = kv.Value;
+            var maintRefs = new Dictionary<string, int>(ctx1.MaintenanceRefOwner);
+            foreach (var kv in ctx2.MaintenanceRefOwner) maintRefs[kv.Key] = kv.Value;
 
             // AI açıklaması: aynı ikili için tekrar çağırma (6 saat cache). Hata mesajları cache'lenmez.
             var cacheKey = $"compare-verdict:{car1Id}-{car2Id}:{(int)winner}";

@@ -36,6 +36,9 @@ services:
       GeminiApiKey: "${GEMINI_API_KEY:-}"
       Resend__ApiKey: "${RESEND_API_KEY:-}"
       Resend__FromEmail: "${RESEND_FROM_EMAIL:-OtoRehber <onboarding@resend.dev>}"
+      # Bakım maliyetlerini € yerine ₺ göstermek için (boşsa € gösterilir):
+      Currency__EurToTry: "${CURRENCY_EUR_TRY:-}"
+      Currency__RateDate: "${CURRENCY_RATE_DATE:-}"
     ports:
       - "8080:8080"
 

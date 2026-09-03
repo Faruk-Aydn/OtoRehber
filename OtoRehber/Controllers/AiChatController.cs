@@ -50,8 +50,8 @@ namespace OtoRehber.Controllers
             if (message.Length > 2000) message = message[..2000];
 
             string? vehicleContext = null;
-            ISet<string> issueRefs = new HashSet<string>();
-            ISet<string> maintRefs = new HashSet<string>();
+            IReadOnlyDictionary<string, int> issueRefs = new Dictionary<string, int>();
+            IReadOnlyDictionary<string, int> maintRefs = new Dictionary<string, int>();
 
             if (request!.CarId is > 0)
             {
@@ -68,8 +68,8 @@ namespace OtoRehber.Controllers
                     };
                     var ctx = AiContextBuilder.ForVehicle(car, score, cur);
                     vehicleContext = ctx.Text;
-                    issueRefs = ctx.IssueRefs;
-                    maintRefs = ctx.MaintenanceRefs;
+                    issueRefs = ctx.IssueRefOwner;
+                    maintRefs = ctx.MaintenanceRefOwner;
                 }
             }
 

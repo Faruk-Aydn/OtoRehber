@@ -96,12 +96,13 @@ public class AiLayerTests
         => Assert.Equal(ComparisonWinner.Undetermined, ComparisonVerdict.Decide(S(8.0), S(null)));
 
     // --- §4.6 Claim validation ---
+    private static readonly Dictionary<string, int> NoRefs = new();
+
     [Fact]
     public void Claims_UnknownType_Rejected()
     {
         var r = AiClaimValidator.Validate(
-            new[] { new AiClaim { Type = "market_price", ReferenceId = "x" } },
-            new HashSet<string>(), new HashSet<string>());
+            new[] { new AiClaim { Type = "market_price", ReferenceId = "x" } }, NoRefs, NoRefs);
         Assert.Empty(r.Accepted);
         Assert.Equal(ClaimRejectReason.UnknownType, r.Rejected[0].Reason);
     }
@@ -109,8 +110,8 @@ public class AiLayerTests
     [Fact]
     public void Claims_ValidAndInvalid_Split()
     {
-        var issues = new HashSet<string> { "issue-1" };
-        var maint = new HashSet<string> { "maint-2" };
+        var issues = new Dictionary<string, int> { ["issue-1"] = 10 };
+        var maint = new Dictionary<string, int> { ["maint-2"] = 10 };
         var r = AiClaimValidator.Validate(new[]
         {
             new AiClaim { Type = "known_issue", ReferenceId = "issue-1" },
@@ -121,6 +122,28 @@ public class AiLayerTests
         Assert.Equal(2, r.Accepted.Count);
         Assert.Single(r.Rejected);
         Assert.Equal("issue-42", r.Rejected[0].Claim.ReferenceId);
+    }
+
+    [Fact]
+    public void Claims_ReferenceAttributedToWrongVehicle_Rejected()
+    {
+        // issue-5 aslında araç 10'a ait; AI onu araç 20'ye atfetti → REJECT (§4.6 kontrol 2)
+        var issues = new Dictionary<string, int> { ["issue-5"] = 10 };
+        var r = AiClaimValidator.Validate(
+            new[] { new AiClaim { Type = "known_issue", ReferenceId = "issue-5", VehicleId = 20 } },
+            issues, NoRefs);
+        Assert.Empty(r.Accepted);
+        Assert.Equal(ClaimRejectReason.NotLinkedToVehicle, r.Rejected[0].Reason);
+    }
+
+    [Fact]
+    public void Claims_ReferenceAttributedToCorrectVehicle_Accepted()
+    {
+        var issues = new Dictionary<string, int> { ["issue-5"] = 10 };
+        var r = AiClaimValidator.Validate(
+            new[] { new AiClaim { Type = "known_issue", ReferenceId = "issue-5", VehicleId = 10 } },
+            issues, NoRefs);
+        Assert.Single(r.Accepted);
     }
 
     // --- §4.7 Context builder emits reference ids ---
@@ -137,8 +160,8 @@ public class AiLayerTests
 
         Assert.Contains("issue-3", ctx.Text);
         Assert.Contains("maint-9", ctx.Text);
-        Assert.Contains("issue-3", ctx.IssueRefs);
-        Assert.Contains("maint-9", ctx.MaintenanceRefs);
+        Assert.Equal(7, ctx.IssueRefOwner["issue-3"]);        // §4.6 kontrol 2: ref → araç Id
+        Assert.Equal(7, ctx.MaintenanceRefOwner["maint-9"]);
     }
 
     [Fact]

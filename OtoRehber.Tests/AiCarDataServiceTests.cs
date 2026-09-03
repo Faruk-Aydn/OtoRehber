@@ -52,7 +52,7 @@ public class AiCarDataServiceTests
             new HttpClient(handler));
     }
 
-    private static readonly HashSet<string> NoRefs = new();
+    private static readonly Dictionary<string, int> NoRefs = new();
 
     [Fact]
     public async Task Answer_NoApiKey_ReturnsFailWithMessage()
@@ -94,7 +94,7 @@ public class AiCarDataServiceTests
         """;
         var svc = CreateService(new StubHandler(HttpStatusCode.OK, geminiJson), apiKey: "k");
 
-        var result = await svc.AnswerQuestionAsync("q", "ctx", NoRefs, new HashSet<string> { "maint-5" });
+        var result = await svc.AnswerQuestionAsync("q", "ctx", NoRefs, new Dictionary<string, int> { ["maint-5"] = 0 });
 
         Assert.True(result.Ok);
         Assert.Equal(1, result.AcceptedClaims);
@@ -106,7 +106,7 @@ public class AiCarDataServiceTests
     {
         var svc = CreateService(new StubHandler((HttpStatusCode)429, "quota exceeded"), apiKey: "k");
 
-        var result = await svc.ExplainWizardCandidatesAsync("adaylar", "tercihler", NoRefs, NoRefs);
+        var result = await svc.ExplainWizardCandidatesAsync("adaylar", "tercihler", null, NoRefs, NoRefs);
 
         Assert.False(result.Ok);
         Assert.Contains("kota", result.ErrorMessage!, StringComparison.OrdinalIgnoreCase);
