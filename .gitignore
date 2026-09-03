@@ -59,3 +59,6 @@ node_modules/
 # Admin tarafından yüklenen araç görselleri (repoya girmez; kalıcılık için object storage gerekir)
 OtoRehber/wwwroot/images/cars/*
 !OtoRehber/wwwroot/images/cars/.gitkeep
+
+# Test çıktıları
+**/TestResults/

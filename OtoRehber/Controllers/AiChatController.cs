@@ -2,10 +2,13 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using OtoRehber.Domain.Advisory;
+using OtoRehber.Domain.Ai;
 using OtoRehber.Domain.Interfaces;
 using OtoRehber.Infrastructure.Data;
-using System.Linq;
-using System.Text;
+using OtoRehber.Services;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace OtoRehber.Controllers
@@ -18,49 +21,64 @@ namespace OtoRehber.Controllers
     {
         private readonly OtoRehberDbContext _context;
         private readonly IAiCarDataService _aiService;
+        private readonly CarScoreService _scores;
+        private readonly IConfiguration _configuration;
 
-        public AiChatController(OtoRehberDbContext context, IAiCarDataService aiService)
+        public AiChatController(OtoRehberDbContext context, IAiCarDataService aiService,
+            CarScoreService scores, IConfiguration configuration)
         {
             _context = context;
             _aiService = aiService;
+            _scores = scores;
+            _configuration = configuration;
         }
 
         public class ChatRequest
         {
-            public string Message { get; set; }
+            public string? Message { get; set; }
+            /// <summary>Araç detay sayfasından geldiyse o aracın Id'si — bağlam duyarlı yanıt (§4.8).</summary>
+            public int? CarId { get; set; }
         }
 
+        // PRD v5 §4.7/§4.8: yapılandırılmış bağlam, sadece DB verisi, araç önermez.
         [HttpPost("send")]
         public async Task<IActionResult> SendMessage([FromBody] ChatRequest request)
         {
             var message = request?.Message?.Trim();
             if (string.IsNullOrWhiteSpace(message))
-            {
                 return BadRequest(new { error = "Mesaj boş olamaz." });
-            }
-            // Prompt injection / maliyet: kullanıcı mesajını sınırla
             if (message.Length > 2000) message = message[..2000];
 
-            // Sadece prompt'a giren kolonlar
-            var cars = await _context.Cars.AsNoTracking()
-                .Select(c => new { c.Brand, c.ModelName, c.Segment, c.MinPrice, c.MaxPrice, c.ReliabilityScore })
-                .ToListAsync();
+            string? vehicleContext = null;
+            ISet<string> issueRefs = new HashSet<string>();
+            ISet<string> maintRefs = new HashSet<string>();
 
-            var contextBuilder = new StringBuilder();
-            foreach (var car in cars)
+            if (request!.CarId is > 0)
             {
-                contextBuilder.AppendLine($"- {car.Brand} {car.ModelName} ({car.Segment} Segment): Fiyat: {car.MinPrice}-{car.MaxPrice} TL, Güvenilirlik: {car.ReliabilityScore}/10");
+                var car = await _context.Cars.AsNoTracking()
+                    .Include(c => c.ChronicIssues).Include(c => c.MileageMilestones)
+                    .FirstOrDefaultAsync(c => c.Id == request.CarId);
+                if (car != null)
+                {
+                    var score = await _scores.ForCarAsync(car, car.ChronicIssues);
+                    var cur = new CurrencyContext
+                    {
+                        EurToTry = _configuration.GetValue<double?>("Currency:EurToTry"),
+                        RateDate = _configuration["Currency:RateDate"]
+                    };
+                    var ctx = AiContextBuilder.ForVehicle(car, score, cur);
+                    vehicleContext = ctx.Text;
+                    issueRefs = ctx.IssueRefs;
+                    maintRefs = ctx.MaintenanceRefs;
+                }
             }
 
-            string availableCarsContext = contextBuilder.Length > 0
-                ? contextBuilder.ToString()
-                : "Şu anda sistemde kayıtlı hiçbir araç yok.";
+            var explanation = await _aiService.AnswerQuestionAsync(message, vehicleContext, issueRefs, maintRefs);
 
-            // Yapay zekaya soruyoruz
-            var responseText = await _aiService.GetCarRecommendationAsync(message, availableCarsContext);
+            if (!explanation.Ok)
+                return Ok(new { response = explanation.ErrorMessage ?? "AI yanıtı şu anda üretilemedi." });
 
-            // Ham Markdown döndürülür; istemci tarafında marked + DOMPurify ile güvenli şekilde render edilir (_Layout).
-            return Ok(new { response = responseText });
+            return Ok(new { response = explanation.Summary });
         }
     }
 }

@@ -7,10 +7,12 @@ namespace OtoRehber.Controllers
     public class StatsController : Controller
     {
         private readonly OtoRehberDbContext _context;
+        private readonly OtoRehber.Services.CarScoreService _scores;
 
-        public StatsController(OtoRehberDbContext context)
+        public StatsController(OtoRehberDbContext context, OtoRehber.Services.CarScoreService scores)
         {
             _context = context;
+            _scores = scores;
         }
 
         [ResponseCache(Duration = 120, Location = ResponseCacheLocation.Any)]
@@ -20,10 +22,15 @@ namespace OtoRehber.Controllers
             // (Postgres'te ROUND(double precision, int) yok → 500).
             var cars = await _context.Cars.AsNoTracking().ToListAsync();
 
+            // Canonical OtoRehber Skoru (PRD v5 §1.2) — istatistikler ham ReliabilityScore değil bunu kullanır.
+            var scores = await _scores.ForCarsAsync(cars);
+            double? Overall(int carId) => scores[carId].Overall;
+            var scoredCars = cars.Where(c => Overall(c.Id).HasValue).ToList();
+
             ViewBag.TotalCars = cars.Count;
             ViewBag.TotalReviews = await _context.CarReviews.CountAsync();
             ViewBag.TotalGarage = await _context.UserGarages.CountAsync();
-            ViewBag.AvgScore = cars.Count > 0 ? Math.Round(cars.Average(c => c.ReliabilityScore), 2) : 0;
+            ViewBag.AvgScore = scoredCars.Count > 0 ? Math.Round(scoredCars.Average(c => Overall(c.Id)!.Value), 2) : 0;
 
             var segmentData = cars
                 .GroupBy(c => string.IsNullOrWhiteSpace(c.Segment) ? "Belirsiz" : c.Segment)
@@ -35,12 +42,16 @@ namespace OtoRehber.Controllers
 
             var brandScores = cars
                 .GroupBy(c => string.IsNullOrWhiteSpace(c.Brand) ? "Belirsiz" : c.Brand)
-                .Select(g => new
+                .Select(g =>
                 {
-                    Brand = g.Key,
-                    AvgScore = Math.Round(g.Average(c => c.ReliabilityScore), 1),
-                    CarCount = g.Count(),
-                    AvgCost = g.Average(c => c.EstimatedMaintenanceCostEUR)
+                    var scored = g.Where(c => Overall(c.Id).HasValue).ToList();
+                    return new
+                    {
+                        Brand = g.Key,
+                        AvgScore = scored.Count > 0 ? Math.Round(scored.Average(c => Overall(c.Id)!.Value), 1) : 0d,
+                        CarCount = g.Count(),
+                        AvgCost = g.Average(c => c.EstimatedMaintenanceCostEUR)
+                    };
                 })
                 .OrderByDescending(x => x.AvgScore)
                 .Take(15)
@@ -50,10 +61,10 @@ namespace OtoRehber.Controllers
             ViewBag.BrandCarCounts = brandScores.Select(b => b.CarCount).ToList();
             ViewBag.BrandAvgCosts = brandScores.Select(b => (int)b.AvgCost).ToList();
 
-            ViewBag.Top5Cars = cars
-                .OrderByDescending(c => c.ReliabilityScore)
-                .Take(5)
-                .Select(c => new { Name = c.Brand + " " + c.ModelName, Score = c.ReliabilityScore, Segment = c.Segment })
+            // Presentation Ranking (PRD v5 §3.2): Canonical → Diversity/Re-ranking → Top 5.
+            var top5 = _scores.PresentationRanking(_scores.CanonicalRanking(scoredCars, scores)).Take(5);
+            ViewBag.Top5Cars = top5
+                .Select(c => new { Name = c.Brand + " " + c.ModelName, Score = OtoRehber.Domain.Scoring.OtoRehberScore.RoundForDisplay(Overall(c.Id)), Segment = c.Segment })
                 .ToList<dynamic>();
 
             ViewBag.HighCostCars = cars

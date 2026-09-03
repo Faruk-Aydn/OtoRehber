@@ -62,7 +62,9 @@
             {
                 <div class="py-8 text-center text-content-muted text-sm">
                     <i class="fa-regular fa-comment-dots text-2xl mb-2 block"></i>
-                    Henüz yorum yapılmamış. İlk yorumu siz yapın!
+                    @(ViewBag.CommunityLimited == true
+                        ? "Topluluk verisi henüz sınırlı."
+                        : "Henüz yorum yapılmamış. İlk yorumu siz yapın!")
                 </div>
             }
         </div>
@@ -71,7 +73,7 @@
     <div class="card overflow-hidden" data-aos="fade-up">
         <div class="px-5 py-4 border-b border-border flex items-center gap-2">
             <i class="fa-solid fa-trophy text-content-muted"></i>
-            <h2 class="section-title">En güvenilir araçlar</h2>
+            <h2 class="section-title">En yüksek OtoRehber Skoru</h2>
         </div>
         <div class="p-3">
             @if (ViewBag.TopByScore != null)
@@ -98,6 +100,7 @@
 <!-- Araç listesi -->
 @{
     ViewData["Ratings"] = ViewBag.CarRatings;
+    ViewData["Scores"] = ViewBag.CarScores;
     ViewData["ShowCompare"] = true;
 }
 <div class="flex items-center justify-between mb-4">

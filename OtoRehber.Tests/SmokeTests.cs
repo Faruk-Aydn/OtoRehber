@@ -126,4 +126,21 @@ public class SmokeTests : IClassFixture<CustomWebApplicationFactory>
         var html = await _client.GetStringAsync("/Car/Details/1");
         Assert.Contains("Topluluk yorumları", html);
     }
+
+    [Fact]
+    public async Task CarDetails_RendersSession2Sections()
+    {
+        var html = await _client.GetStringAsync("/Car/Details/1");
+        Assert.Contains("OtoRehber Değerlendirmesi", html);
+        Assert.Contains("Satın alma kontrol listesi", html);
+        // Golf (Id=1): 2 kronik sorun (1 Kritik) → Reliability 8, ChronicRisk 1.5, Maint 5.5 → ~5.3 → "Riskli"
+        Assert.Contains("Riskli", html);
+    }
+
+    [Fact]
+    public async Task CarDetails_WithKmParam_ReturnsSuccess()
+    {
+        var res = await _client.GetAsync("/Car/Details/1?km=120000");
+        Assert.Equal(HttpStatusCode.OK, res.StatusCode);
+    }
 }

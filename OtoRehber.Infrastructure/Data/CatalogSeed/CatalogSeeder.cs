@@ -174,6 +174,11 @@ namespace OtoRehber.Infrastructure.Data.CatalogSeed
             car.UserFeedbackSummary = src.UserFeedbackSummary ?? "";
             car.ImageUrl = string.IsNullOrWhiteSpace(src.ImageUrl) ? null : Trim(src.ImageUrl!, 500);
 
+            // Katalog satırları küratörlüdür (çok alanlı, elle kontrol) → Medium (PRD v5 §1.5).
+            // AI/otomatik verinin aksine "Unknown" değil; ama tek kaynak olduğu için "High" da değil.
+            (car.DataConfidence ??= new Domain.Entities.CarDataConfidence()).Overall =
+                Domain.Entities.DataConfidenceLevel.Medium;
+
             // Yapılandırılmış özellikler: JSON'da boş olanları Engine/ProductionYears'ten türet.
             CatalogSpecInference.Fill(src);
             car.FuelType = Norm(src.FuelType, OtoRehber.Domain.CarSpecs.IsValidFuel);

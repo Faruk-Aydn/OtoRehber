@@ -2,6 +2,14 @@
 
 @{
     ViewData["Title"] = "Karşılaştırma Sonucu";
+    var winner = ViewBag.Winner is OtoRehber.Domain.Ai.ComparisonWinner w ? w : OtoRehber.Domain.Ai.ComparisonWinner.Undetermined;
+    string winnerBanner = winner switch
+    {
+        OtoRehber.Domain.Ai.ComparisonWinner.VehicleA => $"OtoRehber Skoru'na göre öne çıkan: {Model.Car1.Brand} {Model.Car1.ModelName}",
+        OtoRehber.Domain.Ai.ComparisonWinner.VehicleB => $"OtoRehber Skoru'na göre öne çıkan: {Model.Car2.Brand} {Model.Car2.ModelName}",
+        OtoRehber.Domain.Ai.ComparisonWinner.Tie => "İki araç OtoRehber Skoru'nda çok yakın — net bir fark yok.",
+        _ => "Yeterli veri olmadığı için OtoRehber Skoru üzerinden karşılaştırma yapılamadı."
+    };
 }
 
 <div class="max-w-5xl mx-auto py-8">
@@ -27,6 +35,11 @@
                 <h2 class="text-xl sm:text-2xl font-bold text-content">@Model.Car2.Brand</h2>
                 <h3 class="text-content-muted font-medium">@Model.Car2.ModelName</h3>
             </div>
+        </div>
+
+        <div class="p-4 sm:p-5 border-b border-border bg-brand-50/50 dark:bg-brand-500/10">
+            <p class="text-center text-sm font-semibold text-content"><i class="fa-solid fa-scale-balanced mr-2 text-content-muted"></i>@winnerBanner</p>
+            <p class="text-center text-xs text-content-muted mt-1">Kazanan backend tarafından canonical OtoRehber Skoru ile belirlenir; AI yalnızca nedenini açıklar.</p>
         </div>
 
         <div class="p-6 border-b border-border">
@@ -75,15 +88,31 @@
                     ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300"
                     : s >= 6 ? "bg-amber-50 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300"
                     : "bg-red-50 text-red-700 dark:bg-red-500/15 dark:text-red-300";
+                var _s1 = ViewBag.Score1 as OtoRehber.Domain.Scoring.ScoreResult;
+                var _s2 = ViewBag.Score2 as OtoRehber.Domain.Scoring.ScoreResult;
             }
             <div class="grid grid-cols-2">
                 <div class="p-4 sm:p-6 text-center border-r border-border">
-                    <span class="block text-[10px] font-semibold text-content-muted uppercase tracking-widest mb-2">Güvenilirlik</span>
-                    <div class="inline-flex items-center justify-center w-12 h-12 rounded-full font-bold @ScoreCls(Model.Car1.ReliabilityScore)">@Model.Car1.ReliabilityScore</div>
+                    <span class="block text-[10px] font-semibold text-content-muted uppercase tracking-widest mb-2">OtoRehber Skoru</span>
+                    @if (_s1?.Overall is double _o1)
+                    {
+                        <div class="inline-flex items-center justify-center w-12 h-12 rounded-full font-bold @ScoreCls(_o1)">@OtoRehber.Domain.Scoring.OtoRehberScore.FormatForDisplay(_o1)</div>
+                    }
+                    else
+                    {
+                        <div class="text-xs text-content-muted">Veri yetersiz</div>
+                    }
                 </div>
                 <div class="p-4 sm:p-6 text-center">
-                    <span class="block text-[10px] font-semibold text-content-muted uppercase tracking-widest mb-2">Güvenilirlik</span>
-                    <div class="inline-flex items-center justify-center w-12 h-12 rounded-full font-bold @ScoreCls(Model.Car2.ReliabilityScore)">@Model.Car2.ReliabilityScore</div>
+                    <span class="block text-[10px] font-semibold text-content-muted uppercase tracking-widest mb-2">OtoRehber Skoru</span>
+                    @if (_s2?.Overall is double _o2)
+                    {
+                        <div class="inline-flex items-center justify-center w-12 h-12 rounded-full font-bold @ScoreCls(_o2)">@OtoRehber.Domain.Scoring.OtoRehberScore.FormatForDisplay(_o2)</div>
+                    }
+                    else
+                    {
+                        <div class="text-xs text-content-muted">Veri yetersiz</div>
+                    }
                 </div>
             </div>
 
@@ -131,8 +160,8 @@
                 <i class="fa-solid fa-brain text-xl text-brand-300"></i>
             </div>
             <div>
-                <h3 class="text-xl font-bold text-white">Yapay zeka uzman görüşü</h3>
-                <p class="text-slate-400 text-sm">OtoRehber AI, bu iki aracı sizin için kıyasladı.</p>
+                <h3 class="text-xl font-bold text-white">AI yorumu</h3>
+                <p class="text-slate-400 text-sm">Backend'in belirlediği sonucun nedenini açıklar — kazananı seçmez.</p>
             </div>
         </div>
 

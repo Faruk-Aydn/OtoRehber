@@ -15,33 +15,31 @@ namespace OtoRehber.Controllers
         private readonly OtoRehberDbContext _context;
         private readonly ILogger<HomeController> _logger;
         private readonly IMemoryCache _cache;
+        private readonly OtoRehber.Services.CarScoreService _scores;
 
         // Araç/yorum eklendiğinde AdminCarController/CarController bu anahtarları temizler.
         public const string CacheKeyBrands = "home:brands";
         public const string CacheKeyLeaderboard = "home:leaderboard";
 
-        public HomeController(OtoRehberDbContext context, ILogger<HomeController> logger, IMemoryCache cache)
+        public HomeController(OtoRehberDbContext context, ILogger<HomeController> logger, IMemoryCache cache,
+            OtoRehber.Services.CarScoreService scores)
         {
             _context = context;
             _logger = logger;
             _cache = cache;
+            _scores = scores;
         }
 
         public async Task<IActionResult> Index(OtoRehber.Services.CarFilter filter, int page = 1)
         {
-            // Filtre + sıralama /araclar ile ortak (Services/CarCatalogQuery).
-            var carsQuery = OtoRehber.Services.CarCatalogQuery.ApplyFilters(_context.Cars.AsNoTracking(), filter);
-            carsQuery = OtoRehber.Services.CarCatalogQuery.ApplySort(carsQuery, filter.SortBy);
-
-            // Sayfalama (Pagination) — sınır kontrolü
+            // Filtre /araclar ile ortak; sıralama + sayfalama canonical skora göre (CarScoreService).
             const int pageSize = 12;
-            int totalItems = await carsQuery.CountAsync();
+            var carsQuery = OtoRehber.Services.CarCatalogQuery.ApplyFilters(_context.Cars.AsNoTracking(), filter);
+            var (cars, pageScores, totalItems) = await _scores.SortAndPageAsync(carsQuery, filter.SortBy, filter.MinScore, page, pageSize);
             int totalPages = Math.Max(1, (int)Math.Ceiling(totalItems / (double)pageSize));
             page = Math.Clamp(page, 1, totalPages);
-
-            int skipAmount = (page - 1) * pageSize;
-            var cars = await carsQuery.Skip(skipAmount).Take(pageSize).ToListAsync();
             var carDtos = cars.ToListDto();
+            ViewBag.CarScores = pageScores;
 
             // Bu sayfadaki araçların ortalama kullanıcı puanı (kart rozetinde gösterilir)
             var pageCarIds = carDtos.Select(d => d.Id).ToList();
@@ -73,23 +71,36 @@ namespace OtoRehber.Controllers
             var leaderboard = await _cache.GetOrCreateAsync(CacheKeyLeaderboard, async e =>
             {
                 e.AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5);
-                var topReviewed = (await _context.CarReviews.AsNoTracking()
+
+                // "En yüksek OtoRehber Skoru" = Presentation Ranking (PRD v5 §3.2):
+                // skor → Canonical Ranking → Diversity/Re-ranking (maxSameMainModel) → Top 10.
+                var allCars = await _context.Cars.AsNoTracking().ToListAsync();
+                var (topCars, allScores) = await _scores.TopRankedAsync(allCars, 10);
+                var topByScore = topCars
+                    .Select(c => (object)new
+                    {
+                        Label = c.Brand + " " + c.ModelName,
+                        Score = OtoRehber.Domain.Scoring.OtoRehberScore.RoundForDisplay(allScores[c.Id].Overall)
+                    })
+                    .ToList();
+
+                // §1.7: yeterli topluluk verisi yoksa "en çok yorum alan" başlığı gösterilmez.
+                var reviewCounts = await _context.CarReviews.AsNoTracking()
                     .GroupBy(r => new { r.CarId, r.Car.Brand, r.Car.ModelName })
-                    .Select(g => new { Label = g.Key.Brand + " " + g.Key.ModelName, Count = g.Count() })
+                    .Select(g => new { g.Key.Brand, g.Key.ModelName, Count = g.Count() })
                     .OrderByDescending(x => x.Count)
                     .Take(10)
-                    .ToListAsync()).Cast<object>().ToList();
+                    .ToListAsync();
+                bool communityLimited = reviewCounts.Count == 0 || reviewCounts[0].Count < _scores.CommunityReviewThreshold;
+                var topReviewed = communityLimited
+                    ? new List<object>()
+                    : reviewCounts.Select(x => (object)new { Label = x.Brand + " " + x.ModelName, x.Count }).ToList();
 
-                var topByScore = (await _context.Cars.AsNoTracking()
-                    .OrderByDescending(c => c.ReliabilityScore)
-                    .Take(10)
-                    .Select(c => new { Label = c.Brand + " " + c.ModelName, Score = c.ReliabilityScore })
-                    .ToListAsync()).Cast<object>().ToList();
-
-                return (TopReviewed: topReviewed, TopByScore: topByScore);
+                return (TopReviewed: topReviewed, TopByScore: topByScore, CommunityLimited: communityLimited);
             });
             ViewBag.TopReviewed = leaderboard.TopReviewed;
             ViewBag.TopByScore = leaderboard.TopByScore;
+            ViewBag.CommunityLimited = leaderboard.CommunityLimited;
 
             return View(carDtos);
         }

@@ -1,6 +1,6 @@
 @{
     ViewData["Title"] = "Veritabanı İstatistikleri";
-    ViewData["Description"] = "OtoRehber veritabanındaki araçların segment dağılımı, marka bazlı ortalama güvenilirlik puanları ve genel istatistikler.";
+    ViewData["Description"] = "OtoRehber veritabanındaki araçların segment dağılımı, marka bazlı ortalama OtoRehber Skoru ve genel istatistikler.";
     var segLabels = System.Text.Json.JsonSerializer.Serialize(ViewBag.SegmentLabels ?? new List<string>());
     var segCounts = System.Text.Json.JsonSerializer.Serialize(ViewBag.SegmentCounts ?? new List<int>());
     var brandLabels = System.Text.Json.JsonSerializer.Serialize(ViewBag.BrandLabels ?? new List<string>());
@@ -28,7 +28,7 @@
     </div>
     <div class="stat">
         <div class="stat-value">@ViewBag.AvgScore</div>
-        <div class="stat-label"><i class="fa-solid fa-gauge mr-1"></i>Ort. puan</div>
+        <div class="stat-label"><i class="fa-solid fa-gauge mr-1"></i>Ort. OtoRehber Skoru</div>
     </div>
 </div>
 
@@ -38,7 +38,7 @@
         <div class="relative h-64"><canvas id="segmentChart"></canvas></div>
     </div>
     <div class="card card-pad" data-aos="fade-up">
-        <h2 class="section-title mb-4 flex items-center gap-2"><i class="fa-solid fa-chart-bar text-content-muted"></i> Marka bazlı ort. güvenilirlik</h2>
+        <h2 class="section-title mb-4 flex items-center gap-2"><i class="fa-solid fa-chart-bar text-content-muted"></i> Marka bazlı ort. OtoRehber Skoru</h2>
         <div class="relative h-64"><canvas id="brandChart"></canvas></div>
     </div>
 </div>
@@ -47,7 +47,7 @@
     <div class="card overflow-hidden" data-aos="fade-up">
         <div class="px-5 py-4 border-b border-border flex items-center gap-2">
             <i class="fa-solid fa-shield-halved text-content-muted"></i>
-            <h2 class="section-title">En güvenilir 5 araç</h2>
+            <h2 class="section-title">En yüksek OtoRehber Skoru (5 araç)</h2>
         </div>
         <div class="p-4 space-y-3">
             @if (ViewBag.Top5Cars != null)
@@ -111,7 +111,7 @@
                     <th class="px-3 sm:px-6 py-3">#</th>
                     <th class="px-3 sm:px-6 py-3">Marka</th>
                     <th class="px-3 sm:px-6 py-3 hidden sm:table-cell">Araç sayısı</th>
-                    <th class="px-3 sm:px-6 py-3">Ort. güvenilirlik</th>
+                    <th class="px-3 sm:px-6 py-3">Ort. OtoRehber Skoru</th>
                     <th class="px-3 sm:px-6 py-3 hidden md:table-cell">Ort. bakım/yıl</th>
                 </tr>
             </thead>
@@ -165,7 +165,7 @@
 
         new Chart(document.getElementById('brandChart'), {
             type: 'bar',
-            data: { labels: brandLabels, datasets: [{ label: 'Ort. güvenilirlik puanı', data: brandScores, backgroundColor: 'rgba(37,99,235,0.8)', borderColor: '#2563eb', borderWidth: 1, borderRadius: 6 }] },
+            data: { labels: brandLabels, datasets: [{ label: 'Ort. OtoRehber Skoru', data: brandScores, backgroundColor: 'rgba(37,99,235,0.8)', borderColor: '#2563eb', borderWidth: 1, borderRadius: 6 }] },
             options: {
                 responsive: true, maintainAspectRatio: false, indexAxis: 'y',
                 plugins: { legend: { display: false } },

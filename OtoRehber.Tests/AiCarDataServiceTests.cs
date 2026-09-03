@@ -52,43 +52,63 @@ public class AiCarDataServiceTests
             new HttpClient(handler));
     }
 
+    private static readonly HashSet<string> NoRefs = new();
+
     [Fact]
-    public async Task GetCarRecommendation_NoApiKey_ReturnsConfigError()
+    public async Task Answer_NoApiKey_ReturnsFailWithMessage()
     {
         var svc = CreateService(new StubHandler(HttpStatusCode.OK, "{}"), apiKey: "");
 
-        var result = await svc.GetCarRecommendationAsync("bütçem 500 bin", "Golf, Corolla");
+        var result = await svc.AnswerQuestionAsync("Golf nasıl?", null, NoRefs, NoRefs);
 
-        Assert.Contains("API anahtarı bulunamadı", result);
+        Assert.False(result.Ok);
+        Assert.False(string.IsNullOrWhiteSpace(result.ErrorMessage));
     }
 
     [Fact]
-    public async Task GetCarRecommendation_SuccessResponse_ReturnsModelText()
+    public async Task Answer_StructuredResponse_ParsesSummary_AndRejectsUnknownClaims()
     {
-        const string geminiJson = """
-        {
-          "candidates": [
-            { "content": { "parts": [ { "text": "Size **Toyota Corolla** öneririm." } ] } }
-          ]
-        }
+        // Gemini responseMimeType=application/json → parts[0].text bir JSON string.
+        const string inner = "{\"summary\":\"CVT şanzımana dikkat.\",\"claims\":[{\"type\":\"known_issue\",\"referenceId\":\"issue-999\"}]}";
+        var geminiJson = $$"""
+        { "candidates": [ { "content": { "parts": [ { "text": {{System.Text.Json.JsonSerializer.Serialize(inner)}} } ] } } ] }
         """;
         var handler = new StubHandler(HttpStatusCode.OK, geminiJson);
         var svc = CreateService(handler, apiKey: "test-key-123");
 
-        var result = await svc.GetCarRecommendationAsync("dayanıklı bir araç", "Golf, Corolla");
+        var result = await svc.AnswerQuestionAsync("CVT sorunu var mı?", "ARAÇ #1 ...", NoRefs, NoRefs);
 
-        Assert.Equal("Size **Toyota Corolla** öneririm.", result);
-        Assert.NotNull(handler.LastRequest);
+        Assert.True(result.Ok);
+        Assert.Equal("CVT şanzımana dikkat.", result.Summary);
+        Assert.Equal(0, result.AcceptedClaims);
+        Assert.Equal(1, result.RejectedClaims); // issue-999 bağlamda yok → REJECT
         Assert.Contains("test-key-123", handler.LastRequest!.RequestUri!.ToString());
     }
 
     [Fact]
-    public async Task GetCarRecommendation_RateLimited_ReturnsFriendlyMessage()
+    public async Task Answer_ValidClaim_IsAccepted()
     {
-        var svc = CreateService(new StubHandler((HttpStatusCode)429, "quota exceeded"), apiKey: "test-key-123");
+        const string inner = "{\"summary\":\"x\",\"claims\":[{\"type\":\"maintenance\",\"referenceId\":\"maint-5\"}]}";
+        var geminiJson = $$"""
+        { "candidates": [ { "content": { "parts": [ { "text": {{System.Text.Json.JsonSerializer.Serialize(inner)}} } ] } } ] }
+        """;
+        var svc = CreateService(new StubHandler(HttpStatusCode.OK, geminiJson), apiKey: "k");
 
-        var result = await svc.GetCarRecommendationAsync("x", "y");
+        var result = await svc.AnswerQuestionAsync("q", "ctx", NoRefs, new HashSet<string> { "maint-5" });
 
-        Assert.Contains("kota", result, StringComparison.OrdinalIgnoreCase);
+        Assert.True(result.Ok);
+        Assert.Equal(1, result.AcceptedClaims);
+        Assert.Equal(0, result.RejectedClaims);
+    }
+
+    [Fact]
+    public async Task Explain_RateLimited_ReturnsFailMessage()
+    {
+        var svc = CreateService(new StubHandler((HttpStatusCode)429, "quota exceeded"), apiKey: "k");
+
+        var result = await svc.ExplainWizardCandidatesAsync("adaylar", "tercihler", NoRefs, NoRefs);
+
+        Assert.False(result.Ok);
+        Assert.Contains("kota", result.ErrorMessage!, StringComparison.OrdinalIgnoreCase);
     }
 }

@@ -2,6 +2,7 @@
 @model IEnumerable<OtoRehber.Domain.DTOs.CarListDto>
 @{
     ViewData["Ratings"] = ViewBag.CarRatings;
+    ViewData["Scores"] = ViewBag.CarScores;
     ViewData["ShowCompare"] = false;
     var f = (ViewBag.Filter as CarFilter) ?? new CarFilter();
 
@@ -28,7 +29,7 @@
         pairs.Add(("cc", id, $"Hacim: {OtoRehber.Domain.CarSpecs.CcLabel(id) ?? id}"));
     AddNum("priceMin", f.PriceMin, $"Min {f.PriceMin?.ToString("N0")} ₺");
     AddNum("priceMax", f.PriceMax, $"Maks {f.PriceMax?.ToString("N0")} ₺");
-    AddNum("minScore", (long?)(f.MinScore is > 0 ? (long)f.MinScore : null), $"Puan {f.MinScore?.ToString("0.#")}+");
+    AddNum("minScore", (long?)(f.MinScore is > 0 ? (long)f.MinScore : null), $"OtoRehber Skoru {f.MinScore?.ToString("0.#")}+");
     AddNum("yearMin", f.YearMin, $"{f.YearMin} ve sonrası");
     AddNum("yearMax", f.YearMax, $"{f.YearMax} ve öncesi");
 
@@ -55,8 +56,8 @@
             <label for="sort" class="text-sm text-content-muted whitespace-nowrap">Sırala</label>
             <select id="sort" name="sortBy" class="select py-1.5 text-sm w-auto" onchange="this.form.submit()">
                 <option value="" selected="@string.IsNullOrEmpty(f.SortBy)">En yeni</option>
-                <option value="score_desc" selected="@(f.SortBy == "score_desc")">Güvenilirlik (yüksek → düşük)</option>
-                <option value="score_asc" selected="@(f.SortBy == "score_asc")">Güvenilirlik (düşük → yüksek)</option>
+                <option value="score_desc" selected="@(f.SortBy == "score_desc")">OtoRehber Skoru (yüksek → düşük)</option>
+                <option value="score_asc" selected="@(f.SortBy == "score_asc")">OtoRehber Skoru (düşük → yüksek)</option>
                 <option value="price_asc" selected="@(f.SortBy == "price_asc")">Fiyat (artan)</option>
                 <option value="price_desc" selected="@(f.SortBy == "price_desc")">Fiyat (azalan)</option>
                 <option value="year_desc" selected="@(f.SortBy == "year_desc")">Model yılı (yeni → eski)</option>

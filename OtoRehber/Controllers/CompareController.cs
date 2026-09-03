@@ -1,10 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Configuration;
+using OtoRehber.Domain.Advisory;
+using OtoRehber.Domain.Ai;
 using OtoRehber.Domain.Interfaces;
 using OtoRehber.Infrastructure.Data;
 using OtoRehber.Models;
+using OtoRehber.Services;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,12 +20,17 @@ namespace OtoRehber.Controllers
         private readonly OtoRehberDbContext _context;
         private readonly IAiCarDataService _aiService;
         private readonly IMemoryCache _cache;
+        private readonly CarScoreService _scores;
+        private readonly IConfiguration _configuration;
 
-        public CompareController(OtoRehberDbContext context, IAiCarDataService aiService, IMemoryCache cache)
+        public CompareController(OtoRehberDbContext context, IAiCarDataService aiService, IMemoryCache cache,
+            CarScoreService scores, IConfiguration configuration)
         {
             _context = context;
             _aiService = aiService;
             _cache = cache;
+            _scores = scores;
+            _configuration = configuration;
         }
 
         // GET: /Compare
@@ -45,6 +55,7 @@ namespace OtoRehber.Controllers
                 .AsSplitQuery()
                 .Include(c => c.ProsConsList)
                 .Include(c => c.ChronicIssues)
+                .Include(c => c.MileageMilestones)
                 .Where(c => c.Id == car1Id || c.Id == car2Id)
                 .ToListAsync();
 
@@ -57,16 +68,38 @@ namespace OtoRehber.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            // AI yorumu: aynı ikili için Gemini'yi tekrar çağırma (6 saat cache).
-            // Araç verisi nadiren değişir; hata/kota mesajları cache'lenmez.
-            var cacheKey = $"compare-verdict:{car1Id}-{car2Id}";
+            // Canonical OtoRehber Skoru (PRD v5 §1.2) + kazananı BACKEND belirler (§4.5).
+            var scoreMap = await _scores.ForCarsAsync(new[] { car1, car2 });
+            var score1 = scoreMap[car1.Id];
+            var score2 = scoreMap[car2.Id];
+            var winner = ComparisonVerdict.Decide(score1, score2);
+            ViewBag.Score1 = score1;
+            ViewBag.Score2 = score2;
+            ViewBag.Winner = winner;
+
+            var cur = new CurrencyContext
+            {
+                EurToTry = _configuration.GetValue<double?>("Currency:EurToTry"),
+                RateDate = _configuration["Currency:RateDate"]
+            };
+            var ctx1 = AiContextBuilder.ForVehicle(car1, score1, cur);
+            var ctx2 = AiContextBuilder.ForVehicle(car2, score2, cur);
+            var issueRefs = new HashSet<string>(ctx1.IssueRefs); issueRefs.UnionWith(ctx2.IssueRefs);
+            var maintRefs = new HashSet<string>(ctx1.MaintenanceRefs); maintRefs.UnionWith(ctx2.MaintenanceRefs);
+
+            // AI açıklaması: aynı ikili için tekrar çağırma (6 saat cache). Hata mesajları cache'lenmez.
+            var cacheKey = $"compare-verdict:{car1Id}-{car2Id}:{(int)winner}";
             if (!_cache.TryGetValue(cacheKey, out string? verdict) || string.IsNullOrEmpty(verdict))
             {
-                verdict = await _aiService.GetComparisonVerdictAsync(car1, car2);
-                if (!string.IsNullOrWhiteSpace(verdict) && verdict.Length > 150)
-                {
+                var explanation = await _aiService.ExplainComparisonAsync(
+                    ctx1.Text + "\n" + ctx2.Text, winner,
+                    $"{car1.Brand} {car1.ModelName}", $"{car2.Brand} {car2.ModelName}",
+                    issueRefs, maintRefs);
+                verdict = explanation is { Ok: true } && !string.IsNullOrWhiteSpace(explanation.Summary)
+                    ? explanation.Summary
+                    : (explanation?.ErrorMessage ?? "AI yorumu şu anda üretilemedi.");
+                if (explanation is { Ok: true } && verdict.Length > 150)
                     _cache.Set(cacheKey, verdict, TimeSpan.FromHours(6));
-                }
             }
 
             var viewModel = new CarCompareViewModel

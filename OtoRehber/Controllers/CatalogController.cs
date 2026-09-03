@@ -18,11 +18,13 @@ namespace OtoRehber.Controllers
     {
         private readonly OtoRehberDbContext _context;
         private readonly IMemoryCache _cache;
+        private readonly CarScoreService _scores;
 
-        public CatalogController(OtoRehberDbContext context, IMemoryCache cache)
+        public CatalogController(OtoRehberDbContext context, IMemoryCache cache, CarScoreService scores)
         {
             _context = context;
             _cache = cache;
+            _scores = scores;
         }
 
         // GET: /araclar  — zengin filtre + sıralama + sayfalama
@@ -32,13 +34,10 @@ namespace OtoRehber.Controllers
             const int pageSize = 12;
 
             var query = CarCatalogQuery.ApplyFilters(_context.Cars.AsNoTracking(), filter);
-            var total = await query.CountAsync();
+            var (cars, pageScores, total) = await _scores.SortAndPageAsync(query, filter.SortBy, filter.MinScore, page, pageSize);
             var totalPages = Math.Max(1, (int)Math.Ceiling(total / (double)pageSize));
             page = Math.Clamp(page, 1, totalPages);
-
-            var cars = await CarCatalogQuery.ApplySort(query, filter.SortBy)
-                .Skip((page - 1) * pageSize).Take(pageSize)
-                .ToListAsync();
+            ViewBag.CarScores = pageScores;
 
             await FillRatingsAsync(cars.Select(c => c.Id).ToList());
 
@@ -81,11 +80,7 @@ namespace OtoRehber.Controllers
             var brand = brands.FirstOrDefault(b => Slugify(b) == slug);
             if (brand == null) return NotFound();
 
-            var cars = await _context.Cars.AsNoTracking()
-                .Where(c => c.Brand == brand)
-                .OrderByDescending(c => c.ReliabilityScore)
-                .ToListAsync();
-
+            var cars = await OrderByScoreAsync(_context.Cars.AsNoTracking().Where(c => c.Brand == brand));
             await FillRatingsAsync(cars.Select(c => c.Id).ToList());
 
             ViewData["Title"] = $"{brand} Modelleri";
@@ -104,11 +99,7 @@ namespace OtoRehber.Controllers
             var segment = segments.FirstOrDefault(s => Slugify(s) == slug);
             if (segment == null) return NotFound();
 
-            var cars = await _context.Cars.AsNoTracking()
-                .Where(c => c.Segment == segment)
-                .OrderByDescending(c => c.ReliabilityScore)
-                .ToListAsync();
-
+            var cars = await OrderByScoreAsync(_context.Cars.AsNoTracking().Where(c => c.Segment == segment));
             await FillRatingsAsync(cars.Select(c => c.Id).ToList());
 
             ViewData["Title"] = $"{segment} Segmenti Araçlar";
@@ -116,6 +107,18 @@ namespace OtoRehber.Controllers
             ViewBag.Heading = $"{segment} Segmenti Araçlar";
             ViewBag.Kind = "segment";
             return View("List", cars.ToListDto());
+        }
+
+        // Marka/segment landing — canonical OtoRehber Skoru'na göre sırala (N/A sona), ViewBag.CarScores doldur.
+        private async Task<List<OtoRehber.Domain.Entities.Car>> OrderByScoreAsync(IQueryable<OtoRehber.Domain.Entities.Car> q)
+        {
+            var list = await q.ToListAsync();
+            var scores = await _scores.ForCarsAsync(list);
+            ViewBag.CarScores = scores;
+            return list
+                .OrderByDescending(c => scores[c.Id].Overall ?? double.MinValue)
+                .ThenByDescending(c => c.Id)
+                .ToList();
         }
 
         private async Task FillRatingsAsync(List<int> carIds)

@@ -2,13 +2,16 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using OtoRehber.Domain.Advisory;
+using OtoRehber.Domain.Ai;
 using OtoRehber.Domain.Interfaces;
 using OtoRehber.Domain.Mappings;
 using OtoRehber.Infrastructure.Data;
+using OtoRehber.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace OtoRehber.Controllers
@@ -19,16 +22,22 @@ namespace OtoRehber.Controllers
     {
         private readonly OtoRehberDbContext _context;
         private readonly IAiCarDataService _aiService;
+        private readonly CarScoreService _scores;
+        private readonly IConfiguration _configuration;
 
-        public AiWizardController(OtoRehberDbContext context, IAiCarDataService aiService)
+        public AiWizardController(OtoRehberDbContext context, IAiCarDataService aiService,
+            CarScoreService scores, IConfiguration configuration)
         {
             _context = context;
             _aiService = aiService;
+            _scores = scores;
+            _configuration = configuration;
         }
 
         [HttpGet]
         public IActionResult Index() => View();
 
+        // PRD v5 §4.3: Kullanıcı kriterleri → Backend filtreleme → Backend ranking → İlk 3 aday → AI açıklaması.
         [HttpPost]
         public async Task<IActionResult> Analyze(
             long? budgetMin, long? budgetMax,
@@ -44,60 +53,78 @@ namespace OtoRehber.Controllers
             if (budgetMin is > 0 && budgetMax is > 0 && budgetMin > budgetMax)
                 (budgetMin, budgetMax) = (budgetMax, budgetMin);
 
-            // Girdi temizliği (prompt injection / maliyet)
             static string Clip(string? s, int max) => (s ?? "").Trim() is var t && t.Length > max ? t[..max] : t;
-            bodyType = Clip(bodyType, 40);
-            transmission = Clip(transmission, 40);
-            fuel = Clip(fuel, 40);
-            familySize = Clip(familySize, 60);
-            usageType = Clip(usageType, 80);
-            notes = Clip(notes, 400);
-            var priorityList = (priorities ?? Array.Empty<string>())
-                .Where(p => !string.IsNullOrWhiteSpace(p))
-                .Select(p => Clip(p, 40)).Take(8).ToList();
-
-            var cars = await _context.Cars.AsNoTracking()
-                .Select(c => new { c.Id, c.Brand, c.ModelName, c.Segment, c.ProductionYears, c.MinPrice, c.MaxPrice, c.ReliabilityScore })
-                .ToListAsync();
-
-            var ctx = new StringBuilder();
-            ctx.AppendLine("Veritabanındaki araçlar:");
-            foreach (var c in cars)
-                ctx.AppendLine($"- {c.Brand} {c.ModelName} ({c.ProductionYears}) | Segment: {c.Segment} | Fiyat: {c.MinPrice:N0}-{c.MaxPrice:N0} TL | Güvenilirlik: {c.ReliabilityScore}/10");
-
-            // Yapılandırılmış profil
-            var p = new StringBuilder();
-            string Budget()
+            var prefs = new WizardPreferences
             {
-                if (budgetMin is > 0 && budgetMax is > 0) return $"{budgetMin:N0} - {budgetMax:N0} TL";
-                if (budgetMin is > 0) return $"en az {budgetMin:N0} TL";
-                return $"en fazla {budgetMax:N0} TL";
+                BudgetMin = budgetMin,
+                BudgetMax = budgetMax,
+                BodyType = Clip(bodyType, 40),
+                Transmission = Clip(transmission, 40),
+                Fuel = Clip(fuel, 40),
+                FamilySize = Clip(familySize, 60),
+                UsageType = Clip(usageType, 80),
+                Notes = Clip(notes, 400),
+                Priorities = (priorities ?? Array.Empty<string>())
+                    .Where(p => !string.IsNullOrWhiteSpace(p)).Select(p => Clip(p, 40)).Take(8).ToList()
+            };
+
+            // 1) Tüm araçlar + canonical skor (rule engine bunu kullanır — AI değil).
+            var allCars = await _context.Cars.AsNoTracking().ToListAsync();
+            var scoreMap = await _scores.ForCarsAsync(allCars);
+
+            // 2-3) Backend rule engine: katı filtre (bütçe+yakıt+vites+kasa) → canonical rank → diversity → 3 aday.
+            var result = WizardRuleEngine.Evaluate(
+                allCars, prefs, c => scoreMap[c.Id].Overall,
+                maxCandidates: 3, maxSameMainModel: _scores.MaxSameMainModel);
+
+            var cur = new CurrencyContext
+            {
+                EurToTry = _configuration.GetValue<double?>("Currency:EurToTry"),
+                RateDate = _configuration["Currency:RateDate"]
+            };
+
+            // 4) Adayların tam bağlamı (kronik sorun + km barajları dahil) — §4.7.
+            var candidateIds = result.Candidates.Select(c => c.Car.Id).ToList();
+            var candidateEntities = candidateIds.Count == 0
+                ? new List<Domain.Entities.Car>()
+                : await _context.Cars.AsNoTracking()
+                    .Include(c => c.ChronicIssues).Include(c => c.MileageMilestones)
+                    .Where(c => candidateIds.Contains(c.Id)).ToListAsync();
+
+            var ordered = result.Candidates
+                .Select(c => (Car: candidateEntities.First(e => e.Id == c.Car.Id), c.Rank, Score: scoreMap[c.Car.Id]))
+                .ToList();
+
+            AiExplanation explanation;
+            if (ordered.Count == 0)
+            {
+                explanation = new AiExplanation { Ok = true, Summary = "" };
             }
-            p.AppendLine($"- Bütçe: {Budget()}");
-            if (!string.IsNullOrWhiteSpace(bodyType)) p.AppendLine($"- Tercih edilen kasa tipi: {bodyType}");
-            if (!string.IsNullOrWhiteSpace(transmission)) p.AppendLine($"- Vites: {transmission}");
-            if (!string.IsNullOrWhiteSpace(fuel)) p.AppendLine($"- Yakıt: {fuel}");
-            if (!string.IsNullOrWhiteSpace(familySize)) p.AppendLine($"- Aile durumu: {familySize}");
-            if (!string.IsNullOrWhiteSpace(usageType)) p.AppendLine($"- Kullanım: {usageType}");
-            if (priorityList.Count > 0) p.AppendLine($"- Öncelikler (önem sırasıyla): {string.Join(", ", priorityList)}");
-            if (!string.IsNullOrWhiteSpace(notes)) p.AppendLine($"- Kullanıcının ek notu: {notes}");
+            else
+            {
+                var ctx = AiContextBuilder.ForCandidates(ordered, cur);
+                explanation = await _aiService.ExplainWizardCandidatesAsync(
+                    ctx.Text, AiContextBuilder.ForPreferences(prefs), ctx.IssueRefs, ctx.MaintenanceRefs);
+            }
 
-            var userPrompt = "Bir araç arıyorum. Profilim:\n" + p;
-
-            var responseText = await _aiService.GetCarRecommendationAsync(userPrompt, ctx.ToString());
-
-            // AI metninde adı geçen veritabanı araçlarını eşleştir (Result'ta kart olarak göster)
-            var matchedIds = cars
-                .Where(c => responseText.Contains(c.ModelName, StringComparison.OrdinalIgnoreCase)
-                            && responseText.Contains(c.Brand, StringComparison.OrdinalIgnoreCase))
-                .Select(c => c.Id).ToList();
-
-            var matchedCars = matchedIds.Count > 0
-                ? (await _context.Cars.AsNoTracking().Where(c => matchedIds.Contains(c.Id)).ToListAsync()).ToListDto()
-                : new List<Domain.DTOs.CarListDto>();
-
-            ViewBag.AiResponse = responseText;
-            ViewBag.MatchedCars = matchedCars;
+            // View modeli: kartlar backend'den; AI yalnızca açıklama.
+            ViewBag.Candidates = result.Candidates
+                .Select(c => new
+                {
+                    Dto = candidateEntities.First(e => e.Id == c.Car.Id).ToListDto(),
+                    c.Rank,
+                    Score = OtoRehber.Domain.Scoring.OtoRehberScore.RoundForDisplay(c.Score)
+                }).ToList();
+            ViewBag.NearMisses = result.NearMisses
+                .Select(n => new
+                {
+                    Label = $"{n.Car.Brand} {n.Car.ModelName}",
+                    n.Car.Id,
+                    Reasons = n.Reasons.ToList()
+                }).ToList();
+            ViewBag.TotalPassed = result.TotalPassed;
+            ViewBag.Explanation = explanation;
+            ViewBag.Preferences = prefs;
             return View("Result");
         }
     }

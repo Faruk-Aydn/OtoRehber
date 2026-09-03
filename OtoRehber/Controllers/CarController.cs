@@ -19,16 +19,21 @@ namespace OtoRehber.Controllers
         private readonly OtoRehberDbContext _context;
         private readonly UserManager<AppUser> _userManager;
         private readonly IMemoryCache _cache;
+        private readonly OtoRehber.Services.CarScoreService _scores;
+        private readonly IConfiguration _configuration;
 
         // Dependency Injection: Veritabanını Controller'a bağlıyoruz
-        public CarController(OtoRehberDbContext context, UserManager<AppUser> userManager, IMemoryCache cache)
+        public CarController(OtoRehberDbContext context, UserManager<AppUser> userManager, IMemoryCache cache,
+            OtoRehber.Services.CarScoreService scores, IConfiguration configuration)
         {
             _context = context;
             _userManager = userManager;
             _cache = cache;
+            _scores = scores;
+            _configuration = configuration;
         }
 
-        public async Task<IActionResult> Details(int id)
+        public async Task<IActionResult> Details(int id, int? km)
         {
             // Artık veritabanından ID ile aracı getiriyoruz
             var car = await _context.Cars
@@ -70,6 +75,44 @@ namespace OtoRehber.Controllers
                 r => r.Id,
                 r => (Count: r.ReviewLikes.Count,
                       Voted: currentUserId != null && r.ReviewLikes.Any(l => l.UserId == currentUserId)));
+
+            // Canonical OtoRehber Skoru (PRD v5 §1.2) — kronik sorunlar zaten yüklü.
+            var score = await _scores.ForCarAsync(car, car.ChronicIssues);
+            ViewBag.Score = score;
+            ViewBag.LastUpdatedUtc = car.LastUpdatedUtc;
+            ViewBag.DataConfidenceText = car.EffectiveDataConfidence switch
+            {
+                OtoRehber.Domain.Entities.DataConfidenceLevel.High => "Yüksek",
+                OtoRehber.Domain.Entities.DataConfidenceLevel.Medium => "Orta",
+                OtoRehber.Domain.Entities.DataConfidenceLevel.Low => "Düşük (tahmini veri)",
+                _ => "Belirlenmedi"
+            };
+
+            // --- Session 2: kural bazlı değerlendirme katmanı (AI yok) ---
+            ViewBag.Verdict = OtoRehber.Domain.Advisory.OtoRehberVerdict.FromScore(score.Overall);
+            ViewBag.Suitability = OtoRehber.Domain.Advisory.SuitabilityRules.Evaluate(car);
+            ViewBag.Maintenance = OtoRehber.Domain.Advisory.MaintenanceCategories.Build(car);
+            ViewBag.Checklist = OtoRehber.Domain.Advisory.PurchaseChecklist.Build(car);
+            ViewBag.UserKm = km is > 0 ? km : null;
+            ViewBag.MileageChecks = OtoRehber.Domain.Advisory.MileageAdvisor.Check(car.MileageMilestones, km is > 0 ? km : null);
+            ViewBag.Currency = new OtoRehber.Domain.Advisory.CurrencyContext
+            {
+                EurToTry = _configuration.GetValue<double?>("Currency:EurToTry"),
+                RateDate = _configuration["Currency:RateDate"]
+            };
+
+            // Benzer araçlar: aynı segment, kendisi hariç, canonical skora göre (Session 3 diversity değil).
+            var similar = await _context.Cars.AsNoTracking()
+                .Where(c => c.Segment == car.Segment && c.Id != car.Id)
+                .ToListAsync();
+            var similarScores = await _scores.ForCarsAsync(similar);
+            ViewBag.SimilarCars = similar
+                .OrderByDescending(c => similarScores[c.Id].Overall ?? double.MinValue)
+                .ThenByDescending(c => c.Id)
+                .Take(4)
+                .Select(c => c.ToListDto())
+                .ToList();
+            ViewBag.SimilarScores = similarScores;
 
             var carDto = car.ToDetailDto();
             return View(carDto);

@@ -37,7 +37,8 @@ namespace OtoRehber.Services
             if (f.PriceMin is > 0) query = query.Where(c => c.MaxPrice >= f.PriceMin);
             if (f.PriceMax is > 0) query = query.Where(c => c.MinPrice <= f.PriceMax);
 
-            if (f.MinScore is > 0) query = query.Where(c => c.ReliabilityScore >= f.MinScore);
+            // Min. skor filtresi artık canonical OtoRehber Skoru üzerinden uygulanır
+            // (CarScoreService.SortAndPageAsync) — ham ReliabilityScore değil.
 
             // Yıl: model üretim aralığı [YearStart, YearEnd] filtre aralığıyla kesişiyorsa dahil.
             if (f.YearMin is > 0) query = query.Where(c => c.YearEnd == null || c.YearEnd >= f.YearMin);
@@ -54,6 +55,9 @@ namespace OtoRehber.Services
 
             return query;
         }
+
+        // Not: Sıralama artık CarScoreService.SortAndPageAsync içinde (canonical skor + fiyat/yıl)
+        // bellek üzerinde yapılır — eski SQL ApplySort kaldırıldı (PRD v5 §3.2).
 
         /// <summary>
         /// `entity => value != null && ((value >= min1 && value <= max1) || (value >= min2 && value <= max2) ...)`
@@ -79,14 +83,5 @@ namespace OtoRehber.Services
             return Expression.Lambda<Func<T, bool>>(body, p);
         }
 
-        public static IQueryable<Car> ApplySort(IQueryable<Car> query, string? sortBy) => sortBy switch
-        {
-            "price_asc" => query.OrderBy(c => c.MinPrice),
-            "price_desc" => query.OrderByDescending(c => c.MinPrice),
-            "score_desc" => query.OrderByDescending(c => c.ReliabilityScore),
-            "score_asc" => query.OrderBy(c => c.ReliabilityScore),
-            "year_desc" => query.OrderByDescending(c => c.YearEnd ?? c.YearStart ?? 0),
-            _ => query.OrderByDescending(c => c.Id)
-        };
     }
 }

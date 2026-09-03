@@ -339,7 +339,7 @@
                     </div>
                     <div class="flex flex-col gap-1 w-full max-w-[85%]">
                         <div class="bg-surface border border-border text-content p-3 rounded-e-xl rounded-es-xl text-sm">
-                            Merhaba! Ben OtoRehber AI Asistanı. Sana sistemimizdeki araçlar arasından en uygununu önerebilirim. Bütçen veya aradığın özellikler neler?
+                            Merhaba! Ben OtoRehber AI Asistanı. OtoRehber verilerine dayanarak araçlar hakkındaki sorularını yanıtlarım (kronik sorunlar, bakım maliyeti, skorlar). Bütçene göre araç önerisi için <a href="/AiWizard" class="text-brand-600 hover:underline">AI Sihirbaz</a>'ı kullanabilirsin.
                         </div>
                     </div>
                 </div>
@@ -362,6 +362,15 @@
     <script src="~/lib/dompurify/purify.min.js" asp-append-version="true"></script>
 
     <!-- AI Chatbot Javascript -->
+    @{
+        var _isCarDetails = string.Equals(ViewContext.RouteData.Values["controller"] as string, "Car", StringComparison.OrdinalIgnoreCase)
+            && string.Equals(ViewContext.RouteData.Values["action"] as string, "Details", StringComparison.OrdinalIgnoreCase);
+        var _chatCarId = _isCarDetails && int.TryParse(ViewContext.RouteData.Values["id"] as string, out var _cid) ? _cid.ToString() : "null";
+    }
+    <script>
+        // Araç detay sayfasındaysak chat'e o aracın bağlamını taşı (PRD v5 §4.8).
+        window.__otoChatCarId = @Html.Raw(_chatCarId);
+    </script>
     <script>
         // ===== ANTIFORGERY YARDIMCISI =====
         // Sunucudaki AutoValidateAntiforgeryToken filtresi tüm POST'larda token bekler.
@@ -407,7 +416,8 @@
             scrollToBottom();
 
             try {
-                const response = await postJson('/api/AiChat/send', { message: message });
+                const carId = window.__otoChatCarId || null;
+                const response = await postJson('/api/AiChat/send', carId ? { message: message, carId: carId } : { message: message });
 
                 const data = await response.json();
                 
@@ -598,7 +608,7 @@
                                     <p class="text-sm font-semibold text-content group-hover:text-brand-600">${item.label}</p>
                                     <p class="text-xs text-content-muted">${item.segment} Segmenti</p>
                                 </div>
-                                <span class="text-xs font-semibold text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-500/15 px-2 py-0.5 rounded">★ ${item.score}</span>
+                                ${item.score != null ? `<span class="text-xs font-semibold text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-500/15 px-2 py-0.5 rounded">★ ${item.score}</span>` : ''}
                             </a>`).join('');
                         results.classList.remove('hidden');
                         input.setAttribute('aria-expanded', 'true');

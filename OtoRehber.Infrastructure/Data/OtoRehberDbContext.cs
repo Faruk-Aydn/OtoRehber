@@ -58,6 +58,22 @@ namespace OtoRehber.Infrastructure.Data
                 b.HasIndex(c => c.Brand);
                 b.HasIndex(c => c.Segment);
                 b.HasIndex(c => c.ReliabilityScore);
+
+                // Veri güvenilirliği (PRD v5 §1.5) — Car ile aynı tabloya gömülü owned type.
+                // Tek düz string değil; alan bazlı seviyeler ileride eklenebilsin diye ayrı sınıf.
+                b.Navigation(c => c.DataConfidence).IsRequired(false);
+                b.OwnsOne(c => c.DataConfidence, d =>
+                {
+                    d.Property(x => x.Overall).HasConversion<string>().HasMaxLength(12).HasColumnName("DataConfidence");
+                    d.Property(x => x.TechnicalData).HasConversion<string>().HasMaxLength(12);
+                    d.Property(x => x.ChronicIssue).HasConversion<string>().HasMaxLength(12);
+                    d.Property(x => x.Maintenance).HasConversion<string>().HasMaxLength(12);
+                    d.Property(x => x.MarketData).HasConversion<string>().HasMaxLength(12);
+                    d.Property(x => x.Community).HasConversion<string>().HasMaxLength(12);
+                    d.HasData(
+                        new { CarId = 1, Overall = DataConfidenceLevel.Medium },
+                        new { CarId = 2, Overall = DataConfidenceLevel.Medium });
+                });
             });
 
             // Başlangıç verisi (Seeding)

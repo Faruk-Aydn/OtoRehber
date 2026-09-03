@@ -185,6 +185,9 @@ builder.Services.AddRateLimiter(options =>
 builder.Services.AddResponseCaching();
 builder.Services.AddMemoryCache();
 
+// Canonical OtoRehber Skoru (PRD v5 §1.2) — tek kaynak; Home/Detay/Karşılaştırma/Sihirbaz/İstatistik/Arama kullanır.
+builder.Services.AddScoped<OtoRehber.Services.CarScoreService>();
+
 // Yanıt sıkıştırma (Brotli + Gzip)
 builder.Services.AddResponseCompression(options =>
 {

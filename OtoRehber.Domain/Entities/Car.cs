@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -40,6 +41,24 @@ namespace OtoRehber.Domain.Entities
         /// </summary>
         [MaxLength(20)]
         public string? Source { get; set; }
+
+        /// <summary>
+        /// Verinin güvenilirlik bilgisi (PRD v5 §1.5). EF'de aynı tabloya gömülür.
+        /// Ayarlanmamışsa null → <see cref="DataConfidenceLevel.Unknown"/> kabul edilir.
+        /// Katalog seeder küratörlü satırlara Medium atar.
+        /// </summary>
+        public CarDataConfidence? DataConfidence { get; set; }
+
+        /// <summary>DataConfidence null ise Unknown döndürür (view'lar bunu kullanır).</summary>
+        [System.ComponentModel.DataAnnotations.Schema.NotMapped]
+        public DataConfidenceLevel EffectiveDataConfidence
+            => DataConfidence?.Overall ?? DataConfidenceLevel.Unknown;
+
+        /// <summary>
+        /// Verinin gerçek son güncelleme tarihi (PRD v5 §1.6). Bilinmiyorsa null —
+        /// asla oluşturma tarihiyle doldurulmaz; UI "Güncelleme tarihi bilinmiyor" gösterir.
+        /// </summary>
+        public DateTime? LastUpdatedUtc { get; set; }
 
         // --- Yapılandırılmış özellikler (filtreleme için; serbest metin Engine'den türetilir/elle girilir) ---
         /// <summary>Benzin | Benzin+LPG | Dizel | Hibrit | Plug-in Hibrit | Elektrik | Benzin (Hafif Hibrit) | Dizel (Hafif Hibrit)</summary>

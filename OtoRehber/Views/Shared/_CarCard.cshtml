@@ -4,6 +4,10 @@
     var showCompare = ViewData["ShowCompare"] as bool? ?? false;
     (double Avg, int Count) rt = default;
     var hasRating = ratings != null && ratings.TryGetValue(Model.Id, out rt);
+
+    var scores = ViewData["Scores"] as IReadOnlyDictionary<int, OtoRehber.Domain.Scoring.ScoreResult>;
+    OtoRehber.Domain.Scoring.ScoreResult score = null;
+    scores?.TryGetValue(Model.Id, out score);
 }
 <div class="card card-hover overflow-hidden flex flex-col h-full" data-aos="fade-up">
     <div class="relative h-44 bg-surface-3 flex items-center justify-center group border-b border-border">
@@ -20,8 +24,16 @@
             <i class="fa-solid fa-heart" aria-hidden="true"></i>
         </button>
 
-        <div class="absolute bottom-3 left-3 badge bg-surface/95 border border-border text-content z-10" title="Uzman güvenilirlik puanı">
-            <i class="fa-solid fa-star text-amber-500"></i> @Model.ReliabilityScore<span class="text-content-muted">/10</span>
+        <div class="absolute bottom-3 left-3 badge bg-surface/95 border border-border text-content z-10" title="OtoRehber Skoru">
+            @if (score?.Overall is not null)
+            {
+                <i class="fa-solid fa-star text-amber-500"></i>
+                <span>@OtoRehber.Domain.Scoring.OtoRehberScore.FormatForDisplay(score.Overall)</span><span class="text-content-muted">/10</span>
+            }
+            else
+            {
+                <span class="text-content-muted text-xs">Skor: veri yetersiz</span>
+            }
         </div>
 
         @if (!string.IsNullOrEmpty(Model.ImageUrl))
