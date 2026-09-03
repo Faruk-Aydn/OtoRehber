@@ -36,6 +36,7 @@ public class SmokeTests : IClassFixture<CustomWebApplicationFactory>
     [InlineData("/araclar")]
     [InlineData("/araclar?brand=Toyota&sortBy=price_asc")]
     [InlineData("/araclar?page=999")]
+    [InlineData("/ilan-analizi")]
     public async Task Get_PublicPages_ReturnsSuccess(string url)
     {
         var res = await _client.GetAsync(url);

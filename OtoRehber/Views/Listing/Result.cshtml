@@ -1,0 +1,136 @@
+@using OtoRehber.Domain.Advisory
+@using OtoRehber.Domain.Listing
+@model ListingAnalysisResult
+@{
+    ViewData["Title"] = $"{Model.Car.Brand} {Model.Car.ModelName} — İlan Analizi";
+    var cur = ViewBag.Currency as CurrencyContext ?? new CurrencyContext();
+
+    string CoverageLabel(DataCoverage c) => c switch
+    {
+        DataCoverage.Full => "Veri tam",
+        DataCoverage.Partial => "Kısmi veri",
+        _ => "Veri yok"
+    };
+}
+
+<div class="max-w-3xl mx-auto py-8">
+    <div class="mb-6">
+        <a href="/ilan-analizi" class="inline-flex items-center text-content-muted hover:text-content font-medium transition-colors">
+            <i class="fa-solid fa-arrow-left mr-2"></i> Yeni analiz
+        </a>
+    </div>
+
+    <div class="card card-pad mb-6" data-aos="fade-down">
+        <div class="flex items-center justify-between flex-wrap gap-2">
+            <div>
+                <h1 class="text-xl font-bold text-content">@Model.Car.Brand @Model.Car.ModelName</h1>
+                <p class="text-sm text-content-muted">@Model.Car.Engine</p>
+            </div>
+            <a asp-controller="Car" asp-action="Details" asp-route-id="@Model.Car.Id" class="btn-secondary btn-sm">Araç sayfası</a>
+        </div>
+    </div>
+
+    <div class="space-y-4">
+
+        <!-- 1 · Fiyat -->
+        <section class="card card-pad" data-aos="fade-up">
+            <div class="flex items-center justify-between mb-2">
+                <h2 class="section-title"><i class="fa-solid fa-tag text-content-muted mr-2"></i>Fiyat</h2>
+                <span class="badge-muted">@CoverageLabel(Model.Price.Coverage)</span>
+            </div>
+            <p class="text-sm text-content">@Model.Price.Message</p>
+        </section>
+
+        <!-- 2 · Kilometre -->
+        <section class="card card-pad" data-aos="fade-up">
+            <div class="flex items-center justify-between mb-2">
+                <h2 class="section-title"><i class="fa-solid fa-gauge text-content-muted mr-2"></i>Kilometre</h2>
+                <span class="badge-muted">@CoverageLabel(Model.Mileage.Coverage)</span>
+            </div>
+            <p class="text-sm text-content">@Model.Mileage.Message</p>
+        </section>
+
+        <!-- 3 · Kronik sorunlar -->
+        <section class="card card-pad" data-aos="fade-up">
+            <h2 class="section-title mb-3"><i class="fa-solid fa-triangle-exclamation text-content-muted mr-2"></i>Bu araçta kontrol edilmesi gereken kronik sorunlar</h2>
+            @if (Model.ChronicIssues.Count > 0)
+            {
+                <ul class="space-y-3">
+                    @foreach (var i in Model.ChronicIssues)
+                    {
+                        <li class="border-b border-border/60 pb-2 last:border-0">
+                            <div class="flex justify-between items-start gap-2">
+                                <span class="text-sm font-medium text-content">@i.IssueTitle</span>
+                                <span class="badge-muted shrink-0">@i.Severity · @cur.Eur(i.EstimatedCostEUR)</span>
+                            </div>
+                            <p class="text-xs text-content-muted mt-0.5">@i.Description</p>
+                        </li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <p class="text-sm text-content-muted">Bu varyant için katalogda kayıtlı kronik sorun yok.</p>
+            }
+        </section>
+
+        <!-- 4 · Bakım -->
+        <section class="card card-pad" data-aos="fade-up">
+            <h2 class="section-title mb-3"><i class="fa-solid fa-screwdriver-wrench text-content-muted mr-2"></i>Bakım durumu</h2>
+            @if (Model.Maintenance.Count > 0)
+            {
+                <ul class="space-y-2.5">
+                    @foreach (var m in Model.Maintenance)
+                    {
+                        string status = m.Status switch
+                        {
+                            MilestoneStatus.Passed => "Geçilmiş — yapıldığını teyit edin",
+                            MilestoneStatus.Due => "Şu an sırada",
+                            MilestoneStatus.Upcoming => "Yaklaşıyor",
+                            _ => ""
+                        };
+                        <li class="text-sm flex justify-between items-start gap-3">
+                            <span class="text-content">@m.Milestone.Mileage — <span class="text-content-muted">@m.Milestone.ExpectedIssues</span></span>
+                            <span class="shrink-0 text-xs text-content-muted">@(string.IsNullOrEmpty(status) ? cur.Eur(m.Milestone.EstimatedCostEUR) : status)</span>
+                        </li>
+                    }
+                </ul>
+                @if (Model.Mileage.Coverage != DataCoverage.Full)
+                {
+                    <p class="text-xs text-content-muted mt-3">Kilometre girilirse hangi bakımların geçilmiş/yaklaşan olduğu işaretlenir.</p>
+                }
+            }
+            else
+            {
+                <p class="text-sm text-content-muted">Bu varyant için katalogda kilometre bakım barajı kaydı yok.</p>
+            }
+        </section>
+
+        <!-- 5 · Hasar / boya -->
+        <section class="card card-pad" data-aos="fade-up">
+            <div class="flex items-center justify-between mb-2">
+                <h2 class="section-title"><i class="fa-solid fa-car-burst text-content-muted mr-2"></i>Hasar / boya</h2>
+                <span class="badge-muted">@CoverageLabel(Model.Damage.Coverage)</span>
+            </div>
+            <p class="text-sm text-content">@Model.Damage.Message</p>
+        </section>
+
+        <!-- 6 · Kontrol listesi -->
+        <section class="card card-pad" data-aos="fade-up">
+            <h2 class="section-title mb-3"><i class="fa-solid fa-list-check text-content-muted mr-2"></i>Bakılırken kontrol edilecekler</h2>
+            <ul class="space-y-2.5">
+                @foreach (var item in Model.Checklist)
+                {
+                    <li class="flex items-start gap-3 text-sm">
+                        <i class="fa-regular fa-square-check @(item.FromChronicIssue ? "text-amber-500" : "text-content-muted") mt-0.5"></i>
+                        <span class="text-content-muted">@item.Text</span>
+                    </li>
+                }
+            </ul>
+        </section>
+    </div>
+
+    <p class="text-xs text-content-muted text-center mt-6">
+        Sonuçlar yalnızca OtoRehber verilerine ve girdiğiniz bilgilere dayanır. Bağımsız ekspertiz ve resmi tramer sorgusu şarttır.
+    </p>
+</div>

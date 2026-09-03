@@ -77,4 +77,26 @@ public class AiWizardFlowTests : IClassFixture<CustomWebApplicationFactory>
         Assert.Contains("Toyota Corolla", body);         // öne çıkan araç etiketi
         Assert.Contains("canonical OtoRehber Skoru", body);
     }
+
+    [Fact]
+    public async Task Listing_Analyze_RulesBasedResult_NoInvention()
+    {
+        var token = await GetAntiforgeryTokenAsync("/ilan-analizi");
+        var res = await _client.PostAsync("/ilan-analizi", new FormUrlEncodedContent(new Dictionary<string, string>
+        {
+            ["__RequestVerificationToken"] = token,
+            ["carId"] = "2",          // HasData Corolla, MinPrice 700k - MaxPrice 1.1M
+            ["year"] = "2015",
+            ["mileage"] = "160000",
+            ["price"] = "900000",
+        }));
+
+        Assert.Equal(HttpStatusCode.OK, res.StatusCode);
+        var body = await res.Content.ReadAsStringAsync();
+        Assert.Contains("Corolla", body);
+        Assert.Contains("Fiyat", body);
+        Assert.Contains("Kilometre", body);
+        // Renk/verdict yok: 🟢🟡🔴 emoji veya "piyasa değerinin %" ifadesi olmamalı
+        Assert.DoesNotContain("piyasa de", body);
+    }
 }
