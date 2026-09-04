@@ -6,6 +6,7 @@
     var brandLabels = System.Text.Json.JsonSerializer.Serialize(ViewBag.BrandLabels ?? new List<string>());
     var brandScores = System.Text.Json.JsonSerializer.Serialize(ViewBag.BrandAvgScores ?? new List<double>());
     var brandCounts = System.Text.Json.JsonSerializer.Serialize(ViewBag.BrandCarCounts ?? new List<int>());
+    var cur = ViewBag.Currency as OtoRehber.Domain.Advisory.CurrencyContext ?? new OtoRehber.Domain.Advisory.CurrencyContext();
 }
 
 <div class="mb-8" data-aos="fade-down">
@@ -90,7 +91,7 @@
                                 <p class="text-xs text-content-muted">@c.Segment segmenti</p>
                             </div>
                         </div>
-                        <span class="badge bg-red-50 text-red-700 dark:bg-red-500/15 dark:text-red-300">~@c.Cost € / yıl</span>
+                        <span class="badge bg-red-50 text-red-700 dark:bg-red-500/15 dark:text-red-300">@cur.Eur((int)c.Cost) / yıl</span>
                     </div>
                     hc++;
                 }
@@ -131,13 +132,23 @@
                             <td class="px-3 sm:px-6 py-4">
                                 <span class="font-semibold text-amber-600 dark:text-amber-400"><i class="fa-solid fa-star mr-1"></i>@scores[i]</span>
                             </td>
-                            <td class="px-3 sm:px-6 py-4 text-red-500 font-medium hidden md:table-cell">~@costs[i] €</td>
+                            <td class="px-3 sm:px-6 py-4 text-red-500 font-medium hidden md:table-cell">@cur.Eur(costs[i])</td>
                         </tr>
                     }
                 }
             </tbody>
         </table>
     </div>
+    <p class="px-5 py-3 text-xs text-content-muted border-t border-border">
+        @if (cur.RateNote != null)
+        {
+            <text>Bakım maliyetleri ₺'ye çevrilerek gösterilir (@cur.RateNote).</text>
+        }
+        else
+        {
+            <text>Bakım maliyetleri euro (€) cinsindendir; güncel kur yapılandırılmamış.</text>
+        }
+    </p>
 </div>
 
 @section Scripts {

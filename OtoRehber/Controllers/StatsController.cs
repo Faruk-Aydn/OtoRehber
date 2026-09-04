@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using OtoRehber.Domain.Advisory;
 using OtoRehber.Infrastructure.Data;
 
 namespace OtoRehber.Controllers
@@ -8,11 +10,13 @@ namespace OtoRehber.Controllers
     {
         private readonly OtoRehberDbContext _context;
         private readonly OtoRehber.Services.CarScoreService _scores;
+        private readonly IConfiguration _configuration;
 
-        public StatsController(OtoRehberDbContext context, OtoRehber.Services.CarScoreService scores)
+        public StatsController(OtoRehberDbContext context, OtoRehber.Services.CarScoreService scores, IConfiguration configuration)
         {
             _context = context;
             _scores = scores;
+            _configuration = configuration;
         }
 
         [ResponseCache(Duration = 120, Location = ResponseCacheLocation.Any)]
@@ -21,6 +25,13 @@ namespace OtoRehber.Controllers
             // Araçları belleğe al; gruplama/yuvarlama SQL'e çevrilmeye çalışılmasın
             // (Postgres'te ROUND(double precision, int) yok → 500).
             var cars = await _context.Cars.AsNoTracking().ToListAsync();
+
+            // Para birimi tutarlılığı (PRD v5.1 §11): Detail/Listing ile aynı € → ₺ dönüşümü.
+            ViewBag.Currency = new CurrencyContext
+            {
+                EurToTry = _configuration.GetValue<double?>("Currency:EurToTry"),
+                RateDate = _configuration["Currency:RateDate"]
+            };
 
             // Canonical OtoRehber Skoru (PRD v5 §1.2) — istatistikler ham ReliabilityScore değil bunu kullanır.
             var scores = await _scores.ForCarsAsync(cars);
